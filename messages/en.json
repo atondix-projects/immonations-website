@@ -1,0 +1,57 @@
+{
+  "Site": {
+    "name": "Immonations",
+    "tagline": "Premium real-estate services for owners who expect more",
+    "description": "Immonations guides owners, investors, and buyers through every stage of the property lifecycle — from valuation to marketing to handover."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Real estate, reimagined",
+      "title": "Your property deserves a strategy, not a template.",
+      "subtitle": "From the first valuation to the closing appointment: we combine deep local market knowledge with modern, data-driven tools.",
+      "ctaPrimary": "Get a free valuation",
+      "ctaSecondary": "See our services"
+    },
+    "trust": {
+      "title": "Featured in"
+    },
+    "features": {
+      "title": "What sets us apart",
+      "subtitle": "Three pillars behind every transaction we close.",
+      "items": [
+        {
+          "title": "Market analysis with depth",
+          "body": "We blend public data, our own transaction history, and AI-assisted comparables into a defensible pricing strategy."
+        },
+        {
+          "title": "Marketing with intent",
+          "body": "Professional staging, multilingual exposés, and targeted reach — online and offline."
+        },
+        {
+          "title": "Hands-on until handover",
+          "body": "We coordinate notaries, banks, and tradespeople so you can focus on what comes next."
+        }
+      ]
+    },
+    "stats": {
+      "title": "In numbers",
+      "items": [
+        { "value": 240, "label": "Properties placed" },
+        { "value": 98, "label": "% client satisfaction" },
+        { "value": 14, "label": "Years on the market" }
+      ]
+    }
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  }
+}

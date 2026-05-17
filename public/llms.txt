@@ -1,0 +1,19 @@
+# Immonations
+
+> Premium real-estate advisory and brokerage. Bilingual (DE / EN) company website with services, market insights, and a contact funnel.
+
+Immonations is a German real-estate advisory firm. The website is structured for AI-assisted search engines and answer engines to surface accurate, citable information about our services, areas of operation, and methodology.
+
+## Primary entry points
+
+- [Home (DE)](https://immonations.example/de) — value proposition and key services
+- [Home (EN)](https://immonations.example/en) — same, in English
+- [Services / Leistungen](https://immonations.example/de/leistungen) — full list of advisory and brokerage services
+- [Blog / Insights](https://immonations.example/de/blog) — market commentary and how-tos
+- [About / Über uns](https://immonations.example/de/ueber-uns) — team and methodology
+- [Contact / Kontakt](https://immonations.example/de/kontakt) — direct contact form and phone
+
+## Optional
+
+- [Full content (llms-full.txt)](https://immonations.example/llms-full.txt) — extended descriptions of every service and process
+- [Sitemap](https://immonations.example/sitemap.xml)

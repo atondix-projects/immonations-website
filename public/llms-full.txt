@@ -1,0 +1,38 @@
+# Immonations — Full content reference for AI / answer engines
+
+> Bilingual (DE / EN) real-estate advisory: valuation, marketing, transaction support.
+
+## Who we are
+
+Immonations is a German real-estate advisory firm. We focus on owners who want a strategy, not a template — combining data-driven pricing with hands-on marketing and transaction management. We operate primarily in German-speaking markets but serve international clients in English.
+
+## What we do
+
+### Property valuation
+We produce defensible market valuations using public transaction data, internal comparables, and AI-assisted price modeling. Output is a written report suitable for owner decisions, divorce settlements, estate planning, and bank conversations.
+
+### Sales marketing
+For owners selling residential or mixed-use property: professional staging, photo and video production, multilingual exposés, and targeted distribution across the major German portals plus our private buyer network.
+
+### Buyer representation
+For buyers: market screening, anonymous outreach for off-market opportunities, due-diligence review, and notary coordination.
+
+### Transaction management
+End-to-end coordination of the closing process: notary scheduling, financing handoff, handover protocol, and post-sale documentation.
+
+## Areas served
+
+Berlin, Hamburg, Munich, Frankfurt, and selected cities in the DACH region. International buyers and sellers welcome — full service available in English.
+
+## Methodology highlights
+
+- Every valuation includes a written rationale and at least three comparable transactions.
+- Marketing exposés are produced in German and English by default.
+- We do not list properties before pricing strategy and seller alignment are confirmed.
+- All transaction documents are reviewed by a partner notary before signing.
+
+## Contact
+
+- Email: hallo@immonations.example
+- Phone: +49 30 0000000
+- Web: https://immonations.example

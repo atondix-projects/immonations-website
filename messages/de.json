@@ -1,0 +1,57 @@
+{
+  "Site": {
+    "name": "Immonations",
+    "tagline": "Premium Immobilienlösungen für anspruchsvolle Eigentümer",
+    "description": "Immonations begleitet Eigentümer, Investoren und Käufer durch jede Phase des Immobilienzyklus – von der Bewertung über die Vermarktung bis zur Übergabe."
+  },
+  "Nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "blog": "Blog",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Immobilien neu gedacht",
+      "title": "Ihre Immobilie verdient eine Strategie, keinen Standardprozess.",
+      "subtitle": "Vom ersten Wertgutachten bis zum Notartermin: Wir verbinden lokale Marktkenntnis mit modernen, datengetriebenen Werkzeugen.",
+      "ctaPrimary": "Kostenlose Bewertung starten",
+      "ctaSecondary": "Unsere Leistungen ansehen"
+    },
+    "trust": {
+      "title": "Erwähnt in"
+    },
+    "features": {
+      "title": "Was uns auszeichnet",
+      "subtitle": "Drei Bausteine, die jede unserer Vermittlungen tragen.",
+      "items": [
+        {
+          "title": "Marktanalyse mit Tiefgang",
+          "body": "Wir kombinieren öffentliche Daten, eigene Transaktionen und KI-gestützte Vergleichswerte zu einer belastbaren Preisstrategie."
+        },
+        {
+          "title": "Vermarktung mit Anspruch",
+          "body": "Professionelle Inszenierung, mehrsprachige Exposés und gezielte Reichweite – online wie offline."
+        },
+        {
+          "title": "Begleitung bis zur Übergabe",
+          "body": "Wir koordinieren Notar, Banken und Handwerker, damit Sie sich auf den nächsten Schritt konzentrieren können."
+        }
+      ]
+    },
+    "stats": {
+      "title": "In Zahlen",
+      "items": [
+        { "value": 240, "label": "Vermittelte Objekte" },
+        { "value": 98, "label": "% Kundenzufriedenheit" },
+        { "value": 14, "label": "Jahre Markterfahrung" }
+      ]
+    }
+  },
+  "Footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  }
+}

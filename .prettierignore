@@ -1,0 +1,7 @@
+.next
+.next-docs
+node_modules
+pnpm-lock.yaml
+public
+*.md
+*.mdx
