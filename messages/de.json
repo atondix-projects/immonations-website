@@ -1,57 +1,857 @@
 {
   "Site": {
-    "name": "Immonations",
-    "tagline": "Premium Immobilienlösungen für anspruchsvolle Eigentümer",
-    "description": "Immonations begleitet Eigentümer, Investoren und Käufer durch jede Phase des Immobilienzyklus – von der Bewertung über die Vermarktung bis zur Übergabe."
+    "name": "Immonation",
+    "tagline": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth und Erlangen",
+    "description": "Die Immonation GmbH begleitet Eigentümer in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von 60 km durch den gesamten Verkaufsprozess – von der fundierten Wertermittlung über die professionelle Vermarktung bis zum Notartermin."
   },
   "Nav": {
     "home": "Start",
     "services": "Leistungen",
     "blog": "Blog",
     "about": "Über uns",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "references": "Referenzen",
+    "guide": "Ratgeber & News",
+    "buy": "Kaufen",
+    "resources": "Ressourcen",
+    "faq": "FAQ",
+    "downloads": "Downloads",
+    "careers": "Karriere",
+    "referrers": "Tippgeber",
+    "mega": {
+      "forSellers": "Für Verkäufer",
+      "forBuyers": "Für Käufer",
+      "ownerPath": "Eigentümer",
+      "buyerPath": "Käufer",
+      "proofPath": "Vertrauen & Ablauf",
+      "knowledgePath": "Wissen & Unterlagen",
+      "companyPath": "Unternehmen & Kontakt",
+      "valuation": "Immobilienbewertung",
+      "valuationDesc": "Kostenlos, unverbindlich, mit schriftlichem Ergebnis.",
+      "selling": "Immobilienverkauf",
+      "sellingDesc": "Aktiv gesteuerter Verkauf bis zum Notartermin.",
+      "virtualTour": "Virtuelle Besichtigung",
+      "virtualTourDesc": "360°-Rundgang: digital besichtigen, ernsthaft kaufen.",
+      "references": "Referenzobjekte",
+      "referencesDesc": "Verkaufte Objekte aus Ihrer Nachbarschaft.",
+      "buying": "Immobilie kaufen",
+      "buyingDesc": "Aktuelle Angebote aus der Region.",
+      "financing": "Finanzierung",
+      "financingDesc": "Baufinanzierung mit unserem Partner Dr. Klein.",
+      "searchRequest": "Suchauftrag",
+      "searchRequestDesc": "Von passenden Objekten zuerst erfahren.",
+      "trustProof": "Bewertungen & Nachweise",
+      "trustProofDesc": "Google, Trustpilot und echte Verkaufsgeschichten.",
+      "faqDesc": "Kosten, Dauer, Ablauf — kurz beantwortet.",
+      "guideDesc": "Immobilienwissen und Marktupdates.",
+      "downloadsDesc": "Checklisten und Unterlagen für Eigentümer.",
+      "careersDesc": "Festanstellung oder freie Vertriebspartnerschaft.",
+      "referrersDesc": "Empfehlen und profitieren.",
+      "contactDesc": "Telefon, E-Mail oder Erstgespräch.",
+      "highlightKicker": "Nur für Verkäufer",
+      "highlightTitle": "Virtuelle Besichtigung",
+      "highlightTagline": "Einzigartig bei Immonation.",
+      "highlightBody": "360°-Rundgang für jedes Verkaufsobjekt. Interessenten prüfen digital vor, bevor ein Termin vor Ort entsteht.",
+      "highlightCta": "Rundgang ansehen",
+      "servicesFooter": "Bewertung, Verkauf und Käuferstrecke — klar geführt von einem lokalen Team.",
+      "servicesFooterCta": "Alle Leistungen ansehen",
+      "resourcesKicker": "Direkt",
+      "resourcesTitle": "Antworten & Unterlagen",
+      "resourcesTagline": "Schneller zur richtigen Entscheidung.",
+      "resourcesBody": "FAQ, Checklisten und Kontaktwege für Eigentümer, Käufer, Bewerber und Tippgeber.",
+      "resourcesCta": "FAQ öffnen",
+      "resourcesFooter": "Ratgeber, Downloads und Kontaktwege für die nächste konkrete Frage.",
+      "resourcesFooterCta": "Downloads ansehen"
+    }
   },
-  "Home": {
-    "hero": {
-      "eyebrow": "Immobilien neu gedacht",
-      "title": "Ihre Immobilie verdient eine Strategie, keinen Standardprozess.",
-      "subtitle": "Vom ersten Wertgutachten bis zum Notartermin: Wir verbinden lokale Marktkenntnis mit modernen, datengetriebenen Werkzeugen.",
-      "ctaPrimary": "Kostenlose Bewertung starten",
-      "ctaSecondary": "Unsere Leistungen ansehen"
+  "AboutPage": {
+    "metadata": {
+      "title": "\u00dcber Immonation",
+      "description": "Erfahren Sie, wie die Immonation GmbH Eigent\u00fcmer und K\u00e4ufer in Zirndorf, N\u00fcrnberg, F\u00fcrth und Erlangen begleitet."
     },
-    "trust": {
-      "title": "Erwähnt in"
-    },
-    "features": {
-      "title": "Was uns auszeichnet",
-      "subtitle": "Drei Bausteine, die jede unserer Vermittlungen tragen.",
+    "eyebrow": "Immonation GmbH",
+    "title": "Immobilienberatung, die lokal verwurzelt und digital stark ist.",
+    "lede": "Immonation begleitet Eigent\u00fcmer, K\u00e4ufer und Investoren in Zirndorf, N\u00fcrnberg, F\u00fcrth, Erlangen und der umliegenden Region mit Bewertung, Vermarktung und pers\u00f6nlicher Beratung.",
+    "body": "Unser Anspruch ist ein transparenter Prozess mit belastbaren Zahlen, klarer Kommunikation und Vermarktung, die mehr leistet als ein Standardinserat.",
+    "values": {
       "items": [
         {
-          "title": "Marktanalyse mit Tiefgang",
-          "body": "Wir kombinieren öffentliche Daten, eigene Transaktionen und KI-gestützte Vergleichswerte zu einer belastbaren Preisstrategie."
+          "title": "Lokale Marktkenntnis",
+          "text": "Wir bewerten Immobilien nicht isoliert, sondern im Kontext aktueller Nachfrage, vergleichbarer Transaktionen und regionaler Mikrolagen."
         },
         {
-          "title": "Vermarktung mit Anspruch",
-          "body": "Professionelle Inszenierung, mehrsprachige Exposés und gezielte Reichweite – online wie offline."
+          "title": "Aktive Vermarktung",
+          "text": "Video, 360-Grad-Rundg\u00e4nge, qualifizierte Suchkunden und klare Expos\u00e9s sorgen f\u00fcr bessere Entscheidungen auf beiden Seiten."
         },
         {
-          "title": "Begleitung bis zur Übergabe",
-          "body": "Wir koordinieren Notar, Banken und Handwerker, damit Sie sich auf den nächsten Schritt konzentrieren können."
+          "title": "Pers\u00f6nliche Begleitung",
+          "text": "Ein fester Ansprechpartner f\u00fchrt Sie vom ersten Gespr\u00e4ch bis zum Notartermin durch den gesamten Prozess."
         }
       ]
     },
-    "stats": {
-      "title": "In Zahlen",
+    "cta": {
+      "title": "Sie planen einen Verkauf oder Kauf?",
+      "text": "Starten Sie mit einer fundierten Ersteinsch\u00e4tzung und einem klaren Blick auf die n\u00e4chsten Schritte.",
+      "label": "Kontakt aufnehmen"
+    }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie die Immonation GmbH f\u00fcr Immobilienbewertung, Verkauf, Kaufberatung und Suchauftr\u00e4ge."
+    },
+    "eyebrow": "Kontakt",
+    "title": "Sprechen wir \u00fcber Ihre Immobilie.",
+    "lede": "Ob Verkauf, Bewertung, Kaufberatung oder Suchauftrag: Schreiben Sie uns oder rufen Sie an. Wir melden uns mit einer konkreten Einsch\u00e4tzung der n\u00e4chsten Schritte.",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-Mail",
+    "serviceLink": "Leistungen ansehen",
+    "steps": {
+      "title": "So geht es weiter",
       "items": [
-        { "value": 240, "label": "Vermittelte Objekte" },
-        { "value": 98, "label": "% Kundenzufriedenheit" },
-        { "value": 14, "label": "Jahre Markterfahrung" }
+        {
+          "title": "Kurz einordnen",
+          "text": "Wir kl\u00e4ren Lage, Objektart und Ziel, damit das Gespr\u00e4ch direkt verwertbar ist."
+        },
+        {
+          "title": "Daten pr\u00fcfen",
+          "text": "Auf Wunsch betrachten wir Unterlagen, Vergleichswerte und aktuelle Nachfrage in Ihrer Region."
+        },
+        {
+          "title": "N\u00e4chste Schritte festlegen",
+          "text": "Sie erhalten eine klare Empfehlung, ob Bewertung, Vermarktung oder Suchauftrag der richtige Startpunkt ist."
+        }
+      ]
+    }
+  },
+  "ValuationPage": {
+    "metadata": {
+      "title": "Kostenlose Immobilienbewertung",
+      "description": "Kostenlose, unverbindliche Immobilienbewertung für Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung — fundiert, vor Ort und mit schriftlichem Ergebnis."
+    },
+    "hero": {
+      "eyebrow": "Kostenlos & unverbindlich",
+      "title": "Was ist Ihre Immobilie wert?",
+      "lede": "Fundierte Wertermittlung auf Basis aktueller Verkaufsdaten aus Ihrer Nachbarschaft — vor Ort geprüft, schriftlich dokumentiert und ohne Verpflichtung."
+    },
+    "answer": "Die Immobilienbewertung der Immonation GmbH ist kostenlos und unverbindlich. Wir ermitteln den realistischen Marktwert Ihrer Immobilie in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung — auf Basis aktueller Transaktionen, eigener Vermittlungen und einer Einschätzung vor Ort, nicht allein per Algorithmus.",
+    "features": {
+      "title": "Was die Bewertung auszeichnet",
+      "items": [
+        {
+          "title": "Aktuelle Vergleichsdaten",
+          "text": "Wir bewerten im Kontext echter Verkäufe aus Ihrer Umgebung — nicht anhand pauschaler Online-Rechner."
+        },
+        {
+          "title": "Einschätzung vor Ort",
+          "text": "Zustand, Ausstattung und Mikrolage fließen persönlich geprüft in den Wertansatz ein."
+        },
+        {
+          "title": "Schriftliches Ergebnis",
+          "text": "Sie erhalten eine dokumentierte Einschätzung, die Sie für Entscheidungen, Erbschaft oder Bankgespräche nutzen können."
+        },
+        {
+          "title": "Keine Verpflichtung",
+          "text": "Ob Sie verkaufen, halten oder eine zweite Meinung einholen — die Entscheidung bleibt bei Ihnen."
+        }
+      ]
+    },
+    "steps": {
+      "title": "So läuft die Bewertung ab",
+      "items": [
+        {
+          "num": "01",
+          "title": "Eckdaten übermitteln",
+          "text": "Objektart, Lage und Grunddaten — online in wenigen Minuten oder telefonisch."
+        },
+        {
+          "num": "02",
+          "title": "Analyse & Vor-Ort-Termin",
+          "text": "Wir prüfen Vergleichswerte und besichtigen Ihre Immobilie persönlich."
+        },
+        {
+          "num": "03",
+          "title": "Ergebnis & Empfehlung",
+          "text": "Sie erhalten den Wertansatz schriftlich — mit einer klaren Empfehlung für die nächsten Schritte."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "5,0 ★", "label": "Google-Bewertung bei 184 Rezensionen" },
+      { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
+      { "value": "5.000+", "label": "registrierte Suchkunden" },
+      { "value": "360°", "label": "Rundgang bei jedem Verkaufsobjekt" }
+    ],
+    "faq": {
+      "title": "Häufige Fragen zur Bewertung",
+      "items": [
+        {
+          "question": "Was kostet die Immobilienbewertung?",
+          "answer": "Für Verkaufsinteressenten ist die Bewertung kostenlos und unverbindlich. Reine Gutachten für Erbschafts- oder Steuerzwecke berechnen wir transparent nach Aufwand."
+        },
+        {
+          "question": "Wie lange dauert die Bewertung?",
+          "answer": "Von der Anfrage bis zum schriftlichen Ergebnis vergehen typischerweise wenige Tage bis zwei Wochen, abhängig von Terminfindung und Unterlagen."
+        },
+        {
+          "question": "Welche Unterlagen werden benötigt?",
+          "answer": "Hilfreich sind Grundriss, Wohnflächenberechnung, Energieausweis und Grundbuchauszug. Fehlende Unterlagen können wir gemeinsam beschaffen."
+        },
+        {
+          "question": "Bin ich nach der Bewertung zu etwas verpflichtet?",
+          "answer": "Nein. Die Bewertung ist eine Entscheidungsgrundlage — ob und wann Sie verkaufen, bestimmen allein Sie."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Jetzt kostenlose Bewertung starten",
+      "text": "In 3 Minuten angefragt — wir melden uns innerhalb eines Werktags mit den nächsten Schritten.",
+      "primaryLabel": "Bewertung starten",
+      "secondaryLabel": "Erstgespräch vereinbaren"
+    }
+  },
+  "FaqPage": {
+    "metadata": {
+      "title": "Häufige Fragen (FAQ)",
+      "description": "Antworten auf die häufigsten Fragen zu Immobilienverkauf, Bewertung, Provision, Dauer und Ablauf bei der Immonation GmbH."
+    },
+    "eyebrow": "FAQ",
+    "title": "Häufige Fragen, klar beantwortet",
+    "lede": "Kosten, Dauer, Ablauf, Unterlagen: die Fragen, die uns Eigentümer und Käufer am häufigsten stellen — beantwortet in wenigen Sätzen.",
+    "items": [
+      {
+        "question": "Was kostet die Immobilienbewertung?",
+        "answer": "Die Bewertung ist für Verkaufsinteressenten kostenlos und unverbindlich — inklusive Vor-Ort-Einschätzung und schriftlichem Ergebnis."
+      },
+      {
+        "question": "Wie lange dauert ein Immobilienverkauf?",
+        "answer": "Typisch sind 6 bis 12 Wochen von der Vermarktung bis zum Notartermin — abhängig von Objekt, Preisstrategie und Nachfrage."
+      },
+      {
+        "question": "Wer zahlt die Maklerprovision?",
+        "answer": "Die Provision wird je nach Objekt und Konstellation zwischen Verkäufer und Käufer aufgeteilt. Die genaue Höhe weisen wir transparent im Exposé und vor Beauftragung aus."
+      },
+      {
+        "question": "Welche Unterlagen brauche ich für den Verkauf?",
+        "answer": "Grundbuchauszug, Grundriss, Wohnflächenberechnung, Energieausweis und bei Wohnungen die Teilungserklärung. Fehlende Unterlagen beschaffen wir gemeinsam."
+      },
+      {
+        "question": "Was bringt der 360°-Rundgang?",
+        "answer": "Interessenten besichtigen zuerst digital — vor Ort erscheinen nur noch ernsthafte Kaufinteressenten. Das spart Termine und schützt Ihre Privatsphäre."
+      },
+      {
+        "question": "In welcher Region ist Immonation tätig?",
+        "answer": "Wir vermitteln Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von rund 60 km um unseren Standort in Zirndorf."
+      },
+      {
+        "question": "Kann ich eine vermietete Immobilie verkaufen?",
+        "answer": "Ja. Vermietete Objekte vermarkten wir gezielt an Kapitalanleger — inklusive Aufbereitung der relevanten Miet- und Renditedaten."
+      },
+      {
+        "question": "Unterstützt Immonation auch bei der Finanzierung?",
+        "answer": "Ja. Gemeinsam mit unserem Finanzierungspartner Dr. Klein prüfen wir Finanzierungen von Kaufinteressenten und beraten Käufer zu Konditionen."
+      }
+    ],
+    "cta": {
+      "title": "Ihre Frage war nicht dabei?",
+      "text": "Rufen Sie an oder starten Sie direkt mit einer kostenlosen Bewertung — wir antworten innerhalb eines Werktags.",
+      "primaryLabel": "Kostenlose Bewertung",
+      "secondaryLabel": "Kontakt aufnehmen"
+    }
+  },
+  "LegalImprint": {
+    "metadata": {
+      "title": "Impressum",
+      "description": "Impressum der Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf."
+    },
+    "eyebrow": "Rechtliches",
+    "title": "Impressum",
+    "lede": "Angaben gemäß § 5 DDG.",
+    "sections": [
+      {
+        "heading": "Anbieter",
+        "paragraphs": [
+          "Immonation GmbH",
+          "Nürnberger Straße 18",
+          "90513 Zirndorf",
+          "Deutschland"
+        ]
+      },
+      {
+        "heading": "Kontakt",
+        "paragraphs": [
+          "Telefon: 0911 / 212 838 90",
+          "E-Mail: info@immonations.de"
+        ]
+      },
+      {
+        "heading": "Vertreten durch",
+        "paragraphs": ["[Geschäftsführung — vor Launch ergänzen]"]
+      },
+      {
+        "heading": "Registereintrag",
+        "paragraphs": [
+          "Registergericht: Amtsgericht Fürth",
+          "Handelsregisternummer: HRB 19278 [vor Launch verifizieren]"
+        ]
+      },
+      {
+        "heading": "Umsatzsteuer-ID",
+        "paragraphs": ["Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [vor Launch ergänzen]"]
+      },
+      {
+        "heading": "Aufsichtsbehörde",
+        "paragraphs": [
+          "Erlaubnis nach § 34c GewO, erteilt durch die zuständige Behörde: [vor Launch ergänzen — z. B. Landratsamt Fürth]"
+        ]
+      },
+      {
+        "heading": "Streitschlichtung",
+        "paragraphs": [
+          "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+        ]
+      }
+    ],
+    "note": "Platzhalter-Inhalte in eckigen Klammern werden vor Launch mit den geprüften Angaben von immonationgmbh.de ersetzt."
+  },
+  "LegalPrivacy": {
+    "metadata": {
+      "title": "Datenschutzerklärung",
+      "description": "Datenschutzerklärung der Immonation GmbH: Verantwortlicher, Datenverarbeitung, Cookies, Einwilligung und Ihre Rechte."
+    },
+    "eyebrow": "Rechtliches",
+    "title": "Datenschutzerklärung",
+    "lede": "Wie wir mit Ihren Daten umgehen — transparent und auf den Punkt.",
+    "sections": [
+      {
+        "heading": "Verantwortlicher",
+        "paragraphs": [
+          "Verantwortlich für die Datenverarbeitung auf dieser Website ist die Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Telefon 0911 / 212 838 90, E-Mail info@immonations.de."
+        ]
+      },
+      {
+        "heading": "Hosting",
+        "paragraphs": [
+          "Diese Website wird bei einem externen Dienstleister gehostet. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. [Hoster und Auftragsverarbeitungsvertrag vor Launch ergänzen]"
+        ]
+      },
+      {
+        "heading": "Kontaktaufnahme & Formulare",
+        "paragraphs": [
+          "Wenn Sie uns per Formular, E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b DSGVO). Für den Formularversand nutzen wir einen E-Mail-Dienstleister. [Resend-Details und AV-Vertrag vor Launch ergänzen]"
+        ]
+      },
+      {
+        "heading": "Cookies & Einwilligung",
+        "paragraphs": [
+          "Technisch nicht erforderliche Cookies und Tracking-Dienste (z. B. Google Analytics 4, Meta Pixel) setzen wir nur nach Ihrer ausdrücklichen Einwilligung über den Consent-Banner ein (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen."
+        ]
+      },
+      {
+        "heading": "Externe Inhalte",
+        "paragraphs": [
+          "Videos von YouTube werden im erweiterten Datenschutzmodus und erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen."
+        ]
+      },
+      {
+        "heading": "Ihre Rechte",
+        "paragraphs": [
+          "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch (Art. 15–21 DSGVO). Außerdem besteht ein Beschwerderecht bei der zuständigen Aufsichtsbehörde, dem Bayerischen Landesamt für Datenschutzaufsicht."
+        ]
+      }
+    ],
+    "note": "Diese Datenschutzerklärung ist ein strukturierter Ausgangspunkt und wird vor Launch juristisch geprüft und vervollständigt."
+  },
+  "LegalTerms": {
+    "metadata": {
+      "title": "Allgemeine Geschäftsbedingungen (AGB)",
+      "description": "Allgemeine Geschäftsbedingungen der Immonation GmbH für Maklerleistungen."
+    },
+    "eyebrow": "Rechtliches",
+    "title": "Allgemeine Geschäftsbedingungen",
+    "lede": "Grundlage unserer Maklerleistungen.",
+    "sections": [
+      {
+        "heading": "§ 1 Geltungsbereich",
+        "paragraphs": [
+          "Diese Allgemeinen Geschäftsbedingungen gelten für alle Maklerleistungen der Immonation GmbH gegenüber Verbrauchern und Unternehmern. [Vollständiger Text vor Launch von immonationgmbh.de übernehmen und prüfen]"
+        ]
+      },
+      {
+        "heading": "§ 2 Maklerleistung",
+        "paragraphs": [
+          "Gegenstand der Tätigkeit ist der Nachweis der Gelegenheit zum Abschluss eines Vertrags oder die Vermittlung eines Vertrags über Immobilien. [Details vor Launch ergänzen]"
+        ]
+      },
+      {
+        "heading": "§ 3 Provision",
+        "paragraphs": [
+          "Der Provisionsanspruch, dessen Höhe und die Verteilung zwischen den Parteien werden vor Beauftragung transparent ausgewiesen. [Konkrete Sätze vor Launch ergänzen]"
+        ]
+      },
+      {
+        "heading": "§ 4 Haftung",
+        "paragraphs": [
+          "Für die Richtigkeit der vom Eigentümer bereitgestellten Objektangaben übernimmt der Makler keine Gewähr. [Haftungsklauseln vor Launch juristisch prüfen]"
+        ]
+      },
+      {
+        "heading": "§ 5 Schlussbestimmungen",
+        "paragraphs": [
+          "Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt."
+        ]
+      }
+    ],
+    "note": "Diese AGB sind ein strukturierter Platzhalter und werden vor Launch durch die geprüfte Fassung ersetzt."
+  },
+  "CareersPage": {
+    "metadata": {
+      "title": "Karriere bei Immonation",
+      "description": "Karriere bei der Immonation GmbH in Zirndorf: Festanstellung im Immobilien- und Backoffice-Bereich oder freie Vertriebspartnerschaft mit 20 % Provision."
+    },
+    "eyebrow": "Karriere",
+    "title": "Arbeiten bei Immonation",
+    "lede": "Ob Festanstellung oder freie Vertriebspartnerschaft: Wir wachsen in der Metropolregion Nürnberg und suchen Menschen, die Immobilien und Vertrieb lieben.",
+    "sections": [
+      {
+        "heading": "Festangestellte",
+        "paragraphs": [
+          "Wir besetzen laufend Positionen im Immobilien- und Backoffice-Bereich — von der Objektaufnahme über die Vermarktung bis zur Verwaltung. Konkrete Stellenausschreibungen veröffentlichen wir hier in Kürze."
+        ]
+      },
+      {
+        "heading": "Freie Vertriebspartner",
+        "paragraphs": [
+          "Sie konzentrieren sich auf Akquise und Vertrieb — Immonation übernimmt Administration, Branding, Unterlagen und die komplette Vermarktungsstruktur. Mit 20 Prozent Provision und einem eingespielten Team im Rücken.",
+          "Ideal für vertriebsstarke Menschen aus der Region mit Immobilienerfahrung oder eigener Kauf- und Verkaufserfahrung."
+        ]
+      }
+    ],
+    "note": "Detaillierte Stellenangebote und das vollständige Partner-Modell folgen. Bis dahin: Melden Sie sich direkt — wir freuen uns auf das Gespräch.",
+    "cta": {
+      "title": "Interesse geweckt?",
+      "text": "Erzählen Sie uns kurz, wer Sie sind und was Sie suchen — wir melden uns innerhalb eines Werktags.",
+      "primaryLabel": "Jetzt Kontakt aufnehmen"
+    }
+  },
+  "ReferrersPage": {
+    "metadata": {
+      "title": "Tippgeber werden",
+      "description": "Als Tippgeber der Immonation GmbH profitieren: Verkaufsbereite Eigentümer empfehlen und am erfolgreichen Abschluss beteiligt werden."
+    },
+    "eyebrow": "Tippgeber",
+    "title": "Empfehlen und profitieren",
+    "lede": "Sie kennen jemanden, der eine Immobilie verkaufen möchte? Als Tippgeber werden Sie am erfolgreichen Abschluss beteiligt — ohne eigenen Aufwand.",
+    "sections": [
+      {
+        "heading": "So funktioniert es",
+        "paragraphs": [
+          "Sie nennen uns einen Kontakt mit Verkaufsabsicht. Wir übernehmen Beratung, Bewertung und Vermarktung. Kommt es zum erfolgreichen Abschluss, erhalten Sie eine Tippgeber-Vergütung.",
+          "Diskretion ist selbstverständlich: Ihr Kontakt erfährt nur mit Ihrer Zustimmung, dass die Empfehlung von Ihnen stammt."
+        ]
+      }
+    ],
+    "note": "Die Details des Tippgeber-Modells (Vergütungshöhe, Bedingungen) werden derzeit finalisiert und hier veröffentlicht.",
+    "cta": {
+      "title": "Sie haben einen Tipp für uns?",
+      "text": "Kurz melden genügt — wir besprechen alles Weitere persönlich.",
+      "primaryLabel": "Tipp übermitteln"
+    }
+  },
+  "DownloadsPage": {
+    "metadata": {
+      "title": "Downloads & Checklisten",
+      "description": "Checklisten und Unterlagen für Eigentümer und Käufer: Verkaufs-Checkliste, Unterlagen-Checkliste und Marktberichte der Immonation GmbH."
+    },
+    "eyebrow": "Ressourcen",
+    "title": "Downloads & Checklisten",
+    "lede": "Praktische Unterlagen für Eigentümer und Käufer — kompakt, verständlich und kostenlos.",
+    "sections": [
+      {
+        "heading": "In Vorbereitung",
+        "paragraphs": [
+          "Verkaufs-Checkliste: alle Schritte vom Entschluss bis zum Notartermin.",
+          "Unterlagen-Checkliste: welche Dokumente Sie für Verkauf oder Bewertung benötigen.",
+          "Marktberichte für Nürnberg, Fürth, Erlangen und Zirndorf."
+        ]
+      }
+    ],
+    "note": "Die Downloads werden derzeit erstellt. Bis dahin senden wir Ihnen die Checklisten gern persönlich zu — eine kurze Nachricht genügt.",
+    "cta": {
+      "title": "Checkliste direkt anfordern",
+      "text": "Sagen Sie uns, welche Unterlagen Sie brauchen — wir senden sie Ihnen per E-Mail.",
+      "primaryLabel": "Unterlagen anfordern"
+    }
+  },
+  "Audience": {
+    "sellerCta": "Kostenlose Bewertung starten",
+    "buyerCta": "Immobilie suchen",
+    "iAmA": "Ich bin",
+    "seller": "Verkäufer",
+    "buyer": "Käufer"
+  },
+  "Home": {
+    "hero": {
+      "seller": {
+        "eyebrow": "Zirndorf · Nürnberg · Fürth · Erlangen",
+        "title": "Ihr Immobilienverkauf, aktiv gesteuert — nicht nur inseriert.",
+        "subtitle": "Fundierte Bewertung, professionelle Vermarktung mit Video und 360°-Rundgang, persönliche Begleitung bis zum Notartermin.",
+        "ctaPrimary": "Kostenlose Bewertung starten",
+        "ctaSecondary": "Immobilie suchen"
+      },
+      "buyer": {
+        "eyebrow": "Kaufen in der Region",
+        "title": "Finden Sie Ihr Zuhause, bevor es alle anderen sehen.",
+        "subtitle": "Aktuelle Angebote aus Zirndorf, Nürnberg, Fürth und Erlangen — mit Suchauftrag, Finanzierungsberatung und persönlicher Begleitung bis zum Einzug.",
+        "ctaPrimary": "Immobilie suchen",
+        "ctaSecondary": "Suchauftrag anlegen"
+      },
+      "ratingLabel": "Google-Bewertung · 184 Rezensionen",
+      "ratingValue": "5,0 ★★★★★",
+      "imageAlt": "Immobilienvermarktung der Immonation GmbH"
+    },
+    "intro": {
+      "title": "Immobilienberatung mit lokaler Marktkenntnis und digitaler Vermarktungsstärke.",
+      "p1": "Die Immonation GmbH begleitet Eigentümer in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von 60 km durch den gesamten Verkaufsprozess — von der fundierten Wertermittlung über die professionelle Vermarktung bis zum Notartermin.",
+      "p2": "Persönlich, transparent und mit nachweisbaren Ergebnissen: feste Ansprechpartner, ein aktives Suchkunden-Netzwerk und Vermarktung mit Video, 360°-Rundgang und Social Media."
+    },
+    "process": {
+      "eyebrow": "Für Eigentümer",
+      "title": "So verkaufen wir Ihre Immobilie",
+      "link": "Den ganzen Prozess ansehen →",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Onboarding-Call",
+          "text": "Kostenloses Erstgespräch per Telefon oder Video: Wir klären Ihre Ziele, den Zeitrahmen und beantworten Ihre ersten Fragen."
+        },
+        {
+          "num": "02",
+          "title": "Vor-Ort-Termin",
+          "text": "Persönliche Besichtigung Ihrer Immobilie und marktbasierte Wertermittlung — vor Ort, nicht per Algorithmus allein."
+        },
+        {
+          "num": "03",
+          "title": "Preis- & Vertriebsstrategie",
+          "text": "Realistischer Angebotspreis, Zielgruppendefinition und ein klarer Vermarktungsplan, bevor das Objekt online geht."
+        },
+        {
+          "num": "04",
+          "title": "Objektaufnahme",
+          "text": "Professionelle Fotos, Video-Exposé und 360°-Rundgang setzen Ihre Immobilie ins beste Licht."
+        },
+        {
+          "num": "05",
+          "title": "Vermarktung",
+          "text": "Reichweitenstarke Vermarktung über Portale, unser Netzwerk und Social Media — für maximale qualifizierte Nachfrage."
+        },
+        {
+          "num": "06",
+          "title": "Käuferqualifizierung & Finanzierung",
+          "text": "Wir prüfen Interessenten inklusive Finanzierungsnachweis — nur ernsthafte, solvente Käufer besichtigen."
+        },
+        {
+          "num": "07",
+          "title": "Notar & Abschluss",
+          "text": "Verhandlungsführung, Notartermin und Begleitung bis zur Schlüsselübergabe — alles aus einer Hand."
+        }
+      ]
+    },
+    "references": {
+      "eyebrow": "Nachweisbare Ergebnisse",
+      "title": "Referenzen aus Ihrer Nachbarschaft",
+      "link": "Alle Referenzobjekte →",
+      "durationLabel": "Vermarktungsdauer",
+      "resultLabel": "Ergebnis",
+      "photoAlt": "Referenzfoto",
+      "items": [
+        {
+          "badge": "Verkauft",
+          "title": "Eigentumswohnung, Fürth-Südstadt",
+          "duration": "6 Wochen",
+          "result": "+4 % über Wertansatz",
+          "story": "360°-Rundgang und Video-Exposé brachten 38 qualifizierte Anfragen in der ersten Woche."
+        },
+        {
+          "badge": "Verkauft",
+          "title": "Einfamilienhaus, Zirndorf",
+          "duration": "8 Wochen",
+          "result": "Zum Wertansatz",
+          "story": "Diskrete Vermarktung über das Suchkunden-Netzwerk — ohne öffentliches Inserat."
+        },
+        {
+          "badge": "Vermietet",
+          "title": "Mehrfamilienhaus, Erlangen",
+          "duration": "4 Wochen",
+          "result": "Vollvermietung",
+          "story": "Alle drei Einheiten über Vorqualifizierung besetzt, inklusive Bonitätsprüfung."
+        }
+      ]
+    },
+    "valuation": {
+      "eyebrow": "Kostenlos & unverbindlich",
+      "title": "Was ist Ihre Immobilie heute wert?",
+      "subtitle": "Fundierte Ersteinschätzung auf Basis aktueller Marktdaten aus Ihrer Nachbarschaft — in 3 Minuten, ohne Verpflichtung.",
+      "quote": "„Der 360°-Rundgang hat uns Besichtigungen mit Unentschlossenen erspart — es kamen nur noch ernsthafte Interessenten.“",
+      "quoteAuthor": "Herr M. · Wohnungsverkauf Nürnberg-St. Johannis · Google ★★★★★",
+      "formTitle": "Bewertung starten",
+      "plzLabel": "Postleitzahl des Objekts",
+      "plzPlaceholder": "z. B. 90513",
+      "typeLabel": "Objektart",
+      "types": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
+      "submit": "Kostenlose Bewertung starten",
+      "success": "✓ Vielen Dank — wir melden uns innerhalb eines Werktags mit Ihrer Ersteinschätzung.",
+      "privacyNote": "Keine Weitergabe Ihrer Daten. Rückruf statt Formular?",
+      "callbackLink": "Rückruf vereinbaren"
+    },
+    "servicesOverview": {
+      "eyebrow": "Leistungen",
+      "title": "Alles rund um Ihre Immobilie — aus einer Hand",
+      "link": "Alle Leistungen ansehen →",
+      "itemLink": "Mehr erfahren →",
+      "items": [
+        {
+          "title": "Immobilienverkauf",
+          "text": "Aktiv gesteuerter Verkauf mit klarem 10-Schritte-System — von der Preisstrategie bis zum Notartermin."
+        },
+        {
+          "title": "Immobilienbewertung",
+          "text": "Kostenlose, fundierte Wertermittlung auf Basis aktueller Verkaufsdaten aus Ihrer Nachbarschaft."
+        },
+        {
+          "title": "Mietverwaltung",
+          "text": "Zuverlässige Verwaltung Ihrer Mietobjekte — von der Mietersuche über Verträge bis zur Abrechnung."
+        },
+        {
+          "title": "Suchauftrag & Kaufberatung",
+          "text": "Über 5.000 registrierte Suchkunden — als Käufer erfahren Sie von passenden Objekten vor allen anderen."
+        },
+        {
+          "title": "Finanzierung",
+          "text": "Baufinanzierung zu Top-Konditionen mit unserem langjährigen Partner Dr. Klein — persönlich beraten."
+        },
+        {
+          "title": "Projektentwicklung & Investment",
+          "text": "Ankauf, Entwicklung und Revitalisierung von Objekten — gebündelt in der Immonation-Gruppe."
+        }
+      ]
+    },
+    "virtualTour": {
+      "eyebrow": "Digitale Vermarktung",
+      "title": "Die virtuelle Besichtigung: überzeugen, bevor jemand vor Ort ist",
+      "p1": "Jedes Objekt erhält bei uns einen professionellen 360°-Rundgang. Interessenten besichtigen Ihre Immobilie zuerst digital — realistisch, jederzeit und von überall. Vor Ort erscheinen nur noch Menschen, die wirklich kaufen wollen.",
+      "bullets": [
+        {
+          "title": "Weniger Vor-Ort-Termine",
+          "text": "Unentschlossene sortieren sich digital aus — Sie öffnen Ihre Tür nur für ernsthafte Interessenten."
+        },
+        {
+          "title": "Vorqualifizierung mit Daten",
+          "text": "Wie oft und wie lange ein Rundgang angesehen wird, zeigt echtes Kaufinteresse — noch bevor ein Termin entsteht."
+        },
+        {
+          "title": "Geschützte Privatsphäre",
+          "text": "Rundgänge gehen ausschließlich an geprüfte Interessenten; sensible Bereiche werden unkenntlich gemacht."
+        },
+        {
+          "title": "Realistische Darstellung",
+          "text": "Ehrliche Raumwirkung statt geschönter Bilder — inklusive virtuellem Home Staging, wo es sinnvoll ist."
+        }
+      ],
+      "stats": [
+        { "value": "360°", "label": "Rundgang bei jedem Objekt" },
+        { "value": "5.000+", "label": "registrierte Suchkunden" },
+        { "value": "60+", "label": "Immobilienverkäufe pro Jahr" }
+      ],
+      "demoLabel": "360°-Rundgang · Beispielobjekt",
+      "demoNote": "Interaktive Demo folgt an dieser Stelle",
+      "cta": "Verkauf mit 360°-Rundgang starten"
+    },
+    "reviews": {
+      "eyebrow": "Bewertungen",
+      "title": "Was unsere Kundinnen und Kunden sagen",
+      "ratingSuffix": "von 5",
+      "google": {
+        "name": "Google",
+        "rating": "5,0",
+        "count": "184 Bewertungen",
+        "link": "Bewertungen auf Google lesen →"
+      },
+      "trustpilot": {
+        "name": "Trustpilot",
+        "rating": "4,7",
+        "count": "29 Bewertungen",
+        "link": "Bewertungen auf Trustpilot lesen →"
+      },
+      "items": [
+        {
+          "quote": "„Von der Bewertung bis zum Notartermin lief alles schneller als gedacht — und wir waren jederzeit informiert.“",
+          "source": "Google ★★★★★ · Hausverkauf Zirndorf"
+        },
+        {
+          "quote": "„Der 360°-Rundgang hat uns viele unnötige Besichtigungen erspart. Es kamen nur ernsthafte Interessenten.“",
+          "source": "Google ★★★★★ · Wohnungsverkauf Nürnberg"
+        },
+        {
+          "quote": "„Professionell, jederzeit erreichbar und ehrlich in der Preiseinschätzung. Klare Empfehlung.“",
+          "source": "Trustpilot ★★★★★ · Verkauf Fürth"
+        }
+      ]
+    },
+    "feedback": {
+      "eyebrow": "Ausgezeichnet bewertet",
+      "title": "Kundenfeedback, das man sehen kann",
+      "text": "Zahlen sind gut, Gesichter sind besser: Im Video zeigen wir, wie wir arbeiten — und Kundinnen und Kunden erzählen, wie ihr Verkauf gelaufen ist.",
+      "badges": [
+        "Google 5,0 ★ bei 184 Bewertungen",
+        "Trustpilot 4,7 ★",
+        "60+ Immobilienverkäufe pro Jahr",
+        "5.000+ Suchkunden im Netzwerk"
+      ],
+      "videoTitle": "Einblick: So arbeitet Immonation",
+      "playLabel": "Video abspielen",
+      "consentNote": "Beim Abspielen wird das Video von YouTube (erweiterter Datenschutzmodus) geladen."
+    },
+    "social": {
+      "eyebrow": "Social Media",
+      "title": "Vermarktung dort, wo Käufer heute suchen",
+      "text": "Objektvideos, Reels und Einblicke hinter die Kulissen: Auf Instagram, TikTok und YouTube erreichen unsere Immobilien auch Käufergruppen, die kein Portal durchsuchen.",
+      "followLabel": "Profil ansehen",
+      "platforms": {
+        "instagram": "Objektvideos, Neuzugänge und Einblicke ins Team — regelmäßig auf Instagram.",
+        "tiktok": "Immobilien-Reels mit Reichweite: So erreichen Objekte auch jüngere Käufergruppen.",
+        "youtube": "Ausführliche Objektvideos und 360°-Einblicke zum Ansehen in voller Länge."
+      }
+    },
+    "group": {
+      "eyebrow": "Unternehmensgruppe",
+      "title": "Die Immonation-Gruppe: mehr als Vermittlung",
+      "intro": "Hinter der Immonation GmbH steht eine Unternehmensgruppe, die den gesamten Lebenszyklus einer Immobilie abdeckt — von Vermittlung und Verwaltung über Projektentwicklung bis zum Investment.",
+      "link": "Mehr über uns →",
+      "companies": [
+        {
+          "name": "Immonation Capital Holding GmbH",
+          "role": "Dachgesellschaft",
+          "text": "Bündelt Immobilienvermittlung, Verwaltung, Projektentwicklung und Investment unter einem Dach."
+        },
+        {
+          "name": "IN Beteiligungs GmbH",
+          "role": "Ankauf & Projektentwicklung",
+          "text": "Erwirbt und entwickelt Objekte mit Fokus auf Wertsteigerung und nachhaltige Nutzung."
+        },
+        {
+          "name": "Dream Living GmbH",
+          "role": "Revitalisierung",
+          "text": "Saniert renovierungsbedürftige Bestandsimmobilien und schafft Mehrwert für Bewohner und Quartiere."
+        }
+      ]
+    },
+    "partners": {
+      "eyebrow": "Partner",
+      "title": "Starke Partner an unserer Seite",
+      "text": "Für Finanzierung, Reichweite und regionale Vernetzung setzen wir auf etablierte Partner.",
+      "items": [
+        {
+          "name": "Dr. Klein",
+          "role": "Finanzierungspartner — Baufinanzierung zu Top-Konditionen"
+        },
+        { "name": "Immowelt", "role": "Immobilienportal" },
+        { "name": "Zirndorf Marketing", "role": "Regionales Netzwerk" }
+      ]
+    },
+    "contactBooking": {
+      "eyebrow": "Kontakt & Termin",
+      "title": "Direkter Draht statt Warteschleife",
+      "text": "Rufen Sie an, schreiben Sie uns — oder buchen Sie direkt ein kostenloses Erstgespräch: vor Ort in Zirndorf, telefonisch oder per Video.",
+      "phoneLabel": "Telefon",
+      "phoneValue": "0911 / 212 838 90",
+      "emailLabel": "E-Mail",
+      "addressLabel": "Büro",
+      "addressValue": "Nürnberger Straße 18, 90513 Zirndorf",
+      "bookingTitle": "Erstgespräch buchen",
+      "bookingText": "15 Minuten, kostenlos und unverbindlich: Wir ordnen Ihre Situation ein und empfehlen die nächsten Schritte — ohne Verkaufsdruck.",
+      "bookingCta": "Termin anfragen",
+      "bookingNote": "Wir antworten innerhalb eines Werktags."
+    },
+    "buy": {
+      "metaTitle": "Immobilien kaufen in Zirndorf, Nürnberg, Fürth & Erlangen",
+      "metaDescription": "Aktuelle Immobilienangebote und Suchauftrag für Käufer in der Region — Häuser, Wohnungen und Grundstücke mit persönlicher Begleitung bis zum Einzug.",
+      "eyebrow": "Für Käufer",
+      "title": "Sie suchen statt verkaufen?",
+      "subtitle": "Aktuelle Angebote aus der Region — oder legen Sie einen Suchauftrag an und erfahren Sie von neuen Objekten vor allen anderen.",
+      "ctaAll": "Alle Angebote",
+      "ctaSearch": "Suchauftrag anlegen",
+      "newBadge": "Neu",
+      "exposeLink": "Exposé ansehen →",
+      "photoAlt": "Objektfoto",
+      "items": [
+        {
+          "isNew": true,
+          "title": "Einfamilienhaus mit Garten",
+          "location": "Zirndorf · Wintersdorfer Weg",
+          "area": "142 m²",
+          "rooms": "5 Zimmer",
+          "extra": "612 m² Grund",
+          "price": "689.000 €"
+        },
+        {
+          "isNew": false,
+          "title": "3-Zimmer-Wohnung mit Balkon",
+          "location": "Nürnberg · St. Johannis",
+          "area": "84 m²",
+          "rooms": "3 Zimmer",
+          "extra": "Balkon",
+          "price": "379.000 €"
+        },
+        {
+          "isNew": true,
+          "title": "Doppelhaushälfte, saniert",
+          "location": "Erlangen · Büchenbach",
+          "area": "118 m²",
+          "rooms": "4,5 Zimmer",
+          "extra": "Garage",
+          "price": "545.000 €"
+        }
       ]
     }
   },
   "Footer": {
+    "claim": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung.",
+    "stats": [
+      { "value": "60 km", "label": "Beratungsradius um Zirndorf" },
+      { "value": "6–12", "label": "Wochen typische Vermarktungsdauer" },
+      { "value": "360°", "label": "Rundgang bei jedem Objekt" },
+      { "value": "5,0 ★", "label": "Google-Bewertung" }
+    ],
+    "sell": {
+      "title": "Verkaufen",
+      "valuation": "Immobilienbewertung",
+      "house": "Haus verkaufen",
+      "apartment": "Wohnung verkaufen",
+      "letting": "Immobilie vermieten"
+    },
+    "buy": {
+      "title": "Kaufen",
+      "listings": "Immobilienangebote",
+      "searchRequest": "Suchauftrag",
+      "financing": "Finanzierung",
+      "buyerAdvice": "Kaufberatung"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über uns",
+      "references": "Referenzen",
+      "guide": "Ratgeber",
+      "faq": "FAQ",
+      "careers": "Karriere",
+      "referrers": "Tippgeber",
+      "downloads": "Downloads",
+      "contact": "Kontakt"
+    },
+    "copyright": "© {year} Immonation GmbH · Zirndorf",
     "rights": "Alle Rechte vorbehalten.",
     "imprint": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "terms": "AGB"
   }
 }

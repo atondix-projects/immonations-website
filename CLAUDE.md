@@ -1,12 +1,12 @@
 @AGENTS.md
 
-# Immonations — Claude Code project guide
+# Immonation — Claude Code project guide
 
 This file is the canonical, expanded guide for Claude Code. The short form lives in `AGENTS.md` (imported above). When the two ever disagree, **this file wins**.
 
 ## 1. What this project is
 
-Immonations is a bilingual (German / English) marketing website for a real-estate advisory firm. The site is content-heavy by design: many sub-pages (services, blog posts, location pages) will land over time, and every one of them must ship SEO-, AEO-, and GEO-correct out of the gate.
+Immonation is a bilingual (German / English) marketing website for a real-estate advisory firm. The site is content-heavy by design: many sub-pages (services, blog posts, location pages) will land over time, and every one of them must ship SEO-, AEO-, and GEO-correct out of the gate.
 
 - **SEO** — search engine crawlers (Google, Bing). Every page exposes canonical URL, hreflang alternates, OG tags, and at least one JSON-LD block.
 - **AEO** — answer-engine optimization (Perplexity, Copilot, etc.). FAQ schema on service pages, `llms.txt` at the root, prose answers near the top of each page.

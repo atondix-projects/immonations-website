@@ -31,8 +31,8 @@ export async function generateMetadata({
     title: locale === 'de' ? 'Leistungen' : 'Services',
     description:
       locale === 'de'
-        ? 'Beratung, Bewertung, Vermarktung und Transaktion — alle Leistungen von Immonations im Überblick.'
-        : 'Advisory, valuation, marketing, and transaction services — the full Immonations offering.',
+        ? 'Beratung, Bewertung, Vermarktung und Transaktion — alle Leistungen von Immonation im Überblick.'
+        : 'Advisory, valuation, marketing, and transaction services — the full Immonation offering.',
     localizedPaths: { de: '/leistungen', en: '/services' },
   })
 }
@@ -54,7 +54,10 @@ export default async function ServicesIndexPage({
       <JsonLd
         data={breadcrumbList([
           { name: t('home'), url: `${SITE.url}/${locale}` },
-          { name: t('services'), url: `${SITE.url}/${locale}${locale === 'de' ? '/leistungen' : '/services'}` },
+          {
+            name: t('services'),
+            url: `${SITE.url}/${locale}${locale === 'de' ? '/leistungen' : '/services'}`,
+          },
         ])}
       />
       <header className="mb-12 max-w-2xl">
@@ -75,7 +78,7 @@ export default async function ServicesIndexPage({
                   className="hover:text-foreground/80 flex items-start justify-between gap-4"
                 >
                   {svc.title}
-                  <ArrowUpRight className="text-muted-foreground group-hover:text-foreground mt-1 size-5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight className="text-muted-foreground group-hover:text-foreground mt-1 size-5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </CardTitle>
               <CardDescription className="text-base">{svc.lede}</CardDescription>
@@ -83,7 +86,10 @@ export default async function ServicesIndexPage({
             <CardContent>
               <ul className="text-muted-foreground space-y-1.5 text-sm">
                 {svc.hero.bullets.map((b) => (
-                  <li key={b} className="before:bg-foreground/40 relative pl-4 before:absolute before:left-0 before:top-2 before:size-1.5 before:rounded-full">
+                  <li
+                    key={b}
+                    className="before:bg-foreground/40 relative pl-4 before:absolute before:top-2 before:left-0 before:size-1.5 before:rounded-full"
+                  >
                     {b}
                   </li>
                 ))}

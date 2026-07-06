@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   // Today MDX is rendered from content/ via next-mdx-remote, so this is
   // forward-looking only and adds no runtime cost.
   pageExtensions: ['ts', 'tsx', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+    ],
+  },
 }
 
 export default withNextIntl(nextConfig)

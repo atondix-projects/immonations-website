@@ -9,6 +9,7 @@ const eslintConfig = defineConfig([
   prettier,
   globalIgnores([
     '.next/**',
+    'output/**',
     'out/**',
     'build/**',
     'next-env.d.ts',

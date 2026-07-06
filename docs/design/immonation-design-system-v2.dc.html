@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #f7f8f9; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Jost', sans-serif; color: #2b2929; max-width: 1160px; margin: 0 auto; padding: 0 40px 120px 40px">
+
+  <!-- ============ STYLEGUIDE HEADER ============ -->
+  <header style="padding: 72px 0 56px 0; border-bottom: 1px solid #2b2929; display: flex; flex-direction: column; gap: 20px">
+    <img src="assets/immonation-logo.png" alt="Immonation GmbH — Ihr Partner für Immobilien" style="width: 380px; max-width: 100%; height: auto">
+    <h1 style="font-family: 'Source Serif 4', serif; font-size: 48px; font-weight: 600; margin: 24px 0 0 0; letter-spacing: -0.005em">Design System</h1>
+    <p style="font-size: 19px; font-weight: 400; color: #565958; margin: 0; max-width: 62ch; line-height: 1.55">Visuelle Grundlage der Immonation GmbH: präzise, hochwertig, vertrauensbildend. Ein Markenakzent, Serif-Display, harte Kanten, viel Luft. Version 2.0 · Juli 2026</p>
+  </header>
+
+  <!-- ============ 01 MARKE ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">01</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Marke</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Das Logo führt drei Ebenen: Markenblau, Hellblau und Grau. Der Blauton ist der einzige Akzent des Systems — er erscheint auf CTAs, Links und aktiven Zuständen, nirgendwo sonst.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+      <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 48px; display: flex; align-items: center; justify-content: center">
+        <img src="assets/immonation-logo.png" alt="Logo auf hellem Grund" style="width: 320px; max-width: 100%; height: auto">
+      </div>
+      <div style="background: #232020; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px">
+        <img src="assets/immonation-logo.png" alt="Logo auf dunklem Grund" style="width: 320px; max-width: 100%; height: auto; filter: invert(1) hue-rotate(180deg) saturate(0)">
+        <span style="font-size: 13px; color: #8a8d8c">Auf Dunkel: einfarbig weiße Variante verwenden (finale Datei folgt)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 FARBEN ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">02</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Farben</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Direkt aus dem Logo abgeleitet. Für Text auf Weiß und CTA-Flächen gilt Blau 600 oder dunkler (AA-Kontrast). Blau 500 ist die Markenfarbe für Flächen, Icons und Grafik.</p>
+
+    <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 12px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Markenblau</h3>
+    <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px; margin-bottom: 36px">
+      <sc-for list="{{ brandScale }}" as="c" hint-placeholder-count="9">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <div style="height: 72px; background: {{ c.hex }}; border: 1px solid rgba(0,0,0,0.06)"></div>
+          <span style="font-size: 12px; font-weight: 600">{{ c.name }}</span>
+          <span style="font-size: 12px; color: #737371; font-family: monospace">{{ c.hex }}</span>
+          <span style="font-size: 11px; color: #1c9cd7">{{ c.note }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 12px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Neutrale</h3>
+    <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px; margin-bottom: 36px">
+      <sc-for list="{{ neutralScale }}" as="c" hint-placeholder-count="9">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <div style="height: 72px; background: {{ c.hex }}; border: 1px solid rgba(0,0,0,0.06)"></div>
+          <span style="font-size: 12px; font-weight: 600">{{ c.name }}</span>
+          <span style="font-size: 12px; color: #737371; font-family: monospace">{{ c.hex }}</span>
+          <span style="font-size: 11px; color: #1c9cd7">{{ c.note }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 12px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Semantische Zuordnung</h3>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px">
+      <sc-for list="{{ semanticTokens }}" as="t" hint-placeholder-count="8">
+        <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 14px; display: flex; align-items: center; gap: 12px">
+          <div style="width: 36px; height: 36px; flex-shrink: 0; background: {{ t.hex }}; border: 1px solid rgba(0,0,0,0.06)"></div>
+          <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+            <span style="font-size: 13px; font-weight: 600; font-family: monospace">{{ t.token }}</span>
+            <span style="font-size: 12px; color: #737371">{{ t.use }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ 03 TYPOGRAFIE ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">03</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Typografie</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 40px 0; max-width: 68ch; line-height: 1.6"><strong style="font-weight: 600">Source Serif 4</strong> trägt die Stimme der Marke: Display, Sektionstitel, Zitate. <strong style="font-weight: 600">Jost</strong> bleibt das Arbeitstier für UI, Fließtext, Labels und Zahlen. Der Kontrast der beiden Schriften ist das Premium-Signal — nicht Dekoration.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 28px; margin-bottom: 44px">
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">Display · Serif · 58/1.12 · 600</span>
+        <span style="font-family: 'Source Serif 4', serif; font-size: 58px; font-weight: 600; line-height: 1.12; letter-spacing: -0.005em; text-wrap: balance">Ihr Partner für Immobilien in der Region</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">H2 · Serif · 38/1.2 · 600</span>
+        <span style="font-family: 'Source Serif 4', serif; font-size: 38px; font-weight: 600; line-height: 1.2">Immobilienbewertung mit lokaler Marktkenntnis</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">H3 · Sans · 22/1.3 · 600</span>
+        <span style="font-size: 22px; font-weight: 600; line-height: 1.3">Finanzierungsoptionen transparent erklärt</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">Eyebrow · 13/1 · 600 · +0.14em</span>
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #737371">Referenzen aus der Region</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">Body · Sans · 17/1.6 · 400</span>
+        <p style="font-size: 17px; line-height: 1.6; margin: 0; max-width: 68ch">Wir begleiten Eigentümer in Zirndorf, Nürnberg, Fürth und Erlangen durch den gesamten Verkaufsprozess — von der fundierten Wertermittlung über die professionelle Vermarktung bis zum Notartermin. Persönlich, transparent und mit nachweisbaren Ergebnissen.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: baseline">
+        <span style="font-size: 13px; color: #737371; font-family: monospace">Caption · 13/1.5 · 500</span>
+        <span style="font-size: 13px; font-weight: 500; color: #737371; line-height: 1.5">Referenzobjekt · Verkauft in 6 Wochen · Zirndorf</span>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e4e5e6; border-left: 2px solid #1c9cd7; padding: 40px 48px; display: flex; flex-direction: column; gap: 12px">
+      <span style="font-size: 13px; color: #737371; font-family: monospace">Editorial-Zitat · Source Serif 4 italic · 28/1.45</span>
+      <p style="font-family: 'Source Serif 4', serif; font-style: italic; font-size: 28px; line-height: 1.45; margin: 0; max-width: 52ch; font-weight: 400">„Vom ersten Gespräch bis zur Schlüsselübergabe hatten wir jederzeit das Gefühl, in guten Händen zu sein."</p>
+      <span style="font-size: 14px; color: #737371">Familie K. · Hausverkauf in Oberasbach</span>
+    </div>
+  </section>
+
+  <!-- ============ 04 RASTER, KANTEN, SCHATTEN ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">04</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Abstände, Kanten, Schatten</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">4-px-Basisraster. Sektionen atmen mit 96–128 px Vertikalabstand, Karteninhalte mit 20–24 px. Alle Kanten sind scharf: Radius 0, durchgehend. Tiefe entsteht durch Hairline-Border und Flächenkontrast, nicht durch Schatten.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px">
+      <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 28px">
+        <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 16px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Spacing</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <sc-for list="{{ spacingScale }}" as="s" hint-placeholder-count="7">
+            <div style="display: flex; align-items: center; gap: 12px">
+              <span style="font-size: 12px; font-family: monospace; color: #737371; width: 74px">{{ s.label }}</span>
+              <div style="height: 14px; background: #a2d9f5; width: {{ s.px }}"></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 28px">
+        <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 16px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Kanten</h3>
+        <div style="display: flex; align-items: flex-end; gap: 16px">
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">
+            <div style="width: 64px; height: 64px; border: 1px solid #2b2929"></div>
+            <span style="font-size: 12px; font-family: monospace; color: #737371">0 · überall</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">
+            <div style="width: 64px; height: 64px; border: 1px solid #e4e5e6; border-left: 2px solid #1c9cd7"></div>
+            <span style="font-size: 12px; font-family: monospace; color: #737371">Akzentkante</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center">
+            <div style="width: 64px; height: 40px; background: #232020; display: flex; align-items: center; justify-content: center"><span style="font-size: 10px; font-weight: 600; color: #ffffff; letter-spacing: 0.12em">LABEL</span></div>
+            <span style="font-size: 12px; font-family: monospace; color: #737371">Badge · eckig</span>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #737371; margin: 20px 0 0 0; line-height: 1.5">Keine Rundungen, keine Pills. Akzente über 2-px-Kanten in Markenblau.</p>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 28px">
+        <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 16px 0; color: #737371; letter-spacing: 0.1em; text-transform: uppercase">Schatten</h3>
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 14px 16px; font-size: 13px; color: #565958">Ebene 0 — Hairline-Border (Standard)</div>
+          <div style="background: #ffffff; border: 1px solid #2b2929; padding: 14px 16px; font-size: 13px; color: #565958">Ebene 1 — Hover: Border wird dunkel</div>
+          <div style="background: #ffffff; border: 1px solid #e4e5e6; padding: 14px 16px; font-size: 13px; color: #565958; box-shadow: 0 12px 32px rgba(35,32,32,0.14)">Ebene 2 — nur Overlays &amp; Sheets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 BUTTONS ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">05</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Buttons</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Ein primärer CTA pro Viewport. Scharfe Rechtecke mit leichtem Letterspacing. Primär trägt Blau 600 (AA auf Weiß), Sekundär bleibt neutral mit Rahmen, Ghost für tertiäre Wege.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 24px">
+      <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: #0e7fb4; color: #ffffff; border: none; padding: 16px 32px; cursor: pointer; transition: background 0.15s" style-hover="background: #0b6a97">{{ ctaPrimary }}</button>
+      <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: transparent; color: #2b2929; border: 1px solid #2b2929; padding: 15px 32px; cursor: pointer; transition: background 0.15s, color 0.15s" style-hover="background: #2b2929; color: #ffffff">Immobilie suchen</button>
+      <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: transparent; color: #0e7fb4; border: none; padding: 16px 20px; cursor: pointer; transition: background 0.15s" style-hover="background: #eef7fc">Mehr erfahren →</button>
+      <button disabled="" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: #eceded; color: #a8aaaa; border: none; padding: 16px 32px; cursor: not-allowed">Deaktiviert</button>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: #232020; padding: 28px">
+      <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: #1c9cd7; color: #ffffff; border: none; padding: 16px 32px; cursor: pointer; transition: background 0.15s" style-hover="background: #3dafe2">{{ ctaPrimary }}</button>
+      <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); padding: 15px 32px; cursor: pointer; transition: border-color 0.15s" style-hover="border-color: #ffffff">Rückruf vereinbaren</button>
+      <span style="font-size: 13px; color: #8a8d8c; margin-left: auto">Auf dunklen Flächen trägt Primär Blau 500</span>
+    </div>
+  </section>
+
+  <!-- ============ 06 FORMULARE ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">06</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Formulare</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Immer mit sichtbarem Label, klaren Fehler- und Erfolgszuständen. Scharfe Felder, Unterkante als ruhendes Element; Fokus in Markenblau.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="f-default" style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em">Ihre E-Mail-Adresse</label>
+        <input id="f-default" type="email" placeholder="name@beispiel.de" style="font-family: 'Jost', sans-serif; font-size: 16px; padding: 14px 16px; border: 1px solid #d5d6d7; background: #ffffff; color: #2b2929; outline: none" style-focus="border-color: #1c9cd7; box-shadow: 0 0 0 3px rgba(28,156,215,0.2)">
+        <span style="font-size: 13px; color: #737371">Standard mit Hilfetext</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="f-error" style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em">Telefonnummer</label>
+        <input id="f-error" type="tel" value="0911" style="font-family: 'Jost', sans-serif; font-size: 16px; padding: 14px 16px; border: 1px solid #c73a3a; border-left: 3px solid #c73a3a; background: #ffffff; color: #2b2929; outline: none" readonly="">
+        <span style="font-size: 13px; color: #c73a3a; font-weight: 500">Bitte geben Sie eine vollständige Nummer an.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="f-success" style="font-size: 14px; font-weight: 600; letter-spacing: 0.02em">Postleitzahl des Objekts</label>
+        <input id="f-success" type="text" value="90513 Zirndorf" style="font-family: 'Jost', sans-serif; font-size: 16px; padding: 14px 16px; border: 1px solid #2e8b57; border-left: 3px solid #2e8b57; background: #ffffff; color: #2b2929; outline: none" readonly="">
+        <span style="font-size: 13px; color: #2e8b57; font-weight: 500">In unserem Beratungsgebiet — es kann losgehen.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 IMMOBILIEN-KOMPONENTEN ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">07</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Immobilien-Komponenten</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Karten nur für echte wiederholte Objekte. Objektkarte für die Käuferstrecke, Referenzkarte mit Ergebnisstory für die Verkäuferstrecke. Titel in Serif, Fakten in Sans. Bildflächen sind Platzhalter — echte Objektfotos folgen.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px">
+      <!-- Objektkarte -->
+      <article style="background: #ffffff; border: 1px solid #e4e5e6; overflow: hidden; transition: border-color 0.15s" style-hover="border-color: #2b2929">
+        <div style="height: 190px; background: #dfe6ea; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="font-size: 13px; color: #737371">Objektfoto</span>
+          <span style="position: absolute; top: 0; left: 0; background: #1c9cd7; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px">Neu</span>
+        </div>
+        <div style="padding: 20px 22px 22px 22px; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 600; margin: 0">Einfamilienhaus mit Garten</h3>
+          <span style="font-size: 14px; color: #737371">Zirndorf · Wintersdorfer Weg</span>
+          <div style="display: flex; gap: 14px; font-size: 14px; color: #565958; border-top: 1px solid #eceded; padding-top: 12px">
+            <span>142 m²</span><span>·</span><span>5 Zimmer</span><span>·</span><span>612 m² Grund</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 4px">
+            <span style="font-size: 21px; font-weight: 600">689.000 €</span>
+            <a href="#" onClick="{{ noop }}" style="font-size: 15px; font-weight: 500; color: #0e7fb4; text-decoration: none">Exposé ansehen →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Referenzkarte -->
+      <article style="background: #ffffff; border: 1px solid #e4e5e6; overflow: hidden; transition: border-color 0.15s" style-hover="border-color: #2b2929">
+        <div style="height: 190px; background: #dfe6ea; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="font-size: 13px; color: #737371">Referenzfoto</span>
+          <span style="position: absolute; top: 0; left: 0; background: #232020; color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px">Verkauft</span>
+        </div>
+        <div style="padding: 20px 22px 22px 22px; display: flex; flex-direction: column; gap: 10px">
+          <h3 style="font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 600; margin: 0">Eigentumswohnung, Fürth-Südstadt</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid #eceded; padding-top: 12px">
+            <div style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #737371">Vermarktungsdauer</span><span style="font-size: 17px; font-weight: 600">6 Wochen</span></div>
+            <div style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #737371">Ergebnis</span><span style="font-size: 17px; font-weight: 600; color: #0e7fb4">+4 % über Wertansatz</span></div>
+          </div>
+          <p style="font-size: 14px; color: #565958; line-height: 1.55; margin: 4px 0 0 0">360°-Rundgang und Video-Exposé brachten 38 qualifizierte Anfragen in der ersten Woche.</p>
+        </div>
+      </article>
+
+      <!-- Bewertungs-CTA-Karte -->
+      <article style="background: #232020; padding: 28px; display: flex; flex-direction: column; gap: 14px; justify-content: space-between">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <span style="font-size: 12px; font-weight: 600; color: #a2d9f5; letter-spacing: 0.14em; text-transform: uppercase">Kostenlos &amp; unverbindlich</span>
+          <h3 style="font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 600; margin: 0; color: #ffffff; line-height: 1.25">Was ist Ihre Immobilie heute wert?</h3>
+          <p style="font-size: 15px; color: #b8bab9; line-height: 1.55; margin: 0">Fundierte Ersteinschätzung auf Basis aktueller Marktdaten aus Ihrer Nachbarschaft — in 3 Minuten.</p>
+        </div>
+        <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; background: #1c9cd7; color: #ffffff; border: none; padding: 15px 24px; cursor: pointer; transition: background 0.15s" style-hover="background: #3dafe2">{{ ctaPrimary }}</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 08 NAVIGATION ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">08</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Navigation</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Die Website führt zwei Strecken: Verkäufer und Käufer. Der Schalter neben dem primären CTA wechselt den Modus — der CTA folgt ihm (Bewertung bzw. Immobiliensuche). Aktiver Punkt in Markenblau.</p>
+    <div style="background: #ffffff; border: 1px solid #e4e5e6; overflow: hidden">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; gap: 16px 24px; flex-wrap: wrap">
+        <img src="assets/immonation-logo.png" alt="Immonation" style="height: 34px; width: auto">
+        <nav style="display: flex; gap: 12px 24px; align-items: center; flex-wrap: wrap; min-width: 0">
+          
+          
+          <a href="#" onClick="{{ noop }}" style="font-size: 16px; font-weight: 400; color: #2b2929; text-decoration: none" style-hover="color: #0e7fb4">Referenzen</a>
+          <a href="#" onClick="{{ noop }}" style="font-size: 16px; font-weight: 400; color: #2b2929; text-decoration: none" style-hover="color: #0e7fb4">Ratgeber</a>
+          <a href="#" onClick="{{ noop }}" style="font-size: 16px; font-weight: 400; color: #2b2929; text-decoration: none" style-hover="color: #0e7fb4">Karriere</a>
+          <a href="#" onClick="{{ noop }}" style="font-size: 16px; font-weight: 400; color: #2b2929; text-decoration: none" style-hover="color: #0e7fb4">Kontakt</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 16px">
+          <button onClick="{{ toggleAudience }}" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; background: transparent; color: #0e7fb4; border: none; padding: 12px 8px; cursor: pointer; white-space: nowrap; transition: background 0.15s" style-hover="background: #eef7fc">{{ switchLabel }}</button>
+          <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; background: #0e7fb4; color: #ffffff; border: none; padding: 12px 22px; cursor: pointer; white-space: nowrap; transition: background 0.15s" style-hover="background: #0b6a97">{{ navCta }}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 ACCORDION / FAQ ============ -->
+  <section style="padding: 64px 0; border-bottom: 1px solid #e4e5e6">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">09</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Accordion / FAQ</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Ruhig, ohne Animation-Spielerei. Fragen in Serif, Antworten in Sans. Inhalte servergerendert mit FAQPage JSON-LD.</p>
+    <div style="background: #ffffff; border: 1px solid #e4e5e6; overflow: hidden; max-width: 780px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+        <div style="border-bottom: 1px solid #eceded">
+          <button onClick="{{ f.toggle }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: none; border: none; padding: 22px 24px; cursor: pointer; text-align: left">
+            <span style="font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 600; color: #2b2929">{{ f.q }}</span>
+            <span style="font-size: 20px; color: #1c9cd7; font-weight: 400; flex-shrink: 0; font-family: 'Jost', sans-serif">{{ f.icon }}</span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-family: 'Jost', sans-serif; font-size: 16px; color: #565958; line-height: 1.6; margin: 0; padding: 0 24px 22px 24px; max-width: 65ch">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ 10 TRUST / DUNKLE SEKTION ============ -->
+  <section style="padding: 64px 0">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px">
+      <span style="font-size: 14px; font-weight: 600; color: #1c9cd7; letter-spacing: 0.08em">10</span>
+      <h2 style="font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 600; margin: 0">Trust &amp; dunkle Sektionen</h2>
+    </div>
+    <p style="font-size: 16px; color: #565958; margin: 0 0 32px 0; max-width: 68ch; line-height: 1.6">Dunkle Flächen (Anthrazit aus dem Logo-Schriftzug) markieren Trust-Bänder, Bewertungs-CTA und Footer. Zahlen in Serif, Beschriftung in Sans. Maximal zwei dunkle Sektionen pro Seite.</p>
+
+    <div style="background: #232020; padding: 56px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-family: 'Source Serif 4', serif; font-size: 44px; font-weight: 600; color: #ffffff; letter-spacing: -0.005em">{{ s.value }}</span>
+            <span style="font-size: 15px; color: #8a8d8c">{{ s.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 36px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap">
+        <div style="display: flex; flex-direction: column; gap: 10px; max-width: 55ch; border-left: 2px solid #1c9cd7; padding-left: 24px">
+          <p style="font-family: 'Source Serif 4', serif; font-size: 23px; line-height: 1.45; color: #eceded; margin: 0; font-style: italic">„Der 360°-Rundgang hat uns Besichtigungen mit Unentschlossenen erspart — es kamen nur noch ernsthafte Interessenten."</p>
+          <span style="font-size: 14px; color: #8a8d8c">Herr M. · Wohnungsverkauf Nürnberg-St. Johannis · Google-Bewertung ★★★★★</span>
+        </div>
+        <button onClick="{{ noop }}" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.04em; background: #1c9cd7; color: #ffffff; border: none; padding: 16px 32px; cursor: pointer; flex-shrink: 0; transition: background 0.15s" style-hover="background: #3dafe2">{{ ctaPrimary }}</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaPrimary&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Kostenlose Bewertung starten&quot;, &quot;Erstgespräch buchen&quot;], &quot;default&quot;: &quot;Kostenlose Bewertung starten&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Inhalt&quot;}}">
+class Component extends DCLogic {
+  state = { openIndex: 0, audience: "verkaeufer" };
+
+  renderVals() {
+    const faqData = [
+      {
+        q: "Was kostet die Immobilienbewertung?",
+        a: "Die Ersteinschätzung ist für Eigentümer in unserem Beratungsgebiet kostenlos und unverbindlich. Sie basiert auf aktuellen Verkaufsdaten aus Ihrer direkten Umgebung und einem Vor-Ort-Termin.",
+      },
+      {
+        q: "Wie lange dauert ein Verkauf in der Region Nürnberg/Fürth?",
+        a: "Bei realistischer Preisstrategie und professioneller Vermarktung liegt die typische Vermarktungsdauer zwischen 6 und 12 Wochen — abhängig von Lage, Zustand und Objektart.",
+      },
+      {
+        q: "Was unterscheidet Immonation von einem Portal-Inserat?",
+        a: "Wir steuern den Verkauf aktiv: professionelle Fotos, 360°-Rundgang, Video-Exposé, Vorqualifizierung der Interessenten und Begleitung bis zum Notartermin — statt nur einer Anzeige.",
+      },
+    ];
+
+    const faqs = faqData.map((f, i) => ({
+      ...f,
+      open: this.state.openIndex === i,
+      icon: this.state.openIndex === i ? "−" : "+",
+      toggle: () => this.setState({ openIndex: this.state.openIndex === i ? -1 : i }),
+    }));
+
+    return {
+      ctaPrimary: this.props.ctaPrimary ?? "Kostenlose Bewertung starten",
+      navCta: this.state.audience === "verkaeufer" ? (this.props.ctaPrimary ?? "Kostenlose Bewertung starten") : "Immobilie suchen",
+      switchLabel: this.state.audience === "verkaeufer" ? "Für Käufer →" : "Für Verkäufer →",
+      toggleAudience: () => this.setState({ audience: this.state.audience === "verkaeufer" ? "kaeufer" : "verkaeufer" }),
+      noop: (e) => e.preventDefault(),
+      faqs,
+      brandScale: [
+        { name: "50", hex: "#eef7fc", note: "Flächen-Tint" },
+        { name: "100", hex: "#d9eefa", note: "" },
+        { name: "200", hex: "#a2d9f5", note: "Logo hell" },
+        { name: "300", hex: "#6ec4ec", note: "" },
+        { name: "400", hex: "#3dafe2", note: "" },
+        { name: "500", hex: "#1c9cd7", note: "Logo · Marke" },
+        { name: "600", hex: "#0e7fb4", note: "CTA · AA" },
+        { name: "700", hex: "#0b6a97", note: "Hover" },
+        { name: "800", hex: "#0a516f", note: "" },
+      ],
+      neutralScale: [
+        { name: "0", hex: "#ffffff", note: "Karten" },
+        { name: "50", hex: "#f7f8f9", note: "Seitengrund" },
+        { name: "100", hex: "#eceded", note: "" },
+        { name: "200", hex: "#e4e5e6", note: "Border" },
+        { name: "300", hex: "#d5d6d7", note: "Input-Border" },
+        { name: "500", hex: "#8a8d8c", note: "" },
+        { name: "600", hex: "#737371", note: "Logo grau" },
+        { name: "700", hex: "#565958", note: "Sekundärtext" },
+        { name: "900", hex: "#2b2929", note: "Logo · Text" },
+      ],
+      semanticTokens: [
+        { token: "--background", hex: "#f7f8f9", use: "Seitengrund" },
+        { token: "--foreground", hex: "#2b2929", use: "Fließtext" },
+        { token: "--primary", hex: "#0e7fb4", use: "CTA, Links" },
+        { token: "--accent", hex: "#1c9cd7", use: "Marke, Akzentkanten" },
+        { token: "--muted-foreground", hex: "#565958", use: "Sekundärtext" },
+        { token: "--border", hex: "#e4e5e6", use: "Hairlines" },
+        { token: "--surface-dark", hex: "#232020", use: "Trust, Footer" },
+        { token: "--destructive", hex: "#c73a3a", use: "Fehler" },
+      ],
+      spacingScale: [
+        { label: "xs · 4", px: "4px" },
+        { label: "sm · 8", px: "8px" },
+        { label: "md · 16", px: "16px" },
+        { label: "lg · 24", px: "24px" },
+        { label: "xl · 40", px: "40px" },
+        { label: "2xl · 64", px: "64px" },
+        { label: "3xl · 96", px: "96px" },
+      ],
+      stats: [
+        { value: "60 km", label: "Beratungsradius um Zirndorf" },
+        { value: "6–12", label: "Wochen typische Vermarktungsdauer" },
+        { value: "360°", label: "Rundgang bei jedem Objekt" },
+        { value: "4,9 ★", label: "Google-Bewertung" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

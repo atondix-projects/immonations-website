@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Jost, Source_Serif_4, Geist_Mono } from 'next/font/google'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -12,9 +12,17 @@ import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import '../globals.css'
 
-const geistSans = Geist({
+const jost = Jost({
   variable: '--font-sans',
   subsets: ['latin'],
+  style: ['normal', 'italic'],
+})
+
+const sourceSerif = Source_Serif_4({
+  variable: '--font-serif',
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
 })
 
 const geistMono = Geist_Mono({
@@ -58,7 +66,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${jost.variable} ${sourceSerif.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="bg-background text-foreground flex min-h-full flex-col">
@@ -66,7 +74,7 @@ export default async function LocaleLayout({
           <JsonLd data={organization({ locale, url: SITE.url, name: SITE.name })} />
           <JsonLd data={website({ locale, url: SITE.url, name: SITE.name })} />
           <SiteHeader />
-          <main className="flex flex-1 flex-col">{children}</main>
+          <main className="flex flex-1 flex-col pt-[var(--header-height)]">{children}</main>
           <SiteFooter />
         </NextIntlClientProvider>
       </body>

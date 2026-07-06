@@ -6,40 +6,35 @@ import { routing } from '@/i18n/routing'
 import { useTransition } from 'react'
 import { cn } from '@/lib/utils'
 
-export function LocaleSwitcher() {
+/** Single-button locale toggle: shows the language you would switch TO. */
+export function LocaleSwitcher({ light = false }: { light?: boolean }) {
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
 
+  const target = routing.locales.find((loc) => loc !== locale) ?? routing.defaultLocale
+
   return (
-    <div className="flex items-center gap-1 text-xs font-medium">
-      {routing.locales.map((loc) => {
-        const isActive = loc === locale
-        return (
-          <button
-            key={loc}
-            type="button"
-            disabled={isPending || isActive}
-            onClick={() => {
-              startTransition(() => {
-                // pathname is the canonical (locale-stripped) path; cast keeps the
-                // typed-routes helper happy when we don't know the exact pathname union.
-                router.replace(pathname as Parameters<typeof router.replace>[0], { locale: loc })
-              })
-            }}
-            className={cn(
-              'rounded-md px-2 py-1 uppercase tracking-wider transition-colors',
-              isActive
-                ? 'bg-foreground text-background'
-                : 'text-muted-foreground hover:text-foreground',
-            )}
-            aria-current={isActive ? 'page' : undefined}
-          >
-            {loc}
-          </button>
-        )
-      })}
-    </div>
+    <button
+      type="button"
+      disabled={isPending}
+      onClick={() => {
+        startTransition(() => {
+          // pathname is the canonical (locale-stripped) path; cast keeps the
+          // typed-routes helper happy when we don't know the exact pathname union.
+          router.replace(pathname as Parameters<typeof router.replace>[0], { locale: target })
+        })
+      }}
+      aria-label={target === 'de' ? 'Zu Deutsch wechseln' : 'Switch to English'}
+      className={cn(
+        'border px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors',
+        light
+          ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
+          : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground',
+      )}
+    >
+      {target}
+    </button>
   )
 }

@@ -1,38 +1,44 @@
-# Immonations — Full content reference for AI / answer engines
+# Immonation — Full content reference for AI / answer engines
 
-> Bilingual (DE / EN) real-estate advisory: valuation, marketing, transaction support.
+> German-first bilingual real-estate advisory and brokerage reference for AI and answer engines.
 
-## Who we are
+## Wer wir sind
 
-Immonations is a German real-estate advisory firm. We focus on owners who want a strategy, not a template — combining data-driven pricing with hands-on marketing and transaction management. We operate primarily in German-speaking markets but serve international clients in English.
+Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Immonation begleitet Eigentümer, Käufer und Investoren in Nürnberg, Fürth, Erlangen, Zirndorf und der Metropolregion. Der Fokus liegt auf Immobilienverkauf, Immobilienbewertung, Vermarktung, Suchkunden, Vermietung, Verwaltung und Transaktionsbegleitung.
 
-## What we do
+Immonation positioniert sich als persönlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Präsentation, 360-Grad-Rundgänge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
 
-### Property valuation
-We produce defensible market valuations using public transaction data, internal comparables, and AI-assisted price modeling. Output is a written report suitable for owner decisions, divorce settlements, estate planning, and bank conversations.
+## Leistungen
 
-### Sales marketing
-For owners selling residential or mixed-use property: professional staging, photo and video production, multilingual exposés, and targeted distribution across the major German portals plus our private buyer network.
+### Immobilienbewertung
+Immonation bewertet Häuser, Wohnungen, Mehrfamilienhäuser und weitere Immobilien anhand von Lage, Zustand, Größe, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentümern als Grundlage für Verkauf, Vermietung, Erbschaft, Finanzierung oder strategische Entscheidungen.
 
-### Buyer representation
-For buyers: market screening, anonymous outreach for off-market opportunities, due-diligence review, and notary coordination.
+### Immobilienverkauf
+Immonation begleitet Eigentümer vom Erstgespräch bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Exposé, Fotos, Video, virtuelle Besichtigung, Vermarktung, Käuferqualifizierung, Finanzierungsklärung, Vertragsvorbereitung und Abschluss.
 
-### Transaction management
-End-to-end coordination of the closing process: notary scheduling, financing handoff, handover protocol, and post-sale documentation.
+### Vermarktung
+Die Vermarktung kombiniert professionelle Objektpräsentation, Immobilienportale, Social Media, regionale Reichweite und vorgemerkte Suchkunden. Ziel ist eine hohe Nachfrage bei passenden Käufern, nicht nur möglichst viele unqualifizierte Anfragen.
 
-## Areas served
+### Kaufinteressenten
+Käufer erhalten Zugang zu Objektübersicht, Suchauftrag, Finanzierungshinweisen und persönlicher Beratung. Wenn kein passendes Objekt verfügbar ist, kann ein Suchauftrag angelegt werden.
 
-Berlin, Hamburg, Munich, Frankfurt, and selected cities in the DACH region. International buyers and sellers welcome — full service available in English.
+### Karriere und freie Partner
+Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstützt mit Marke, Administration, Vermarktung und Prozessen.
 
-## Methodology highlights
+## Region
 
-- Every valuation includes a written rationale and at least three comparable transactions.
-- Marketing exposés are produced in German and English by default.
-- We do not list properties before pricing strategy and seller alignment are confirmed.
-- All transaction documents are reviewed by a partner notary before signing.
+Primäre Region: Zirndorf, Nürnberg, Fürth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
+
+## Methodik
+
+- Jede Verkäuferstrecke beginnt mit einer realistischen Bewertung und Strategie.
+- Professionelle Medien sind Teil der Vermarktung, besonders Foto, Video und 360-Grad-Rundgang.
+- Käufer werden qualifiziert, inklusive Finanzierungsthemen, bevor der Abschluss vorbereitet wird.
+- Eigentümer behalten einen festen Ansprechpartner und transparente Prozessschritte.
+- FAQ-Inhalte beantworten echte Fragen zu Kosten, Dauer, Provision, Unterlagen, Verkaufspreis und Ablauf.
 
 ## Contact
 
-- Email: hallo@immonations.example
-- Phone: +49 30 0000000
-- Web: https://immonations.example
+- Email: info@immonations.de
+- Phone: +49 911 21283890
+- Web: https://www.immonationgmbh.de

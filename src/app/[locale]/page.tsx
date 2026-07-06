@@ -1,14 +1,26 @@
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { ArrowRight } from 'lucide-react'
 import { routing } from '@/i18n/routing'
-import { Link } from '@/i18n/navigation'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { BlurFade } from '@/components/ui/blur-fade'
-import { Marquee } from '@/components/ui/marquee'
-import { NumberTicker } from '@/components/ui/number-ticker'
-import { ShimmerButton } from '@/components/ui/shimmer-button'
+import { SITE } from '@/lib/seo/site'
+import { localBusiness } from '@/lib/seo/jsonld'
+import { JsonLd } from '@/components/site/json-ld'
+import { Hero } from '@/components/site/home/hero'
+import { ValuationForm } from '@/components/site/home/valuation-form'
+import { ServicesOverview } from '@/components/site/home/services-overview'
+import { VirtualTour } from '@/components/site/home/virtual-tour'
+import { Reviews } from '@/components/site/home/reviews'
+import { FeedbackVideos } from '@/components/site/home/feedback-videos'
+import { SocialVideos } from '@/components/site/home/social-videos'
+import { GroupIntro } from '@/components/site/home/group-intro'
+import { Partners } from '@/components/site/home/partners'
+import { ContactBooking } from '@/components/site/home/contact-booking'
+import { ProcessTimeline } from '@/components/site/home/process-timeline'
+import {
+  CONTAINER,
+  SECTION_TITLE,
+  SectionHeader,
+} from '@/components/site/home/section-shell'
 
 export const dynamic = 'force-static'
 
@@ -16,17 +28,14 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
-type FeatureCopy = { title: string; body: string }
-type StatCopy = { value: number; label: string }
-
-const PARTNERS = [
-  'Handelsblatt',
-  'Immobilienzeitung',
-  'Süddeutsche',
-  'WirtschaftsWoche',
-  'Bloomberg',
-  'JLL Research',
-]
+type ProcessStep = { num: string; title: string; text: string }
+type ReferenceItem = {
+  badge: string
+  title: string
+  duration: string
+  result: string
+  story: string
+}
 
 export default async function HomePage({
   params,
@@ -38,115 +47,144 @@ export default async function HomePage({
   setRequestLocale(locale)
 
   const t = await getTranslations('Home')
-  const features = t.raw('features.items') as FeatureCopy[]
-  const stats = t.raw('stats.items') as StatCopy[]
+  const processSteps = t.raw('process.steps') as ProcessStep[]
+  const references = t.raw('references.items') as ReferenceItem[]
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="bg-foreground/[0.02] pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_70%)]" />
-        <div className="container mx-auto px-6 py-24 md:py-32">
-          <BlurFade delay={0.05}>
-            <p className="text-muted-foreground text-xs uppercase tracking-[0.25em]">
-              {t('hero.eyebrow')}
+      <JsonLd
+        data={localBusiness({
+          locale,
+          name: SITE.legalName,
+          address: { ...SITE.address },
+        })}
+      />
+
+      <Hero mode="seller" />
+
+      {/* Einleitung (AEO): beantwortet die implizite Frage der Seite als erstes */}
+      <section className="bg-background py-16 md:py-24">
+        <div className={`${CONTAINER} grid items-start gap-10 lg:grid-cols-2 lg:gap-16`}>
+          <h2 className={`${SECTION_TITLE} text-balance`}>{t('intro.title')}</h2>
+          <div className="border-accent flex flex-col gap-4 border-l-2 pl-6 md:pl-8">
+            <p className="text-muted-foreground max-w-[68ch] text-[17px] leading-[1.6]">
+              {t('intro.p1')}
             </p>
-          </BlurFade>
-          <BlurFade delay={0.15}>
-            <h1 className="mt-4 max-w-3xl text-balance text-5xl font-semibold tracking-tight md:text-6xl lg:text-7xl">
-              {t('hero.title')}
-            </h1>
-          </BlurFade>
-          <BlurFade delay={0.25}>
-            <p className="text-muted-foreground mt-6 max-w-2xl text-balance text-lg leading-relaxed md:text-xl">
-              {t('hero.subtitle')}
+            <p className="text-muted-foreground max-w-[68ch] text-[17px] leading-[1.6]">
+              {t('intro.p2')}
             </p>
-          </BlurFade>
-          <BlurFade delay={0.35}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link href="/contact">
-                <ShimmerButton className="px-6 py-3 text-sm font-medium">
-                  {t('hero.ctaPrimary')}
-                </ShimmerButton>
-              </Link>
-              <Link
-                href="/services"
-                className="border-border hover:bg-foreground/[0.04] inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
-              >
-                {t('hero.ctaSecondary')}
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>
-          </BlurFade>
+          </div>
         </div>
       </section>
 
-      {/* Trust strip */}
-      <section className="border-border/60 border-y bg-muted/30">
-        <div className="container mx-auto px-6 py-10">
-          <p className="text-muted-foreground mb-4 text-center text-xs uppercase tracking-[0.25em]">
-            {t('trust.title')}
-          </p>
-          <Marquee pauseOnHover className="[--duration:30s]">
-            {PARTNERS.map((p) => (
-              <span
-                key={p}
-                className="text-muted-foreground/70 px-8 text-xl font-semibold tracking-tight"
-              >
-                {p}
-              </span>
-            ))}
-          </Marquee>
-        </div>
-      </section>
+      {/* Leistungsübersicht */}
+      <ServicesOverview />
 
-      {/* Features */}
-      <section className="container mx-auto px-6 py-24">
-        <BlurFade>
-          <header className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              {t('features.title')}
-            </h2>
-            <p className="text-muted-foreground mt-3 text-lg">{t('features.subtitle')}</p>
-          </header>
-        </BlurFade>
-        <div className="grid gap-6 md:grid-cols-3">
-          {features.map((feature, idx) => (
-            <BlurFade key={feature.title} delay={0.1 + idx * 0.08}>
-              <Card className="h-full">
-                <CardHeader>
-                  <p className="text-muted-foreground text-xs font-medium tabular-nums">
-                    0{idx + 1}
+      {/* USP: virtuelle Besichtigung */}
+      <VirtualTour />
+
+      {/* Prozess / Verkaufen */}
+      <ProcessTimeline
+        steps={processSteps}
+        eyebrow={t('process.eyebrow')}
+        title={t('process.title')}
+        link={{ label: t('process.link'), href: '/services' }}
+      />
+
+      {/* Referenz-Teaser */}
+      <section id="referenzen" className="bg-background scroll-mt-24 py-16 md:py-24">
+        <div className={CONTAINER}>
+          <SectionHeader
+            eyebrow={t('references.eyebrow')}
+            title={t('references.title')}
+            link={{ label: t('references.link'), href: '/services' }}
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {references.map((reference) => (
+              <article
+                key={reference.title}
+                className="border-border hover:border-foreground overflow-hidden border bg-white transition-colors"
+              >
+                <div className="bg-brand-100/60 relative flex h-[200px] items-center justify-center">
+                  {/* Bildfläche: echtes Referenzfoto folgt */}
+                  <span className="text-neutral-600 text-[13px]">
+                    {t('references.photoAlt')}
+                  </span>
+                  <span className="bg-surface-dark absolute left-0 top-0 px-3.5 py-[7px] text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                    {reference.badge}
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2.5 p-5 pb-6">
+                  <h3 className="font-serif text-xl font-semibold">{reference.title}</h3>
+                  <div className="border-neutral-100 grid grid-cols-2 gap-2 border-t pt-3">
+                    <div className="flex flex-col">
+                      <span className="text-neutral-600 text-[13px]">
+                        {t('references.durationLabel')}
+                      </span>
+                      <span className="text-[17px] font-semibold">{reference.duration}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-neutral-600 text-[13px]">
+                        {t('references.resultLabel')}
+                      </span>
+                      <span className="text-primary text-[17px] font-semibold">
+                        {reference.result}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground mt-1 text-sm leading-[1.55]">
+                    {reference.story}
                   </p>
-                  <CardTitle className="mt-2 text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">{feature.body}</p>
-                </CardContent>
-              </Card>
-            </BlurFade>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-border/60 border-t">
-        <div className="container mx-auto px-6 py-20">
-          <h2 className="text-muted-foreground mb-12 text-xs uppercase tracking-[0.25em]">
-            {t('stats.title')}
-          </h2>
-          <div className="grid gap-12 md:grid-cols-3">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-2">
-                <span className="text-5xl font-semibold tracking-tight md:text-6xl">
-                  <NumberTicker value={stat.value} />
-                </span>
-                <span className="text-muted-foreground text-sm">{stat.label}</span>
-              </div>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Google- & Trustpilot-Bewertungen */}
+      <Reviews />
+
+      {/* Auszeichnung + Kundenfeedback-Video */}
+      <FeedbackVideos />
+
+      {/* Social-Media-Videos */}
+      <SocialVideos />
+
+      {/* Unternehmensgruppe */}
+      <GroupIntro />
+
+      {/* Partnerlogos */}
+      <Partners />
+
+      {/* Bewertungs-CTA (dunkel) */}
+      <section id="bewertung" className="bg-surface-dark scroll-mt-24 py-16 md:py-24">
+        <div className={`${CONTAINER} grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16`}>
+          <div className="flex flex-col gap-5">
+            <span className="text-brand-200 text-[13px] font-semibold uppercase tracking-[0.14em]">
+              {t('valuation.eyebrow')}
+            </span>
+            <h2 className="font-serif text-3xl font-semibold leading-[1.15] text-balance text-white md:text-[44px]">
+              {t('valuation.title')}
+            </h2>
+            <p className="text-neutral-400 max-w-[56ch] text-[17px] leading-[1.6]">
+              {t('valuation.subtitle')}
+            </p>
+            <figure className="border-accent mt-2 flex flex-col gap-2.5 border-l-2 pl-6">
+              <blockquote className="text-neutral-100 font-serif max-w-[50ch] text-xl italic leading-[1.45] md:text-[23px]">
+                {t('valuation.quote')}
+              </blockquote>
+              <figcaption className="text-neutral-500 text-sm">
+                {t('valuation.quoteAuthor')}
+              </figcaption>
+            </figure>
+          </div>
+          <ValuationForm />
+        </div>
+      </section>
+
+      {/* Kontakt & Terminbuchung */}
+      <ContactBooking />
     </>
   )
 }

@@ -1,57 +1,857 @@
 {
   "Site": {
-    "name": "Immonations",
-    "tagline": "Premium real-estate services for owners who expect more",
-    "description": "Immonations guides owners, investors, and buyers through every stage of the property lifecycle — from valuation to marketing to handover."
+    "name": "Immonation",
+    "tagline": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, and Erlangen",
+    "description": "Immonation GmbH guides property owners in Zirndorf, Nuremberg, Fürth, Erlangen, and within a 60 km radius through the entire selling process – from a well-founded valuation to professional marketing to the notary appointment."
   },
   "Nav": {
     "home": "Home",
     "services": "Services",
     "blog": "Blog",
-    "about": "About",
-    "contact": "Contact"
+    "about": "About us",
+    "contact": "Contact",
+    "references": "References",
+    "guide": "Guide & News",
+    "buy": "Buying",
+    "resources": "Resources",
+    "faq": "FAQ",
+    "downloads": "Downloads",
+    "careers": "Careers",
+    "referrers": "Referrers",
+    "mega": {
+      "forSellers": "For sellers",
+      "forBuyers": "For buyers",
+      "ownerPath": "Owners",
+      "buyerPath": "Buyers",
+      "proofPath": "Trust & process",
+      "knowledgePath": "Guides & documents",
+      "companyPath": "Company & contact",
+      "valuation": "Property valuation",
+      "valuationDesc": "Free, non-binding, with a written result.",
+      "selling": "Selling your property",
+      "sellingDesc": "An actively managed sale through to the notary.",
+      "virtualTour": "Virtual viewing",
+      "virtualTourDesc": "360° tours: view digitally, buy seriously.",
+      "references": "Reference properties",
+      "referencesDesc": "Sold properties from your neighborhood.",
+      "buying": "Buy a property",
+      "buyingDesc": "Current listings from the region.",
+      "financing": "Financing",
+      "financingDesc": "Construction financing with our partner Dr. Klein.",
+      "searchRequest": "Search request",
+      "searchRequestDesc": "Hear about matching properties first.",
+      "trustProof": "Reviews & proof",
+      "trustProofDesc": "Google, Trustpilot, and real sale stories.",
+      "faqDesc": "Costs, timelines, process — answered briefly.",
+      "guideDesc": "Real-estate knowledge and market updates.",
+      "downloadsDesc": "Checklists and documents for owners.",
+      "careersDesc": "Employment or independent sales partnership.",
+      "referrersDesc": "Recommend and benefit.",
+      "contactDesc": "Phone, email, or an initial consultation.",
+      "highlightKicker": "For sellers only",
+      "highlightTitle": "Virtual viewing",
+      "highlightTagline": "Unique to Immonation.",
+      "highlightBody": "A 360° tour for every sale property. Buyers pre-check digitally before an on-site appointment is made.",
+      "highlightCta": "View the tour",
+      "servicesFooter": "Valuation, sales, and buyer paths — clearly guided by a local team.",
+      "servicesFooterCta": "View all services",
+      "resourcesKicker": "Direct",
+      "resourcesTitle": "Answers & documents",
+      "resourcesTagline": "Get to the right decision faster.",
+      "resourcesBody": "FAQ, checklists, and contact routes for owners, buyers, candidates, and referrers.",
+      "resourcesCta": "Open FAQ",
+      "resourcesFooter": "Guides, downloads, and contact routes for the next concrete question.",
+      "resourcesFooterCta": "View downloads"
+    }
   },
-  "Home": {
-    "hero": {
-      "eyebrow": "Real estate, reimagined",
-      "title": "Your property deserves a strategy, not a template.",
-      "subtitle": "From the first valuation to the closing appointment: we combine deep local market knowledge with modern, data-driven tools.",
-      "ctaPrimary": "Get a free valuation",
-      "ctaSecondary": "See our services"
+  "AboutPage": {
+    "metadata": {
+      "title": "About Immonation",
+      "description": "Learn how Immonation GmbH supports owners and buyers in Zirndorf, Nuremberg, F\u00fcrth, and Erlangen."
     },
-    "trust": {
-      "title": "Featured in"
-    },
-    "features": {
-      "title": "What sets us apart",
-      "subtitle": "Three pillars behind every transaction we close.",
+    "eyebrow": "Immonation GmbH",
+    "title": "Real-estate advisory with local roots and digital reach.",
+    "lede": "Immonation supports owners, buyers, and investors in Zirndorf, Nuremberg, F\u00fcrth, Erlangen, and the surrounding region with valuation, marketing, and personal advisory.",
+    "body": "Our standard is a transparent process with defensible numbers, clear communication, and marketing that does more than place a standard listing.",
+    "values": {
       "items": [
         {
-          "title": "Market analysis with depth",
-          "body": "We blend public data, our own transaction history, and AI-assisted comparables into a defensible pricing strategy."
+          "title": "Local market knowledge",
+          "text": "We value properties in the context of current demand, comparable transactions, and regional micro-locations."
         },
         {
-          "title": "Marketing with intent",
-          "body": "Professional staging, multilingual exposés, and targeted reach — online and offline."
+          "title": "Active marketing",
+          "text": "Video, 360-degree tours, qualified buyer demand, and clear expos\u00e9s help both sides make better decisions."
         },
         {
-          "title": "Hands-on until handover",
-          "body": "We coordinate notaries, banks, and tradespeople so you can focus on what comes next."
+          "title": "Personal guidance",
+          "text": "One dedicated contact guides you from the first conversation to the notary appointment."
         }
       ]
     },
-    "stats": {
-      "title": "In numbers",
+    "cta": {
+      "title": "Planning to sell or buy?",
+      "text": "Start with a grounded first assessment and a clear view of the next steps.",
+      "label": "Contact us"
+    }
+  },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contact",
+      "description": "Contact Immonation GmbH for property valuation, sales advisory, buyer advisory, and search requests."
+    },
+    "eyebrow": "Contact",
+    "title": "Let us talk about your property.",
+    "lede": "Whether you are selling, valuing, buying, or creating a search request: send us a message or call us. We will respond with a concrete view of the next steps.",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "serviceLink": "View services",
+    "steps": {
+      "title": "What happens next",
       "items": [
-        { "value": 240, "label": "Properties placed" },
-        { "value": 98, "label": "% client satisfaction" },
-        { "value": 14, "label": "Years on the market" }
+        {
+          "title": "Initial context",
+          "text": "We clarify location, property type, and objective so the first conversation is immediately useful."
+        },
+        {
+          "title": "Review the data",
+          "text": "If helpful, we review documents, comparable values, and current demand in your region."
+        },
+        {
+          "title": "Define next steps",
+          "text": "You receive a clear recommendation on whether valuation, marketing, or a search request is the right starting point."
+        }
+      ]
+    }
+  },
+  "ValuationPage": {
+    "metadata": {
+      "title": "Free property valuation",
+      "description": "Free, non-binding property valuation for Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region — well-founded, on site, with a written result."
+    },
+    "hero": {
+      "eyebrow": "Free & non-binding",
+      "title": "What is your property worth?",
+      "lede": "A well-founded valuation based on current sales data from your neighborhood — verified on site, documented in writing, and with no obligation."
+    },
+    "answer": "The Immonation GmbH property valuation is free and non-binding. We determine the realistic market value of your property in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region — based on current transactions, our own brokered sales, and an on-site assessment, not an algorithm alone.",
+    "features": {
+      "title": "What sets the valuation apart",
+      "items": [
+        {
+          "title": "Current comparables",
+          "text": "We value in the context of real sales from your area — not generic online calculators."
+        },
+        {
+          "title": "On-site assessment",
+          "text": "Condition, fittings, and micro-location are personally verified and factored into the value."
+        },
+        {
+          "title": "Written result",
+          "text": "You receive a documented assessment you can use for decisions, inheritance matters, or bank meetings."
+        },
+        {
+          "title": "No obligation",
+          "text": "Whether you sell, hold, or seek a second opinion — the decision stays yours."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How the valuation works",
+      "items": [
+        {
+          "num": "01",
+          "title": "Share key details",
+          "text": "Property type, location, and basic data — online in a few minutes or by phone."
+        },
+        {
+          "num": "02",
+          "title": "Analysis & on-site visit",
+          "text": "We review comparables and visit your property in person."
+        },
+        {
+          "num": "03",
+          "title": "Result & recommendation",
+          "text": "You receive the valuation in writing — with a clear recommendation for next steps."
+        }
+      ]
+    },
+    "stats": [
+      { "value": "5.0 ★", "label": "Google rating across 184 reviews" },
+      { "value": "60+", "label": "property sales per year" },
+      { "value": "5,000+", "label": "registered search clients" },
+      { "value": "360°", "label": "tour for every listing" }
+    ],
+    "faq": {
+      "title": "Common questions about the valuation",
+      "items": [
+        {
+          "question": "What does the property valuation cost?",
+          "answer": "For prospective sellers, the valuation is free and non-binding. Formal appraisals for inheritance or tax purposes are billed transparently by effort."
+        },
+        {
+          "question": "How long does the valuation take?",
+          "answer": "From inquiry to written result typically takes a few days to two weeks, depending on scheduling and documents."
+        },
+        {
+          "question": "Which documents are needed?",
+          "answer": "A floor plan, living-space calculation, energy certificate, and land-register extract help. Missing documents can be obtained together."
+        },
+        {
+          "question": "Am I obligated to anything after the valuation?",
+          "answer": "No. The valuation is a basis for your decision — whether and when you sell is entirely up to you."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start your free valuation now",
+      "text": "Requested in 3 minutes — we respond within one business day with the next steps.",
+      "primaryLabel": "Start valuation",
+      "secondaryLabel": "Book a consultation"
+    }
+  },
+  "FaqPage": {
+    "metadata": {
+      "title": "Frequently asked questions (FAQ)",
+      "description": "Answers to the most common questions about selling, valuation, commission, timelines, and process at Immonation GmbH."
+    },
+    "eyebrow": "FAQ",
+    "title": "Common questions, clearly answered",
+    "lede": "Costs, timelines, process, documents: the questions owners and buyers ask us most — answered in a few sentences.",
+    "items": [
+      {
+        "question": "What does the property valuation cost?",
+        "answer": "The valuation is free and non-binding for prospective sellers — including an on-site assessment and a written result."
+      },
+      {
+        "question": "How long does a property sale take?",
+        "answer": "Typically 6 to 12 weeks from marketing to the notary appointment — depending on the property, pricing strategy, and demand."
+      },
+      {
+        "question": "Who pays the broker commission?",
+        "answer": "The commission is split between seller and buyer depending on the property and constellation. The exact rate is disclosed transparently in the exposé and before engagement."
+      },
+      {
+        "question": "Which documents do I need to sell?",
+        "answer": "Land-register extract, floor plan, living-space calculation, energy certificate, and for apartments the declaration of division. We obtain missing documents together."
+      },
+      {
+        "question": "What does the 360° tour add?",
+        "answer": "Prospects view digitally first — only serious buyers show up in person. That saves appointments and protects your privacy."
+      },
+      {
+        "question": "Which region does Immonation serve?",
+        "answer": "We broker properties in Zirndorf, Nuremberg, Fürth, Erlangen, and within roughly 60 km of our office in Zirndorf."
+      },
+      {
+        "question": "Can I sell a rented property?",
+        "answer": "Yes. We market tenanted properties specifically to investors — including preparation of the relevant rent and yield data."
+      },
+      {
+        "question": "Does Immonation also help with financing?",
+        "answer": "Yes. Together with our financing partner Dr. Klein, we verify buyers' financing and advise buyers on conditions."
+      }
+    ],
+    "cta": {
+      "title": "Didn't find your question?",
+      "text": "Call us or start with a free valuation — we respond within one business day.",
+      "primaryLabel": "Free valuation",
+      "secondaryLabel": "Get in touch"
+    }
+  },
+  "LegalImprint": {
+    "metadata": {
+      "title": "Imprint",
+      "description": "Imprint of Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Germany."
+    },
+    "eyebrow": "Legal",
+    "title": "Imprint",
+    "lede": "Information pursuant to § 5 DDG. The German version is authoritative.",
+    "sections": [
+      {
+        "heading": "Provider",
+        "paragraphs": [
+          "Immonation GmbH",
+          "Nürnberger Straße 18",
+          "90513 Zirndorf",
+          "Germany"
+        ]
+      },
+      {
+        "heading": "Contact",
+        "paragraphs": [
+          "Phone: +49 911 212 838 90",
+          "Email: info@immonations.de"
+        ]
+      },
+      {
+        "heading": "Represented by",
+        "paragraphs": ["[Managing directors — to be added before launch]"]
+      },
+      {
+        "heading": "Register entry",
+        "paragraphs": [
+          "Register court: Local court (Amtsgericht) Fürth",
+          "Commercial register number: HRB 19278 [verify before launch]"
+        ]
+      },
+      {
+        "heading": "VAT ID",
+        "paragraphs": ["VAT identification number pursuant to § 27a UStG: [to be added before launch]"]
+      },
+      {
+        "heading": "Supervisory authority",
+        "paragraphs": [
+          "License pursuant to § 34c GewO, issued by the competent authority: [to be added before launch]"
+        ]
+      },
+      {
+        "heading": "Dispute resolution",
+        "paragraphs": [
+          "The European Commission provides a platform for online dispute resolution (ODR): https://ec.europa.eu/consumers/odr. We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+        ]
+      }
+    ],
+    "note": "Placeholder content in square brackets will be replaced with verified details from immonationgmbh.de before launch."
+  },
+  "LegalPrivacy": {
+    "metadata": {
+      "title": "Privacy policy",
+      "description": "Privacy policy of Immonation GmbH: controller, data processing, cookies, consent, and your rights."
+    },
+    "eyebrow": "Legal",
+    "title": "Privacy policy",
+    "lede": "How we handle your data — transparent and to the point. The German version is authoritative.",
+    "sections": [
+      {
+        "heading": "Controller",
+        "paragraphs": [
+          "The controller for data processing on this website is Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Germany, phone +49 911 212 838 90, email info@immonations.de."
+        ]
+      },
+      {
+        "heading": "Hosting",
+        "paragraphs": [
+          "This website is hosted by an external service provider. Personal data collected on this website is stored on the host's servers. [Host and data-processing agreement to be added before launch]"
+        ]
+      },
+      {
+        "heading": "Contact & forms",
+        "paragraphs": [
+          "If you contact us via form, email, or phone, we process your details to handle the inquiry (Art. 6(1)(b) GDPR). We use an email service provider for form delivery. [Resend details and DPA to be added before launch]"
+        ]
+      },
+      {
+        "heading": "Cookies & consent",
+        "paragraphs": [
+          "We only use technically non-essential cookies and tracking services (e.g., Google Analytics 4, Meta Pixel) with your explicit consent via the consent banner (Art. 6(1)(a) GDPR). You can withdraw your consent at any time."
+        ]
+      },
+      {
+        "heading": "External content",
+        "paragraphs": [
+          "YouTube videos load in privacy-enhanced mode and only after a click. Links to Google, Trustpilot, Instagram, TikTok, and Facebook lead to external providers with their own privacy policies."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "paragraphs": [
+          "You have the right to access, rectification, erasure, restriction of processing, data portability, and objection (Art. 15–21 GDPR). You also have the right to lodge a complaint with the competent supervisory authority, the Bavarian State Office for Data Protection Supervision."
+        ]
+      }
+    ],
+    "note": "This privacy policy is a structured starting point and will be legally reviewed and completed before launch."
+  },
+  "LegalTerms": {
+    "metadata": {
+      "title": "Terms and conditions",
+      "description": "General terms and conditions of Immonation GmbH for brokerage services."
+    },
+    "eyebrow": "Legal",
+    "title": "Terms and conditions",
+    "lede": "The basis of our brokerage services. The German version is authoritative.",
+    "sections": [
+      {
+        "heading": "§ 1 Scope",
+        "paragraphs": [
+          "These general terms and conditions apply to all brokerage services of Immonation GmbH toward consumers and businesses. [Full text to be adopted from immonationgmbh.de and reviewed before launch]"
+        ]
+      },
+      {
+        "heading": "§ 2 Brokerage services",
+        "paragraphs": [
+          "The subject of the activity is evidencing the opportunity to conclude a contract, or brokering a contract, concerning real estate. [Details to be added before launch]"
+        ]
+      },
+      {
+        "heading": "§ 3 Commission",
+        "paragraphs": [
+          "The commission claim, its amount, and the split between the parties are disclosed transparently before engagement. [Specific rates to be added before launch]"
+        ]
+      },
+      {
+        "heading": "§ 4 Liability",
+        "paragraphs": [
+          "The broker assumes no guarantee for the accuracy of property information provided by the owner. [Liability clauses to be legally reviewed before launch]"
+        ]
+      },
+      {
+        "heading": "§ 5 Final provisions",
+        "paragraphs": [
+          "The law of the Federal Republic of Germany applies. Should individual provisions be invalid, the validity of the remaining provisions remains unaffected."
+        ]
+      }
+    ],
+    "note": "These terms are a structured placeholder and will be replaced with the reviewed version before launch."
+  },
+  "CareersPage": {
+    "metadata": {
+      "title": "Careers at Immonation",
+      "description": "Careers at Immonation GmbH in Zirndorf: employment in real estate and back office, or an independent sales partnership with 20% commission."
+    },
+    "eyebrow": "Careers",
+    "title": "Working at Immonation",
+    "lede": "Whether employed or as an independent sales partner: we are growing in the Nuremberg metropolitan region and looking for people who love real estate and sales.",
+    "sections": [
+      {
+        "heading": "Employees",
+        "paragraphs": [
+          "We regularly fill positions in real estate and back office — from property onboarding to marketing and management. Specific job postings will be published here shortly."
+        ]
+      },
+      {
+        "heading": "Independent sales partners",
+        "paragraphs": [
+          "You focus on acquisition and sales — Immonation handles administration, branding, paperwork, and the complete marketing structure. With 20 percent commission and an experienced team behind you.",
+          "Ideal for sales-driven people from the region with real-estate experience or their own buying and selling experience."
+        ]
+      }
+    ],
+    "note": "Detailed job postings and the full partner model are coming. Until then: reach out directly — we look forward to talking.",
+    "cta": {
+      "title": "Interested?",
+      "text": "Tell us briefly who you are and what you're looking for — we respond within one business day.",
+      "primaryLabel": "Get in touch"
+    }
+  },
+  "ReferrersPage": {
+    "metadata": {
+      "title": "Become a referrer",
+      "description": "Benefit as an Immonation GmbH referrer: recommend owners ready to sell and share in the successful closing."
+    },
+    "eyebrow": "Referrers",
+    "title": "Recommend and benefit",
+    "lede": "You know someone who wants to sell a property? As a referrer, you share in the successful closing — with no effort of your own.",
+    "sections": [
+      {
+        "heading": "How it works",
+        "paragraphs": [
+          "You give us a contact with intent to sell. We handle consultation, valuation, and marketing. If the sale closes successfully, you receive a referrer fee.",
+          "Discretion is a given: your contact only learns the recommendation came from you with your consent."
+        ]
+      }
+    ],
+    "note": "The details of the referrer model (fee amount, conditions) are currently being finalized and will be published here.",
+    "cta": {
+      "title": "Have a tip for us?",
+      "text": "A short message is enough — we'll discuss everything else personally.",
+      "primaryLabel": "Submit a tip"
+    }
+  },
+  "DownloadsPage": {
+    "metadata": {
+      "title": "Downloads & checklists",
+      "description": "Checklists and documents for owners and buyers: selling checklist, documents checklist, and market reports from Immonation GmbH."
+    },
+    "eyebrow": "Resources",
+    "title": "Downloads & checklists",
+    "lede": "Practical documents for owners and buyers — compact, clear, and free.",
+    "sections": [
+      {
+        "heading": "In preparation",
+        "paragraphs": [
+          "Selling checklist: every step from decision to notary appointment.",
+          "Documents checklist: which documents you need for a sale or valuation.",
+          "Market reports for Nuremberg, Fürth, Erlangen, and Zirndorf."
+        ]
+      }
+    ],
+    "note": "The downloads are currently being prepared. Until then, we're happy to send you the checklists personally — a short message is enough.",
+    "cta": {
+      "title": "Request a checklist directly",
+      "text": "Tell us which documents you need — we'll send them by email.",
+      "primaryLabel": "Request documents"
+    }
+  },
+  "Audience": {
+    "sellerCta": "Start your free valuation",
+    "buyerCta": "Find a property",
+    "iAmA": "I am a",
+    "seller": "Seller",
+    "buyer": "Buyer"
+  },
+  "Home": {
+    "hero": {
+      "seller": {
+        "eyebrow": "Zirndorf · Nuremberg · Fürth · Erlangen",
+        "title": "Your property sale, actively managed — not just listed.",
+        "subtitle": "Well-founded valuation, professional marketing with video and 360° tours, personal guidance all the way to the notary appointment.",
+        "ctaPrimary": "Start your free valuation",
+        "ctaSecondary": "Find a property"
+      },
+      "buyer": {
+        "eyebrow": "Buying in the region",
+        "title": "Find your home before everyone else sees it.",
+        "subtitle": "Current listings from Zirndorf, Nuremberg, Fürth, and Erlangen — with search requests, financing advice, and personal support until you move in.",
+        "ctaPrimary": "Find a property",
+        "ctaSecondary": "Create a search request"
+      },
+      "ratingLabel": "Google rating · 184 reviews",
+      "ratingValue": "5.0 ★★★★★",
+      "imageAlt": "Property marketing by Immonation GmbH"
+    },
+    "intro": {
+      "title": "Real-estate advisory with local market knowledge and digital marketing strength.",
+      "p1": "Immonation GmbH guides property owners in Zirndorf, Nuremberg, Fürth, Erlangen, and within a 60 km radius through the entire selling process — from a well-founded valuation to professional marketing to the notary appointment.",
+      "p2": "Personal, transparent, and with proven results: dedicated contacts, an active network of pre-qualified buyers, and marketing with video, 360° tours, and social media."
+    },
+    "process": {
+      "eyebrow": "For owners",
+      "title": "How we sell your property",
+      "link": "See the full process →",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Onboarding call",
+          "text": "A free first call by phone or video: we clarify your goals, the timeline, and answer your initial questions."
+        },
+        {
+          "num": "02",
+          "title": "On-site appointment",
+          "text": "A personal viewing of your property and a market-based valuation — on site, not by algorithm alone."
+        },
+        {
+          "num": "03",
+          "title": "Pricing & sales strategy",
+          "text": "A realistic asking price, target-group definition, and a clear marketing plan before the property goes online."
+        },
+        {
+          "num": "04",
+          "title": "Property shoot",
+          "text": "Professional photos, a video exposé, and a 360° tour present your property in the best possible light."
+        },
+        {
+          "num": "05",
+          "title": "Marketing",
+          "text": "High-reach marketing across portals, our network, and social media — for maximum qualified demand."
+        },
+        {
+          "num": "06",
+          "title": "Buyer qualification & financing",
+          "text": "We vet prospects including proof of financing — only serious, solvent buyers come to viewings."
+        },
+        {
+          "num": "07",
+          "title": "Notary & closing",
+          "text": "Negotiation management, the notary appointment, and support all the way to the key handover — all from one hand."
+        }
+      ]
+    },
+    "references": {
+      "eyebrow": "Proven results",
+      "title": "References from your neighborhood",
+      "link": "All reference properties →",
+      "durationLabel": "Time on market",
+      "resultLabel": "Result",
+      "photoAlt": "Reference photo",
+      "items": [
+        {
+          "badge": "Sold",
+          "title": "Condominium, Fürth-Südstadt",
+          "duration": "6 weeks",
+          "result": "+4% above valuation",
+          "story": "The 360° tour and video exposé generated 38 qualified inquiries in the first week."
+        },
+        {
+          "badge": "Sold",
+          "title": "Single-family home, Zirndorf",
+          "duration": "8 weeks",
+          "result": "At valuation",
+          "story": "Discreet marketing through our buyer network — without a public listing."
+        },
+        {
+          "badge": "Let",
+          "title": "Multi-family house, Erlangen",
+          "duration": "4 weeks",
+          "result": "Fully let",
+          "story": "All three units filled through pre-qualification, including credit checks."
+        }
+      ]
+    },
+    "valuation": {
+      "eyebrow": "Free & non-binding",
+      "title": "What is your property worth today?",
+      "subtitle": "A well-founded initial assessment based on current market data from your neighborhood — in 3 minutes, with no obligation.",
+      "quote": "“The 360° tour spared us viewings with undecided visitors — only serious prospects came.”",
+      "quoteAuthor": "Mr. M. · Apartment sale, Nuremberg-St. Johannis · Google ★★★★★",
+      "formTitle": "Start your valuation",
+      "plzLabel": "Postal code of the property",
+      "plzPlaceholder": "e.g. 90513",
+      "typeLabel": "Property type",
+      "types": ["House", "Apartment", "Multi-family house", "Plot"],
+      "submit": "Start your free valuation",
+      "success": "✓ Thank you — we will get back to you within one business day with your initial assessment.",
+      "privacyNote": "Your data is never shared. Prefer a call instead of a form?",
+      "callbackLink": "Request a callback"
+    },
+    "servicesOverview": {
+      "eyebrow": "Services",
+      "title": "Everything around your property — from one team",
+      "link": "View all services →",
+      "itemLink": "Learn more →",
+      "items": [
+        {
+          "title": "Property sales",
+          "text": "An actively managed sale with a clear 10-step system — from pricing strategy to the notary appointment."
+        },
+        {
+          "title": "Property valuation",
+          "text": "A free, well-founded valuation based on current sales data from your neighborhood."
+        },
+        {
+          "title": "Rental management",
+          "text": "Reliable management of your rental properties — from tenant search to contracts and statements."
+        },
+        {
+          "title": "Search requests & buyer advisory",
+          "text": "Over 5,000 registered search clients — as a buyer, you hear about matching properties before anyone else."
+        },
+        {
+          "title": "Financing",
+          "text": "Construction financing at top conditions with our long-standing partner Dr. Klein — with personal advice."
+        },
+        {
+          "title": "Project development & investment",
+          "text": "Acquisition, development, and revitalization of properties — bundled within the Immonation group."
+        }
+      ]
+    },
+    "virtualTour": {
+      "eyebrow": "Digital marketing",
+      "title": "The virtual viewing: convince buyers before anyone is on site",
+      "p1": "Every property gets a professional 360° tour. Prospects view your property digitally first — realistically, anytime, from anywhere. Only people who genuinely want to buy show up in person.",
+      "bullets": [
+        {
+          "title": "Fewer on-site viewings",
+          "text": "The undecided filter themselves out digitally — you open your door only for serious prospects."
+        },
+        {
+          "title": "Data-based pre-qualification",
+          "text": "How often and how long a tour is viewed reveals genuine buying interest — before an appointment is made."
+        },
+        {
+          "title": "Protected privacy",
+          "text": "Tours are shared exclusively with vetted prospects; sensitive areas are obscured."
+        },
+        {
+          "title": "Realistic presentation",
+          "text": "Honest spatial impressions instead of embellished images — including virtual home staging where it makes sense."
+        }
+      ],
+      "stats": [
+        { "value": "360°", "label": "Tour for every property" },
+        { "value": "5,000+", "label": "registered search clients" },
+        { "value": "60+", "label": "property sales per year" }
+      ],
+      "demoLabel": "360° tour · sample property",
+      "demoNote": "An interactive demo will appear here",
+      "cta": "Start selling with a 360° tour"
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "What our clients say",
+      "ratingSuffix": "out of 5",
+      "google": {
+        "name": "Google",
+        "rating": "5.0",
+        "count": "184 reviews",
+        "link": "Read reviews on Google →"
+      },
+      "trustpilot": {
+        "name": "Trustpilot",
+        "rating": "4.7",
+        "count": "29 reviews",
+        "link": "Read reviews on Trustpilot →"
+      },
+      "items": [
+        {
+          "quote": "“From valuation to the notary appointment, everything went faster than expected — and we were kept informed at all times.”",
+          "source": "Google ★★★★★ · House sale, Zirndorf"
+        },
+        {
+          "quote": "“The 360° tour spared us many unnecessary viewings. Only serious prospects came.”",
+          "source": "Google ★★★★★ · Apartment sale, Nuremberg"
+        },
+        {
+          "quote": "“Professional, always reachable, and honest about pricing. Clear recommendation.”",
+          "source": "Trustpilot ★★★★★ · Sale, Fürth"
+        }
+      ]
+    },
+    "feedback": {
+      "eyebrow": "Highly rated",
+      "title": "Client feedback you can watch",
+      "text": "Numbers are good, faces are better: in our video we show how we work — and clients share how their sale went.",
+      "badges": [
+        "Google 5.0 ★ across 184 reviews",
+        "Trustpilot 4.7 ★",
+        "60+ property sales per year",
+        "5,000+ search clients in our network"
+      ],
+      "videoTitle": "Inside Immonation: how we work",
+      "playLabel": "Play video",
+      "consentNote": "Playing loads the video from YouTube (privacy-enhanced mode)."
+    },
+    "social": {
+      "eyebrow": "Social media",
+      "title": "Marketing where buyers actually look",
+      "text": "Property videos, reels, and behind-the-scenes insights: on Instagram, TikTok, and YouTube our listings also reach buyers who never browse the portals.",
+      "followLabel": "View profile",
+      "platforms": {
+        "instagram": "Property videos, new listings, and team insights — regularly on Instagram.",
+        "tiktok": "Real-estate reels with reach: how listings connect with younger buyer groups.",
+        "youtube": "Full-length property videos and 360° insights to watch in detail."
+      }
+    },
+    "group": {
+      "eyebrow": "Company group",
+      "title": "The Immonation group: more than brokerage",
+      "intro": "Behind Immonation GmbH stands a company group covering the entire life cycle of a property — from brokerage and management to project development and investment.",
+      "link": "More about us →",
+      "companies": [
+        {
+          "name": "Immonation Capital Holding GmbH",
+          "role": "Holding company",
+          "text": "Bundles real-estate brokerage, management, project development, and investment under one roof."
+        },
+        {
+          "name": "IN Beteiligungs GmbH",
+          "role": "Acquisition & project development",
+          "text": "Acquires and develops properties with a focus on value appreciation and sustainable use."
+        },
+        {
+          "name": "Dream Living GmbH",
+          "role": "Revitalization",
+          "text": "Renovates properties in need of modernization, creating value for residents and neighborhoods."
+        }
+      ]
+    },
+    "partners": {
+      "eyebrow": "Partners",
+      "title": "Strong partners at our side",
+      "text": "For financing, reach, and regional connections, we rely on established partners.",
+      "items": [
+        {
+          "name": "Dr. Klein",
+          "role": "Financing partner — construction financing at top conditions"
+        },
+        { "name": "Immowelt", "role": "Property portal" },
+        { "name": "Zirndorf Marketing", "role": "Regional network" }
+      ]
+    },
+    "contactBooking": {
+      "eyebrow": "Contact & appointments",
+      "title": "A direct line instead of a waiting loop",
+      "text": "Call us, write to us — or book a free initial consultation right away: in person in Zirndorf, by phone, or via video call.",
+      "phoneLabel": "Phone",
+      "phoneValue": "+49 911 212 838 90",
+      "emailLabel": "Email",
+      "addressLabel": "Office",
+      "addressValue": "Nürnberger Straße 18, 90513 Zirndorf",
+      "bookingTitle": "Book an initial consultation",
+      "bookingText": "15 minutes, free and non-binding: we assess your situation and recommend the next steps — with no sales pressure.",
+      "bookingCta": "Request an appointment",
+      "bookingNote": "We respond within one business day."
+    },
+    "buy": {
+      "metaTitle": "Buying property in Zirndorf, Nuremberg, Fürth & Erlangen",
+      "metaDescription": "Current property listings and search requests for buyers in the region — houses, apartments, and plots with personal support until you move in.",
+      "eyebrow": "For buyers",
+      "title": "Looking to buy instead of sell?",
+      "subtitle": "Current listings from the region — or create a search request and hear about new properties before anyone else.",
+      "ctaAll": "All listings",
+      "ctaSearch": "Create a search request",
+      "newBadge": "New",
+      "exposeLink": "View exposé →",
+      "photoAlt": "Property photo",
+      "items": [
+        {
+          "isNew": true,
+          "title": "Single-family home with garden",
+          "location": "Zirndorf · Wintersdorfer Weg",
+          "area": "142 m²",
+          "rooms": "5 rooms",
+          "extra": "612 m² plot",
+          "price": "€689,000"
+        },
+        {
+          "isNew": false,
+          "title": "3-room apartment with balcony",
+          "location": "Nuremberg · St. Johannis",
+          "area": "84 m²",
+          "rooms": "3 rooms",
+          "extra": "Balcony",
+          "price": "€379,000"
+        },
+        {
+          "isNew": true,
+          "title": "Semi-detached house, renovated",
+          "location": "Erlangen · Büchenbach",
+          "area": "118 m²",
+          "rooms": "4.5 rooms",
+          "extra": "Garage",
+          "price": "€545,000"
+        }
       ]
     }
   },
   "Footer": {
+    "claim": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region.",
+    "stats": [
+      { "value": "60 km", "label": "Advisory radius around Zirndorf" },
+      { "value": "6–12", "label": "Weeks typical time on market" },
+      { "value": "360°", "label": "Tour for every property" },
+      { "value": "5.0 ★", "label": "Google rating" }
+    ],
+    "sell": {
+      "title": "Selling",
+      "valuation": "Property valuation",
+      "house": "Sell a house",
+      "apartment": "Sell an apartment",
+      "letting": "Let a property"
+    },
+    "buy": {
+      "title": "Buying",
+      "listings": "Property listings",
+      "searchRequest": "Search request",
+      "financing": "Financing",
+      "buyerAdvice": "Buyer advisory"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About us",
+      "references": "References",
+      "guide": "Guide",
+      "faq": "FAQ",
+      "careers": "Careers",
+      "referrers": "Referrers",
+      "downloads": "Downloads",
+      "contact": "Contact"
+    },
+    "copyright": "© {year} Immonation GmbH · Zirndorf",
     "rights": "All rights reserved.",
     "imprint": "Imprint",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "terms": "Terms"
   }
 }

@@ -1,6 +1,6 @@
-# Immonations Website
+# Immonation Website
 
-Bilingual (DE / EN) marketing site for Immonations — a real-estate advisory firm — built for SEO, AEO, and GEO.
+Bilingual (DE / EN) marketing site for Immonation — a real-estate advisory firm — built for SEO, AEO, and GEO.
 
 **Stack:** Next.js 16 · React 19 · TypeScript (strict) · Tailwind CSS v4 · shadcn/ui (Neutral) · Magic UI · next-intl v4 · MDX (blog) · pnpm
 

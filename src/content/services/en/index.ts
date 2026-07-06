@@ -48,7 +48,7 @@ const services: Record<string, Service> = {
     cta: { label: 'Request a consultation', href: '/contact' },
     updatedAt: '2026-04-12',
     serviceType: 'Real estate valuation and advisory',
-    areaServed: 'Germany',
+    areaServed: 'Zirndorf, Nuremberg, Fürth, Erlangen and the surrounding region',
   },
 }
 

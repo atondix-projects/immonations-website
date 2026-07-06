@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# Immonations — Agent Instructions
+# Immonation — Agent Instructions
 
 > Bilingual (DE / EN) company website built on Next.js 16 App Router. Optimized for SEO, AEO, and GEO. This file is read by every AI agent that touches the repo. Keep it terse; the canonical, fuller guide lives in `CLAUDE.md`.
 

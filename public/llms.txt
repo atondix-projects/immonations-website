@@ -1,19 +1,19 @@
-# Immonations
+# Immonation
 
-> Premium real-estate advisory and brokerage. Bilingual (DE / EN) company website with services, market insights, and a contact funnel.
+> Immobilienmakler und Immobilienberatung aus Zirndorf für Nürnberg, Fürth, Erlangen und die Metropolregion. German-first bilingual website with seller, buyer, guide, reference, and contact funnels.
 
-Immonations is a German real-estate advisory firm. The website is structured for AI-assisted search engines and answer engines to surface accurate, citable information about our services, areas of operation, and methodology.
+Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Die Website ist für Suchmaschinen, Antwortmaschinen und KI-gestützte Recherche strukturiert, damit Leistungen, regionale Zuständigkeit, Verkaufsprozess und Kontaktwege korrekt zitiert werden können.
 
-## Primary entry points
+## Primäre Einstiegspunkte
 
-- [Home (DE)](https://immonations.example/de) — value proposition and key services
-- [Home (EN)](https://immonations.example/en) — same, in English
-- [Services / Leistungen](https://immonations.example/de/leistungen) — full list of advisory and brokerage services
-- [Blog / Insights](https://immonations.example/de/blog) — market commentary and how-tos
-- [About / Über uns](https://immonations.example/de/ueber-uns) — team and methodology
-- [Contact / Kontakt](https://immonations.example/de/kontakt) — direct contact form and phone
+- [Startseite (DE)](https://www.immonationgmbh.de/de) — Positionierung, Leistungsübersicht, virtuelle 360°-Besichtigung, Kundenbewertungen (Google 5,0 · Trustpilot 4,7), Unternehmensgruppe (Immonation Capital Holding, IN Beteiligungs GmbH, Dream Living GmbH), Finanzierungspartner Dr. Klein, Bewertung, Kontakt und Terminbuchung
+- [Home (EN)](https://www.immonationgmbh.de/en) — English entry point
+- [Leistungen](https://www.immonationgmbh.de/de/leistungen) — Bewertung, Verkauf, Vermarktung und Transaktion
+- [Immobilienbewertung](https://www.immonationgmbh.de/de/immobilienbewertung) — kostenlose, unverbindliche Wertermittlung mit Vor-Ort-Einschätzung und schriftlichem Ergebnis
+- [FAQ](https://www.immonationgmbh.de/de/faq) — Kosten, Provision, Dauer, Unterlagen, Region und Ablauf in Kurzantworten
+- [Blog / Ratgeber](https://www.immonationgmbh.de/de/blog) — Immobilienwissen, Marktkommentare und Entscheidungsfragen
 
-## Optional
+## Weitere Maschinenlese-Hinweise
 
-- [Full content (llms-full.txt)](https://immonations.example/llms-full.txt) — extended descriptions of every service and process
-- [Sitemap](https://immonations.example/sitemap.xml)
+- [Full content (llms-full.txt)](https://www.immonationgmbh.de/llms-full.txt) — ausführliche Leistungs-, Prozess- und Regionalbeschreibung
+- [Sitemap](https://www.immonationgmbh.de/sitemap.xml)

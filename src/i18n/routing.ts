@@ -6,6 +6,10 @@ export const routing = defineRouting({
   localePrefix: 'always',
   pathnames: {
     '/': '/',
+    '/buy': {
+      de: '/kaufen',
+      en: '/buy',
+    },
     '/services': {
       de: '/leistungen',
       en: '/services',
@@ -29,6 +33,38 @@ export const routing = defineRouting({
     '/contact': {
       de: '/kontakt',
       en: '/contact',
+    },
+    '/property-valuation': {
+      de: '/immobilienbewertung',
+      en: '/property-valuation',
+    },
+    '/faq': {
+      de: '/faq',
+      en: '/faq',
+    },
+    '/imprint': {
+      de: '/impressum',
+      en: '/imprint',
+    },
+    '/privacy': {
+      de: '/datenschutz',
+      en: '/privacy',
+    },
+    '/terms': {
+      de: '/agb',
+      en: '/terms',
+    },
+    '/careers': {
+      de: '/karriere',
+      en: '/careers',
+    },
+    '/referrers': {
+      de: '/tippgeber',
+      en: '/referrers',
+    },
+    '/downloads': {
+      de: '/downloads',
+      en: '/downloads',
     },
   },
 })
