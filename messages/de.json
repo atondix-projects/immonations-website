@@ -270,19 +270,11 @@
     "sections": [
       {
         "heading": "Anbieter",
-        "paragraphs": [
-          "Immonation GmbH",
-          "Nürnberger Straße 18",
-          "90513 Zirndorf",
-          "Deutschland"
-        ]
+        "paragraphs": ["Immonation GmbH", "Nürnberger Straße 18", "90513 Zirndorf", "Deutschland"]
       },
       {
         "heading": "Kontakt",
-        "paragraphs": [
-          "Telefon: 0911 / 212 838 90",
-          "E-Mail: info@immonations.de"
-        ]
+        "paragraphs": ["Telefon: 0911 / 212 838 90", "E-Mail: info@immonations.de"]
       },
       {
         "heading": "Vertreten durch",

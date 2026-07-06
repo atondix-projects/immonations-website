@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SITE } from './site'
 import { routing } from '@/i18n/routing'
+import { localizePath } from '@/lib/seo/routes'
 
 const OG_LOCALES: Record<(typeof routing.locales)[number], string> = {
   de: 'de_DE',
@@ -23,20 +24,12 @@ type BuildMetadataInput = {
 }
 
 export function buildMetadata(input: BuildMetadataInput): Metadata {
-  const {
-    locale,
-    path,
-    title,
-    description,
-    titleTemplate,
-    image,
-    noindex,
-    localizedPaths,
-  } = input
+  const { locale, path, title, description, titleTemplate, image, noindex, localizedPaths } = input
 
   const localePath = (loc: string) => {
-    const override = localizedPaths?.[loc as (typeof routing.locales)[number]]
-    return `/${loc}${override ?? path}`.replace(/\/$/, '') || `/${loc}`
+    const localeKey = loc as (typeof routing.locales)[number]
+    const override = localizedPaths?.[localeKey]
+    return `/${loc}${override ?? localizePath(path, localeKey)}`.replace(/\/$/, '') || `/${loc}`
   }
 
   const canonical = `${SITE.url}${localePath(locale)}`

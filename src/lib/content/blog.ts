@@ -9,6 +9,7 @@ export type PostFrontmatter = {
   title: string
   description: string
   date: string
+  translationKey?: string
   tags?: string[]
   cover?: string
   author?: string
@@ -55,7 +56,9 @@ export async function listPosts(locale: LocaleKey): Promise<PostSummary[]> {
  * Every (locale, slug) combination — used by the sitemap and `generateStaticParams`.
  */
 export async function listAllPosts(): Promise<PostSummary[]> {
-  const lists = await Promise.all(routing.locales.map((loc) => readPostsForLocale(loc as LocaleKey)))
+  const lists = await Promise.all(
+    routing.locales.map((loc) => readPostsForLocale(loc as LocaleKey)),
+  )
   return lists.flat()
 }
 
@@ -69,4 +72,23 @@ export async function getPost(locale: LocaleKey, slug: string): Promise<PostFull
   } catch {
     return null
   }
+}
+
+export async function getPostAlternates(
+  post: Pick<PostSummary, 'locale' | 'slug' | 'translationKey'>,
+): Promise<Partial<Record<LocaleKey, string>>> {
+  const paths: Partial<Record<LocaleKey, string>> = {
+    [post.locale]: post.slug,
+  }
+
+  if (!post.translationKey) return paths
+
+  const allPosts = await listAllPosts()
+  for (const candidate of allPosts) {
+    if (candidate.translationKey === post.translationKey) {
+      paths[candidate.locale] = candidate.slug
+    }
+  }
+
+  return paths
 }

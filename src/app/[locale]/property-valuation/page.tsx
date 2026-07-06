@@ -9,11 +9,11 @@ import { JsonLd } from '@/components/site/json-ld'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { SITE } from '@/lib/seo/site'
 import {
-  MarketingPage,
-  type MarketingFeature,
-  type MarketingStat,
-  type MarketingStep,
-} from '@/components/site/templates/marketing-page'
+  ValuationPage,
+  type ValuationFeature,
+  type ValuationStat,
+  type ValuationStep,
+} from '@/components/site/templates/valuation-page'
 import type { FaqItem } from '@/components/site/templates/faq-section'
 
 export const dynamic = 'force-static'
@@ -54,9 +54,10 @@ export default async function PropertyValuationPage({
 
   const t = await getTranslations('ValuationPage')
   const nav = await getTranslations('Nav')
-  const features = t.raw('features.items') as MarketingFeature[]
-  const steps = t.raw('steps.items') as MarketingStep[]
-  const stats = t.raw('stats') as MarketingStat[]
+  const features = t.raw('features.items') as ValuationFeature[]
+  const stepsRaw = t.raw('steps.items') as Array<{ title: string; text: string }>
+  const steps: ValuationStep[] = stepsRaw.map(({ title, text }) => ({ title, text }))
+  const stats = t.raw('stats') as ValuationStat[]
   const faqItems = t.raw('faq.items') as FaqItem[]
   const publicPath = localizePath('/property-valuation', locale)
   const url = `${SITE.url}/${locale}${publicPath}`
@@ -80,7 +81,7 @@ export default async function PropertyValuationPage({
           faqPage(faqItems.map((item) => ({ question: item.question, answer: item.answer }))),
         ]}
       />
-      <MarketingPage
+      <ValuationPage
         locale={locale}
         hero={{ eyebrow: t('hero.eyebrow'), title: t('hero.title'), lede: t('hero.lede') }}
         answer={t('answer')}

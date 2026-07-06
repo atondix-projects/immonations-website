@@ -6,13 +6,7 @@ import { Menu } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 
 type LinkHref = ComponentProps<typeof Link>['href']
 type NavGroup = { headingKey?: string; items: { labelKey: string; href: LinkHref }[] }
@@ -83,7 +77,7 @@ export function MobileNav({ light = false }: { light?: boolean }) {
           {NAV_GROUPS.map((group, groupIndex) => (
             <div key={group.headingKey ?? groupIndex} className="flex flex-col">
               {group.headingKey ? (
-                <span className="text-neutral-600 pb-1 pt-5 text-[11px] font-semibold uppercase tracking-[0.14em]">
+                <span className="pt-5 pb-1 text-[11px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
                   {t(group.headingKey)}
                 </span>
               ) : null}
@@ -100,7 +94,7 @@ export function MobileNav({ light = false }: { light?: boolean }) {
             </div>
           ))}
         </nav>
-        <div className="mt-auto px-6 pb-8 pt-4">
+        <div className="mt-auto px-6 pt-4 pb-8">
           <a
             href={`/${locale}#bewertung`}
             onClick={() => setOpen(false)}

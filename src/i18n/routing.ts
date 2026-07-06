@@ -7,8 +7,8 @@ export const routing = defineRouting({
   pathnames: {
     '/': '/',
     '/buy': {
-      de: '/kaufen',
-      en: '/buy',
+      de: '/immobilie-kaufen',
+      en: '/buy-property',
     },
     '/services': {
       de: '/leistungen',
@@ -19,12 +19,12 @@ export const routing = defineRouting({
       en: '/services/[slug]',
     },
     '/blog': {
-      de: '/blog',
-      en: '/blog',
+      de: '/ratgeber',
+      en: '/guides',
     },
     '/blog/[slug]': {
-      de: '/blog/[slug]',
-      en: '/blog/[slug]',
+      de: '/ratgeber/[slug]',
+      en: '/guides/[slug]',
     },
     '/about': {
       de: '/ueber-uns',

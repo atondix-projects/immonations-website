@@ -2,8 +2,7 @@ import type { ComponentProps } from 'react'
 import { Link } from '@/i18n/navigation'
 
 export const CONTAINER = 'mx-auto w-full max-w-[1240px] px-6 lg:px-10'
-export const EYEBROW =
-  'text-neutral-600 text-[13px] font-semibold uppercase tracking-[0.14em]'
+export const EYEBROW = 'text-neutral-600 text-[13px] font-semibold uppercase tracking-[0.14em]'
 export const SECTION_TITLE = 'font-serif text-3xl font-semibold leading-[1.2] md:text-[38px]'
 export const SECTION_LINK =
   'text-primary whitespace-nowrap text-base font-medium tracking-[0.04em] hover:underline'

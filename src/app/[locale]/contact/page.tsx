@@ -6,8 +6,9 @@ import { Mail, Phone } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
 import { JsonLd } from '@/components/site/json-ld'
-import { breadcrumbList, organization } from '@/lib/seo/jsonld'
+import { breadcrumbList, localBusiness } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
+import { PageHero } from '@/components/site/templates/page-hero'
 import { SITE } from '@/lib/seo/site'
 
 export const dynamic = 'force-static'
@@ -40,11 +41,7 @@ export async function generateMetadata({
   })
 }
 
-export default async function ContactPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
@@ -62,67 +59,71 @@ export default async function ContactPage({
             { name: nav('home'), url: `${SITE.url}/${locale}` },
             { name: nav('contact'), url: `${SITE.url}/${locale}${path}` },
           ]),
-          organization({ locale, url: SITE.url, name: SITE.legalName }),
+          localBusiness({
+            locale,
+            name: SITE.legalName,
+            address: SITE.address,
+            telephone: SITE.contact.phone,
+          }),
         ]}
       />
 
-      <section className="mx-auto grid w-full max-w-[1240px] gap-12 px-6 py-16 lg:grid-cols-[1fr_0.85fr] lg:px-10 lg:py-24">
-        <div>
-          <p className="text-primary text-sm font-semibold uppercase tracking-[0.16em]">
-            {t('eyebrow')}
-          </p>
-          <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance md:text-6xl">
-            {t('title')}
-          </h1>
-          <p className="text-muted-foreground mt-6 max-w-[68ch] text-lg leading-8">
-            {t('lede')}
-          </p>
-        </div>
+      <section className="border-border border-b">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-10 px-6 py-16 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-14 lg:px-10 lg:py-20">
+          <PageHero
+            eyebrow={t('eyebrow')}
+            title={t('title')}
+            lede={t('lede')}
+            className="!px-0 !py-0 lg:grid-cols-1"
+          />
 
-        <aside className="border-border bg-muted flex flex-col gap-5 border p-7">
-          <a
-            href={`tel:${SITE.contact.phone.replaceAll(' ', '')}`}
-            className="border-border bg-white flex items-center gap-4 border p-4 transition-colors hover:border-foreground"
-          >
-            <Phone className="text-primary size-5" />
-            <span className="flex flex-col">
-              <span className="text-muted-foreground text-sm">{t('phoneLabel')}</span>
-              <span className="font-semibold">{SITE.contact.phone}</span>
-            </span>
-          </a>
-          <a
-            href={`mailto:${SITE.contact.email}`}
-            className="border-border bg-white flex items-center gap-4 border p-4 transition-colors hover:border-foreground"
-          >
-            <Mail className="text-primary size-5" />
-            <span className="flex flex-col">
-              <span className="text-muted-foreground text-sm">{t('emailLabel')}</span>
-              <span className="font-semibold">{SITE.contact.email}</span>
-            </span>
-          </a>
-          <Link
-            href="/services"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex justify-center px-6 py-3 text-sm font-semibold transition-colors"
-          >
-            {t('serviceLink')}
-          </Link>
-        </aside>
+          <aside className="flex flex-col gap-4 lg:sticky lg:top-28">
+            <a
+              href={`tel:${SITE.contact.phone.replaceAll(' ', '')}`}
+              className="border-border hover:border-foreground flex items-center gap-4 border bg-white p-5 transition-colors"
+            >
+              <Phone className="text-primary size-5 shrink-0" />
+              <span className="flex flex-col">
+                <span className="text-muted-foreground text-sm">{t('phoneLabel')}</span>
+                <span className="font-semibold">{SITE.contact.phone}</span>
+              </span>
+            </a>
+            <a
+              href={`mailto:${SITE.contact.email}`}
+              className="border-border hover:border-foreground flex items-center gap-4 border bg-white p-5 transition-colors"
+            >
+              <Mail className="text-primary size-5 shrink-0" />
+              <span className="flex flex-col">
+                <span className="text-muted-foreground text-sm">{t('emailLabel')}</span>
+                <span className="font-semibold">{SITE.contact.email}</span>
+              </span>
+            </a>
+            <Link
+              href="/services"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex justify-center px-6 py-3 text-sm font-semibold transition-colors"
+            >
+              {t('serviceLink')}
+            </Link>
+          </aside>
+        </div>
       </section>
 
-      <section className="border-border bg-muted border-y py-16">
+      <section className="py-16 md:py-20">
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
           <h2 className="font-serif text-3xl font-semibold">{t('steps.title')}</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <ol className="mt-10 grid max-w-[760px] gap-8">
             {steps.map((step, index) => (
-              <article key={step.title} className="border-border bg-white p-7">
-                <span className="text-primary font-serif text-sm font-semibold">
-                  {String(index + 1).padStart(2, '0')}
+              <li key={step.title} className="grid gap-3 md:grid-cols-[3rem_1fr] md:gap-6">
+                <span className="text-primary font-serif text-2xl font-semibold tabular-nums">
+                  {index + 1}
                 </span>
-                <h3 className="mt-3 text-xl font-semibold">{step.title}</h3>
-                <p className="text-muted-foreground mt-3 leading-7">{step.text}</p>
-              </article>
+                <div>
+                  <h3 className="text-lg font-semibold">{step.title}</h3>
+                  <p className="text-muted-foreground mt-2 leading-7">{step.text}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
     </main>

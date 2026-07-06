@@ -270,19 +270,11 @@
     "sections": [
       {
         "heading": "Provider",
-        "paragraphs": [
-          "Immonation GmbH",
-          "Nürnberger Straße 18",
-          "90513 Zirndorf",
-          "Germany"
-        ]
+        "paragraphs": ["Immonation GmbH", "Nürnberger Straße 18", "90513 Zirndorf", "Germany"]
       },
       {
         "heading": "Contact",
-        "paragraphs": [
-          "Phone: +49 911 212 838 90",
-          "Email: info@immonations.de"
-        ]
+        "paragraphs": ["Phone: +49 911 212 838 90", "Email: info@immonations.de"]
       },
       {
         "heading": "Represented by",
@@ -297,7 +289,9 @@
       },
       {
         "heading": "VAT ID",
-        "paragraphs": ["VAT identification number pursuant to § 27a UStG: [to be added before launch]"]
+        "paragraphs": [
+          "VAT identification number pursuant to § 27a UStG: [to be added before launch]"
+        ]
       },
       {
         "heading": "Supervisory authority",

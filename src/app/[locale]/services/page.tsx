@@ -9,7 +9,8 @@ import { listServices } from '@/lib/content/services'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { JsonLd } from '@/components/site/json-ld'
 import { breadcrumbList } from '@/lib/seo/jsonld'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { PageHero } from '@/components/site/templates/page-hero'
+import { CtaBand } from '@/components/site/templates/cta-band'
 import { SITE } from '@/lib/seo/site'
 
 export const dynamic = 'force-static'
@@ -48,9 +49,26 @@ export default async function ServicesIndexPage({
 
   const services = await listServices(locale)
   const t = await getTranslations('Nav')
+  const copy =
+    locale === 'de'
+      ? {
+          eyebrow: 'Leistungen',
+          lede: 'Vier Leistungsbereiche, die wir mit derselben Sorgfalt liefern wie ein einzelnes Projekt.',
+          ctaTitle: 'Unsicher, wo Sie anfangen sollen?',
+          ctaText: 'Im Erstgespräch klären wir Ziel, Zeitplan und den passenden Einstieg.',
+          ctaPrimary: 'Erstgespräch vereinbaren',
+        }
+      : {
+          eyebrow: 'Services',
+          lede: 'Four service areas delivered with the care of a single project.',
+          ctaTitle: 'Not sure where to start?',
+          ctaText:
+            'In an initial conversation we clarify your goal, timeline, and the right entry point.',
+          ctaPrimary: 'Book initial consultation',
+        }
 
   return (
-    <section className="container mx-auto px-6 py-16">
+    <div className="bg-background">
       <JsonLd
         data={breadcrumbList([
           { name: t('home'), url: `${SITE.url}/${locale}` },
@@ -60,44 +78,48 @@ export default async function ServicesIndexPage({
           },
         ])}
       />
-      <header className="mb-12 max-w-2xl">
-        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">{t('services')}</h1>
-        <p className="text-muted-foreground mt-4 text-lg">
-          {locale === 'de'
-            ? 'Vier Leistungsbereiche, die wir mit derselben Sorgfalt liefern wie ein einzelnes Projekt.'
-            : 'Four service areas delivered with the care of a single project.'}
-        </p>
-      </header>
-      <div className="grid gap-6 md:grid-cols-2">
-        {services.map((svc) => (
-          <Card key={svc.slug} className="group h-full">
-            <CardHeader>
-              <CardTitle className="text-2xl">
+
+      <PageHero eyebrow={copy.eyebrow} title={t('services')} lede={copy.lede} />
+
+      <section className="border-border border-t py-12 md:py-16">
+        <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+          <ul className="divide-border divide-y">
+            {services.map((svc) => (
+              <li key={svc.slug}>
                 <Link
                   href={{ pathname: '/services/[slug]', params: { slug: svc.slug } }}
-                  className="hover:text-foreground/80 flex items-start justify-between gap-4"
+                  className="group grid gap-4 py-8 transition-colors md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-10"
                 >
-                  {svc.title}
-                  <ArrowUpRight className="text-muted-foreground group-hover:text-foreground mt-1 size-5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <div>
+                    <h2 className="group-hover:text-primary font-serif text-2xl leading-tight font-semibold transition-colors md:text-3xl">
+                      {svc.title}
+                    </h2>
+                    <p className="text-muted-foreground mt-3 max-w-[62ch] text-[15px] leading-7">
+                      {svc.lede}
+                    </p>
+                    <ul className="text-muted-foreground mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                      {svc.hero.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <ArrowUpRight
+                    className="text-primary size-6 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                  />
                 </Link>
-              </CardTitle>
-              <CardDescription className="text-base">{svc.lede}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-muted-foreground space-y-1.5 text-sm">
-                {svc.hero.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="before:bg-foreground/40 relative pl-4 before:absolute before:top-2 before:left-0 before:size-1.5 before:rounded-full"
-                  >
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <CtaBand
+        title={copy.ctaTitle}
+        text={copy.ctaText}
+        primary={{ label: copy.ctaPrimary, href: '/contact' }}
+        secondary={{ label: t('mega.valuation'), href: '/property-valuation' }}
+      />
+    </div>
   )
 }

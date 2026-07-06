@@ -1,29 +1,41 @@
+import { cn } from '@/lib/utils'
+
 /**
- * Light page hero for content/sub pages (no video, no dark surface).
- * Matches the About page's visual language: eyebrow, serif display title,
- * optional lede in an accent-bordered column.
+ * Light page hero for content and marketing sub-pages.
+ * Split layout: display title left, optional lede right — no decorative side stripes.
  */
 export function PageHero({
   eyebrow,
   title,
   lede,
+  className,
 }: {
-  eyebrow: string
+  eyebrow?: string
   title: string
   lede?: string
+  className?: string
 }) {
   return (
-    <section className="mx-auto grid w-full max-w-[1240px] gap-12 px-6 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-24">
+    <section
+      className={cn(
+        'mx-auto grid w-full max-w-[1240px] gap-8 px-6 py-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-14 lg:px-10 lg:py-20',
+        className,
+      )}
+    >
       <div>
-        <p className="text-primary text-sm font-semibold uppercase tracking-[0.16em]">{eyebrow}</p>
-        <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] text-balance md:text-6xl">
+        {eyebrow ? (
+          <p className="text-primary text-[13px] font-semibold tracking-[0.16em] uppercase">
+            {eyebrow}
+          </p>
+        ) : null}
+        <h1
+          className={`font-serif text-4xl leading-[1.08] font-semibold text-balance md:text-5xl lg:text-[56px] ${eyebrow ? 'mt-4' : ''}`}
+        >
           {title}
         </h1>
       </div>
       {lede ? (
-        <div className="border-accent flex flex-col gap-5 border-l-2 pl-6 md:pl-8">
-          <p className="text-muted-foreground text-lg leading-8">{lede}</p>
-        </div>
+        <p className="text-muted-foreground max-w-[62ch] text-lg leading-[1.65] lg:pb-1">{lede}</p>
       ) : null}
     </section>
   )

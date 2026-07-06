@@ -1,12 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import {
-  Building2,
-  Calculator,
-  KeyRound,
-  Landmark,
-  Search,
-  TrendingUp,
-} from 'lucide-react'
+import { Building2, Calculator, KeyRound, Landmark, Search, TrendingUp } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { CONTAINER, SectionHeader } from './section-shell'
 
@@ -19,7 +12,10 @@ export async function ServicesOverview() {
   const items = t.raw('items') as ServiceItem[]
 
   return (
-    <section id="leistungen" className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24">
+    <section
+      id="leistungen"
+      className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24"
+    >
       <div className={CONTAINER}>
         <SectionHeader
           eyebrow={t('eyebrow')}
@@ -36,7 +32,7 @@ export async function ServicesOverview() {
                 className="border-border hover:border-foreground group flex flex-col gap-4 border bg-white p-7 transition-colors"
               >
                 <Icon className="text-primary size-6" strokeWidth={1.75} aria-hidden />
-                <h3 className="text-[21px] font-semibold leading-tight">{item.title}</h3>
+                <h3 className="text-[21px] leading-tight font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground text-[15px] leading-[1.55]">{item.text}</p>
                 <span className="text-primary mt-auto text-sm font-medium tracking-[0.04em] opacity-0 transition-opacity group-hover:opacity-100">
                   {t('itemLink')}

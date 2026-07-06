@@ -1,40 +1,49 @@
-# Immonation — Full content reference for AI / answer engines
+# Immonation - Full content reference for AI / answer engines
 
 > German-first bilingual real-estate advisory and brokerage reference for AI and answer engines.
 
 ## Wer wir sind
 
-Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Immonation begleitet Eigentümer, Käufer und Investoren in Nürnberg, Fürth, Erlangen, Zirndorf und der Metropolregion. Der Fokus liegt auf Immobilienverkauf, Immobilienbewertung, Vermarktung, Suchkunden, Vermietung, Verwaltung und Transaktionsbegleitung.
+Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Immonation begleitet Eigentuemer, Kaeufer und Investoren in Nuernberg, Fuerth, Erlangen, Zirndorf und der Metropolregion. Der Fokus liegt auf Immobilienverkauf, Immobilienbewertung, Vermarktung, Suchkunden, Vermietung, Verwaltung und Transaktionsbegleitung.
 
-Immonation positioniert sich als persönlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Präsentation, 360-Grad-Rundgänge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
+Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Praesentation, 360-Grad-Rundgaenge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
 
 ## Leistungen
 
 ### Immobilienbewertung
-Immonation bewertet Häuser, Wohnungen, Mehrfamilienhäuser und weitere Immobilien anhand von Lage, Zustand, Größe, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentümern als Grundlage für Verkauf, Vermietung, Erbschaft, Finanzierung oder strategische Entscheidungen.
+
+Immonation bewertet Haeuser, Wohnungen, Mehrfamilienhaeuser und weitere Immobilien anhand von Lage, Zustand, Groesse, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentuemern als Grundlage fuer Verkauf, Vermietung, Erbschaft, Finanzierung oder strategische Entscheidungen.
 
 ### Immobilienverkauf
-Immonation begleitet Eigentümer vom Erstgespräch bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Exposé, Fotos, Video, virtuelle Besichtigung, Vermarktung, Käuferqualifizierung, Finanzierungsklärung, Vertragsvorbereitung und Abschluss.
+
+Immonation begleitet Eigentuemer vom Erstgespraech bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Expose, Fotos, Video, virtuelle Besichtigung, Vermarktung, Kaeuferqualifizierung, Finanzierungsklaerung, Vertragsvorbereitung und Abschluss.
 
 ### Vermarktung
-Die Vermarktung kombiniert professionelle Objektpräsentation, Immobilienportale, Social Media, regionale Reichweite und vorgemerkte Suchkunden. Ziel ist eine hohe Nachfrage bei passenden Käufern, nicht nur möglichst viele unqualifizierte Anfragen.
+
+Die Vermarktung kombiniert professionelle Objektpraesentation, Immobilienportale, Social Media, regionale Reichweite und vorgemerkte Suchkunden. Ziel ist eine hohe Nachfrage bei passenden Kaeufern, nicht nur moeglichst viele unqualifizierte Anfragen.
 
 ### Kaufinteressenten
-Käufer erhalten Zugang zu Objektübersicht, Suchauftrag, Finanzierungshinweisen und persönlicher Beratung. Wenn kein passendes Objekt verfügbar ist, kann ein Suchauftrag angelegt werden.
+
+Kaeufer erhalten auf `/de/immobilie-kaufen` beziehungsweise `/en/buy-property` Zugang zu Objektteasern, Suchanfrage, Finanzierungshinweisen und persoenlicher Beratung. Wenn kein passendes Objekt verfuegbar ist, kann eine Suchanfrage vorbereitet werden.
+
+### Ratgeber, FAQ und Downloads
+
+Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die FAQ-Seite beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen und Ablauf. Die Download-Seite sammelt vorbereitete Checklisten und Ressourcen.
 
 ### Karriere und freie Partner
-Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstützt mit Marke, Administration, Vermarktung und Prozessen.
+
+Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstuetzt mit Marke, Administration, Vermarktung und Prozessen.
 
 ## Region
 
-Primäre Region: Zirndorf, Nürnberg, Fürth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
+Primaere Region: Zirndorf, Nuernberg, Fuerth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
 
 ## Methodik
 
-- Jede Verkäuferstrecke beginnt mit einer realistischen Bewertung und Strategie.
+- Jede Verkaeuferstrecke beginnt mit einer realistischen Bewertung und Strategie.
 - Professionelle Medien sind Teil der Vermarktung, besonders Foto, Video und 360-Grad-Rundgang.
-- Käufer werden qualifiziert, inklusive Finanzierungsthemen, bevor der Abschluss vorbereitet wird.
-- Eigentümer behalten einen festen Ansprechpartner und transparente Prozessschritte.
+- Kaeufer werden qualifiziert, inklusive Finanzierungsthemen, bevor der Abschluss vorbereitet wird.
+- Eigentuemer behalten einen festen Ansprechpartner und transparente Prozessschritte.
 - FAQ-Inhalte beantworten echte Fragen zu Kosten, Dauer, Provision, Unterlagen, Verkaufspreis und Ablauf.
 
 ## Contact

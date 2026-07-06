@@ -16,11 +16,7 @@ import { GroupIntro } from '@/components/site/home/group-intro'
 import { Partners } from '@/components/site/home/partners'
 import { ContactBooking } from '@/components/site/home/contact-booking'
 import { ProcessTimeline } from '@/components/site/home/process-timeline'
-import {
-  CONTAINER,
-  SECTION_TITLE,
-  SectionHeader,
-} from '@/components/site/home/section-shell'
+import { CONTAINER, SECTION_TITLE, SectionHeader } from '@/components/site/home/section-shell'
 
 export const dynamic = 'force-static'
 
@@ -37,11 +33,7 @@ type ReferenceItem = {
   story: string
 }
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
@@ -66,7 +58,7 @@ export default async function HomePage({
       <section className="bg-background py-16 md:py-24">
         <div className={`${CONTAINER} grid items-start gap-10 lg:grid-cols-2 lg:gap-16`}>
           <h2 className={`${SECTION_TITLE} text-balance`}>{t('intro.title')}</h2>
-          <div className="border-accent flex flex-col gap-4 border-l-2 pl-6 md:pl-8">
+          <div className="flex flex-col gap-4">
             <p className="text-muted-foreground max-w-[68ch] text-[17px] leading-[1.6]">
               {t('intro.p1')}
             </p>
@@ -107,24 +99,22 @@ export default async function HomePage({
               >
                 <div className="bg-brand-100/60 relative flex h-[200px] items-center justify-center">
                   {/* Bildfläche: echtes Referenzfoto folgt */}
-                  <span className="text-neutral-600 text-[13px]">
-                    {t('references.photoAlt')}
-                  </span>
-                  <span className="bg-surface-dark absolute left-0 top-0 px-3.5 py-[7px] text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                  <span className="text-[13px] text-neutral-600">{t('references.photoAlt')}</span>
+                  <span className="bg-surface-dark absolute top-0 left-0 px-3.5 py-[7px] text-[11px] font-semibold tracking-[0.12em] text-white uppercase">
                     {reference.badge}
                   </span>
                 </div>
                 <div className="flex flex-col gap-2.5 p-5 pb-6">
                   <h3 className="font-serif text-xl font-semibold">{reference.title}</h3>
-                  <div className="border-neutral-100 grid grid-cols-2 gap-2 border-t pt-3">
+                  <div className="grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3">
                     <div className="flex flex-col">
-                      <span className="text-neutral-600 text-[13px]">
+                      <span className="text-[13px] text-neutral-600">
                         {t('references.durationLabel')}
                       </span>
                       <span className="text-[17px] font-semibold">{reference.duration}</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-neutral-600 text-[13px]">
+                      <span className="text-[13px] text-neutral-600">
                         {t('references.resultLabel')}
                       </span>
                       <span className="text-primary text-[17px] font-semibold">
@@ -161,20 +151,20 @@ export default async function HomePage({
       <section id="bewertung" className="bg-surface-dark scroll-mt-24 py-16 md:py-24">
         <div className={`${CONTAINER} grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16`}>
           <div className="flex flex-col gap-5">
-            <span className="text-brand-200 text-[13px] font-semibold uppercase tracking-[0.14em]">
+            <span className="text-brand-200 text-[13px] font-semibold tracking-[0.14em] uppercase">
               {t('valuation.eyebrow')}
             </span>
-            <h2 className="font-serif text-3xl font-semibold leading-[1.15] text-balance text-white md:text-[44px]">
+            <h2 className="font-serif text-3xl leading-[1.15] font-semibold text-balance text-white md:text-[44px]">
               {t('valuation.title')}
             </h2>
-            <p className="text-neutral-400 max-w-[56ch] text-[17px] leading-[1.6]">
+            <p className="max-w-[56ch] text-[17px] leading-[1.6] text-neutral-400">
               {t('valuation.subtitle')}
             </p>
             <figure className="border-accent mt-2 flex flex-col gap-2.5 border-l-2 pl-6">
-              <blockquote className="text-neutral-100 font-serif max-w-[50ch] text-xl italic leading-[1.45] md:text-[23px]">
+              <blockquote className="max-w-[50ch] font-serif text-xl leading-[1.45] text-neutral-100 italic md:text-[23px]">
                 {t('valuation.quote')}
               </blockquote>
-              <figcaption className="text-neutral-500 text-sm">
+              <figcaption className="text-sm text-neutral-500">
                 {t('valuation.quoteAuthor')}
               </figcaption>
             </figure>

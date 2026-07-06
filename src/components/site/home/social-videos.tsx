@@ -50,7 +50,7 @@ export async function SocialVideos() {
                 <span className="relative font-serif text-3xl font-semibold text-white">
                   {platform.name}
                 </span>
-                <span className="bg-brand-500 absolute left-0 top-0 px-3.5 py-[7px] text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <span className="bg-brand-500 absolute top-0 left-0 px-3.5 py-[7px] text-[11px] font-semibold tracking-[0.12em] text-white uppercase">
                   {platform.handle}
                 </span>
               </div>
@@ -60,7 +60,10 @@ export async function SocialVideos() {
                 </p>
                 <span className="text-primary mt-auto inline-flex items-center gap-1.5 text-sm font-medium tracking-[0.04em]">
                   {t('followLabel')}
-                  <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
+                  <ArrowUpRight
+                    className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden
+                  />
                 </span>
               </div>
             </a>

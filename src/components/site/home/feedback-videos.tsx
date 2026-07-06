@@ -25,7 +25,11 @@ export async function FeedbackVideos() {
           <ul className="flex flex-col gap-3">
             {badges.map((badge) => (
               <li key={badge} className="flex items-center gap-3">
-                <BadgeCheck className="text-primary size-5 shrink-0" strokeWidth={1.75} aria-hidden />
+                <BadgeCheck
+                  className="text-primary size-5 shrink-0"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
                 <span className="text-[15px] font-medium">{badge}</span>
               </li>
             ))}

@@ -12,7 +12,7 @@ export async function Partners() {
       <div className={CONTAINER}>
         <div className="mb-10 flex flex-col gap-3.5">
           <span className={EYEBROW}>{t('eyebrow')}</span>
-          <h2 className="font-serif text-2xl font-semibold leading-[1.2] md:text-[30px]">
+          <h2 className="font-serif text-2xl leading-[1.2] font-semibold md:text-[30px]">
             {t('title')}
           </h2>
           <p className="text-muted-foreground max-w-[68ch] text-[16px] leading-[1.6]">
@@ -26,10 +26,8 @@ export async function Partners() {
               key={item.name}
               className="border-border flex flex-col items-center gap-2 border bg-white px-6 py-8 text-center"
             >
-              <span className="font-serif text-2xl font-semibold tracking-tight">
-                {item.name}
-              </span>
-              <span className="text-neutral-600 text-[13px] leading-snug">{item.role}</span>
+              <span className="font-serif text-2xl font-semibold tracking-tight">{item.name}</span>
+              <span className="text-[13px] leading-snug text-neutral-600">{item.role}</span>
             </div>
           ))}
         </div>

@@ -24,10 +24,10 @@ export async function GroupIntro() {
               key={company.name}
               className="border-border border-t-accent flex flex-col gap-3.5 border border-t-2 bg-white p-7"
             >
-              <span className="text-neutral-600 text-[13px] font-semibold uppercase tracking-[0.14em]">
+              <span className="text-[13px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
                 {company.role}
               </span>
-              <h3 className="font-serif text-xl font-semibold leading-tight">{company.name}</h3>
+              <h3 className="font-serif text-xl leading-tight font-semibold">{company.name}</h3>
               <p className="text-muted-foreground text-[15px] leading-[1.55]">{company.text}</p>
             </div>
           ))}

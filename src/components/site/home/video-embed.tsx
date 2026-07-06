@@ -45,9 +45,7 @@ export function VideoEmbed({
         <Play className="size-6 fill-current" aria-hidden />
       </span>
       <span className="relative font-serif text-xl font-semibold md:text-2xl">{title}</span>
-      <span className="text-neutral-400 relative max-w-[46ch] px-6 text-[13px]">
-        {consentNote}
-      </span>
+      <span className="relative max-w-[46ch] px-6 text-[13px] text-neutral-400">{consentNote}</span>
       <span className="sr-only">{playLabel}</span>
     </button>
   )

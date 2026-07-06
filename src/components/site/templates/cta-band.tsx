@@ -16,11 +16,11 @@ export function CtaBand({ title, text, primary, secondary }: CtaBandProps) {
     <section className="bg-surface-dark py-16 md:py-20">
       <div className="mx-auto flex w-full max-w-[1240px] flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center lg:px-10">
         <div className="flex flex-col gap-3">
-          <h2 className="font-serif text-3xl font-semibold leading-[1.15] text-balance text-white md:text-[38px]">
+          <h2 className="font-serif text-3xl leading-[1.15] font-semibold text-balance text-white md:text-[38px]">
             {title}
           </h2>
           {text ? (
-            <p className="text-neutral-400 max-w-[56ch] text-[17px] leading-[1.6]">{text}</p>
+            <p className="max-w-[56ch] text-[17px] leading-[1.6] text-neutral-400">{text}</p>
           ) : null}
         </div>
         <div className="flex flex-wrap gap-4">

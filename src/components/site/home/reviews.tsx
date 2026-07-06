@@ -26,17 +26,17 @@ function RatingCard({
 }) {
   return (
     <div className="border-border flex flex-col gap-4 border bg-white p-7">
-      <span className="text-[13px] font-semibold uppercase tracking-[0.14em]">{name}</span>
+      <span className="text-[13px] font-semibold tracking-[0.14em] uppercase">{name}</span>
       <div className="flex items-end gap-3">
-        <span className="font-serif text-5xl font-semibold leading-none">{rating}</span>
-        <span className="text-neutral-600 pb-1 text-sm">{suffix}</span>
+        <span className="font-serif text-5xl leading-none font-semibold">{rating}</span>
+        <span className="pb-1 text-sm text-neutral-600">{suffix}</span>
       </div>
       <div className="text-brand-600 flex gap-1" aria-hidden>
         {Array.from({ length: 5 }, (_, index) => (
           <Star key={index} className="size-4 fill-current" />
         ))}
       </div>
-      <span className="text-neutral-600 text-[15px]">{count}</span>
+      <span className="text-[15px] text-neutral-600">{count}</span>
       <a
         href={href}
         target="_blank"
@@ -54,7 +54,10 @@ export async function Reviews() {
   const items = t.raw('items') as ReviewItem[]
 
   return (
-    <section id="bewertungen" className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24">
+    <section
+      id="bewertungen"
+      className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24"
+    >
       <div className={CONTAINER}>
         <SectionHeader eyebrow={t('eyebrow')} title={t('title')} />
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_1.6fr]">
@@ -80,10 +83,10 @@ export async function Reviews() {
                 key={item.source}
                 className="border-accent flex flex-col gap-2 border-l-2 pl-6"
               >
-                <blockquote className="font-serif text-lg italic leading-[1.45] md:text-xl">
+                <blockquote className="font-serif text-lg leading-[1.45] italic md:text-xl">
                   {item.quote}
                 </blockquote>
-                <figcaption className="text-neutral-600 text-sm">{item.source}</figcaption>
+                <figcaption className="text-sm text-neutral-600">{item.source}</figcaption>
               </figure>
             ))}
           </div>

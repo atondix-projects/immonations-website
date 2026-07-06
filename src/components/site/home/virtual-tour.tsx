@@ -24,7 +24,7 @@ export async function VirtualTour() {
                 360°
               </span>
               <span className="text-lg font-medium text-white">{t('demoLabel')}</span>
-              <span className="text-neutral-400 text-[13px]">{t('demoNote')}</span>
+              <span className="text-[13px] text-neutral-400">{t('demoNote')}</span>
             </div>
           </div>
           <div className="border-border grid grid-cols-3 divide-x border bg-white">
@@ -33,7 +33,7 @@ export async function VirtualTour() {
                 <span className="font-serif text-2xl font-semibold md:text-[28px]">
                   {stat.value}
                 </span>
-                <span className="text-neutral-600 text-[13px] leading-snug">{stat.label}</span>
+                <span className="text-[13px] leading-snug text-neutral-600">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -50,7 +50,11 @@ export async function VirtualTour() {
               const Icon = BULLET_ICONS[index] ?? Eye
               return (
                 <div key={bullet.title} className="flex gap-4">
-                  <Icon className="text-primary mt-0.5 size-5 shrink-0" strokeWidth={1.75} aria-hidden />
+                  <Icon
+                    className="text-primary mt-0.5 size-5 shrink-0"
+                    strokeWidth={1.75}
+                    aria-hidden
+                  />
                   <div className="flex flex-col gap-1">
                     <h3 className="text-[17px] font-semibold">{bullet.title}</h3>
                     <p className="text-muted-foreground text-[15px] leading-[1.55]">

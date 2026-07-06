@@ -33,11 +33,18 @@ export async function ContactBooking() {
           <div className="flex flex-col gap-5">
             {contactRows.map((row) => (
               <div key={row.label} className="flex items-start gap-4">
-                <row.icon className="text-primary mt-1 size-5 shrink-0" strokeWidth={1.75} aria-hidden />
+                <row.icon
+                  className="text-primary mt-1 size-5 shrink-0"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
                 <div className="flex flex-col">
-                  <span className="text-neutral-600 text-[13px]">{row.label}</span>
+                  <span className="text-[13px] text-neutral-600">{row.label}</span>
                   {row.href ? (
-                    <a href={row.href} className="hover:text-primary text-[17px] font-semibold transition-colors">
+                    <a
+                      href={row.href}
+                      className="hover:text-primary text-[17px] font-semibold transition-colors"
+                    >
                       {row.value}
                     </a>
                   ) : (
@@ -51,7 +58,7 @@ export async function ContactBooking() {
 
         <div className="border-border border-t-accent flex flex-col gap-5 border border-t-2 bg-white p-8 md:p-9">
           <CalendarCheck className="text-primary size-7" strokeWidth={1.75} aria-hidden />
-          <h3 className="font-serif text-2xl font-semibold leading-tight md:text-[26px]">
+          <h3 className="font-serif text-2xl leading-tight font-semibold md:text-[26px]">
             {t('bookingTitle')}
           </h3>
           <p className="text-muted-foreground text-[15px] leading-[1.55]">{t('bookingText')}</p>
@@ -61,7 +68,7 @@ export async function ContactBooking() {
           >
             {t('bookingCta')}
           </Link>
-          <span className="text-neutral-600 text-[13px]">{t('bookingNote')}</span>
+          <span className="text-[13px] text-neutral-600">{t('bookingNote')}</span>
         </div>
       </div>
     </section>

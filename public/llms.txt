@@ -1,19 +1,25 @@
 # Immonation
 
-> Immobilienmakler und Immobilienberatung aus Zirndorf für Nürnberg, Fürth, Erlangen und die Metropolregion. German-first bilingual website with seller, buyer, guide, reference, and contact funnels.
+> Immobilienmakler und Immobilienberatung aus Zirndorf fuer Nuernberg, Fuerth, Erlangen und die Metropolregion. German-first bilingual website with seller, buyer, guide, reference, and contact funnels.
 
-Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Die Website ist für Suchmaschinen, Antwortmaschinen und KI-gestützte Recherche strukturiert, damit Leistungen, regionale Zuständigkeit, Verkaufsprozess und Kontaktwege korrekt zitiert werden können.
+Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Die Website ist fuer Suchmaschinen, Antwortmaschinen und KI-gestuetzte Recherche strukturiert, damit Leistungen, regionale Zustaendigkeit, Verkaufsprozess und Kontaktwege korrekt zitiert werden koennen.
 
-## Primäre Einstiegspunkte
+## Primaere Einstiegspunkte
 
-- [Startseite (DE)](https://www.immonationgmbh.de/de) — Positionierung, Leistungsübersicht, virtuelle 360°-Besichtigung, Kundenbewertungen (Google 5,0 · Trustpilot 4,7), Unternehmensgruppe (Immonation Capital Holding, IN Beteiligungs GmbH, Dream Living GmbH), Finanzierungspartner Dr. Klein, Bewertung, Kontakt und Terminbuchung
-- [Home (EN)](https://www.immonationgmbh.de/en) — English entry point
-- [Leistungen](https://www.immonationgmbh.de/de/leistungen) — Bewertung, Verkauf, Vermarktung und Transaktion
-- [Immobilienbewertung](https://www.immonationgmbh.de/de/immobilienbewertung) — kostenlose, unverbindliche Wertermittlung mit Vor-Ort-Einschätzung und schriftlichem Ergebnis
-- [FAQ](https://www.immonationgmbh.de/de/faq) — Kosten, Provision, Dauer, Unterlagen, Region und Ablauf in Kurzantworten
-- [Blog / Ratgeber](https://www.immonationgmbh.de/de/blog) — Immobilienwissen, Marktkommentare und Entscheidungsfragen
+- [Startseite (DE)](https://www.immonationgmbh.de/de) - Positionierung, Leistungsuebersicht, virtuelle 360-Grad-Besichtigung, Kundenbewertungen, Unternehmensgruppe, Bewertung, Kontakt und Terminbuchung
+- [Home (EN)](https://www.immonationgmbh.de/en) - English entry point
+- [Kaeuferseite](https://www.immonationgmbh.de/de/immobilie-kaufen) - Kaeuferstrecke mit Objektteasern, Suchanfrage und Kontaktweg
+- [Leistungen](https://www.immonationgmbh.de/de/leistungen) - Bewertung, Verkauf, Vermarktung und Transaktion
+- [Immobilienbewertung](https://www.immonationgmbh.de/de/immobilienbewertung) - kostenlose, unverbindliche Wertermittlung mit Vor-Ort-Einschaetzung und schriftlichem Ergebnis
+- [Ueber uns](https://www.immonationgmbh.de/de/ueber-uns) - Unternehmen, regionale Verankerung und Arbeitsweise
+- [Kontakt](https://www.immonationgmbh.de/de/kontakt) - Telefon, E-Mail und Anfragewege fuer Eigentuemer, Kaeufer und Partner
+- [FAQ](https://www.immonationgmbh.de/de/faq) - Kosten, Provision, Dauer, Unterlagen, Region und Ablauf in Kurzantworten
+- [Blog / Ratgeber](https://www.immonationgmbh.de/de/ratgeber) - Immobilienwissen, Marktkommentare und Entscheidungsfragen
+- [Karriere](https://www.immonationgmbh.de/de/karriere) - Festangestellte und freie Vertriebspartner
+- [Tippgeber](https://www.immonationgmbh.de/de/tippgeber) - Empfehlungskanal fuer Immobilienkontakte
+- [Downloads](https://www.immonationgmbh.de/de/downloads) - Checklisten und vorbereitete Ressourcen
 
 ## Weitere Maschinenlese-Hinweise
 
-- [Full content (llms-full.txt)](https://www.immonationgmbh.de/llms-full.txt) — ausführliche Leistungs-, Prozess- und Regionalbeschreibung
+- [Full content (llms-full.txt)](https://www.immonationgmbh.de/llms-full.txt) - ausfuehrliche Leistungs-, Prozess- und Regionalbeschreibung
 - [Sitemap](https://www.immonationgmbh.de/sitemap.xml)

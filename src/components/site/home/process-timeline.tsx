@@ -1,12 +1,7 @@
 'use client'
 
 import { type ComponentProps, useRef } from 'react'
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-} from 'motion/react'
+import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react'
 import {
   Camera,
   Handshake,
@@ -63,10 +58,7 @@ export function ProcessTimeline({
   })
 
   return (
-    <section
-      id="verkaufen"
-      className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24"
-    >
+    <section id="verkaufen" className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-24">
       <div className={CONTAINER}>
         <SectionHeader eyebrow={eyebrow} title={title} link={link} />
 
@@ -96,7 +88,7 @@ export function ProcessTimeline({
                   className="relative grid grid-cols-[48px_1fr] gap-x-5 lg:grid-cols-2 lg:gap-x-0"
                 >
                   {/* Node marker: in-flow on mobile, centered on the spine on lg */}
-                  <div className="z-10 flex justify-center lg:absolute lg:left-1/2 lg:top-0 lg:-translate-x-1/2">
+                  <div className="z-10 flex justify-center lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2">
                     <span className="border-accent text-accent flex size-12 items-center justify-center rounded-full border-2 bg-white shadow-sm">
                       <Icon className="size-5" strokeWidth={1.75} aria-hidden />
                     </span>
@@ -114,9 +106,7 @@ export function ProcessTimeline({
                     transition={{ duration: 0.6, ease: EASE, delay: 0.05 }}
                     className={cn(
                       'border-border border-t-accent relative flex flex-col gap-3 border border-t-2 bg-white p-7',
-                      isLeft
-                        ? 'lg:col-start-1 lg:mr-10 lg:text-left'
-                        : 'lg:col-start-2 lg:ml-10',
+                      isLeft ? 'lg:col-start-1 lg:mr-10 lg:text-left' : 'lg:col-start-2 lg:ml-10',
                     )}
                   >
                     {/* Connector line from the card to the spine */}
@@ -128,9 +118,7 @@ export function ProcessTimeline({
                       transition={{ duration: 0.4, ease: EASE, delay: 0.18 }}
                       className={cn(
                         'bg-accent absolute top-6 hidden h-0.5 lg:block',
-                        isLeft
-                          ? 'left-full w-10 origin-right'
-                          : 'right-full w-10 origin-left',
+                        isLeft ? 'left-full w-10 origin-right' : 'right-full w-10 origin-left',
                       )}
                     />
                     {/* Connector line for the mobile single-column layout */}
@@ -146,12 +134,8 @@ export function ProcessTimeline({
                     <span className="text-accent font-serif text-[15px] font-semibold tracking-[0.08em]">
                       {step.num}
                     </span>
-                    <h3 className="text-[21px] font-semibold leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-[15px] leading-[1.55]">
-                      {step.text}
-                    </p>
+                    <h3 className="text-[21px] leading-tight font-semibold">{step.title}</h3>
+                    <p className="text-muted-foreground text-[15px] leading-[1.55]">{step.text}</p>
                   </motion.div>
                 </li>
               )

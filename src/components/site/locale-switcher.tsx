@@ -28,7 +28,7 @@ export function LocaleSwitcher({ light = false }: { light?: boolean }) {
       }}
       aria-label={target === 'de' ? 'Zu Deutsch wechseln' : 'Switch to English'}
       className={cn(
-        'border px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors',
+        'border px-2.5 py-1.5 text-xs font-semibold tracking-wider uppercase transition-colors',
         light
           ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
           : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground',

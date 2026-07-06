@@ -8,7 +8,8 @@ import { routing } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { JsonLd } from '@/components/site/json-ld'
-import { breadcrumbList } from '@/lib/seo/jsonld'
+import { breadcrumbList, service } from '@/lib/seo/jsonld'
+import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
 import { Hero } from '@/components/site/home/hero'
 
@@ -76,7 +77,7 @@ function ListingFacts({ listing }: { listing: ListingItem }) {
 
 function ListingBadge({ label }: { label: string }) {
   return (
-    <span className="bg-primary absolute left-0 top-0 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+    <span className="bg-primary absolute top-0 left-0 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-white uppercase">
       {label}
     </span>
   )
@@ -95,15 +96,10 @@ export async function generateMetadata({
     path: '/buy',
     title: t('metaTitle'),
     description: t('metaDescription'),
-    localizedPaths: { de: '/kaufen', en: '/buy' },
   })
 }
 
-export default async function BuyPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function BuyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
@@ -114,17 +110,29 @@ export default async function BuyPage({
   const featured = listings[0]
   const secondaryListings = listings.slice(1)
   const priceLabel = locale === 'de' ? 'Kaufpreis' : 'Purchase price'
+  const buyPath = localizePath('/buy', locale)
+  const pageUrl = `${SITE.url}/${locale}${buyPath}`
 
   return (
     <>
       <JsonLd
-        data={breadcrumbList([
-          { name: tNav('home'), url: `${SITE.url}/${locale}` },
-          {
-            name: tNav('buy'),
-            url: `${SITE.url}/${locale}${locale === 'de' ? '/kaufen' : '/buy'}`,
-          },
-        ])}
+        data={[
+          breadcrumbList([
+            { name: tNav('home'), url: `${SITE.url}/${locale}` },
+            {
+              name: tNav('buy'),
+              url: pageUrl,
+            },
+          ]),
+          service({
+            locale,
+            url: pageUrl,
+            name: t('title'),
+            description: t('metaDescription'),
+            serviceType: locale === 'de' ? 'Immobilie kaufen' : 'Buy property',
+            areaServed: 'Zirndorf, Nurnberg, Furth, Erlangen',
+          }),
+        ]}
       />
 
       <Hero mode="buyer" />
@@ -150,7 +158,7 @@ export default async function BuyPage({
 
           <div className="grid gap-6 lg:grid-cols-[1.45fr_0.9fr]">
             {featured ? (
-              <article className="group border-border overflow-hidden border bg-white transition-colors hover:border-foreground">
+              <article className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors">
                 <div className="relative min-h-[360px] overflow-hidden md:min-h-[560px]">
                   <Image
                     src={listingVisual(0).src}
@@ -163,7 +171,7 @@ export default async function BuyPage({
                   <div className="absolute inset-x-0 bottom-0 flex justify-end bg-gradient-to-t from-black/45 via-black/10 to-transparent p-6">
                     <Link
                       href="/contact"
-                      className="bg-surface-dark/90 inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-surface-dark"
+                      className="bg-surface-dark/90 hover:bg-surface-dark inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white transition-colors"
                     >
                       {t('exposeLink')}
                     </Link>
@@ -172,19 +180,19 @@ export default async function BuyPage({
                 </div>
                 <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-7">
                   <div>
-                    <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                    <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
                       <MapPin className="text-primary size-4" aria-hidden="true" />
                       {featured.location}
                     </span>
-                    <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight md:text-[30px]">
+                    <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold md:text-[30px]">
                       {featured.title}
                     </h3>
                     <div className="mt-4">
                       <ListingFacts listing={featured} />
                     </div>
                   </div>
-                  <div className="border-border pt-5 md:border-l md:pl-8 md:pt-0">
-                    <span className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.16em]">
+                  <div className="border-border pt-5 md:border-l md:pt-0 md:pl-8">
+                    <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
                       {priceLabel}
                     </span>
                     <p className="mt-2 text-3xl font-semibold tabular-nums">{featured.price}</p>
@@ -197,7 +205,7 @@ export default async function BuyPage({
               {secondaryListings.map((listing, index) => (
                 <article
                   key={listing.title}
-                  className="group border-border overflow-hidden border bg-white transition-colors hover:border-foreground"
+                  className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors"
                 >
                   <div className="relative min-h-[230px] overflow-hidden">
                     <Image
@@ -211,20 +219,20 @@ export default async function BuyPage({
                   </div>
                   <div className="grid gap-5 p-5 md:grid-cols-[1fr_auto] md:items-end">
                     <div>
-                      <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em]">
+                      <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] uppercase">
                         <MapPin className="text-primary size-4" aria-hidden="true" />
                         {listing.location}
                       </span>
-                      <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight">
+                      <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold">
                         {listing.title}
                       </h3>
                       <div className="mt-4">
                         <ListingFacts listing={listing} />
                       </div>
                     </div>
-                    <div className="border-border flex items-end justify-between gap-5 border-t pt-4 md:block md:border-l md:border-t-0 md:pl-6 md:pt-0">
+                    <div className="border-border flex items-end justify-between gap-5 border-t pt-4 md:block md:border-t-0 md:border-l md:pt-0 md:pl-6">
                       <div>
-                        <span className="text-muted-foreground text-xs font-semibold uppercase tracking-[0.16em]">
+                        <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
                           {priceLabel}
                         </span>
                         <p className="mt-1 text-2xl font-semibold tabular-nums">{listing.price}</p>

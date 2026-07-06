@@ -14,13 +14,13 @@ export function ValuationForm() {
 
   return (
     <form
-      className="flex flex-col gap-[18px] bg-white p-6 md:p-9"
+      className="flex flex-col gap-[18px] bg-white p-6 md:p-8"
       onSubmit={(event) => {
         event.preventDefault()
         setSubmitted(true)
       }}
     >
-      <h3 className="font-serif text-2xl font-semibold leading-tight md:text-[26px]">
+      <h3 className="font-serif text-2xl leading-tight font-semibold md:text-[26px]">
         {t('formTitle')}
       </h3>
       <div className="flex flex-col gap-2">
@@ -37,7 +37,7 @@ export function ValuationForm() {
             setPlz(event.target.value)
             setSubmitted(false)
           }}
-          className="border-input focus:border-brand-500 focus:ring-brand-500/20 border bg-white px-4 py-3.5 text-base outline-none transition-shadow focus:ring-[3px]"
+          className="border-input focus:border-brand-500 focus:ring-brand-500/20 border bg-white px-4 py-3.5 text-base transition-shadow outline-none focus:ring-[3px]"
         />
       </div>
       <fieldset className="flex flex-col gap-2">
@@ -78,7 +78,7 @@ export function ValuationForm() {
           {t('success')}
         </p>
       ) : null}
-      <span className="text-neutral-600 text-[13px]">
+      <span className="text-[13px] text-neutral-600">
         {t('privacyNote')}{' '}
         <Link href="/contact" className="text-primary">
           {t('callbackLink')}

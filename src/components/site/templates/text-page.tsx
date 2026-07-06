@@ -30,7 +30,7 @@ export function TextPage({
           {sections.map((section, index) => (
             <div key={section.heading ?? index} className="flex flex-col gap-3">
               {section.heading ? (
-                <h2 className="font-serif text-2xl font-semibold leading-tight">
+                <h2 className="font-serif text-2xl leading-tight font-semibold">
                   {section.heading}
                 </h2>
               ) : null}
@@ -42,7 +42,7 @@ export function TextPage({
             </div>
           ))}
           {note ? (
-            <p className="border-accent text-neutral-600 border-l-2 pl-5 text-sm leading-relaxed">
+            <p className="text-muted-foreground bg-muted/60 px-5 py-4 text-sm leading-relaxed">
               {note}
             </p>
           ) : null}

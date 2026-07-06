@@ -34,11 +34,7 @@ export async function generateMetadata({
   })
 }
 
-export default async function TermsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
