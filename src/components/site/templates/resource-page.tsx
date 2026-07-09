@@ -1,4 +1,4 @@
-import type { ComponentProps } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
@@ -22,6 +22,7 @@ export function ResourcePage({
   lede,
   sections,
   note,
+  feature,
   action,
 }: {
   locale: Locale
@@ -30,6 +31,7 @@ export function ResourcePage({
   lede?: string
   sections: TextSection[]
   note?: string
+  feature?: ReactNode
   action: ResourcePageAction
 }) {
   const labels =
@@ -91,6 +93,8 @@ export function ResourcePage({
           </div>
         </aside>
       ) : null}
+
+      {feature}
 
       <section className="border-border border-t py-12 md:py-16">
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">

@@ -502,7 +502,8 @@
       },
       "ratingLabel": "Google rating · 184 reviews",
       "ratingValue": "5.0 ★★★★★",
-      "imageAlt": "Property marketing by Immonation GmbH"
+      "imageAlt": "Property marketing by Immonation GmbH",
+      "playWithAudio": "Restart with sound"
     },
     "intro": {
       "title": "Real-estate advisory with local market knowledge and digital marketing strength.",
@@ -657,8 +658,9 @@
         { "value": "5,000+", "label": "registered search clients" },
         { "value": "60+", "label": "property sales per year" }
       ],
-      "demoLabel": "360° tour · sample property",
-      "demoNote": "An interactive demo will appear here",
+      "demoLabel": "Property presentation · From plot to completed home",
+      "demoNote": "The video shows how a plot of land becomes a completed real-estate project step by step.",
+      "videoFallback": "Your browser cannot play this property video.",
       "cta": "Start selling with a 360° tour"
     },
     "reviews": {
@@ -807,6 +809,38 @@
           "price": "€545,000"
         }
       ]
+    }
+  },
+  "Magazine": {
+    "eyebrow": "REVIER magazine",
+    "title": "A look at our work, our principles, and real sale stories.",
+    "text": "Our magazine presents selected sales from the greater Nuremberg region and the stories behind them: how owners made decisions, how we market properties, and what good guidance looks like.",
+    "cta": "Discuss your own sale",
+    "points": [
+      {
+        "title": "Completed projects",
+        "text": "Concrete examples instead of claims: properties, starting points, and outcomes from the region."
+      },
+      {
+        "title": "Our principles",
+        "text": "Realistic pricing, careful preparation, and marketing that qualifies buyers seriously."
+      },
+      {
+        "title": "Flip through online",
+        "text": "Read the issue directly by click, arrow keys, or fullscreen view."
+      }
+    ],
+    "reader": {
+      "label": "Flip through the REVIER online magazine",
+      "previous": "Previous page",
+      "next": "Next page",
+      "expand": "Expand magazine",
+      "collapse": "Collapse magazine",
+      "firstPage": "Cover",
+      "lastPage": "Back cover",
+      "pageProgress": "Page {page} of {total}",
+      "spreadProgress": "Pages {from}-{to} of {total}",
+      "pageAlt": "REVIER magazine page {page}"
     }
   },
   "Footer": {

@@ -10,6 +10,7 @@ import { breadcrumbList } from '@/lib/seo/jsonld'
 import { SITE } from '@/lib/seo/site'
 import { ResourcePage } from '@/components/site/templates/resource-page'
 import type { TextSection } from '@/components/site/templates/text-page'
+import { MagazineSection } from '@/components/site/magazine-section'
 
 export const dynamic = 'force-static'
 
@@ -58,6 +59,7 @@ export default async function DownloadsPage({ params }: { params: Promise<{ loca
         lede={t('lede')}
         sections={sections}
         note={t('note')}
+        feature={<MagazineSection />}
         action={{
           title: t('cta.title'),
           text: t('cta.text'),

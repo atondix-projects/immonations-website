@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useSpring } from 'motion/react'
 import {
   Camera,
   Handshake,
+  Image as ImageIcon,
   LineChart,
   MapPin,
   Megaphone,
@@ -130,6 +131,15 @@ export function ProcessTimeline({
                       transition={{ duration: 0.4, ease: EASE, delay: 0.18 }}
                       className="bg-accent absolute top-6 right-full h-0.5 w-5 origin-left lg:hidden"
                     />
+
+                    {/* Image placeholder: real step photo follows */}
+                    <div className="bg-brand-100/60 relative -mx-7 -mt-7 mb-1 flex aspect-[16/9] items-center justify-center overflow-hidden">
+                      <ImageIcon
+                        className="text-brand-300/70 size-8"
+                        strokeWidth={1.5}
+                        aria-hidden
+                      />
+                    </div>
 
                     <span className="text-accent font-serif text-[15px] font-semibold tracking-[0.08em]">
                       {step.num}

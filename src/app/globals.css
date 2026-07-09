@@ -230,3 +230,24 @@
     cursor: pointer;
   }
 }
+
+@layer utilities {
+  .magazine-flip-stage .stf__wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .magazine-flip-stage .magazine-flip-page {
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .magazine-flip-stage .magazine-flip-page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}

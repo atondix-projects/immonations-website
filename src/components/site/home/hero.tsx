@@ -1,6 +1,7 @@
 'use client'
 
 import { Fragment, useEffect, useRef } from 'react'
+import { RotateCcw, Volume2 } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
@@ -90,13 +91,28 @@ export function Hero({ mode }: { mode: Audience }) {
     return () => reduce.removeEventListener('change', apply)
   }, [])
 
+  const restartWithAudio = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.currentTime = 0
+    video.muted = false
+    video.volume = 1
+    void video.play().catch(() => {
+      video.muted = true
+    })
+  }
+
   return (
     <section className="bg-surface-dark relative -mt-[var(--header-height)] overflow-hidden">
       {/* Hero-Bildfläche: Vermarktungs-Video mit Ken-Burns-Zoom + scroll-gebundenem Parallax (motion/react), gedimmt hinter der Headline */}
-      <div className="absolute -inset-x-12 -inset-y-20" aria-hidden>
+      <div
+        className="absolute top-8 -right-12 -bottom-8 -left-12 md:top-10 md:-right-16 md:-bottom-10 md:-left-16 lg:-right-20 lg:-left-20"
+        aria-hidden
+      >
         <video
           ref={videoRef}
-          className="absolute inset-0 size-full object-cover opacity-55"
+          className="absolute inset-0 size-full object-cover object-[center_20%] opacity-55"
           src="/immonation-hero.mp4"
           autoPlay
           muted
@@ -114,8 +130,8 @@ export function Hero({ mode }: { mode: Audience }) {
         aria-hidden
       />
       <div className="relative mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-        {/* lg: knapp unter 100svh, damit Section 2 am unteren Rand als Scroll-Hinweis sichtbar bleibt */}
-        <div className="flex min-h-[100svh] items-end justify-between gap-10 lg:min-h-[90svh]">
+        {/* Etwas unter voller Hoehe, damit die naechste Sektion knapp ueber der Falz hervorlugt. */}
+        <div className="flex min-h-[calc(100svh-5rem)] items-end justify-between gap-10">
           {/* key={mode}: Wechsel Verkäufer/Käufer spielt die Inszenierung erneut ab */}
           <div
             key={mode}
@@ -174,6 +190,19 @@ export function Hero({ mode }: { mode: Audience }) {
                     {t(`${mode}.ctaSecondary`)}
                   </Link>
                 </motion.span>
+                <motion.button
+                  type="button"
+                  onClick={restartWithAudio}
+                  aria-label={t('playWithAudio')}
+                  whileHover={reduceMotion ? undefined : { scale: 1.03 }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                  transition={{ duration: 0.2, ease: EASE }}
+                  className="inline-flex items-center justify-center gap-2 border border-white/25 bg-black/25 px-5 py-[15px] text-sm font-medium tracking-[0.04em] text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/10"
+                >
+                  <RotateCcw className="size-4" aria-hidden />
+                  <Volume2 className="size-4" aria-hidden />
+                  <span>{t('playWithAudio')}</span>
+                </motion.button>
               </motion.div>
               {/* Mobil: Switch + Rating unter den CTAs; Desktop: rechte Randspalte (siehe unten) */}
               <motion.div

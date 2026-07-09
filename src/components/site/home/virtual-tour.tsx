@@ -15,16 +15,22 @@ export async function VirtualTour() {
   return (
     <section id="virtuelle-besichtigung" className="bg-background scroll-mt-24 py-16 md:py-24">
       <div className={`${CONTAINER} grid items-start gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16`}>
-        {/* Medienfläche: interaktiver 360°-Rundgang folgt, bis dahin markige Platzhalterfläche */}
+        {/* Medienfläche: Immobilienpräsentation vom Grundstück bis zur fertigen Immobilie */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-28">
-          <div className="bg-surface-dark relative flex aspect-[4/3] items-center justify-center overflow-hidden">
-            <span className="from-brand-800/40 absolute inset-0 bg-gradient-to-tr via-transparent to-transparent opacity-60" />
-            <div className="relative flex flex-col items-center gap-3 px-6 text-center">
-              <span className="border-brand-500 text-brand-200 flex size-20 items-center justify-center border font-serif text-2xl font-semibold">
-                360°
-              </span>
-              <span className="text-lg font-medium text-white">{t('demoLabel')}</span>
-              <span className="text-[13px] text-neutral-400">{t('demoNote')}</span>
+          <div className="bg-surface-dark overflow-hidden">
+            <video
+              className="aspect-video w-full bg-black object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label={t('demoLabel')}
+            >
+              <source src="/immonation-presentation-video.mp4" type="video/mp4" />
+              {t('videoFallback')}
+            </video>
+            <div className="border-t border-white/10 p-5">
+              <p className="font-medium text-white">{t('demoLabel')}</p>
+              <p className="mt-1 text-[13px] leading-snug text-neutral-400">{t('demoNote')}</p>
             </div>
           </div>
           <div className="border-border grid grid-cols-3 divide-x border bg-white">

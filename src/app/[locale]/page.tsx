@@ -17,6 +17,7 @@ import { Partners } from '@/components/site/home/partners'
 import { ContactBooking } from '@/components/site/home/contact-booking'
 import { ProcessTimeline } from '@/components/site/home/process-timeline'
 import { CONTAINER, SECTION_TITLE, SectionHeader } from '@/components/site/home/section-shell'
+import { MagazineSection } from '@/components/site/magazine-section'
 
 export const dynamic = 'force-static'
 
@@ -82,6 +83,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         title={t('process.title')}
         link={{ label: t('process.link'), href: '/services' }}
       />
+
+      {/* Magazin: echte Verkaufsgeschichten und Haltung */}
+      <MagazineSection tone="muted" />
 
       {/* Referenz-Teaser */}
       <section id="referenzen" className="bg-background scroll-mt-24 py-16 md:py-24">

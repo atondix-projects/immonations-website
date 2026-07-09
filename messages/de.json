@@ -500,7 +500,8 @@
       },
       "ratingLabel": "Google-Bewertung · 184 Rezensionen",
       "ratingValue": "5,0 ★★★★★",
-      "imageAlt": "Immobilienvermarktung der Immonation GmbH"
+      "imageAlt": "Immobilienvermarktung der Immonation GmbH",
+      "playWithAudio": "Film mit Ton starten"
     },
     "intro": {
       "title": "Immobilienberatung mit lokaler Marktkenntnis und digitaler Vermarktungsstärke.",
@@ -655,8 +656,9 @@
         { "value": "5.000+", "label": "registrierte Suchkunden" },
         { "value": "60+", "label": "Immobilienverkäufe pro Jahr" }
       ],
-      "demoLabel": "360°-Rundgang · Beispielobjekt",
-      "demoNote": "Interaktive Demo folgt an dieser Stelle",
+      "demoLabel": "Immobilienpräsentation · Vom Grundstück zur fertigen Immobilie",
+      "demoNote": "Das Video zeigt, wie aus einem Grundstück Schritt für Schritt ein vollständiges Immobilienprojekt entsteht.",
+      "videoFallback": "Ihr Browser kann dieses Immobilienvideo nicht abspielen.",
       "cta": "Verkauf mit 360°-Rundgang starten"
     },
     "reviews": {
@@ -805,6 +807,38 @@
           "price": "545.000 €"
         }
       ]
+    }
+  },
+  "Magazine": {
+    "eyebrow": "REVIER Magazin",
+    "title": "Ein Blick in unsere Arbeit, unsere Haltung und echte Verkaufsgeschichten.",
+    "text": "Unser Magazin zeigt ausgewählte Verkäufe aus dem Großraum Nürnberg und die Geschichten dahinter: wie Eigentümer entschieden haben, wie wir vermarkten und was eine gute Begleitung ausmacht.",
+    "cta": "Eigene Verkaufssituation besprechen",
+    "points": [
+      {
+        "title": "Gemachte Projekte",
+        "text": "Konkrete Beispiele statt Behauptungen: Objekte, Ausgangslagen und Ergebnisse aus der Region."
+      },
+      {
+        "title": "Unsere Haltung",
+        "text": "Realistische Preise, saubere Vorbereitung und Vermarktung, die Käufer ernsthaft qualifiziert."
+      },
+      {
+        "title": "Online blättern",
+        "text": "Per Klick, Pfeiltasten oder Vollbildansicht direkt durch die Ausgabe lesen."
+      }
+    ],
+    "reader": {
+      "label": "Online-Magazin REVIER durchblättern",
+      "previous": "Vorherige Seite",
+      "next": "Nächste Seite",
+      "expand": "Magazin vergrößern",
+      "collapse": "Magazin verkleinern",
+      "firstPage": "Titel",
+      "lastPage": "Rückseite",
+      "pageProgress": "Seite {page} von {total}",
+      "spreadProgress": "Seiten {from}-{to} von {total}",
+      "pageAlt": "REVIER Magazin Seite {page}"
     }
   },
   "Footer": {
