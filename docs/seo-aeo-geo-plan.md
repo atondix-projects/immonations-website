@@ -32,7 +32,6 @@ Die Website soll für lokale Immobilienanfragen in der Metropolregion Nürnberg 
 | `/de/haus-verkaufen` | `/en/sell-house` | Haus verkaufen Nürnberg | Service, FAQPage |
 | `/de/wohnung-verkaufen` | `/en/sell-apartment` | Wohnung verkaufen Nürnberg | Service, FAQPage |
 | `/de/mehrfamilienhaus-verkaufen` | `/en/sell-apartment-building` | Mehrfamilienhaus verkaufen Nürnberg | Service, FAQPage |
-| `/de/immobilie-vermieten` | `/en/rent-out-property` | Immobilie vermieten Nürnberg | Service, FAQPage |
 | `/de/projektentwicklung` | `/en/project-development` | Projektentwicklung Nürnberg | Service, FAQPage |
 | `/de/immobilienankauf` | `/en/property-acquisition` | Immobilienankauf Nürnberg | Service, FAQPage |
 | `/de/revitalisierung` | `/en/revitalization` | Immobilien revitalisieren Nürnberg | Service, FAQPage |
@@ -143,13 +142,44 @@ Aktuell öffentlich gefundene Claim-Pool-Elemente:
 
 - Kostenlose und unverbindliche Immobilienbewertung.
 - Hochwertige Immobilienvideos, realistische 360-Grad-Rundgänge und Social-Media-Marketing.
-- Mehr als 5.000 registrierte/vorgemerkte Kaufinteressenten.
+- Mehr als 8.000 registrierte/vorgemerkte Kaufinteressenten.
 - 10-Schritte-Verkaufssystem.
 - Über 40 Immobilien pro Jahr laut Startseite.
 - Über 60 erfolgreiche Immobilienverkäufe pro Jahr und 30 Mio. Euro jährliches Transaktionsvolumen laut FAQ.
 - Google-Bewertungen werden live angezeigt.
 
 Zahlen sind vor Veröffentlichung live zu prüfen, weil Bewertungen und Bestandsdaten volatil sind. Die Claims `40+` und `60+` Verkäufe pro Jahr müssen vor finaler Copy vereinheitlicht werden.
+
+Das EK-Archiv ergänzt folgende Evidenz- und Content-Quellen:
+
+- 26 Referenzentwürfe mit Objektart, Ort, Highlights, Slug-Vorschlag und teilweise ausgefüllten Kennzahlen.
+- Referenzfotografie für 21 Objektordner sowie verkaufte Kurzclips.
+- F.A.Z.- und Immowelt-Award-Material, jeweils mit Rechte-/Methodikprüfung.
+- Testimonial-Material für Frau Hartmann, Herr Sippel, Markus Burkhard, Viktor Emter, Sandra Börschlein und Frau Berthold; Veröffentlichung nur mit Einzelfreigabe.
+
+Referenzkennzahlen aus dem Archiv sind keine automatisch validierten Claims. Das Content-Modell braucht deshalb einen Freigabestatus und eine Quellen-/Prüfspur pro Kennzahl.
+
+## Neue Content-Cluster aus dem EK-Archiv
+
+Priorisierte seller-intent Cluster:
+
+1. Erbfall und Erbengemeinschaft.
+2. Sanierungsstau und Verkauf im Ist-Zustand.
+3. Kapitalanlage mit bestehendem Mietverhältnis.
+4. Trennung/Scheidung.
+5. Pflege/Verkauf im Alter und Verrentung.
+6. Zeitdruck, Finanzierungskrise und Vermeidung einer Zwangsversteigerung.
+
+Die Themen 5 und 6 sind besonders sensibel und dürfen weder Angstmarketing noch pauschale Rechts-/Finanzberatung enthalten. Pro Cluster zuerst einen starken Ratgeber plus passende Service-/FAQ-Module bauen; erst bei ausreichendem eigenständigem Inhalt lokale Landingpages ableiten.
+
+## Quellenhygiene für neue Inhalte
+
+- Bodenrichtwerte und Quadratmeterpreise ausschließlich aus offiziellen, datierten Quellen übernehmen; die gelieferten Zahlen sind Platzhalter.
+- Bewertungszahl und Rating live beziehen oder mit sichtbarem Stichtag versehen.
+- Rechts-, Steuer-, Energieausweis-, Provisions-, Erb- und Betreuungsaussagen fachlich prüfen und mit Aktualisierungsdatum versehen.
+- Award- und Spitzenstellungsclaims nur mit dokumentiertem Geltungsbereich, Datum, Methodik und Nutzungsrecht.
+- KI-Visualisierungen sichtbar als Visualisierung kennzeichnen.
+- Jede publizierte Referenz mit bestätigtem Ergebnis, freigegebener Ortsgenauigkeit und Bild-/Zitatrechten verknüpfen.
 
 ## Quellen & Wettbewerbsnotizen
 

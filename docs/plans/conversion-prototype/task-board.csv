@@ -1,0 +1,37 @@
+id,priority,workstream,task,dependencies,acceptance,status,owner
+F01,P0,Foundation,Audit routes components and assets,,Disposition recorded for every core route,done,Codex
+F02,P0,Foundation,Define Tailwind design tokens,F01,Shared color type spacing border radius and motion tokens,done,Codex
+F03,P0,Foundation,Build responsive editorial grid,F02,Stable mobile tablet and desktop composition,done,Codex
+F04,P0,Foundation,Align shared site shell,F02,Keyboard-safe header footer locale and CTA,done,Codex
+F05,P0,Foundation,Build shared site patterns,F03,Core sections compose reusable site components,done,Codex
+F06,P1,Foundation,Add restrained motion,F05,Reduced-motion variant and no layout shift,done,Codex
+H01,P0,Homepage,Build seller-first hero,F03|F04|F05,Promise region and two CTAs are clear,done,Codex
+H02,P0,Homepage,Build homepage narrative sections,H01,Locked section order is complete,done,Codex
+H03,P0,Homepage,Place prototype proof metrics,H02,Approved values are consistent and tracked,done,Codex
+H04,P0,Homepage,Complete responsive visual pass,H03,No crop overflow or hierarchy defects,done,Codex
+C01,P0,Conversion,Align sell hub,F05,Three seller branches are distinct and scannable,done,Codex
+C02,P0,Conversion,Build three seller detail pages,C01,Relevant content proof FAQ and CTA on each,done,Codex
+C03,P0,Conversion,Build sales process page,F05,Concrete preparation-to-handover sequence,done,Codex
+C04,P0,Conversion,Build local valuation wizard,F04|F05,Complete validated local-state flow with no network,done,Codex
+C05,P0,Conversion,Build prototype thank-you page,C04,Explicit no-transmission confirmation,done,Codex
+C06,P0,Conversion,Build seller FAQ,C02,Answers and any structured data agree,done,Codex
+R01,P0,References,Normalize UI reference records,F01,Privacy metrics images and rights status explicit,done,Codex
+R02,P0,References,Build references hub,F05|R01,All available details discoverable,done,Codex
+R03,P0,References,Build detail layout,R01,Consistent narrative metrics media and CTA,done,Codex
+R04,P0,References,Populate all reference details,R03,No exact address missing media or invented value,done,Codex
+R05,P0,References,Build four customer stories,F05,All four approved stories placed safely,done,Codex
+R06,P1,References,Place review screenshots,R05,Legible attributed and flagged for clearance,done,Codex
+S01,P0,Supporting,Build buyer overview and sample cards,F05,Sample inventory status unmistakable,done,Codex
+S02,P0,Supporting,Add visual sample search,S01,No live feed or submission implication,done,Codex
+S03,P0,Supporting,Align service routes,F05,Preparation and marketing are concrete,done,Codex
+S04,P0,Supporting,Align locations hub,F05,Regional competence without placeholders,done,Codex
+S05,P1,Supporting,Align secondary routes,F04,About careers referrers downloads blog contact legal consistent,done,Codex
+S06,P1,Supporting,Add prototype partner treatment,S01,Dr. Klein wording stays within supplied claim,done,Codex
+S07,P1,Supporting,Wire Calendly link,F04,External behavior is clear and safe,deferred,Andreas
+Q01,P0,Quality,Complete German content pass,H04|C06|R04|S04,No placeholder contradiction or mixed register,done,Codex
+Q02,P0,Quality,Adapt core English,Q01,Natural complete core journey and navigation,done,Codex
+Q03,P0,Quality,Run responsive browser and accessibility QA,Q02,No open P0 QA blocker,done,Codex
+Q04,P0,Quality,Verify prototype behavior,C04|S02,No absent-backend calls or misleading control,done,Codex
+Q05,P0,Quality,Run typecheck lint and build,Q03|Q04,All commands pass,done,Codex
+Q06,P1,Quality,Align SEO and localization shell,Q02,Repository conventions followed on touched routes,done,Codex
+Q07,P0,Approval,Final visual approval,Q05,Andreas approves or issues bounded revisions,ready,Andreas

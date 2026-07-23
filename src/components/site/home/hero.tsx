@@ -1,18 +1,23 @@
 'use client'
 
-import { Fragment, useEffect, useRef } from 'react'
-import { RotateCcw, Volume2 } from 'lucide-react'
+import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { AudienceSwitch } from '@/components/site/audience-switch'
+import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 
 type Audience = 'seller' | 'buyer'
 
 const HERO_CTAS = {
-  // primaryHref is a same-page anchor; secondaryHref is a localized route.
-  seller: { primaryHref: '#bewertung', secondaryHref: '/buy' as const },
-  buyer: { primaryHref: '#angebote', secondaryHref: '/contact' as const },
+  seller: {
+    primaryHref: '/property-valuation' as const,
+    secondaryHref: '/sales-process' as const,
+  },
+  buyer: {
+    primaryHref: { pathname: '/buy' as const, hash: '#angebote' },
+    secondaryHref: '/contact' as const,
+  },
 }
 
 // Premium ease (matches the rest of the site's spring-like feel); staggered in seconds.
@@ -27,7 +32,7 @@ const STAGE_DELAYS = {
 } as const
 
 /** Rise-in: opacity + translateY, disabled entirely under prefers-reduced-motion. */
-function useRise(reduceMotion: boolean, delay: number) {
+function getRise(reduceMotion: boolean, delay: number) {
   return {
     initial: reduceMotion ? false : { opacity: 0, y: 26 },
     animate: { opacity: 1, y: 0 },
@@ -38,7 +43,7 @@ function useRise(reduceMotion: boolean, delay: number) {
 function RevealTitle({ title, reduceMotion }: { title: string; reduceMotion: boolean }) {
   const words = title.split(' ')
   return (
-    <h1 className="font-serif text-4xl leading-[1.12] font-semibold tracking-[-0.005em] text-balance text-white md:text-5xl lg:text-[58px]">
+    <h1 className="font-serif text-3xl leading-[1.12] font-semibold tracking-[-0.005em] text-balance text-white sm:text-4xl md:text-5xl lg:text-[58px]">
       {words.map((word, index) => (
         <Fragment key={`${word}-${index}`}>
           <span className="-mb-[0.08em] inline-flex overflow-hidden pb-[0.08em] align-bottom">
@@ -74,52 +79,21 @@ function GoogleRating() {
 
 export function Hero({ mode }: { mode: Audience }) {
   const t = useTranslations('Home.hero')
-  const videoRef = useRef<HTMLVideoElement>(null)
   const reduceMotion = useReducedMotion() ?? false
   const cta = HERO_CTAS[mode]
 
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const apply = () => {
-      if (reduce.matches) video.pause()
-      else void video.play().catch(() => {})
-    }
-    apply()
-    reduce.addEventListener('change', apply)
-    return () => reduce.removeEventListener('change', apply)
-  }, [])
-
-  const restartWithAudio = () => {
-    const video = videoRef.current
-    if (!video) return
-
-    video.currentTime = 0
-    video.muted = false
-    video.volume = 1
-    void video.play().catch(() => {
-      video.muted = true
-    })
-  }
-
   return (
     <section className="bg-surface-dark relative -mt-[var(--header-height)] overflow-hidden">
-      {/* Hero-Bildfläche: Vermarktungs-Video mit Ken-Burns-Zoom + scroll-gebundenem Parallax (motion/react), gedimmt hinter der Headline */}
+      {/* Hero-Bildfläche: Firmenlogo, gedimmt hinter der Headline */}
       <div
         className="absolute top-8 -right-12 -bottom-8 -left-12 md:top-10 md:-right-16 md:-bottom-10 md:-left-16 lg:-right-20 lg:-left-20"
         aria-hidden
       >
-        <video
-          ref={videoRef}
-          className="absolute inset-0 size-full object-cover object-[center_20%] opacity-55"
-          src="/immonation-hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label={t('imageAlt')}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="absolute inset-0 size-full object-contain object-center opacity-55"
+          src="/immonation-logo.png"
+          alt=""
         />
         <div className="from-brand-800/40 absolute inset-0 bg-gradient-to-tr via-transparent to-transparent opacity-55" />
         <div className="from-surface-dark/95 via-surface-dark/40 absolute inset-0 bg-gradient-to-t to-transparent" />
@@ -131,11 +105,11 @@ export function Hero({ mode }: { mode: Audience }) {
       />
       <div className="relative mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         {/* Etwas unter voller Hoehe, damit die naechste Sektion knapp ueber der Falz hervorlugt. */}
-        <div className="flex min-h-[calc(100svh-5rem)] items-end justify-between gap-10">
+        <div className="grid min-h-[calc(100svh-5rem)] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)]">
           {/* key={mode}: Wechsel Verkäufer/Käufer spielt die Inszenierung erneut ab */}
           <div
             key={mode}
-            className="relative flex max-w-[760px] flex-col gap-6 pt-24 pb-14 md:pb-[72px]"
+            className="relative flex max-w-[760px] min-w-0 flex-col gap-6 pt-24 pb-14 md:pb-[72px]"
           >
             <div className="flex items-center gap-3">
               <motion.span
@@ -146,7 +120,7 @@ export function Hero({ mode }: { mode: Audience }) {
               />
               <motion.span
                 className="text-brand-200 text-[13px] font-semibold tracking-[0.14em] uppercase"
-                {...useRise(reduceMotion, STAGE_DELAYS.eyebrow)}
+                {...getRise(reduceMotion, STAGE_DELAYS.eyebrow)}
               >
                 {t(`${mode}.eyebrow`)}
               </motion.span>
@@ -154,29 +128,35 @@ export function Hero({ mode }: { mode: Audience }) {
             <RevealTitle title={t(`${mode}.title`)} reduceMotion={reduceMotion} />
             <motion.p
               className="max-w-[56ch] text-lg leading-[1.55] text-neutral-300 md:text-[19px]"
-              {...useRise(reduceMotion, STAGE_DELAYS.subtitle)}
+              {...getRise(reduceMotion, STAGE_DELAYS.subtitle)}
             >
               {t(`${mode}.subtitle`)}
             </motion.p>
             <div className="flex flex-col gap-3">
               <motion.div
                 className="flex flex-wrap gap-4"
-                {...useRise(reduceMotion, STAGE_DELAYS.ctas)}
+                {...getRise(reduceMotion, STAGE_DELAYS.ctas)}
               >
-                <motion.a
-                  href={cta.primaryHref}
-                  whileHover={reduceMotion ? undefined : { scale: 1.03 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  transition={{ duration: 0.2, ease: EASE }}
-                  className="bg-brand-500 hover:bg-brand-400 group relative inline-flex items-center justify-center overflow-hidden px-8 py-4 text-base font-medium tracking-[0.04em] text-white transition-colors"
-                >
-                  {/* Licht-Sweep beim Hover — einziger dekorativer Effekt auf dem CTA */}
-                  <span
-                    className="absolute inset-y-0 -left-full w-1/2 skew-x-[-20deg] bg-white/20 transition-[left] duration-500 ease-out group-hover:left-[150%] motion-reduce:hidden"
-                    aria-hidden
-                  />
-                  <span className="relative">{t(`${mode}.ctaPrimary`)}</span>
-                </motion.a>
+                {mode === 'buyer' ? (
+                  <motion.span
+                    className="inline-flex"
+                    whileHover={reduceMotion ? undefined : { scale: 1.03 }}
+                    whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                    transition={{ duration: 0.2, ease: EASE }}
+                  >
+                    <Link
+                      href={cta.primaryHref}
+                      className="bg-brand-600 hover:bg-brand-700 group relative inline-flex items-center justify-center overflow-hidden px-8 py-4 text-base font-semibold text-white transition-colors"
+                    >
+                      {/* Licht-Sweep beim Hover — einziger dekorativer Effekt auf dem CTA */}
+                      <span
+                        className="absolute inset-y-0 -left-full w-1/2 skew-x-[-20deg] bg-white/20 transition-[left] duration-500 ease-out group-hover:left-[150%] motion-reduce:hidden"
+                        aria-hidden
+                      />
+                      <span className="relative">{t(`${mode}.ctaPrimary`)}</span>
+                    </Link>
+                  </motion.span>
+                ) : null}
                 <motion.span
                   className="inline-flex"
                   whileHover={reduceMotion ? undefined : { scale: 1.03 }}
@@ -190,24 +170,19 @@ export function Hero({ mode }: { mode: Audience }) {
                     {t(`${mode}.ctaSecondary`)}
                   </Link>
                 </motion.span>
-                <motion.button
-                  type="button"
-                  onClick={restartWithAudio}
-                  aria-label={t('playWithAudio')}
-                  whileHover={reduceMotion ? undefined : { scale: 1.03 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  transition={{ duration: 0.2, ease: EASE }}
-                  className="inline-flex items-center justify-center gap-2 border border-white/25 bg-black/25 px-5 py-[15px] text-sm font-medium tracking-[0.04em] text-white backdrop-blur-sm transition-colors hover:border-white/70 hover:bg-white/10"
-                >
-                  <RotateCcw className="size-4" aria-hidden />
-                  <Volume2 className="size-4" aria-hidden />
-                  <span>{t('playWithAudio')}</span>
-                </motion.button>
               </motion.div>
+              {mode === 'seller' ? (
+                <motion.div
+                  className="mt-2 w-full max-w-[440px] lg:hidden"
+                  {...getRise(reduceMotion, STAGE_DELAYS.ctas)}
+                >
+                  <ValuationEntryCard />
+                </motion.div>
+              ) : null}
               {/* Mobil: Switch + Rating unter den CTAs; Desktop: rechte Randspalte (siehe unten) */}
               <motion.div
                 className="flex flex-col divide-y divide-white/15 self-start border border-white/15 bg-white/5 lg:hidden"
-                {...useRise(reduceMotion, STAGE_DELAYS.switch)}
+                {...getRise(reduceMotion, STAGE_DELAYS.switch)}
               >
                 <AudienceSwitch mode={mode} />
                 <GoogleRating />
@@ -218,10 +193,11 @@ export function Hero({ mode }: { mode: Audience }) {
           {/* Rechte Randspalte: Publikums-Switch + Bewertung, unten rechts verankert */}
           <motion.div
             key={`${mode}-rail`}
-            className="hidden flex-col items-end gap-3 pb-14 md:pb-[72px] lg:flex"
-            {...useRise(reduceMotion, STAGE_DELAYS.switch)}
+            className="hidden h-full flex-col items-stretch pt-32 pb-[72px] lg:flex"
+            {...getRise(reduceMotion, STAGE_DELAYS.switch)}
           >
-            <div className="flex flex-col divide-y divide-white/15 border border-white/15 bg-white/5 backdrop-blur-sm">
+            {mode === 'seller' ? <ValuationEntryCard /> : null}
+            <div className="mt-auto flex flex-col divide-y divide-white/15 self-end border border-white/15 bg-white/5 backdrop-blur-sm">
               <AudienceSwitch mode={mode} />
               <GoogleRating />
             </div>

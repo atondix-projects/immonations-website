@@ -33,7 +33,7 @@
       "virtualTour": "Virtual viewing",
       "virtualTourDesc": "360° tours: view digitally, buy seriously.",
       "references": "Reference properties",
-      "referencesDesc": "Sold properties from your neighborhood.",
+      "referencesDesc": "15 selected properties from our region.",
       "buying": "Buy a property",
       "buyingDesc": "Current listings from the region.",
       "financing": "Financing",
@@ -107,6 +107,7 @@
     "emailLabel": "Email",
     "serviceLink": "View services",
     "steps": {
+      "eyebrow": "Continue personally",
       "title": "What happens next",
       "items": [
         {
@@ -123,6 +124,28 @@
         }
       ]
     }
+  },
+  "ContactForm": {
+    "prototypeLabel": "Form prototype",
+    "title": "What would you like to discuss?",
+    "text": "These fields demonstrate the future contact journey. No message is transmitted in this phase.",
+    "name": "Name",
+    "email": "Email",
+    "topic": "Topic",
+    "topics": ["Sell a property", "Value a property", "Buy a property", "Other"],
+    "message": "Your message",
+    "submit": "Complete prototype form",
+    "success": "The demonstration is complete. No message was submitted.",
+    "localOnly": "No storage, email, or data transfer in this frontend prototype."
+  },
+  "PrototypeCookie": {
+    "label": "Cookie notice",
+    "prototype": "Visual prototype",
+    "title": "Privacy, explained clearly.",
+    "text": "This preview demonstrates the future consent interface. No preferences are stored and no optional services are activated.",
+    "accept": "Allow all",
+    "necessary": "Necessary only",
+    "note": "Both buttons only close this local preview."
   },
   "ValuationPage": {
     "metadata": {
@@ -177,9 +200,9 @@
       ]
     },
     "stats": [
-      { "value": "5.0 ★", "label": "Google rating across 184 reviews" },
+      { "value": "4.9 ★", "label": "Google rating across 220+ reviews" },
       { "value": "60+", "label": "property sales per year" },
-      { "value": "5,000+", "label": "registered search clients" },
+      { "value": "8,000+", "label": "registered search clients" },
       { "value": "360°", "label": "tour for every listing" }
     ],
     "faq": {
@@ -209,6 +232,64 @@
       "primaryLabel": "Start valuation",
       "secondaryLabel": "Book a consultation"
     }
+  },
+  "ValuationWizard": {
+    "prototypeLabel": "Frontend prototype",
+    "title": "Classify your property",
+    "progressLabel": "Valuation progress",
+    "propertyTypes": ["House", "Apartment", "Apartment building", "Land"],
+    "conditions": ["Modernised", "Well maintained", "Needs renovation"],
+    "timings": ["0–3 months", "3–12 months", "Orientation only"],
+    "steps": {
+      "type": {
+        "title": "Which property would you like to value?",
+        "text": "Select the property type for a relevant first classification."
+      },
+      "location": {
+        "title": "Where is the property?",
+        "text": "Postcode and city are enough for this prototype.",
+        "postcode": "Postcode",
+        "city": "City"
+      },
+      "details": {
+        "title": "How large is the property?",
+        "text": "Approximate figures are enough for this first classification.",
+        "area": "Living area in m²",
+        "rooms": "Rooms"
+      },
+      "context": {
+        "title": "Condition and timing",
+        "condition": "How would you describe its condition?",
+        "timing": "When could a sale become relevant?"
+      },
+      "summary": {
+        "title": "Your details at a glance",
+        "text": "Review the key facts. Nothing is sent or stored in this prototype."
+      }
+    },
+    "summary": {
+      "type": "Property type",
+      "location": "Location",
+      "details": "Size",
+      "rooms": "rooms",
+      "context": "Context"
+    },
+    "localOnly": "Completing the flow only opens the local thank-you page. No request is transmitted.",
+    "error": "Please complete the details in this step.",
+    "back": "Back",
+    "next": "Continue",
+    "finish": "Complete prototype"
+  },
+  "ValuationThankYou": {
+    "metadata": {
+      "title": "Valuation prototype complete",
+      "description": "Confirmation for the local Immonation valuation prototype."
+    },
+    "eyebrow": "Prototype complete",
+    "title": "Your details were not submitted.",
+    "text": "This flow demonstrates how the future valuation could feel. During this design phase, every entry stays locally in your browser. For a real conversation, reach Immonation through the contact page.",
+    "contact": "Contact options",
+    "back": "View valuation again"
   },
   "FaqPage": {
     "metadata": {
@@ -244,8 +325,8 @@
         "answer": "We broker properties in Zirndorf, Nuremberg, Fürth, Erlangen, and within roughly 60 km of our office in Zirndorf."
       },
       {
-        "question": "Can I sell a rented property?",
-        "answer": "Yes. We market tenanted properties specifically to investors — including preparation of the relevant rent and yield data."
+        "question": "Can I sell a property with an existing tenancy?",
+        "answer": "Yes. We market properties with an existing tenancy specifically to investors — including preparation of the relevant contractual and yield data."
       },
       {
         "question": "Does Immonation also help with financing?",
@@ -410,7 +491,7 @@
       {
         "heading": "Employees",
         "paragraphs": [
-          "We regularly fill positions in real estate and back office — from property onboarding to marketing and management. Specific job postings will be published here shortly."
+          "We regularly fill positions in real estate and back office — from property onboarding and marketing to transaction preparation. Specific job postings will be published here shortly."
         ]
       },
       {
@@ -422,6 +503,12 @@
       }
     ],
     "note": "Detailed job postings and the full partner model are coming. Until then: reach out directly — we look forward to talking.",
+    "agentTrack": {
+      "eyebrow": "Dedicated career path",
+      "title": "Work as a real-estate agent with Immonation",
+      "text": "The dedicated agent page explains responsibilities, collaboration, candidate fit, and the direct route to an introductory conversation.",
+      "link": "Explore the agent career"
+    },
     "cta": {
       "title": "Interested?",
       "text": "Tell us briefly who you are and what you're looking for — we respond within one business day.",
@@ -491,7 +578,7 @@
         "title": "Your property sale, actively managed — not just listed.",
         "subtitle": "Well-founded valuation, professional marketing with video and 360° tours, personal guidance all the way to the notary appointment.",
         "ctaPrimary": "Start your free valuation",
-        "ctaSecondary": "Find a property"
+        "ctaSecondary": "View the sales process"
       },
       "buyer": {
         "eyebrow": "Buying in the region",
@@ -500,8 +587,8 @@
         "ctaPrimary": "Find a property",
         "ctaSecondary": "Create a search request"
       },
-      "ratingLabel": "Google rating · 184 reviews",
-      "ratingValue": "5.0 ★★★★★",
+      "ratingLabel": "Google rating · 220+ reviews",
+      "ratingValue": "4.9 ★★★★★",
       "imageAlt": "Property marketing by Immonation GmbH",
       "playWithAudio": "Restart with sound"
     },
@@ -510,78 +597,31 @@
       "p1": "Immonation GmbH guides property owners in Zirndorf, Nuremberg, Fürth, Erlangen, and within a 60 km radius through the entire selling process — from a well-founded valuation to professional marketing to the notary appointment.",
       "p2": "Personal, transparent, and with proven results: dedicated contacts, an active network of pre-qualified buyers, and marketing with video, 360° tours, and social media."
     },
+    "proof": {
+      "eyebrow": "Locally rooted · measurably effective",
+      "items": [
+        { "value": "4.9 / 5", "label": "Google rating across 220+ reviews" },
+        { "value": "60+", "label": "property sales per year" },
+        { "value": "€30m", "label": "annual transaction volume" },
+        { "value": "8,000+", "label": "registered search clients" }
+      ]
+    },
     "process": {
       "eyebrow": "For owners",
       "title": "How we sell your property",
-      "link": "See the full process →",
-      "steps": [
-        {
-          "num": "01",
-          "title": "Onboarding call",
-          "text": "A free first call by phone or video: we clarify your goals, the timeline, and answer your initial questions."
-        },
-        {
-          "num": "02",
-          "title": "On-site appointment",
-          "text": "A personal viewing of your property and a market-based valuation — on site, not by algorithm alone."
-        },
-        {
-          "num": "03",
-          "title": "Pricing & sales strategy",
-          "text": "A realistic asking price, target-group definition, and a clear marketing plan before the property goes online."
-        },
-        {
-          "num": "04",
-          "title": "Property shoot",
-          "text": "Professional photos, a video exposé, and a 360° tour present your property in the best possible light."
-        },
-        {
-          "num": "05",
-          "title": "Marketing",
-          "text": "High-reach marketing across portals, our network, and social media — for maximum qualified demand."
-        },
-        {
-          "num": "06",
-          "title": "Buyer qualification & financing",
-          "text": "We vet prospects including proof of financing — only serious, solvent buyers come to viewings."
-        },
-        {
-          "num": "07",
-          "title": "Notary & closing",
-          "text": "Negotiation management, the notary appointment, and support all the way to the key handover — all from one hand."
-        }
-      ]
+      "lede": "Ten clearly defined steps connect preparation, marketing, and completion. Select a step to see what happens in each phase.",
+      "link": "See all 10 steps in detail",
+      "previous": "Previous step",
+      "next": "Next step",
+      "tabList": "The ten steps of a property sale",
+      "selectedStep": "Selected step",
+      "activities": "What we do",
+      "outcome": "Your result"
     },
     "references": {
-      "eyebrow": "Proven results",
+      "eyebrow": "Selected references",
       "title": "References from your neighborhood",
-      "link": "All reference properties →",
-      "durationLabel": "Time on market",
-      "resultLabel": "Result",
-      "photoAlt": "Reference photo",
-      "items": [
-        {
-          "badge": "Sold",
-          "title": "Condominium, Fürth-Südstadt",
-          "duration": "6 weeks",
-          "result": "+4% above valuation",
-          "story": "The 360° tour and video exposé generated 38 qualified inquiries in the first week."
-        },
-        {
-          "badge": "Sold",
-          "title": "Single-family home, Zirndorf",
-          "duration": "8 weeks",
-          "result": "At valuation",
-          "story": "Discreet marketing through our buyer network — without a public listing."
-        },
-        {
-          "badge": "Let",
-          "title": "Multi-family house, Erlangen",
-          "duration": "4 weeks",
-          "result": "Fully let",
-          "story": "All three units filled through pre-qualification, including credit checks."
-        }
-      ]
+      "link": "View all 15 reference properties →"
     },
     "valuation": {
       "eyebrow": "Free & non-binding",
@@ -590,13 +630,16 @@
       "quote": "“The 360° tour spared us viewings with undecided visitors — only serious prospects came.”",
       "quoteAuthor": "Mr. M. · Apartment sale, Nuremberg-St. Johannis · Google ★★★★★",
       "formTitle": "Start your valuation",
+      "prototypeLabel": "Interactive frontend prototype",
+      "prototypeNote": "Classify property type, location, size, and timing in five clear steps.",
+      "localOnly": "Your details stay in the browser. No request is transmitted.",
       "plzLabel": "Postal code of the property",
       "plzPlaceholder": "e.g. 90513",
       "typeLabel": "Property type",
       "types": ["House", "Apartment", "Multi-family house", "Plot"],
       "submit": "Start your free valuation",
-      "success": "✓ Thank you — we will get back to you within one business day with your initial assessment.",
-      "privacyNote": "Your data is never shared. Prefer a call instead of a form?",
+      "success": "Prototype complete — no request was submitted.",
+      "privacyNote": "Local demonstration without data transmission. Prefer a call instead of a form?",
       "callbackLink": "Request a callback"
     },
     "servicesOverview": {
@@ -614,12 +657,12 @@
           "text": "A free, well-founded valuation based on current sales data from your neighborhood."
         },
         {
-          "title": "Rental management",
-          "text": "Reliable management of your rental properties — from tenant search to contracts and statements."
+          "title": "Premium marketing",
+          "text": "Professional photography, video, 360° tours, and digital reach for a compelling market presence."
         },
         {
           "title": "Search requests & buyer advisory",
-          "text": "Over 5,000 registered search clients — as a buyer, you hear about matching properties before anyone else."
+          "text": "Over 8,000 registered search clients — as a buyer, you hear about matching properties before anyone else."
         },
         {
           "title": "Financing",
@@ -655,7 +698,7 @@
       ],
       "stats": [
         { "value": "360°", "label": "Tour for every property" },
-        { "value": "5,000+", "label": "registered search clients" },
+        { "value": "8,000+", "label": "registered search clients" },
         { "value": "60+", "label": "property sales per year" }
       ],
       "demoLabel": "Property presentation · From plot to completed home",
@@ -667,18 +710,81 @@
       "eyebrow": "Reviews",
       "title": "What our clients say",
       "ratingSuffix": "out of 5",
-      "google": {
-        "name": "Google",
-        "rating": "5.0",
-        "count": "184 reviews",
-        "link": "Read reviews on Google →"
-      },
-      "trustpilot": {
-        "name": "Trustpilot",
-        "rating": "4.7",
-        "count": "29 reviews",
-        "link": "Read reviews on Trustpilot →"
-      },
+      "primaryProfiles": [
+        {
+          "id": "google",
+          "name": "Google",
+          "rating": "4.9",
+          "count": "220+ reviews",
+          "link": "Read on Google →"
+        },
+        {
+          "id": "trustpilot",
+          "name": "Trustpilot",
+          "rating": "4.7",
+          "count": "30 reviews",
+          "link": "Read on Trustpilot →"
+        },
+        {
+          "id": "immowelt",
+          "name": "Immowelt",
+          "rating": "4.5",
+          "count": "55 reviews",
+          "link": "Read on Immowelt →"
+        }
+      ],
+      "secondaryTitle": "More review profiles",
+      "asOf": "As of July 2026",
+      "aggregationNote": "Note: Some profiles aggregate reviews from other platforms. Their underlying source basis is therefore stated on each profile.",
+      "screenshots": [
+        {
+          "src": "/images/reviews/google-patric-mago.png",
+          "alt": "Supplied screenshot of a Google review by Patric Mago"
+        },
+        {
+          "src": "/images/reviews/google-ursula-troeger.png",
+          "alt": "Supplied screenshot of a Google review by Ursula Tröger"
+        },
+        {
+          "src": "/images/reviews/google-customer-review.png",
+          "alt": "Supplied screenshot of a detailed Google client review"
+        }
+      ],
+      "screenshotNote": "Supplied review screenshots shown in the prototype. Platform terms and usage clearance remain a public-release gate.",
+      "secondaryProfiles": [
+        {
+          "id": "provenexpert",
+          "name": "ProvenExpert",
+          "rating": "5.0",
+          "suffix": "out of 5",
+          "basis": "173 reviews · from Google",
+          "link": "Open profile"
+        },
+        {
+          "id": "trustlocal",
+          "name": "Trustlocal",
+          "rating": "9.4",
+          "suffix": "out of 10",
+          "basis": "160 reviews · from 3 sources",
+          "link": "Open profile"
+        },
+        {
+          "id": "jacasa",
+          "name": "Jacasa",
+          "rating": "4.8",
+          "suffix": "out of 5",
+          "basis": "271 reviews · from 2 portals",
+          "link": "Open profile"
+        },
+        {
+          "id": "dasoertliche",
+          "name": "Das Örtliche",
+          "rating": "5.0",
+          "suffix": "out of 5",
+          "basis": "3 reviews · Golocal & 11880",
+          "link": "Open profile"
+        }
+      ],
       "items": [
         {
           "quote": "“From valuation to the notary appointment, everything went faster than expected — and we were kept informed at all times.”",
@@ -694,19 +800,80 @@
         }
       ]
     },
+    "stories": {
+      "eyebrow": "Sales stories",
+      "title": "Four situations. Four tailored strategies.",
+      "text": "A private-sale attempt, an inherited property, a character apartment, and the wish for a fully managed process: strong marketing starts with the owner's real situation.",
+      "videoFallback": "Your browser cannot play this client interview.",
+      "prototypeNote": "Names, statements, and results are used as supplied in this prototype. Documented consent remains required before public release.",
+      "items": [
+        {
+          "id": "viktor-emter",
+          "name": "Viktor Emter",
+          "context": "After a private-sale attempt",
+          "quote": "Open communication and a clear pricing strategy gave us confidence even as interest rates changed.",
+          "result": "Professionally managed apartment sale",
+          "alt": "Preview image for the client interview with Viktor Emter",
+          "video": true
+        },
+        {
+          "id": "markus-burkhard",
+          "name": "Markus Burkhard",
+          "context": "Maisonette in Zirndorf-Weiherhof",
+          "quote": "The process was clear, transparent, and genuinely fully managed for me.",
+          "result": "Sold at the desired price in around three months",
+          "alt": "Preview image for Markus Burkhard's sales story",
+          "video": false
+        },
+        {
+          "id": "herr-sippel",
+          "name": "Mr Sippel",
+          "context": "Inherited semi-detached home in Erlangen",
+          "quote": "Despite the renovation needs, Immonation found the right buyer and handled everything for me.",
+          "result": "Sold in twelve weeks",
+          "alt": "Inherited semi-detached home from Mr Sippel's sales story",
+          "video": false
+        },
+        {
+          "id": "frau-hartmann",
+          "name": "Ms Hartmann",
+          "context": "Heritage apartment in St. Johannis",
+          "quote": "Immonation immediately understood the character of my apartment and presented it perfectly.",
+          "result": "Sold in six weeks · 6% above market value",
+          "alt": "Heritage apartment from Ms Hartmann's sales story",
+          "video": false
+        }
+      ]
+    },
     "feedback": {
-      "eyebrow": "Highly rated",
-      "title": "Client feedback you can watch",
-      "text": "Numbers are good, faces are better: in our video we show how we work — and clients share how their sale went.",
-      "badges": [
-        "Google 5.0 ★ across 184 reviews",
-        "Trustpilot 4.7 ★",
-        "60+ property sales per year",
-        "5,000+ search clients in our network"
-      ],
-      "videoTitle": "Inside Immonation: how we work",
-      "playLabel": "Play video",
-      "consentNote": "Playing loads the video from YouTube (privacy-enhanced mode)."
+      "eyebrow": "Client stories",
+      "title": "Three personal perspectives on working with us",
+      "text": "Clients describe the advice, communication, and sale in their own words. One conversation is available now; two further video slots are prepared for approved contributions.",
+      "comingSoon": "Video coming soon",
+      "videoFallback": "Your browser cannot play this client interview.",
+      "items": [
+        {
+          "id": "viktor-emter",
+          "name": "Viktor Emter",
+          "title": "Experiences from selling a property",
+          "alt": "Preview image for the client interview with Viktor Emter",
+          "available": true
+        },
+        {
+          "id": "markus-burkhard",
+          "name": "Markus Burkhard",
+          "title": "A client story from Zirndorf-Weiherhof",
+          "alt": "Preview image for Markus Burkhard's client story",
+          "available": false
+        },
+        {
+          "id": "sandra-boerschlein",
+          "name": "Sandra Börschlein",
+          "title": "A personal look back at the collaboration",
+          "alt": "Preview image for Sandra Börschlein's client story",
+          "available": false
+        }
+      ]
     },
     "social": {
       "eyebrow": "Social media",
@@ -722,13 +889,13 @@
     "group": {
       "eyebrow": "Company group",
       "title": "The Immonation group: more than brokerage",
-      "intro": "Behind Immonation GmbH stands a company group covering the entire life cycle of a property — from brokerage and management to project development and investment.",
+      "intro": "Behind Immonation GmbH stands a group with complementary expertise — from brokerage and professional marketing to project development and investment.",
       "link": "More about us →",
       "companies": [
         {
           "name": "Immonation Capital Holding GmbH",
           "role": "Holding company",
-          "text": "Bundles real-estate brokerage, management, project development, and investment under one roof."
+          "text": "Bundles real-estate brokerage, professional marketing, project development, and investment under one roof."
         },
         {
           "name": "IN Beteiligungs GmbH",
@@ -743,16 +910,50 @@
       ]
     },
     "partners": {
-      "eyebrow": "Partners",
-      "title": "Strong partners at our side",
-      "text": "For financing, reach, and regional connections, we rely on established partners.",
+      "eyebrow": "Network & group",
+      "title": "Verified partners and combined real-estate expertise",
+      "text": "We clearly separate external relationships from the companies in the Immonation group, making every role in the network easy to understand.",
+      "partnerGroupLabel": "Partners & market presence",
+      "companyGroupLabel": "Immonation company group",
       "items": [
         {
+          "id": "dr-klein",
           "name": "Dr. Klein",
-          "role": "Financing partner — construction financing at top conditions"
+          "role": "Financing partner",
+          "alt": "Dr. Klein logo"
         },
-        { "name": "Immowelt", "role": "Property portal" },
-        { "name": "Zirndorf Marketing", "role": "Regional network" }
+        {
+          "id": "immowelt",
+          "name": "immowelt",
+          "role": "Business Partner and property portal",
+          "alt": "immowelt Business Partner logo"
+        },
+        {
+          "id": "rewe",
+          "name": "REWE",
+          "role": "Regional market presence",
+          "alt": "REWE logo"
+        }
+      ],
+      "groupItems": [
+        {
+          "id": "capital-holding",
+          "name": "Immonation Capital Holding GmbH",
+          "role": "Holding company",
+          "alt": "Immonation Capital Holding GmbH logo"
+        },
+        {
+          "id": "in-beteiligung",
+          "name": "IN Beteiligungs GmbH",
+          "role": "Acquisition and project development",
+          "alt": "IN Beteiligungs GmbH logo"
+        },
+        {
+          "id": "dream-living",
+          "name": "Dream Living GmbH",
+          "role": "Revitalization",
+          "alt": "Dream Living GmbH logo"
+        }
       ]
     },
     "contactBooking": {
@@ -771,20 +972,26 @@
     },
     "buy": {
       "metaTitle": "Buying property in Zirndorf, Nuremberg, Fürth & Erlangen",
-      "metaDescription": "Current property listings and search requests for buyers in the region — houses, apartments, and plots with personal support until you move in.",
+      "metaDescription": "Prototype property overview for buyers in the region — houses and apartments with a clear search and financing journey.",
       "eyebrow": "For buyers",
       "title": "Looking to buy instead of sell?",
-      "subtitle": "Current listings from the region — or create a search request and hear about new properties before anyone else.",
+      "subtitle": "A realistic preview of the future buyer search — with clear orientation, sample properties, and personal guidance.",
+      "prototypeNotice": "Design prototype: the following listings, filters, and brochure actions are examples and are not live.",
+      "searchLabel": "Sample search",
+      "searchPlaceholder": "Location, postcode, or property ID",
+      "filters": "Filters",
+      "search": "Search",
+      "sampleCount": "3 sample properties",
       "ctaAll": "All listings",
       "ctaSearch": "Create a search request",
       "newBadge": "New",
-      "exposeLink": "View exposé →",
+      "exposeLink": "Sample brochure",
       "photoAlt": "Property photo",
       "items": [
         {
           "isNew": true,
           "title": "Single-family home with garden",
-          "location": "Zirndorf · Wintersdorfer Weg",
+          "location": "Zirndorf · Weiherhof",
           "area": "142 m²",
           "rooms": "5 rooms",
           "extra": "612 m² plot",
@@ -808,8 +1015,231 @@
           "extra": "Garage",
           "price": "€545,000"
         }
-      ]
+      ],
+      "financing": {
+        "eyebrow": "Financing orientation",
+        "title": "With Dr. Klein as the named financing partner.",
+        "text": "Prospective buyers can request a separate financing orientation. The prototype presents this as a clearly separated partner journey.",
+        "prototypeNote": "Partner status and final public wording remain subject to confirmation before launch."
+      }
     }
+  },
+  "SalesProcess": {
+    "serviceType": "Property sale",
+    "areaServed": "Nuremberg metropolitan region",
+    "metadata": {
+      "title": "Property sale process: 10 clear steps",
+      "description": "How a property sale works with Immonation: ten clear steps from property intake and valuation to the notary appointment and key handover."
+    },
+    "hero": {
+      "eyebrow": "The Immonation sales roadmap",
+      "title": "The property sale process in 10 clear steps",
+      "lede": "A successful sale does not begin with a listing. It begins with complete information, a market-ready price, and a clear roadmap through to handover."
+    },
+    "answer": "Our property sale process follows ten defined steps: we document the property and its records, assess market and price, agree the strategy, prepare the presentation, publish after your approval, and then manage enquiries, viewings, negotiation, the notary process, and handover.",
+    "indexEyebrow": "Direct orientation",
+    "indexTitle": "All 10 steps at a glance",
+    "indexLabel": "Jump to a step in the property sale process",
+    "activities": "What we take care of",
+    "outcome": "What this gives you",
+    "owner": {
+      "eyebrow": "Transparent guidance",
+      "title": "What you can expect throughout the sale",
+      "items": [
+        {
+          "title": "One clear roadmap",
+          "text": "You know which step is complete, what happens next, and which decision we need from you."
+        },
+        {
+          "title": "Controlled approvals",
+          "text": "We agree the price, strategy, brochure, and publication with you before your property enters the market."
+        },
+        {
+          "title": "One coordinating interface",
+          "text": "We keep seller, buyer, finance partner, and notary aligned and remain involved through handover."
+        }
+      ]
+    },
+    "related": {
+      "eyebrow": "Prepare your sale",
+      "title": "Choose the right next step for your situation",
+      "text": "Begin with a well-founded valuation or read the property-specific guide for a house, apartment, plot, or apartment building.",
+      "valuation": "Value your property",
+      "guides": "View seller guides"
+    },
+    "faq": {
+      "title": "Frequently asked questions about the property sale process",
+      "items": [
+        {
+          "question": "Which documents are needed to sell a property?",
+          "answer": "The core records include the land register extract, site plan or cadastral map, energy certificate, and key property data and photos. Depending on the property type, floor plans, floor-area calculations, declarations of division, meeting minutes, tenancy records, or a development plan may also be needed. We source missing records through our specialist network, which can also prepare floor plans and area calculations when required."
+        },
+        {
+          "question": "When is the property published?",
+          "answer": "Publication takes place only after property intake, valuation, sales strategy, and professional preparation are complete. The brochure, price, and marketing route are released to the relevant portals and agreed channels after your approval."
+        },
+        {
+          "question": "How are prospective buyers checked?",
+          "answer": "We handle every enquiry, assess seriousness and creditworthiness, clarify financing, and then arrange suitable viewings. This focuses appointments on buyers who genuinely want and are able to purchase the property."
+        },
+        {
+          "question": "What happens after a purchase offer?",
+          "answer": "We review the price and conditions, assess the buyer profile and financing, and negotiate in your interest. We then coordinate preparation of the purchase agreement, the notary office, and notarisation."
+        },
+        {
+          "question": "Does the agent's support end at the notary appointment?",
+          "answer": "No. After notarisation, we organise the handover, document meter readings, and coordinate remaining points. Our support continues through the key handover and beyond."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start with a reliable first step",
+      "text": "In a personal conversation, we put your property's value, records, target group, and timetable into context.",
+      "primary": "Start a free valuation",
+      "secondary": "Book an initial consultation"
+    },
+    "steps": [
+      {
+        "id": "property-intake",
+        "num": "01",
+        "phase": "Phase 01 · A clean start",
+        "title": "Instruction & property intake",
+        "summary": "We document your property completely and create a reliable basis for every decision that follows.",
+        "detail": "Once instructed, we take the time to build a complete picture. Property type, year of construction, condition, areas, plot data, features, modernisation work, and distinctive strengths are recorded together with the available documents.",
+        "activities": [
+          "Record the property, areas, condition, and features systematically",
+          "Document distinctive strengths and modernisation work",
+          "Review available records and identify missing documents"
+        ],
+        "outcome": "A complete evidence base prevents later surprises and makes the valuation and marketing defensible."
+      },
+      {
+        "id": "valuation",
+        "num": "02",
+        "phase": "Phase 02 · Value and route",
+        "title": "Valuation & market analysis",
+        "summary": "We determine a market-ready asking price using experience, data, and current comparable listings.",
+        "detail": "The valuation rests on three pillars: our sales experience with comparable properties in the region, current market data and professional valuation tools, and comparison with similar properties currently offered on the market.",
+        "activities": [
+          "Assess regional sales experience and property characteristics",
+          "Evaluate current market data and professional valuation tools",
+          "Compare competing listings and the property's realistic market position"
+        ],
+        "outcome": "You receive a well-founded basis for an achievable sale price, not a wish price or a price chosen merely to win the instruction."
+      },
+      {
+        "id": "strategy",
+        "num": "03",
+        "phase": "Phase 02 · Value and route",
+        "title": "Sales strategy",
+        "summary": "Together we define the asking price, target group, sales arguments, and marketing route.",
+        "detail": "The right price and message determine whether the first weeks of peak attention are used well. Before launch, we define which buyers fit the property, which strengths matter most, and which channels will reach them.",
+        "activities": [
+          "Agree a market-ready asking price",
+          "Define suitable buyer groups and persuasive property strengths",
+          "Plan marketing channels and approval points"
+        ],
+        "outcome": "A clear launch protects the most valuable attention phase and reduces the need for later price corrections."
+      },
+      {
+        "id": "preparation",
+        "num": "04",
+        "phase": "Phase 03 · Visibility and buyers",
+        "title": "Professional preparation",
+        "summary": "Photography, floor plans, brochure, and digital presentation show the property from its strongest perspective.",
+        "detail": "We prepare a clear property description, high-quality photography, and polished floor plans. Depending on the property, a virtual tour or clearly labelled visualisations add context. Our specialist network can prepare missing lender-ready measured plans and floor-area calculations.",
+        "activities": [
+          "Create the brochure, property description, and professional imagery",
+          "Review, improve, or measure floor plans when required",
+          "Use 360° tours, drone imagery, or visualisation where they add value"
+        ],
+        "outcome": "Buyers understand the location, rooms, and potential online and arrive better prepared for the next stage."
+      },
+      {
+        "id": "publication",
+        "num": "05",
+        "phase": "Phase 03 · Visibility and buyers",
+        "title": "Publication",
+        "summary": "After your approval, we launch the property on the relevant portals and through the right channels.",
+        "detail": "The property enters the market only after the agreed approvals. We combine relevant property portals with our buyer network and, where appropriate, target-group social communication and additional visibility measures.",
+        "activities": [
+          "Present the brochure and marketing materials for approval",
+          "Publish on the relevant property portals",
+          "Activate the buyer network and suitable additional channels"
+        ],
+        "outcome": "Your property appears where suitable buyers search, with one consistent and approved presentation."
+      },
+      {
+        "id": "enquiries",
+        "num": "06",
+        "phase": "Phase 03 · Visibility and buyers",
+        "title": "Enquiry management",
+        "summary": "We handle every enquiry, assess seriousness and creditworthiness, and keep the process clear.",
+        "detail": "Quality comes before quantity. We answer incoming enquiries, pre-assess prospective buyers, review seriousness and financial readiness, and document feedback. Engagement with the virtual tour can also support the qualification process.",
+        "activities": [
+          "Handle incoming enquiries completely and promptly",
+          "Pre-qualify seriousness, buyer fit, and creditworthiness",
+          "Document feedback and next actions systematically"
+        ],
+        "outcome": "You face fewer unnecessary appointments and gain a clear view of the demand that genuinely matters."
+      },
+      {
+        "id": "viewings",
+        "num": "07",
+        "phase": "Phase 03 · Visibility and buyers",
+        "title": "Viewings",
+        "summary": "We present your property to serious buyers and manage each appointment with clear preparation and follow-up.",
+        "detail": "Viewings are arranged with pre-qualified buyers and conducted professionally. We prepare for likely questions, explain the property's decisive strengths, and obtain structured feedback after each appointment.",
+        "activities": [
+          "Coordinate suitable appointments with qualified buyers",
+          "Present the property and its sales arguments professionally",
+          "Gather feedback and re-qualify continuing interest"
+        ],
+        "outcome": "Viewings become informed decision appointments rather than casual property tourism."
+      },
+      {
+        "id": "negotiation",
+        "num": "08",
+        "phase": "Phase 04 · Through to the keys",
+        "title": "Offer & negotiation",
+        "summary": "We check the buyer and financing, assess the overall package, and negotiate in your interest.",
+        "detail": "An offer is not judged only by the number on the page. We review price and conditions, buyer profile, creditworthiness, and financing, then negotiate with the goal of a strong and secure completion.",
+        "activities": [
+          "Review the offer's price, conditions, and timing",
+          "Assess the buyer profile, creditworthiness, and financing",
+          "Lead negotiations and coordination in your interest"
+        ],
+        "outcome": "You decide on a checked overall package instead of relying only on the highest non-binding figure."
+      },
+      {
+        "id": "notary",
+        "num": "09",
+        "phase": "Phase 04 · Through to the keys",
+        "title": "Notary & notarisation",
+        "summary": "We coordinate the purchase agreement, notary office, and all parties through to notarisation.",
+        "detail": "Once terms are agreed, we support preparation of the purchase agreement, coordinate open points with the notary office, and keep seller, buyer, and finance partner aligned through to the notarisation appointment.",
+        "activities": [
+          "Bring together the information needed for the purchase agreement",
+          "Coordinate open points with the buyer and notary office",
+          "Support the organisation of the notarisation appointment"
+        ],
+        "outcome": "Every party works from the same information toward an orderly contractual completion."
+      },
+      {
+        "id": "handover",
+        "num": "10",
+        "phase": "Phase 04 · Through to the keys",
+        "title": "Handover & completion",
+        "summary": "We support the key handover, document meter readings, and remain available for outstanding points.",
+        "detail": "The process does not end with the signature. We organise the handover, prepare or support the record, document meter readings, and coordinate the final outstanding points between the parties.",
+        "activities": [
+          "Organise the handover appointment between seller and buyer",
+          "Document the record, keys, and meter readings",
+          "Coordinate final outstanding points through to completion"
+        ],
+        "outcome": "The change of ownership ends in a clear and orderly way, with one contact through the final step."
+      }
+    ]
   },
   "Magazine": {
     "eyebrow": "REVIER magazine",
@@ -843,20 +1273,651 @@
       "pageAlt": "REVIER magazine page {page}"
     }
   },
+  "PremiumMarketing": {
+    "eyebrow": "The Immonation sales system",
+    "title": "Premium marketing works as a system.",
+    "lede": "From a market-ready price and lender-ready documents to precise buyer outreach, ten connected services prepare your sale, create visibility, and guide it safely to completion.",
+    "primaryCta": "Value your property",
+    "secondaryCta": "Explore seller paths",
+    "tabList": "Services in the Immonation sales system",
+    "included": "What is included",
+    "result": "Your advantage",
+    "videoLabel": "Example of a digital property presentation by Immonation",
+    "videoFallback": "Your browser cannot play the presentation video.",
+    "services": [
+      {
+        "id": "system",
+        "tab": "Sales system",
+        "kicker": "10-step system",
+        "title": "Selling means managing the process, not merely listing.",
+        "text": "Every sale follows a defined path, from the complete property intake to the handover of keys. Responsibilities, approvals, and next steps remain clear throughout.",
+        "highlight": "A clear plan for every step.",
+        "bullets": [
+          "A complete roadmap from instruction to handover",
+          "Clear responsibilities within the Immonation team",
+          "Regular, proactive updates on the sale",
+          "One dedicated contact for your decisions"
+        ],
+        "result": "Preparation, marketing, and completion work as one process. Your sale remains manageable, and no important step is left to chance.",
+        "proof": [
+          { "value": "10", "label": "coordinated steps" },
+          { "value": "1 team", "label": "instead of one individual agent" },
+          { "value": "To completion", "label": "support beyond the notary appointment" }
+        ]
+      },
+      {
+        "id": "valuation",
+        "tab": "Valuation",
+        "kicker": "Value & approach",
+        "title": "A market-ready price instead of wishful thinking or bait pricing.",
+        "text": "Experience from regional sales, current market data, and comparison with similar listings provide the shared foundation.",
+        "highlight": "Price, audience, and strategy aligned.",
+        "bullets": [
+          "On-site assessment of location, condition, and features",
+          "Data-led market analysis as an objective cross-check",
+          "Comparison with similar listings and completed sales",
+          "Joint decision on price and marketing route"
+        ],
+        "result": "The asking price reaches the right search filters and uses the high-attention launch phase without losing potential through an unrealistic opening position.",
+        "proof": [
+          { "value": "3 pillars", "label": "experience, data, and comparison" },
+          { "value": "Regional", "label": "context for the greater Nuremberg area" },
+          { "value": "Market-ready", "label": "price as the basis of strategy" }
+        ]
+      },
+      {
+        "id": "intake",
+        "tab": "Property intake",
+        "kicker": "A clean start",
+        "title": "A complete foundation prevents surprises later.",
+        "text": "We record property type, areas, condition, features, improvements, and special characteristics, then review the available documents.",
+        "highlight": "Understand first. Market second.",
+        "bullets": [
+          "Complete capture of property and land data",
+          "Review of land register, cadastral map, and energy certificate",
+          "Checks tailored to the specific property type",
+          "Procurement of missing documents through our network"
+        ],
+        "result": "Valuation, brochure, and buyer checks rely on dependable information, so open questions do not surface only during finance or contract review.",
+        "proof": [
+          { "value": "Complete", "label": "property and documents recorded" },
+          { "value": "Specific", "label": "requirements matched to property type" },
+          { "value": "Resolved early", "label": "missing documents obtained" }
+        ]
+      },
+      {
+        "id": "floorplans",
+        "tab": "Floor plans",
+        "kicker": "Lender-ready records",
+        "title": "Measured floor plans that support financing.",
+        "text": "Missing or unusable plans can delay a buyer's financing. When needed, our specialist network coordinates a measured redraw with a traceable living-area calculation.",
+        "highlight": "Usable for buyers, lenders, and valuers.",
+        "bullets": [
+          "Measurements for all relevant walls and rooms",
+          "Living-area calculation under the applicable regulation",
+          "Traceable records for lenders and valuers",
+          "Coordinated through an established specialist network"
+        ],
+        "result": "Buyers can submit usable plans with their finance application, while questions about dimensions and areas are resolved early.",
+        "proof": [
+          { "value": "Measured", "label": "exact dimensions instead of a sketch" },
+          { "value": "Living area", "label": "calculated transparently" },
+          { "value": "Network", "label": "prepared by coordinated specialists" }
+        ]
+      },
+      {
+        "id": "media",
+        "tab": "Photo & perspective",
+        "kicker": "Perspective & presentation",
+        "title": "Your property's strengths become visible in seconds.",
+        "text": "Professional images show rooms, land, and location from perspectives suited to the property and its buyer audience.",
+        "highlight": "A first impression grounded in real potential.",
+        "bullets": [
+          "Professional interior and exterior photography",
+          "Architecture-led perspectives for the plot and its setting",
+          "Image selection aligned with the buyer audience",
+          "Authentic presentation without false promises"
+        ],
+        "result": "The listing communicates quality and orientation before a prospect reads the first paragraph or requests an appointment.",
+        "proof": [
+          { "value": "Inside & out", "label": "one consistent visual language" },
+          { "value": "In context", "label": "location and plot made clear" },
+          { "value": "Purposeful", "label": "every perspective earns its place" }
+        ]
+      },
+      {
+        "id": "tour",
+        "tab": "360° tour",
+        "kicker": "Qualified virtually",
+        "title": "Serious prospects view the property digitally first.",
+        "text": "After an enquiry, suitable prospects receive access to the virtual tour. They gain a realistic sense of the space without an immediate on-site appointment.",
+        "highlight": "More insight. Fewer casual viewings.",
+        "bullets": [
+          "A realistic digital tour of the property",
+          "Controlled access following a specific enquiry",
+          "Review of access and viewing duration",
+          "On-site appointments with better-prepared buyers"
+        ],
+        "result": "Your privacy is protected, and viewing time is focused on people who are seriously considering the property.",
+        "proof": [
+          { "value": "Anytime", "label": "digital and location-independent" },
+          { "value": "Controlled", "label": "access after qualification" },
+          { "value": "Prepared", "label": "clearer spatial understanding before a visit" }
+        ]
+      },
+      {
+        "id": "visualisation",
+        "tab": "Visualisation",
+        "kicker": "Making potential clear",
+        "title": "Room and use ideas make potential visible.",
+        "text": "For empty, renovation-ready, or unrealised spaces, visualisations show how rooms could be used and designed, always clearly identified as representations.",
+        "highlight": "Easy to imagine, honest about the current state.",
+        "bullets": [
+          "Virtual home staging for empty rooms",
+          "Visualisation of possible room and use ideas",
+          "Before-and-after context with clear labelling",
+          "Targeted use only where explanation adds value"
+        ],
+        "result": "Prospects understand the potential faster while the property's actual condition remains transparent.",
+        "proof": [
+          { "value": "Before", "label": "the documented current condition" },
+          { "value": "Possibility", "label": "an understandable spatial idea" },
+          { "value": "Transparent", "label": "clearly marked as a visualisation" }
+        ]
+      },
+      {
+        "id": "listing",
+        "tab": "Brochure & portals",
+        "kicker": "Approval & publication",
+        "title": "A precise brochure brings every fact together.",
+        "text": "Property description, photography, floor plans, and documents form one consistent presentation. We publish only after your review and approval.",
+        "highlight": "Clearly reviewed. Precisely published.",
+        "bullets": [
+          "Compelling property and location description",
+          "Ordered facts, areas, and supporting documents",
+          "An approval round before publication",
+          "Placement on the relevant property portals"
+        ],
+        "result": "Buyers receive a dependable basis for their decision, and questions focus on what genuinely matters to the purchase.",
+        "proof": [
+          { "value": "One brochure", "label": "media and facts connected" },
+          { "value": "Approved", "label": "you retain control" },
+          { "value": "Relevant", "label": "portals suited to the property" }
+        ]
+      },
+      {
+        "id": "visibility",
+        "tab": "Visibility",
+        "kicker": "Reaching buyers precisely",
+        "title": "Reach follows the audience, not a scattergun approach.",
+        "text": "Portals, enhanced placements, social campaigns, and our buyer network are combined to fit the property, its audience, and the desired level of discretion.",
+        "highlight": "Visible where suitable buyers are looking.",
+        "bullets": [
+          "Audience-led campaigns on social media",
+          "Enhanced portal placements where useful",
+          "Direct outreach through our buyer network",
+          "Discreet buyer outreach with coordinated communication"
+        ],
+        "result": "The property receives the attention it needs without confusing broad reach with genuine demand.",
+        "proof": [
+          { "value": "Portals", "label": "reach within the active search market" },
+          { "value": "Social", "label": "campaigns aligned with the audience" },
+          { "value": "Network", "label": "direct and discreet outreach" }
+        ]
+      },
+      {
+        "id": "qualification",
+        "tab": "Buyer checks",
+        "kicker": "From interest to secure completion",
+        "title": "Not every enquiry automatically becomes a viewing.",
+        "text": "We review seriousness, buyer fit, and financing, coordinate appointments, and guide qualified offers through negotiation, the notary process, and handover.",
+        "highlight": "The best price matters only when the sale is secure.",
+        "bullets": [
+          "Personal handling and pre-qualification of every enquiry",
+          "Review of creditworthiness and financing viability",
+          "Negotiation of price and terms in your interest",
+          "Coordination of contract, notary, and handover"
+        ],
+        "result": "Reach becomes dependable offers, and the strongest overall package becomes a securely coordinated completion.",
+        "proof": [
+          { "value": "Qualified", "label": "seriousness and financing reviewed" },
+          { "value": "Negotiated", "label": "price and terms kept in view" },
+          { "value": "Coordinated", "label": "through to the handover of keys" }
+        ]
+      }
+    ]
+  },
+  "SellerHubPage": {
+    "metadata": {
+      "title": "Sell a property | Immonation",
+      "description": "Sell a house, apartment, land, or apartment building with sound valuation, clear strategy, and premium marketing in the Nuremberg region."
+    },
+    "eyebrow": "For owners",
+    "title": "Sell a property — prepared, not merely listed.",
+    "lede": "Every property type raises different questions about valuation, records, buyers, and marketing. Choose the appropriate sales path and learn what matters in practice.",
+    "answer": "A strong property sale starts with a realistic valuation and a plan. Immonation coordinates preparation, presentation, buyer review, and completion with one dedicated contact across Zirndorf, Nuremberg, Fürth, and Erlangen.",
+    "processLink": "See the complete sales process",
+    "guides": {
+      "eyebrow": "Seller paths",
+      "title": "What are you selling?",
+      "link": "Open guide"
+    },
+    "local": {
+      "title": "Local context instead of a generic market figure.",
+      "text": "Zirndorf, Nuremberg, Fürth, and Erlangen vary at district and street level. Our location pages explain the sales approach without unverified live prices.",
+      "link": "Explore locations"
+    },
+    "cta": {
+      "title": "Which sales path fits your property?",
+      "text": "Start with a non-binding valuation or place your plans in context during a personal conversation.",
+      "primary": "Free valuation",
+      "secondary": "Get in touch"
+    }
+  },
+  "SellerGuidePage": {
+    "hub": "Sell a property",
+    "areaServed": "Zirndorf, Nuremberg, Fürth, Erlangen, and surrounding areas",
+    "valuationCta": "Start valuation",
+    "processEyebrow": "Preparation & marketing",
+    "processTitle": "The decisive steps",
+    "faqTitle": "Frequently asked questions",
+    "cta": {
+      "title": "Prepare your sale properly",
+      "text": "We clarify value, documents, buyer group, and timing before your property enters the market.",
+      "primary": "Value your property",
+      "secondary": "Request a conversation"
+    }
+  },
+  "LocationsPage": {
+    "metadata": {
+      "title": "Real-estate agents in the Nuremberg region",
+      "description": "Local property advice and sales in Zirndorf, Nuremberg, Fürth, and Erlangen — personal and property-specific."
+    },
+    "eyebrow": "Our region",
+    "title": "Local market knowledge starts with the neighborhood.",
+    "lede": "A city name alone does not explain property value. We consider micro-location, property type, condition, and current buyer group and turn them into a reliable sales strategy.",
+    "answer": "Immonation supports owners in Zirndorf, Nuremberg, Fürth, and Erlangen with personal valuation and professional marketing. These location pages provide durable orientation without invented or outdated price claims.",
+    "link": "View location",
+    "cta": {
+      "title": "How does your property fit its local market?",
+      "text": "An on-site valuation connects property characteristics with the specific micro-location and current demand.",
+      "primary": "Request valuation",
+      "secondary": "Explore seller paths"
+    }
+  },
+  "LocationDetailPage": {
+    "hub": "Locations",
+    "eyebrow": "Local property advice",
+    "serviceType": "Property sale and valuation",
+    "contentEyebrow": "Locally informed",
+    "contentTitle": "Selling property in {city}",
+    "faqTitle": "Property questions for {city}",
+    "cta": {
+      "title": "Value your property in {city}",
+      "text": "We connect the specific micro-location in {city} with condition, documents, and the current buyer group.",
+      "primary": "Start valuation",
+      "secondary": "Talk to us"
+    }
+  },
+  "RecruitingPage": {
+    "metadata": {
+      "title": "Become a real-estate agent | Immonation",
+      "description": "Work with Immonation as a real-estate agent or independent sales partner in the Nuremberg metropolitan region: role, collaboration, and application."
+    },
+    "eyebrow": "Agent career",
+    "title": "Broker property — with structure behind you.",
+    "lede": "You bring sales ability, regional proximity, and responsibility for clients. Immonation provides the brand, administration, documents, and a professional marketing structure.",
+    "answer": "The agent partnership is for people who want to win owners, understand property, and lead sales personally. We discuss the framework, responsibilities, and compensation transparently during an introductory conversation.",
+    "heroCta": "Request an introduction",
+    "benefits": {
+      "eyebrow": "Collaboration",
+      "title": "Focus on advice and sales",
+      "items": [
+        {
+          "title": "Clear role",
+          "text": "You focus on acquisition, owner advice, and the personal sales process."
+        },
+        {
+          "title": "Ordered documents",
+          "text": "Administration, brand material, and marketing records are prepared in a structured team process."
+        },
+        {
+          "title": "Shared marketing",
+          "text": "Photography, video, 360° presentation, and distribution work as one coordinated process."
+        },
+        {
+          "title": "Regional proximity",
+          "text": "You work across the metropolitan region with an accessible team and short coordination routes."
+        }
+      ]
+    },
+    "profile": {
+      "eyebrow": "Your profile",
+      "title": "What fits Immonation",
+      "text": "How you work matters more than the number of entries on your CV. Property experience is useful; reliability and readiness to learn are essential.",
+      "items": [
+        {
+          "title": "Sales ability with judgment",
+          "text": "You can lead conversations, listen, and prepare decisions without unnecessary pressure."
+        },
+        {
+          "title": "Independent organization",
+          "text": "You keep commitments, document work clearly, and manage several sales processes responsibly."
+        },
+        {
+          "title": "Regional roots",
+          "text": "You know the people, routes, and property in the region or actively build that network."
+        },
+        {
+          "title": "Digital openness",
+          "text": "You use media and processes to improve advice, not to replace personal contact."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How we get to know each other",
+      "items": [
+        {
+          "title": "Introduce yourself",
+          "text": "Send us your background, region, and view of a good working relationship."
+        },
+        {
+          "title": "Align expectations",
+          "text": "We discuss role, working style, support, compensation model, and realistic next steps."
+        },
+        {
+          "title": "Decide together",
+          "text": "If values and expectations fit, we agree the concrete start and necessary foundations."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Questions about the agent partnership",
+      "items": [
+        {
+          "question": "Do I need prior estate-agency experience?",
+          "answer": "Property or sales experience is useful. Advisory ability, reliability, and willingness to learn the property and process thoroughly are decisive."
+        },
+        {
+          "question": "Is the role employed or self-employed?",
+          "answer": "This page primarily describes the independent sales partnership. Other career paths are covered on the general careers page."
+        },
+        {
+          "question": "How does compensation work?",
+          "answer": "The specific model depends on the role and collaboration and is explained transparently before any decision."
+        },
+        {
+          "question": "Which area would I cover?",
+          "answer": "The focus is Zirndorf, Nuremberg, Fürth, Erlangen, and the metropolitan region. A sensible territory is agreed together."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Does your working style fit ours?",
+      "text": "Tell us briefly where you are and how you approach real-estate sales. We will get back to you for an open introductory conversation.",
+      "primary": "Get in touch",
+      "secondary": "All career paths"
+    }
+  },
+  "KnowledgeHub": {
+    "metadata": {
+      "title": "Property guides & knowledge",
+      "description": "Guides for property sales, buying, valuation, locations, and agent careers — structured clearly by Immonation."
+    },
+    "eyebrow": "Guides & knowledge",
+    "title": "Answers for your next property decision.",
+    "lede": "From an initial sales plan to local context: find guides, FAQs, regional orientation, and reviewed resources in one place.",
+    "answer": "The Immonation knowledge hub brings together content for owners, buyers, and applicants. Topic gateways lead to detailed guides, practical pages, and — once reviewed — relevant downloads.",
+    "categories": {
+      "eyebrow": "Topics",
+      "title": "Go straight to the right answer",
+      "items": [
+        {
+          "id": "selling",
+          "title": "Selling property",
+          "text": "Guides for houses, apartments, land, and apartment buildings.",
+          "link": "Open selling guides"
+        },
+        {
+          "id": "valuation",
+          "title": "Property valuation",
+          "text": "Value factors, process, and the documents needed for a reliable assessment.",
+          "link": "Understand valuation"
+        },
+        {
+          "id": "buying",
+          "title": "Buying property",
+          "text": "Listings, search requests, financing, and the route to a suitable property.",
+          "link": "Explore buyer area"
+        },
+        {
+          "id": "local",
+          "title": "Region & micro-location",
+          "text": "Evergreen orientation for Zirndorf, Nuremberg, Fürth, and Erlangen.",
+          "link": "Compare locations"
+        },
+        {
+          "id": "careers",
+          "title": "Agent career",
+          "text": "Role, collaboration, and expectations for real-estate agents at Immonation.",
+          "link": "Review the career path"
+        },
+        {
+          "id": "downloads",
+          "title": "Downloads & templates",
+          "text": "Reviewed documents are connected to the guides where they are most useful.",
+          "link": "Explore resources"
+        }
+      ]
+    },
+    "note": {
+      "title": "Editorial note",
+      "text": "Our content prepares decisions but does not replace a review of the property, records, and personal objective. We publish market or price claims only with a reliable source and update date."
+    },
+    "articles": {
+      "title": "Latest articles",
+      "count": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
+      "read": "Read article",
+      "empty": "More articles are coming."
+    },
+    "faq": {
+      "title": "Questions about the knowledge hub",
+      "items": [
+        {
+          "question": "Where can I find information for my property type?",
+          "answer": "The selling section contains dedicated guides for houses, apartments, land, and apartment buildings."
+        },
+        {
+          "question": "Do the location pages include current property prices?",
+          "answer": "No. Without approved market data we do not publish supposedly current square-metre prices. The pages explain durable local factors instead."
+        },
+        {
+          "question": "Can I download checklists directly?",
+          "answer": "Downloads are linked only after content, rights, accessibility, and currency are reviewed. The downloads area shows the current status."
+        },
+        {
+          "question": "Does a guide replace personal advice?",
+          "answer": "No. Guides support preparation; pricing, strategy, and legally relevant individual questions require a property-specific review."
+        }
+      ]
+    }
+  },
+  "ReferenceDetailPage": {
+    "eyebrow": "Sales reference",
+    "back": "Back to references",
+    "metrics": {
+      "requests": "Enquiries",
+      "viewings": "Viewings",
+      "weeks": "Weeks on market"
+    },
+    "caseEyebrow": "Starting point · strategy · result",
+    "caseTitle": "A sale told with clarity.",
+    "challenge": "Challenge",
+    "approach": "Our approach",
+    "result": "Result",
+    "prototypeNote": "The figures come from the supplied reference material and are approved for this prototype. Evidence and consent remain required before public release.",
+    "allReferences": "View all references",
+    "cta": {
+      "title": "What could your property achieve?",
+      "text": "A strong sales strategy starts with a realistic understanding of the property, location, and audience.",
+      "primary": "Start free valuation",
+      "secondary": "View the sales process"
+    }
+  },
+  "ReferencesPage": {
+    "metadata": {
+      "title": "Reference properties in Nuremberg, Fürth & region",
+      "description": "Explore 15 Immonation reference properties from Nuremberg, Fürth, Erlangen, Zirndorf, and the region, with real property photography and client interviews."
+    },
+    "eyebrow": "References & insights",
+    "title": "Properties we have had the privilege to support",
+    "lede": "From apartments to multi-family buildings, this selection presents real properties from our region and the range of homes and investments Immonation presents professionally and supports personally.",
+    "proof": {
+      "title": "Selected properties from the documented reference library",
+      "text": "We intentionally show only verifiable property types, locations, and approved images. Marketing periods, enquiry figures, and sale results are added only after documented approval."
+    },
+    "gallery": {
+      "eyebrow": "15 reference properties",
+      "title": "As individual as the people behind them",
+      "text": "Every property needs its own positioning. This selection ranges from apartments and detached homes to investment and commercial properties across the metropolitan region.",
+      "referenceLabel": "Immonation reference",
+      "allLabel": "All properties",
+      "filterLabel": "Filter references by property type"
+    },
+    "tour": {
+      "eyebrow": "Virtual viewing",
+      "title": "Experience the space before the on-site appointment",
+      "text": "Virtual tours give prospective buyers a realistic first impression and help prepare viewings with greater focus. Discover how we present properties digitally.",
+      "link": "Discover virtual viewings",
+      "imageAlt": "Bright garden apartment illustrating Immonation property presentation"
+    },
+    "cta": {
+      "title": "Your property could be the next success story",
+      "text": "We assess value, audience, and the right marketing route personally, without obligation and with a clear next step.",
+      "primary": "Request a property valuation",
+      "secondary": "Talk to us"
+    },
+    "items": [
+      {
+        "id": "deining-neubauwohnung",
+        "title": "New-build apartment in Deining",
+        "type": "Condominium",
+        "location": "Deining",
+        "alt": "Exterior view of a new-build apartment in Deining"
+      },
+      {
+        "id": "erlangen-eigentumswohnung",
+        "title": "Apartment in Erlangen",
+        "type": "Residential property",
+        "location": "Erlangen",
+        "alt": "Reference photograph of an apartment in Erlangen"
+      },
+      {
+        "id": "forchheim-eigentumswohnung",
+        "title": "Apartment in Forchheim",
+        "type": "Condominium",
+        "location": "Forchheim",
+        "alt": "Reference photograph of an apartment in Forchheim"
+      },
+      {
+        "id": "forchheim-reihenhaus",
+        "title": "Townhouse in Forchheim",
+        "type": "Residential house",
+        "location": "Forchheim",
+        "alt": "Exterior view of a townhouse in Forchheim"
+      },
+      {
+        "id": "fuerth-altbauwohnung",
+        "title": "Period apartment in Fürth",
+        "type": "Condominium",
+        "location": "Fürth",
+        "alt": "Reference photograph of a period apartment in Fürth"
+      },
+      {
+        "id": "fuerth-renovierte-wohnung",
+        "title": "Renovated apartment in Fürth",
+        "type": "Condominium",
+        "location": "Fürth",
+        "alt": "Interior view of a renovated apartment in Fürth"
+      },
+      {
+        "id": "fuerth-versorgungszentrum",
+        "title": "Medical center in Fürth",
+        "type": "Commercial and investment property",
+        "location": "Fürth",
+        "alt": "Exterior view of a medical center in Fürth"
+      },
+      {
+        "id": "fuerth-mehrfamilienhaus",
+        "title": "Apartment building in Fürth",
+        "type": "Investment property",
+        "location": "Fürth",
+        "alt": "Exterior view of an apartment building in Fürth"
+      },
+      {
+        "id": "heroldsbach-mehrfamilienhaus",
+        "title": "Multi-family home in Heroldsbach",
+        "type": "Three-family house",
+        "location": "Heroldsbach",
+        "alt": "Exterior view of a multi-family home in Heroldsbach"
+      },
+      {
+        "id": "langenzenn-terrassenwohnung",
+        "title": "Terrace apartment in Langenzenn",
+        "type": "Condominium",
+        "location": "Langenzenn",
+        "alt": "Reference photograph of a terrace apartment in Langenzenn"
+      },
+      {
+        "id": "nuernberg-einfamilienhaus",
+        "title": "Detached home in Nuremberg",
+        "type": "Residential house",
+        "location": "Nuremberg",
+        "alt": "Exterior view of a detached home in Nuremberg"
+      },
+      {
+        "id": "nuernberg-eigentumswohnung",
+        "title": "Apartment in Nuremberg",
+        "type": "Residential property",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of an apartment in Nuremberg"
+      },
+      {
+        "id": "nuernberg-reihenendhaus",
+        "title": "End-terrace home in Nuremberg",
+        "type": "Residential house",
+        "location": "Nuremberg",
+        "alt": "Exterior view of an end-terrace home in Nuremberg"
+      },
+      {
+        "id": "oberasbach-einfamilienhaus",
+        "title": "Detached home in Oberasbach",
+        "type": "Residential house",
+        "location": "Oberasbach",
+        "alt": "Exterior view of a detached home in Oberasbach"
+      },
+      {
+        "id": "zirndorf-gartenwohnung",
+        "title": "Garden apartment in Zirndorf",
+        "type": "Condominium",
+        "location": "Zirndorf",
+        "alt": "Bright garden apartment in Zirndorf"
+      }
+    ]
+  },
   "Footer": {
     "claim": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region.",
     "stats": [
       { "value": "60 km", "label": "Advisory radius around Zirndorf" },
       { "value": "6–12", "label": "Weeks typical time on market" },
       { "value": "360°", "label": "Tour for every property" },
-      { "value": "5.0 ★", "label": "Google rating" }
+      { "value": "4.9 ★", "label": "Google rating" }
     ],
     "sell": {
       "title": "Selling",
       "valuation": "Property valuation",
       "house": "Sell a house",
-      "apartment": "Sell an apartment",
-      "letting": "Let a property"
+      "apartment": "Sell an apartment"
     },
     "buy": {
       "title": "Buying",

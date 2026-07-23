@@ -1,11 +1,11 @@
 import { getTranslations } from 'next-intl/server'
-import { Building2, Calculator, KeyRound, Landmark, Search, TrendingUp } from 'lucide-react'
+import { Calculator, Camera, KeyRound, Landmark, Search, TrendingUp } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { CONTAINER, SectionHeader } from './section-shell'
 
 type ServiceItem = { title: string; text: string }
 
-const SERVICE_ICONS = [KeyRound, Calculator, Building2, Search, Landmark, TrendingUp] as const
+const SERVICE_ICONS = [KeyRound, Calculator, Camera, Search, Landmark, TrendingUp] as const
 
 export async function ServicesOverview() {
   const t = await getTranslations('Home.servicesOverview')

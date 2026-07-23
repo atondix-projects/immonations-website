@@ -79,7 +79,6 @@ type MenuGroup = {
 const menuGroups: MenuGroup[] = [
   { id: 'home', labelKey: 'home', href: '/' },
   { id: 'about', labelKey: 'about', href: '/about' },
-  { id: 'references', labelKey: 'references', href: '/', homeAnchor: '#referenzen' },
   {
     id: 'services',
     labelKey: 'services',
@@ -97,7 +96,7 @@ const menuGroups: MenuGroup[] = [
           {
             labelKey: 'mega.selling',
             descriptionKey: 'mega.sellingDesc',
-            href: '/services',
+            href: '/sell',
             icon: Home,
           },
           {
@@ -106,13 +105,6 @@ const menuGroups: MenuGroup[] = [
             href: '/',
             homeAnchor: '#virtuelle-besichtigung',
             icon: Video,
-          },
-          {
-            labelKey: 'mega.references',
-            descriptionKey: 'mega.referencesDesc',
-            href: '/',
-            homeAnchor: '#referenzen',
-            icon: Building2,
           },
         ],
       },
@@ -144,6 +136,12 @@ const menuGroups: MenuGroup[] = [
         num: '03',
         titleKey: 'mega.proofPath',
         links: [
+          {
+            labelKey: 'mega.references',
+            descriptionKey: 'mega.referencesDesc',
+            href: '/references',
+            icon: Building2,
+          },
           { labelKey: 'faq', descriptionKey: 'mega.faqDesc', href: '/faq', icon: CircleHelp },
           {
             labelKey: 'mega.trustProof',

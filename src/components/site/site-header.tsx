@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import { useState } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
@@ -15,7 +15,6 @@ const SCROLL_THRESHOLD = 24
 export function SiteHeader() {
   const tSite = useTranslations('Site')
   const tAudience = useTranslations('Audience')
-  const locale = useLocale()
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
@@ -40,7 +39,7 @@ export function SiteHeader() {
     >
       <div
         className={cn(
-          'mx-auto grid w-full origin-top grid-cols-[1fr_auto] items-center gap-4 px-6 transition-[max-width,min-height,padding,transform] duration-300 ease-out motion-reduce:transition-none md:grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] lg:px-10',
+          'mx-auto grid w-full origin-top grid-cols-[1fr_auto] items-center gap-3 px-4 transition-[max-width,min-height,padding,transform] duration-300 ease-out motion-reduce:transition-none sm:gap-4 sm:px-6 lg:grid-cols-[minmax(180px,1fr)_auto_minmax(180px,1fr)] lg:px-10',
           compact
             ? 'min-h-[68px] max-w-[1240px] scale-[0.985] py-2'
             : 'min-h-[84px] max-w-[1320px] scale-100 py-3.5',
@@ -52,7 +51,9 @@ export function SiteHeader() {
           aria-label={`${tSite('name')} GmbH`}
           className={cn(
             'relative z-10 block transition-[width,height,transform] duration-300 ease-out motion-reduce:transition-none',
-            compact ? 'h-7 w-[146px] md:h-8 md:w-[167px]' : 'h-8 w-[167px] md:h-9 md:w-[188px]',
+            compact
+              ? 'h-7 w-[146px] md:h-8 md:w-[167px]'
+              : 'h-7 w-[146px] sm:h-8 sm:w-[167px] md:h-9 md:w-[188px]',
           )}
         >
           <Image
@@ -79,20 +80,20 @@ export function SiteHeader() {
             )}
           />
         </Link>
-        <div className="hidden justify-self-center md:block">
+        <div className="hidden justify-self-center lg:block">
           <MainNav light={transparent} compact={compact} />
         </div>
         <div className="relative z-10 flex items-center gap-3 justify-self-end">
           <LocaleSwitcher light={transparent} />
-          <a
-            href={`/${locale}#bewertung`}
+          <Link
+            href="/property-valuation"
             className={cn(
-              'bg-primary text-primary-foreground hover:bg-brand-700 hidden text-sm font-medium tracking-[0.04em] whitespace-nowrap transition-[background-color,padding] duration-300 motion-reduce:transition-none md:inline-block',
+              'bg-brand-700 text-primary-foreground hover:bg-brand-800 hidden text-sm font-semibold whitespace-nowrap transition-[background-color,padding,transform] duration-300 active:translate-y-px motion-reduce:transition-none lg:inline-block',
               compact ? 'px-4 py-2.5' : 'px-5 py-3',
             )}
           >
             {tAudience('sellerCta')}
-          </a>
+          </Link>
           <MobileNav light={transparent} />
         </div>
       </div>

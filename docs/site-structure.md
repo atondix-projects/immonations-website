@@ -27,7 +27,7 @@ Sekundärer CTA je nach Kontext: `Erstgespräch buchen`, `Immobilie suchen`, `Fi
 | `/de/immobilie-kaufen` | `/en/buy-property` | Käuferstrecke mit Suche, Finanzierung und Kontakt | Hoch |
 | `/de/immobilienangebote` | `/en/properties` | Objektübersicht mit Filtern und OnOffice-Anbindung | Hoch |
 | `/de/finanzierung` | `/en/financing` | Finanzierungsstrecke als Käufer- und Conversion-Seite | Hoch |
-| `/de/referenzobjekte` | `/en/references` | Verkauft-/vermietet-Referenzen und Verkaufsstories | Hoch |
+| `/de/referenzobjekte` | `/en/references` | Verkaufsreferenzen und Verkaufsstories | Hoch |
 | `/de/ueber-uns` | `/en/about` | Unternehmen, Team, lokale Verankerung | Mittel |
 | `/de/ratgeber` | `/en/guides` | Ratgeber-Hub für SEO/AEO/GEO | Hoch |
 | `/de/news` | `/en/news` | Unternehmensnews und Marktupdates | Mittel |
@@ -60,7 +60,7 @@ Empfohlene Wizard-Felder:
 - Wohnfläche, Grundstücksfläche, Zimmer.
 - Baujahr und Modernisierungsstand.
 - Zustand und Ausstattung.
-- Nutzung: selbst genutzt, vermietet, leerstehend.
+- Nutzung: selbst genutzt, mit bestehendem Mietverhältnis, leerstehend.
 - Verkaufszeitpunkt.
 - Ziel: verkaufen, bewerten, erben, finanzieren, anderes.
 - Medien/Unterlagen optional hochladen.
@@ -73,7 +73,6 @@ Empfohlene Unterseiten:
 - `/de/wohnung-verkaufen`
 - `/de/mehrfamilienhaus-verkaufen`
 - `/de/gewerbeimmobilie-verkaufen`
-- `/de/immobilie-vermieten`
 - `/de/projektentwicklung`
 - `/de/immobilienankauf`
 - `/de/revitalisierung`
@@ -154,9 +153,30 @@ Empfohlene Formate:
 - Marktberichte für Nürnberg, Fürth, Erlangen, Zirndorf und relevante Stadtteile.
 - Downloads mit E-Mail-Opt-in.
 
+Neue, materialgestützte Kandidaten aus dem EK-Archiv:
+
+- Übergabeprotokoll Hausverkauf.
+- Übergabeprotokoll Wohnungsverkauf.
+- Bodenrichtwert-Ratgeber mit offiziellen, datierten Quellen.
+- Zentrale Immobilienverkaufs-FAQ als wiederverwendbare Antwortbank.
+- Ratgeber zur Erkennung glaubwürdiger Online-Bewertungen ohne unbelegte Spitzenstellungswerbung.
+
+## Situative Verkäuferthemen
+
+Das EK-Archiv liefert Suchintentionen für Trennung, Erbfall, drohende Zwangsversteigerung, Immobilienverrentung, Pflegeheim/Verkauf im Alter, Sanierungsstau, Kapitalanlagen mit bestehenden Mietverhältnissen, beruflichen Umzug, Finanzierungsdruck, Verkauf mit Vollmacht/Betreuung, Gewerbe-/Praxisnachfolge sowie Leerstand/Doppelbelastung.
+
+Nicht alle Themen sofort als Landingpages veröffentlichen. Erste Cluster mit vorhandener Referenz-/Testimonial-Evidenz:
+
+1. Geerbte Immobilie verkaufen.
+2. Sanierungsbedürftige Immobilie verkaufen.
+3. Kapitalanlage mit bestehendem Mietverhältnis verkaufen.
+4. Immobilie bei Trennung/Scheidung verkaufen.
+
+Jede Seite braucht eigenständigen Nutzen, juristisch geprüfte Aussagen, sensible Sprache, lokale Relevanz, FAQ und einen Bewertungs- oder Beratungspfad.
+
 ## Technische Integrationen
 
-- OnOffice API mit voll berechtigtem API-User für Immobilienangebote und Objektverwaltung.
+- OnOffice API mit voll berechtigtem API-User für Immobilienangebote und Objektdaten.
 - Resend für Formulare und E-Mail-Versand.
 - Calendly eingebettet für Erstgespräche.
 - Google- und Trustpilot-Bewertungen, Google mit Consent.
@@ -171,4 +191,6 @@ Empfohlene Formate:
 - Welche Stellen sind konkret offen?
 - Wie genau ist das freie Partner-Modell formuliert?
 - Welche rechtlichen Anforderungen gelten für Partner-, Tippgeber- und Provisionsclaims?
-- Logo-/CI-Dateien aus dem Attachment lokal verfügbar machen.
+- Welche Logo-Variante aus `assets/media-library/brand/immonation/` ist die kanonische Primärmarke?
+- Welche Award-Nutzungsrechte und Methodiknachweise liegen für F.A.Z. und Immowelt vor?
+- Darf die EU-Markenregistrierung kommunikativ genutzt werden, und wenn ja nur textlich oder auch mit Zertifikatsabbildung?

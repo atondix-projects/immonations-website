@@ -3,7 +3,17 @@ import Image from 'next/image'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { ArrowUpRight, BedDouble, Car, HomeIcon, MapPin, Ruler } from 'lucide-react'
+import {
+  ArrowUpRight,
+  BedDouble,
+  Car,
+  HomeIcon,
+  Info,
+  MapPin,
+  Ruler,
+  Search,
+  SlidersHorizontal,
+} from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -35,15 +45,15 @@ const SECTION_TITLE = 'font-serif text-4xl font-semibold leading-[1.05] text-bal
 
 const listingVisuals = [
   {
-    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=82',
+    src: '/images/references/oberasbach-einfamilienhaus.webp',
     alt: 'Modern single-family home with illuminated garden',
   },
   {
-    src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=82',
+    src: '/images/references/fuerth-altbauwohnung.webp',
     alt: 'Bright apartment with open living area',
   },
   {
-    src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=82',
+    src: '/images/references/erlangen-eigentumswohnung.webp',
     alt: 'Renovated residential house with garage and garden',
   },
 ] as const
@@ -137,6 +147,47 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
 
       <Hero mode="buyer" />
 
+      <section className="bg-surface-dark border-y border-white/10 py-10 text-white">
+        <div className={`${CONTAINER} grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end`}>
+          <div>
+            <div className="flex items-center gap-2 text-xs text-neutral-300">
+              <Info className="text-brand-300 size-4" aria-hidden="true" />
+              {t('prototypeNotice')}
+            </div>
+            <div className="mt-5 grid gap-2 sm:grid-cols-[1fr_auto_auto]">
+              <label className="relative">
+                <span className="sr-only">{t('searchLabel')}</span>
+                <Search
+                  className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-neutral-500"
+                  aria-hidden="true"
+                />
+                <input
+                  disabled
+                  placeholder={t('searchPlaceholder')}
+                  className="min-h-13 w-full border border-white/20 bg-white/8 pr-4 pl-11 text-sm text-white placeholder:text-neutral-400 disabled:cursor-not-allowed"
+                />
+              </label>
+              <button
+                type="button"
+                disabled
+                className="inline-flex min-h-13 items-center justify-center gap-2 border border-white/20 px-5 text-sm font-semibold text-neutral-300 disabled:cursor-not-allowed"
+              >
+                <SlidersHorizontal className="size-4" aria-hidden="true" />
+                {t('filters')}
+              </button>
+              <button
+                type="button"
+                disabled
+                className="bg-brand-700 inline-flex min-h-13 items-center justify-center px-6 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-80"
+              >
+                {t('search')}
+              </button>
+            </div>
+          </div>
+          <span className="font-mono text-xs text-neutral-400">{t('sampleCount')}</span>
+        </div>
+      </section>
+
       <section id="angebote" className="bg-background scroll-mt-24 py-16 md:py-24">
         <div className={CONTAINER}>
           <div className="mb-12 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
@@ -169,12 +220,13 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
                     priority
                   />
                   <div className="absolute inset-x-0 bottom-0 flex justify-end bg-gradient-to-t from-black/45 via-black/10 to-transparent p-6">
-                    <Link
-                      href="/contact"
-                      className="bg-surface-dark/90 hover:bg-surface-dark inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white transition-colors"
+                    <button
+                      type="button"
+                      disabled
+                      className="bg-surface-dark/90 inline-flex cursor-not-allowed items-center gap-2 px-5 py-3 text-sm font-medium text-white opacity-80"
                     >
                       {t('exposeLink')}
-                    </Link>
+                    </button>
                   </div>
                   {featured.isNew ? <ListingBadge label={t('newBadge')} /> : null}
                 </div>
@@ -237,17 +289,37 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
                         </span>
                         <p className="mt-1 text-2xl font-semibold tabular-nums">{listing.price}</p>
                       </div>
-                      <Link
-                        href="/contact"
-                        className="text-primary inline-flex items-center gap-2 text-sm font-semibold"
+                      <button
+                        type="button"
+                        disabled
+                        className="text-primary inline-flex cursor-not-allowed items-center gap-2 text-sm font-semibold opacity-75"
                       >
                         {t('exposeLink')}
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-border bg-muted/55 border-y py-16 md:py-20">
+        <div className={`${CONTAINER} grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center`}>
+          <div>
+            <p className={EYEBROW}>{t('financing.eyebrow')}</p>
+            <h2 className="mt-4 max-w-[18ch] font-serif text-3xl leading-tight font-medium md:text-[2.8rem]">
+              {t('financing.title')}
+            </h2>
+          </div>
+          <div>
+            <p className="text-muted-foreground max-w-[62ch] text-[17px] leading-[1.75]">
+              {t('financing.text')}
+            </p>
+            <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+              {t('financing.prototypeNote')}
+            </p>
           </div>
         </div>
       </section>

@@ -1,0 +1,1954 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-07-22",
+  "source_root": "customer-files",
+  "file_count": 108,
+  "total_bytes": 2122759974,
+  "files": [
+    {
+      "id": "cf-d4d49b6cf28d",
+      "source_path": "Auszeichnungen/F.A.Z Institut - TOP Makler 2026/FAZ Ausgabe TOP Makler 2026 Immonaiton.jpg",
+      "extension": ".jpg",
+      "bytes": 172047,
+      "sha256": "d4d49b6cf28d5772a3c83e68ad40735cd919bf032353eb820403798ccb4b2b91",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1112,
+        "height": 1599
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/awards/faz-top-makler-2026/award-letter-2026.jpg"
+    },
+    {
+      "id": "cf-5ab46b57f80d",
+      "source_path": "Auszeichnungen/F.A.Z Institut - TOP Makler 2026/TOP Makler 2026 Immonation .jpg",
+      "extension": ".jpg",
+      "bytes": 79630,
+      "sha256": "5ab46b57f80d8bda5749eaffe6b8dafc269a29a701e72b45161b8fabafb35752",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1205,
+        "height": 1600
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/awards/faz-top-makler-2026/generic-award-kit-mockup.jpg"
+    },
+    {
+      "id": "cf-5ca9653e9909",
+      "source_path": "Auszeichnungen/F.A.Z Institut - TOP Makler 2026/Unbenanntes Dokument.docx",
+      "extension": ".docx",
+      "bytes": 217089,
+      "sha256": "5ca9653e9909fdc4ee2c75f400425a4353aeae3f3ce73052f61ee956c0469bc3",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 13,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:06+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/auszeichnungen/f-a-z-institut-top-makler-2026/auszeichnungen-f-a-z-institut-top-makler-2026-unbenanntes-dokument.docx"
+    },
+    {
+      "id": "cf-e219ce30b831",
+      "source_path": "Auszeichnungen/Immowelt/Immowelt Auszeichnung 2024.png",
+      "extension": ".png",
+      "bytes": 400135,
+      "sha256": "e219ce30b831efbee431f068534c758a64a9d6883920e4a4549337ac7ad10223",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2381,
+        "height": 3367
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/awards/immowelt/immowelt-auszeichnung-2024.png"
+    },
+    {
+      "id": "cf-7b1744da1495",
+      "source_path": "Auszeichnungen/Immowelt/Immowelt Auszeichnung 2026.png",
+      "extension": ".png",
+      "bytes": 401156,
+      "sha256": "7b1744da1495ebf39bbb62393a54723b38d48ed2fe8cb4b9e5b232038f6efb7c",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2381,
+        "height": 3367
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/awards/immowelt/immowelt-auszeichnung-2026.png"
+    },
+    {
+      "id": "cf-e8ef405c4c6a",
+      "source_path": "Auszeichnungen/Immowelt/Immowelt Partner Icon.png",
+      "extension": ".png",
+      "bytes": 33751,
+      "sha256": "e8ef405c4c6ad503167fb6c9f6548539956aa1571869c43c3442a15fa84fa7a8",
+      "category": "Auszeichnungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 500,
+        "height": 500
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/awards/immowelt/immowelt-partner-icon.png"
+    },
+    {
+      "id": "cf-b6e82e90f374",
+      "source_path": "Bewertungsseite/Immonation_Text_Echte_Bewertungen.docx",
+      "extension": ".docx",
+      "bytes": 11456,
+      "sha256": "b6e82e90f3745364115c13fae23f7023d7a4132c97be6d42e10942a1319f507a",
+      "category": "Bewertungsseite",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/bewertungsseite/bewertungsseite/bewertungsseite-immonation-text-echte-bewertungen.docx"
+    },
+    {
+      "id": "cf-d707188cacb2",
+      "source_path": "Bodenrichtwert - Seite/Bodenrichtwert.docx",
+      "extension": ".docx",
+      "bytes": 218284,
+      "sha256": "d707188cacb22f3d547b96e360821631e4424c48f0a9a1fc5b626c3fe20b5484",
+      "category": "Bodenrichtwert - Seite",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 20,
+        "tables": 1,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/bodenrichtwert-seite/bodenrichtwert-seite/bodenrichtwert-seite-bodenrichtwert.docx"
+    },
+    {
+      "id": "cf-97d8363322d9",
+      "source_path": "FAQ - Vorschläge/Unbenanntes Dokument.docx",
+      "extension": ".docx",
+      "bytes": 220579,
+      "sha256": "97d8363322d9fd3184bb501932e983d668d509737a696e12e5b6770118e163b6",
+      "category": "FAQ - Vorschläge",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 37,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 1,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/faq-vorschlaege/faq-vorschlaege/faq-vorschlaege-unbenanntes-dokument.docx"
+    },
+    {
+      "id": "cf-88d17d6376da",
+      "source_path": "Immobilie verkaufen 4 Seiten je Art/Haus verkaufen_.docx",
+      "extension": ".docx",
+      "bytes": 217884,
+      "sha256": "88d17d6376dad19c7e952f215d17104c886011589581bbfa9431c81175480bd8",
+      "category": "Immobilie verkaufen 4 Seiten je Art",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 20,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art-haus-verkaufen.docx"
+    },
+    {
+      "id": "cf-a5da424069c5",
+      "source_path": "Immobilie verkaufen 4 Seiten je Art/Mehrfamilienhaus verkaufen.docx",
+      "extension": ".docx",
+      "bytes": 217638,
+      "sha256": "a5da424069c50eaf1ab2473da415f6bf6cbfc03122813146e8661e1e08deb712",
+      "category": "Immobilie verkaufen 4 Seiten je Art",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 19,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art-mehrfamilienhaus-verkaufen.docx"
+    },
+    {
+      "id": "cf-e5d582a05dab",
+      "source_path": "Immobilie verkaufen 4 Seiten je Art/Wohnung verkaufen_.docx",
+      "extension": ".docx",
+      "bytes": 217748,
+      "sha256": "e5d582a05dab86d7c9d1de2523f298002134a41627b272768dafe8e1a46e98d3",
+      "category": "Immobilie verkaufen 4 Seiten je Art",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 19,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:07+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art/immobilie-verkaufen-4-seiten-je-art-wohnung-verkaufen.docx"
+    },
+    {
+      "id": "cf-f9eff6317b28",
+      "source_path": "Inhouse Ingenieur/nicht aktzeptierter Grundriss von Banken .jpg",
+      "extension": ".jpg",
+      "bytes": 178675,
+      "sha256": "f9eff6317b28ba6cb7866339d4f7ce27532b560d87a139bdbee0cc95c4f9a3a2",
+      "category": "Inhouse Ingenieur",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 1216
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/services/inhouse-engineering/nicht-aktzeptierter-grundriss-von-banken.jpg"
+    },
+    {
+      "id": "cf-e3ef2578c063",
+      "source_path": "KI Visualisierungen/Eigentumswohnung Visualisierung/ETW Panzerstraße Nürnberg/KI Video.mp4",
+      "extension": ".mp4",
+      "bytes": 7654823,
+      "sha256": "e3ef2578c063ac44f7121e83b01ef8ab28b760c41e224108c6741b8146d83497",
+      "category": "KI Visualisierungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 13.056,
+        "video_codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "audio_codec": "aac"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/visualizations/eigentumswohnung-visualisierung/etw-panzerstrasse-nuernberg/visualization-video.mp4"
+    },
+    {
+      "id": "cf-9a560ee3b9a1",
+      "source_path": "KI Visualisierungen/Eigentumswohnung Visualisierung/ETW Vogelherdstraße Zirndorf/Imagevideo.mp4",
+      "extension": ".mp4",
+      "bytes": 18799555,
+      "sha256": "9a560ee3b9a10b0dcc5766fea8e4aa265cbb1669395c485d2fffcdbc32e25cb2",
+      "category": "KI Visualisierungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 25.045,
+        "video_codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "audio_codec": "aac"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/visualizations/eigentumswohnung-visualisierung/etw-vogelherdstrasse-zirndorf/visualization-video.mp4"
+    },
+    {
+      "id": "cf-a4383caa501c",
+      "source_path": "KI Visualisierungen/Grundstück Visualisuerung/Schwabach Wolkersdorf/Bild - Visualisierung.png",
+      "extension": ".png",
+      "bytes": 1025230,
+      "sha256": "a4383caa501cd4e2a3a3f7ff46fad7e89c5d855f11fce5347bbae16c13fc707f",
+      "category": "KI Visualisierungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1212,
+        "height": 864
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/visualizations/grundstueck-visualisuerung/schwabach-wolkersdorf/visualization-image.png"
+    },
+    {
+      "id": "cf-3d967e9e9f99",
+      "source_path": "KI Visualisierungen/Grundstück Visualisuerung/Schwabach Wolkersdorf/Video - Visualisierung.mp4",
+      "extension": ".mp4",
+      "bytes": 26681190,
+      "sha256": "3d967e9e9f99b7086927e14f60b100944a16a28abba851b0c0f09104914d90df",
+      "category": "KI Visualisierungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 16.042,
+        "video_codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "audio_codec": "aac"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/visualizations/grundstueck-visualisuerung/schwabach-wolkersdorf/visualization-video.mp4"
+    },
+    {
+      "id": "cf-82f4ac44a5a7",
+      "source_path": "KI Visualisierungen/Haus Visualisierung/RMH Wörnitzstraße/KI Video.mp4",
+      "extension": ".mp4",
+      "bytes": 17385628,
+      "sha256": "82f4ac44a5a74f92094116ce01ab9567f39b638adfe157bbe57aecaf4f65798e",
+      "category": "KI Visualisierungen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 25.045,
+        "video_codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "audio_codec": "aac"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/visualizations/haus-visualisierung/rmh-woernitzstrasse/visualization-video.mp4"
+    },
+    {
+      "id": "cf-91e3ec7b9b33",
+      "source_path": "Kostenlose Dokumente/Protokoll Hausübergabe - (VER)Kauf.pdf",
+      "extension": ".pdf",
+      "bytes": 630832,
+      "sha256": "91e3ec7b9b3393927ca8e4236b57d3fdd746b76b2be6937ba1eef37c57c92fc1",
+      "category": "Kostenlose Dokumente",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "pages": 2,
+        "pages_with_text": 2,
+        "rendered_pages": 2,
+        "pdf_metadata": {
+          "Creator": "Canva",
+          "Producer": "Canva",
+          "CreationDate": "D:20230619154924+00'00'",
+          "ModDate": "D:20230619154923+00'00'",
+          "Keywords": "DAFitK-poIA,BAEplvaWPho",
+          "Author": "Immonation GmbH",
+          "Title": "Eckdatenblatt Nbg Brunn"
+        }
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/downloads/handover-templates/house-handover-protocol.pdf"
+    },
+    {
+      "id": "cf-d95f8e8d2f7f",
+      "source_path": "Kostenlose Dokumente/Protokoll Wohnungsübergabe - (VER)Kauf.pdf",
+      "extension": ".pdf",
+      "bytes": 338463,
+      "sha256": "d95f8e8d2f7fffb87764cf3dfb125573cabf86edd0adf0cdf1ba208d56442829",
+      "category": "Kostenlose Dokumente",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "pages": 2,
+        "pages_with_text": 2,
+        "rendered_pages": 2,
+        "pdf_metadata": {
+          "Title": "Protokoll Wohnungsübergabe - (VER)Kauf",
+          "Creator": "Canva",
+          "Producer": "Canva",
+          "CreationDate": "D:20260710124106+00'00'",
+          "ModDate": "D:20260710124106+00'00'",
+          "Keywords": "DAHO-yYecxQ,BAEplvaWPho",
+          "Author": "Immonation GmbH",
+          "Trapped": "/False"
+        }
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/downloads/handover-templates/apartment-handover-protocol.pdf"
+    },
+    {
+      "id": "cf-ea0de2009943",
+      "source_path": "Logos Immonation/01bb9a16-f561-444e-9fa6-e3cddac28c0f.jpg",
+      "extension": ".jpg",
+      "bytes": 18615,
+      "sha256": "ea0de20099435a29f1e15f5214a6d33cbdc76a808b441b857877e52cceb8bd3a",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1080,
+        "height": 1080
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-logo-photo.jpg"
+    },
+    {
+      "id": "cf-42f2145f8f4e",
+      "source_path": "Logos Immonation/33 - Immonation Facelift Logo-Grey.png",
+      "extension": ".png",
+      "bytes": 66733,
+      "sha256": "42f2145f8f4eb48e92a611a1e89b6ff51c0f9864aaf64782512106e9151bfa8f",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1698,
+        "height": 326
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-logo-grey.png"
+    },
+    {
+      "id": "cf-efb622b2c1ad",
+      "source_path": "Logos Immonation/33 - Immonation Facelift Logo.jpg",
+      "extension": ".jpg",
+      "bytes": 2101197,
+      "sha256": "efb622b2c1ad691fb5507c9e84bc51c0aa352242b20abd11784c1f93071fbf96",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2231,
+        "height": 1334
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-logo-facelift.jpg"
+    },
+    {
+      "id": "cf-0162196808dc",
+      "source_path": "Logos Immonation/Einzelnes I/PNG transparenter HIntergrund/1.png",
+      "extension": ".png",
+      "bytes": 45649,
+      "sha256": "0162196808dcc3c2feedd7e3115548c856dcd2a9ef4c970ed73f70803bf2c617",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 2000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-mark-transparent-1.png"
+    },
+    {
+      "id": "cf-aa5765a333e6",
+      "source_path": "Logos Immonation/Einzelnes I/PNG/2.png",
+      "extension": ".png",
+      "bytes": 44280,
+      "sha256": "aa5765a333e6228408fbc04ecdefbead25537c27b37897b2e161b5306469573c",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 2000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-mark-solid-2.png"
+    },
+    {
+      "id": "cf-f3e55de9d721",
+      "source_path": "Logos Immonation/Immonation - Stempel Vorlage SW.png",
+      "extension": ".png",
+      "bytes": 121994,
+      "sha256": "f3e55de9d7214bfe2378ee7bae14db54d6957629bcee20a921e6e34117583c02",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 944,
+        "height": 353
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-stamp-black-white.png"
+    },
+    {
+      "id": "cf-4e88e0687a15",
+      "source_path": "Logos Immonation/LOGO Vektor.pdf",
+      "extension": ".pdf",
+      "bytes": 378909,
+      "sha256": "4e88e0687a15eade8136be6d9e37953b55ea8e6b78cd1e5c6bba4033763c867a",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "pages": 1,
+        "pages_with_text": 0,
+        "rendered_pages": 1,
+        "pdf_metadata": {
+          "CreationDate": "D:20250715115051+02'00'",
+          "Creator": "Adobe Illustrator 29.6 (Windows)",
+          "ModDate": "D:20250715115051+02'00'",
+          "Producer": "Adobe PDF library 17.00",
+          "Title": "LogoExport_28x37cm"
+        },
+        "visual_summary": {
+          "content_type": "Vector brand logo",
+          "visible_text": [
+            "IMMONATION GMBH",
+            "Ihr Partner für Immobilien"
+          ],
+          "visual_description": "Immonation lockup with a layered blue, light-blue, and gray geometric mark to the left of the company name and tagline."
+        }
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-logo-vector.pdf"
+    },
+    {
+      "id": "cf-95409df78069",
+      "source_path": "Logos Immonation/logo4.png",
+      "extension": ".png",
+      "bytes": 60297,
+      "sha256": "95409df780693f82ff0376ca06f5d56d19bf0326e826f020f3a6e581722d6a09",
+      "category": "Logos Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2025,
+        "height": 2025
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/immonation/immonation-logo-variant-04.png"
+    },
+    {
+      "id": "cf-e297e1dacb45",
+      "source_path": "Nischen für Google - KI Suchen/Nischen_.docx",
+      "extension": ".docx",
+      "bytes": 8390,
+      "sha256": "e297e1dacb45b5490fca4a604c8ad5ee5d725eada8ed61c0601d28343cb5232d",
+      "category": "Nischen für Google - KI Suchen",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 13,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:19+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/nischen-fuer-google-ki-suchen/nischen-fuer-google-ki-suchen/nischen-fuer-google-ki-suchen-nischen.docx"
+    },
+    {
+      "id": "cf-d3bb75c4172e",
+      "source_path": "Patent Immonation/Zertifikat Marke Immonation.PDF",
+      "extension": ".pdf",
+      "bytes": 1035919,
+      "sha256": "d3bb75c4172e6d1f650a29d4f0859f3ede1c920443ac622411357846b98a72ef",
+      "category": "Patent Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "pages": 3,
+        "pages_with_text": 3,
+        "rendered_pages": 3,
+        "pdf_metadata": {
+          "Producer": "iText 5.0.6 (c) 1T3XT BVBA",
+          "ModDate": "D:20260325175003+01'00'",
+          "CreationDate": "D:20260325175003+01'00'"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/legal/euipo-immonation-trademark-certificate.pdf"
+    },
+    {
+      "id": "cf-e859af64304c",
+      "source_path": "Referenz Objekte/Adelsdorf/RMH - Reuthseering/_DSC2868.JPG",
+      "extension": ".jpg",
+      "bytes": 14417920,
+      "sha256": "e859af64304c2aa8e6995b804f22f1b3e7604fdcecc009db8e614f079169c0bc",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/adelsdorf/rmh-reuthseering/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-7d7db2566e6e",
+      "source_path": "Referenz Objekte/Adelsdorf/RMH - Reuthseering/_DSC2873.JPG",
+      "extension": ".jpg",
+      "bytes": 11403264,
+      "sha256": "7d7db2566e6ebc6079035f39d103985717186a65883fd214784110f5b365c28d",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/adelsdorf/rmh-reuthseering/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-231f6e3afb9b",
+      "source_path": "Referenz Objekte/Adelsdorf/RMH - Reuthseering/_DSC2889.JPG",
+      "extension": ".jpg",
+      "bytes": 13369344,
+      "sha256": "231f6e3afb9bb8c183c59e0386e8ef418b0d9b8895a91b2de3686d123292ab2b",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/adelsdorf/rmh-reuthseering/property-photo-03.jpg"
+    },
+    {
+      "id": "cf-76fb938ffe4d",
+      "source_path": "Referenz Objekte/Bewertungen - Referenzobjekt Kunden .docx",
+      "extension": ".docx",
+      "bytes": 588400,
+      "sha256": "76fb938ffe4d12cdbe29b5791eeb3d8e416a48a834769230e28b67993f4ab3a8",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 21,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 21,
+        "embedded_media": 21,
+        "transcribed_embedded_media": 21,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:23+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/referenz-objekte/referenz-objekte/referenz-objekte-bewertungen-referenzobjekt-kunden.docx"
+    },
+    {
+      "id": "cf-ec2ff235ff46",
+      "source_path": "Referenz Objekte/Deining/ETW Bürgermeister Keckl Str/11.jpg",
+      "extension": ".jpg",
+      "bytes": 11915695,
+      "sha256": "ec2ff235ff4615608b2939ce4061fd19b400b0dc63645d3bad8bbd3acd8d9724",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5963,
+        "height": 3975
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/deining/etw-buergermeister-keckl-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-8532a14757f8",
+      "source_path": "Referenz Objekte/Erlangen/ETW Luise Kisselbach Str/_DSC3092.JPG",
+      "extension": ".jpg",
+      "bytes": 11042816,
+      "sha256": "8532a14757f8ee5fd41993c0b6a6afefdb6f8d9e031eafd6c632b9bee407a4a2",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/erlangen/etw-luise-kisselbach-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-fb74678103a6",
+      "source_path": "Referenz Objekte/Erlangen/ETW Luise Kisselbach Str/_DSC3112.JPG",
+      "extension": ".jpg",
+      "bytes": 9666560,
+      "sha256": "fb74678103a641831683eb3a74d848a2657a64ec5288a50aa228b7fe928e9c27",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/erlangen/etw-luise-kisselbach-str/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-d3bbe2c41b1e",
+      "source_path": "Referenz Objekte/Forchheim/ETW Spieläcker Str/_DSC2369.JPG",
+      "extension": ".jpg",
+      "bytes": 12288000,
+      "sha256": "d3bbe2c41b1e946ec0f10ccb2687ddb4d27a828ccbcb77f28464fa38cd086f51",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/forchheim/etw-spielaecker-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-beb9e4f4af9d",
+      "source_path": "Referenz Objekte/Forchheim/Townhouse Katzensteinstraße/_DSC2243.JPG",
+      "extension": ".jpg",
+      "bytes": 11337728,
+      "sha256": "beb9e4f4af9d0bc322a1a1fe9400bc7e7d52ab14acd1066b3e180c9b2fb58653",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/forchheim/townhouse-katzensteinstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-b391b0d2cb08",
+      "source_path": "Referenz Objekte/Forchheim/Townhouse Katzensteinstraße/_DSC2244.JPG",
+      "extension": ".jpg",
+      "bytes": 11632640,
+      "sha256": "b391b0d2cb08f5f635b43fc06b26bed8ae9a4097ba4a2fdd95441948e6d422fa",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/forchheim/townhouse-katzensteinstrasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-ffc7296c03c4",
+      "source_path": "Referenz Objekte/Fürth/ETW Kellermannstraße/_DSC0204.JPG",
+      "extension": ".jpg",
+      "bytes": 14319616,
+      "sha256": "ffc7296c03c467c4201a82d30d1d39bff4aac43d05b89b859e5053a6b5c7cf42",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/etw-kellermannstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-9e2913447883",
+      "source_path": "Referenz Objekte/Fürth/ETW Kellermannstraße/_DSC0209.JPG",
+      "extension": ".jpg",
+      "bytes": 19562496,
+      "sha256": "9e29134478839be92c5945b1be0473fe33a61a24275819bbd7613822e8fb9fd8",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/etw-kellermannstrasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-7982712d9c8f",
+      "source_path": "Referenz Objekte/Fürth/ETW Ludwigstraße/_DSC4063.jpg",
+      "extension": ".jpg",
+      "bytes": 14805157,
+      "sha256": "7982712d9c8f5c12e29c50d365e9069ba6f34dc6746faf9f5af07270c95e9fd0",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5924,
+        "height": 3949
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/etw-ludwigstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-7c13153b6082",
+      "source_path": "Referenz Objekte/Fürth/ETW Ludwigstraße/_DSC4068.jpg",
+      "extension": ".jpg",
+      "bytes": 8857254,
+      "sha256": "7c13153b608223863652db7b628b005ddfb7845c6ed8a90228359c87ccdf3456",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5992,
+        "height": 3995
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/etw-ludwigstrasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-9b6be1f87cf3",
+      "source_path": "Referenz Objekte/Fürth/ETW Ludwigstraße/_DSC4073.jpg",
+      "extension": ".jpg",
+      "bytes": 11156672,
+      "sha256": "9b6be1f87cf31167ee1cf9b5d41cf295649f7fd1cefc834d9713f567298f9ef7",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 4576,
+        "height": 3051
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/etw-ludwigstrasse/property-photo-03.jpg"
+    },
+    {
+      "id": "cf-c05878c8483b",
+      "source_path": "Referenz Objekte/Fürth/Medizinisches Versorgungszentrum Fürth/_DSC0489.JPG",
+      "extension": ".jpg",
+      "bytes": 12353536,
+      "sha256": "c05878c8483bf180c17234176b9954ea7fc59191c4c8712a16b877e44ecd65ca",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/medizinisches-versorgungszentrum-fuerth/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-a18317257f56",
+      "source_path": "Referenz Objekte/Fürth/MFH Ottostraße/_DSC2845.JPG",
+      "extension": ".jpg",
+      "bytes": 12353536,
+      "sha256": "a18317257f566db90c35b8ab5582c65f59c491c9033dad115d312886bc0c8ab4",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/fuerth/mfh-ottostrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-3aca95e7ef7a",
+      "source_path": "Referenz Objekte/Heroldsbach/ZFH Am Vogelherd/_DSC3863.jpg",
+      "extension": ".jpg",
+      "bytes": 23060431,
+      "sha256": "3aca95e7ef7abba880604efffda8d6e2d50ab690eca66d5c501c9fa429299db5",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5810,
+        "height": 3873
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/heroldsbach/zfh-am-vogelherd/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-9bcb5d232cde",
+      "source_path": "Referenz Objekte/Heroldsbach/ZFH Am Vogelherd/_DSC3877.jpg",
+      "extension": ".jpg",
+      "bytes": 14692960,
+      "sha256": "9bcb5d232cde1b86f373bf130b2418b9b864519676d3a1cdd5999d08231aeb46",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5988,
+        "height": 3991
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/heroldsbach/zfh-am-vogelherd/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-94c5ebd59aae",
+      "source_path": "Referenz Objekte/Immonation_Referenztexte.docx",
+      "extension": ".docx",
+      "bytes": 37593,
+      "sha256": "94c5ebd59aae320185fe05ebc1b11550b41c96af7b7d19e3cc678a25451dbc31",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 447,
+        "tables": 26,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Immonation – Referenztexte Kaufobjekte",
+          "author": "Immonation GmbH",
+          "created": "2026-07-13T12:06:00+00:00",
+          "modified": "2026-07-13T12:06:00+00:00",
+          "last_modified_by": "Erman Karabacak"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/referenz-objekte/referenz-objekte/referenz-objekte-immonation-referenztexte.docx"
+    },
+    {
+      "id": "cf-e8550cb35c95",
+      "source_path": "Referenz Objekte/Langenzenn/ETW Lenzenstraße/11111111.JPG",
+      "extension": ".jpg",
+      "bytes": 2613199,
+      "sha256": "e8550cb35c95a460369b2b57dc354be40418534eebbfb313f0cc7c04d699efb9",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5941,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/langenzenn/etw-lenzenstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-895ef201e078",
+      "source_path": "Referenz Objekte/Langenzenn/ETW Lenzenstraße/9999999.JPG",
+      "extension": ".jpg",
+      "bytes": 2806627,
+      "sha256": "895ef201e078a4231d2c98084f0ba9f7b1dd6c5536d0dc5c1287374da5e2db01",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5971,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/langenzenn/etw-lenzenstrasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-25e14d28ba1b",
+      "source_path": "Referenz Objekte/Nürnberg/EFH Seidelbastweg/_DSC3904.jpg",
+      "extension": ".jpg",
+      "bytes": 17820134,
+      "sha256": "25e14d28ba1bdb79b7d2531bd1506c9594335f24c453dc0364998a6e14b00ea5",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5547,
+        "height": 3698
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/efh-seidelbastweg/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-f953cf66b994",
+      "source_path": "Referenz Objekte/Nürnberg/EFH Seidelbastweg/DJI_0028-2.jpg",
+      "extension": ".jpg",
+      "bytes": 4174211,
+      "sha256": "f953cf66b9949229e68544a0f87b99fd7c7083bdf326163bac9b3b3cc39fb0e5",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2903,
+        "height": 1633
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/efh-seidelbastweg/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-993f17fe36fa",
+      "source_path": "Referenz Objekte/Nürnberg/ETW Stabiusstraße/_DSC6043.jpg",
+      "extension": ".jpg",
+      "bytes": 12460481,
+      "sha256": "993f17fe36fab2057fdb5abf830119449c12ead85c1ad3ce51b9adfc6db946f3",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 4935,
+        "height": 3566
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/etw-stabiusstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-c6d49c6e7976",
+      "source_path": "Referenz Objekte/Nürnberg/ETW Züricher Str. 40/_DSC5188.jpg",
+      "extension": ".jpg",
+      "bytes": 10343824,
+      "sha256": "c6d49c6e7976cfee3de7bc28ac45ee90226b196249ac62a1b9ed876ec52af56c",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5977,
+        "height": 3985
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/etw-zuericher-str-40/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-223f1e9c4644",
+      "source_path": "Referenz Objekte/Nürnberg/REH Siebenbürger Str/_DSC2275.JPG",
+      "extension": ".jpg",
+      "bytes": 8716288,
+      "sha256": "223f1e9c4644da1bc15d92f4eca61c78ff20c84c527fcb2a2576b504b80b456e",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/reh-siebenbuerger-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-6dd1f8a65824",
+      "source_path": "Referenz Objekte/Nürnberg/REH Siebenbürger Str/_DSC2299.JPG",
+      "extension": ".jpg",
+      "bytes": 12025856,
+      "sha256": "6dd1f8a6582411778e7a8dd1fa6dd37623e4ab8902da81c2f7d8e4fab52c686f",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/reh-siebenbuerger-str/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-6eb31ac92d01",
+      "source_path": "Referenz Objekte/Nürnberg/RMH Haderastraße/_DSC9345-HDR.jpg",
+      "extension": ".jpg",
+      "bytes": 11217645,
+      "sha256": "6eb31ac92d0105c7bf4c618a5a27ebd058fd88267289d938136c6d33e3c25978",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5952,
+        "height": 3968
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/rmh-haderastrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-44d16f19c71f",
+      "source_path": "Referenz Objekte/Nürnberg/RMH Wörnitzstraße/_DSC6085.jpg",
+      "extension": ".jpg",
+      "bytes": 8909657,
+      "sha256": "44d16f19c71f3c59feb937cbe12aee4c2627e666b001b7b86ca46095d9af953d",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5939,
+        "height": 3901
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/nuernberg/rmh-woernitzstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-a636c4a54be0",
+      "source_path": "Referenz Objekte/Oberasbach/EFH Bucher Straße/22222222.JPG",
+      "extension": ".jpg",
+      "bytes": 2574574,
+      "sha256": "a636c4a54be0c40cf3c424c7f9bed28521d026deaa11e5c70fe52678e408723b",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5952,
+        "height": 3726
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/oberasbach/efh-bucher-strasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-d00706062580",
+      "source_path": "Referenz Objekte/Oberasbach/EFH Bucher Straße/5555555.JPG",
+      "extension": ".jpg",
+      "bytes": 2496338,
+      "sha256": "d0070606258078f03b2525bae8264023c4eb3c2b2337d2160b8bc90d6cdcb43c",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5989,
+        "height": 3842
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/oberasbach/efh-bucher-strasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-21373cb91616",
+      "source_path": "Referenz Objekte/Zirndorf/Gutenbergstraße/_DSC4622.jpg",
+      "extension": ".jpg",
+      "bytes": 13390373,
+      "sha256": "21373cb91616a28271db75592eeb568cd8dee639a1cbcc8773f0cc60ccf14184",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5976,
+        "height": 3984
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/gutenbergstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-9da02ac67c1b",
+      "source_path": "Referenz Objekte/Zirndorf/Homburger Str/_DSC1853.JPG",
+      "extension": ".jpg",
+      "bytes": 12746752,
+      "sha256": "9da02ac67c1b3775e68c3731b555813814743b84b370530b6897b94af0367ad0",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/homburger-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-272c4bbf894a",
+      "source_path": "Referenz Objekte/Zirndorf/Homburger Str/_DSC1854.JPG",
+      "extension": ".jpg",
+      "bytes": 11337728,
+      "sha256": "272c4bbf894a617d443d4487f29b67b040100a4dbf7ef1ff8fbdc35bdd3c989c",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/homburger-str/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-b9ebe2a12a21",
+      "source_path": "Referenz Objekte/Zirndorf/Marienbader Str/4444.JPG",
+      "extension": ".jpg",
+      "bytes": 2789371,
+      "sha256": "b9ebe2a12a215f4b0f18708db3d210d5ae1368e5e0e359cd7caf884fece7a2ac",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5955,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/marienbader-str/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-e8cc4cdbe7f1",
+      "source_path": "Referenz Objekte/Zirndorf/Marienbader Str/_DSC2643.JPG",
+      "extension": ".jpg",
+      "bytes": 11763712,
+      "sha256": "e8cc4cdbe7f19474c697385f8d2c3ba3c6be8d58d1d48532522ad38d6062f9c2",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/marienbader-str/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-84f9d4bb45e0",
+      "source_path": "Referenz Objekte/Zirndorf/Vogelherdstraße/_DSC7024.jpg",
+      "extension": ".jpg",
+      "bytes": 9664800,
+      "sha256": "84f9d4bb45e0bfd764856513683b7ccf17adaf59fb47aaf2a5c73f46a8b2ac7c",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 6000,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/vogelherdstrasse/property-photo-01.jpg"
+    },
+    {
+      "id": "cf-d1359bc4509e",
+      "source_path": "Referenz Objekte/Zirndorf/Vogelherdstraße/_DSC7051.jpg",
+      "extension": ".jpg",
+      "bytes": 10624303,
+      "sha256": "d1359bc4509eef9bb3974ab17e28ea854564551b18a4bff720139af1f5253575",
+      "category": "Referenz Objekte",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 5374,
+        "height": 3713
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/references/zirndorf/vogelherdstrasse/property-photo-02.jpg"
+    },
+    {
+      "id": "cf-defa8e6a2b35",
+      "source_path": "Spende Schulbildung Uganda/IMG_0012.HEIC",
+      "extension": ".heic",
+      "bytes": 2845077,
+      "sha256": "defa8e6a2b358b8b14ee4767d118387211d5bb4a22a702f24a6303274196ef0a",
+      "category": "Spende Schulbildung Uganda",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 3024,
+        "height": 4032
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/uganda-school-support/img-0012.heic"
+    },
+    {
+      "id": "cf-d7ef832c09df",
+      "source_path": "Spende Schulbildung Uganda/IMG_0019.HEIC",
+      "extension": ".heic",
+      "bytes": 1846710,
+      "sha256": "d7ef832c09df8dc390232057e9e266bcc22381cf2ddbae825851cffd653cd813",
+      "category": "Spende Schulbildung Uganda",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 3024,
+        "height": 4032
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/uganda-school-support/img-0019.heic"
+    },
+    {
+      "id": "cf-7753be476dd1",
+      "source_path": "Spende Schulbildung Uganda/IMG_0817.JPG.jpeg",
+      "extension": ".jpeg",
+      "bytes": 4302438,
+      "sha256": "7753be476dd14da333141a4bc074dad96ee948696915cbc37aaee3b66cdf6ad7",
+      "category": "Spende Schulbildung Uganda",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2252,
+        "height": 4000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/uganda-school-support/img-0817-jpg.jpg"
+    },
+    {
+      "id": "cf-8e36036cf683",
+      "source_path": "Spende Schulbildung Uganda/IMG_9998.HEIC",
+      "extension": ".heic",
+      "bytes": 3018459,
+      "sha256": "8e36036cf683f2ef87f2d73c653d4634b1f39af5c20b32405cb4b221f29956a2",
+      "category": "Spende Schulbildung Uganda",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 3024,
+        "height": 4032
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/uganda-school-support/img-9998.heic"
+    },
+    {
+      "id": "cf-19abf3c62057",
+      "source_path": "Sponsoring TSV Zirndorf Bundesathleten/Autogrammkarte Eni Kuske.png",
+      "extension": ".png",
+      "bytes": 6210334,
+      "sha256": "19abf3c620570f18a99f84616f67012211500ef6956c5d395fc86d3d16615e5c",
+      "category": "Sponsoring TSV Zirndorf Bundesathleten",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1426,
+        "height": 2000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/tsv-zirndorf/autogrammkarte-eni-kuske.png"
+    },
+    {
+      "id": "cf-df0a03175a85",
+      "source_path": "Sponsoring TSV Zirndorf Bundesathleten/ERFOLGE Amelie Giese.png",
+      "extension": ".png",
+      "bytes": 533214,
+      "sha256": "df0a03175a8573e31c601bb67b37038ae7070820a1fc3fa8abad1f29fedf3d4a",
+      "category": "Sponsoring TSV Zirndorf Bundesathleten",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1426,
+        "height": 2000
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/community/tsv-zirndorf/erfolge-amelie-giese.png"
+    },
+    {
+      "id": "cf-9b77083ae27d",
+      "source_path": "Sponsoring TSV Zirndorf Bundesathleten/LINK zum Beitrag.docx",
+      "extension": ".docx",
+      "bytes": 6790,
+      "sha256": "9b77083ae27d86ea440b39cf9876a07f7fdb7888a3ba46926dfbbe8738d0bacc",
+      "category": "Sponsoring TSV Zirndorf Bundesathleten",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 3,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 1,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:39+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/sponsoring-tsv-zirndorf-bundesathleten/sponsoring-tsv-zirndorf-bundesathleten/sponsoring-tsv-zirndorf-bundesathleten-link-zum-beitrag.docx"
+    },
+    {
+      "id": "cf-7e3bcef04b60",
+      "source_path": "Testimonial Kunden - mit Bild/Frau Berthold/Terrassenwohnung Fürth.jpg",
+      "extension": ".jpg",
+      "bytes": 448106,
+      "sha256": "7e3bcef04b60a07c3d2da80ac43b636f719ed6357651aa7acf22113e80ad8b26",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 1216
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/frau-berthold/property-photo.jpg"
+    },
+    {
+      "id": "cf-d25bfe2a8d0c",
+      "source_path": "Testimonial Kunden - mit Bild/Frau Hartmann/ETW Johannis.jpg",
+      "extension": ".jpg",
+      "bytes": 186113,
+      "sha256": "d25bfe2a8d0c141833d5688b7387f1ae1bc4834b3ea23e6c5a31623dce459362",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 1216
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/frau-hartmann/property-photo.jpg"
+    },
+    {
+      "id": "cf-77ee537080da",
+      "source_path": "Testimonial Kunden - mit Bild/Frau Hartmann/Frau Hartmann.jpg",
+      "extension": ".jpg",
+      "bytes": 148748,
+      "sha256": "77ee537080da7ef151ba868a276baebb626bdc8e89828622b3b1143cbdbe1d52",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 1216
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/frau-hartmann/illustrative-portrait.jpg"
+    },
+    {
+      "id": "cf-72b3720c27a2",
+      "source_path": "Testimonial Kunden - mit Bild/Frau Hartmann/Unbenanntes Dokument.docx",
+      "extension": ".docx",
+      "bytes": 216398,
+      "sha256": "72b3720c27a2be88e35bc15324c2a2a1aafb8654e6446061d29977254a864728",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 6,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:39+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/testimonial-kunden-mit-bild/frau-hartmann/testimonial-kunden-mit-bild-frau-hartmann-unbenanntes-dokument.docx"
+    },
+    {
+      "id": "cf-309e591f3d0d",
+      "source_path": "Testimonial Kunden - mit Bild/Herr Sippel/Doppelhaushälfte Erlangen.jpg",
+      "extension": ".jpg",
+      "bytes": 487289,
+      "sha256": "309e591f3d0de64b1cb4cf5b3c0f504f9a03dda31d3c878f1612bc2267d19d3f",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2000,
+        "height": 1216
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/herr-sippel/property-photo.jpg"
+    },
+    {
+      "id": "cf-723fcbdb3a80",
+      "source_path": "Testimonial Kunden - mit Bild/Herr Sippel/Unbenanntes Dokument.docx",
+      "extension": ".docx",
+      "bytes": 216741,
+      "sha256": "723fcbdb3a807b8bc8df8c225c3f39c441e2dcfd45a74409987726ccf84f077a",
+      "category": "Testimonial Kunden - mit Bild",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 7,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 0,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:39+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/testimonial-kunden-mit-bild/herr-sippel/testimonial-kunden-mit-bild-herr-sippel-unbenanntes-dokument.docx"
+    },
+    {
+      "id": "cf-6f867ccb3815",
+      "source_path": "Unternehmensgruppe Immonation/Dream Living/.DS_Store",
+      "extension": "",
+      "bytes": 6148,
+      "sha256": "6f867ccb38155c1164538a1c4c10af4e02eb4456e42ce1286c2b7f30b5250586",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "removed-os-metadata",
+      "metadata": {},
+      "prior_status": "unmatched",
+      "curated_destination": ""
+    },
+    {
+      "id": "cf-72bcdb4d863a",
+      "source_path": "Unternehmensgruppe Immonation/Dream Living/Dream Living GmbH Logo (2).png",
+      "extension": ".png",
+      "bytes": 11571,
+      "sha256": "72bcdb4d863a842fc85235e14bdb824407671b9bc157e69e81532fccf01bbb29",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 500,
+        "height": 500
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/group/dream-living/dream-living-logo-dream-living-gmbh-logo-2.png"
+    },
+    {
+      "id": "cf-42dec05af4a9",
+      "source_path": "Unternehmensgruppe Immonation/Dream Living/Logo3.pdf",
+      "extension": ".pdf",
+      "bytes": 584807,
+      "sha256": "42dec05af4a97a62cf12cab42ca623daefd2553db3d6e657caf44842af59a975",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "pages": 1,
+        "pages_with_text": 0,
+        "rendered_pages": 1,
+        "pdf_metadata": {
+          "CreationDate": "D:20240522111218+03'00'",
+          "Creator": "Adobe Illustrator 27.6 (Macintosh)",
+          "GTS_PDFXConformance": "PDF/X-1a:2001",
+          "GTS_PDFXVersion": "PDF/X-1:2001",
+          "ModDate": "D:20240522111218+03'00'",
+          "Producer": "Adobe PDF library 17.00",
+          "Title": "Logo3",
+          "Trapped": "/False"
+        },
+        "visual_summary": {
+          "content_type": "Vector brand logo",
+          "visible_text": [
+            "DREAM LIVING GMBH",
+            "WIR REVITALISIEREN WOHNRAUM"
+          ],
+          "visual_description": "Dream Living lockup with an outlined light-blue monogram, black and charcoal wordmark, and a horizontal light-blue rule above the tagline."
+        }
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/group/dream-living/dream-living-logo-logo3.pdf"
+    },
+    {
+      "id": "cf-032ce82a05de",
+      "source_path": "Unternehmensgruppe Immonation/Dream Living/logo3.svg",
+      "extension": ".svg",
+      "bytes": 14575,
+      "sha256": "032ce82a05dea416f5eb7667093a990b9741fdcad178036d0e0234bcc74e08c1",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": "SVG"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/group/dream-living/dream-living-logo-logo3.svg"
+    },
+    {
+      "id": "cf-3875dac96f47",
+      "source_path": "Unternehmensgruppe Immonation/Dream Living/Thumbs.db",
+      "extension": ".db",
+      "bytes": 13312,
+      "sha256": "3875dac96f47eb46a70395acdf3aa3f833193ff6ca156f4e8dde6503c8fe6b4a",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "removed-os-metadata",
+      "metadata": {},
+      "prior_status": "unmatched",
+      "curated_destination": ""
+    },
+    {
+      "id": "cf-6345e5cfcac0",
+      "source_path": "Unternehmensgruppe Immonation/Immonation Captial Holding/.DS_Store",
+      "extension": "",
+      "bytes": 6148,
+      "sha256": "6345e5cfcac0f16ab1f03bd75da9e01a4555bea2d77e30c1ded3bbfd0e713eb7",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "removed-os-metadata",
+      "metadata": {},
+      "prior_status": "unmatched",
+      "curated_destination": ""
+    },
+    {
+      "id": "cf-e9a2dfead675",
+      "source_path": "Unternehmensgruppe Immonation/IN Beteiligung GmbH/logo1.png",
+      "extension": ".png",
+      "bytes": 39711,
+      "sha256": "e9a2dfead67570bdc118078a73d94e405a28c9fc31019f193e41a4f757735337",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2025,
+        "height": 2025
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/brand/group/in-beteiligung-gmbh/in-beteiligung-gmbh-logo-logo1.png"
+    },
+    {
+      "id": "cf-2a6bb9881124",
+      "source_path": "Unternehmensgruppe Immonation/IN Beteiligung GmbH/Thumbs.db",
+      "extension": ".db",
+      "bytes": 6144,
+      "sha256": "2a6bb9881124520dc03e41c1affd9d845ff6baab8a0d295d24348d3f720b2ddc",
+      "category": "Unternehmensgruppe Immonation",
+      "cleanup_status": "removed-os-metadata",
+      "metadata": {},
+      "prior_status": "unmatched",
+      "curated_destination": ""
+    },
+    {
+      "id": "cf-bdbd077b414e",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT ADELSDORF RMH.mp4",
+      "extension": ".mp4",
+      "bytes": 857031,
+      "sha256": "bdbd077b414e9f771dcb58109c100b9aef92cc05b92c1e35401eba90796a93a0",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.233,
+        "video_codec": "h264",
+        "width": 576,
+        "height": 1024,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-adelsdorf-rmh.mp4"
+    },
+    {
+      "id": "cf-a88ae0fe6cb6",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT FORCHHEIM ETW.mp4",
+      "extension": ".mp4",
+      "bytes": 906577,
+      "sha256": "a88ae0fe6cb630c5a16d925a44cd9b3db15665ec725bc9f135221c5b82e8021e",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 5.0,
+        "video_codec": "h264",
+        "width": 576,
+        "height": 1024,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-forchheim-etw.mp4"
+    },
+    {
+      "id": "cf-8ad1cd3e3765",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT FORCHHEIM TOWNHOUSE.mp4",
+      "extension": ".mp4",
+      "bytes": 862601,
+      "sha256": "8ad1cd3e3765a13ab1ab08b937c5961aff01c4ea3292dd87d1c8294cb43cb89b",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 5.0,
+        "video_codec": "h264",
+        "width": 576,
+        "height": 1024,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-forchheim-townhouse.mp4"
+    },
+    {
+      "id": "cf-bfd155c428a4",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT FÜRTH ETW 2.mp4",
+      "extension": ".mp4",
+      "bytes": 906202,
+      "sha256": "bfd155c428a4c61e42f97daddc8f8a5dee337c2833f20dfd2942ba622d4efe75",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.5,
+        "video_codec": "h264",
+        "width": 576,
+        "height": 1024,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-fuerth-etw-2.mp4"
+    },
+    {
+      "id": "cf-cecd222203d7",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT FÜRTH ETW.mp4",
+      "extension": ".mp4",
+      "bytes": 642192,
+      "sha256": "cecd222203d7b1b6a09afb0816a1382551e031ab681ce49d646b2e8cba745a8f",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.233,
+        "video_codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-fuerth-etw.mp4"
+    },
+    {
+      "id": "cf-a13506bf33b0",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT HAGENBÜCHACH EFH.mp4",
+      "extension": ".mp4",
+      "bytes": 1035506,
+      "sha256": "a13506bf33b089e9787a3883577d560324033c273801dc72b532e7f9d587ff05",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.233,
+        "video_codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-hagenbuechach-efh.mp4"
+    },
+    {
+      "id": "cf-93b299371c69",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT NÜRNBERG EFH.mp4",
+      "extension": ".mp4",
+      "bytes": 1100710,
+      "sha256": "93b299371c69545d75769f20ccdb5c754bcb93065849eb112490a0f4069d4f30",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.233,
+        "video_codec": "h264",
+        "width": 576,
+        "height": 1024,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-nuernberg-efh.mp4"
+    },
+    {
+      "id": "cf-ee81be6ce98d",
+      "source_path": "Verkauft Videos inkl. Ortschaften/VERKAUFT SCHWABACH ETW.mp4",
+      "extension": ".mp4",
+      "bytes": 412826,
+      "sha256": "ee81be6ce98de990a727b0132e9449e27a6b488bbd01206c7de82a52eefcb2c4",
+      "category": "Verkauft Videos inkl. Ortschaften",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 4.5,
+        "video_codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "audio_codec": null
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/marketing/sold-clips/sold-schwabach-etw.mp4"
+    },
+    {
+      "id": "cf-d231ef74978c",
+      "source_path": "Verkäufer Feedback Videos/Markus Burkhard/Text Markus Burkhard.docx",
+      "extension": ".docx",
+      "bytes": 139732,
+      "sha256": "d231ef74978c99d83a61dada26201f2ed6e82986ba1cf1fb12c3e15369888ce5",
+      "category": "Verkäufer Feedback Videos",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 11,
+        "tables": 0,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 2,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:40+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/verkaeufer-feedback-videos/markus-burkhard/verkaeufer-feedback-videos-markus-burkhard-text-markus-burkhard.docx"
+    },
+    {
+      "id": "cf-96cd5a0ba650",
+      "source_path": "Verkäufer Feedback Videos/Markus Burkhard/Titelbild.jpg",
+      "extension": ".jpg",
+      "bytes": 259643,
+      "sha256": "96cd5a0ba65030b00bf59893a576d5dd9a538ebb16d4a45661c5326a23a1da8b",
+      "category": "Verkäufer Feedback Videos",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1080,
+        "height": 1920
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/markus-burkhard/thumbnail.jpg"
+    },
+    {
+      "id": "cf-e3e8fe558c41",
+      "source_path": "Verkäufer Feedback Videos/Sandra Börschlein/Titelbild.jpg",
+      "extension": ".jpg",
+      "bytes": 252093,
+      "sha256": "e3e8fe558c41270653207c0e2c89842cabb9434cf0f5e7f3b672440024a386bc",
+      "category": "Verkäufer Feedback Videos",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1080,
+        "height": 1920
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/sandra-boerschlein/thumbnail.jpg"
+    },
+    {
+      "id": "cf-7ef49ca85961",
+      "source_path": "Verkäufer Feedback Videos/Viktor Emter/Interview Viktor Emter.mp4",
+      "extension": ".mp4",
+      "bytes": 1600334345,
+      "sha256": "7ef49ca859612d28ca5e4d97fc6a06878d9bea8c08c202f61c14a52cbc77f038",
+      "category": "Verkäufer Feedback Videos",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "duration_seconds": 361.7,
+        "video_codec": "hevc",
+        "width": 2160,
+        "height": 3840,
+        "audio_codec": "aac"
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/viktor-emter/interview.mp4"
+    },
+    {
+      "id": "cf-ec269bd6607e",
+      "source_path": "Verkäufer Feedback Videos/Viktor Emter/Titelbild Viktor Emter.png",
+      "extension": ".png",
+      "bytes": 3914560,
+      "sha256": "ec269bd6607e9e63a8c2db4b6481fadcab4359ef3060e085336db096d1845be1",
+      "category": "Verkäufer Feedback Videos",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1080,
+        "height": 1920
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/testimonials/viktor-emter/thumbnail.png"
+    },
+    {
+      "id": "cf-cc6d198c19d1",
+      "source_path": "Öffnungszeiten-Anfahrt-FAQ/Öffnungszeiten _ Anfahrt _ FAQ.docx",
+      "extension": ".docx",
+      "bytes": 219154,
+      "sha256": "cc6d198c19d1b629ba990a71f8ac0205d74db063d3665f4a17c346f38db95aeb",
+      "category": "Öffnungszeiten-Anfahrt-FAQ",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "paragraphs": 32,
+        "tables": 1,
+        "headers": 0,
+        "footers": 0,
+        "hyperlinks": 0,
+        "drawings": 3,
+        "embedded_media": 0,
+        "transcribed_embedded_media": 0,
+        "document_properties": {
+          "title": "Word Document",
+          "modified": "2026-07-22T12:13:50+00:00",
+          "last_modified_by": "python-docx"
+        }
+      },
+      "prior_status": "retained-source-only",
+      "curated_destination": "docs/source-material/originals/content/oeffnungszeiten-anfahrt-faq/oeffnungszeiten-anfahrt-faq/oeffnungszeiten-anfahrt-faq-oeffnungszeiten-anfahrt-faq.docx"
+    },
+    {
+      "id": "cf-29acf168e816",
+      "source_path": "Übergabebilder Polaroidkamera/IMG_4937.JPG",
+      "extension": ".jpg",
+      "bytes": 428842,
+      "sha256": "29acf168e81658d0512da6b244e2fffb5b2b69b5b5bd2afe085e52be831b5850",
+      "category": "Übergabebilder Polaroidkamera",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1197,
+        "height": 1593
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/handovers/handover-photo-01.jpg"
+    },
+    {
+      "id": "cf-ea6a6f3ea41b",
+      "source_path": "Übergabebilder Polaroidkamera/IMG_4940.JPG",
+      "extension": ".jpg",
+      "bytes": 981267,
+      "sha256": "ea6a6f3ea41b9e69920d570802a6229ee55cb90b2e58370c0b89fe3795b4beda",
+      "category": "Übergabebilder Polaroidkamera",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1873,
+        "height": 2504
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/handovers/handover-photo-02.jpg"
+    },
+    {
+      "id": "cf-d6f8261d4e51",
+      "source_path": "Übergabebilder Polaroidkamera/IMG_4943.JPG",
+      "extension": ".jpg",
+      "bytes": 659322,
+      "sha256": "d6f8261d4e5154c075a49533f1baa23c705b352e38e7c387fd989067f4a1ee52",
+      "category": "Übergabebilder Polaroidkamera",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 1405,
+        "height": 2105
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/handovers/handover-photo-03.jpg"
+    },
+    {
+      "id": "cf-cf22d9470656",
+      "source_path": "Übergabebilder Polaroidkamera/IMG_4947.JPG",
+      "extension": ".jpg",
+      "bytes": 1377271,
+      "sha256": "cf22d947065689e84042fe4ecfe70abc94532f601e73f775c26f1c0426576b62",
+      "category": "Übergabebilder Polaroidkamera",
+      "cleanup_status": "preserve-original",
+      "metadata": {
+        "format": null,
+        "width": 2261,
+        "height": 2965
+      },
+      "prior_status": "curated",
+      "curated_destination": "assets/media-library/trust/handovers/handover-photo-04.jpg"
+    }
+  ]
+}

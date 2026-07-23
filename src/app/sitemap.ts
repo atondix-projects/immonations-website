@@ -4,6 +4,13 @@ import { routing } from '@/i18n/routing'
 import { STATIC_ROUTES, localizePath } from '@/lib/seo/routes'
 import { getPostAlternates, listAllPosts, type PostSummary } from '@/lib/content/blog'
 import { listAllServices } from '@/lib/content/services'
+import { listAllLocations } from '@/lib/content/locations'
+import { REFERENCE_DETAILS } from '@/lib/content/references'
+import {
+  getSellerGuideAlternates,
+  listAllSellerGuides,
+  type SellerGuide,
+} from '@/lib/content/seller-guides'
 
 type LocaleKey = (typeof routing.locales)[number]
 
@@ -51,6 +58,50 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   )
 
+  const sellerGuideGroups = new Map<string, SellerGuide[]>()
+  for (const guide of listAllSellerGuides()) {
+    sellerGuideGroups.set(guide.translationKey, [
+      ...(sellerGuideGroups.get(guide.translationKey) ?? []),
+      guide,
+    ])
+  }
+  const sellerGuideEntries = [...sellerGuideGroups.values()].map((group) => {
+    const fallbackGuide = group[0]
+    if (!fallbackGuide) return null
+    const guide = group.find((entry) => entry.locale === SITE.defaultLocale) ?? fallbackGuide
+    const alternates = getSellerGuideAlternates(guide)
+    const localizedPaths: Partial<Record<LocaleKey, string>> = {}
+    for (const locale of routing.locales as readonly LocaleKey[]) {
+      const slug = alternates[locale]
+      if (slug)
+        localizedPaths[locale] = localizePath('/sell/[slug]', locale).replace('[slug]', slug)
+    }
+    return entryFor(`/sell/${guide.slug}`, {
+      priority: 0.8,
+      changefreq: 'monthly',
+      localizedPaths,
+    })
+  })
+
+  const locations = listAllLocations().filter((location) => location.locale === SITE.defaultLocale)
+  const locationEntries = locations.map((location) =>
+    entryFor(`/locations/${location.slug}`, {
+      priority: 0.7,
+      changefreq: 'monthly',
+      localizedPaths: {
+        de: localizePath('/locations/[slug]', 'de').replace('[slug]', location.slug),
+        en: localizePath('/locations/[slug]', 'en').replace('[slug]', location.slug),
+      },
+    }),
+  )
+
+  const referenceEntries = Object.keys(REFERENCE_DETAILS).map((slug) =>
+    entryFor(`/references/${slug}`, {
+      priority: 0.7,
+      changefreq: 'yearly',
+    }),
+  )
+
   const posts = await listAllPosts()
   const postGroups = new Map<string, PostSummary[]>()
   for (const post of posts) {
@@ -85,6 +136,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticEntries,
     ...serviceEntries,
+    ...sellerGuideEntries.filter((entry) => entry !== null),
+    ...locationEntries,
+    ...referenceEntries,
     ...postEntries.filter((entry) => entry !== null),
   ].filter((entry) => {
     if (seen.has(entry.url)) return false

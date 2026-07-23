@@ -6,16 +6,14 @@ Stand: 2026-07-05. Diese Datei hält die beantworteten Kontextfragen als Arbeits
 
 - Canonical Name: Immonation GmbH.
 - Domain: `immonationgmbh.de`.
-- Logo/CI: aus dem bereitgestellten Logo ableiten; lokales Logo-Asset ist noch nicht im Repository vorhanden.
+- Logo/CI: aus den bereitgestellten Logo-Varianten ableiten. Vektor-, Raster-, Graustufen-, Stempel- und Einzelmarken-Assets liegen jetzt unter `assets/media-library/brand/immonation/`; vor Implementierung eine kanonische Primärvariante bestimmen.
 - Stil: Mischung aus Premium Minimal und modern.
 - Startseite: ca. 90 Prozent Verkäufer-Fokus.
 - Hauptconversion: Immobilienbewertung.
 
 ## Leistungen
 
-- Alle erwähnten Leistungsbereiche grundsätzlich berücksichtigen.
-- Mietverwaltung ist keine Core-Conversion und keine priorisierte Hauptseite.
-- Unternehmensgruppen-Themen aufnehmen: Immobilienverkauf, Vermietung, Verwaltung als Gruppenkompetenz, Projektentwicklung, Investment/Ankauf, Revitalisierung/Renovierung.
+- Bestätigter Leistungsumfang: Immobilienverkauf, Immobilienbewertung, professionelle Vermarktung, Kaufberatung, Finanzierung, Projektentwicklung, Investment/Ankauf und Revitalisierung/Renovierung.
 - Immobilienbewertung ist kostenlos und unverbindlich.
 - Bewertung wird als Multi-Step-Wizard umgesetzt.
 - Calendly wird eingebettet.
@@ -40,13 +38,23 @@ Gefundener Claim-Pool:
 - Kostenlose und unverbindliche Immobilienbewertung.
 - Hochwertige Immobilienvideos, realistische 360-Grad-Rundgänge und Social-Media-Marketing.
 - Feste Ansprechpartner.
-- Mehr als 5.000 registrierte oder vorgemerkte Kaufinteressenten.
+- Mehr als 8.000 registrierte oder vorgemerkte Kaufinteressenten.
 - Diskrete Vorvermarktung über Suchkunden-Netzwerk.
 - 10-Schritte-Verkaufssystem.
 - Über 40 Immobilien pro Jahr laut Startseite.
 - Über 60 erfolgreiche Immobilienverkäufe pro Jahr laut FAQ.
 - 30 Mio. Euro jährliches Transaktionsvolumen laut FAQ.
 - Google-Bewertungen live eingebunden.
+
+Zusätzliche Claims aus dem EK-Archiv, noch nicht als live verifiziert:
+
+- 4,9 von 5 Sternen bei mehr als 220 beziehungsweise konkret 223 Google-Rezensionen; die Zahl muss live oder mit Stichtag ausgespielt werden.
+- Immonation arbeitet seit 2017 eigenständig und ist kein Franchise.
+- Typische Vermarktungsdauer von sechs bis zwölf Wochen.
+- Wohnflächenberechnung beziehungsweise Neuaufmaß durch einen Inhouse-Ingenieur.
+- F.A.Z. Institut TOP Makler 2026 sowie Immowelt-Auszeichnungen 2024 und 2026; Bezeichnung, Methodik und Nutzungsrechte vor Veröffentlichung prüfen.
+
+Primär belegt ist die EU-Markenregistrierung: EUIPO Nr. `019283377`, eingetragen am 15.03.2026 für Immonation GmbH, unter anderem in den Klassen 36 und 37. Das Zertifikat bleibt als Rechtsquelle unter `docs/source-material/originals/legal/` und ist kein automatisches Public Asset.
 
 ## Käufer & Listings
 
@@ -82,6 +90,9 @@ Gefundener Claim-Pool:
 - Google-Einbindung braucht Consent.
 - Video-Testimonials bekommen Platzhalter bis Material vorliegt.
 - Referenzobjekte und Detailtiefe bleiben fallabhängig.
+- Das EK-Archiv enthält Material für sechs Testimonial-Leads sowie vier ausgearbeitete Geschichten, einschließlich einer maschinell transkribierten Viktor-Emter-Videoaussage. Namen, Zitate, Resultate und Bild-/Videorechte müssen je Fall schriftlich bestätigt werden.
+- Es liegen 26 ausgearbeitete Referenzentwürfe und Fotomaterial für 21 Objektordner vor. Zahlen aus den Referenztabellen gelten bis zur Einzelfreigabe als unbestätigt.
+- Community-Material zu TSV Zirndorf und Schulbildungsunterstützung in Uganda ist vorhanden; Athleten- und insbesondere Kinderbilder benötigen eine Rechte-/Consent-Prüfung.
 
 ## Karriere & Partner
 
@@ -97,6 +108,8 @@ Gefundener Claim-Pool:
 - Downloads erfordern E-Mail-Opt-in.
 - Zentrale FAQ-Seite: ja.
 - Ein gemeinsamer Content-Hub mit getrennten Seiten für Ratgeber, News, FAQ, Downloads und Newsletter.
+- Zwei Übergabeprotokolle für Haus und Wohnung liegen als PDF-Quellen vor. Vor Veröffentlichung: Branding, Formularnutzbarkeit, Barrierefreiheit und rechtliche Prüfung; danach optimierte Derivate nach `public/` übernehmen.
+- Die gelieferten Content-Entwürfe decken Haus-, Wohnungs- und Mehrfamilienhausverkauf, zentrale FAQ, Bodenrichtwert, Bewertungs-/Review-Aufklärung sowie zwölf situative Verkäuferthemen ab. Priorisierung und Freigabestatus stehen in `docs/source-material/publishing-backlog.md`.
 
 ## Technik & Tracking
 
@@ -112,3 +125,12 @@ Gefundener Claim-Pool:
 - Impressum, Datenschutz, AGB und vorhandene Maklerpflichtinformationen von `immonationgmbh.de` als Ausgangspunkt.
 - Claims von der aktuellen Website gelten als nutzbar, werden aber vor Launch live geprüft.
 - Property-Bilder und Kundenstimmen dürfen grundsätzlich wiederverwendet werden, sofern im Einzelfall freigegeben.
+- Award-Logos/-Abbildungen, Athletenbilder, Aufnahmen von Kindern, Kundenportraits, Übergabebilder und KI-Visualisierungen werden nicht allein durch die Ablage im Archiv zur Veröffentlichung freigegeben.
+- Google-Bewertungen nicht pauschal als „verifizierte Kunden“ bezeichnen; öffentlich sichtbare Google-Konten sind kein Nachweis eines abgeschlossenen Kundenverhältnisses.
+
+## Neue offene Entscheidungen aus dem EK-Archiv
+
+- Der FAQ-Entwurf nennt Dr. Klein als langjährigen Finanzierungspartner. Partnerschaft, zulässige Formulierung und Verlinkung bestätigen.
+- Der FAQ-Entwurf empfiehlt einen Suchauftrag; die bestehende Entscheidung schließt nur einen selbstverwalteten Suchauftrag als Primärfunktion aus. Gewünschte Sekundärfunktion präzisieren.
+- Bürozeiten, Telefonnummer und Anfahrtsangaben aus dem Archiv vor Übernahme live bestätigen.
+- Für jede Referenz festlegen: veröffentlichbare Ortsgenauigkeit, Kennzahlen, Ergebnisformulierung, Medien und Kundenfreigabe.

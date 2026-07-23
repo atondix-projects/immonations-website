@@ -10,14 +10,20 @@ Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. D
 - [Home (EN)](https://www.immonationgmbh.de/en) - English entry point
 - [Kaeuferseite](https://www.immonationgmbh.de/de/immobilie-kaufen) - Kaeuferstrecke mit Objektteasern, Suchanfrage und Kontaktweg
 - [Leistungen](https://www.immonationgmbh.de/de/leistungen) - Bewertung, Verkauf, Vermarktung und Transaktion
+- [Immobilie verkaufen](https://www.immonationgmbh.de/de/immobilie-verkaufen) - Verkaufsleitfäden für Haus, Wohnung, Grundstück und Mehrfamilienhaus
+- [Ablauf Immobilienverkauf](https://www.immonationgmbh.de/de/immobilie-verkaufen/ablauf) - der vollständige Verkaufsfahrplan in zehn Schritten von der Objektaufnahme bis zur Übergabe
+- [Regionen](https://www.immonationgmbh.de/de/immobilienmakler-region) - lokale Orientierung für Zirndorf, Nürnberg, Fürth und Erlangen ohne unbestätigte Live-Preise
 - [Immobilienbewertung](https://www.immonationgmbh.de/de/immobilienbewertung) - kostenlose, unverbindliche Wertermittlung mit Vor-Ort-Einschaetzung und schriftlichem Ergebnis
 - [Ueber uns](https://www.immonationgmbh.de/de/ueber-uns) - Unternehmen, regionale Verankerung und Arbeitsweise
 - [Kontakt](https://www.immonationgmbh.de/de/kontakt) - Telefon, E-Mail und Anfragewege fuer Eigentuemer, Kaeufer und Partner
 - [FAQ](https://www.immonationgmbh.de/de/faq) - Kosten, Provision, Dauer, Unterlagen, Region und Ablauf in Kurzantworten
 - [Blog / Ratgeber](https://www.immonationgmbh.de/de/ratgeber) - Immobilienwissen, Marktkommentare und Entscheidungsfragen
 - [Karriere](https://www.immonationgmbh.de/de/karriere) - Festangestellte und freie Vertriebspartner
+- [Immobilienmakler werden](https://www.immonationgmbh.de/de/immobilienmakler-werden) - Aufgaben, Zusammenarbeit, Profil und Kontaktweg für freie Vertriebspartner
 - [Tippgeber](https://www.immonationgmbh.de/de/tippgeber) - Empfehlungskanal fuer Immobilienkontakte
 - [Downloads](https://www.immonationgmbh.de/de/downloads) - Checklisten und vorbereitete Ressourcen
+- [Referenzen](https://www.immonationgmbh.de/de/referenzen) - 15 ausgewaehlte Referenzimmobilien mit echten Objektfotos, virtueller Besichtigung und drei Kundenstimmen-Plaetzen
+- [References (EN)](https://www.immonationgmbh.de/en/references) - English reference-property hub
 
 ## Weitere Maschinenlese-Hinweise
 

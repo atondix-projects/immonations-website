@@ -8,7 +8,7 @@ brand
 
 Die primäre Zielgruppe sind Eigentümer in Zirndorf, Nürnberg, Fürth, Erlangen, Schwabach und im Umkreis von ca. 60 km, die eine Immobilie verkaufen, bewerten oder professionell vermarkten lassen möchten. Sie suchen Sicherheit, lokale Marktkenntnis, transparente Abläufe und einen Anbieter, der den Verkauf aktiv steuert statt nur ein Inserat zu veröffentlichen.
 
-Sekundäre Zielgruppen sind Kaufinteressenten, Kapitalanleger, Mietinteressenten, Bewerber, freie Vertriebspartner, Tippgeber und lokale Kooperationspartner. Käufer brauchen eine schnelle Objektsuche, Finanzierung, klare Kontaktwege und eine unaufdringliche KI-Assistenz für Orientierung. Ein klassischer, selbstverwalteter Suchauftrag ist nicht vorgesehen. Bewerber und freie Partner brauchen getrennte Strecken mit klarer Perspektive: Wachstum, regionale Stärke, Weiterbildung, starke Marke und administrative Entlastung.
+Sekundäre Zielgruppen sind Kaufinteressenten, Kapitalanleger, Bewerber, freie Vertriebspartner, Tippgeber und lokale Kooperationspartner. Käufer brauchen eine schnelle Objektsuche, Finanzierung, klare Kontaktwege und eine unaufdringliche KI-Assistenz für Orientierung. Ein klassischer, selbstverwalteter Suchauftrag ist nicht vorgesehen. Bewerber und freie Partner brauchen getrennte Strecken mit klarer Perspektive: Wachstum, regionale Stärke, Weiterbildung, starke Marke und administrative Entlastung.
 
 ## Product Purpose
 

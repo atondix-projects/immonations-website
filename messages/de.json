@@ -33,7 +33,7 @@
       "virtualTour": "Virtuelle Besichtigung",
       "virtualTourDesc": "360°-Rundgang: digital besichtigen, ernsthaft kaufen.",
       "references": "Referenzobjekte",
-      "referencesDesc": "Verkaufte Objekte aus Ihrer Nachbarschaft.",
+      "referencesDesc": "15 ausgewählte Immobilien aus unserer Region.",
       "buying": "Immobilie kaufen",
       "buyingDesc": "Aktuelle Angebote aus der Region.",
       "financing": "Finanzierung",
@@ -107,6 +107,7 @@
     "emailLabel": "E-Mail",
     "serviceLink": "Leistungen ansehen",
     "steps": {
+      "eyebrow": "Persönlich weiter",
       "title": "So geht es weiter",
       "items": [
         {
@@ -123,6 +124,28 @@
         }
       ]
     }
+  },
+  "ContactForm": {
+    "prototypeLabel": "Formular-Prototyp",
+    "title": "Worum geht es bei Ihrer Immobilie?",
+    "text": "Die Felder zeigen den späteren Kontaktweg. In dieser Phase wird keine Nachricht übertragen.",
+    "name": "Name",
+    "email": "E-Mail",
+    "topic": "Thema",
+    "topics": ["Immobilie verkaufen", "Immobilie bewerten", "Immobilie kaufen", "Sonstiges"],
+    "message": "Ihre Nachricht",
+    "submit": "Prototypisch absenden",
+    "success": "Die Darstellung ist abgeschlossen. Es wurde keine Nachricht versendet.",
+    "localOnly": "Keine Speicherung, keine E-Mail und keine Weitergabe im Frontend-Prototyp."
+  },
+  "PrototypeCookie": {
+    "label": "Cookie-Hinweis",
+    "prototype": "Visueller Prototyp",
+    "title": "Ihre Privatsphäre, klar erklärt.",
+    "text": "Diese Vorschau zeigt die spätere Einwilligungsoberfläche. Es werden keine Präferenzen gespeichert und keine optionalen Dienste aktiviert.",
+    "accept": "Alle erlauben",
+    "necessary": "Nur notwendige",
+    "note": "Beide Schaltflächen schließen nur diese lokale Vorschau."
   },
   "ValuationPage": {
     "metadata": {
@@ -177,9 +200,9 @@
       ]
     },
     "stats": [
-      { "value": "5,0 ★", "label": "Google-Bewertung bei 184 Rezensionen" },
+      { "value": "4,9 ★", "label": "Google-Bewertung bei 220+ Rezensionen" },
       { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
-      { "value": "5.000+", "label": "registrierte Suchkunden" },
+      { "value": "8.000+", "label": "registrierte Suchkunden" },
       { "value": "360°", "label": "Rundgang bei jedem Verkaufsobjekt" }
     ],
     "faq": {
@@ -209,6 +232,64 @@
       "primaryLabel": "Bewertung starten",
       "secondaryLabel": "Erstgespräch vereinbaren"
     }
+  },
+  "ValuationWizard": {
+    "prototypeLabel": "Frontend-Prototyp",
+    "title": "Immobilie einordnen",
+    "progressLabel": "Fortschritt der Bewertung",
+    "propertyTypes": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
+    "conditions": ["Modernisiert", "Gepflegt", "Renovierungsbedarf"],
+    "timings": ["0–3 Monate", "3–12 Monate", "Nur Orientierung"],
+    "steps": {
+      "type": {
+        "title": "Welche Immobilie möchten Sie bewerten?",
+        "text": "Wählen Sie die Objektart für eine passende Einordnung."
+      },
+      "location": {
+        "title": "Wo befindet sich die Immobilie?",
+        "text": "Für den Prototyp genügen Postleitzahl und Ort.",
+        "postcode": "Postleitzahl",
+        "city": "Ort"
+      },
+      "details": {
+        "title": "Wie groß ist die Immobilie?",
+        "text": "Näherungswerte reichen für diese erste Einordnung.",
+        "area": "Wohnfläche in m²",
+        "rooms": "Zimmer"
+      },
+      "context": {
+        "title": "Zustand und Zeitplan",
+        "condition": "Wie würden Sie den Zustand beschreiben?",
+        "timing": "Wann könnte ein Verkauf relevant werden?"
+      },
+      "summary": {
+        "title": "Ihre Angaben auf einen Blick",
+        "text": "Prüfen Sie die Eckdaten. Im Prototyp wird nichts versendet oder gespeichert."
+      }
+    },
+    "summary": {
+      "type": "Objektart",
+      "location": "Lage",
+      "details": "Größe",
+      "rooms": "Zimmer",
+      "context": "Kontext"
+    },
+    "localOnly": "Mit Abschluss öffnen Sie ausschließlich die lokale Danke-Seite. Es wird keine Anfrage übertragen.",
+    "error": "Bitte ergänzen Sie die Angaben in diesem Schritt.",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Prototyp abschließen"
+  },
+  "ValuationThankYou": {
+    "metadata": {
+      "title": "Bewertungsprototyp abgeschlossen",
+      "description": "Bestätigung des lokalen Immonation Bewertungsprototyps."
+    },
+    "eyebrow": "Prototyp abgeschlossen",
+    "title": "Ihre Angaben wurden nicht versendet.",
+    "text": "Der Ablauf zeigt, wie sich die spätere Bewertung anfühlen kann. In dieser Designphase bleiben alle Angaben lokal in Ihrem Browser. Für ein echtes Gespräch erreichen Sie Immonation über die Kontaktseite.",
+    "contact": "Kontaktmöglichkeiten",
+    "back": "Bewertung erneut ansehen"
   },
   "FaqPage": {
     "metadata": {
@@ -244,8 +325,8 @@
         "answer": "Wir vermitteln Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von rund 60 km um unseren Standort in Zirndorf."
       },
       {
-        "question": "Kann ich eine vermietete Immobilie verkaufen?",
-        "answer": "Ja. Vermietete Objekte vermarkten wir gezielt an Kapitalanleger — inklusive Aufbereitung der relevanten Miet- und Renditedaten."
+        "question": "Kann ich eine Immobilie mit bestehendem Mietverhältnis verkaufen?",
+        "answer": "Ja. Objekte mit bestehendem Mietverhältnis vermarkten wir gezielt an Kapitalanleger — inklusive Aufbereitung der relevanten Vertrags- und Renditedaten."
       },
       {
         "question": "Unterstützt Immonation auch bei der Finanzierung?",
@@ -408,7 +489,7 @@
       {
         "heading": "Festangestellte",
         "paragraphs": [
-          "Wir besetzen laufend Positionen im Immobilien- und Backoffice-Bereich — von der Objektaufnahme über die Vermarktung bis zur Verwaltung. Konkrete Stellenausschreibungen veröffentlichen wir hier in Kürze."
+          "Wir besetzen laufend Positionen im Immobilien- und Backoffice-Bereich — von der Objektaufnahme über die Vermarktung bis zur Transaktionsvorbereitung. Konkrete Stellenausschreibungen veröffentlichen wir hier in Kürze."
         ]
       },
       {
@@ -420,6 +501,12 @@
       }
     ],
     "note": "Detaillierte Stellenangebote und das vollständige Partner-Modell folgen. Bis dahin: Melden Sie sich direkt — wir freuen uns auf das Gespräch.",
+    "agentTrack": {
+      "eyebrow": "Eigener Karriereweg",
+      "title": "Als Immobilienmakler mit Immonation arbeiten",
+      "text": "Die neue Makler-Seite zeigt Aufgaben, Zusammenarbeit, passendes Profil und den direkten Weg zu einem Kennenlerngespräch.",
+      "link": "Makler-Karriere ansehen"
+    },
     "cta": {
       "title": "Interesse geweckt?",
       "text": "Erzählen Sie uns kurz, wer Sie sind und was Sie suchen — wir melden uns innerhalb eines Werktags.",
@@ -489,7 +576,7 @@
         "title": "Ihr Immobilienverkauf, aktiv gesteuert — nicht nur inseriert.",
         "subtitle": "Fundierte Bewertung, professionelle Vermarktung mit Video und 360°-Rundgang, persönliche Begleitung bis zum Notartermin.",
         "ctaPrimary": "Kostenlose Bewertung starten",
-        "ctaSecondary": "Immobilie suchen"
+        "ctaSecondary": "Verkaufsprozess ansehen"
       },
       "buyer": {
         "eyebrow": "Kaufen in der Region",
@@ -498,8 +585,8 @@
         "ctaPrimary": "Immobilie suchen",
         "ctaSecondary": "Suchauftrag anlegen"
       },
-      "ratingLabel": "Google-Bewertung · 184 Rezensionen",
-      "ratingValue": "5,0 ★★★★★",
+      "ratingLabel": "Google-Bewertung · 220+ Rezensionen",
+      "ratingValue": "4,9 ★★★★★",
       "imageAlt": "Immobilienvermarktung der Immonation GmbH",
       "playWithAudio": "Film mit Ton starten"
     },
@@ -508,78 +595,31 @@
       "p1": "Die Immonation GmbH begleitet Eigentümer in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von 60 km durch den gesamten Verkaufsprozess — von der fundierten Wertermittlung über die professionelle Vermarktung bis zum Notartermin.",
       "p2": "Persönlich, transparent und mit nachweisbaren Ergebnissen: feste Ansprechpartner, ein aktives Suchkunden-Netzwerk und Vermarktung mit Video, 360°-Rundgang und Social Media."
     },
+    "proof": {
+      "eyebrow": "Lokal verankert · messbar wirksam",
+      "items": [
+        { "value": "4,9 / 5", "label": "Google-Bewertung bei 220+ Rezensionen" },
+        { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
+        { "value": "30 Mio. €", "label": "jährliches Transaktionsvolumen" },
+        { "value": "8.000+", "label": "registrierte Suchkunden" }
+      ]
+    },
     "process": {
       "eyebrow": "Für Eigentümer",
       "title": "So verkaufen wir Ihre Immobilie",
-      "link": "Den ganzen Prozess ansehen →",
-      "steps": [
-        {
-          "num": "01",
-          "title": "Onboarding-Call",
-          "text": "Kostenloses Erstgespräch per Telefon oder Video: Wir klären Ihre Ziele, den Zeitrahmen und beantworten Ihre ersten Fragen."
-        },
-        {
-          "num": "02",
-          "title": "Vor-Ort-Termin",
-          "text": "Persönliche Besichtigung Ihrer Immobilie und marktbasierte Wertermittlung — vor Ort, nicht per Algorithmus allein."
-        },
-        {
-          "num": "03",
-          "title": "Preis- & Vertriebsstrategie",
-          "text": "Realistischer Angebotspreis, Zielgruppendefinition und ein klarer Vermarktungsplan, bevor das Objekt online geht."
-        },
-        {
-          "num": "04",
-          "title": "Objektaufnahme",
-          "text": "Professionelle Fotos, Video-Exposé und 360°-Rundgang setzen Ihre Immobilie ins beste Licht."
-        },
-        {
-          "num": "05",
-          "title": "Vermarktung",
-          "text": "Reichweitenstarke Vermarktung über Portale, unser Netzwerk und Social Media — für maximale qualifizierte Nachfrage."
-        },
-        {
-          "num": "06",
-          "title": "Käuferqualifizierung & Finanzierung",
-          "text": "Wir prüfen Interessenten inklusive Finanzierungsnachweis — nur ernsthafte, solvente Käufer besichtigen."
-        },
-        {
-          "num": "07",
-          "title": "Notar & Abschluss",
-          "text": "Verhandlungsführung, Notartermin und Begleitung bis zur Schlüsselübergabe — alles aus einer Hand."
-        }
-      ]
+      "lede": "Zehn klar definierte Schritte verbinden Vorbereitung, Vermarktung und Abschluss. Wählen Sie einen Schritt und sehen Sie, was in dieser Phase passiert.",
+      "link": "Alle 10 Schritte im Detail",
+      "previous": "Vorheriger Schritt",
+      "next": "Nächster Schritt",
+      "tabList": "Die zehn Schritte des Immobilienverkaufs",
+      "selectedStep": "Ausgewählter Schritt",
+      "activities": "Was wir tun",
+      "outcome": "Ihr Ergebnis"
     },
     "references": {
-      "eyebrow": "Nachweisbare Ergebnisse",
+      "eyebrow": "Ausgewählte Referenzen",
       "title": "Referenzen aus Ihrer Nachbarschaft",
-      "link": "Alle Referenzobjekte →",
-      "durationLabel": "Vermarktungsdauer",
-      "resultLabel": "Ergebnis",
-      "photoAlt": "Referenzfoto",
-      "items": [
-        {
-          "badge": "Verkauft",
-          "title": "Eigentumswohnung, Fürth-Südstadt",
-          "duration": "6 Wochen",
-          "result": "+4 % über Wertansatz",
-          "story": "360°-Rundgang und Video-Exposé brachten 38 qualifizierte Anfragen in der ersten Woche."
-        },
-        {
-          "badge": "Verkauft",
-          "title": "Einfamilienhaus, Zirndorf",
-          "duration": "8 Wochen",
-          "result": "Zum Wertansatz",
-          "story": "Diskrete Vermarktung über das Suchkunden-Netzwerk — ohne öffentliches Inserat."
-        },
-        {
-          "badge": "Vermietet",
-          "title": "Mehrfamilienhaus, Erlangen",
-          "duration": "4 Wochen",
-          "result": "Vollvermietung",
-          "story": "Alle drei Einheiten über Vorqualifizierung besetzt, inklusive Bonitätsprüfung."
-        }
-      ]
+      "link": "Alle 15 Referenzobjekte →"
     },
     "valuation": {
       "eyebrow": "Kostenlos & unverbindlich",
@@ -588,13 +628,16 @@
       "quote": "„Der 360°-Rundgang hat uns Besichtigungen mit Unentschlossenen erspart — es kamen nur noch ernsthafte Interessenten.“",
       "quoteAuthor": "Herr M. · Wohnungsverkauf Nürnberg-St. Johannis · Google ★★★★★",
       "formTitle": "Bewertung starten",
+      "prototypeLabel": "Interaktiver Frontend-Prototyp",
+      "prototypeNote": "Objektart, Lage, Größe und Verkaufszeitpunkt in fünf klaren Schritten einordnen.",
+      "localOnly": "Ihre Angaben bleiben im Browser. Es wird keine Anfrage übertragen.",
       "plzLabel": "Postleitzahl des Objekts",
       "plzPlaceholder": "z. B. 90513",
       "typeLabel": "Objektart",
       "types": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
       "submit": "Kostenlose Bewertung starten",
-      "success": "✓ Vielen Dank — wir melden uns innerhalb eines Werktags mit Ihrer Ersteinschätzung.",
-      "privacyNote": "Keine Weitergabe Ihrer Daten. Rückruf statt Formular?",
+      "success": "Prototyp abgeschlossen — es wurde keine Anfrage versendet.",
+      "privacyNote": "Lokale Demonstration ohne Datenübertragung. Rückruf statt Formular?",
       "callbackLink": "Rückruf vereinbaren"
     },
     "servicesOverview": {
@@ -612,12 +655,12 @@
           "text": "Kostenlose, fundierte Wertermittlung auf Basis aktueller Verkaufsdaten aus Ihrer Nachbarschaft."
         },
         {
-          "title": "Mietverwaltung",
-          "text": "Zuverlässige Verwaltung Ihrer Mietobjekte — von der Mietersuche über Verträge bis zur Abrechnung."
+          "title": "Premium-Vermarktung",
+          "text": "Professionelle Fotografie, Video, 360°-Rundgang und digitale Reichweite für einen überzeugenden Marktauftritt."
         },
         {
           "title": "Suchauftrag & Kaufberatung",
-          "text": "Über 5.000 registrierte Suchkunden — als Käufer erfahren Sie von passenden Objekten vor allen anderen."
+          "text": "Über 8.000 registrierte Suchkunden — als Käufer erfahren Sie von passenden Objekten vor allen anderen."
         },
         {
           "title": "Finanzierung",
@@ -653,7 +696,7 @@
       ],
       "stats": [
         { "value": "360°", "label": "Rundgang bei jedem Objekt" },
-        { "value": "5.000+", "label": "registrierte Suchkunden" },
+        { "value": "8.000+", "label": "registrierte Suchkunden" },
         { "value": "60+", "label": "Immobilienverkäufe pro Jahr" }
       ],
       "demoLabel": "Immobilienpräsentation · Vom Grundstück zur fertigen Immobilie",
@@ -665,18 +708,81 @@
       "eyebrow": "Bewertungen",
       "title": "Was unsere Kundinnen und Kunden sagen",
       "ratingSuffix": "von 5",
-      "google": {
-        "name": "Google",
-        "rating": "5,0",
-        "count": "184 Bewertungen",
-        "link": "Bewertungen auf Google lesen →"
-      },
-      "trustpilot": {
-        "name": "Trustpilot",
-        "rating": "4,7",
-        "count": "29 Bewertungen",
-        "link": "Bewertungen auf Trustpilot lesen →"
-      },
+      "primaryProfiles": [
+        {
+          "id": "google",
+          "name": "Google",
+          "rating": "4,9",
+          "count": "220+ Bewertungen",
+          "link": "Auf Google lesen →"
+        },
+        {
+          "id": "trustpilot",
+          "name": "Trustpilot",
+          "rating": "4,7",
+          "count": "30 Bewertungen",
+          "link": "Auf Trustpilot lesen →"
+        },
+        {
+          "id": "immowelt",
+          "name": "Immowelt",
+          "rating": "4,5",
+          "count": "55 Bewertungen",
+          "link": "Auf Immowelt lesen →"
+        }
+      ],
+      "secondaryTitle": "Weitere Bewertungsprofile",
+      "asOf": "Stand: Juli 2026",
+      "aggregationNote": "Hinweis: Einige Profile bündeln Bewertungen anderer Plattformen. Die Quellenbasis ist deshalb direkt an jedem Profil angegeben.",
+      "screenshots": [
+        {
+          "src": "/images/reviews/google-patric-mago.png",
+          "alt": "Gelieferter Screenshot einer Google-Bewertung von Patric Mago"
+        },
+        {
+          "src": "/images/reviews/google-ursula-troeger.png",
+          "alt": "Gelieferter Screenshot einer Google-Bewertung von Ursula Tröger"
+        },
+        {
+          "src": "/images/reviews/google-customer-review.png",
+          "alt": "Gelieferter Screenshot einer ausführlichen Google-Kundenbewertung"
+        }
+      ],
+      "screenshotNote": "Gelieferte Bewertungs-Screenshots im Prototyp. Plattform- und Nutzungsfreigabe bleibt vor Veröffentlichung zu prüfen.",
+      "secondaryProfiles": [
+        {
+          "id": "provenexpert",
+          "name": "ProvenExpert",
+          "rating": "5,0",
+          "suffix": "von 5",
+          "basis": "173 Bewertungen · aus Google",
+          "link": "Profil öffnen"
+        },
+        {
+          "id": "trustlocal",
+          "name": "Trustlocal",
+          "rating": "9,4",
+          "suffix": "von 10",
+          "basis": "160 Bewertungen · aus 3 Quellen",
+          "link": "Profil öffnen"
+        },
+        {
+          "id": "jacasa",
+          "name": "Jacasa",
+          "rating": "4,8",
+          "suffix": "von 5",
+          "basis": "271 Bewertungen · aus 2 Portalen",
+          "link": "Profil öffnen"
+        },
+        {
+          "id": "dasoertliche",
+          "name": "Das Örtliche",
+          "rating": "5,0",
+          "suffix": "von 5",
+          "basis": "3 Bewertungen · Golocal & 11880",
+          "link": "Profil öffnen"
+        }
+      ],
       "items": [
         {
           "quote": "„Von der Bewertung bis zum Notartermin lief alles schneller als gedacht — und wir waren jederzeit informiert.“",
@@ -692,19 +798,80 @@
         }
       ]
     },
+    "stories": {
+      "eyebrow": "Verkaufsgeschichten",
+      "title": "Vier Situationen. Vier passende Strategien.",
+      "text": "Ein privater Verkaufsversuch, eine geerbte Immobilie, eine charakterstarke Altbauwohnung und der Wunsch nach einem Rundum-sorglos-Prozess: gute Vermarktung beginnt mit der tatsächlichen Situation des Eigentümers.",
+      "videoFallback": "Ihr Browser kann dieses Kundeninterview nicht abspielen.",
+      "prototypeNote": "Namen, Aussagen und Ergebnisse werden im Prototyp wie geliefert verwendet. Die dokumentierte Einwilligung bleibt Voraussetzung für die öffentliche Veröffentlichung.",
+      "items": [
+        {
+          "id": "viktor-emter",
+          "name": "Viktor Emter",
+          "context": "Nach privatem Verkaufsversuch",
+          "quote": "Die offene Kommunikation und die nachvollziehbare Preisstrategie haben uns auch in einem schwierigen Zinsumfeld Sicherheit gegeben.",
+          "result": "Professionell gesteuerter Wohnungsverkauf",
+          "alt": "Vorschaubild zum Kundeninterview mit Viktor Emter",
+          "video": true
+        },
+        {
+          "id": "markus-burkhard",
+          "name": "Markus Burkhard",
+          "context": "Maisonette in Zirndorf-Weiherhof",
+          "quote": "Der Ablauf war klar, transparent und für mich ein echtes Rundum-sorglos-Paket.",
+          "result": "In etwa drei Monaten zum Wunschpreis verkauft",
+          "alt": "Vorschaubild zur Verkaufsgeschichte von Markus Burkhard",
+          "video": false
+        },
+        {
+          "id": "herr-sippel",
+          "name": "Herr Sippel",
+          "context": "Geerbte Doppelhaushälfte in Erlangen",
+          "quote": "Immonation hat trotz Sanierungsbedarf den passenden Käufer gefunden und alles für mich geregelt.",
+          "result": "In zwölf Wochen verkauft",
+          "alt": "Geerbte Doppelhaushälfte aus der Verkaufsgeschichte von Herrn Sippel",
+          "video": false
+        },
+        {
+          "id": "frau-hartmann",
+          "name": "Frau Hartmann",
+          "context": "Denkmalgeschützte Wohnung in St. Johannis",
+          "quote": "Immonation hat den Charakter meiner Wohnung sofort verstanden und perfekt in Szene gesetzt.",
+          "result": "In sechs Wochen · 6 % über Marktwert",
+          "alt": "Denkmalgeschützte Altbauwohnung aus der Verkaufsgeschichte von Frau Hartmann",
+          "video": false
+        }
+      ]
+    },
     "feedback": {
-      "eyebrow": "Ausgezeichnet bewertet",
-      "title": "Kundenfeedback, das man sehen kann",
-      "text": "Zahlen sind gut, Gesichter sind besser: Im Video zeigen wir, wie wir arbeiten — und Kundinnen und Kunden erzählen, wie ihr Verkauf gelaufen ist.",
-      "badges": [
-        "Google 5,0 ★ bei 184 Bewertungen",
-        "Trustpilot 4,7 ★",
-        "60+ Immobilienverkäufe pro Jahr",
-        "5.000+ Suchkunden im Netzwerk"
-      ],
-      "videoTitle": "Einblick: So arbeitet Immonation",
-      "playLabel": "Video abspielen",
-      "consentNote": "Beim Abspielen wird das Video von YouTube (erweiterter Datenschutzmodus) geladen."
+      "eyebrow": "Kundenstimmen",
+      "title": "Drei persönliche Perspektiven auf die Zusammenarbeit",
+      "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Ein Gespräch ist bereits verfügbar; zwei weitere Videoplätze sind für freigegebene Beiträge vorbereitet.",
+      "comingSoon": "Video folgt",
+      "videoFallback": "Ihr Browser kann dieses Kundeninterview nicht abspielen.",
+      "items": [
+        {
+          "id": "viktor-emter",
+          "name": "Viktor Emter",
+          "title": "Erfahrungen aus dem Immobilienverkauf",
+          "alt": "Vorschaubild zum Kundeninterview mit Viktor Emter",
+          "available": true
+        },
+        {
+          "id": "markus-burkhard",
+          "name": "Markus Burkhard",
+          "title": "Kundenstimme aus Zirndorf-Weiherhof",
+          "alt": "Vorschaubild für die Kundenstimme von Markus Burkhard",
+          "available": false
+        },
+        {
+          "id": "sandra-boerschlein",
+          "name": "Sandra Börschlein",
+          "title": "Persönlicher Rückblick auf die Zusammenarbeit",
+          "alt": "Vorschaubild für die Kundenstimme von Sandra Börschlein",
+          "available": false
+        }
+      ]
     },
     "social": {
       "eyebrow": "Social Media",
@@ -720,13 +887,13 @@
     "group": {
       "eyebrow": "Unternehmensgruppe",
       "title": "Die Immonation-Gruppe: mehr als Vermittlung",
-      "intro": "Hinter der Immonation GmbH steht eine Unternehmensgruppe, die den gesamten Lebenszyklus einer Immobilie abdeckt — von Vermittlung und Verwaltung über Projektentwicklung bis zum Investment.",
+      "intro": "Hinter der Immonation GmbH steht eine Unternehmensgruppe mit gebündelter Kompetenz — von Vermittlung und professioneller Vermarktung über Projektentwicklung bis zum Investment.",
       "link": "Mehr über uns →",
       "companies": [
         {
           "name": "Immonation Capital Holding GmbH",
           "role": "Dachgesellschaft",
-          "text": "Bündelt Immobilienvermittlung, Verwaltung, Projektentwicklung und Investment unter einem Dach."
+          "text": "Bündelt Immobilienvermittlung, professionelle Vermarktung, Projektentwicklung und Investment unter einem Dach."
         },
         {
           "name": "IN Beteiligungs GmbH",
@@ -741,16 +908,50 @@
       ]
     },
     "partners": {
-      "eyebrow": "Partner",
-      "title": "Starke Partner an unserer Seite",
-      "text": "Für Finanzierung, Reichweite und regionale Vernetzung setzen wir auf etablierte Partner.",
+      "eyebrow": "Netzwerk & Gruppe",
+      "title": "Verifizierte Partner und gebündelte Immobilienkompetenz",
+      "text": "Wir trennen externe Kooperationen klar von den Gesellschaften der Immonation-Gruppe. So bleibt sichtbar, wer welche Rolle im Netzwerk übernimmt.",
+      "partnerGroupLabel": "Partner & Marktpräsenz",
+      "companyGroupLabel": "Immonation-Unternehmensgruppe",
       "items": [
         {
+          "id": "dr-klein",
           "name": "Dr. Klein",
-          "role": "Finanzierungspartner — Baufinanzierung zu Top-Konditionen"
+          "role": "Finanzierungspartner",
+          "alt": "Logo von Dr. Klein"
         },
-        { "name": "Immowelt", "role": "Immobilienportal" },
-        { "name": "Zirndorf Marketing", "role": "Regionales Netzwerk" }
+        {
+          "id": "immowelt",
+          "name": "immowelt",
+          "role": "Business Partner und Immobilienportal",
+          "alt": "immowelt Business Partner Logo"
+        },
+        {
+          "id": "rewe",
+          "name": "REWE",
+          "role": "Regionale Marktpräsenz",
+          "alt": "REWE Logo"
+        }
+      ],
+      "groupItems": [
+        {
+          "id": "capital-holding",
+          "name": "Immonation Capital Holding GmbH",
+          "role": "Dachgesellschaft",
+          "alt": "Logo der Immonation Capital Holding GmbH"
+        },
+        {
+          "id": "in-beteiligung",
+          "name": "IN Beteiligungs GmbH",
+          "role": "Ankauf und Projektentwicklung",
+          "alt": "Logo der IN Beteiligungs GmbH"
+        },
+        {
+          "id": "dream-living",
+          "name": "Dream Living GmbH",
+          "role": "Revitalisierung",
+          "alt": "Logo der Dream Living GmbH"
+        }
       ]
     },
     "contactBooking": {
@@ -769,20 +970,26 @@
     },
     "buy": {
       "metaTitle": "Immobilien kaufen in Zirndorf, Nürnberg, Fürth & Erlangen",
-      "metaDescription": "Aktuelle Immobilienangebote und Suchauftrag für Käufer in der Region — Häuser, Wohnungen und Grundstücke mit persönlicher Begleitung bis zum Einzug.",
+      "metaDescription": "Prototypische Angebotsübersicht für Käufer in der Region — Häuser und Wohnungen mit klarer Such- und Finanzierungsstrecke.",
       "eyebrow": "Für Käufer",
       "title": "Sie suchen statt verkaufen?",
-      "subtitle": "Aktuelle Angebote aus der Region — oder legen Sie einen Suchauftrag an und erfahren Sie von neuen Objekten vor allen anderen.",
+      "subtitle": "Eine realistische Vorschau auf die spätere Käufersuche — mit klarer Orientierung, Beispielobjekten und persönlicher Begleitung.",
+      "prototypeNotice": "Designprototyp: Die folgenden Angebote, Filter und Exposé-Aktionen sind Beispiele und nicht live.",
+      "searchLabel": "Beispielsuche",
+      "searchPlaceholder": "Ort, Postleitzahl oder Objekt-ID",
+      "filters": "Filter",
+      "search": "Suchen",
+      "sampleCount": "3 Beispielobjekte",
       "ctaAll": "Alle Angebote",
       "ctaSearch": "Suchauftrag anlegen",
       "newBadge": "Neu",
-      "exposeLink": "Exposé ansehen →",
+      "exposeLink": "Beispiel-Exposé",
       "photoAlt": "Objektfoto",
       "items": [
         {
           "isNew": true,
           "title": "Einfamilienhaus mit Garten",
-          "location": "Zirndorf · Wintersdorfer Weg",
+          "location": "Zirndorf · Weiherhof",
           "area": "142 m²",
           "rooms": "5 Zimmer",
           "extra": "612 m² Grund",
@@ -806,8 +1013,231 @@
           "extra": "Garage",
           "price": "545.000 €"
         }
-      ]
+      ],
+      "financing": {
+        "eyebrow": "Finanzierung einordnen",
+        "title": "Mit Dr. Klein als benanntem Finanzierungspartner.",
+        "text": "Kaufinteressenten erhalten auf Wunsch eine separate Orientierung zur Finanzierung. Der Prototyp zeigt die Einbindung als klar abgegrenzten Partnerweg.",
+        "prototypeNote": "Partnerstatus und finale öffentliche Formulierung bleiben vor dem Launch zu bestätigen."
+      }
     }
+  },
+  "SalesProcess": {
+    "serviceType": "Immobilienverkauf",
+    "areaServed": "Metropolregion Nürnberg",
+    "metadata": {
+      "title": "Ablauf Immobilienverkauf: 10 Schritte",
+      "description": "So läuft ein Immobilienverkauf mit Immonation ab: zehn klare Schritte von Objektaufnahme und Bewertung bis Notar und Schlüsselübergabe."
+    },
+    "hero": {
+      "eyebrow": "Der Immonation-Verkaufsfahrplan",
+      "title": "Ablauf Immobilienverkauf: in 10 Schritten zum Abschluss",
+      "lede": "Ein erfolgreicher Verkauf beginnt nicht mit dem Inserat. Er beginnt mit vollständigen Informationen, einem marktfähigen Preis und einem klaren Fahrplan bis zur Übergabe."
+    },
+    "answer": "Beim Immobilienverkauf folgen wir einem festen System aus zehn Schritten: Wir erfassen Objekt und Unterlagen, bewerten Markt und Preis, legen die Strategie fest, bereiten die Präsentation vor, veröffentlichen nach Ihrer Freigabe und steuern anschließend Anfragen, Besichtigungen, Verhandlung, Notar und Übergabe.",
+    "indexEyebrow": "Direkte Orientierung",
+    "indexTitle": "Alle 10 Schritte auf einen Blick",
+    "indexLabel": "Direkt zu einem Schritt im Verkaufsprozess",
+    "activities": "Das übernehmen wir",
+    "outcome": "Was Sie davon haben",
+    "owner": {
+      "eyebrow": "Transparent begleitet",
+      "title": "Was Sie während des Verkaufs erwarten können",
+      "items": [
+        {
+          "title": "Ein fester Fahrplan",
+          "text": "Sie wissen, welcher Schritt abgeschlossen ist, was als Nächstes passiert und welche Entscheidung wir von Ihnen benötigen."
+        },
+        {
+          "title": "Geprüfte Freigaben",
+          "text": "Preis, Strategie, Exposé und Veröffentlichung stimmen wir mit Ihnen ab, bevor Ihre Immobilie in den Markt geht."
+        },
+        {
+          "title": "Eine koordinierende Schnittstelle",
+          "text": "Wir halten Verkäufer, Käufer, Finanzierungspartner und Notariat zusammen und begleiten auch die Übergabe."
+        }
+      ]
+    },
+    "related": {
+      "eyebrow": "Verkauf vorbereiten",
+      "title": "Der passende nächste Schritt für Ihre Situation",
+      "text": "Beginnen Sie mit einer fundierten Bewertung oder lesen Sie den objektartspezifischen Leitfaden für Haus, Wohnung, Grundstück oder Mehrfamilienhaus.",
+      "valuation": "Immobilie bewerten",
+      "guides": "Verkaufsleitfäden ansehen"
+    },
+    "faq": {
+      "title": "Häufige Fragen zum Ablauf eines Immobilienverkaufs",
+      "items": [
+        {
+          "question": "Welche Unterlagen werden für den Immobilienverkauf benötigt?",
+          "answer": "Zur Grundausstattung gehören Grundbuchauszug, Lageplan oder Flurkarte, Energieausweis sowie Eckdaten und Fotos. Je nach Objektart kommen zum Beispiel Grundrisse, Wohnflächenberechnung, Teilungserklärung, Protokolle, Mietunterlagen oder ein Bebauungsplan hinzu. Fehlende Unterlagen beschaffen wir über unser Spezialistennetzwerk; dort können bei Bedarf auch Grundrisse und Wohnflächenberechnungen vorbereitet werden."
+        },
+        {
+          "question": "Wann wird die Immobilie veröffentlicht?",
+          "answer": "Die Veröffentlichung erfolgt erst, wenn Objektaufnahme, Bewertung, Verkaufsstrategie und professionelle Aufbereitung abgeschlossen sind. Exposé, Preis und Vermarktungsweg gehen nach Ihrer Freigabe auf die relevanten Portale und in die abgestimmten Kanäle."
+        },
+        {
+          "question": "Wie werden Kaufinteressenten geprüft?",
+          "answer": "Wir bearbeiten alle Anfragen, prüfen Ernsthaftigkeit und Bonität, klären die Finanzierung und koordinieren erst danach passende Besichtigungen. So werden Termine auf Käufer konzentriert, die das Objekt wirklich kaufen wollen und können."
+        },
+        {
+          "question": "Was passiert nach einem Kaufangebot?",
+          "answer": "Wir prüfen Preis und Konditionen, bewerten Käuferprofil und Finanzierung und führen die Verhandlung in Ihrem Interesse. Anschließend koordinieren wir Kaufvertragsvorbereitung, Notariat und Beurkundung."
+        },
+        {
+          "question": "Endet die Maklerbegleitung mit dem Notartermin?",
+          "answer": "Nein. Nach der Beurkundung organisieren wir die Übergabe, dokumentieren Zählerstände und klären offene Punkte. Die Begleitung reicht bis zur Schlüsselübergabe und darüber hinaus."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Starten Sie mit einem belastbaren ersten Schritt",
+      "text": "Wir ordnen Wert, Unterlagen, Zielgruppe und Zeitplan Ihrer Immobilie in einem persönlichen Gespräch ein.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Erstgespräch vereinbaren"
+    },
+    "steps": [
+      {
+        "id": "objektaufnahme",
+        "num": "01",
+        "phase": "Phase 01 · Der saubere Start",
+        "title": "Auftrag & Objektaufnahme",
+        "summary": "Wir erfassen Ihre Immobilie vollständig und schaffen eine belastbare Grundlage für alle weiteren Entscheidungen.",
+        "detail": "Nach Ihrer Beauftragung nehmen wir uns bewusst Zeit für die vollständige Bestandsaufnahme. Immobilientyp, Baujahr, Zustand, Flächen, Grundstücksdaten, Ausstattung, Modernisierungen und Besonderheiten werden gemeinsam mit den vorhandenen Unterlagen dokumentiert.",
+        "activities": [
+          "Objekt, Flächen, Zustand und Ausstattung strukturiert aufnehmen",
+          "Besonderheiten, Stärken und Modernisierungen dokumentieren",
+          "Vorhandene Unterlagen sichten und fehlende Dokumente identifizieren"
+        ],
+        "outcome": "Eine vollständige Datengrundlage verhindert spätere Überraschungen und macht Bewertung und Vermarktung belastbar."
+      },
+      {
+        "id": "bewertung",
+        "num": "02",
+        "phase": "Phase 02 · Wert und Weg",
+        "title": "Bewertung & Marktanalyse",
+        "summary": "Wir ermitteln einen marktfähigen Angebotspreis aus Erfahrung, Daten und aktuellen Vergleichsangeboten.",
+        "detail": "Die Bewertung stützt sich auf drei Säulen: unsere Verkaufserfahrung mit vergleichbaren Objekten in der Region, aktuelle Marktdaten und professionelle Bewertungstools sowie den Abgleich mit derzeit angebotenen, vergleichbaren Immobilien.",
+        "activities": [
+          "Regionale Verkaufserfahrung und Objektmerkmale einordnen",
+          "Aktuelle Marktdaten und Bewertungswerkzeuge auswerten",
+          "Vergleichsangebote und reale Marktposition abgleichen"
+        ],
+        "outcome": "Sie erhalten keinen Wunsch- oder Lockpreis, sondern eine fundierte Grundlage für einen erreichbaren Verkaufspreis."
+      },
+      {
+        "id": "strategie",
+        "num": "03",
+        "phase": "Phase 02 · Wert und Weg",
+        "title": "Verkaufsstrategie",
+        "summary": "Gemeinsam legen wir Angebotspreis, Zielgruppe, Argumentation und Vermarktungsweg fest.",
+        "detail": "Der richtige Preis und die passende Ansprache entscheiden darüber, ob die hohe Aufmerksamkeit der ersten Wochen genutzt wird. Deshalb definieren wir vor dem Marktstart, welche Käufer zur Immobilie passen, welche Stärken überzeugen und über welche Kanäle wir sie erreichen.",
+        "activities": [
+          "Marktfähigen Angebotspreis gemeinsam festlegen",
+          "Passende Käufergruppen und Verkaufsargumente definieren",
+          "Vermarktungskanäle und Freigabepunkte planen"
+        ],
+        "outcome": "Ein klarer Markteintritt schützt die wertvollste Aufmerksamkeitsphase und reduziert spätere Preiskorrekturen."
+      },
+      {
+        "id": "aufbereitung",
+        "num": "04",
+        "phase": "Phase 03 · Sichtbarkeit und Käufer",
+        "title": "Professionelle Aufbereitung",
+        "summary": "Fotos, Grundrisse, Exposé und digitale Präsentation zeigen die Immobilie aus ihrer stärksten Perspektive.",
+        "detail": "Wir erstellen eine aussagekräftige Objektbeschreibung, hochwertige Fotos und aufbereitete Grundrisse. Je nach Immobilie ergänzen ein virtueller Rundgang oder klar gekennzeichnete Visualisierungen die Präsentation. Fehlende, bankfähige Grundrisse und Wohnflächenberechnungen können über unser Spezialistennetzwerk vorbereitet werden.",
+        "activities": [
+          "Exposé, Objektbeschreibung und professionelle Aufnahmen erstellen",
+          "Grundrisse prüfen, aufbereiten oder bei Bedarf neu bemessen",
+          "360°-Rundgang, Drohne oder Visualisierung gezielt einsetzen"
+        ],
+        "outcome": "Käufer verstehen Lage, Räume und Potenzial bereits online — und kommen besser vorbereitet in die weitere Auswahl."
+      },
+      {
+        "id": "veroeffentlichung",
+        "num": "05",
+        "phase": "Phase 03 · Sichtbarkeit und Käufer",
+        "title": "Veröffentlichung",
+        "summary": "Nach Ihrer Freigabe bringen wir die Immobilie auf die relevanten Portale und in die passenden Kanäle.",
+        "detail": "Die Immobilie geht erst nach abgestimmter Freigabe an den Markt. Wir kombinieren relevante Immobilienportale mit unserem Käufernetzwerk und — wenn es zum Objekt passt — zielgruppenorientierter Social-Media-Kommunikation und zusätzlichen Sichtbarkeitsmaßnahmen.",
+        "activities": [
+          "Exposé und Vermarktungsunterlagen zur Freigabe vorlegen",
+          "Auf relevanten Immobilienportalen veröffentlichen",
+          "Käufernetzwerk und passende zusätzliche Kanäle aktivieren"
+        ],
+        "outcome": "Ihre Immobilie erscheint dort, wo passende Käufer suchen, mit einer konsistenten und freigegebenen Darstellung."
+      },
+      {
+        "id": "interessenten",
+        "num": "06",
+        "phase": "Phase 03 · Sichtbarkeit und Käufer",
+        "title": "Interessentenmanagement",
+        "summary": "Wir bearbeiten jede Anfrage, prüfen Ernsthaftigkeit und Bonität und halten den Prozess übersichtlich.",
+        "detail": "Qualität geht vor Quantität. Wir beantworten eingehende Anfragen, ordnen Interessenten vor, prüfen Ernsthaftigkeit sowie finanzielle Voraussetzungen und dokumentieren Rückmeldungen. Auch Zugriffe auf den virtuellen Rundgang können in die Vorqualifizierung einfließen.",
+        "activities": [
+          "Anfragen vollständig und zeitnah bearbeiten",
+          "Ernsthaftigkeit, Käuferprofil und Bonität vorqualifizieren",
+          "Rückmeldungen und nächste Schritte strukturiert dokumentieren"
+        ],
+        "outcome": "Sie erhalten weniger unnötige Termine und eine klare Sicht auf die tatsächlich relevante Nachfrage."
+      },
+      {
+        "id": "besichtigungen",
+        "num": "07",
+        "phase": "Phase 03 · Sichtbarkeit und Käufer",
+        "title": "Besichtigungen",
+        "summary": "Wir präsentieren Ihre Immobilie ernsthaften Käufern und steuern Termine mit klarer Vor- und Nachbereitung.",
+        "detail": "Besichtigungen werden mit vorqualifizierten Interessenten koordiniert und professionell durchgeführt. Wir bereiten Fragen vor, stellen die entscheidenden Stärken der Immobilie heraus und holen nach jedem Termin strukturiertes Feedback ein.",
+        "activities": [
+          "Passende Termine mit qualifizierten Interessenten koordinieren",
+          "Immobilie und Verkaufsargumente professionell präsentieren",
+          "Feedback einholen und weiteres Interesse nachqualifizieren"
+        ],
+        "outcome": "Besichtigungen werden zu fundierten Entscheidungsterminen statt zu unverbindlichem Besichtigungstourismus."
+      },
+      {
+        "id": "verhandlung",
+        "num": "08",
+        "phase": "Phase 04 · Bis zum Schlüssel",
+        "title": "Angebot & Verhandlung",
+        "summary": "Wir prüfen Käufer und Finanzierung, bewerten das Gesamtpaket und verhandeln in Ihrem Interesse.",
+        "detail": "Ein Angebot wird nicht nur nach der Zahl auf dem Papier beurteilt. Wir prüfen Preis und Konditionen, Käuferprofil, Bonität und Finanzierung und führen die Verhandlung mit Blick auf einen guten und zugleich sicheren Abschluss.",
+        "activities": [
+          "Preis, Bedingungen und zeitlichen Rahmen des Angebots prüfen",
+          "Käuferprofil, Bonität und Finanzierung bewerten",
+          "Verhandlung und Abstimmung in Ihrem Interesse führen"
+        ],
+        "outcome": "Sie entscheiden auf Basis eines geprüften Gesamtpakets statt allein nach dem höchsten unverbindlichen Angebot."
+      },
+      {
+        "id": "notar",
+        "num": "09",
+        "phase": "Phase 04 · Bis zum Schlüssel",
+        "title": "Notar & Beurkundung",
+        "summary": "Wir koordinieren Kaufvertrag, Notariat und Beteiligte bis zur rechtssicheren Beurkundung.",
+        "detail": "Nach der Einigung begleiten wir die Vorbereitung des Kaufvertrags, stimmen offene Punkte mit dem Notariat ab und koordinieren Verkäufer, Käufer und Finanzierungspartner bis zum Beurkundungstermin.",
+        "activities": [
+          "Informationen für die Kaufvertragsvorbereitung zusammenführen",
+          "Offene Punkte mit Käuferseite und Notariat koordinieren",
+          "Beurkundung organisatorisch begleiten"
+        ],
+        "outcome": "Alle Beteiligten arbeiten mit demselben Informationsstand auf einen geordneten Vertragsabschluss hin."
+      },
+      {
+        "id": "uebergabe",
+        "num": "10",
+        "phase": "Phase 04 · Bis zum Schlüssel",
+        "title": "Übergabe & Abschluss",
+        "summary": "Wir begleiten die Schlüsselübergabe, dokumentieren Zählerstände und bleiben für offene Punkte ansprechbar.",
+        "detail": "Der Prozess endet nicht mit der Unterschrift. Wir organisieren die Übergabe, erstellen beziehungsweise begleiten das Protokoll, dokumentieren Zählerstände und koordinieren letzte offene Punkte zwischen den Beteiligten.",
+        "activities": [
+          "Übergabetermin zwischen Verkäufer und Käufer organisieren",
+          "Protokoll, Schlüssel und Zählerstände dokumentieren",
+          "Letzte offene Punkte bis zum Abschluss koordinieren"
+        ],
+        "outcome": "Der Eigentumswechsel endet nachvollziehbar und geordnet — mit einer Ansprechperson bis zum letzten Schritt."
+      }
+    ]
   },
   "Magazine": {
     "eyebrow": "REVIER Magazin",
@@ -841,20 +1271,651 @@
       "pageAlt": "REVIER Magazin Seite {page}"
     }
   },
+  "PremiumMarketing": {
+    "eyebrow": "Das Immonation-Verkaufssystem",
+    "title": "Premium-Vermarktung ist bei uns ein System.",
+    "lede": "Vom marktfähigen Preis über bankfähige Unterlagen bis zur gezielten Käuferansprache: Zehn Leistungen greifen ineinander, damit Ihr Verkauf vorbereitet, sichtbar und sicher zum Abschluss kommt.",
+    "primaryCta": "Immobilie bewerten",
+    "secondaryCta": "Verkaufswege ansehen",
+    "tabList": "Leistungen im Immonation-Verkaufssystem",
+    "included": "Das ist enthalten",
+    "result": "Ihr Vorteil",
+    "videoLabel": "Beispiel einer digitalen Immobilienpräsentation von Immonation",
+    "videoFallback": "Ihr Browser kann das Präsentationsvideo nicht abspielen.",
+    "services": [
+      {
+        "id": "system",
+        "tab": "Verkaufssystem",
+        "kicker": "10-Schritte-System",
+        "title": "Verkaufen heißt steuern, nicht nur inserieren.",
+        "text": "Jeder Verkauf folgt einem festen Ablauf – von der vollständigen Aufnahme bis zur Schlüsselübergabe. Zuständigkeiten, Freigaben und nächste Schritte bleiben für Sie nachvollziehbar.",
+        "highlight": "Ein klarer Plan für jeden Schritt.",
+        "bullets": [
+          "Ein vollständiger Fahrplan vom Auftrag bis zur Übergabe",
+          "Klare Zuständigkeiten im eingespielten Immonation-Team",
+          "Regelmäßige, proaktive Informationen zum Verkaufsstand",
+          "Ein fester Ansprechpartner für Ihre Entscheidungen"
+        ],
+        "result": "Vorbereitung, Vermarktung und Abwicklung greifen ineinander. So bleibt der Verkauf steuerbar und kein wichtiger Schritt dem Zufall überlassen.",
+        "proof": [
+          { "value": "10", "label": "aufeinander abgestimmte Schritte" },
+          { "value": "1 Team", "label": "statt eines Einzelkämpfers" },
+          { "value": "Bis zum Schluss", "label": "Begleitung über den Notartermin hinaus" }
+        ]
+      },
+      {
+        "id": "valuation",
+        "tab": "Bewertung",
+        "kicker": "Wert & Weg",
+        "title": "Ein marktfähiger Preis statt Wunsch- oder Lockpreis.",
+        "text": "Erfahrung aus regionalen Verkäufen, aktuelle Marktdaten und der Vergleich mit ähnlichen Angeboten bilden gemeinsam die Grundlage.",
+        "highlight": "Preis, Zielgruppe und Strategie aus einer Hand.",
+        "bullets": [
+          "Vor-Ort-Einordnung von Lage, Zustand und Ausstattung",
+          "Datenbasierte Marktanalyse als objektive Gegenprobe",
+          "Abgleich mit vergleichbaren Angeboten und Abschlüssen",
+          "Gemeinsame Festlegung von Preis und Vermarktungsweg"
+        ],
+        "result": "Der Angebotspreis erreicht die passenden Suchfilter und nutzt die aufmerksamkeitsstarke Startphase, ohne Potenzial durch einen unrealistischen Einstieg zu verschenken.",
+        "proof": [
+          { "value": "3 Säulen", "label": "Erfahrung, Daten und Vergleich" },
+          { "value": "Regional", "label": "Einordnung im Großraum Nürnberg" },
+          { "value": "Marktfähig", "label": "Preis als Basis der Strategie" }
+        ]
+      },
+      {
+        "id": "intake",
+        "tab": "Objektaufnahme",
+        "kicker": "Der saubere Start",
+        "title": "Eine vollständige Grundlage verhindert spätere Überraschungen.",
+        "text": "Wir erfassen Immobilientyp, Flächen, Zustand, Ausstattung, Modernisierungen und Besonderheiten und prüfen die vorhandenen Unterlagen.",
+        "highlight": "Erst verstehen. Dann vermarkten.",
+        "bullets": [
+          "Aufnahme aller Objekt- und Grundstücksdaten",
+          "Sichtung von Grundbuch, Flurkarte und Energieausweis",
+          "Prüfung objektartspezifischer Unterlagen",
+          "Beschaffung fehlender Dokumente über unser Netzwerk"
+        ],
+        "result": "Bewertung, Exposé und Käuferprüfung bauen auf belastbaren Angaben auf – damit offene Punkte nicht erst in Finanzierung oder Kaufvertrag auftauchen.",
+        "proof": [
+          { "value": "Vollständig", "label": "Objekt und Unterlagen erfasst" },
+          { "value": "Objektbezogen", "label": "Anforderungen je Immobilienart" },
+          { "value": "Früh geklärt", "label": "fehlende Dokumente beschafft" }
+        ]
+      },
+      {
+        "id": "floorplans",
+        "tab": "Grundrisse",
+        "kicker": "Bankfähige Unterlagen",
+        "title": "Bemaßte Grundrisse, die Finanzierungen unterstützen.",
+        "text": "Fehlende oder unbrauchbare Bestandspläne können den Käuferprozess ausbremsen. Bei Bedarf koordiniert unser Spezialistennetzwerk eine bemaßte Neuzeichnung mit nachvollziehbarer Wohnflächenberechnung.",
+        "highlight": "Planbar für Käufer, Bank und Gutachter.",
+        "bullets": [
+          "Bemaßung aller relevanten Wände und Räume",
+          "Wohnflächenberechnung nach Wohnflächenverordnung",
+          "Nachvollziehbare Unterlage für Bank und Gutachter",
+          "Koordination über ein eingespieltes Spezialistennetzwerk"
+        ],
+        "result": "Käufer können die Finanzierung mit verwertbaren Plänen einreichen – und Rückfragen zu Flächen oder Maßen werden früh geklärt.",
+        "proof": [
+          { "value": "Bemaßt", "label": "exakte Maße statt Skizze" },
+          { "value": "Wohnfläche", "label": "nachvollziehbar berechnet" },
+          { "value": "Netzwerk", "label": "durch koordinierte Spezialisten" }
+        ]
+      },
+      {
+        "id": "media",
+        "tab": "Foto & Perspektive",
+        "kicker": "Perspektive & Präsentation",
+        "title": "Die Stärken Ihrer Immobilie werden in Sekunden sichtbar.",
+        "text": "Professionelle Aufnahmen zeigen Räume, Grundstück und Lage aus der Perspektive, die zum Objekt und zur Käuferzielgruppe passt.",
+        "highlight": "Der erste Eindruck zeigt das echte Potenzial.",
+        "bullets": [
+          "Professionelle Innen- und Außenaufnahmen",
+          "Architekturorientierte Perspektiven für Grundstück und Lage",
+          "Bildauswahl entlang der Käuferzielgruppe",
+          "Realitätsgetreue Aufbereitung ohne falsche Versprechen"
+        ],
+        "result": "Das Inserat vermittelt Qualität und Orientierung, bevor Interessenten den ersten Text gelesen oder einen Termin angefragt haben.",
+        "proof": [
+          { "value": "Innen & außen", "label": "eine konsistente Bildsprache" },
+          { "value": "Im Kontext", "label": "Lage und Grundstück verständlich" },
+          { "value": "Objektgerecht", "label": "jede Perspektive mit Zweck" }
+        ]
+      },
+      {
+        "id": "tour",
+        "tab": "360°-Rundgang",
+        "kicker": "Virtuell vorqualifiziert",
+        "title": "Ernsthafte Interessenten besichtigen zuerst digital.",
+        "text": "Nach einer Anfrage erhalten passende Interessenten Zugang zum virtuellen Rundgang. So gewinnen sie einen realistischen Raumeindruck, ohne dass sofort ein Vor-Ort-Termin nötig ist.",
+        "highlight": "Mehr Einblick. Weniger Besichtigungstourismus.",
+        "bullets": [
+          "Realistischer digitaler Rundgang durch die Immobilie",
+          "Kontrollierter Zugang nach einer konkreten Anfrage",
+          "Auswertung von Zugriff und Betrachtungsdauer",
+          "Vor-Ort-Termine mit besser vorbereiteten Käufern"
+        ],
+        "result": "Ihre Privatsphäre wird geschützt und Besichtigungszeit auf Menschen konzentriert, die sich ernsthaft mit der Immobilie beschäftigen.",
+        "proof": [
+          { "value": "Jederzeit", "label": "digital und ortsunabhängig" },
+          { "value": "Kontrolliert", "label": "Zugang nach Qualifizierung" },
+          { "value": "Vorbereitet", "label": "klarerer Raumeindruck vor Ort" }
+        ]
+      },
+      {
+        "id": "visualisation",
+        "tab": "Visualisierung",
+        "kicker": "Potenzial verständlich machen",
+        "title": "Raum- und Nutzungsideen machen Potenzial sichtbar.",
+        "text": "Bei leeren, sanierungsbedürftigen oder noch nicht realisierten Flächen zeigen Visualisierungen, wie Räume genutzt und gestaltet werden könnten – immer klar als Darstellung gekennzeichnet.",
+        "highlight": "Vorstellbar, ohne den Ist-Zustand zu verschleiern.",
+        "bullets": [
+          "Virtuelles Home Staging für leere Räume",
+          "Visualisierung möglicher Raum- und Nutzungsideen",
+          "Vorher-Nachher-Einordnung mit klarer Kennzeichnung",
+          "Gezielter Einsatz nur bei echtem Erklärungsbedarf"
+        ],
+        "result": "Interessenten erkennen das Potenzial schneller, während die tatsächliche Beschaffenheit der Immobilie transparent bleibt.",
+        "proof": [
+          { "value": "Vorher", "label": "der dokumentierte Ist-Zustand" },
+          { "value": "Möglichkeit", "label": "eine verständliche Raumidee" },
+          { "value": "Transparent", "label": "als Visualisierung gekennzeichnet" }
+        ]
+      },
+      {
+        "id": "listing",
+        "tab": "Exposé & Portale",
+        "kicker": "Freigabe & Veröffentlichung",
+        "title": "Ein präzises Exposé bringt alle Fakten zusammen.",
+        "text": "Objektbeschreibung, Fotos, Grundrisse und Unterlagen werden zu einer konsistenten Präsentation verbunden. Erst nach Ihrer Kontrolle und Freigabe veröffentlichen wir.",
+        "highlight": "Verständlich geprüft. Gezielt veröffentlicht.",
+        "bullets": [
+          "Aussagekräftige Objekt- und Lagebeschreibung",
+          "Geordnete Fakten, Flächen und Unterlagen",
+          "Freigabeschleife vor der Veröffentlichung",
+          "Platzierung auf den relevanten Immobilienportalen"
+        ],
+        "result": "Käufer erhalten eine verlässliche Entscheidungsgrundlage und Rückfragen konzentrieren sich auf das, was für den Kauf wirklich wichtig ist.",
+        "proof": [
+          { "value": "Ein Exposé", "label": "Medien und Fakten verbunden" },
+          { "value": "Mit Freigabe", "label": "Sie behalten die Kontrolle" },
+          { "value": "Relevant", "label": "Portale passend zum Objekt" }
+        ]
+      },
+      {
+        "id": "visibility",
+        "tab": "Sichtbarkeit",
+        "kicker": "Käufer gezielt erreichen",
+        "title": "Reichweite folgt der Zielgruppe, nicht der Gießkanne.",
+        "text": "Portale, Sonderplatzierungen, Social-Media-Kampagnen und das eigene Käufernetzwerk werden passend zu Objekt, Zielgruppe und gewünschter Diskretion kombiniert.",
+        "highlight": "Sichtbar dort, wo passende Käufer suchen.",
+        "bullets": [
+          "Zielgruppenorientierte Kampagnen auf Social Media",
+          "Sonderplatzierungen auf relevanten Portalen, wo sinnvoll",
+          "Direkte Ansprache im eigenen Käufernetzwerk",
+          "Diskrete Käuferansprache mit abgestimmter Kommunikation"
+        ],
+        "result": "Die Immobilie erhält die notwendige Aufmerksamkeit, ohne ungezielte Reichweite mit echter Nachfrage zu verwechseln.",
+        "proof": [
+          { "value": "Portale", "label": "Reichweite im aktiven Suchmarkt" },
+          { "value": "Social", "label": "Kampagnen nach Zielgruppe" },
+          { "value": "Netzwerk", "label": "direkte und diskrete Ansprache" }
+        ]
+      },
+      {
+        "id": "qualification",
+        "tab": "Käuferprüfung",
+        "kicker": "Vom Interesse zum sicheren Abschluss",
+        "title": "Nicht jede Anfrage wird automatisch zur Besichtigung.",
+        "text": "Wir prüfen Ernsthaftigkeit, Käuferprofil und Finanzierung, koordinieren Termine und führen qualifizierte Angebote durch Verhandlung, Notariat und Übergabe.",
+        "highlight": "Der beste Preis zählt erst, wenn der Verkauf sicher steht.",
+        "bullets": [
+          "Persönliche Bearbeitung und Vorqualifizierung aller Anfragen",
+          "Prüfung von Bonität und Finanzierbarkeit",
+          "Verhandlung von Preis und Konditionen in Ihrem Interesse",
+          "Koordination von Kaufvertrag, Notar und Übergabe"
+        ],
+        "result": "Aus Reichweite werden belastbare Angebote – und aus dem besten Gesamtpaket ein sicher koordinierter Abschluss.",
+        "proof": [
+          { "value": "Qualifiziert", "label": "Ernsthaftigkeit und Finanzierung" },
+          { "value": "Verhandelt", "label": "Preis und Konditionen im Blick" },
+          { "value": "Koordiniert", "label": "bis zur Schlüsselübergabe" }
+        ]
+      }
+    ]
+  },
+  "SellerHubPage": {
+    "metadata": {
+      "title": "Immobilie verkaufen | Immonation",
+      "description": "Haus, Wohnung, Grundstück oder Mehrfamilienhaus verkaufen: fundierte Bewertung, klare Strategie und Premium-Vermarktung in der Region Nürnberg."
+    },
+    "eyebrow": "Für Eigentümer",
+    "title": "Immobilie verkaufen — vorbereitet statt nur inseriert.",
+    "lede": "Jede Objektart stellt andere Fragen an Bewertung, Unterlagen, Zielgruppe und Vermarktung. Wählen Sie den passenden Verkaufsweg und erfahren Sie, worauf es konkret ankommt.",
+    "answer": "Ein guter Immobilienverkauf beginnt mit einer realistischen Bewertung und einem Plan. Immonation koordiniert Vorbereitung, Präsentation, Interessentenprüfung und Abschluss mit einem festen Ansprechpartner in Zirndorf, Nürnberg, Fürth und Erlangen.",
+    "processLink": "Den vollständigen Verkaufsprozess ansehen",
+    "guides": {
+      "eyebrow": "Verkaufswege",
+      "title": "Was möchten Sie verkaufen?",
+      "link": "Leitfaden öffnen"
+    },
+    "local": {
+      "title": "Lokale Einordnung statt pauschaler Marktzahl.",
+      "text": "Zirndorf, Nürnberg, Fürth und Erlangen unterscheiden sich bis auf Quartiers- und Straßenebene. Unsere Regionsseiten erklären den Verkaufsansatz ohne unbestätigte Live-Preise.",
+      "link": "Regionen entdecken"
+    },
+    "cta": {
+      "title": "Welcher Verkaufsweg passt zu Ihrer Immobilie?",
+      "text": "Starten Sie mit einer unverbindlichen Bewertung oder ordnen Sie Ihr Vorhaben im persönlichen Gespräch ein.",
+      "primary": "Kostenlose Bewertung",
+      "secondary": "Kontakt aufnehmen"
+    }
+  },
+  "SellerGuidePage": {
+    "hub": "Immobilie verkaufen",
+    "areaServed": "Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung",
+    "valuationCta": "Bewertung starten",
+    "processEyebrow": "Vorbereitung & Vermarktung",
+    "processTitle": "Die entscheidenden Schritte",
+    "faqTitle": "Häufige Fragen",
+    "cta": {
+      "title": "Verkauf fundiert vorbereiten",
+      "text": "Wir klären Wert, Unterlagen, Zielgruppe und Zeitplan, bevor Ihre Immobilie auf den Markt geht.",
+      "primary": "Immobilie bewerten",
+      "secondary": "Erstgespräch anfragen"
+    }
+  },
+  "LocationsPage": {
+    "metadata": {
+      "title": "Immobilienmakler in der Region Nürnberg",
+      "description": "Lokale Immobilienberatung und Immobilienverkauf in Zirndorf, Nürnberg, Fürth und Erlangen — persönlich und objektbezogen."
+    },
+    "eyebrow": "Unsere Region",
+    "title": "Lokale Marktkenntnis beginnt im Quartier.",
+    "lede": "Ein Stadtname erklärt noch keinen Immobilienwert. Wir betrachten Mikrolage, Objektart, Zustand und aktuelle Zielgruppe und leiten daraus eine belastbare Verkaufsstrategie ab.",
+    "answer": "Immonation begleitet Eigentümer in Zirndorf, Nürnberg, Fürth und Erlangen mit persönlicher Bewertung und professioneller Vermarktung. Die Regionsseiten liefern eine dauerhafte Orientierung — ohne erfundene oder veraltete Preisangaben.",
+    "link": "Region ansehen",
+    "cta": {
+      "title": "Wie ist Ihre Immobilie lokal einzuordnen?",
+      "text": "Eine Vor-Ort-Bewertung verbindet Objektmerkmale mit der konkreten Mikrolage und aktuellen Nachfrage.",
+      "primary": "Bewertung anfragen",
+      "secondary": "Verkaufswege ansehen"
+    }
+  },
+  "LocationDetailPage": {
+    "hub": "Regionen",
+    "eyebrow": "Lokale Immobilienberatung",
+    "serviceType": "Immobilienverkauf und Immobilienbewertung",
+    "contentEyebrow": "Lokal gedacht",
+    "contentTitle": "Immobilienverkauf in {city}",
+    "faqTitle": "Häufige Fragen zu Immobilien in {city}",
+    "cta": {
+      "title": "Ihre Immobilie in {city} bewerten lassen",
+      "text": "Wir verbinden die konkrete Mikrolage in {city} mit Zustand, Unterlagen und aktueller Zielgruppe.",
+      "primary": "Bewertung starten",
+      "secondary": "Persönlich sprechen"
+    }
+  },
+  "RecruitingPage": {
+    "metadata": {
+      "title": "Immobilienmakler werden | Immonation",
+      "description": "Als Immobilienmakler oder freier Vertriebspartner mit Immonation in der Metropolregion Nürnberg arbeiten: Aufgaben, Zusammenarbeit und Bewerbung."
+    },
+    "eyebrow": "Makler-Karriere",
+    "title": "Immobilien vermitteln — mit Struktur im Rücken.",
+    "lede": "Sie bringen Vertriebsstärke, regionale Nähe und Verantwortung für Kunden mit. Immonation stellt Marke, Administration, Unterlagen und eine professionelle Vermarktungsstruktur bereit.",
+    "answer": "Die Makler-Zusammenarbeit richtet sich an Menschen, die Eigentümer gewinnen, Immobilien verstehen und Verkaufsprozesse persönlich führen wollen. Rahmen, Aufgaben und Vergütung klären wir transparent im Kennenlerngespräch.",
+    "heroCta": "Kennenlerngespräch anfragen",
+    "benefits": {
+      "eyebrow": "Zusammenarbeit",
+      "title": "Fokus auf Beratung und Vertrieb",
+      "items": [
+        {
+          "title": "Klare Rolle",
+          "text": "Sie konzentrieren sich auf Akquise, Eigentümerberatung und den persönlichen Verkaufsprozess."
+        },
+        {
+          "title": "Geordnete Unterlagen",
+          "text": "Administration, Markenmaterial und Vermarktungsunterlagen werden strukturiert im Team vorbereitet."
+        },
+        {
+          "title": "Gemeinsame Vermarktung",
+          "text": "Foto, Video, 360°-Präsentation und Distribution greifen als ein abgestimmter Prozess ineinander."
+        },
+        {
+          "title": "Regionale Nähe",
+          "text": "Sie arbeiten in der Metropolregion mit einem erreichbaren Team und kurzen Abstimmungswegen."
+        }
+      ]
+    },
+    "profile": {
+      "eyebrow": "Ihr Profil",
+      "title": "Was zu Immonation passt",
+      "text": "Uns ist wichtiger, wie Sie arbeiten, als wie viele Stationen Ihr Lebenslauf hat. Immobilienerfahrung ist hilfreich; Verlässlichkeit und Lernbereitschaft sind unverzichtbar.",
+      "items": [
+        {
+          "title": "Vertriebsstärke mit Haltung",
+          "text": "Sie können Gespräche führen, zuhören und Entscheidungen ohne unnötigen Druck vorbereiten."
+        },
+        {
+          "title": "Eigenverantwortliche Organisation",
+          "text": "Sie halten Zusagen, dokumentieren sauber und führen mehrere Verkaufsprozesse nachvollziehbar."
+        },
+        {
+          "title": "Regionale Verankerung",
+          "text": "Sie kennen Menschen, Wege und Immobilien in der Region oder bauen dieses Netzwerk aktiv auf."
+        },
+        {
+          "title": "Digitale Offenheit",
+          "text": "Sie nutzen Medien und Prozesse als Werkzeug für bessere Beratung, nicht als Ersatz für persönlichen Kontakt."
+        }
+      ]
+    },
+    "steps": {
+      "title": "So lernen wir uns kennen",
+      "items": [
+        {
+          "title": "Kurz vorstellen",
+          "text": "Senden Sie uns Ihren Hintergrund, Ihre Region und Ihre Vorstellung von der Zusammenarbeit."
+        },
+        {
+          "title": "Erwartungen abgleichen",
+          "text": "Wir sprechen über Rolle, Arbeitsweise, Unterstützung, Vergütungsmodell und realistische nächste Schritte."
+        },
+        {
+          "title": "Zusammenarbeit entscheiden",
+          "text": "Wenn Haltung und Erwartungen passen, vereinbaren wir den konkreten Start und die notwendigen Grundlagen."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen zur Makler-Zusammenarbeit",
+      "items": [
+        {
+          "question": "Brauche ich bereits Maklererfahrung?",
+          "answer": "Immobilien- oder Vertriebserfahrung ist hilfreich. Entscheidend sind Beratungskompetenz, Verlässlichkeit und die Bereitschaft, sich gründlich in Objekt und Prozess einzuarbeiten."
+        },
+        {
+          "question": "Ist die Zusammenarbeit angestellt oder selbstständig?",
+          "answer": "Diese Seite beschreibt vor allem die freie Vertriebspartnerschaft. Andere Karrierewege werden auf der allgemeinen Karriereseite eingeordnet."
+        },
+        {
+          "question": "Wie ist die Vergütung geregelt?",
+          "answer": "Das konkrete Modell hängt von Rolle und Zusammenarbeit ab und wird vor einer Entscheidung transparent im persönlichen Gespräch geklärt."
+        },
+        {
+          "question": "Welche Region betreue ich?",
+          "answer": "Der Schwerpunkt liegt in Zirndorf, Nürnberg, Fürth, Erlangen und der Metropolregion. Ein sinnvolles Gebiet wird gemeinsam abgestimmt."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Passt Ihre Arbeitsweise zu unserer?",
+      "text": "Schreiben Sie uns kurz, wo Sie stehen und wie Sie Immobilienvertrieb verstehen. Wir melden uns für ein offenes Kennenlerngespräch.",
+      "primary": "Kontakt aufnehmen",
+      "secondary": "Alle Karrierewege"
+    }
+  },
+  "KnowledgeHub": {
+    "metadata": {
+      "title": "Immobilien-Ratgeber & Wissen",
+      "description": "Ratgeber für Immobilienverkauf, Kauf, Bewertung, Regionen und Makler-Karriere — strukturiert und verständlich von Immonation."
+    },
+    "eyebrow": "Ratgeber & Wissen",
+    "title": "Antworten für die nächste Immobilienentscheidung.",
+    "lede": "Vom ersten Verkaufsplan bis zur lokalen Einordnung: Finden Sie Leitfäden, FAQ, regionale Orientierung und geprüfte Ressourcen an einem Ort.",
+    "answer": "Der Immonation Wissensbereich bündelt Inhalte für Eigentümer, Käufer und Bewerber. Einstiegspunkte führen direkt zu vertiefenden Leitfäden, konkreten Seiten und — sobald geprüft — passenden Downloads.",
+    "categories": {
+      "eyebrow": "Themen",
+      "title": "Direkt zur passenden Antwort",
+      "items": [
+        {
+          "id": "selling",
+          "title": "Immobilie verkaufen",
+          "text": "Leitfäden für Haus, Wohnung, Grundstück und Mehrfamilienhaus.",
+          "link": "Verkaufswissen öffnen"
+        },
+        {
+          "id": "valuation",
+          "title": "Immobilienbewertung",
+          "text": "Wertfaktoren, Ablauf und die Unterlagen für eine belastbare Einschätzung.",
+          "link": "Bewertung verstehen"
+        },
+        {
+          "id": "buying",
+          "title": "Immobilie kaufen",
+          "text": "Angebote, Suchanfrage, Finanzierung und der Weg zur passenden Immobilie.",
+          "link": "Käuferbereich ansehen"
+        },
+        {
+          "id": "local",
+          "title": "Region & Mikrolage",
+          "text": "Evergreen-Orientierung für Zirndorf, Nürnberg, Fürth und Erlangen.",
+          "link": "Regionen vergleichen"
+        },
+        {
+          "id": "careers",
+          "title": "Makler-Karriere",
+          "text": "Rolle, Zusammenarbeit und Erwartungen für Immobilienmakler bei Immonation.",
+          "link": "Karriereweg prüfen"
+        },
+        {
+          "id": "downloads",
+          "title": "Downloads & Vorlagen",
+          "text": "Geprüfte Unterlagen werden thematisch mit den passenden Leitfäden verbunden.",
+          "link": "Ressourcen ansehen"
+        }
+      ]
+    },
+    "note": {
+      "title": "Redaktioneller Hinweis",
+      "text": "Unsere Inhalte bereiten Entscheidungen vor, ersetzen aber keine Prüfung von Objekt, Unterlagen und persönlichem Ziel. Markt- oder Preisangaben veröffentlichen wir nur mit belastbarer Quelle und Aktualitätsangabe."
+    },
+    "articles": {
+      "title": "Aktuelle Beiträge",
+      "count": "{count, plural, =0 {Keine Beiträge} one {# Beitrag} other {# Beiträge}}",
+      "read": "Beitrag lesen",
+      "empty": "Weitere Beiträge folgen."
+    },
+    "faq": {
+      "title": "Häufige Fragen zum Wissensbereich",
+      "items": [
+        {
+          "question": "Wo finde ich Informationen zu meiner Objektart?",
+          "answer": "Der Bereich Immobilien verkaufen führt zu eigenen Leitfäden für Haus, Wohnung, Grundstück und Mehrfamilienhaus."
+        },
+        {
+          "question": "Enthalten die Regionsseiten aktuelle Immobilienpreise?",
+          "answer": "Nein. Ohne freigegebene Marktdaten veröffentlichen wir keine vermeintlich aktuellen Quadratmeterpreise. Die Seiten erklären stattdessen dauerhaft relevante lokale Faktoren."
+        },
+        {
+          "question": "Kann ich Checklisten direkt herunterladen?",
+          "answer": "Downloads werden erst verlinkt, wenn Inhalt, Rechte, Barrierefreiheit und Aktualität geprüft sind. Der Downloadbereich zeigt den jeweiligen Stand."
+        },
+        {
+          "question": "Ersetzt ein Ratgeber die persönliche Beratung?",
+          "answer": "Nein. Ratgeber helfen bei der Vorbereitung; für Preis, Strategie und rechtlich relevante Einzelfragen ist eine objektbezogene Prüfung notwendig."
+        }
+      ]
+    }
+  },
+  "ReferenceDetailPage": {
+    "eyebrow": "Verkaufsreferenz",
+    "back": "Zurück zu den Referenzen",
+    "metrics": {
+      "requests": "Anfragen",
+      "viewings": "Besichtigungen",
+      "weeks": "Wochen Vermarktung"
+    },
+    "caseEyebrow": "Ausgangslage · Strategie · Ergebnis",
+    "caseTitle": "Ein Verkauf, nachvollziehbar erzählt.",
+    "challenge": "Herausforderung",
+    "approach": "Unser Ansatz",
+    "result": "Ergebnis",
+    "prototypeNote": "Die Kennzahlen stammen aus den bereitgestellten Referenzunterlagen und sind für diesen Prototyp freigegeben. Vor einer öffentlichen Veröffentlichung bleiben Nachweis und Zustimmung erforderlich.",
+    "allReferences": "Alle Referenzen ansehen",
+    "cta": {
+      "title": "Was könnte Ihre Immobilie erreichen?",
+      "text": "Eine gute Verkaufsstrategie beginnt mit einer realistischen Einordnung von Objekt, Lage und Zielgruppe.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Verkaufsprozess ansehen"
+    }
+  },
+  "ReferencesPage": {
+    "metadata": {
+      "title": "Referenzobjekte in Nürnberg, Fürth & Region",
+      "description": "15 ausgewählte Referenzimmobilien von Immonation aus Nürnberg, Fürth, Erlangen, Zirndorf und der Region – mit echten Objektfotos und Kundeninterviews."
+    },
+    "eyebrow": "Referenzen & Einblicke",
+    "title": "Immobilien, die wir bereits begleiten durften",
+    "lede": "Vom Apartment bis zum Mehrfamilienhaus: Diese Auswahl zeigt echte Immobilien aus unserer Region und die Bandbreite der Objekte, die Immonation professionell präsentiert und persönlich begleitet.",
+    "proof": {
+      "title": "Ausgewählte Immobilien aus dem vorhandenen Referenzbestand",
+      "text": "Wir zeigen bewusst nur belegbare Objektarten, Orte und freigegebene Bilder. Vermarktungsdauer, Nachfragezahlen und Verkaufsergebnisse ergänzen wir erst nach dokumentierter Freigabe."
+    },
+    "gallery": {
+      "eyebrow": "15 Referenzobjekte",
+      "title": "So unterschiedlich wie die Menschen dahinter",
+      "text": "Jede Immobilie verlangt eine eigene Positionierung. Die Auswahl reicht von Wohnungen und Einfamilienhäusern bis zu Anlage- und Gewerbeobjekten in der Metropolregion.",
+      "referenceLabel": "Immonation Referenz",
+      "allLabel": "Alle Objekte",
+      "filterLabel": "Referenzen nach Objektart filtern"
+    },
+    "tour": {
+      "eyebrow": "Virtuelle Besichtigung",
+      "title": "Räume erleben, bevor der Vor-Ort-Termin beginnt",
+      "text": "Virtuelle Rundgänge geben Kaufinteressierten früh einen realistischen Eindruck und helfen, Besichtigungen gezielt vorzubereiten. Lernen Sie unsere digitale Immobilienpräsentation kennen.",
+      "link": "Virtuelle Besichtigung kennenlernen",
+      "imageAlt": "Helle Gartenwohnung als Beispiel für die Immobilienpräsentation"
+    },
+    "cta": {
+      "title": "Ihre Immobilie könnte die nächste Erfolgsgeschichte sein",
+      "text": "Wir ordnen Wert, Zielgruppe und Vermarktungsweg persönlich ein – unverbindlich und mit einem klaren nächsten Schritt.",
+      "primary": "Immobilie bewerten lassen",
+      "secondary": "Persönlich sprechen"
+    },
+    "items": [
+      {
+        "id": "deining-neubauwohnung",
+        "title": "Neubauwohnung in Deining",
+        "type": "Eigentumswohnung",
+        "location": "Deining",
+        "alt": "Außenansicht einer Neubauwohnung in Deining"
+      },
+      {
+        "id": "erlangen-eigentumswohnung",
+        "title": "Eigentumswohnung in Erlangen",
+        "type": "Wohnimmobilie",
+        "location": "Erlangen",
+        "alt": "Referenzfoto einer Eigentumswohnung in Erlangen"
+      },
+      {
+        "id": "forchheim-eigentumswohnung",
+        "title": "Eigentumswohnung in Forchheim",
+        "type": "Eigentumswohnung",
+        "location": "Forchheim",
+        "alt": "Referenzfoto einer Eigentumswohnung in Forchheim"
+      },
+      {
+        "id": "forchheim-reihenhaus",
+        "title": "Reihenhaus in Forchheim",
+        "type": "Wohnhaus",
+        "location": "Forchheim",
+        "alt": "Außenansicht eines Reihenhauses in Forchheim"
+      },
+      {
+        "id": "fuerth-altbauwohnung",
+        "title": "Altbauwohnung in Fürth",
+        "type": "Eigentumswohnung",
+        "location": "Fürth",
+        "alt": "Referenzfoto einer Altbauwohnung in Fürth"
+      },
+      {
+        "id": "fuerth-renovierte-wohnung",
+        "title": "Renovierte Wohnung in Fürth",
+        "type": "Eigentumswohnung",
+        "location": "Fürth",
+        "alt": "Innenansicht einer renovierten Wohnung in Fürth"
+      },
+      {
+        "id": "fuerth-versorgungszentrum",
+        "title": "Versorgungszentrum in Fürth",
+        "type": "Gewerbe- und Anlageimmobilie",
+        "location": "Fürth",
+        "alt": "Außenansicht eines medizinischen Versorgungszentrums in Fürth"
+      },
+      {
+        "id": "fuerth-mehrfamilienhaus",
+        "title": "Mehrfamilienhaus in Fürth",
+        "type": "Anlageimmobilie",
+        "location": "Fürth",
+        "alt": "Außenansicht eines Mehrfamilienhauses in Fürth"
+      },
+      {
+        "id": "heroldsbach-mehrfamilienhaus",
+        "title": "Mehrfamilienhaus in Heroldsbach",
+        "type": "Dreifamilienhaus",
+        "location": "Heroldsbach",
+        "alt": "Außenansicht eines Mehrfamilienhauses in Heroldsbach"
+      },
+      {
+        "id": "langenzenn-terrassenwohnung",
+        "title": "Terrassenwohnung in Langenzenn",
+        "type": "Eigentumswohnung",
+        "location": "Langenzenn",
+        "alt": "Referenzfoto einer Terrassenwohnung in Langenzenn"
+      },
+      {
+        "id": "nuernberg-einfamilienhaus",
+        "title": "Einfamilienhaus in Nürnberg",
+        "type": "Wohnhaus",
+        "location": "Nürnberg",
+        "alt": "Außenansicht eines Einfamilienhauses in Nürnberg"
+      },
+      {
+        "id": "nuernberg-eigentumswohnung",
+        "title": "Eigentumswohnung in Nürnberg",
+        "type": "Wohnimmobilie",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto einer Eigentumswohnung in Nürnberg"
+      },
+      {
+        "id": "nuernberg-reihenendhaus",
+        "title": "Reihenendhaus in Nürnberg",
+        "type": "Wohnhaus",
+        "location": "Nürnberg",
+        "alt": "Außenansicht eines Reihenendhauses in Nürnberg"
+      },
+      {
+        "id": "oberasbach-einfamilienhaus",
+        "title": "Einfamilienhaus in Oberasbach",
+        "type": "Wohnhaus",
+        "location": "Oberasbach",
+        "alt": "Außenansicht eines Einfamilienhauses in Oberasbach"
+      },
+      {
+        "id": "zirndorf-gartenwohnung",
+        "title": "Gartenwohnung in Zirndorf",
+        "type": "Eigentumswohnung",
+        "location": "Zirndorf",
+        "alt": "Helle Gartenwohnung in Zirndorf"
+      }
+    ]
+  },
   "Footer": {
     "claim": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung.",
     "stats": [
       { "value": "60 km", "label": "Beratungsradius um Zirndorf" },
       { "value": "6–12", "label": "Wochen typische Vermarktungsdauer" },
       { "value": "360°", "label": "Rundgang bei jedem Objekt" },
-      { "value": "5,0 ★", "label": "Google-Bewertung" }
+      { "value": "4,9 ★", "label": "Google-Bewertung" }
     ],
     "sell": {
       "title": "Verkaufen",
       "valuation": "Immobilienbewertung",
       "house": "Haus verkaufen",
-      "apartment": "Wohnung verkaufen",
-      "letting": "Immobilie vermieten"
+      "apartment": "Wohnung verkaufen"
     },
     "buy": {
       "title": "Kaufen",

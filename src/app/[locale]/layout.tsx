@@ -10,6 +10,7 @@ import { JsonLd } from '@/components/site/json-ld'
 import { organization, website } from '@/lib/seo/jsonld'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
+import { PrototypeCookieNotice } from '@/components/site/prototype-cookie-notice'
 import '../globals.css'
 
 const jost = Jost({
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${jost.variable} ${sourceSerif.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -73,9 +75,18 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <JsonLd data={organization({ locale, url: SITE.url, name: SITE.name })} />
           <JsonLd data={website({ locale, url: SITE.url, name: SITE.name })} />
+          <a
+            href="#main-content"
+            className="bg-surface-dark fixed top-3 left-3 z-[60] -translate-y-24 px-4 py-3 text-sm font-semibold text-white transition-transform focus:translate-y-0"
+          >
+            {locale === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}
+          </a>
           <SiteHeader />
-          <main className="flex flex-1 flex-col pt-[var(--header-height)]">{children}</main>
+          <main id="main-content" className="flex flex-1 flex-col pt-[var(--header-height)]">
+            {children}
+          </main>
           <SiteFooter />
+          <PrototypeCookieNotice />
         </NextIntlClientProvider>
       </body>
     </html>

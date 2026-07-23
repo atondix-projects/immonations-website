@@ -10,6 +10,7 @@ import { breadcrumbList, localBusiness } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { SITE } from '@/lib/seo/site'
+import { PrototypeContactForm } from '@/components/site/contact/prototype-contact-form'
 
 export const dynamic = 'force-static'
 
@@ -108,22 +109,28 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
-        <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-          <h2 className="font-serif text-3xl font-semibold">{t('steps.title')}</h2>
-          <ol className="mt-10 grid max-w-[760px] gap-8">
-            {steps.map((step, index) => (
-              <li key={step.title} className="grid gap-3 md:grid-cols-[3rem_1fr] md:gap-6">
-                <span className="text-primary font-serif text-2xl font-semibold tabular-nums">
-                  {index + 1}
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold">{step.title}</h3>
-                  <p className="text-muted-foreground mt-2 leading-7">{step.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+      <section className="bg-muted/45 py-16 md:py-24">
+        <div className="mx-auto grid w-full max-w-[1320px] gap-10 px-5 sm:px-7 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
+          <PrototypeContactForm />
+          <div className="lg:pt-8">
+            <p className="text-brand-700 text-[11px] font-semibold tracking-[0.2em] uppercase">
+              {t('steps.eyebrow')}
+            </p>
+            <h2 className="mt-4 font-serif text-3xl font-medium">{t('steps.title')}</h2>
+            <ol className="mt-10 grid gap-8">
+              {steps.map((step, index) => (
+                <li key={step.title} className="grid gap-3 md:grid-cols-[3rem_1fr] md:gap-6">
+                  <span className="text-primary font-serif text-2xl font-semibold tabular-nums">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold">{step.title}</h3>
+                    <p className="text-muted-foreground mt-2 leading-7">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
     </main>

@@ -18,6 +18,26 @@ export const routing = defineRouting({
       de: '/leistungen/[slug]',
       en: '/services/[slug]',
     },
+    '/sell': {
+      de: '/immobilie-verkaufen',
+      en: '/sell-property',
+    },
+    '/sales-process': {
+      de: '/immobilie-verkaufen/ablauf',
+      en: '/sell-property/process',
+    },
+    '/sell/[slug]': {
+      de: '/immobilie-verkaufen/[slug]',
+      en: '/sell-property/[slug]',
+    },
+    '/locations': {
+      de: '/immobilienmakler-region',
+      en: '/real-estate-agent-locations',
+    },
+    '/locations/[slug]': {
+      de: '/immobilienmakler-region/[slug]',
+      en: '/real-estate-agent-locations/[slug]',
+    },
     '/blog': {
       de: '/ratgeber',
       en: '/guides',
@@ -37,6 +57,10 @@ export const routing = defineRouting({
     '/property-valuation': {
       de: '/immobilienbewertung',
       en: '/property-valuation',
+    },
+    '/property-valuation/thank-you': {
+      de: '/immobilienbewertung/danke',
+      en: '/property-valuation/thank-you',
     },
     '/faq': {
       de: '/faq',
@@ -58,6 +82,10 @@ export const routing = defineRouting({
       de: '/karriere',
       en: '/careers',
     },
+    '/real-estate-agent-career': {
+      de: '/immobilienmakler-werden',
+      en: '/become-a-real-estate-agent',
+    },
     '/referrers': {
       de: '/tippgeber',
       en: '/referrers',
@@ -65,6 +93,14 @@ export const routing = defineRouting({
     '/downloads': {
       de: '/downloads',
       en: '/downloads',
+    },
+    '/references': {
+      de: '/referenzen',
+      en: '/references',
+    },
+    '/references/[slug]': {
+      de: '/referenzen/[slug]',
+      en: '/references/[slug]',
     },
   },
 })

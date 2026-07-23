@@ -59,6 +59,27 @@ export function breadcrumbList(items: Array<{ name: string; url: string }>): Thi
   }
 }
 
+export function itemList(
+  items: Array<{ name: string; description?: string; image?: string; url?: string }>,
+): Thing {
+  return {
+    ...ctx,
+    '@type': 'ItemList',
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: item.name,
+        description: item.description,
+        image: item.image,
+        url: item.url,
+      },
+    })),
+  }
+}
+
 export function faqPage(qa: Array<{ question: string; answer: string }>): Thing {
   return {
     ...ctx,
@@ -67,6 +88,30 @@ export function faqPage(qa: Array<{ question: string; answer: string }>): Thing 
       '@type': 'Question',
       name: entry.question,
       acceptedAnswer: { '@type': 'Answer', text: entry.answer },
+    })),
+  }
+}
+
+export function howTo(input: {
+  locale: string
+  url: string
+  name: string
+  description: string
+  steps: Array<{ name: string; text: string; url?: string }>
+}): Thing {
+  return {
+    ...ctx,
+    '@type': 'HowTo',
+    inLanguage: input.locale,
+    name: input.name,
+    description: input.description,
+    mainEntityOfPage: input.url,
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      url: step.url,
     })),
   }
 }

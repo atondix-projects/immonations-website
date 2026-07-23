@@ -4,7 +4,7 @@
 
 ## Wer wir sind
 
-Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Immonation begleitet Eigentuemer, Kaeufer und Investoren in Nuernberg, Fuerth, Erlangen, Zirndorf und der Metropolregion. Der Fokus liegt auf Immobilienverkauf, Immobilienbewertung, Vermarktung, Suchkunden, Vermietung, Verwaltung und Transaktionsbegleitung.
+Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Immonation begleitet Eigentuemer, Kaeufer und Investoren in Nuernberg, Fuerth, Erlangen, Zirndorf und der Metropolregion. Der Fokus liegt auf Immobilienverkauf, Immobilienbewertung, professioneller Vermarktung, Suchkunden und Transaktionsbegleitung.
 
 Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Praesentation, 360-Grad-Rundgaenge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
 
@@ -12,11 +12,15 @@ Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Verm
 
 ### Immobilienbewertung
 
-Immonation bewertet Haeuser, Wohnungen, Mehrfamilienhaeuser und weitere Immobilien anhand von Lage, Zustand, Groesse, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentuemern als Grundlage fuer Verkauf, Vermietung, Erbschaft, Finanzierung oder strategische Entscheidungen.
+Immonation bewertet Haeuser, Wohnungen, Mehrfamilienhaeuser und weitere Immobilien anhand von Lage, Zustand, Groesse, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentuemern als Grundlage fuer Verkauf, Erbschaft, Finanzierung oder strategische Entscheidungen.
 
 ### Immobilienverkauf
 
 Immonation begleitet Eigentuemer vom Erstgespraech bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Expose, Fotos, Video, virtuelle Besichtigung, Vermarktung, Kaeuferqualifizierung, Finanzierungsklaerung, Vertragsvorbereitung und Abschluss.
+
+Der Verkaufsbereich unter `/de/immobilie-verkaufen` beziehungsweise `/en/sell-property` trennt die Vorbereitung nach Haus, Eigentumswohnung, Grundstueck und Mehrfamilienhaus. Jeder Leitfaden beschreibt objektartspezifische Unterlagen, Zielgruppen, Prueffragen und Vermarktungsschritte und endet mit konkreten FAQ.
+
+Der vollstaendige Verkaufsfahrplan liegt unter `/de/immobilie-verkaufen/ablauf` beziehungsweise `/en/sell-property/process`. Er dokumentiert zehn aufeinander abgestimmte Schritte: Auftrag und Objektaufnahme, Bewertung und Marktanalyse, Verkaufsstrategie, professionelle Aufbereitung, Veroeffentlichung, Interessentenmanagement, Besichtigungen, Angebot und Verhandlung, Notar und Beurkundung sowie Uebergabe und Abschluss.
 
 ### Vermarktung
 
@@ -30,13 +34,21 @@ Kaeufer erhalten auf `/de/immobilie-kaufen` beziehungsweise `/en/buy-property` Z
 
 Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die FAQ-Seite beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen und Ablauf. Die Download-Seite sammelt vorbereitete Checklisten und Ressourcen.
 
+### Referenzen und Kundenstimmen
+
+Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Veroeffentlicht werden nur belegbare Objektarten und Orte; unbestaetigte Vermarktungszahlen oder Verkaufsergebnisse bleiben ausgeschlossen. Der Bereich enthaelt ausserdem den Einstieg zur virtuellen Besichtigung und drei Plaetze fuer freigegebene Kundeninterviews.
+
 ### Karriere und freie Partner
 
 Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstuetzt mit Marke, Administration, Vermarktung und Prozessen.
 
+Die eigene Makler-Karriereseite unter `/de/immobilienmakler-werden` beziehungsweise `/en/become-a-real-estate-agent` beschreibt Rolle, Zusammenarbeit, passendes Profil und den Ablauf eines Kennenlerngespraechs. Konkrete Verguetungs- oder Leistungsversprechen werden persoenlich und vor einer Entscheidung transparent geklaert.
+
 ## Region
 
 Primaere Region: Zirndorf, Nuernberg, Fuerth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
+
+Die dauerhaften Regionsseiten unter `/de/immobilienmakler-region` beziehungsweise `/en/real-estate-agent-locations` erklaeren Mikrolage, Objektart, Vorbereitung und Verkaufsstrategie fuer Zirndorf, Nuernberg, Fuerth und Erlangen. Sie enthalten keine vermeintlich aktuellen Quadratmeterpreise oder Marktdaten ohne freigegebene Quelle und Aktualitaetsangabe.
 
 ## Methodik
 

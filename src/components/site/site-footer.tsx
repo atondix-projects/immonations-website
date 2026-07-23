@@ -48,14 +48,23 @@ export async function SiteFooter() {
             <Link href="/property-valuation" className={LINK_CLASSES}>
               {t('sell.valuation')}
             </Link>
-            <Link href="/services" className={LINK_CLASSES}>
+            <Link
+              href={{
+                pathname: '/sell/[slug]',
+                params: { slug: locale === 'de' ? 'haus' : 'house' },
+              }}
+              className={LINK_CLASSES}
+            >
               {t('sell.house')}
             </Link>
-            <Link href="/services" className={LINK_CLASSES}>
+            <Link
+              href={{
+                pathname: '/sell/[slug]',
+                params: { slug: locale === 'de' ? 'wohnung' : 'apartment' },
+              }}
+              className={LINK_CLASSES}
+            >
               {t('sell.apartment')}
-            </Link>
-            <Link href="/services" className={LINK_CLASSES}>
-              {t('sell.letting')}
             </Link>
           </div>
           <div className="flex flex-col gap-2.5">
@@ -78,9 +87,9 @@ export async function SiteFooter() {
             <Link href="/about" className={LINK_CLASSES}>
               {t('company.about')}
             </Link>
-            <a href={`/${locale}#referenzen`} className={LINK_CLASSES}>
+            <Link href="/references" className={LINK_CLASSES}>
               {t('company.references')}
-            </a>
+            </Link>
             <Link href="/blog" className={LINK_CLASSES}>
               {t('company.guide')}
             </Link>

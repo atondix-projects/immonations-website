@@ -12,9 +12,17 @@
 
 # testing
 /coverage
+/.playwright-cli/
 
 # local test/debug output
 /output/
+/tmp/
+
+# local source inputs and generated Python caches
+/assets/
+/customer-files/
+**/__pycache__/
+*.py[cod]
 
 # next.js
 /.next/

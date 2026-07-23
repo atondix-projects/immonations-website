@@ -3,7 +3,7 @@
 import type { ComponentProps } from 'react'
 import { useState } from 'react'
 import { Menu } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
@@ -35,6 +35,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     headingKey: 'resources',
     items: [
+      { labelKey: 'references', href: '/references' },
       { labelKey: 'faq', href: '/faq' },
       { labelKey: 'guide', href: '/blog' },
       { labelKey: 'downloads', href: '/downloads' },
@@ -49,7 +50,6 @@ export function MobileNav({ light = false }: { light?: boolean }) {
   const t = useTranslations('Nav')
   const tAudience = useTranslations('Audience')
   const tSite = useTranslations('Site')
-  const locale = useLocale()
   const [open, setOpen] = useState(false)
 
   const itemClasses =
@@ -60,7 +60,7 @@ export function MobileNav({ light = false }: { light?: boolean }) {
       <SheetTrigger
         aria-label="Menu"
         className={cn(
-          '-mr-2 flex size-11 cursor-pointer items-center justify-center transition-colors md:hidden',
+          '-mr-2 flex size-11 cursor-pointer items-center justify-center transition-colors lg:hidden',
           light ? 'text-white' : 'text-foreground',
         )}
       >
@@ -71,9 +71,6 @@ export function MobileNav({ light = false }: { light?: boolean }) {
           <SheetTitle className="text-left text-base font-semibold">{tSite('name')}</SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col px-6 py-4">
-          <a href={`/${locale}#referenzen`} onClick={() => setOpen(false)} className={itemClasses}>
-            {t('references')}
-          </a>
           {NAV_GROUPS.map((group, groupIndex) => (
             <div key={group.headingKey ?? groupIndex} className="flex flex-col">
               {group.headingKey ? (
@@ -95,13 +92,13 @@ export function MobileNav({ light = false }: { light?: boolean }) {
           ))}
         </nav>
         <div className="mt-auto px-6 pt-4 pb-8">
-          <a
-            href={`/${locale}#bewertung`}
+          <Link
+            href="/property-valuation"
             onClick={() => setOpen(false)}
-            className="bg-primary text-primary-foreground hover:bg-brand-700 block px-6 py-4 text-center text-base font-medium tracking-[0.04em] transition-colors"
+            className="bg-brand-700 text-primary-foreground hover:bg-brand-800 block px-6 py-4 text-center text-base font-semibold transition-colors"
           >
             {tAudience('sellerCta')}
-          </a>
+          </Link>
         </div>
       </SheetContent>
     </Sheet>

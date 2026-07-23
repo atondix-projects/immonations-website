@@ -1,8 +1,8 @@
-import type { ComponentProps } from 'react'
+import { Suspense, type ComponentProps } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
-import { ValuationForm } from '@/components/site/home/valuation-form'
+import { ValuationWizard } from '@/components/site/valuation/valuation-wizard'
 import { FaqSection, type FaqItem } from './faq-section'
 import { CtaBand } from './cta-band'
 
@@ -28,7 +28,7 @@ export type ValuationPageProps = {
   }
 }
 
-const CONTAINER = 'mx-auto w-full max-w-[1240px] px-6 lg:px-10'
+const CONTAINER = 'mx-auto w-full max-w-[1320px] px-5 sm:px-7 lg:px-12'
 
 export function ValuationPage({
   locale,
@@ -43,12 +43,12 @@ export function ValuationPage({
   const labels =
     locale === 'de'
       ? {
-          formCaption: 'Erste Einschätzung in wenigen Minuten',
-          trust: 'Kostenlos, unverbindlich und vertraulich.',
+          formCaption: 'Interaktiver Prototyp · keine Übertragung',
+          trust: 'Ihre Eingaben bleiben in diesem Browser und werden nicht gespeichert.',
         }
       : {
-          formCaption: 'First assessment in a few minutes',
-          trust: 'Free, non-binding, and confidential.',
+          formCaption: 'Interactive prototype · no transmission',
+          trust: 'Your entries stay in this browser and are not stored.',
         }
 
   return (
@@ -56,23 +56,23 @@ export function ValuationPage({
       <section className="border-border relative overflow-hidden border-b">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+            src="/images/references/nuernberg-einfamilienhaus.webp"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-[0.07]"
+            className="object-cover opacity-[0.09] grayscale"
             priority
           />
         </div>
 
         <div
-          className={`${CONTAINER} relative grid gap-12 py-16 lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-16 lg:py-20`}
+          className={`${CONTAINER} relative grid gap-12 py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(460px,1.1fr)] lg:items-start lg:gap-18 lg:py-24`}
         >
           <div className="flex flex-col gap-6">
             <p className="text-primary text-[13px] font-semibold tracking-[0.16em] uppercase">
               {hero.eyebrow}
             </p>
-            <h1 className="font-serif text-4xl leading-[1.08] font-semibold text-balance md:text-5xl lg:text-[56px]">
+            <h1 className="max-w-[14ch] font-serif text-[2.8rem] leading-[0.98] font-medium tracking-[-0.035em] text-balance md:text-[4.25rem] lg:text-[5.2rem]">
               {hero.title}
             </h1>
             <p className="text-muted-foreground max-w-[62ch] text-lg leading-[1.65]">{hero.lede}</p>
@@ -81,9 +81,16 @@ export function ValuationPage({
 
           <div className="lg:sticky lg:top-28">
             <p className="text-muted-foreground mb-3 text-sm font-medium">{labels.formCaption}</p>
-            <div className="border-border border bg-white shadow-[0_18px_50px_-28px_rgba(15,23,42,0.35)]">
-              <ValuationForm />
-            </div>
+            <Suspense
+              fallback={
+                <div
+                  className="border-border bg-neutral-0 min-h-[580px] animate-pulse border motion-reduce:animate-none"
+                  aria-hidden="true"
+                />
+              }
+            >
+              <ValuationWizard />
+            </Suspense>
             <p className="text-muted-foreground mt-4 text-xs leading-relaxed">{labels.trust}</p>
           </div>
         </div>
