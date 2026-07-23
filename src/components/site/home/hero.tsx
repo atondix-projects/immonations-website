@@ -109,7 +109,7 @@ export function Hero({ mode }: { mode: Audience }) {
           {/* key={mode}: Wechsel Verkäufer/Käufer spielt die Inszenierung erneut ab */}
           <div
             key={mode}
-            className="relative flex max-w-[760px] min-w-0 flex-col gap-6 pt-24 pb-14 md:pb-[72px]"
+            className="relative flex max-w-[760px] min-w-0 flex-col justify-end gap-6 pt-28 pb-14 md:pb-[72px]"
           >
             <div className="flex items-center gap-3">
               <motion.span
@@ -176,7 +176,7 @@ export function Hero({ mode }: { mode: Audience }) {
                   className="mt-2 w-full max-w-[440px] lg:hidden"
                   {...getRise(reduceMotion, STAGE_DELAYS.ctas)}
                 >
-                  <ValuationEntryCard />
+                  <ValuationEntryCard variant="glass" />
                 </motion.div>
               ) : null}
               {/* Mobil: Switch + Rating unter den CTAs; Desktop: rechte Randspalte (siehe unten) */}
@@ -193,10 +193,14 @@ export function Hero({ mode }: { mode: Audience }) {
           {/* Rechte Randspalte: Publikums-Switch + Bewertung, unten rechts verankert */}
           <motion.div
             key={`${mode}-rail`}
-            className="hidden h-full flex-col items-stretch pt-32 pb-[72px] lg:flex"
+            className="relative hidden h-full flex-col items-stretch pt-28 pb-[72px] lg:flex"
             {...getRise(reduceMotion, STAGE_DELAYS.switch)}
           >
-            {mode === 'seller' ? <ValuationEntryCard /> : null}
+            {mode === 'seller' ? (
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
+                <ValuationEntryCard variant="glass" />
+              </div>
+            ) : null}
             <div className="mt-auto flex flex-col divide-y divide-white/15 self-end border border-white/15 bg-white/5 backdrop-blur-sm">
               <AudienceSwitch mode={mode} />
               <GoogleRating />
