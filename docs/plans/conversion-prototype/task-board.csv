@@ -34,4 +34,4 @@ Q03,P0,Quality,Run responsive browser and accessibility QA,Q02,No open P0 QA blo
 Q04,P0,Quality,Verify prototype behavior,C04|S02,No absent-backend calls or misleading control,done,Codex
 Q05,P0,Quality,Run typecheck lint and build,Q03|Q04,All commands pass,done,Codex
 Q06,P1,Quality,Align SEO and localization shell,Q02,Repository conventions followed on touched routes,done,Codex
-Q07,P0,Approval,Final visual approval,Q05,Andreas approves or issues bounded revisions,ready,Andreas
+Q07,P0,Approval,Final visual approval,Q05,Andreas approves or issues bounded revisions,done,Andreas

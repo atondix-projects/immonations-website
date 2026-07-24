@@ -57,4 +57,4 @@
 - [x] Seller → valuation and seller → process journeys are coherent.
 - [x] Buyer route cannot be confused with live inventory.
 - [x] All available reference detail pages are reachable.
-- [ ] Andreas gives final visual approval or a bounded revision list.
+- [x] Andreas gave final visual approval on 2026-07-24.

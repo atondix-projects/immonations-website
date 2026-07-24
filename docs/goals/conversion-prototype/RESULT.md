@@ -1,10 +1,10 @@
 # Immonation conversion prototype result
 
-Status: bounded visual revisions implemented and verified; ready for final visual approval by Andreas.
+Status: complete. Andreas explicitly approved the visual prototype on 2026-07-24.
 
 ## Task reconciliation
 
-- P0: 29 of 30 complete. Q07, final visual approval, is ready for Andreas after the 2026-07-23 revision pass.
+- P0: 30 of 30 complete. Q07 was resolved by Andreas's explicit visual approval on 2026-07-24.
 - P1: 5 of 6 complete.
 - Deferred P1: S07, Calendly. No approved Calendly URL exists in the repository or normalized customer material, so no URL was invented.
 - Machine-readable status: `docs/plans/conversion-prototype/task-board.csv`.
@@ -43,6 +43,7 @@ Representative captures live under `output/playwright/`:
 - Revised reviews: `reviews-final-mobile.png`, `reviews-final-1020.png`, and `reviews-final-desktop.png`
 - Revised stories: `final-story-mobile.png`, `stories-final-1020.png`, and `stories-final-desktop-v2.png`
 - Embedded valuation entry: `valuation-entry-hero-desktop.png`, `valuation-entry-hero-mobile-clean.png`, `valuation-entry-section-desktop.png`, and `valuation-entry-step-two.png`
+- Approved glass hero refinement: `hero-glass-desktop-clean.png`, `hero-glass-mobile-clean.png`, and `hero-glass-mobile-top.png`
 
 Verified flows and corrections:
 
@@ -63,6 +64,7 @@ Verified flows and corrections:
 - Revised story layout: cards have 32–40 px gutters; the first and last stories span the desktop grid; the final Frau Hartmann image loads eagerly and renders at 390, 1020, and 1440 px.
 - Revised overflow measurements: document, review section, and story section widths matched the viewport at 390, 1020, and 1440 px.
 - Embedded valuation entry: the seller hero and lower valuation card now contain property-type step 1; German and English handoffs open step 2 on the localized valuation page with the type preserved.
+- Final hero composition: seller copy remains anchored at the lower left; the valuation entry is optically centered in the right rail and uses a hero-specific translucent glass treatment. The light lower-page card remains unchanged.
 
 ## Static verification
 
@@ -83,12 +85,12 @@ During final verification, a Cursor-managed dev process wrote stale `.next/dev` 
 - Design checklist: complete for the prototype.
 - Content/claims checklist: prototype display state complete; public-release verification remains open.
 - Rights/assets checklist: selection and prototype annotation complete; public usage permissions remain open.
-- QA checklist: complete except the absent approved Calendly URL and Andreas's final visual approval.
+- QA checklist: all P0 checks complete. The absent approved Calendly URL remains an explicitly deferred P1 item.
 - Post-prototype production checklist: intentionally open and not implied by prototype approval.
 
 ## Final visual approval
 
-Ready for Andreas. The bounded review/story revision list has been implemented and verified; an approval response or another bounded revision list will resolve Q07.
+Approved by Andreas on 2026-07-24 with the explicit response: “Visual review approved.” This resolves Q07 and the final P0 acceptance gate. Visual approval does not constitute production launch, legal, privacy, rights, or content-claim clearance.
 
 ## Remaining production work
 
@@ -103,5 +105,5 @@ Ready for Andreas. The bounded review/story revision list has been implemented a
 ## Worktree preservation
 
 - Existing dirty-worktree content was preserved.
-- No file was staged, committed, pushed, deployed, or published.
+- The verified prototype snapshot was committed and pushed to `main`; no deployment or publication was performed.
 - Generated QA screenshots remain under ignored `output/playwright/`.

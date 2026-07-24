@@ -54,7 +54,7 @@ Priority legend: **P0** required for prototype acceptance; **P1** complete if P0
 - [ ] **P0 Q04** Verify prototype-only behavior and network silence. Dependency: interactions. Accept: no form or UI control calls an absent backend.
 - [ ] **P0 Q05** Run typecheck, lint, and production build. Dependency: implementation complete. Accept: all pass without new errors.
 - [ ] **P1 Q06** Align metadata, JSON-LD, route registry, hreflang, and translation coverage for touched routes. Dependency: final copy. Accept: repository SEO conventions are followed even though public launch is deferred.
-- [ ] **P0 Q07** Final visual approval by Andreas. Dependency: Q01–Q05. Accept: explicit approval or documented revision list.
+- [x] **P0 Q07** Final visual approval by Andreas. Dependency: Q01–Q05. Accept: explicit approval or documented revision list. Approved 2026-07-24.
 
 ## P2 parking lot
 

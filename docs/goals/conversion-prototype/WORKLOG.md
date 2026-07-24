@@ -68,3 +68,15 @@ Next: Andreas reviews the revised sections and either approves Q07 or supplies a
 - Added local ignore rules for multi-gigabyte raw source inputs, temporary QA output, and generated Python caches before the authorized commit/push.
 
 Next: clean generated residue, review the staged scope, commit the prototype, and push the current branch as requested.
+
+## 2026-07-24 — final visual approval
+
+- Refined the seller hero after Andreas's last review: restored the copy to the lower-left anchor, centered the valuation entry independently in the right rail, and introduced a hero-only translucent glass variant while preserving the lower-page light card.
+- Verified the refinement at 1543 px desktop and 390 px mobile; mobile width remained 390/390 and the browser console reported zero errors.
+- Andreas explicitly responded “Visual review approved.”
+- Marked Q07 done. All 30 P0 tasks are complete; S07 remains the sole deferred P1 item because no approved Calendly URL exists.
+- Visual approval closes the frontend prototype goal only. Production launch, backend integrations, consent, legal review, rights clearance, and claim verification remain outside this approval.
+- Final clean verification passed: `pnpm typecheck`, full `pnpm lint`, `pnpm build` with 95 generated static pages, `git diff --check`, and task-board reconciliation.
+- The approved hero refinement is committed on `main` as `4e8d257`.
+
+Completion proof: explicit approval, 30/30 P0 tasks done, clean static verification, and the approved implementation present on `origin/main`.
