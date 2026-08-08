@@ -63,8 +63,10 @@ export async function generateMetadata({
   })
 }
 
-const EYEBROW_LIGHT = 'text-brand-700 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
-const EYEBROW_DARK = 'text-brand-300 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
+const EYEBROW_LIGHT =
+  'text-brand-700 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
+const EYEBROW_DARK =
+  'text-brand-300 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
 const SECTION_TITLE =
   'mt-4 font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.2rem]'
 const CONTAINER = 'mx-auto w-full max-w-[1320px] px-5 sm:px-7 lg:px-12'
@@ -423,10 +425,7 @@ export default async function FloorPlansPage({ params }: { params: Promise<{ loc
       {/* Interne Verlinkung */}
       <section className="py-16 md:py-20">
         <div
-          className={cn(
-            CONTAINER,
-            'grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-16',
-          )}
+          className={cn(CONTAINER, 'grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-16')}
         >
           <div>
             <p className={EYEBROW_LIGHT}>{t('related.eyebrow')}</p>

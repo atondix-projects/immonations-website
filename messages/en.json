@@ -1562,9 +1562,18 @@
       "title": "When this pays off most",
       "items": [
         { "lead": "You have inherited", "text": "and no documents exist, or only very old ones." },
-        { "lead": "Your property has been altered", "text": "— attic conversion, extension, conservatory — and the old plans no longer match." },
-        { "lead": "Your property has converted space", "text": "whose treatment in the calculation is disputed." },
-        { "lead": "You are selling an apartment", "text": "and the declaration of division differs from reality." },
+        {
+          "lead": "Your property has been altered",
+          "text": "— attic conversion, extension, conservatory — and the old plans no longer match."
+        },
+        {
+          "lead": "Your property has converted space",
+          "text": "whose treatment in the calculation is disputed."
+        },
+        {
+          "lead": "You are selling an apartment",
+          "text": "and the declaration of division differs from reality."
+        },
         { "lead": "Your buyer needs financing", "text": "— which is to say, in almost every sale." }
       ]
     },
@@ -1573,10 +1582,26 @@
       "title": "Five steps to documents that hold up",
       "steps": [
         { "num": "1", "title": "Arrange an appointment", "text": "Our engineer comes to you." },
-        { "num": "2", "title": "On-site survey", "text": "Every room is measured properly, including sloping ceilings, recesses, and outdoor areas." },
-        { "num": "3", "title": "Calculation & documentation", "text": "The living area is determined under the applicable rules and documented verifiably." },
-        { "num": "4", "title": "Floor plan production", "text": "You receive floor plans ready for print, portals, and the bank." },
-        { "num": "5", "title": "Putting them to work", "text": "The documents feed straight into the brochure, the marketing, and your client area." }
+        {
+          "num": "2",
+          "title": "On-site survey",
+          "text": "Every room is measured properly, including sloping ceilings, recesses, and outdoor areas."
+        },
+        {
+          "num": "3",
+          "title": "Calculation & documentation",
+          "text": "The living area is determined under the applicable rules and documented verifiably."
+        },
+        {
+          "num": "4",
+          "title": "Floor plan production",
+          "text": "You receive floor plans ready for print, portals, and the bank."
+        },
+        {
+          "num": "5",
+          "title": "Putting them to work",
+          "text": "The documents feed straight into the brochure, the marketing, and your client area."
+        }
       ]
     },
     "related": {

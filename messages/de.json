@@ -1559,10 +1559,19 @@
       "eyebrow": "Besonders wertvoll",
       "title": "Wann sich das besonders auszahlt",
       "items": [
-        { "lead": "Sie haben geerbt", "text": "und es existieren keine oder nur uralte Unterlagen." },
-        { "lead": "Ihre Immobilie wurde umgebaut", "text": "– Dachausbau, Anbau, Wintergarten – und die alten Pläne stimmen nicht mehr." },
+        {
+          "lead": "Sie haben geerbt",
+          "text": "und es existieren keine oder nur uralte Unterlagen."
+        },
+        {
+          "lead": "Ihre Immobilie wurde umgebaut",
+          "text": "– Dachausbau, Anbau, Wintergarten – und die alten Pläne stimmen nicht mehr."
+        },
         { "lead": "Ihr Objekt hat ausgebaute Flächen", "text": "deren Anrechnung strittig ist." },
-        { "lead": "Sie verkaufen eine Eigentumswohnung", "text": "und die Teilungserklärung weicht von der Realität ab." },
+        {
+          "lead": "Sie verkaufen eine Eigentumswohnung",
+          "text": "und die Teilungserklärung weicht von der Realität ab."
+        },
         { "lead": "Ihr Käufer muss finanzieren", "text": "– also in fast jedem Verkaufsfall." }
       ]
     },
@@ -1571,10 +1580,26 @@
       "title": "In fünf Schritten zu belastbaren Unterlagen",
       "steps": [
         { "num": "1", "title": "Terminvereinbarung", "text": "Unser Ingenieur kommt zu Ihnen." },
-        { "num": "2", "title": "Aufmaß vor Ort", "text": "Jeder Raum wird fachgerecht vermessen, inklusive Dachschrägen, Nischen und Außenflächen." },
-        { "num": "3", "title": "Berechnung & Dokumentation", "text": "Die Wohnfläche wird nach dem passenden Regelwerk ermittelt und nachvollziehbar dokumentiert." },
-        { "num": "4", "title": "Grundrisserstellung", "text": "Sie erhalten druck-, portal- und bankfertige Grundrisse." },
-        { "num": "5", "title": "Verwendung", "text": "Die Unterlagen fließen direkt in Exposé, Vermarktung und Kundenbereich ein." }
+        {
+          "num": "2",
+          "title": "Aufmaß vor Ort",
+          "text": "Jeder Raum wird fachgerecht vermessen, inklusive Dachschrägen, Nischen und Außenflächen."
+        },
+        {
+          "num": "3",
+          "title": "Berechnung & Dokumentation",
+          "text": "Die Wohnfläche wird nach dem passenden Regelwerk ermittelt und nachvollziehbar dokumentiert."
+        },
+        {
+          "num": "4",
+          "title": "Grundrisserstellung",
+          "text": "Sie erhalten druck-, portal- und bankfertige Grundrisse."
+        },
+        {
+          "num": "5",
+          "title": "Verwendung",
+          "text": "Die Unterlagen fließen direkt in Exposé, Vermarktung und Kundenbereich ein."
+        }
       ]
     },
     "related": {

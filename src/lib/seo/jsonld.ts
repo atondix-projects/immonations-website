@@ -183,9 +183,7 @@ export function person(input: {
     description: input.description,
     inLanguage: input.locale,
     knowsAbout: input.knowsAbout,
-    alumniOf: input.alumniOf
-      ? { '@type': 'CollegeOrUniversity', name: input.alumniOf }
-      : undefined,
+    alumniOf: input.alumniOf ? { '@type': 'CollegeOrUniversity', name: input.alumniOf } : undefined,
     worksFor: { '@id': `${SITE.url}/#organization` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': input.url },
   }
