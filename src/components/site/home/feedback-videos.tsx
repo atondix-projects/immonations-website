@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Clock3, Play } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { VideoDialog } from '@/components/site/video-dialog'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 type VideoItem = {
@@ -15,6 +16,9 @@ const VIDEO_MEDIA = {
   'viktor-emter': {
     poster: '/images/testimonials/viktor-emter.webp',
     video: '/videos/testimonials/viktor-emter.mp4',
+    // Echte Maße der Datei — das Overlay spielt im Hochformat ohne Beschnitt.
+    videoWidth: 720,
+    videoHeight: 1280,
   },
   'markus-burkhard': {
     poster: '/images/testimonials/markus-burkhard.webp',
@@ -26,7 +30,9 @@ const VIDEO_MEDIA = {
 
 export async function FeedbackVideos() {
   const t = await getTranslations('Home.feedback')
+  const tVideo = await getTranslations('VideoDialog')
   const items = t.raw('items') as VideoItem[]
+  const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
     <section id="kundenstimmen" className="bg-background scroll-mt-24 py-16 md:py-24">
@@ -44,23 +50,24 @@ export async function FeedbackVideos() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => {
             const media = VIDEO_MEDIA[item.id]
-            const videoSource = 'video' in media ? media.video : undefined
+            // Auf dem ganzen Objekt eingegrenzt, damit auch die Videomaße typisiert bleiben.
+            const videoMedia = 'video' in media ? media : null
 
             return (
               <article key={item.id} className="group flex flex-col gap-4">
                 <div className="bg-surface-dark relative aspect-[9/12] overflow-hidden">
-                  {item.available && videoSource ? (
-                    <video
-                      className="size-full object-cover"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      poster={media.poster}
-                      aria-label={`${item.name}: ${item.title}`}
-                    >
-                      <source src={videoSource} type="video/mp4" />
-                      {t('videoFallback')}
-                    </video>
+                  {item.available && videoMedia ? (
+                    <VideoDialog
+                      src={videoMedia.video}
+                      poster={videoMedia.poster}
+                      width={videoMedia.videoWidth}
+                      height={videoMedia.videoHeight}
+                      title={`${item.name}: ${item.title}`}
+                      fallback={t('videoFallback')}
+                      labels={videoLabels}
+                      className="size-full"
+                      posterSizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    />
                   ) : (
                     <>
                       <Image

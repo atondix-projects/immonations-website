@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { AudienceSwitch } from '@/components/site/audience-switch'
+import { AnimatedNumber } from '@/components/site/animated-number'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 
 type Audience = 'seller' | 'buyer'
@@ -72,7 +73,7 @@ function GoogleRating() {
   return (
     <div className="flex items-center gap-2 px-4 py-2.5">
       <span className="text-xs text-neutral-400">{t('ratingLabel')}</span>
-      <span className="text-sm font-semibold text-white">{t('ratingValue')}</span>
+      <AnimatedNumber value={t('ratingValue')} className="text-sm font-semibold text-white" />
     </div>
   )
 }

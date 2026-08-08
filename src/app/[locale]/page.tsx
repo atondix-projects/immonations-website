@@ -6,6 +6,7 @@ import { SITE } from '@/lib/seo/site'
 import { localBusiness } from '@/lib/seo/jsonld'
 import { JsonLd } from '@/components/site/json-ld'
 import { Hero } from '@/components/site/home/hero'
+import { Awards } from '@/components/site/home/awards'
 import { TrustProof } from '@/components/site/home/trust-proof'
 import { ServicesOverview } from '@/components/site/home/services-overview'
 import { PremiumMarketing } from '@/components/site/home/premium-marketing'
@@ -47,6 +48,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       <Hero mode="seller" />
+      <Awards />
       <TrustProof />
 
       {/* Leistungsübersicht */}

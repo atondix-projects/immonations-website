@@ -1,14 +1,18 @@
 import { ArrowUpRight } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { VIRTUAL_TOUR } from '@/lib/content/virtual-tour'
 import {
   PremiumMarketingSystem,
   type MarketingService,
+  type VisualizationExample,
 } from '@/components/site/home/premium-marketing-system'
 
 export async function PremiumMarketing() {
   const t = await getTranslations('PremiumMarketing')
+  const tVideo = await getTranslations('VideoDialog')
   const services = t.raw('services') as MarketingService[]
+  const visualizationExamples = t.raw('visualizationExamples') as VisualizationExample[]
 
   return (
     <section
@@ -46,12 +50,27 @@ export async function PremiumMarketing() {
         <div className="mt-12 md:mt-14">
           <PremiumMarketingSystem
             services={services}
+            tourUrl={VIRTUAL_TOUR?.url ?? null}
+            visualizationExamples={visualizationExamples}
             labels={{
               tabList: t('tabList'),
               included: t('included'),
               result: t('result'),
               videoLabel: t('videoLabel'),
               videoFallback: t('videoFallback'),
+              aiVisualization: t('aiVisualization'),
+              visualizationExamplesLabel: t('visualizationExamplesLabel'),
+              video: { play: tVideo('play'), close: tVideo('close') },
+              tour: {
+                title: t('tourTitle'),
+                consentNote: t('tourConsentNote', { provider: VIRTUAL_TOUR?.provider ?? '' }),
+                openOverlayLabel: t('tourOpenOverlayLabel'),
+                closeLabel: t('tourCloseOverlayLabel'),
+                loadingLabel: t('tourLoadingLabel'),
+                failedTitle: t('tourFailedTitle'),
+                failedText: t('tourFailedText', { provider: VIRTUAL_TOUR?.provider ?? '' }),
+                failedLinkLabel: t('tourOpenLabel', { provider: VIRTUAL_TOUR?.provider ?? '' }),
+              },
             }}
           />
         </div>

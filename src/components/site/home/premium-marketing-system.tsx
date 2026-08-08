@@ -15,6 +15,9 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { AnimatedNumber } from '@/components/site/animated-number'
+import { TourEmbed, type TourEmbedLabels } from '@/components/site/home/tour-embed'
+import { VideoDialog, type VideoDialogLabels } from '@/components/site/video-dialog'
 
 export type MarketingServiceId =
   | 'system'
@@ -40,13 +43,46 @@ export type MarketingService = {
   proof: Array<{ value: string; label: string }>
 }
 
+export type VisualizationExample = {
+  id: 'apartment' | 'property'
+  tab: string
+  title: string
+  description: string
+}
+
 type MarketingSystemLabels = {
   tabList: string
   included: string
   result: string
   videoLabel: string
   videoFallback: string
+  aiVisualization: string
+  visualizationExamplesLabel: string
+  tour: TourEmbedLabels
+  video: VideoDialogLabels
 }
+
+/** Alle Beispielvideos liegen in 1280 × 720 vor. */
+const VISUALIZATION_VIDEO_SIZE = { width: 1280, height: 720 } as const
+
+const VISUALIZATION_MEDIA: Record<VisualizationExample['id'], { src: string; poster: string }> = {
+  apartment: {
+    src: '/videos/ai-visualizations/apartment-nuremberg.mp4',
+    poster: '/videos/ai-visualizations/apartment-nuremberg-poster.webp',
+  },
+  property: {
+    src: '/videos/ai-visualizations/property-schwabach.mp4',
+    poster: '/videos/ai-visualizations/property-schwabach-poster.webp',
+  },
+}
+
+/** Das Präsentationsvideo; das Poster ist der erste Frame der Datei. */
+const PRESENTATION_MEDIA = {
+  src: '/immonation-presentation-video.mp4',
+  poster: '/videos/immonation-presentation-poster.webp',
+  width: 1920,
+  height: 1080,
+} as const
 
 const SERVICE_ICONS: Record<MarketingServiceId, LucideIcon> = {
   system: Route,
@@ -65,38 +101,50 @@ function ServiceBlueprint({
   service,
   index,
   labels,
+  tourUrl,
+  visualizationExamples,
+  isActive,
 }: {
   service: MarketingService
   index: number
   labels: MarketingSystemLabels
+  tourUrl: string | null
+  visualizationExamples: VisualizationExample[]
+  isActive: boolean
 }) {
   const Icon = SERVICE_ICONS[service.id]
   const serviceNumber = String(index + 1).padStart(2, '0')
+  const isTour = service.id === 'tour'
 
   return (
-    <div className="bg-surface-dark relative flex min-h-[420px] flex-col overflow-hidden p-6 text-white sm:p-8">
+    <div className="bg-surface-dark relative flex min-h-[420px] flex-col overflow-hidden p-7 text-white sm:p-9 lg:p-11">
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:44px_44px] opacity-[0.16]"
         aria-hidden="true"
       />
 
-      {service.id === 'tour' ? (
-        <div className="relative z-10 overflow-hidden bg-black outline -outline-offset-1 outline-white/10">
-          <video
-            className="aspect-video w-full object-cover"
-            controls
-            playsInline
-            preload="metadata"
-            aria-label={labels.videoLabel}
-          >
-            <source src="/immonation-presentation-video.mp4" type="video/mp4" />
-            {labels.videoFallback}
-          </video>
+      {service.id === 'visualisation' && isActive ? (
+        <VisualizationShowcase examples={visualizationExamples} labels={labels} />
+      ) : isTour && tourUrl ? (
+        <TourEmbed url={tourUrl} labels={labels.tour} />
+      ) : isTour ? (
+        <div className="relative z-10 overflow-hidden outline -outline-offset-1 outline-white/10">
+          <VideoDialog
+            src={PRESENTATION_MEDIA.src}
+            poster={PRESENTATION_MEDIA.poster}
+            width={PRESENTATION_MEDIA.width}
+            height={PRESENTATION_MEDIA.height}
+            title={labels.videoLabel}
+            fallback={labels.videoFallback}
+            labels={labels.video}
+            className="aspect-video w-full"
+            posterSizes="(min-width: 1024px) 48vw, 100vw"
+          />
         </div>
       ) : (
         <div className="relative z-10 flex items-start justify-between">
-          <div className="bg-brand-500 flex size-16 items-center justify-center shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_12px_32px_rgba(0,0,0,0.22)]">
-            <Icon className="size-7" strokeWidth={1.5} aria-hidden="true" />
+          <div className="border-brand-500/55 bg-brand-500/12 flex size-16 items-center justify-center border">
+            <Icon className="text-brand-300 size-7" strokeWidth={1.5} aria-hidden="true" />
           </div>
           <div className="text-right font-mono text-xs tracking-[0.16em] text-neutral-500 uppercase">
             <span className="block text-neutral-300">Immonation</span>
@@ -105,17 +153,21 @@ function ServiceBlueprint({
         </div>
       )}
 
-      <div className="relative z-10 mt-auto">
+      {/* `pt-10` hält den Abstand auch dort, wo `mt-auto` durch hohe Medien (Video, Rundgang) auf 0 fällt. */}
+      <div className="relative z-10 mt-auto pt-10">
         <p className="max-w-[22ch] font-serif text-3xl leading-[1.08] font-semibold text-balance sm:text-4xl">
           {service.highlight}
         </p>
-        <div className="mt-8 grid gap-px bg-white/15 sm:grid-cols-3">
-          {service.proof.map((item) => (
-            <div key={item.label} className="bg-surface-dark/95 min-h-28 p-4 backdrop-blur-sm">
-              <span className="text-brand-300 font-serif text-2xl leading-none font-semibold">
-                {item.value}
-              </span>
-              <span className="mt-3 block text-xs leading-snug text-pretty text-neutral-400">
+        <div className="mt-8 grid gap-px bg-white/12 sm:grid-cols-3">
+          {service.proof.map((item, index) => (
+            <div key={item.label} className="bg-surface-dark flex flex-col p-4 sm:min-h-24">
+              <AnimatedNumber
+                value={item.value}
+                delay={index * 0.06}
+                className="text-[15px] leading-snug font-semibold text-pretty text-white"
+              />
+              {/* Ab `sm` hält `mt-auto` die Labels auf einer Grundlinie, auch wenn ein Wert umbricht. */}
+              <span className="pt-3 text-xs leading-snug text-pretty text-neutral-400 sm:mt-auto">
                 {item.label}
               </span>
             </div>
@@ -126,12 +178,96 @@ function ServiceBlueprint({
   )
 }
 
+function VisualizationShowcase({
+  examples,
+  labels,
+}: {
+  examples: VisualizationExample[]
+  labels: MarketingSystemLabels
+}) {
+  const [activeId, setActiveId] = useState<VisualizationExample['id']>(
+    examples[0]?.id ?? 'apartment',
+  )
+  const activeExample = examples.find((example) => example.id === activeId) ?? examples[0]
+
+  if (!activeExample) return null
+
+  const media = VISUALIZATION_MEDIA[activeExample.id]
+
+  return (
+    <div className="relative z-10">
+      <div className="relative overflow-hidden outline -outline-offset-1 outline-white/10">
+        {/* Die Kachel behält die stumme Endlosschleife; das Overlay legt nur den
+            Ton und die volle Auflösung darauf — Ausschnitt und Farbe bleiben gleich. */}
+        <VideoDialog
+          key={activeExample.id}
+          src={media.src}
+          poster={media.poster}
+          width={VISUALIZATION_VIDEO_SIZE.width}
+          height={VISUALIZATION_VIDEO_SIZE.height}
+          title={`${labels.aiVisualization}: ${activeExample.title}`}
+          fallback={labels.videoFallback}
+          labels={labels.video}
+          preview="loop"
+          className="aspect-video w-full"
+          overlay={
+            <span className="bg-brand-500 pointer-events-none absolute top-3 left-3 px-3 py-1.5 text-[10px] font-semibold tracking-[0.14em] text-white uppercase shadow-sm">
+              {labels.aiVisualization}
+            </span>
+          }
+        />
+      </div>
+
+      <div
+        role="group"
+        aria-label={labels.visualizationExamplesLabel}
+        className="mt-2 grid grid-cols-2 gap-2"
+      >
+        {examples.map((example) => {
+          const isSelected = example.id === activeExample.id
+
+          return (
+            <button
+              key={example.id}
+              type="button"
+              aria-pressed={isSelected}
+              onClick={() => setActiveId(example.id)}
+              className={cn(
+                'min-h-11 px-3 py-2 text-left text-xs font-semibold transition-[background-color,color,box-shadow,scale] duration-150 outline-none active:scale-[0.97] motion-reduce:transition-none',
+                'focus-visible:ring-brand-300 focus-visible:ring-2',
+                isSelected
+                  ? 'bg-white text-neutral-950'
+                  : 'bg-white/[0.06] text-neutral-300 outline -outline-offset-1 outline-white/12 hover:bg-white/10 hover:text-white',
+              )}
+            >
+              {example.tab}
+            </button>
+          )
+        })}
+      </div>
+
+      <div className="mt-6">
+        <p className="font-serif text-xl leading-tight font-semibold text-white">
+          {activeExample.title}
+        </p>
+        <p className="mt-2 max-w-[52ch] text-sm leading-relaxed text-pretty text-neutral-400">
+          {activeExample.description}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export function PremiumMarketingSystem({
   services,
   labels,
+  tourUrl,
+  visualizationExamples,
 }: {
   services: MarketingService[]
   labels: MarketingSystemLabels
+  tourUrl: string | null
+  visualizationExamples: VisualizationExample[]
 }) {
   const [activeId, setActiveId] = useState<MarketingServiceId>(services[0]?.id ?? 'system')
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([])
@@ -242,7 +378,7 @@ export function PremiumMarketingSystem({
                 </p>
 
                 <div className="mt-8">
-                  <span className="text-xs font-semibold tracking-[0.13em] uppercase">
+                  <span className="text-[11px] font-semibold tracking-[0.14em] uppercase">
                     {labels.included}
                   </span>
                   <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -251,24 +387,38 @@ export function PremiumMarketingSystem({
                         key={bullet}
                         className="flex items-start gap-3 text-sm leading-relaxed text-pretty"
                       >
-                        <span className="bg-brand-500 mt-2 size-1.5 shrink-0" aria-hidden="true" />
+                        <span
+                          className="mt-2 size-1.5 shrink-0 bg-neutral-400"
+                          aria-hidden="true"
+                        />
                         <span>{bullet}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="border-brand-500 mt-9 border-l-2 bg-neutral-50 px-5 py-4">
-                  <span className="text-brand-600 text-[11px] font-semibold tracking-[0.13em] uppercase">
-                    {labels.result}
-                  </span>
-                  <p className="mt-2 text-sm leading-relaxed text-pretty text-neutral-700">
-                    {service.result}
-                  </p>
+                {/* `mt-auto` legt den Vorteils-Block auf dieselbe Grundlinie wie die Kennzahlen rechts,
+                    `pt-9` sichert den Mindestabstand, wenn die Spalte bereits gefüllt ist. */}
+                <div className="mt-auto pt-9">
+                  <div className="border-brand-600 border-l-2 bg-neutral-50 px-5 py-4">
+                    <span className="text-brand-600 text-[11px] font-semibold tracking-[0.14em] uppercase">
+                      {labels.result}
+                    </span>
+                    <p className="mt-2 text-sm leading-relaxed text-pretty text-neutral-700">
+                      {service.result}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <ServiceBlueprint service={service} index={index} labels={labels} />
+              <ServiceBlueprint
+                service={service}
+                index={index}
+                labels={labels}
+                tourUrl={tourUrl}
+                visualizationExamples={visualizationExamples}
+                isActive={isActive}
+              />
             </div>
           )
         })}

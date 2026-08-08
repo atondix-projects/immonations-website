@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { cn } from '@/lib/utils'
 import { CONTAINER, EYEBROW } from './section-shell'
 
-type PartnerId = 'dr-klein' | 'immowelt' | 'rewe'
+type PartnerId = 'dr-klein' | 'immowelt' | 'tsv-zirndorf'
 type GroupId = 'capital-holding' | 'in-beteiligung' | 'dream-living'
 type LogoItem<T extends string> = { id: T; name: string; role: string; alt: string }
 
@@ -17,10 +18,10 @@ const PARTNER_MEDIA: Record<PartnerId, { src: string; href: string; imageClassNa
     href: 'https://www.immowelt.de/profil/aa4a4a5bc6a949b2981f3a050371ce96',
     imageClassName: 'scale-[0.78]',
   },
-  rewe: {
-    src: '/images/partners/rewe.svg',
-    href: 'https://www.rewe.de/',
-    imageClassName: 'scale-[0.68]',
+  'tsv-zirndorf': {
+    src: '/images/partners/tsv-zirndorf-athletics.png',
+    href: 'https://www.la-zirndorf.de/index.php/848-immonation-gmbh-wird-neuer-starker-partner',
+    imageClassName: 'object-cover object-[center_28%] p-0',
   },
 }
 
@@ -51,7 +52,7 @@ function LogoTile({
           alt={item.alt}
           fill
           sizes="(min-width: 768px) 33vw, 100vw"
-          className={`object-contain p-5 ${media.imageClassName ?? ''}`}
+          className={cn('object-contain p-5', media.imageClassName)}
         />
       </div>
       <div className="flex items-start justify-between gap-3 border-t border-neutral-200 px-5 py-4">

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100" role="img" aria-label="Maklersieger Verifiziert – Immonation GmbH">
+  <rect width="300" height="100" rx="9" fill="#1B3C6E"/>
+  <rect x="0.6" y="0.6" width="298.8" height="98.8" rx="8.4" fill="none" stroke="#E8A020" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="200" y1="20" x2="200" y2="80" stroke="#E8A020" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="16" y="60" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#E8A020" letter-spacing="-0.5">maklersieger<tspan fill="#ffffff" font-weight="500">.de</tspan></text>
+  <text x="17" y="79" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="400" fill="#B8C5D6" letter-spacing="0.2">Unabhängig bewertet · Nürnberg</text><g transform="translate(16, 22)">
+    <circle cx="6" cy="0" r="6.5" fill="#E8A020"/><path d="M 2.8 0.2 L 5.3 2.7 L 9.2 -2.0" fill="none" stroke="#1B3C6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="20" y="3.5" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff" letter-spacing="0.2">Verifizierter Makler</text>
+  </g><g transform="translate(250, 48)">
+      <circle cx="0" cy="0" r="17" fill="#E8A020"/>
+      <path d="M -7.5 0.5 L -2.5 6 L 8 -6.5" fill="none" stroke="#1B3C6E" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g></svg>

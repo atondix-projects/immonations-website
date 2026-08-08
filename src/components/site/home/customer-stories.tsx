@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Play } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
+import { VideoDialog } from '@/components/site/video-dialog'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 type Story = {
@@ -18,6 +19,9 @@ const STORY_MEDIA = {
   'viktor-emter': {
     image: '/images/testimonials/viktor-emter.webp',
     video: '/videos/testimonials/viktor-emter.mp4',
+    // Echte Maße der Datei — das Overlay spielt im Hochformat ohne Beschnitt.
+    videoWidth: 720,
+    videoHeight: 1280,
   },
   'markus-burkhard': { image: '/images/testimonials/markus-burkhard.webp' },
   'herr-sippel': { image: '/images/testimonials/herr-sippel-property.jpg' },
@@ -26,7 +30,9 @@ const STORY_MEDIA = {
 
 export async function CustomerStories() {
   const t = await getTranslations('Home.stories')
+  const tVideo = await getTranslations('VideoDialog')
   const items = t.raw('items') as Story[]
+  const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
     <section id="kundenstimmen" className="bg-background scroll-mt-24 py-18 md:py-28">
@@ -44,7 +50,8 @@ export async function CustomerStories() {
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           {items.map((item, index) => {
             const media = STORY_MEDIA[item.id]
-            const videoSource = 'video' in media ? media.video : undefined
+            // Auf dem ganzen Objekt eingegrenzt, damit auch die Videomaße typisiert bleiben.
+            const videoMedia = 'video' in media ? media : null
             const isFirst = index === 0
             const isLast = index === items.length - 1
 
@@ -64,18 +71,23 @@ export async function CustomerStories() {
                     isLast && 'lg:aspect-auto lg:min-h-[440px]',
                   )}
                 >
-                  {item.video && videoSource ? (
-                    <video
-                      className="size-full object-cover"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      poster={media.image}
-                      aria-label={`${item.name}: ${item.context}`}
-                    >
-                      <source src={videoSource} type="video/mp4" />
-                      {t('videoFallback')}
-                    </video>
+                  {item.video && videoMedia ? (
+                    <VideoDialog
+                      src={videoMedia.video}
+                      poster={videoMedia.image}
+                      width={videoMedia.videoWidth}
+                      height={videoMedia.videoHeight}
+                      title={`${item.name}: ${item.context}`}
+                      fallback={t('videoFallback')}
+                      labels={videoLabels}
+                      className="size-full"
+                      posterPriority
+                      posterSizes={
+                        isFirst
+                          ? '(min-width: 1024px) 58vw, 100vw'
+                          : '(min-width: 1024px) 50vw, 100vw'
+                      }
+                    />
                   ) : (
                     <Image
                       src={media.image}

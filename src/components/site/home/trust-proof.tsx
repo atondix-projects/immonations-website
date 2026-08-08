@@ -1,11 +1,63 @@
 import { getTranslations } from 'next-intl/server'
+import { referenceImage, type ReferenceId, type ReferenceItem } from '@/lib/content/references'
+import { TrustProofGrid, type TrustProofExample } from './trust-proof-grid'
 import { CONTAINER } from './section-shell'
 
 type ProofItem = { value: string; label: string }
 
+const TRAIL_IDS = [
+  ['deining-neubauwohnung', 'fuerth-mehrfamilienhaus', 'langenzenn-terrassenwohnung'],
+  [
+    'forchheim-eigentumswohnung',
+    'fuerth-altbauwohnung',
+    'nuernberg-reihenendhaus',
+    'zirndorf-gartenwohnung',
+  ],
+  ['fuerth-versorgungszentrum', 'fuerth-mehrfamilienhaus', 'heroldsbach-mehrfamilienhaus'],
+  [
+    'nuernberg-einfamilienhaus',
+    'oberasbach-einfamilienhaus',
+    'erlangen-eigentumswohnung',
+    'forchheim-reihenhaus',
+  ],
+] as const satisfies readonly (readonly ReferenceId[])[]
+
 export async function TrustProof() {
-  const t = await getTranslations('Home')
+  const [t, references] = await Promise.all([
+    getTranslations('Home'),
+    getTranslations('ReferencesPage'),
+  ])
   const proof = t.raw('proof.items') as ProofItem[]
+  const referenceItems = references.raw('items') as ReferenceItem[]
+  const referencesById = new Map(referenceItems.map((item) => [item.id, item]))
+  const trailBadges = [
+    t('proof.trailBadges.reviews'),
+    t('proof.trailBadges.sales'),
+    t('proof.trailBadges.volume'),
+    t('proof.trailBadges.search'),
+  ]
+
+  const proofItems = proof.map((item, index) => {
+    const badge = trailBadges[index] ?? ''
+    const examples = (TRAIL_IDS[index] ?? []).flatMap<TrustProofExample>((id) => {
+      const reference = referencesById.get(id)
+
+      return reference
+        ? [
+            {
+              id,
+              title: reference.title,
+              type: reference.type,
+              location: reference.location,
+              image: referenceImage(id),
+              badge,
+            },
+          ]
+        : []
+    })
+
+    return { ...item, examples }
+  })
 
   return (
     <section className="border-border bg-background border-b py-16 md:py-22">
@@ -29,22 +81,11 @@ export async function TrustProof() {
           </div>
         </div>
 
-        <dl className="border-border mt-14 grid grid-cols-2 border-y md:mt-20 lg:grid-cols-4">
-          {proof.map((item, index) => (
-            <div
-              key={item.label}
-              className="border-border flex min-h-36 flex-col justify-end border-b p-5 last:border-b-0 odd:border-r lg:min-h-44 lg:border-r lg:border-b-0 lg:p-7 lg:last:border-r-0"
-            >
-              <dd className="font-serif text-3xl font-medium tracking-[-0.02em] tabular-nums md:text-[2.8rem]">
-                {item.value}
-              </dd>
-              <dt className="text-muted-foreground mt-2 max-w-[20ch] text-xs leading-snug md:text-sm">
-                {item.label}
-              </dt>
-              <span className="sr-only">{index + 1}</span>
-            </div>
-          ))}
-        </dl>
+        <TrustProofGrid
+          items={proofItems}
+          trailHint={t('proof.trailHint')}
+          exampleLabel={t('proof.exampleLabel')}
+        />
       </div>
     </section>
   )

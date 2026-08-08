@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 import { Eye, LineChart, ShieldCheck, View } from 'lucide-react'
+import { AnimatedNumber } from '@/components/site/animated-number'
+import { VideoDialog } from '@/components/site/video-dialog'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 type TourBullet = { title: string; text: string }
@@ -7,8 +9,17 @@ type TourStat = { value: string; label: string }
 
 const BULLET_ICONS = [Eye, LineChart, ShieldCheck, View] as const
 
+/** Das Präsentationsvideo; das Poster ist der erste Frame der Datei. */
+const PRESENTATION_MEDIA = {
+  src: '/immonation-presentation-video.mp4',
+  poster: '/videos/immonation-presentation-poster.webp',
+  width: 1920,
+  height: 1080,
+} as const
+
 export async function VirtualTour() {
   const t = await getTranslations('Home.virtualTour')
+  const tVideo = await getTranslations('VideoDialog')
   const bullets = t.raw('bullets') as TourBullet[]
   const stats = t.raw('stats') as TourStat[]
 
@@ -18,27 +29,30 @@ export async function VirtualTour() {
         {/* Medienfläche: Immobilienpräsentation vom Grundstück bis zur fertigen Immobilie */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-28">
           <div className="bg-surface-dark overflow-hidden">
-            <video
-              className="aspect-video w-full bg-black object-cover"
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={t('demoLabel')}
-            >
-              <source src="/immonation-presentation-video.mp4" type="video/mp4" />
-              {t('videoFallback')}
-            </video>
+            <VideoDialog
+              src={PRESENTATION_MEDIA.src}
+              poster={PRESENTATION_MEDIA.poster}
+              width={PRESENTATION_MEDIA.width}
+              height={PRESENTATION_MEDIA.height}
+              title={t('demoLabel')}
+              fallback={t('videoFallback')}
+              labels={{ play: tVideo('play'), close: tVideo('close') }}
+              className="aspect-video w-full"
+              posterSizes="(min-width: 1024px) 48vw, 100vw"
+            />
             <div className="border-t border-white/10 p-5">
               <p className="font-medium text-white">{t('demoLabel')}</p>
               <p className="mt-1 text-[13px] leading-snug text-neutral-400">{t('demoNote')}</p>
             </div>
           </div>
           <div className="border-border grid grid-cols-3 divide-x border bg-white">
-            {stats.map((stat) => (
+            {stats.map((stat, index) => (
               <div key={stat.label} className="divide-border flex flex-col gap-1 p-5">
-                <span className="font-serif text-2xl font-semibold md:text-[28px]">
-                  {stat.value}
-                </span>
+                <AnimatedNumber
+                  value={stat.value}
+                  delay={index * 0.08}
+                  className="font-serif text-2xl font-semibold md:text-[28px]"
+                />
                 <span className="text-[13px] leading-snug text-neutral-600">{stat.label}</span>
               </div>
             ))}
