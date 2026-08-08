@@ -1435,39 +1435,85 @@
     ]
   },
   "FloorPlansPage": {
-    "serviceType": "Measured survey, floor plans, and living-area calculation",
+    "serviceType": "Living-area calculation and floor plan production",
     "areaServed": "Nuremberg metropolitan region",
     "metadata": {
-      "title": "Lender-ready floor plans & living-area calculation",
-      "description": "Measured floor plans and a verifiable living-area calculation under the German Living Space Ordinance — surveyed on site by our own in-house engineer. For sales in Nuremberg, Fürth, Erlangen, and Zirndorf."
+      "title": "Living-area calculation & floor plans from our in-house engineer",
+      "description": "Our salaried engineer produces living-area calculations and professional floor plans for owners in Nuremberg, Fürth, Erlangen, and Zirndorf. No external contractor, no extra cost."
     },
     "hero": {
-      "eyebrow": "Our own in-house engineer",
-      "title": "Lender-ready floor plans and a living area that holds up",
-      "lede": "Old record drawings and sketches rarely survive review by the buyer's bank. Our engineer surveys your property on site, redraws the floor plan with full dimensions, and calculates the living area verifiably — before the first buyer asks."
+      "eyebrow": "An engineer on staff",
+      "title": "Accurate living areas and floor plans that sell",
+      "lede": "Our living-area calculations and floor plans do not come from an outside contractor — they come from an engineer on our payroll. He surveys on site before marketing begins, so you give away no square metre and your buyer's financing does not stall on missing paperwork."
     },
-    "answer": "A lender-ready floor plan is a to-scale, fully dimensioned drawing from which every room area can be recalculated independently — paired with a living-area calculation under the German Living Space Ordinance (WoFlV). This is exactly what the buyer's bank reviews before approving a loan. At Immonation an in-house engineer handles it: an on-site survey, a dimensioned redraw, and a verifiable area calculation. Without it, financing stalls — or the price gets renegotiated.",
+    "answer": "At Immonation a salaried engineer calculates your property's living area and produces the floor plans — in house rather than bought in. He surveys on site, determines the area under the applicable set of rules, and documents it verifiably. The result is dimensioned floor plans that portals and banks accept. The documents are ready before marketing starts, as part of our service and at no extra cost.",
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Close to half of all properties are listed with the wrong living area",
+      "intro": "“87 m²” — where does that figure actually come from? The 1994 purchase contract? An old rental ad? The previous owner? For most properties nobody remembers who calculated the living area, when, or under which rules. And that is where the trouble starts — in both directions.",
+      "items": [
+        {
+          "title": "Too little area stated = money given away",
+          "text": "Understate the living area and you sell below value. At a square-metre price of €4,900, five “forgotten” square metres cost around €24,500. It happens most often with attic conversions, conservatories, and converted lower-ground floors — because the counting rules are complicated."
+        },
+        {
+          "title": "Too much area stated = liability risk",
+          "text": "If it emerges after the notary appointment that the property is smaller than advertised, you face renegotiation, a price reduction, or in the worst case rescission of the sale. The area in the brochure is not a detail — it is a warranted assurance."
+        },
+        {
+          "title": "Different rulebooks, different results",
+          "text": "Under the Living Space Ordinance, areas below 1 m of height do not count at all, those between 1 and 2 m count by half, and balconies and terraces usually count as a quarter. DIN 277 calculates quite differently. Two “correct” calculations of the same flat can therefore diverge by 10 to 20 %."
+        },
+        {
+          "title": "No floor plan = fewer enquiries",
+          "text": "Listings without a floor plan get noticeably fewer clicks on the portals. Buyers want to understand how they would live in the space before they book a viewing. A photographed building plan from 1978 with faded lines does not do that."
+        }
+      ]
+    },
+    "bank": {
+      "eyebrow": "Financing",
+      "title": "Why banks now insist on a living-area calculation",
+      "intro": "There is little more frustrating than this: you have found your buyer. You agree, the price is settled, the mood is good. And then the bank arrives.",
+      "lead": "Banks have tightened their requirements noticeably in recent years. Before financing is reviewed and approved, the institution has to determine the property's mortgage lending value — and for that it needs solid documents: a verifiable living-area calculation and a usable floor plan. A handwritten figure from an old purchase contract or a photographed plan from 1978 no longer suffices.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "The chain reaction starts",
+          "text": "The bank raises queries. The buyer has to supply documents he does not have — so he asks you. You search the folder, find contradictions, and have to commission someone. Days become weeks. Meanwhile the financing application sits on hold."
+        },
+        {
+          "num": "02",
+          "title": "And here it gets expensive",
+          "text": "Rate offers do not last forever. If the process drags, the interest-rate landscape can shift — and suddenly the buyer is looking at a different monthly payment than at the viewing. For most buyers, financing is the decisive factor."
+        },
+        {
+          "num": "03",
+          "title": "The outcome",
+          "text": "The buyer walks. You are back at the start — except your property has now been on the market for weeks and prospects are asking why it is “still” available. A sale that was effectively done collapses over missing paperwork."
+        }
+      ]
+    },
     "comparison": {
       "eyebrow": "The difference in one image",
-      "title": "What a bank accepts — and what it does not",
+      "title": "What the bank accepts — and what it does not",
       "text": "Both drawings carry the same kind of information: rooms, walls, openings. Only one of them can be checked. The difference is not the care taken in drawing it, but whether every area can be recalculated from the plan itself.",
       "criteriaLabel": "How to tell them apart",
       "disclaimer": "Both images are illustrative examples shown to demonstrate the difference. Neither is a client document produced by Immonation.",
       "accepted": {
-        "badge": "Lender-ready",
+        "badge": "Usable",
         "title": "To-scale floor plan with full dimensioning",
         "text": "Every wall, opening, and room is dimensioned. A case handler can recalculate the living area independently, without ever having seen the property.",
         "alt": "Technical ground-floor plan with continuous dimension chains, room labels, and construction annotations.",
         "criteria": [
           "Continuous dimension chains, external and internal",
-          "Scale, storey, and orientation clearly stated",
+          "Scale and storey clearly stated",
           "Room labels and areas legible",
           "Wall thicknesses, openings, and stairs drawn to scale",
           "Every area can be recalculated without a site visit"
         ]
       },
       "rejected": {
-        "badge": "Not lender-ready",
+        "badge": "Not usable",
         "title": "Freehand sketch without verifiable dimensions",
         "text": "The sketch conveys an idea of the layout, nothing more. Without dimensions and scale the living area remains an assertion — for a financing review it is worthless.",
         "alt": "Hand-drawn floor plan sketch with furniture and room names, but without dimensions or scale.",
@@ -1480,94 +1526,104 @@
         ]
       }
     },
-    "scope": {
-      "eyebrow": "What is included",
-      "title": "From the on-site survey to a verifiable calculation",
-      "text": "We work from the building, not from paper in the planning file. What comes out of it goes on unchanged into the brochure, the portals, and the credit file.",
+    "solution": {
+      "eyebrow": "Our answer",
+      "title": "An engineer of our own — on the payroll, not bought in",
+      "intro": "At Immonation a salaried engineer is part of the team. Not an external contractor you first have to commission, schedule, and pay — but a colleague in the building, available to our clients.",
       "items": [
         {
-          "num": "01",
-          "title": "On-site survey",
-          "text": "Our engineer measures every room personally: lengths, heights, sloping ceilings, bays, and recesses. The basis is the building as built, not as approved."
+          "title": "Accurate living-area calculation",
+          "text": "He calculates the living area correctly, verifiably, and with documentation — surveyed on site rather than copied from old paperwork. You get a defensible figure you can state in the brochure and the purchase contract with a clear conscience."
         },
         {
-          "num": "02",
-          "title": "Dimensioned redraw",
-          "text": "The survey becomes a to-scale floor plan for each storey — fully dimensioned, with room labels and areas, delivered digitally and ready to print."
+          "title": "Professional floor plans",
+          "text": "The survey becomes clean, modern floor plans in Immonation quality — clearly dimensioned, easy to read, furnished or as a 3D view on request. Buyers see immediately how the rooms are arranged."
         },
         {
-          "num": "03",
-          "title": "Living-area calculation under WoFlV",
-          "text": "Areas are determined under the Living Space Ordinance: sloping ceilings counted proportionally, balconies and terraces at the permitted rate, cellar and ancillary space listed separately."
+          "title": "The documents are ready before the first enquiry",
+          "text": "Our engineer visits you before marketing starts. By the time the buyer approaches his bank, everything is in place. Financing goes through instead of stalling — no lost time, no interest-rate risk, no wavering buyer."
         },
         {
-          "num": "04",
-          "title": "Reconciliation with your documents",
-          "text": "We reconcile the result against the declaration of division, building plans, and purchase contract. If the actual area differs, you learn it before marketing — not during negotiation."
+          "title": "One contact, one appointment, no extra cost",
+          "text": "Survey, calculation, and floor plan happen in a single pass, as part of our marketing service. You do not have to find anyone, coordinate anything, or pay a separate invoice."
         }
       ]
     },
-    "impact": {
-      "eyebrow": "Effect on the sale",
-      "title": "Why a defensible area governs both price and pace",
+    "person": {
+      "eyebrow": "Your contact",
+      "name": "Hubert Christian Mahlich",
+      "role": "Engineer",
+      "bio": "Studied at Technische Hochschule Nürnberg Georg Simon Ohm, graduating in 2024 with a Bachelor of Arts. Entitled under the applicable German engineering acts to use the protected professional title of Ingenieur. A salaried member of the Immonation team, responsible for surveying, living-area calculation, and floor plan production.",
+      "tasksLabel": "Responsible for",
+      "tasks": ["On-site survey", "Living-area calculation", "Floor plan production"]
+    },
+    "fit": {
+      "eyebrow": "Especially valuable",
+      "title": "When this pays off most",
       "items": [
-        {
-          "title": "Financing goes through",
-          "text": "The buyer's bank checks the plan and the area before approving. When both are verifiable, follow-up queries disappear and the time to the notary appointment shortens."
-        },
-        {
-          "title": "You are not liable for wrong square metres",
-          "text": "A living area overstated in the brochure can entitle the buyer to a price reduction after completion. A documented calculation removes the basis for that dispute."
-        },
-        {
-          "title": "No discount for uncertainty",
-          "text": "A buyer who doubts the area prices that doubt into the offer. Evidenced figures take the argument away — the negotiation is about the property, not about the plan."
-        },
-        {
-          "title": "Deviations in apartment sales",
-          "text": "In attic and maisonette apartments in particular, the declaration of division often differs from the actual living area. A current survey settles it early and for all sides."
-        }
+        { "lead": "You have inherited", "text": "and no documents exist, or only very old ones." },
+        { "lead": "Your property has been altered", "text": "— attic conversion, extension, conservatory — and the old plans no longer match." },
+        { "lead": "Your property has converted space", "text": "whose treatment in the calculation is disputed." },
+        { "lead": "You are selling an apartment", "text": "and the declaration of division differs from reality." },
+        { "lead": "Your buyer needs financing", "text": "— which is to say, in almost every sale." }
+      ]
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "title": "Five steps to documents that hold up",
+      "steps": [
+        { "num": "1", "title": "Arrange an appointment", "text": "Our engineer comes to you." },
+        { "num": "2", "title": "On-site survey", "text": "Every room is measured properly, including sloping ceilings, recesses, and outdoor areas." },
+        { "num": "3", "title": "Calculation & documentation", "text": "The living area is determined under the applicable rules and documented verifiably." },
+        { "num": "4", "title": "Floor plan production", "text": "You receive floor plans ready for print, portals, and the bank." },
+        { "num": "5", "title": "Putting them to work", "text": "The documents feed straight into the brochure, the marketing, and your client area." }
       ]
     },
     "related": {
-      "eyebrow": "In context",
-      "title": "One building block in the wider sales process",
-      "text": "The survey and the floor plan come first: they are the basis for valuation, brochure, and financing. Our sales roadmap shows how the remaining steps follow on.",
-      "process": "View the sales process",
-      "guides": "View the selling guides"
+      "eyebrow": "Related",
+      "title": "How this connects to the rest",
+      "text": "The survey and the floor plan come first: they are the basis for the valuation, the brochure, and your buyer's financing.",
+      "valuation": "Property valuation",
+      "selling": "Selling your property",
+      "financing": "Financing",
+      "downloads": "Document checklist"
     },
     "faq": {
-      "title": "Common questions about floor plans and living-area calculation",
+      "title": "Common questions about living-area calculation and floor plans",
       "items": [
         {
-          "question": "What is a lender-ready floor plan?",
-          "answer": "A to-scale, fully dimensioned drawing for each storey from which every room area can be recalculated. Together with a living-area calculation under the Living Space Ordinance it forms the basis on which the financing bank determines the mortgage lending value."
+          "question": "Who calculates the living area at Immonation?",
+          "answer": "Our salaried engineer, Hubert Christian Mahlich. He surveys your property on site and produces both the living-area calculation and the floor plan — as part of our marketing service, at no extra cost. You do not need to commission an external contractor."
         },
         {
-          "question": "Why does the bank ask for a floor plan at all?",
-          "answer": "A bank finances the value of the property, not the purchase price. It derives that value from area, layout, and condition. Without a verifiable plan it has no basis — approval is delayed or comes in lower than expected."
+          "question": "Which documents does the buyer's bank need for financing?",
+          "answer": "For the mortgage lending valuation, banks today generally require a verifiable living-area calculation, a usable floor plan, the land-register extract, the energy certificate, and meaningful photographs. Without them the financing approval is delayed — or never materialises."
         },
         {
-          "question": "Is an old record drawing from the planning file enough?",
-          "answer": "Rarely. Planning files show the approved state, not the built one; attic conversions, relocated walls, and extensions are missing. We review existing plans and tell you whether reworking them is sufficient or a new survey is needed."
+          "question": "Why does a missing living-area calculation delay the sale?",
+          "answer": "Because without a defensible area figure the bank cannot determine the mortgage lending value. Queries and re-submissions follow, and they cost weeks. In that time interest terms can shift — and a buyer whose payment suddenly rises will reconsider."
         },
         {
-          "question": "What does the survey by your engineer cost?",
-          "answer": "For owners who commission a valuation from us, the survey is part of the free on-site valuation. You incur no upfront cost, and it commits you to nothing regarding a sale."
+          "question": "When should the living-area calculation be done?",
+          "answer": "Before marketing starts. Measuring only once the buyer's bank asks costs valuable weeks at exactly the point where a sale is most fragile. With us the documents are ready before the first prospect calls."
         },
         {
-          "question": "How is living area calculated under sloping ceilings?",
-          "answer": "Under the Living Space Ordinance, areas count fully from two metres of height, at half between one and two metres, and not at all below that. Balconies and terraces usually count at a quarter. We list these rates separately in the calculation."
+          "question": "Why is the living area in my old documents often wrong?",
+          "answer": "Because the rules have changed and many figures come from old purchase contracts or rental ads. Under the Living Space Ordinance, areas below 1 m of height do not count at all and those between 1 and 2 m count by half. If DIN 277 was used, deviations of 10 to 20 % arise."
         },
         {
-          "question": "What happens if the actual area differs?",
-          "answer": "We discuss it before marketing begins. An area corrected downwards is unwelcome but manageable. An overstated area can lead to a price reduction after the sale. We market on evidenced figures only."
+          "question": "Does the balcony count towards the living area?",
+          "answer": "As a rule at a quarter, and where the quality of construction justifies it up to a half. Details like these decide several square metres — and with them thousands of euros. That is why an engineer does the calculation here, not an online calculator."
+        },
+        {
+          "question": "Do you also produce floor plans when no plans exist any more?",
+          "answer": "Yes. Our engineer surveys your property completely from scratch on site and produces modern, dimensioned floor plans from it — even when no documents survive at all."
         }
       ]
     },
     "cta": {
-      "title": "Have your area verified before the market does",
-      "text": "The free on-site valuation includes the survey by our engineer. You learn what your property is worth — and whether your documents would survive a financing review.",
+      "title": "Have your living area calculated by an engineer",
+      "text": "Survey, living-area calculation, and floor plans are part of our marketing service — no separate invoice. Start with a free valuation or an initial consultation.",
       "primary": "Start the free valuation",
       "secondary": "Arrange an initial consultation"
     }

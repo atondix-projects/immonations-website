@@ -1433,39 +1433,85 @@
     ]
   },
   "FloorPlansPage": {
-    "serviceType": "Aufmaß, Grundriss und Wohnflächenberechnung",
+    "serviceType": "Wohnflächenberechnung und Grundrisserstellung",
     "areaServed": "Metropolregion Nürnberg",
     "metadata": {
-      "title": "Bankfähiger Grundriss & Wohnflächenberechnung",
-      "description": "Bemaßte Grundrisse und eine prüffähige Wohnflächenberechnung nach Wohnflächenverordnung – aufgemessen vor Ort von unserem eigenen Ingenieur. Für Verkäufe in Nürnberg, Fürth, Erlangen und Zirndorf."
+      "title": "Wohnflächenberechnung & Grundrisse vom Ingenieur im Haus",
+      "description": "Unser angestellter Ingenieur erstellt Wohnflächenberechnungen und professionelle Grundrisse – für Eigentümer in Nürnberg, Fürth, Erlangen und Zirndorf. Kein externer Dienstleister, keine Zusatzkosten."
     },
     "hero": {
-      "eyebrow": "Eigener Ingenieur im Haus",
-      "title": "Bankfähige Grundrisse und eine Wohnfläche, die standhält",
-      "lede": "Alte Bestandspläne und Skizzen halten der Prüfung durch eine finanzierende Bank selten stand. Unser Ingenieur misst Ihre Immobilie vor Ort auf, zeichnet den Grundriss bemaßt neu und berechnet die Wohnfläche nachvollziehbar – bevor der erste Interessent fragt."
+      "eyebrow": "Ingenieur im Haus",
+      "title": "Exakte Wohnflächen und Grundrisse, die verkaufen",
+      "lede": "Wohnflächenberechnung und Grundrisse kommen bei uns nicht von einem externen Dienstleister, sondern von einem fest angestellten Ingenieur. Er maßt vor Ort auf, bevor die Vermarktung startet – damit Sie keinen Quadratmeter verschenken und die Finanzierung Ihres Käufers nicht an fehlenden Unterlagen scheitert."
     },
-    "answer": "Ein bankfähiger Grundriss ist ein maßstäblicher, durchgehend bemaßter Plan, aus dem sich jede Raumfläche unabhängig nachrechnen lässt – ergänzt um eine Wohnflächenberechnung nach Wohnflächenverordnung. Genau diese Grundlage prüft die finanzierende Bank des Käufers, bevor sie ein Darlehen zusagt. Bei Immonation übernimmt das ein eigener Ingenieur: Aufmaß vor Ort, bemaßte Neuzeichnung, prüffähige Flächenberechnung. Fehlt sie, verzögert sich die Finanzierung – oder der Kaufpreis wird nachverhandelt.",
+    "answer": "Bei Immonation berechnet ein fest angestellter Ingenieur die Wohnfläche Ihrer Immobilie und erstellt die Grundrisse – im Haus statt extern eingekauft. Er maßt vor Ort auf, ermittelt die Fläche nach dem passenden Regelwerk und dokumentiert sie nachvollziehbar. Daraus entstehen bemaßte Grundrisse, die Portale und Banken akzeptieren. Die Unterlagen liegen vor dem Vermarktungsstart bereit – im Rahmen unserer Vermarktung, ohne Zusatzkosten.",
+    "problem": {
+      "eyebrow": "Das Problem",
+      "title": "Fast jede zweite Immobilie wird mit der falschen Wohnfläche angeboten",
+      "intro": "„87 m²“ – woher stammt diese Zahl eigentlich? Aus dem Kaufvertrag von 1994? Aus einer alten Mietannonce? Vom Vorbesitzer? Bei den meisten Immobilien weiß niemand mehr, wer die Wohnfläche wann und nach welcher Regel berechnet hat. Und genau hier beginnt das Problem – in beide Richtungen.",
+      "items": [
+        {
+          "title": "Zu wenig Fläche angegeben = verschenktes Geld",
+          "text": "Wird die Wohnfläche zu niedrig angesetzt, verkaufen Sie unter Wert. Bei einem Quadratmeterpreis von 4.900 € kosten fünf „vergessene“ Quadratmeter rund 24.500 €. Genau das passiert häufig bei Dachgeschossen, Wintergärten und ausgebauten Souterrains – weil die Anrechnungsregeln kompliziert sind."
+        },
+        {
+          "title": "Zu viel Fläche angegeben = Haftungsrisiko",
+          "text": "Stellt sich nach dem Notartermin heraus, dass die Wohnung kleiner ist als angeboten, drohen Nachverhandlungen, Kaufpreisminderung oder im schlimmsten Fall die Rückabwicklung. Die Fläche im Exposé ist keine Nebensache – sie ist eine Zusicherung."
+        },
+        {
+          "title": "Verschiedene Regelwerke, verschiedene Ergebnisse",
+          "text": "Nach der Wohnflächenverordnung zählen Flächen unter 1 m Höhe gar nicht, zwischen 1 und 2 m nur zur Hälfte, Balkone und Terrassen in der Regel zu einem Viertel. Die DIN 277 rechnet ganz anders. Zwei „korrekte“ Berechnungen derselben Wohnung können deshalb um 10 bis 20 % auseinanderliegen."
+        },
+        {
+          "title": "Kein Grundriss = weniger Anfragen",
+          "text": "Immobilien ohne Grundriss werden auf den Portalen deutlich seltener geklickt. Käufer wollen verstehen, wie sie leben werden, bevor sie einen Besichtigungstermin vereinbaren. Ein abfotografierter Bauplan von 1978 mit vergilbten Linien leistet das nicht."
+        }
+      ]
+    },
+    "bank": {
+      "eyebrow": "Finanzierung",
+      "title": "Warum Banken heute auf der Wohnflächenberechnung bestehen",
+      "intro": "Es gibt kaum etwas Ärgerlicheres als das: Sie haben den Käufer gefunden. Man ist sich einig, der Preis steht, die Stimmung ist gut. Und dann kommt die Bank.",
+      "lead": "Die Banken haben ihre Regularien in den letzten Jahren spürbar verschärft. Bevor eine Finanzierung geprüft und genehmigt wird, muss das Institut den Beleihungswert der Immobilie ermitteln – und dafür braucht es belastbare Unterlagen: eine nachvollziehbare Wohnflächenberechnung und einen verwertbaren Grundriss. Eine handschriftliche Zahl aus einem alten Kaufvertrag oder ein abfotografierter Plan von 1978 reichen dafür nicht mehr aus.",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Die Kettenreaktion beginnt",
+          "text": "Die Bank stellt Rückfragen. Der Käufer muss Unterlagen nachreichen, die er gar nicht hat – also fragt er Sie. Sie suchen im Ordner, finden Widersprüchliches, müssen jemanden beauftragen. Aus Tagen werden Wochen. Die Finanzierungsanfrage liegt derweil auf Halde."
+        },
+        {
+          "num": "02",
+          "title": "Und hier wird es teuer",
+          "text": "Konditionszusagen gelten nicht ewig. Verzögert sich der Prozess, kann sich die Zinslandschaft verändern – und plötzlich rechnet der Käufer mit einer anderen monatlichen Rate als bei der Besichtigung. Die Finanzierung ist bei den meisten Käufern der ausschlaggebende Faktor."
+        },
+        {
+          "num": "03",
+          "title": "Das Ergebnis",
+          "text": "Der Käufer springt ab. Sie stehen wieder am Anfang – nur dass Ihre Immobilie jetzt schon Wochen am Markt ist und Interessenten fragen, warum das Objekt „immer noch“ verfügbar ist. Ein Verkauf, der eigentlich gelaufen war, kippt an fehlenden Unterlagen."
+        }
+      ]
+    },
     "comparison": {
       "eyebrow": "Der Unterschied in einem Bild",
-      "title": "Was eine Bank akzeptiert – und was nicht",
+      "title": "Was die Bank akzeptiert – und was nicht",
       "text": "Beide Darstellungen zeigen dieselbe Art von Information: Räume, Wände, Öffnungen. Prüfen lässt sich nur eine davon. Der Unterschied liegt nicht in der Sorgfalt der Zeichnung, sondern darin, ob jede Fläche aus dem Plan heraus nachgerechnet werden kann.",
       "criteriaLabel": "Woran man das erkennt",
       "disclaimer": "Beide Abbildungen sind illustrative Beispiele zur Veranschaulichung des Unterschieds. Sie zeigen keine von Immonation erstellten Kundenunterlagen.",
       "accepted": {
-        "badge": "Bankfähig",
+        "badge": "Verwertbar",
         "title": "Maßstäblicher Grundriss mit durchgehender Bemaßung",
         "text": "Jede Wand, jede Öffnung und jeder Raum ist vermaßt. Ein Sachbearbeiter kann die Wohnfläche unabhängig nachrechnen, ohne die Immobilie je gesehen zu haben.",
         "alt": "Technischer Grundriss eines Erdgeschosses mit durchgehenden Maßketten, Raumbezeichnungen und Angaben zu Bauteilen.",
         "criteria": [
           "Durchgehende Maßketten außen und innen",
-          "Maßstab, Geschoss und Nordrichtung eindeutig angegeben",
+          "Maßstab und Geschoss eindeutig angegeben",
           "Raumbezeichnungen und Flächen ablesbar",
           "Wandstärken, Öffnungen und Treppen maßhaltig dargestellt",
           "Jede Fläche ist ohne Ortstermin nachrechenbar"
         ]
       },
       "rejected": {
-        "badge": "Nicht bankfähig",
+        "badge": "Nicht verwertbar",
         "title": "Freihandskizze ohne prüfbare Maße",
         "text": "Die Skizze vermittelt eine Idee vom Schnitt der Wohnung, mehr nicht. Ohne Maße und Maßstab bleibt die Wohnfläche eine Behauptung – für eine Finanzierungsprüfung ist sie wertlos.",
         "alt": "Handgezeichnete Grundrissskizze mit Möblierung und Raumnamen, jedoch ohne Maßangaben und ohne Maßstab.",
@@ -1478,94 +1524,104 @@
         ]
       }
     },
-    "scope": {
-      "eyebrow": "Leistungsumfang",
-      "title": "Vom Aufmaß vor Ort bis zur prüffähigen Berechnung",
-      "text": "Wir arbeiten am Gebäude, nicht am Papier aus dem Bauakt. Was dabei entsteht, geht anschließend unverändert in Exposé, Portale und Kreditakte.",
+    "solution": {
+      "eyebrow": "Unsere Lösung",
+      "title": "Ein eigener Ingenieur – fest angestellt, nicht extern eingekauft",
+      "intro": "Bei Immonation gehört ein angestellter Ingenieur zum Team. Kein externer Dienstleister, den man erst beauftragen, terminieren und bezahlen muss – sondern ein Kollege im Haus, der für unsere Kunden zur Verfügung steht.",
       "items": [
         {
-          "num": "01",
-          "title": "Aufmaß vor Ort",
-          "text": "Unser Ingenieur nimmt jeden Raum selbst auf: Längen, Höhen, Dachschrägen, Erker und Nischen. Grundlage ist der gebaute Zustand, nicht der genehmigte."
+          "title": "Exakte Wohnflächenberechnung",
+          "text": "Er berechnet die Wohnfläche fachlich korrekt, nachvollziehbar und dokumentiert – vor Ort aufgemaßt statt von alten Papieren abgeschrieben. Sie erhalten eine belastbare Zahl, die Sie im Exposé und im Kaufvertrag ruhigen Gewissens angeben können."
         },
         {
-          "num": "02",
-          "title": "Bemaßte Neuzeichnung",
-          "text": "Aus dem Aufmaß entsteht je Geschoss ein maßstäblicher Grundriss – durchgehend bemaßt, mit Raumbezeichnungen und Flächen, digital und druckfähig."
+          "title": "Professionelle Grundrisse",
+          "text": "Aus dem Aufmaß entstehen saubere, moderne Grundrisse in Immonation-Qualität – klar bemaßt, gut lesbar, auf Wunsch möbliert oder als 3D-Ansicht. Käufer sehen sofort, wie sich die Räume anordnen."
         },
         {
-          "num": "03",
-          "title": "Wohnflächenberechnung nach WoFlV",
-          "text": "Die Flächen werden nach Wohnflächenverordnung ermittelt: Dachschrägen anteilig, Balkone und Terrassen mit zulässigem Ansatz, Keller- und Nebenflächen getrennt ausgewiesen."
+          "title": "Die Unterlagen liegen vor, bevor der erste Interessent anruft",
+          "text": "Unser Ingenieur kommt vor dem Vermarktungsstart zu Ihnen. Wenn der Käufer bei seiner Bank vorstellig wird, liegt alles bereit. Die Finanzierung läuft durch, statt zu stocken – kein Zeitverlust, kein Zinsrisiko, kein wackelnder Käufer."
         },
         {
-          "num": "04",
-          "title": "Abgleich mit Ihren Unterlagen",
-          "text": "Wir gleichen das Ergebnis mit Teilungserklärung, Bauplänen und Kaufvertrag ab. Weicht die tatsächliche Fläche ab, erfahren Sie es vor der Vermarktung – nicht in der Verhandlung."
+          "title": "Ein Ansprechpartner, ein Termin, keine Zusatzkosten",
+          "text": "Aufmaß, Berechnung und Grundriss laufen in einem Durchgang – im Rahmen unserer Vermarktung. Sie müssen niemanden suchen, nichts koordinieren und keine separate Rechnung bezahlen."
         }
       ]
     },
-    "impact": {
-      "eyebrow": "Wirkung im Verkauf",
-      "title": "Warum eine belastbare Fläche über Preis und Tempo entscheidet",
+    "person": {
+      "eyebrow": "Ihr Ansprechpartner",
+      "name": "Hubert Christian Mahlich",
+      "role": "Ingenieur",
+      "bio": "Studium an der Technischen Hochschule Nürnberg Georg Simon Ohm, Abschluss 2024 als Bachelor of Arts. Nach den geltenden deutschen Ingenieurgesetzen berechtigt, die geschützte Berufsbezeichnung Ingenieur zu führen. Bei Immonation fest angestellt und zuständig für Aufmaß, Wohnflächenberechnung und Grundrisserstellung.",
+      "tasksLabel": "Zuständig für",
+      "tasks": ["Aufmaß vor Ort", "Wohnflächenberechnung", "Grundrisserstellung"]
+    },
+    "fit": {
+      "eyebrow": "Besonders wertvoll",
+      "title": "Wann sich das besonders auszahlt",
       "items": [
-        {
-          "title": "Die Finanzierung läuft durch",
-          "text": "Die Bank des Käufers prüft Plan und Fläche, bevor sie zusagt. Liegen beide prüffähig vor, entfallen Rückfragen und die Zeit bis zum Notartermin verkürzt sich."
-        },
-        {
-          "title": "Sie haften nicht für falsche Quadratmeter",
-          "text": "Eine im Exposé zu hoch angesetzte Wohnfläche kann den Käufer nach dem Kauf zur Minderung berechtigen. Eine dokumentierte Berechnung nimmt diesem Streit die Grundlage."
-        },
-        {
-          "title": "Kein Preisabschlag für Unsicherheit",
-          "text": "Wer an der Fläche zweifelt, rechnet den Zweifel in sein Gebot ein. Belegte Zahlen nehmen dem Käufer dieses Argument – verhandelt wird über die Immobilie, nicht über den Plan."
-        },
-        {
-          "title": "Abweichungen bei Eigentumswohnungen",
-          "text": "Gerade bei Dachgeschoss- und Maisonettewohnungen weicht die Teilungserklärung häufig von der tatsächlichen Wohnfläche ab. Ein aktuelles Aufmaß klärt das früh und für alle Seiten."
-        }
+        { "lead": "Sie haben geerbt", "text": "und es existieren keine oder nur uralte Unterlagen." },
+        { "lead": "Ihre Immobilie wurde umgebaut", "text": "– Dachausbau, Anbau, Wintergarten – und die alten Pläne stimmen nicht mehr." },
+        { "lead": "Ihr Objekt hat ausgebaute Flächen", "text": "deren Anrechnung strittig ist." },
+        { "lead": "Sie verkaufen eine Eigentumswohnung", "text": "und die Teilungserklärung weicht von der Realität ab." },
+        { "lead": "Ihr Käufer muss finanzieren", "text": "– also in fast jedem Verkaufsfall." }
+      ]
+    },
+    "process": {
+      "eyebrow": "Ablauf",
+      "title": "In fünf Schritten zu belastbaren Unterlagen",
+      "steps": [
+        { "num": "1", "title": "Terminvereinbarung", "text": "Unser Ingenieur kommt zu Ihnen." },
+        { "num": "2", "title": "Aufmaß vor Ort", "text": "Jeder Raum wird fachgerecht vermessen, inklusive Dachschrägen, Nischen und Außenflächen." },
+        { "num": "3", "title": "Berechnung & Dokumentation", "text": "Die Wohnfläche wird nach dem passenden Regelwerk ermittelt und nachvollziehbar dokumentiert." },
+        { "num": "4", "title": "Grundrisserstellung", "text": "Sie erhalten druck-, portal- und bankfertige Grundrisse." },
+        { "num": "5", "title": "Verwendung", "text": "Die Unterlagen fließen direkt in Exposé, Vermarktung und Kundenbereich ein." }
       ]
     },
     "related": {
-      "eyebrow": "Eingeordnet",
-      "title": "Ein Baustein im gesamten Verkaufsprozess",
-      "text": "Aufmaß und Grundriss stehen am Anfang: Sie sind die Grundlage für Bewertung, Exposé und Finanzierung. Wie die weiteren Schritte aufeinander folgen, zeigt unser Verkaufsfahrplan.",
-      "process": "Ablauf des Verkaufs ansehen",
-      "guides": "Verkaufsleitfäden ansehen"
+      "eyebrow": "Passend dazu",
+      "title": "Wie das mit dem Rest zusammenhängt",
+      "text": "Aufmaß und Grundriss stehen am Anfang: Sie sind die Grundlage für Bewertung, Exposé und die Finanzierung Ihres Käufers.",
+      "valuation": "Immobilienbewertung",
+      "selling": "Immobilie verkaufen",
+      "financing": "Finanzierung",
+      "downloads": "Unterlagen-Checkliste"
     },
     "faq": {
-      "title": "Häufige Fragen zu Grundriss und Wohnflächenberechnung",
+      "title": "Häufige Fragen zu Wohnflächenberechnung und Grundrissen",
       "items": [
         {
-          "question": "Was ist ein bankfähiger Grundriss?",
-          "answer": "Ein maßstäblicher, durchgehend bemaßter Plan je Geschoss, aus dem sich jede Raumfläche nachrechnen lässt. Zusammen mit einer Wohnflächenberechnung nach Wohnflächenverordnung bildet er die Grundlage, auf der die finanzierende Bank den Beleihungswert ermittelt."
+          "question": "Wer berechnet bei Immonation die Wohnfläche?",
+          "answer": "Unser fest angestellter Ingenieur, Hubert Christian Mahlich. Er misst Ihre Immobilie vor Ort auf und erstellt Wohnflächenberechnung und Grundriss – im Rahmen unserer Vermarktung, ohne Zusatzkosten. Sie müssen keinen externen Dienstleister beauftragen."
         },
         {
-          "question": "Warum verlangt die Bank überhaupt einen Grundriss?",
-          "answer": "Die Bank finanziert nicht den Kaufpreis, sondern den Wert der Immobilie. Diesen Wert leitet sie aus Fläche, Schnitt und Zustand ab. Ohne prüfbaren Plan fehlt ihr die Grundlage – die Zusage verzögert sich oder fällt niedriger aus als erwartet."
+          "question": "Welche Unterlagen braucht die Bank des Käufers für die Finanzierung?",
+          "answer": "Für die Beleihungswertermittlung verlangen Banken heute in der Regel eine nachvollziehbare Wohnflächenberechnung, einen verwertbaren Grundriss, Grundbuchauszug, Energieausweis und aussagekräftige Fotos. Fehlen diese Unterlagen, verzögert sich die Finanzierungszusage – oder sie kommt gar nicht zustande."
         },
         {
-          "question": "Reicht ein alter Bestandsplan aus dem Bauakt?",
-          "answer": "Selten. Bauakten zeigen den genehmigten, nicht den gebauten Zustand; Dachausbauten, versetzte Wände oder Anbauten fehlen. Wir prüfen vorhandene Pläne und sagen Ihnen, ob eine Aufbereitung genügt oder ein neues Aufmaß nötig ist."
+          "question": "Warum verzögert eine fehlende Wohnflächenberechnung den Verkauf?",
+          "answer": "Weil die Bank ohne belastbare Flächenangabe den Beleihungswert nicht ermitteln kann. Es folgen Rückfragen und Nachreichungen, die Wochen kosten. In dieser Zeit können sich Zinskonditionen ändern – und ein Käufer, dessen Rate plötzlich höher ausfällt, überdenkt seine Entscheidung."
         },
         {
-          "question": "Was kostet das Aufmaß durch Ihren Ingenieur?",
-          "answer": "Für Eigentümer, die eine Bewertung bei uns beauftragen, ist das Aufmaß Teil der kostenlosen Wertermittlung vor Ort. Vorabkosten entstehen Ihnen nicht, und Sie gehen damit keine Verpflichtung zum Verkauf ein."
+          "question": "Wann sollte die Wohnflächenberechnung gemacht werden?",
+          "answer": "Vor dem Vermarktungsstart. Wer erst dann misst, wenn die Bank des Käufers anfragt, verliert wertvolle Wochen genau an der Stelle, an der der Verkauf am empfindlichsten ist. Bei uns liegen die Unterlagen bereit, bevor der erste Interessent anruft."
         },
         {
-          "question": "Wie wird die Wohnfläche bei Dachschrägen berechnet?",
-          "answer": "Nach Wohnflächenverordnung zählen Flächen ab zwei Metern Höhe voll, zwischen einem und zwei Metern zur Hälfte, darunter gar nicht. Balkone und Terrassen fließen in der Regel zu einem Viertel ein. Diese Ansätze weisen wir in der Berechnung getrennt aus."
+          "question": "Warum stimmt die Wohnfläche in meinen alten Unterlagen oft nicht?",
+          "answer": "Weil sich die Regelwerke geändert haben und viele Angaben aus alten Kaufverträgen oder Mietannoncen stammen. Nach der Wohnflächenverordnung zählen Flächen unter 1 m Höhe gar nicht, zwischen 1 und 2 m nur zur Hälfte. Wurde nach DIN 277 gerechnet, entstehen Abweichungen von 10 bis 20 %."
         },
         {
-          "question": "Was passiert, wenn die tatsächliche Fläche abweicht?",
-          "answer": "Dann besprechen wir das vor der Vermarktung. Eine nach unten korrigierte Fläche ist unangenehm, aber beherrschbar. Eine zu hoch angesetzte Fläche kann nach dem Verkauf zu Minderung führen. Wir vermarkten ausschließlich mit belegbaren Zahlen."
+          "question": "Zählt der Balkon zur Wohnfläche?",
+          "answer": "In der Regel zu einem Viertel, bei hochwertiger Ausführung bis zur Hälfte. Genau solche Details entscheiden über mehrere Quadratmeter – und damit über tausende Euro. Deshalb rechnet bei uns ein Ingenieur und kein Onlinerechner."
+        },
+        {
+          "question": "Erstellen Sie auch Grundrisse, wenn keine Pläne mehr existieren?",
+          "answer": "Ja. Unser Ingenieur nimmt Ihre Immobilie vor Ort komplett neu auf und erstellt daraus moderne, bemaßte Grundrisse – auch dann, wenn gar keine Unterlagen mehr vorhanden sind."
         }
       ]
     },
     "cta": {
-      "title": "Lassen Sie Ihre Fläche prüfen, bevor der Markt es tut",
-      "text": "Die kostenlose Bewertung vor Ort schließt das Aufmaß durch unseren Ingenieur ein. Sie erfahren, was Ihre Immobilie wert ist – und ob Ihre Unterlagen einer Finanzierungsprüfung standhalten.",
+      "title": "Lassen Sie Ihre Wohnfläche vom Ingenieur berechnen",
+      "text": "Aufmaß, Wohnflächenberechnung und Grundrisse gehören bei uns zur Vermarktung – ohne separate Rechnung. Starten Sie mit einer kostenlosen Bewertung oder einem Erstgespräch.",
       "primary": "Kostenlose Bewertung starten",
       "secondary": "Erstgespräch vereinbaren"
     }
