@@ -162,6 +162,35 @@ export function service(input: {
   }
 }
 
+/**
+ * Named specialist employed by the organization. Used where a page's authority
+ * rests on a specific, identifiable person (E-E-A-T signal).
+ */
+export function person(input: {
+  locale: string
+  url: string
+  name: string
+  jobTitle: string
+  description: string
+  knowsAbout?: string[]
+  alumniOf?: string
+}): Thing {
+  return {
+    ...ctx,
+    '@type': 'Person',
+    name: input.name,
+    jobTitle: input.jobTitle,
+    description: input.description,
+    inLanguage: input.locale,
+    knowsAbout: input.knowsAbout,
+    alumniOf: input.alumniOf
+      ? { '@type': 'CollegeOrUniversity', name: input.alumniOf }
+      : undefined,
+    worksFor: { '@id': `${SITE.url}/#organization` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': input.url },
+  }
+}
+
 export function localBusiness(input: {
   locale: string
   name: string
