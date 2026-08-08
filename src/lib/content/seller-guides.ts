@@ -11,7 +11,7 @@ export type SellerGuide = {
   answer: string
   highlights: string[]
   sections: Array<{ heading: string; body: string }>
-  faq: Array<{ question: string; answer: string }>
+  documents: string[]
   serviceType: string
 }
 
@@ -21,386 +21,138 @@ const guides: Record<Locale, SellerGuide[]> = {
       locale: 'de',
       slug: 'haus',
       translationKey: 'sell-house',
-      title: 'Haus verkaufen in der Region Nürnberg',
+      title: 'Haus verkaufen in Nürnberg, Fürth, Erlangen & Zirndorf',
       description:
-        'Hausverkauf mit fundierter Bewertung, vollständiger Vorbereitung und Premium-Vermarktung in Zirndorf, Nürnberg, Fürth und Erlangen.',
+        'Haus verkaufen in Nürnberg, Fürth, Erlangen und Zirndorf: kostenlose Bewertung, Wohnflächenberechnung und professionelle Vermarktung.',
       eyebrow: 'Hausverkauf',
-      lede: 'Ein Haus verkauft sich nicht über einen Angebotspreis allein. Entscheidend sind belastbare Unterlagen, eine klare Zielgruppe und eine Präsentation, die Lage, Substanz und Potenzial nachvollziehbar macht.',
+      lede: 'Ein Haus ist selten nur ein Objekt – meist steckt ein halbes Leben darin. Wer Grundstück, Bausubstanz und Energiestand sauber belegt, verhandelt aus einer anderen Position.',
       answer:
-        'Für einen erfolgreichen Hausverkauf verbindet Immonation eine Vor-Ort-Bewertung mit Verkaufsstrategie, professioneller Präsentation, qualifizierten Besichtigungen und einer verlässlichen Begleitung bis zum Notartermin.',
-      highlights: [
-        'Vor-Ort-Bewertung',
-        'Unterlagen- und Zielgruppencheck',
-        'Video und 360°-Rundgang',
-      ],
+        'Beim Hausverkauf zählt die Vorbereitung: Wir klären Wert und Unterlagen, ordnen Energiestandard und Grundstück ein und sprechen Familien mit einer überzeugenden, realistischen Präsentation an.',
+      highlights: ['Bodenwert und Grundstück prüfen', 'Energiezustand ehrlich einordnen', 'Familien und Finanzierung qualifizieren'],
       sections: [
-        {
-          heading: 'Wert und Verkaufsziel zuerst klären',
-          body: 'Grundstück, Baujahr, Modernisierungen, Energiezustand und Mikrolage prägen den realistischen Marktwert. Wir ordnen diese Faktoren ein und stimmen Preisstrategie, Zeitplan und gewünschte Diskretion mit Ihnen ab.',
-        },
-        {
-          heading: 'Das Haus vollständig vorbereiten',
-          body: 'Grundbuchauszug, Grundrisse, Wohnflächenberechnung und Energieausweis schaffen Vertrauen. Fehlende Unterlagen identifizieren wir früh, damit Rückfragen den Verkauf später nicht ausbremsen.',
-        },
-        {
-          heading: 'Passende Käufer statt Besichtigungstourismus',
-          body: 'Professionelle Fotos, Video und 360°-Rundgang vermitteln einen realistischen Eindruck. Interessenten werden vor dem Vor-Ort-Termin nach Bedarf, Zeitplan und Finanzierung eingeordnet.',
-        },
+        { heading: 'Das Grundstück ist ein wesentlicher Werttreiber', body: 'Bodenrichtwert, Grundstücksgrenzen und Zuschnitt prägen den Verkaufspreis erheblich. Wir ordnen sie gemeinsam mit Lage und Bausubstanz ein, damit Sie Ihren Verhandlungsspielraum kennen.' },
+        { heading: 'Energiestandard und Flächen belastbar belegen', body: 'Heizungsalter, Dämmung und Energieausweis sind zentrale Käuferfragen. Bei Anbauten oder Ausbauten sorgt eine aktuelle Wohn- und Nutzflächenberechnung für Klarheit und reduziert Haftungsrisiken.' },
+        { heading: 'Familien gezielt und verlässlich ansprechen', body: 'Familien kaufen emotional und finanzieren oft eng. Video, 360°-Rundgang und eine Bonitätsprüfung vor der Besichtigung schaffen einen klaren Ablauf bis zum Notartermin.' },
       ],
-      faq: [
-        {
-          question: 'Wann ist der richtige Zeitpunkt, ein Haus zu verkaufen?',
-          answer:
-            'Der richtige Zeitpunkt hängt von Ihrem Ziel, dem Zustand des Hauses und der lokalen Nachfrage ab. Eine Bewertung und ein realistischer Zeitplan sind deshalb der sinnvollste erste Schritt.',
-        },
-        {
-          question: 'Welche Unterlagen brauche ich für den Hausverkauf?',
-          answer:
-            'Typisch sind Grundbuchauszug, Flurkarte, Grundrisse, Wohnflächenberechnung, Energieausweis und Nachweise zu Modernisierungen. Fehlende Unterlagen können strukturiert nachbeschafft werden.',
-        },
-        {
-          question: 'Wie werden Besichtigungen organisiert?',
-          answer:
-            'Interessenten erhalten zunächst aussagekräftige Informationen und werden qualifiziert. Vor-Ort-Termine finden anschließend koordiniert und mit einem festen Ansprechpartner statt.',
-        },
-      ],
+      documents: ['Grundbuchauszug', 'Flurkarte oder amtlicher Lageplan', 'Energieausweis', 'Baupläne und Baubeschreibung', 'Wohn- und Nutzflächenberechnung', 'Nachweise über Modernisierungen', 'Grundsteuerbescheid', 'Gegebenenfalls Baulastenauskunft'],
       serviceType: 'Hausverkauf',
     },
     {
       locale: 'de',
       slug: 'wohnung',
       translationKey: 'sell-apartment',
-      title: 'Wohnung verkaufen in der Region Nürnberg',
+      title: 'Eigentumswohnung verkaufen in Nürnberg, Fürth, Erlangen & Zirndorf',
       description:
-        'Eigentumswohnung verkaufen: Bewertung, WEG-Unterlagen, Zielgruppenstrategie und professionelle Vermarktung durch Immonation.',
+        'Eigentumswohnung verkaufen in Nürnberg, Fürth, Erlangen und Zirndorf: WEG-Unterlagen, Wohnfläche und geprüfte Käufer.',
       eyebrow: 'Wohnungsverkauf',
-      lede: 'Bei einer Eigentumswohnung entscheiden nicht nur Lage und Ausstattung. Auch Hausgeld, Rücklagen, Teilungserklärung und Zustand der Gemeinschaft beeinflussen Nachfrage und Finanzierung.',
+      lede: 'Beim Wohnungsverkauf entscheidet nicht nur die Wohnung, sondern die Eigentümergemeinschaft dahinter. Käufer und Banken prüfen Protokolle und Rücklage genauso genau wie das Bad.',
       answer:
-        'Immonation bereitet den Wohnungsverkauf so vor, dass Eigennutzer und Kapitalanleger die Wohnung, das Gebäude und die wirtschaftlichen Rahmenbedingungen verlässlich beurteilen können.',
-      highlights: [
-        'WEG-Unterlagen prüfen',
-        'Eigennutzer oder Kapitalanleger',
-        'Strukturierte Käuferqualifizierung',
-      ],
+        'Wir bereiten Wohnung und WEG transparent auf, prüfen Flächen und richten die Strategie bewusst auf Eigennutzer oder Kapitalanleger aus – je nachdem, ob die Wohnung frei oder vermietet ist.',
+      highlights: ['WEG-Unterlagen vollständig aufbereiten', 'Wohnfläche belastbar prüfen', 'Eigennutzer oder Anleger gezielt ansprechen'],
       sections: [
-        {
-          heading: 'Wohnung und Gemeinschaft gemeinsam betrachten',
-          body: 'Neben Wohnfläche, Schnitt und Ausstattung prüfen Käufer Hausgeld, Rücklagen, Protokolle und geplante Maßnahmen. Eine vollständige Aufbereitung verhindert Unsicherheit und unnötige Preisabschläge.',
-        },
-        {
-          heading: 'Die passende Zielgruppe ansprechen',
-          body: 'Freie Wohnungen und Wohnungen mit bestehendem Mietverhältnis brauchen unterschiedliche Geschichten. Wir richten Exposé, Bildsprache und Ansprache danach aus, ob Eigennutzer oder Kapitalanleger im Mittelpunkt stehen.',
-        },
-        {
-          heading: 'Finanzierbarkeit früh mitdenken',
-          body: 'Banken benötigen neben Objektunterlagen auch Informationen zur Eigentümergemeinschaft. Wir bündeln die relevanten Unterlagen und koordinieren Rückfragen bis zur Kaufvertragsvorbereitung.',
-        },
+        { heading: 'Die WEG verkauft mit', body: 'Teilungserklärung, Protokolle, Hausgeld und Instandhaltungsrücklage beeinflussen den Preis. Eine gesunde Rücklage ist ein Argument; anstehende Sonderumlagen sollten vor der Vermarktung klar sein.' },
+        { heading: 'Fläche und Unterlagen verlässlich machen', body: 'Gerade bei Dachgeschoss- und Maisonettewohnungen können die Angaben der Teilungserklärung von der tatsächlichen Wohnfläche abweichen. Eine aktuelle Berechnung schützt vor Unsicherheit und Haftung.' },
+        { heading: 'Zielgruppe und Vermietung früh entscheiden', body: 'Selbstnutzer kaufen Wohngefühl, Kapitalanleger Rendite. Eine vermietete Wohnung ist für Anleger oft besonders interessant, während freie Wohnungen andere Käufer ansprechen. Das bestimmt Inszenierung und Preisstrategie.' },
       ],
-      faq: [
-        {
-          question: 'Kann ich eine Wohnung mit bestehendem Mietverhältnis verkaufen?',
-          answer:
-            'Ja. Mietvertrag, Miethöhe, Nebenkosten und weitere wirtschaftliche Daten werden transparent aufbereitet und die Vermarktung auf passende Kapitalanleger ausgerichtet.',
-        },
-        {
-          question: 'Welche WEG-Unterlagen sind wichtig?',
-          answer:
-            'Dazu gehören insbesondere Teilungserklärung, Wirtschaftsplan, Hausgeldabrechnung, Rücklagenstand und Protokolle der Eigentümerversammlungen.',
-        },
-        {
-          question: 'Muss die Wohnung vor dem Verkauf renoviert werden?',
-          answer:
-            'Nicht automatisch. Ob Maßnahmen sinnvoll sind, hängt von Zustand, Zielgruppe und erwartbarem Mehrerlös ab. Diese Abwägung gehört in die Verkaufsstrategie.',
-        },
-      ],
+      documents: ['Grundbuchauszug', 'Teilungserklärung und Aufteilungsplan', 'Protokolle der Eigentümerversammlungen der letzten drei Jahre', 'Aktuelle Hausgeldabrechnung', 'Wirtschaftsplan', 'Stand der Instandhaltungsrücklage', 'Energieausweis', 'Wohnflächenberechnung und Grundriss', 'Gegebenenfalls Mietvertrag'],
       serviceType: 'Wohnungsverkauf',
     },
     {
       locale: 'de',
       slug: 'grundstueck',
       translationKey: 'sell-land',
-      title: 'Grundstück verkaufen in der Region Nürnberg',
+      title: 'Grundstück verkaufen in Nürnberg, Fürth, Erlangen & Zirndorf',
       description:
-        'Grundstücksverkauf mit Prüfung von Baurecht, Erschließung, Nutzungspotenzial und passender Käuferansprache.',
+        'Grundstück verkaufen in Nürnberg, Fürth, Erlangen und Zirndorf: Baurecht prüfen, Bodenrichtwert einordnen und passende Käufer ansprechen.',
       eyebrow: 'Grundstücksverkauf',
-      lede: 'Der Wert eines Grundstücks entsteht aus Lage und nutzbarer Perspektive. Baurecht, Zuschnitt, Erschließung und mögliche Teilbarkeit müssen verständlich dokumentiert sein.',
+      lede: 'Bei Grundstücken verkaufen Sie kein Gebäude, sondern eine Möglichkeit. Was darauf gebaut werden darf, entscheidet über den Preis – und genau das wissen viele Eigentümer nicht genau.',
       answer:
-        'Immonation bereitet Grundstücke für private Bauherren, Investoren oder Projektentwickler nachvollziehbar auf und stimmt die Vermarktung auf das tatsächlich belegbare Nutzungspotenzial ab.',
-      highlights: [
-        'Baurecht einordnen',
-        'Nutzungspotenzial erklären',
-        'Zielgruppengerechte Vermarktung',
-      ],
+        'Wir klären Baurecht, Bodenrichtwert, Erschließung und Teilbarkeit und bereiten das tatsächliche Potenzial so auf, dass private Bauherren oder professionelle Käufer belastbar entscheiden können.',
+      highlights: ['Baurecht und Bebauungspotenzial prüfen', 'Bodenrichtwert richtig einordnen', 'Teilung und Käuferzielgruppe bewerten'],
       sections: [
-        {
-          heading: 'Bebaubarkeit belastbar einordnen',
-          body: 'Bebauungsplan, § 34 BauGB, Baulasten und Erschließung können den Wert stärker beeinflussen als die reine Fläche. Offene Punkte werden benannt, statt mit unbelegten Möglichkeiten zu werben.',
-        },
-        {
-          heading: 'Unterlagen für schnelle Entscheidungen bündeln',
-          body: 'Flurkarte, Grundbuch, Auskünfte und vorhandene Planungen bilden die Grundlage. Eine klare Unterlagenstruktur erleichtert Kaufinteressenten und finanzierenden Banken die Prüfung.',
-        },
-        {
-          heading: 'Die richtige Käufergruppe wählen',
-          body: 'Je nach Größe und Potenzial kommen Selbstnutzer, Bauträger oder langfristige Investoren infrage. Die Ansprache folgt der realistischen Nutzung, nicht einem möglichst großen Verteiler.',
-        },
+        { heading: 'Baurecht bestimmt den Preis', body: 'Bebauungsplan, Geschossflächenzahl und Grundflächenzahl bestimmen, was möglich ist. Ein Grundstück mit Baurecht für zwei Doppelhaushälften ist ein anderes Produkt als eine Gartenfläche.' },
+        { heading: 'Der Bodenrichtwert ist der Startpunkt', body: 'Der amtliche Bodenrichtwert liefert Orientierung, aber nicht den Verkaufspreis. Zuschnitt, Erschließung, Altlasten und tatsächliche Bebaubarkeit können den realen Wert deutlich verändern.' },
+        { heading: 'Professionelle Käufer brauchen belastbare Optionen', body: 'Bauträger rechnen in möglichen Einheiten und Verkaufserlösen. Eine klare Darstellung der Bebauung und die Prüfung einer möglichen Grundstücksteilung schaffen die Grundlage für Verhandlungen auf Augenhöhe.' },
       ],
-      faq: [
-        {
-          question: 'Wie wird der Wert eines Grundstücks bestimmt?',
-          answer:
-            'Bodenrichtwert, Lage, Zuschnitt, Erschließung und tatsächliche Bebaubarkeit werden gemeinsam betrachtet. Der Bodenrichtwert allein ist noch kein belastbarer Verkaufspreis.',
-        },
-        {
-          question: 'Brauche ich vor dem Verkauf eine Bauvoranfrage?',
-          answer:
-            'Nicht immer. Bei unklarem oder besonderem Potenzial kann eine Bauvoranfrage jedoch helfen, Risiken zu reduzieren und die Vermarktung zu präzisieren.',
-        },
-        {
-          question: 'Kann ein großes Grundstück geteilt werden?',
-          answer:
-            'Das hängt von Grundstückszuschnitt, Baurecht, Zufahrt und kommunalen Vorgaben ab. Die Möglichkeit sollte vor einer entsprechenden Werbeaussage geprüft werden.',
-        },
-      ],
+      documents: ['Grundbuchauszug', 'Flurkarte oder amtlicher Lageplan', 'Auszug aus dem Bebauungsplan', 'Bodenrichtwert-Auskunft', 'Erschließungsnachweise', 'Altlastenauskunft', 'Gegebenenfalls Baugenehmigung oder Bauvoranfrage', 'Vermessungsunterlagen'],
       serviceType: 'Grundstücksverkauf',
     },
     {
       locale: 'de',
       slug: 'mehrfamilienhaus',
       translationKey: 'sell-apartment-building',
-      title: 'Mehrfamilienhaus verkaufen in der Region Nürnberg',
+      title: 'Mehrfamilienhaus & Anlageobjekt verkaufen in der Metropolregion Nürnberg',
       description:
-        'Mehrfamilienhaus verkaufen: Mietdaten, Ertrag, Instandhaltung und Entwicklungspotenzial professionell aufbereiten.',
+        'Mehrfamilienhaus oder Anlageobjekt in der Metropolregion Nürnberg verkaufen: Ertragswert, Faktor und diskrete Vermarktung.',
       eyebrow: 'Investmentverkauf',
-      lede: 'Beim Mehrfamilienhaus zählen nachvollziehbare Erträge, saubere Mietunterlagen und ein realistischer Blick auf Instandhaltung und Entwicklung. Käufer prüfen Zahlen und Substanz gleichermaßen.',
+      lede: 'Ein Mehrfamilienhaus wird nicht emotional gekauft, sondern gerechnet. Wer seine Zahlen belastbar aufbereitet, verkauft besser; geschönte Zahlen scheitern in der Due Diligence.',
       answer:
-        'Immonation strukturiert Objekt-, Miet- und Wirtschaftsdaten, definiert eine passende Investorenzielgruppe und führt den Verkauf diskret und dokumentiert bis zum Notartermin.',
-      highlights: [
-        'Miet- und Ertragsdaten',
-        'Diskrete Investorensuche',
-        'Dokumentierter Prüfprozess',
-      ],
+        'Wir strukturieren Miet-, Ertrags- und Objektdaten, zeigen Potenziale realistisch und sprechen auf Wunsch diskret die passende Investorenzielgruppe an.',
+      highlights: ['Miet- und Ertragsdaten nachvollziehbar aufbereiten', 'Potenziale realistisch darstellen', 'Diskret an Investoren vermarkten'],
       sections: [
-        {
-          heading: 'Ertrag und Substanz transparent darstellen',
-          body: 'Mieterliste, Mietverträge, Betriebskosten, Modernisierungen und Instandhaltungsbedarf bilden die Entscheidungsgrundlage. Plausible Daten schaffen mehr Vertrauen als pauschale Renditeversprechen.',
-        },
-        {
-          heading: 'Diskretion und Mieterkommunikation planen',
-          body: 'Ein Verkauf kann strukturiert vorbereitet werden, ohne unnötige Unruhe zu erzeugen. Besichtigungen, Unterlagenzugriff und Kommunikation werden auf Objekt und Mietersituation abgestimmt.',
-        },
-        {
-          heading: 'Investoren qualifiziert ansprechen',
-          body: 'Je nach Objekt passen private Bestandshalter, Family Offices oder professionelle Investoren. Wir strukturieren den Datenraum und koordinieren die Prüfung mit ernsthaften Interessenten.',
-        },
+        { heading: 'Die Zahlen sind das Exposé', body: 'Mieterliste, Ist- und Soll-Miete, Faktor, Rendite und Instandhaltungsstau entscheiden, ob Anleger weiterprüfen. Plausible Daten schaffen mehr Vertrauen als pauschale Renditeversprechen.' },
+        { heading: 'Mietpotenzial und Substanz ehrlich zeigen', body: 'Untervermietete Bestände und Denkmalobjekte können für besondere Käufergruppen interessant sein. Entscheidend ist, was rechtlich und praktisch erreichbar ist und welche Instandhaltung absehbar bleibt.' },
+        { heading: 'Diskrete Vermarktung bewusst planen', body: 'Bei vermieteten Objekten kann die Ansprache auf ein aktives Anlegernetzwerk begrenzt werden. So lassen sich Unterlagenzugriff, Besichtigungen und Kommunikation strukturiert und mit möglichst wenig Unruhe organisieren.' },
       ],
-      faq: [
-        {
-          question: 'Welche Kennzahlen sind beim Mehrfamilienhaus wichtig?',
-          answer:
-            'Relevant sind unter anderem Jahresnettokaltmiete, Bewirtschaftungskosten, Leerstand, Mietstruktur und absehbarer Instandhaltungsbedarf. Sie müssen im Kontext von Lage und Substanz gelesen werden.',
-        },
-        {
-          question: 'Erfahren die Mieter vom Verkauf?',
-          answer:
-            'Die Kommunikation wird rechtlich und organisatorisch passend geplant. Ziel ist ein transparenter Ablauf mit möglichst wenig Belastung für Bewohner und Eigentümer.',
-        },
-        {
-          question: 'Ist ein diskreter Verkauf möglich?',
-          answer:
-            'Ja. Bei geeigneten Objekten kann die Ansprache auf vorqualifizierte Investoren begrenzt werden. Reichweite und Diskretion werden dabei bewusst gegeneinander abgewogen.',
-        },
-      ],
+      documents: ['Grundbuchauszug', 'Mieterliste mit Ist-Mieten', 'Mietverträge', 'Nebenkostenabrechnungen der letzten zwei bis drei Jahre', 'Nachweise über Instandhaltung und Sanierungen', 'Energieausweis', 'Grundrisse und Wohnflächenberechnung', 'Versicherungsnachweise', 'Gegebenenfalls Denkmalschutzauflagen'],
       serviceType: 'Verkauf eines Mehrfamilienhauses',
     },
   ],
   en: [
     {
-      locale: 'en',
-      slug: 'house',
-      translationKey: 'sell-house',
-      title: 'Selling a house in the Nuremberg region',
-      description:
-        'Sell your house with an on-site valuation, complete preparation, and premium marketing in Zirndorf, Nuremberg, Fürth, and Erlangen.',
-      eyebrow: 'House sale',
-      lede: 'A house does not sell on its asking price alone. Reliable documents, a clear buyer profile, and a presentation that explains the location, condition, and potential shape the result.',
-      answer:
-        'For a successful house sale, Immonation combines an on-site valuation with sales strategy, professional presentation, qualified viewings, and consistent support through the notary appointment.',
-      highlights: ['On-site valuation', 'Document and buyer review', 'Video and 360° tour'],
+      locale: 'en', slug: 'house', translationKey: 'sell-house', title: 'Selling a house in Nuremberg, Fürth, Erlangen & Zirndorf',
+      description: 'Sell a house in Nuremberg, Fürth, Erlangen, and Zirndorf with a considered valuation, clear documentation, and professional marketing.', eyebrow: 'House sale',
+      lede: 'A house is rarely just a property – it often holds a lifetime of memories. Clear evidence of the plot, building fabric, and energy condition puts you in a stronger negotiating position.',
+      answer: 'House sales benefit from preparation. We clarify value and documents, assess the energy standard and plot, and present the home realistically to qualified family buyers.',
+      highlights: ['Assess plot and land value', 'Position energy condition honestly', 'Qualify family buyers and financing'],
       sections: [
-        {
-          heading: 'Clarify value and objectives first',
-          body: 'Plot, age, improvements, energy condition, and micro-location influence realistic market value. We assess these factors and align pricing, timing, and discretion with your objectives.',
-        },
-        {
-          heading: 'Prepare the property completely',
-          body: 'Land-registry records, floor plans, area calculations, and the energy certificate build confidence. Missing documents are identified early so they do not delay the transaction later.',
-        },
-        {
-          heading: 'Suitable buyers instead of viewing tourism',
-          body: 'Professional photography, video, and a 360° tour provide a realistic first impression. Prospects are qualified by need, timeline, and financing before an on-site appointment.',
-        },
+        { heading: 'The plot is a key value driver', body: 'The standard land value, boundaries, and plot shape have a major impact on the sale price. We assess them alongside location and building condition so you understand your negotiating position.' },
+        { heading: 'Document energy condition and areas reliably', body: 'Heating age, insulation, and the energy certificate are central buyer questions. Where there are extensions or conversions, an up-to-date area calculation creates clarity and reduces risk.' },
+        { heading: 'Reach families with a reliable process', body: 'Families often buy emotionally and finance carefully. Video, a 360° tour, and financing checks before viewings create a clear path through to the notary appointment.' },
       ],
-      faq: [
-        {
-          question: 'When is the right time to sell a house?',
-          answer:
-            'The right time depends on your objective, the property condition, and local demand. A valuation and realistic timeline are therefore the most useful starting point.',
-        },
-        {
-          question: 'Which documents are needed?',
-          answer:
-            'Typical documents include land-registry records, cadastral map, floor plans, area calculation, energy certificate, and evidence of improvements.',
-        },
-        {
-          question: 'How are viewings organized?',
-          answer:
-            'Prospects first receive meaningful information and are qualified. On-site appointments are then coordinated with a dedicated contact.',
-        },
-      ],
+      documents: ['Land-registry extract', 'Cadastral map or official site plan', 'Energy certificate', 'Building plans and specification', 'Living and usable area calculation', 'Evidence of improvements', 'Property-tax notice', 'Where applicable, information on registered building burdens'],
       serviceType: 'House sale',
     },
     {
-      locale: 'en',
-      slug: 'apartment',
-      translationKey: 'sell-apartment',
-      title: 'Selling an apartment in the Nuremberg region',
-      description:
-        'Sell an apartment with valuation, condominium documents, buyer strategy, and professional marketing from Immonation.',
-      eyebrow: 'Apartment sale',
-      lede: 'For an apartment, location and finish are only part of the picture. Service charges, reserves, the declaration of division, and the state of the owners’ association also influence demand and financing.',
-      answer:
-        'Immonation prepares the sale so owner-occupiers and investors can reliably assess the apartment, building, and financial framework.',
-      highlights: [
-        'Review association documents',
-        'Owner-occupier or investor',
-        'Structured buyer qualification',
-      ],
+      locale: 'en', slug: 'apartment', translationKey: 'sell-apartment', title: 'Selling a condominium in Nuremberg, Fürth, Erlangen & Zirndorf',
+      description: 'Sell a condominium in Nuremberg, Fürth, Erlangen, and Zirndorf with complete association records, confirmed areas, and qualified buyers.', eyebrow: 'Apartment sale',
+      lede: 'When selling an apartment, the owners’ association matters as much as the home itself. Buyers and their lenders examine minutes and reserves as closely as the bathroom.',
+      answer: 'We prepare both the apartment and association records transparently, confirm areas, and tailor the strategy to owner-occupiers or investors depending on whether the apartment is vacant or let.',
+      highlights: ['Prepare association records completely', 'Confirm the living area', 'Target owner-occupiers or investors'],
       sections: [
-        {
-          heading: 'Assess the apartment and building together',
-          body: 'Alongside area, layout, and finish, buyers examine service charges, reserves, meeting minutes, and planned work. Complete preparation prevents uncertainty and avoidable discounts.',
-        },
-        {
-          heading: 'Address the right buyer group',
-          body: 'Vacant and tenanted apartments require different stories. The brochure, imagery, and language should reflect whether owner-occupiers or investors are the priority.',
-        },
-        {
-          heading: 'Prepare for financing questions',
-          body: 'Banks need information about both the unit and the owners’ association. We organize the relevant documents and coordinate questions through contract preparation.',
-        },
+        { heading: 'The owners’ association sells with the home', body: 'The declaration of division, meeting minutes, service charges, and maintenance reserve all affect the price. A healthy reserve is a selling point; foreseeable special levies should be clear before marketing.' },
+        { heading: 'Make areas and documents reliable', body: 'Especially in top-floor and duplex apartments, the declared area can differ from the actual living area. A current calculation reduces uncertainty and liability risk.' },
+        { heading: 'Choose the buyer group early', body: 'Owner-occupiers buy a lifestyle; investors buy income. A let apartment can be especially attractive to investors, while vacant homes reach a different audience. This determines presentation and pricing.' },
       ],
-      faq: [
-        {
-          question: 'Can I sell a tenanted apartment?',
-          answer:
-            'Yes. The tenancy, rent, service charges, and relevant financial information are prepared transparently for suitable investors.',
-        },
-        {
-          question: 'Which association documents matter?',
-          answer:
-            'Key records include the declaration of division, annual budget, service-charge statement, reserve balance, and owners’ meeting minutes.',
-        },
-        {
-          question: 'Should I renovate before selling?',
-          answer:
-            'Not automatically. The right choice depends on condition, buyer group, cost, and the likely additional value. It belongs in the sales strategy.',
-        },
-      ],
+      documents: ['Land-registry extract', 'Declaration of division and allocation plan', 'Owners’ meeting minutes for the last three years', 'Current service-charge statement', 'Annual budget', 'Maintenance reserve balance', 'Energy certificate', 'Living area calculation and floor plan', 'Where applicable, tenancy agreement'],
       serviceType: 'Apartment sale',
     },
     {
-      locale: 'en',
-      slug: 'land',
-      translationKey: 'sell-land',
-      title: 'Selling land in the Nuremberg region',
-      description:
-        'Sell land with a clear assessment of planning rights, access, development potential, and suitable buyers.',
-      eyebrow: 'Land sale',
-      lede: 'Land value comes from location and usable potential. Planning rights, plot shape, access, utilities, and possible subdivision must be documented clearly.',
-      answer:
-        'Immonation prepares land for private builders, investors, or developers and aligns the marketing with development potential that can actually be substantiated.',
-      highlights: ['Assess planning rights', 'Explain usable potential', 'Targeted buyer approach'],
+      locale: 'en', slug: 'land', translationKey: 'sell-land', title: 'Selling land in Nuremberg, Fürth, Erlangen & Zirndorf',
+      description: 'Sell land in Nuremberg, Fürth, Erlangen, and Zirndorf with a clear assessment of planning rights, standard land value, and suitable buyers.', eyebrow: 'Land sale',
+      lede: 'With land, you are not selling a building but a possibility. What can be built on it determines the price – and many owners do not know that potential in detail.',
+      answer: 'We clarify planning rights, standard land value, access, and subdivision, then present the substantiated potential so private builders and professional buyers can make informed decisions.',
+      highlights: ['Assess planning rights and buildability', 'Put standard land value in context', 'Evaluate subdivision and buyer group'],
       sections: [
-        {
-          heading: 'Assess buildability reliably',
-          body: 'Local plans, surrounding-development rules, registered burdens, and utility status can matter more than surface area alone. Open questions are named rather than marketed as assumptions.',
-        },
-        {
-          heading: 'Bundle documents for faster decisions',
-          body: 'Cadastral plans, title records, official information, and existing concepts form the basis. A clear document structure helps prospects and lenders review the opportunity.',
-        },
-        {
-          heading: 'Select the appropriate buyer group',
-          body: 'Depending on size and potential, buyers may be private builders, developers, or long-term investors. Outreach follows realistic use rather than the largest possible mailing list.',
-        },
+        { heading: 'Planning rights determine the price', body: 'The local plan, floor-area ratio, and site-coverage ratio determine what is possible. Land approved for two semi-detached homes is a different product from garden land.' },
+        { heading: 'The standard land value is a starting point', body: 'The official standard land value provides orientation, not the sale price. Plot shape, access to utilities, contamination, and actual buildability can materially change the value.' },
+        { heading: 'Professional buyers need substantiated options', body: 'Developers calculate potential units and sale proceeds. A clear presentation of buildability and a check of possible subdivision create a sound basis for negotiations.' },
       ],
-      faq: [
-        {
-          question: 'How is land value assessed?',
-          answer:
-            'Standard land value, location, plot shape, utilities, and actual buildability are considered together. The standard land value alone is not a reliable asking price.',
-        },
-        {
-          question: 'Do I need preliminary planning approval?',
-          answer:
-            'Not always. Where potential is unclear or unusual, preliminary approval can reduce uncertainty and sharpen the marketing.',
-        },
-        {
-          question: 'Can a large plot be divided?',
-          answer:
-            'That depends on shape, planning rules, access, and municipal requirements. The option should be checked before it is advertised.',
-        },
-      ],
+      documents: ['Land-registry extract', 'Cadastral map or official site plan', 'Extract from the local development plan', 'Standard land value information', 'Evidence of servicing and utility access', 'Contamination information', 'Where applicable, planning permission or preliminary approval', 'Survey records'],
       serviceType: 'Land sale',
     },
     {
-      locale: 'en',
-      slug: 'apartment-building',
-      translationKey: 'sell-apartment-building',
-      title: 'Selling an apartment building in the Nuremberg region',
-      description:
-        'Sell an apartment building with well-structured tenancy, income, maintenance, and development information.',
-      eyebrow: 'Investment sale',
-      lede: 'Apartment buildings require traceable income, clean tenancy records, and a realistic view of maintenance and development. Investors examine both numbers and fabric.',
-      answer:
-        'Immonation structures property, tenancy, and financial data, defines a suitable investor profile, and manages the sale discreetly through the notary appointment.',
-      highlights: [
-        'Tenancy and income data',
-        'Discreet investor outreach',
-        'Documented review process',
-      ],
+      locale: 'en', slug: 'apartment-building', translationKey: 'sell-apartment-building', title: 'Selling an apartment building or investment property in the Nuremberg metropolitan region',
+      description: 'Sell an apartment building or investment property in the Nuremberg metropolitan region with clear income data, valuation, and discreet marketing.', eyebrow: 'Investment sale',
+      lede: 'An apartment building is purchased on the numbers, not emotion. Owners who prepare them reliably sell better; polished numbers fall apart during due diligence.',
+      answer: 'We structure tenancy, income, and property data, present potential realistically, and, if desired, approach the right investor group discreetly.',
+      highlights: ['Structure tenancy and income data', 'Present potential realistically', 'Market discreetly to investors'],
       sections: [
-        {
-          heading: 'Present income and condition transparently',
-          body: 'Rent roll, leases, operating costs, improvements, and maintenance needs form the decision basis. Plausible records create more confidence than blanket yield promises.',
-        },
-        {
-          heading: 'Plan discretion and tenant communication',
-          body: 'A sale can be prepared without unnecessary disruption. Viewings, document access, and communication are aligned with the property and tenancy situation.',
-        },
-        {
-          heading: 'Approach qualified investors',
-          body: 'Depending on the asset, private owners, family offices, or professional investors may fit. We structure the information and coordinate due diligence with serious parties.',
-        },
+        { heading: 'The numbers are the brochure', body: 'Rent roll, actual and potential rent, multiplier, yield, and maintenance backlog determine whether investors continue their review. Plausible records build more confidence than broad yield promises.' },
+        { heading: 'Show rental potential and condition honestly', body: 'Under-rented stock and listed buildings can appeal to specific buyers. The essential question is what is legally and practically achievable and what maintenance remains foreseeable.' },
+        { heading: 'Plan discreet marketing deliberately', body: 'For tenanted buildings, outreach can be limited to an active investor network. This gives a controlled process for document access, viewings, and communication with as little disruption as possible.' },
       ],
-      faq: [
-        {
-          question: 'Which figures matter for an apartment building?',
-          answer:
-            'Relevant figures include annual net rent, operating costs, vacancy, tenancy structure, and expected maintenance. They must be read in the context of location and condition.',
-        },
-        {
-          question: 'Will tenants be informed about the sale?',
-          answer:
-            'Communication is planned to fit legal and practical requirements, with as little disruption as possible for residents and the owner.',
-        },
-        {
-          question: 'Is a discreet sale possible?',
-          answer:
-            'Yes. Where suitable, outreach can be limited to pre-qualified investors. Reach and discretion are balanced deliberately.',
-        },
-      ],
+      documents: ['Land-registry extract', 'Rent roll with current rents', 'Tenancy agreements', 'Operating-cost statements for the last two to three years', 'Evidence of maintenance and refurbishment', 'Energy certificate', 'Floor plans and living area calculation', 'Insurance records', 'Where applicable, listed-building requirements'],
       serviceType: 'Apartment-building sale',
     },
   ],
@@ -427,4 +179,21 @@ export function getSellerGuideAlternates(guide: SellerGuide) {
     if (match) paths[locale] = match.slug
   }
   return paths
+}
+
+/** Maps a seller guide to its page-level FAQ profile key. */
+export function getSellerGuideFaqPageKey(
+  guide: SellerGuide,
+): 'sell/haus' | 'sell/wohnung' | 'sell/land' | 'sell/mehrfamilienhaus' {
+  switch (guide.translationKey) {
+    case 'sell-apartment':
+      return 'sell/wohnung'
+    case 'sell-land':
+      return 'sell/land'
+    case 'sell-apartment-building':
+      return 'sell/mehrfamilienhaus'
+    case 'sell-house':
+    default:
+      return 'sell/haus'
+  }
 }
