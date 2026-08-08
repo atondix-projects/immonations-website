@@ -10,7 +10,7 @@ import { JsonLd } from '@/components/site/json-ld'
 import { organization, website } from '@/lib/seo/jsonld'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
-import { PrototypeCookieNotice } from '@/components/site/prototype-cookie-notice'
+import { CookieNotice } from '@/components/site/consent/cookie-notice'
 import '../globals.css'
 
 const jost = Jost({
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <SiteFooter />
-          <PrototypeCookieNotice />
+          <CookieNotice />
         </NextIntlClientProvider>
       </body>
     </html>
