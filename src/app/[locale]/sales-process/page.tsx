@@ -4,18 +4,20 @@ import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import type { SalesProcessStep } from '@/components/site/home/process-timeline'
+import { FaqHubLink } from '@/components/site/faq-category-nav'
 import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
+import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
+import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, howTo, service as serviceJsonLd } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
 
 type OwnerItem = { title: string; text: string }
-type FaqItem = { question: string; answer: string }
 
 export const dynamic = 'force-static'
 
@@ -54,10 +56,11 @@ export default async function SalesProcessPage({
   setRequestLocale(locale)
 
   const t = await getTranslations('SalesProcess')
+  const faqT = await getTranslations('FaqPage')
   const nav = await getTranslations('Nav')
   const steps = t.raw('steps') as SalesProcessStep[]
   const ownerItems = t.raw('owner.items') as OwnerItem[]
-  const faqItems = t.raw('faq.items') as FaqItem[]
+  const faqItems = toFaqSectionItems(selectFaqsForPage(locale, 'sales-process'))
   const pageUrl = `${SITE.url}/${locale}${localizePath('/sales-process', locale)}`
 
   return (
@@ -268,31 +271,11 @@ export default async function SalesProcessPage({
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
-        <div className="mx-auto grid w-full max-w-[1240px] gap-9 px-6 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16 lg:px-10">
-          <h2 className="font-serif text-3xl leading-tight font-semibold text-balance md:text-[40px]">
-            {t('faq.title')}
-          </h2>
-          <div className="divide-border border-border divide-y border-y">
-            {faqItems.map((item) => (
-              <details key={item.question} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-lg font-semibold marker:content-none">
-                  <span>{item.question}</span>
-                  <span
-                    className="text-primary mt-1 text-xl leading-none transition-transform group-open:rotate-45"
-                    aria-hidden="true"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="text-muted-foreground max-w-[76ch] pt-4 pr-10 text-[15px] leading-[1.7] text-pretty">
-                  {item.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection
+        title={t('faq.title')}
+        items={faqItems}
+        footer={<FaqHubLink label={faqT('viewAll')} />}
+      />
 
       <CtaBand
         title={t('cta.title')}

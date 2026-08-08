@@ -3,6 +3,7 @@ import { Check } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { FaqHubLink } from '@/components/site/faq-category-nav'
 import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
@@ -12,8 +13,10 @@ import { routing } from '@/i18n/routing'
 import {
   getSellerGuide,
   getSellerGuideAlternates,
+  getSellerGuideFaqPageKey,
   listAllSellerGuides,
 } from '@/lib/content/seller-guides'
+import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -69,8 +72,12 @@ export default async function SellerGuidePage({
 
   const nav = await getTranslations('Nav')
   const t = await getTranslations('SellerGuidePage')
+  const faqT = await getTranslations('FaqPage')
   const detailPath = localizePath('/sell/[slug]', locale).replace('[slug]', slug)
   const url = `${SITE.url}/${locale}${detailPath}`
+  const faqItems = toFaqSectionItems(
+    selectFaqsForPage(locale, getSellerGuideFaqPageKey(guide)),
+  )
 
   return (
     <article className="bg-background">
@@ -89,7 +96,7 @@ export default async function SellerGuidePage({
             serviceType: guide.serviceType,
             areaServed: t('areaServed'),
           }),
-          faqPage(guide.faq),
+          faqPage(faqItems),
         ]}
       />
 
@@ -152,7 +159,32 @@ export default async function SellerGuidePage({
         </div>
       </section>
 
-      <FaqSection title={t('faqTitle')} items={guide.faq} />
+      <section className="border-border border-t py-16 md:py-20">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">
+          <div>
+            <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
+              {t('documentsEyebrow')}
+            </p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-balance">
+              {t('documentsTitle')}
+            </h2>
+          </div>
+          <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+            {guide.documents.map((document) => (
+              <li key={document} className="flex items-start gap-3 text-sm leading-6">
+                <Check className="text-primary mt-1 size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                <span>{document}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <FaqSection
+        title={t('faqTitle')}
+        items={faqItems}
+        footer={<FaqHubLink label={faqT('viewAll')} />}
+      />
       <CtaBand
         title={t('cta.title')}
         text={t('cta.text')}

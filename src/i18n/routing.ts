@@ -30,6 +30,10 @@ export const routing = defineRouting({
       de: '/immobilie-verkaufen/[slug]',
       en: '/sell-property/[slug]',
     },
+    '/floor-plans': {
+      de: '/leistungen/wohnflaechenberechnung-grundrisse',
+      en: '/services/floor-plans-and-living-area',
+    },
     '/locations': {
       de: '/immobilienmakler-region',
       en: '/real-estate-agent-locations',
@@ -63,8 +67,8 @@ export const routing = defineRouting({
       en: '/property-valuation/thank-you',
     },
     '/faq': {
-      de: '/faq',
-      en: '/faq',
+      de: '/ressourcen/faq',
+      en: '/resources/faq',
     },
     '/imprint': {
       de: '/impressum',
@@ -77,6 +81,10 @@ export const routing = defineRouting({
     '/terms': {
       de: '/agb',
       en: '/terms',
+    },
+    '/withdrawal': {
+      de: '/widerruf',
+      en: '/withdrawal',
     },
     '/careers': {
       de: '/karriere',

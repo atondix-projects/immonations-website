@@ -46,7 +46,7 @@ export default async function SellerHubPage({ params }: { params: Promise<{ loca
 
   const t = await getTranslations('SellerHubPage')
   const nav = await getTranslations('Nav')
-  const guides = listSellerGuides(locale).filter((guide) => guide.translationKey !== 'sell-land')
+  const guides = listSellerGuides(locale)
   const pageUrl = `${SITE.url}/${locale}${localizePath('/sell', locale)}`
 
   return (

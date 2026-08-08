@@ -32,6 +32,8 @@
       "sellingDesc": "An actively managed sale through to the notary.",
       "virtualTour": "Virtual viewing",
       "virtualTourDesc": "360° tours: view digitally, buy seriously.",
+      "floorPlans": "Floor plans & living area",
+      "floorPlansDesc": "Lender-ready plans, surveyed by our in-house engineer.",
       "references": "Reference properties",
       "referencesDesc": "15 selected properties from our region.",
       "buying": "Buy a property",
@@ -67,11 +69,11 @@
   "AboutPage": {
     "metadata": {
       "title": "About Immonation",
-      "description": "Learn how Immonation GmbH supports owners and buyers in Zirndorf, Nuremberg, F\u00fcrth, and Erlangen."
+      "description": "Learn how Immonation GmbH supports owners and buyers in Zirndorf, Nuremberg, Fürth, and Erlangen."
     },
     "eyebrow": "Immonation GmbH",
     "title": "Real-estate advisory with local roots and digital reach.",
-    "lede": "Immonation supports owners, buyers, and investors in Zirndorf, Nuremberg, F\u00fcrth, Erlangen, and the surrounding region with valuation, marketing, and personal advisory.",
+    "lede": "Immonation supports owners, buyers, and investors in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region with valuation, marketing, and personal advisory.",
     "body": "Our standard is a transparent process with defensible numbers, clear communication, and marketing that does more than place a standard listing.",
     "values": {
       "items": [
@@ -81,7 +83,7 @@
         },
         {
           "title": "Active marketing",
-          "text": "Video, 360-degree tours, qualified buyer demand, and clear expos\u00e9s help both sides make better decisions."
+          "text": "Video, 360-degree tours, qualified buyer demand, and clear exposés help both sides make better decisions."
         },
         {
           "title": "Personal guidance",
@@ -138,14 +140,17 @@
     "success": "The demonstration is complete. No message was submitted.",
     "localOnly": "No storage, email, or data transfer in this frontend prototype."
   },
-  "PrototypeCookie": {
+  "CookieConsent": {
     "label": "Cookie notice",
-    "prototype": "Visual prototype",
     "title": "Privacy, explained clearly.",
-    "text": "This preview demonstrates the future consent interface. No preferences are stored and no optional services are activated.",
+    "text": "Necessary functions keep this website usable. Selecting “Allow all” additionally loads external media such as the 360° tour directly, which transfers data to the respective provider.",
     "accept": "Allow all",
     "necessary": "Necessary only",
-    "note": "Both buttons only close this local preview."
+    "note": "Your choice is stored locally in this browser. Without consent, external media stays disabled and can be enabled individually."
+  },
+  "VideoDialog": {
+    "play": "Play video",
+    "close": "Close video"
   },
   "ValuationPage": {
     "metadata": {
@@ -200,31 +205,13 @@
       ]
     },
     "stats": [
-      { "value": "4.9 ★", "label": "Google rating across 220+ reviews" },
+      { "value": "300+", "label": "reviews across 10 platforms" },
       { "value": "60+", "label": "property sales per year" },
       { "value": "8,000+", "label": "registered search clients" },
       { "value": "360°", "label": "tour for every listing" }
     ],
     "faq": {
-      "title": "Common questions about the valuation",
-      "items": [
-        {
-          "question": "What does the property valuation cost?",
-          "answer": "For prospective sellers, the valuation is free and non-binding. Formal appraisals for inheritance or tax purposes are billed transparently by effort."
-        },
-        {
-          "question": "How long does the valuation take?",
-          "answer": "From inquiry to written result typically takes a few days to two weeks, depending on scheduling and documents."
-        },
-        {
-          "question": "Which documents are needed?",
-          "answer": "A floor plan, living-space calculation, energy certificate, and land-register extract help. Missing documents can be obtained together."
-        },
-        {
-          "question": "Am I obligated to anything after the valuation?",
-          "answer": "No. The valuation is a basis for your decision — whether and when you sell is entirely up to you."
-        }
-      ]
+      "title": "Common questions about the valuation"
     },
     "cta": {
       "title": "Start your free valuation now",
@@ -293,46 +280,23 @@
   },
   "FaqPage": {
     "metadata": {
-      "title": "Frequently asked questions (FAQ)",
-      "description": "Answers to the most common questions about selling, valuation, commission, timelines, and process at Immonation GmbH."
+      "title": "Frequently asked questions about selling property | Immonation Nuremberg",
+      "description": "Commission, process, documents, timelines, taxes: the most important questions about selling property in Nuremberg, Fürth, Erlangen & Zirndorf — answered clearly by Immonation."
     },
-    "eyebrow": "FAQ",
-    "title": "Common questions, clearly answered",
-    "lede": "Costs, timelines, process, documents: the questions owners and buyers ask us most — answered in a few sentences.",
-    "items": [
-      {
-        "question": "What does the property valuation cost?",
-        "answer": "The valuation is free and non-binding for prospective sellers — including an on-site assessment and a written result."
-      },
-      {
-        "question": "How long does a property sale take?",
-        "answer": "Typically 6 to 12 weeks from marketing to the notary appointment — depending on the property, pricing strategy, and demand."
-      },
-      {
-        "question": "Who pays the broker commission?",
-        "answer": "The commission is split between seller and buyer depending on the property and constellation. The exact rate is disclosed transparently in the exposé and before engagement."
-      },
-      {
-        "question": "Which documents do I need to sell?",
-        "answer": "Land-register extract, floor plan, living-space calculation, energy certificate, and for apartments the declaration of division. We obtain missing documents together."
-      },
-      {
-        "question": "What does the 360° tour add?",
-        "answer": "Prospects view digitally first — only serious buyers show up in person. That saves appointments and protects your privacy."
-      },
-      {
-        "question": "Which region does Immonation serve?",
-        "answer": "We broker properties in Zirndorf, Nuremberg, Fürth, Erlangen, and within roughly 60 km of our office in Zirndorf."
-      },
-      {
-        "question": "Can I sell a property with an existing tenancy?",
-        "answer": "Yes. We market properties with an existing tenancy specifically to investors — including preparation of the relevant contractual and yield data."
-      },
-      {
-        "question": "Does Immonation also help with financing?",
-        "answer": "Yes. Together with our financing partner Dr. Klein, we verify buyers' financing and advise buyers on conditions."
-      }
-    ],
+    "eyebrow": "Resources",
+    "title": "Frequently asked questions about selling property",
+    "lede": "Costs, timelines, process, documents, valuation, and tax: the questions owners and buyers ask us most — answered in a few sentences.",
+    "categoryNavLabel": "FAQ categories",
+    "viewAll": "See all questions",
+    "categories": {
+      "broker-costs": "Agents & costs",
+      "sales-process": "The sales process",
+      "documents-financing": "Documents & financing",
+      "valuation-price": "Valuation & price",
+      "tax-law": "Tax & legal",
+      "buyers": "For buyers",
+      "about": "About Immonation"
+    },
     "cta": {
       "title": "Didn't find your question?",
       "text": "Call us or start with a free valuation — we respond within one business day.",
@@ -439,45 +403,162 @@
   },
   "LegalTerms": {
     "metadata": {
-      "title": "Terms and conditions",
-      "description": "General terms and conditions of Immonation GmbH for brokerage services."
+      "title": "Terms and conditions (AGB)",
+      "description": "General terms and conditions of Immonation GmbH for brokerage services. As of July 2026. The German version is authoritative."
     },
     "eyebrow": "Legal",
     "title": "Terms and conditions",
-    "lede": "The basis of our brokerage services. The German version is authoritative.",
+    "lede": "Immonation GmbH · Nürnberger Straße 18 · 90513 Zirndorf · As of July 2026. The German version is authoritative.",
     "sections": [
       {
-        "heading": "§ 1 Scope",
+        "heading": "§ 1 Scope and contracting parties",
         "paragraphs": [
-          "These general terms and conditions apply to all brokerage services of Immonation GmbH toward consumers and businesses. [Full text to be adopted from immonationgmbh.de and reviewed before launch]"
+          "(1) These terms and conditions apply to all contracts and services between Immonation GmbH (hereinafter “Immonation”) and its customers — via the website https://www.immonationgmbh.de as well as under any agreement concluded between the parties.",
+          "(2) A customer within the meaning of these terms is the seller or buyer of a property and, in exceptional cases, also the landlord or — subject to the “Bestellerprinzip” — the person seeking a tenancy. The principal contract is the purchase, rental, or lease contract brokered in each case.",
+          "(3) A consumer is any natural person who concludes the contract predominantly for private purposes (Section 13 BGB); an entrepreneur is anyone acting in the exercise of a commercial or independent professional activity (Section 14 BGB).",
+          "(4) Individually agreed terms and property-specific commission disclosures take precedence over these terms (Section 305b BGB)."
         ]
       },
       {
-        "heading": "§ 2 Brokerage services",
+        "heading": "§ 2 Subject matter and formation of the contract",
         "paragraphs": [
-          "The subject of the activity is evidencing the opportunity to conclude a contract, or brokering a contract, concerning real estate. [Details to be added before launch]"
+          "(1) Immonation provides brokerage services in the form of evidencing the opportunity to conclude a contract or brokering such a contract concerning real estate.",
+          "(2) The contract is formed when the customer makes use of Immonation’s services — in particular by retrieving an exposé or further property information, arranging a viewing, or entering into negotiations — after Immonation has appeared recognizably as broker and has quantified its commission claim for the success case.",
+          "(3) Evidencing or brokering a purchase contract for an apartment or single-family house to a consumer requires text form (Section 656a BGB).",
+          "(4) Where the parties have a separate written agreement, its provisions take precedence over these terms in the event of conflict."
         ]
       },
       {
-        "heading": "§ 3 Commission",
+        "heading": "§ 3 Services, offers, and property information",
         "paragraphs": [
-          "The commission claim, its amount, and the split between the parties are disclosed transparently before engagement. [Specific rates to be added before launch]"
+          "(1) The scope of services follows the agreement in each case and includes in particular valuation, preparation of documents, marketing, qualification of prospects, viewings, and support through to the notary appointment.",
+          "(2) Immonation’s offers are non-binding and subject to change. Prior sale, price changes, and error are reserved.",
+          "(3) Property-related information regularly originates from the owner, seller, property manager, authorities, or other third parties. Immonation forwards this carefully but assumes no warranty for accuracy, completeness, or currency unless it knew or ought to have known of the inaccuracy. Checking information material to the customer’s decision is the customer’s responsibility."
         ]
       },
       {
-        "heading": "§ 4 Liability",
+        "heading": "§ 4 Customer cooperation and power of attorney",
         "paragraphs": [
-          "The broker assumes no guarantee for the accuracy of property information provided by the owner. [Liability clauses to be legally reviewed before launch]"
+          "(1) The customer provides the documents and information required for marketing completely and accurately.",
+          "(2) Under the separate agreement, the seller authorizes Immonation in particular to inspect the land register and official files and to request and receive required documents from authorities and the notary. Where separately agreed, this power of attorney continues for up to twelve months after conclusion of the principal contract for the purpose of reviewing the causality of the brokerage activity."
         ]
       },
       {
-        "heading": "§ 5 Final provisions",
+        "heading": "§ 5 Commission claim and amount",
         "paragraphs": [
-          "The law of the Federal Republic of Germany applies. Should individual provisions be invalid, the validity of the remaining provisions remains unaffected."
+          "(1) The commission claim arises as soon as a valid principal contract is concluded as a result of Immonation’s evidencing or brokerage (Section 652 BGB). It is sufficient that Immonation’s activity was a contributing cause of the contract conclusion.",
+          "(2) On a sale, the commission is 3.57% including 19% VAT of the notarized purchase price per contracting party (seller and buyer side), unless otherwise agreed for the specific property.",
+          "(3) If Immonation acts for both sides when a consumer purchases an apartment or single-family house, it may only have commission promised by both parties in equal amounts (Section 656c BGB). If only one party is the instructing party and a consumer, the other party bears at most the same share and only after the first party has evidenced payment (Section 656d BGB).",
+          "(4) Multiple sellers are jointly and severally liable. The commission arrangement becomes effective upon joinder of all owners entered in the land register or upon valid representation.",
+          "(5) The assessment basis is the notarized purchase price. If further valuable consideration is agreed in the course of the transaction — such as assumption of liabilities, buy-out or distance payments, or inventory sold with the property — the assessment basis increases accordingly insofar as those performances form part of the brokered transaction.",
+          "(6) A commission claim already earned does not lapse because the principal contract is later mutually cancelled or reversed; cases of initial invalidity remain unaffected."
+        ]
+      },
+      {
+        "heading": "§ 6 Economically equivalent transactions and related persons",
+        "paragraphs": [
+          "(1) If a closing results from Immonation’s activity, the commission claim remains intact even if the concluded contract differs in content from the evidenced opportunity or if a transaction with essentially the same economic result takes its place, provided that success is based on Immonation’s evidencing or brokerage.",
+          "(2) Conclusion with the customer is equivalent to conclusion by a person so closely connected to the customer personally, familially, legally, or economically that the contract economically benefits the customer. This includes in particular close relatives, companies controlled by or affiliated with the customer, and trustees or nominated purchasers engaged by the customer."
+        ]
+      },
+      {
+        "heading": "§ 7 Due date and duty to notify",
+        "paragraphs": [
+          "(1) Commission is earned and due upon conclusion of the principal contract; for contracts requiring notarization, upon notarization. It is payable after invoicing.",
+          "(2) Immonation is entitled to attend the conclusion of the principal contract. If the customer concludes the contract without Immonation’s involvement, the customer shall promptly inform Immonation of the closing and of the contractual contents relevant to commission calculation."
+        ]
+      },
+      {
+        "heading": "§ 8 Rent and lease",
+        "paragraphs": [
+          "(1) Immonation’s focus is on sales. Brokerage of rental or lease properties occurs only in individual cases and requires a separate agreement.",
+          "(2) For brokering commercial rental or lease contracts, the commission is three net cold rents or net leases plus statutory VAT, unless otherwise agreed for the property. The monthly net cold rent or net lease without operating and ancillary costs is decisive.",
+          "(3) For brokering residential tenancies, the “Bestellerprinzip” (Section 2 WoVermRG) applies: commission from the person seeking a tenancy is charged only if that person previously instructed Immonation in text form and Immonation acts exclusively on that instruction. Otherwise remuneration is agreed solely with the landlord.",
+          "(4) Remuneration agreed with the landlord is two net cold rents plus statutory VAT, unless otherwise agreed for the property."
+        ]
+      },
+      {
+        "heading": "§ 9 Dual agency",
+        "paragraphs": [
+          "In purchase contracts, Immonation may act commissionably for seller and buyer and is obliged to treat both sides fairly. When brokering residential tenancies, it may act commissionably for only one of the two sides. Mandatory statutory rules on the allocation of brokerage costs remain unaffected."
+        ]
+      },
+      {
+        "heading": "§ 10 Prior knowledge",
+        "paragraphs": [
+          "(1) If the customer already knows the evidenced property, the contractual opportunity, or the named contracting party, the customer shall notify Immonation without delay in text form and name the source of that knowledge in a comprehensible manner.",
+          "(2) Prior knowledge does not affect the commission claim if Immonation’s evidencing or brokerage was at least a contributing cause of the contract conclusion. Failure to notify or late notification may be taken into account when assessing causality."
+        ]
+      },
+      {
+        "heading": "§ 11 Ending the cooperation; expenses",
+        "paragraphs": [
+          "(1) The cooperation is not time-limited and may be ended by either side at any time with reasonable notice.",
+          "(2) If the property is marketed unsuccessfully for at least three months and the customer then ends the cooperation, no costs arise for the customer. The three-month period begins with Immonation’s first online listing of the property.",
+          "(3) If the customer ends the cooperation before expiry of those three months, Immonation may claim reimbursement of expenses actually incurred and evidenced up to that point (e.g. insertion, photo and video costs, travel costs), capped at a maximum of 25% of the commission expected upon success. The customer remains entitled to prove that no expenses or substantially lower expenses arose (Section 309 No. 5 BGB).",
+          "(4) If Immonation had no opportunity for online marketing before termination, paragraph 3 applies accordingly."
+        ]
+      },
+      {
+        "heading": "§ 12 Private sale and withdrawal after reservation",
+        "paragraphs": [
+          "(1) If the customer sells the property after instructing Immonation without first giving Immonation an opportunity to market via the intended channels, Immonation may invoice the services performed and evidenced up to that point in accordance with § 11.",
+          "(2) If a prospect evidenced by Immonation has made a binding reservation at the agreed purchase price and the customer then withdraws from the sale or concludes the principal contract with that prospect independently, Immonation is entitled to the agreed commission."
+        ]
+      },
+      {
+        "heading": "§ 13 Continuing commission",
+        "paragraphs": [
+          "If the customer concludes a principal contract within six months after ending the cooperation with a prospect whom Immonation had previously demonstrably named or evidenced, the agreed commission is payable provided the evidencing or brokerage was causal for the contract conclusion."
+        ]
+      },
+      {
+        "heading": "§ 14 Confidentiality and disclosure of information",
+        "paragraphs": [
+          "(1) Offers, exposés, and property documents provided by Immonation are confidential and intended solely for the customer; disclosure to third parties requires prior consent in text form.",
+          "(2) Disclosure remains permitted to the financing bank, notary, lawyer, or tax adviser, and to other advisers directly involved in reviewing or completing the specific transaction, provided they are bound to confidentiality and do not themselves act as purchaser or economic beneficiary.",
+          "(3) If unauthorized disclosure causes a third party to conclude the principal contract, Immonation may claim damages; the damage may in particular consist of lost commission. The customer remains entitled to prove that no damage or a lesser damage arose."
+        ]
+      },
+      {
+        "heading": "§ 15 Liability",
+        "paragraphs": [
+          "(1) Immonation forwards third-party information unchecked; checking it for accuracy and completeness is the customer’s responsibility.",
+          "(2) For slight negligence, Immonation is liable only for breach of material contractual duties and limited to the contract-typical, foreseeable damage. Liability for intent and gross negligence, for damage from injury to life, body, or health, and under the Product Liability Act remains unaffected."
+        ]
+      },
+      {
+        "heading": "§ 16 Right of withdrawal for consumers",
+        "paragraphs": [
+          "If a consumer concludes the contract by distance selling or away from business premises (e.g. at an appointment in the property), the consumer has a statutory right of withdrawal of 14 days (Sections 312b, 312g, 355 BGB). Details follow from the separately provided withdrawal information and model withdrawal form. If the consumer expressly requests performance to begin before the period expires, proportional compensation for value may arise upon withdrawal; complete performance before expiry may cause the right of withdrawal to lapse."
+        ]
+      },
+      {
+        "heading": "§ 17 Limitation",
+        "paragraphs": [
+          "Claims of the customer against Immonation become time-barred after three years unless the law provides a shorter period or a different period for specific claims."
+        ]
+      },
+      {
+        "heading": "§ 18 Data protection",
+        "paragraphs": [
+          "Immonation processes personal data under the GDPR and BDSG. Details are set out in the privacy policy on the website."
+        ]
+      },
+      {
+        "heading": "§ 19 Final provisions",
+        "paragraphs": [
+          "(1) Amendments and supplements require text form.",
+          "(2) If a provision is invalid, the validity of the remaining provisions is unaffected; statutory rules replace the invalid provision.",
+          "(3) German law applies. Place of performance and — where the customer is a merchant, a legal entity under public law, or a special fund under public law — place of jurisdiction is Fürth. Statutory places of jurisdiction apply vis-à-vis consumers."
         ]
       }
     ],
-    "note": "These terms are a structured placeholder and will be replaced with the reviewed version before launch."
+    "relatedLink": {
+      "href": "/withdrawal",
+      "label": "Go to the withdrawal information and model withdrawal form"
+    },
+    "note": "As of July 2026. The German version is authoritative. Individually agreed terms and property-specific commission disclosures take precedence."
   },
   "CareersPage": {
     "metadata": {
@@ -541,28 +622,86 @@
   },
   "DownloadsPage": {
     "metadata": {
-      "title": "Downloads & checklists",
-      "description": "Checklists and documents for owners and buyers: selling checklist, documents checklist, and market reports from Immonation GmbH."
+      "title": "Free documents, REVIER magazine & handbook",
+      "description": "Download handover protocols and tenancy templates after email unlock, read the REVIER magazine online, and request the Immonation handbook by enquiry."
     },
     "eyebrow": "Resources",
-    "title": "Downloads & checklists",
-    "lede": "Practical documents for owners and buyers — compact, clear, and free.",
-    "sections": [
-      {
-        "heading": "In preparation",
-        "paragraphs": [
-          "Selling checklist: every step from decision to notary appointment.",
-          "Documents checklist: which documents you need for a sale or valuation.",
-          "Market reports for Nuremberg, Fürth, Erlangen, and Zirndorf."
-        ]
+    "title": "Free documents. A magazine to read. A handbook on request.",
+    "lede": "Unlock handover and tenancy templates with a short email check. The REVIER magazine is free to read; we send the selling handbook personally by email.",
+    "freedocs": {
+      "eyebrow": "Free documents",
+      "title": "Templates for handover and tenancy — ready to download.",
+      "lede": "Enter your email address. After a successful format check, downloads unlock. Files are not sent to your inbox.",
+      "fileType": "PDF",
+      "disclaimer": "These templates support preparation and do not replace individual legal advice.",
+      "gate": {
+        "eyebrow": "Unlock",
+        "email": "Email address",
+        "emailPlaceholder": "name@example.com",
+        "continue": "Unlock downloads",
+        "invalid": "Please enter a valid email address.",
+        "helper": "Used only to unlock access — we do not email the files to you.",
+        "unlockedHint": "Downloads unlocked. You can save the PDFs now.",
+        "lockedCta": "Enter email"
+      },
+      "categories": {
+        "handover": "Handover",
+        "tenancy": "Tenancy"
+      },
+      "documents": {
+        "house-handover": {
+          "title": "House handover protocol",
+          "description": "Sample protocol for handing over a house on purchase — parties, meters, keys, and condition.",
+          "downloadLabel": "Download PDF"
+        },
+        "apartment-handover": {
+          "title": "Apartment handover protocol",
+          "description": "Sample protocol for apartment handover on purchase — rooms, defects, meter readings, and signatures.",
+          "downloadLabel": "Download PDF"
+        },
+        "tenant-self-disclosure": {
+          "title": "Tenant self-disclosure",
+          "description": "Self-disclosure form for prospective tenants — personal, income, and tenancy details.",
+          "downloadLabel": "Download PDF"
+        },
+        "tenant-self-disclosure-commercial": {
+          "title": "Commercial tenant self-disclosure",
+          "description": "Self-disclosure for commercial prospective tenants — structured company and use details.",
+          "downloadLabel": "Download PDF"
+        },
+        "landlord-confirmation-nuremberg": {
+          "title": "Landlord confirmation Nuremberg",
+          "description": "Wohnungsgeberbestätigung form for registration in Nuremberg.",
+          "downloadLabel": "Download PDF"
+        }
       }
-    ],
-    "note": "The downloads are currently being prepared. Until then, we're happy to send you the checklists personally — a short message is enough.",
-    "cta": {
-      "title": "Request a checklist directly",
-      "text": "Tell us which documents you need — we'll send them by email.",
-      "primaryLabel": "Request documents"
+    },
+    "handbook": {
+      "eyebrow": "Immonation handbook",
+      "title": "A clear guide to a well-prepared property sale.",
+      "text": "The handbook brings together the key steps, documents, and questions before a sale. To keep it current and provide it in the right context, we do not publish it as an open download.",
+      "accessTitle": "Personal delivery rather than a public download",
+      "accessText": "Share your contact details and situation. You will then receive the handbook through a controlled email delivery."
     }
+  },
+  "HandbookRequest": {
+    "eyebrow": "Request the handbook",
+    "title": "Receive the handbook by email",
+    "text": "Your details help us assign the delivery appropriately.",
+    "name": "Name",
+    "email": "Email address",
+    "situation": "Your situation",
+    "situationPlaceholder": "Please select",
+    "situations": [
+      "I am planning to sell",
+      "I am preparing to sell",
+      "I would first like to learn more"
+    ],
+    "consent": "I agree to the processing of my details in accordance with the",
+    "privacyLink": "Privacy Policy",
+    "submit": "Request handbook",
+    "success": "Thank you. Your request has been noted.",
+    "prototypeNote": "Email delivery is not connected in this preview yet. The handbook remains unavailable to the public until controlled delivery is set up."
   },
   "Audience": {
     "sellerCta": "Start your free valuation",
@@ -587,8 +726,8 @@
         "ctaPrimary": "Find a property",
         "ctaSecondary": "Create a search request"
       },
-      "ratingLabel": "Google rating · 220+ reviews",
-      "ratingValue": "4.9 ★★★★★",
+      "ratingLabel": "reviews across 10 platforms",
+      "ratingValue": "300+",
       "imageAlt": "Property marketing by Immonation GmbH",
       "playWithAudio": "Restart with sound"
     },
@@ -599,11 +738,59 @@
     },
     "proof": {
       "eyebrow": "Locally rooted · measurably effective",
+      "trailHint": "Explore references",
+      "exampleLabel": "Example properties",
+      "trailBadges": {
+        "reviews": "Five-star sale",
+        "sales": "Sold reference",
+        "volume": "Investment reference",
+        "search": "Regional demand"
+      },
       "items": [
-        { "value": "4.9 / 5", "label": "Google rating across 220+ reviews" },
+        { "value": "300+", "label": "reviews across 10 platforms" },
         { "value": "60+", "label": "property sales per year" },
         { "value": "€30m", "label": "annual transaction volume" },
         { "value": "8,000+", "label": "registered search clients" }
+      ]
+    },
+    "awards": {
+      "eyebrow": "Awarded & verified",
+      "title": "Confirmed by independent bodies",
+      "text": "Quality can be claimed — or it can be tested. These awards come from business media, research institutes, and review platforms that assessed our work independently.",
+      "sourceLabel": "View the source",
+      "items": [
+        {
+          "id": "faz-top-makler-2026",
+          "title": "TOP Makler 2026",
+          "issuer": "F.A.Z. Institut",
+          "meta": "2026",
+          "note": "Named in the FAZ special supplement of 11 March 2026, in cooperation with QuantiQuest.",
+          "alt": "TOP Makler 2026 seal from the F.A.Z. Institut"
+        },
+        {
+          "id": "capital-makler-kompass-2024",
+          "title": "Top agent Nuremberg, four stars",
+          "issuer": "Capital Makler-Kompass",
+          "meta": "2024",
+          "note": "Assessed by the independent IIB Institut — qualification, process quality, listing, contract, service.",
+          "alt": "Capital seal, top agent Nuremberg 2024"
+        },
+        {
+          "id": "immowelt-business-partner",
+          "title": "immowelt Business Partner",
+          "issuer": "immowelt",
+          "meta": "2024–2026",
+          "note": "Awarded without interruption since 2024, most recently for 2026.",
+          "alt": "immowelt Business Partner seal 2026"
+        },
+        {
+          "id": "deutscher-immobilienpreis-2021",
+          "title": "Deutscher Immobilienpreis, Network category",
+          "issuer": "immowelt",
+          "meta": "2021",
+          "note": "Awarded in the Network category of immowelt's Deutscher Immobilienpreis.",
+          "alt": "Deutscher Immobilienpreis Network 2021 seal"
+        }
       ]
     },
     "process": {
@@ -708,95 +895,123 @@
     },
     "reviews": {
       "eyebrow": "Reviews",
-      "title": "What our clients say",
+      "title": "Selected voices from real sales",
+      "lead": "Immonation maintains a profile on 10 review platforms — more than 300 reviews in total. Every client quote below links to its matching sales reference.",
       "ratingSuffix": "out of 5",
-      "primaryProfiles": [
+      "referenceLink": "View the sales reference",
+      "reviewSource": "Google · {rating} out of 5 stars",
+      "selectionNote": "Each client review is connected to its sales reference. The original Google screenshot appears with the corresponding property.",
+      "headline": {
+        "platform": "Google",
+        "rating": "4.9",
+        "count": "226 reviews",
+        "link": "Read all Google reviews"
+      },
+      "stats": [
+        {
+          "value": "300+",
+          "label": "Reviews in total"
+        },
+        {
+          "value": "10",
+          "label": "Review platforms"
+        },
+        {
+          "value": "5.0",
+          "label": "Top score on 5 platforms"
+        }
+      ],
+      "portalTitle": "Our review profiles",
+      "portalClaim": "300+ reviews across 10 platforms",
+      "portalIntro": "Every profile is publicly accessible. Select a platform to read the original reviews there.",
+      "portalNote": "The total counts each underlying review source once. Profiles marked “aggregate” bundle reviews from other platforms and therefore display the same voices again.",
+      "sourceDirect": "Direct source",
+      "sourceAggregate": "Aggregate",
+      "openProfile": "Open profile",
+      "verifiedProfile": "Verified profile on Maklersieger",
+      "sealAlt": "“Verified agent” seal issued by maklersieger.de for Immonation GmbH",
+      "sealNote": "Independently verified agent profile. The seal is embedded as a local copy — no external tracking.",
+      "asOf": "As of August 2026",
+      "portals": [
         {
           "id": "google",
           "name": "Google",
           "rating": "4.9",
-          "count": "220+ reviews",
-          "link": "Read on Google →"
+          "scale": "/ 5",
+          "basis": "226 reviews",
+          "kind": "direct"
         },
         {
           "id": "trustpilot",
           "name": "Trustpilot",
           "rating": "4.7",
-          "count": "30 reviews",
-          "link": "Read on Trustpilot →"
+          "scale": "/ 5",
+          "basis": "30 reviews",
+          "kind": "direct"
         },
         {
           "id": "immowelt",
           "name": "Immowelt",
           "rating": "4.5",
-          "count": "55 reviews",
-          "link": "Read on Immowelt →"
-        }
-      ],
-      "secondaryTitle": "More review profiles",
-      "asOf": "As of July 2026",
-      "aggregationNote": "Note: Some profiles aggregate reviews from other platforms. Their underlying source basis is therefore stated on each profile.",
-      "screenshots": [
-        {
-          "src": "/images/reviews/google-patric-mago.png",
-          "alt": "Supplied screenshot of a Google review by Patric Mago"
+          "scale": "/ 5",
+          "basis": "55 reviews",
+          "kind": "direct"
         },
-        {
-          "src": "/images/reviews/google-ursula-troeger.png",
-          "alt": "Supplied screenshot of a Google review by Ursula Tröger"
-        },
-        {
-          "src": "/images/reviews/google-customer-review.png",
-          "alt": "Supplied screenshot of a detailed Google client review"
-        }
-      ],
-      "screenshotNote": "Supplied review screenshots shown in the prototype. Platform terms and usage clearance remain a public-release gate.",
-      "secondaryProfiles": [
         {
           "id": "provenexpert",
           "name": "ProvenExpert",
-          "rating": "5.0",
-          "suffix": "out of 5",
+          "rating": "5.00",
+          "scale": "/ 5",
           "basis": "173 reviews · from Google",
-          "link": "Open profile"
-        },
-        {
-          "id": "trustlocal",
-          "name": "Trustlocal",
-          "rating": "9.4",
-          "suffix": "out of 10",
-          "basis": "160 reviews · from 3 sources",
-          "link": "Open profile"
+          "kind": "aggregate"
         },
         {
           "id": "jacasa",
           "name": "Jacasa",
           "rating": "4.8",
-          "suffix": "out of 5",
-          "basis": "271 reviews · from 2 portals",
-          "link": "Open profile"
+          "scale": "/ 5",
+          "basis": "284 reviews · from 2 portals",
+          "kind": "aggregate"
         },
         {
-          "id": "dasoertliche",
-          "name": "Das Örtliche",
+          "id": "werkenntdenbesten",
+          "name": "Wer kennt den Besten",
           "rating": "5.0",
-          "suffix": "out of 5",
-          "basis": "3 reviews · Golocal & 11880",
-          "link": "Open profile"
-        }
-      ],
-      "items": [
-        {
-          "quote": "“From valuation to the notary appointment, everything went faster than expected — and we were kept informed at all times.”",
-          "source": "Google ★★★★★ · House sale, Zirndorf"
+          "scale": "/ 5",
+          "basis": "280 reviews · from several sources",
+          "kind": "aggregate"
         },
         {
-          "quote": "“The 360° tour spared us many unnecessary viewings. Only serious prospects came.”",
-          "source": "Google ★★★★★ · Apartment sale, Nuremberg"
+          "id": "trustlocal",
+          "name": "Trustlocal",
+          "rating": "9.4",
+          "scale": "/ 10",
+          "basis": "160 reviews · from 3 sources",
+          "kind": "aggregate"
         },
         {
-          "quote": "“Professional, always reachable, and honest about pricing. Clear recommendation.”",
-          "source": "Trustpilot ★★★★★ · Sale, Fürth"
+          "id": "kennstdueinen",
+          "name": "KennstDuEinen",
+          "rating": "5.0",
+          "scale": "/ 5",
+          "basis": "3 reviews",
+          "kind": "aggregate"
+        },
+        {
+          "id": "elf880",
+          "name": "11880",
+          "rating": "5.0",
+          "scale": "/ 5",
+          "basis": "4 reviews",
+          "kind": "direct"
+        },
+        {
+          "id": "golocal",
+          "name": "golocal",
+          "rating": "5.0",
+          "scale": "/ 5",
+          "basis": "4 reviews",
+          "kind": "direct"
         }
       ]
     },
@@ -929,10 +1144,10 @@
           "alt": "immowelt Business Partner logo"
         },
         {
-          "id": "rewe",
-          "name": "REWE",
-          "role": "Regional market presence",
-          "alt": "REWE logo"
+          "id": "tsv-zirndorf",
+          "name": "TSV Zirndorf Athletics",
+          "role": "Sponsor of Eni Kuske and Amelie Giese",
+          "alt": "TSV Zirndorf athlete Eni Kuske competing in hurdles"
         }
       ],
       "groupItems": [
@@ -1068,29 +1283,7 @@
       "guides": "View seller guides"
     },
     "faq": {
-      "title": "Frequently asked questions about the property sale process",
-      "items": [
-        {
-          "question": "Which documents are needed to sell a property?",
-          "answer": "The core records include the land register extract, site plan or cadastral map, energy certificate, and key property data and photos. Depending on the property type, floor plans, floor-area calculations, declarations of division, meeting minutes, tenancy records, or a development plan may also be needed. We source missing records through our specialist network, which can also prepare floor plans and area calculations when required."
-        },
-        {
-          "question": "When is the property published?",
-          "answer": "Publication takes place only after property intake, valuation, sales strategy, and professional preparation are complete. The brochure, price, and marketing route are released to the relevant portals and agreed channels after your approval."
-        },
-        {
-          "question": "How are prospective buyers checked?",
-          "answer": "We handle every enquiry, assess seriousness and creditworthiness, clarify financing, and then arrange suitable viewings. This focuses appointments on buyers who genuinely want and are able to purchase the property."
-        },
-        {
-          "question": "What happens after a purchase offer?",
-          "answer": "We review the price and conditions, assess the buyer profile and financing, and negotiate in your interest. We then coordinate preparation of the purchase agreement, the notary office, and notarisation."
-        },
-        {
-          "question": "Does the agent's support end at the notary appointment?",
-          "answer": "No. After notarisation, we organise the handover, document meter readings, and coordinate remaining points. Our support continues through the key handover and beyond."
-        }
-      ]
+      "title": "Frequently asked questions about the property sale process"
     },
     "cta": {
       "title": "Start with a reliable first step",
@@ -1241,6 +1434,144 @@
       }
     ]
   },
+  "FloorPlansPage": {
+    "serviceType": "Measured survey, floor plans, and living-area calculation",
+    "areaServed": "Nuremberg metropolitan region",
+    "metadata": {
+      "title": "Lender-ready floor plans & living-area calculation",
+      "description": "Measured floor plans and a verifiable living-area calculation under the German Living Space Ordinance — surveyed on site by our own in-house engineer. For sales in Nuremberg, Fürth, Erlangen, and Zirndorf."
+    },
+    "hero": {
+      "eyebrow": "Our own in-house engineer",
+      "title": "Lender-ready floor plans and a living area that holds up",
+      "lede": "Old record drawings and sketches rarely survive review by the buyer's bank. Our engineer surveys your property on site, redraws the floor plan with full dimensions, and calculates the living area verifiably — before the first buyer asks."
+    },
+    "answer": "A lender-ready floor plan is a to-scale, fully dimensioned drawing from which every room area can be recalculated independently — paired with a living-area calculation under the German Living Space Ordinance (WoFlV). This is exactly what the buyer's bank reviews before approving a loan. At Immonation an in-house engineer handles it: an on-site survey, a dimensioned redraw, and a verifiable area calculation. Without it, financing stalls — or the price gets renegotiated.",
+    "comparison": {
+      "eyebrow": "The difference in one image",
+      "title": "What a bank accepts — and what it does not",
+      "text": "Both drawings carry the same kind of information: rooms, walls, openings. Only one of them can be checked. The difference is not the care taken in drawing it, but whether every area can be recalculated from the plan itself.",
+      "criteriaLabel": "How to tell them apart",
+      "disclaimer": "Both images are illustrative examples shown to demonstrate the difference. Neither is a client document produced by Immonation.",
+      "accepted": {
+        "badge": "Lender-ready",
+        "title": "To-scale floor plan with full dimensioning",
+        "text": "Every wall, opening, and room is dimensioned. A case handler can recalculate the living area independently, without ever having seen the property.",
+        "alt": "Technical ground-floor plan with continuous dimension chains, room labels, and construction annotations.",
+        "criteria": [
+          "Continuous dimension chains, external and internal",
+          "Scale, storey, and orientation clearly stated",
+          "Room labels and areas legible",
+          "Wall thicknesses, openings, and stairs drawn to scale",
+          "Every area can be recalculated without a site visit"
+        ]
+      },
+      "rejected": {
+        "badge": "Not lender-ready",
+        "title": "Freehand sketch without verifiable dimensions",
+        "text": "The sketch conveys an idea of the layout, nothing more. Without dimensions and scale the living area remains an assertion — for a financing review it is worthless.",
+        "alt": "Hand-drawn floor plan sketch with furniture and room names, but without dimensions or scale.",
+        "criteria": [
+          "No dimension chains, no scale",
+          "Wall thicknesses drawn freehand rather than to scale",
+          "Areas cannot be recalculated",
+          "Furniture instead of construction detail",
+          "Unusable for the credit file and the brochure"
+        ]
+      }
+    },
+    "scope": {
+      "eyebrow": "What is included",
+      "title": "From the on-site survey to a verifiable calculation",
+      "text": "We work from the building, not from paper in the planning file. What comes out of it goes on unchanged into the brochure, the portals, and the credit file.",
+      "items": [
+        {
+          "num": "01",
+          "title": "On-site survey",
+          "text": "Our engineer measures every room personally: lengths, heights, sloping ceilings, bays, and recesses. The basis is the building as built, not as approved."
+        },
+        {
+          "num": "02",
+          "title": "Dimensioned redraw",
+          "text": "The survey becomes a to-scale floor plan for each storey — fully dimensioned, with room labels and areas, delivered digitally and ready to print."
+        },
+        {
+          "num": "03",
+          "title": "Living-area calculation under WoFlV",
+          "text": "Areas are determined under the Living Space Ordinance: sloping ceilings counted proportionally, balconies and terraces at the permitted rate, cellar and ancillary space listed separately."
+        },
+        {
+          "num": "04",
+          "title": "Reconciliation with your documents",
+          "text": "We reconcile the result against the declaration of division, building plans, and purchase contract. If the actual area differs, you learn it before marketing — not during negotiation."
+        }
+      ]
+    },
+    "impact": {
+      "eyebrow": "Effect on the sale",
+      "title": "Why a defensible area governs both price and pace",
+      "items": [
+        {
+          "title": "Financing goes through",
+          "text": "The buyer's bank checks the plan and the area before approving. When both are verifiable, follow-up queries disappear and the time to the notary appointment shortens."
+        },
+        {
+          "title": "You are not liable for wrong square metres",
+          "text": "A living area overstated in the brochure can entitle the buyer to a price reduction after completion. A documented calculation removes the basis for that dispute."
+        },
+        {
+          "title": "No discount for uncertainty",
+          "text": "A buyer who doubts the area prices that doubt into the offer. Evidenced figures take the argument away — the negotiation is about the property, not about the plan."
+        },
+        {
+          "title": "Deviations in apartment sales",
+          "text": "In attic and maisonette apartments in particular, the declaration of division often differs from the actual living area. A current survey settles it early and for all sides."
+        }
+      ]
+    },
+    "related": {
+      "eyebrow": "In context",
+      "title": "One building block in the wider sales process",
+      "text": "The survey and the floor plan come first: they are the basis for valuation, brochure, and financing. Our sales roadmap shows how the remaining steps follow on.",
+      "process": "View the sales process",
+      "guides": "View the selling guides"
+    },
+    "faq": {
+      "title": "Common questions about floor plans and living-area calculation",
+      "items": [
+        {
+          "question": "What is a lender-ready floor plan?",
+          "answer": "A to-scale, fully dimensioned drawing for each storey from which every room area can be recalculated. Together with a living-area calculation under the Living Space Ordinance it forms the basis on which the financing bank determines the mortgage lending value."
+        },
+        {
+          "question": "Why does the bank ask for a floor plan at all?",
+          "answer": "A bank finances the value of the property, not the purchase price. It derives that value from area, layout, and condition. Without a verifiable plan it has no basis — approval is delayed or comes in lower than expected."
+        },
+        {
+          "question": "Is an old record drawing from the planning file enough?",
+          "answer": "Rarely. Planning files show the approved state, not the built one; attic conversions, relocated walls, and extensions are missing. We review existing plans and tell you whether reworking them is sufficient or a new survey is needed."
+        },
+        {
+          "question": "What does the survey by your engineer cost?",
+          "answer": "For owners who commission a valuation from us, the survey is part of the free on-site valuation. You incur no upfront cost, and it commits you to nothing regarding a sale."
+        },
+        {
+          "question": "How is living area calculated under sloping ceilings?",
+          "answer": "Under the Living Space Ordinance, areas count fully from two metres of height, at half between one and two metres, and not at all below that. Balconies and terraces usually count at a quarter. We list these rates separately in the calculation."
+        },
+        {
+          "question": "What happens if the actual area differs?",
+          "answer": "We discuss it before marketing begins. An area corrected downwards is unwelcome but manageable. An overstated area can lead to a price reduction after the sale. We market on evidenced figures only."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Have your area verified before the market does",
+      "text": "The free on-site valuation includes the survey by our engineer. You learn what your property is worth — and whether your documents would survive a financing review.",
+      "primary": "Start the free valuation",
+      "secondary": "Arrange an initial consultation"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER magazine",
     "title": "A look at our work, our principles, and real sale stories.",
@@ -1284,6 +1615,30 @@
     "result": "Your advantage",
     "videoLabel": "Example of a digital property presentation by Immonation",
     "videoFallback": "Your browser cannot play the presentation video.",
+    "tourTitle": "View the 360° tour: detached house in Hagenbüchach",
+    "tourConsentNote": "The tour is only loaded from {provider} once you click. Data is transferred to the provider.",
+    "tourOpenLabel": "Open the tour at {provider}",
+    "tourOpenOverlayLabel": "Open the 360° tour",
+    "tourCloseOverlayLabel": "Close",
+    "tourLoadingLabel": "Loading the tour …",
+    "tourFailedTitle": "The tour cannot be displayed here.",
+    "tourFailedText": "Your browser may be blocking embedded content, or the connection to {provider} failed. You can open the tour directly at the provider.",
+    "aiVisualization": "AI visualisation",
+    "visualizationExamplesLabel": "AI visualisation examples",
+    "visualizationExamples": [
+      {
+        "id": "apartment",
+        "tab": "Apartment",
+        "title": "Apartment, Nuremberg",
+        "description": "Simple images of empty rooms become a furnished sense of place that makes use and proportions easier to understand."
+      },
+      {
+        "id": "property",
+        "tab": "Plot",
+        "title": "Plot, Schwabach",
+        "description": "An early plot and construction view develops into a tangible architectural vision."
+      }
+    ],
     "services": [
       {
         "id": "system",
@@ -1407,21 +1762,21 @@
       },
       {
         "id": "visualisation",
-        "tab": "Visualisation",
-        "kicker": "Making potential clear",
-        "title": "Room and use ideas make potential visible.",
-        "text": "For empty, renovation-ready, or unrealised spaces, visualisations show how rooms could be used and designed, always clearly identified as representations.",
-        "highlight": "Easy to imagine, honest about the current state.",
+        "tab": "AI visualisation",
+        "kicker": "AI-assisted marketing",
+        "title": "Simple source images become a compelling property vision.",
+        "text": "Even when the available images are plain or reveal little potential, we develop clear ideas for rooms and possible uses. Every AI visualisation is explicitly labelled as a possible representation.",
+        "highlight": "From current image to emotional vision.",
         "bullets": [
-          "Virtual home staging for empty rooms",
-          "Visualisation of possible room and use ideas",
-          "Before-and-after context with clear labelling",
-          "Targeted use only where explanation adds value"
+          "AI-assisted home staging for empty rooms",
+          "Enhancement of source images that reveal little potential",
+          "Architecture and use ideas for plots",
+          "Clear labelling as a possible visualisation"
         ],
-        "result": "Prospects understand the potential faster while the property's actual condition remains transparent.",
+        "result": "Prospects understand use, atmosphere, and development potential faster, even when the available imagery does not yet convey what the property could become.",
         "proof": [
-          { "value": "Before", "label": "the documented current condition" },
-          { "value": "Possibility", "label": "an understandable spatial idea" },
+          { "value": "Source image", "label": "the documented current state" },
+          { "value": "AI vision", "label": "potential made emotionally clear" },
           { "value": "Transparent", "label": "clearly marked as a visualisation" }
         ]
       },
@@ -1520,6 +1875,8 @@
     "valuationCta": "Start valuation",
     "processEyebrow": "Preparation & marketing",
     "processTitle": "The decisive steps",
+    "documentsEyebrow": "Checklist",
+    "documentsTitle": "Documents you will need",
     "faqTitle": "Frequently asked questions",
     "cta": {
       "title": "Prepare your sale properly",
@@ -1733,7 +2090,7 @@
         },
         {
           "question": "Can I download checklists directly?",
-          "answer": "Downloads are linked only after content, rights, accessibility, and currency are reviewed. The downloads area shows the current status."
+          "answer": "Yes. The downloads page offers free templates (handover protocols and tenancy forms). Enter a valid email to unlock the PDFs and download them directly — nothing is sent to your inbox."
         },
         {
           "question": "Does a guide replace personal advice?",
@@ -1755,6 +2112,13 @@
     "challenge": "Challenge",
     "approach": "Our approach",
     "result": "Result",
+    "review": {
+      "eyebrow": "Client review for this reference",
+      "title": "What the owner says about working with us",
+      "source": "{rating} out of 5 stars on Google",
+      "screenshotLabel": "Original review",
+      "screenshotNote": "This Google review belongs to this specific sales reference."
+    },
     "prototypeNote": "The figures come from the supplied reference material and are approved for this prototype. Evidence and consent remain required before public release.",
     "allReferences": "View all references",
     "cta": {
@@ -1911,13 +2275,15 @@
       { "value": "60 km", "label": "Advisory radius around Zirndorf" },
       { "value": "6–12", "label": "Weeks typical time on market" },
       { "value": "360°", "label": "Tour for every property" },
-      { "value": "4.9 ★", "label": "Google rating" }
+      { "value": "300+", "label": "reviews across 10 platforms" }
     ],
     "sell": {
       "title": "Selling",
       "valuation": "Property valuation",
       "house": "Sell a house",
-      "apartment": "Sell an apartment"
+      "apartment": "Sell an apartment",
+      "land": "Sell land",
+      "apartmentBuilding": "Sell an apartment building"
     },
     "buy": {
       "title": "Buying",
@@ -1941,6 +2307,58 @@
     "rights": "All rights reserved.",
     "imprint": "Imprint",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "withdrawal": "Withdrawal"
+  },
+  "LegalWithdrawal": {
+    "metadata": {
+      "title": "Right of withdrawal",
+      "description": "Withdrawal information and model withdrawal form of Immonation GmbH for consumers. As of July 2026. The German version is authoritative."
+    },
+    "eyebrow": "Legal",
+    "title": "Withdrawal information",
+    "lede": "For consumers · Immonation GmbH · Nürnberger Straße 18 · 90513 Zirndorf · As of July 2026. The German version is authoritative.",
+    "sections": [
+      {
+        "heading": "Right of withdrawal",
+        "paragraphs": [
+          "You have the right to withdraw from this contract within fourteen days without giving any reason. The withdrawal period is fourteen days from the day of the conclusion of the contract.",
+          "To exercise your right of withdrawal, you must inform us — Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Phone: 0911 212 838 90, Email: info@immonations.de — of your decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or an email). You may use the attached model withdrawal form, but it is not obligatory.",
+          "To meet the withdrawal deadline, it is sufficient for you to send your communication concerning your exercise of the right of withdrawal before the withdrawal period has expired."
+        ]
+      },
+      {
+        "heading": "Effects of withdrawal",
+        "paragraphs": [
+          "If you withdraw from this contract, we shall reimburse to you all payments received from you, including the costs of delivery (with the exception of the supplementary costs resulting from your choice of a type of delivery other than the least expensive type of standard delivery offered by us), without undue delay and in any event not later than fourteen days from the day on which we are informed about your decision to withdraw from this contract. We will carry out such reimbursement using the same means of payment as you used for the initial transaction, unless you have expressly agreed otherwise; in any event, you will not incur any fees as a result of such reimbursement.",
+          "If you requested that the performance of services begin during the withdrawal period, you shall pay us an amount which is in proportion to what has been provided until you have communicated to us your withdrawal from this contract, in comparison with the full coverage of the contract."
+        ]
+      },
+      {
+        "heading": "Early expiry of the right of withdrawal",
+        "paragraphs": [
+          "Your right of withdrawal expires in the case of a contract for the provision of services if we have fully performed the service and began performance only after you gave your express consent and at the same time confirmed your knowledge that you lose your right of withdrawal upon full performance of the contract by us."
+        ]
+      }
+    ],
+    "form": {
+      "title": "Model withdrawal form",
+      "instruction": "(Complete and return this form only if you wish to withdraw from the contract.)",
+      "recipient": "To: Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Email: info@immonations.de",
+      "declaration": "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract for the provision of the following service:",
+      "orderedReceived": "Ordered on (*) / received on (*):",
+      "consumerName": "Name of consumer(s):",
+      "consumerAddress": "Address of consumer(s):",
+      "signature": "Signature of consumer(s) (only if this form is notified on paper)",
+      "date": "Date:",
+      "footnote": "(*) Delete as appropriate.",
+      "downloadLabel": "Open fillable PDF",
+      "downloadHint": "The PDF opens in a new tab. Complete the fields digitally (e.g. in Adobe Acrobat) — or print it and send it by post or email."
+    },
+    "relatedLink": {
+      "href": "/terms",
+      "label": "Go to the terms and conditions"
+    },
+    "note": "As of July 2026. The German version is authoritative. The model withdrawal form is not obligatory."
   }
 }

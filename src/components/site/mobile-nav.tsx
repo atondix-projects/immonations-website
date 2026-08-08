@@ -23,6 +23,7 @@ const NAV_GROUPS: NavGroup[] = [
     items: [
       { labelKey: 'mega.valuation', href: '/property-valuation' },
       { labelKey: 'mega.selling', href: '/services' },
+      { labelKey: 'mega.floorPlans', href: '/floor-plans' },
     ],
   },
   {

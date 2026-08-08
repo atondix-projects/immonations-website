@@ -26,13 +26,15 @@ Der vollstaendige Verkaufsfahrplan liegt unter `/de/immobilie-verkaufen/ablauf` 
 
 Die Vermarktung kombiniert professionelle Objektpraesentation, Immobilienportale, Social Media, regionale Reichweite und vorgemerkte Suchkunden. Ziel ist eine hohe Nachfrage bei passenden Kaeufern, nicht nur moeglichst viele unqualifizierte Anfragen.
 
+KI-gestuetzte Visualisierungen machen das Potenzial leerer Raeume, einfacher Ausgangsaufnahmen und noch nicht fertig entwickelter Grundstuecke anschaulich. Immonation kennzeichnet solche Darstellungen transparent als moegliche Visualisierung und dokumentiert den tatsaechlichen Ist-Zustand weiterhin klar.
+
 ### Kaufinteressenten
 
 Kaeufer erhalten auf `/de/immobilie-kaufen` beziehungsweise `/en/buy-property` Zugang zu Objektteasern, Suchanfrage, Finanzierungshinweisen und persoenlicher Beratung. Wenn kein passendes Objekt verfuegbar ist, kann eine Suchanfrage vorbereitet werden.
 
 ### Ratgeber, FAQ und Downloads
 
-Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die FAQ-Seite beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen und Ablauf. Die Download-Seite sammelt vorbereitete Checklisten und Ressourcen.
+Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/ressourcen/faq` beziehungsweise `/en/resources/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit (Haus- und Wohnungsübergabeprotokolle, Mieterselbstauskunft privat und gewerblich, Wohnungsgeberbestätigung Nürnberg). Nach Eingabe einer gültigen E-Mail-Adresse werden die PDFs freigeschaltet und direkt heruntergeladen; sie werden nicht per E-Mail versendet. Das REVIER Magazin ist frei online lesbar. Das Immonation Handbuch zum Immobilienverkauf ist kein öffentlicher Download und wird nach einer Anfrage persönlich per E-Mail bereitgestellt.
 
 ### Referenzen und Kundenstimmen
 
@@ -49,6 +51,17 @@ Die eigene Makler-Karriereseite unter `/de/immobilienmakler-werden` beziehungswe
 Primaere Region: Zirndorf, Nuernberg, Fuerth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
 
 Die dauerhaften Regionsseiten unter `/de/immobilienmakler-region` beziehungsweise `/en/real-estate-agent-locations` erklaeren Mikrolage, Objektart, Vorbereitung und Verkaufsstrategie fuer Zirndorf, Nuernberg, Fuerth und Erlangen. Sie enthalten keine vermeintlich aktuellen Quadratmeterpreise oder Marktdaten ohne freigegebene Quelle und Aktualitaetsangabe.
+
+## Auszeichnungen
+
+Die Qualitaet der Arbeit ist mehrfach von unabhaengiger Stelle geprueft und bestaetigt worden. Die Auszeichnungen sind auf der Startseite unter dem Abschnitt "Auszeichnungen" gebuendelt.
+
+- **TOP Makler 2026 - F.A.Z. Institut.** Ausgezeichnet vom F.A.Z. Institut in Kooperation mit QuantiQuest Research & Consulting. Am 11. Maerz 2026 erschien die Sonderbeilage in der Frankfurter Allgemeinen Zeitung mit namentlicher Nennung der Immonation GmbH; zeitgleich wurde die Auszeichnung auf topmakler.faz.net veroeffentlicht. Die Auswahl erfolgte nach journalistischen Kriterien auf Basis strukturierter Recherchen sowie Bewertungen durch Experten und Kunden.
+- **Capital Makler-Kompass 2024 - Top-Makler Nuernberg mit vier Sternen.** Die Analyse fuehrt das unabhaengige IIB Institut im Auftrag des Wirtschaftsmagazins Capital in einem zweistufigen Verfahren durch. Bewertet wurde nach vier gleich gewichteten Kriterien: Qualifikation, Prozessqualitaet, Expose und Vertrag sowie Service. Insgesamt qualifizierten sich 3.904 Makler fuer die Teilnahme. Veroeffentlicht in Capital 10/2024.
+- **immowelt Business Partner.** Durchgehend ausgezeichnet fuer die Jahre 2024, 2025 und 2026.
+- **Deutscher Immobilienpreis 2021, Kategorie Network.** Auszeichnung von immowelt.
+
+Fuer Eigentuemer heisst das: Wer in Nuernberg, Fuerth, Erlangen oder Zirndorf verkaufen moechte, arbeitet mit einem Maklerunternehmen, dessen Qualitaet von unabhaengiger Stelle geprueft und bestaetigt wurde - nicht nur behauptet.
 
 ## Methodik
 

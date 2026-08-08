@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { getLocale, getTranslations } from 'next-intl/server'
+import { AnimatedNumber } from '@/components/site/animated-number'
 import { Link } from '@/i18n/navigation'
 
 type FooterStat = { value: string; label: string }
@@ -19,11 +20,13 @@ export async function SiteFooter() {
       <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         {/* Stats band */}
         <div className="grid grid-cols-2 gap-8 border-b border-white/12 pb-12 lg:grid-cols-4">
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <div key={stat.label} className="flex flex-col gap-1.5">
-              <span className="text-brand-500 font-serif text-3xl font-semibold md:text-[40px]">
-                {stat.value}
-              </span>
+              <AnimatedNumber
+                value={stat.value}
+                delay={index * 0.08}
+                className="text-brand-500 font-serif text-3xl font-semibold md:text-[40px]"
+              />
               <span className="text-[15px] text-neutral-500">{stat.label}</span>
             </div>
           ))}
@@ -65,6 +68,25 @@ export async function SiteFooter() {
               className={LINK_CLASSES}
             >
               {t('sell.apartment')}
+            </Link>            <Link
+              href={{
+                pathname: '/sell/[slug]',
+                params: { slug: locale === 'de' ? 'grundstueck' : 'land' },
+              }}
+              className={LINK_CLASSES}
+            >
+              {t('sell.land')}
+            </Link>
+            <Link
+              href={{
+                pathname: '/sell/[slug]',
+                params: {
+                  slug: locale === 'de' ? 'mehrfamilienhaus' : 'apartment-building',
+                },
+              }}
+              className={LINK_CLASSES}
+            >
+              {t('sell.apartmentBuilding')}
             </Link>
           </div>
           <div className="flex flex-col gap-2.5">
@@ -132,6 +154,12 @@ export async function SiteFooter() {
               className="text-sm text-neutral-600 transition-colors hover:text-white"
             >
               {t('terms')}
+            </Link>
+            <Link
+              href="/withdrawal"
+              className="text-sm text-neutral-600 transition-colors hover:text-white"
+            >
+              {t('withdrawal')}
             </Link>
           </div>
         </div>

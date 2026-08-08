@@ -12,7 +12,7 @@ Move references out of the top-level navigation and into Resources, then provide
 - A virtual-tour CTA is data-driven and renders only when a verified URL exists. The supplied archive contains no usable tour URL, so the implementation must not ship a dead or invented link.
 - Three customer-review video slots use the supplied Viktor Emter, Markus Burkhard, and Sandra Börschlein artwork. The available Viktor interview is web-optimized; missing video sources remain explicitly marked as forthcoming.
 - The existing partner wordmark cards become a real logo system. External relationships and group companies are separated to avoid misclassification:
-  - Partners and market presence: Dr. Klein, immowelt Business Partner, REWE.
+  - Partners and market presence: Dr. Klein, immowelt Business Partner, TSV Zirndorf athletics sponsorship.
   - Immonation group: Immonation Capital Holding, IN Beteiligungs GmbH, Dream Living GmbH.
 
 ## Interaction and visual direction

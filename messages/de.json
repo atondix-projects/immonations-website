@@ -32,6 +32,8 @@
       "sellingDesc": "Aktiv gesteuerter Verkauf bis zum Notartermin.",
       "virtualTour": "Virtuelle Besichtigung",
       "virtualTourDesc": "360°-Rundgang: digital besichtigen, ernsthaft kaufen.",
+      "floorPlans": "Grundriss & Wohnfläche",
+      "floorPlansDesc": "Bankfähige Pläne und Aufmaß vom eigenen Ingenieur.",
       "references": "Referenzobjekte",
       "referencesDesc": "15 ausgewählte Immobilien aus unserer Region.",
       "buying": "Immobilie kaufen",
@@ -66,12 +68,12 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "\u00dcber Immonation",
-      "description": "Erfahren Sie, wie die Immonation GmbH Eigent\u00fcmer und K\u00e4ufer in Zirndorf, N\u00fcrnberg, F\u00fcrth und Erlangen begleitet."
+      "title": "Über Immonation",
+      "description": "Erfahren Sie, wie die Immonation GmbH Eigentümer und Käufer in Zirndorf, Nürnberg, Fürth und Erlangen begleitet."
     },
     "eyebrow": "Immonation GmbH",
     "title": "Immobilienberatung, die lokal verwurzelt und digital stark ist.",
-    "lede": "Immonation begleitet Eigent\u00fcmer, K\u00e4ufer und Investoren in Zirndorf, N\u00fcrnberg, F\u00fcrth, Erlangen und der umliegenden Region mit Bewertung, Vermarktung und pers\u00f6nlicher Beratung.",
+    "lede": "Immonation begleitet Eigentümer, Käufer und Investoren in Zirndorf, Nürnberg, Fürth, Erlangen und der umliegenden Region mit Bewertung, Vermarktung und persönlicher Beratung.",
     "body": "Unser Anspruch ist ein transparenter Prozess mit belastbaren Zahlen, klarer Kommunikation und Vermarktung, die mehr leistet als ein Standardinserat.",
     "values": {
       "items": [
@@ -81,28 +83,28 @@
         },
         {
           "title": "Aktive Vermarktung",
-          "text": "Video, 360-Grad-Rundg\u00e4nge, qualifizierte Suchkunden und klare Expos\u00e9s sorgen f\u00fcr bessere Entscheidungen auf beiden Seiten."
+          "text": "Video, 360-Grad-Rundgänge, qualifizierte Suchkunden und klare Exposés sorgen für bessere Entscheidungen auf beiden Seiten."
         },
         {
-          "title": "Pers\u00f6nliche Begleitung",
-          "text": "Ein fester Ansprechpartner f\u00fchrt Sie vom ersten Gespr\u00e4ch bis zum Notartermin durch den gesamten Prozess."
+          "title": "Persönliche Begleitung",
+          "text": "Ein fester Ansprechpartner führt Sie vom ersten Gespräch bis zum Notartermin durch den gesamten Prozess."
         }
       ]
     },
     "cta": {
       "title": "Sie planen einen Verkauf oder Kauf?",
-      "text": "Starten Sie mit einer fundierten Ersteinsch\u00e4tzung und einem klaren Blick auf die n\u00e4chsten Schritte.",
+      "text": "Starten Sie mit einer fundierten Ersteinschätzung und einem klaren Blick auf die nächsten Schritte.",
       "label": "Kontakt aufnehmen"
     }
   },
   "ContactPage": {
     "metadata": {
       "title": "Kontakt",
-      "description": "Kontaktieren Sie die Immonation GmbH f\u00fcr Immobilienbewertung, Verkauf, Kaufberatung und Suchauftr\u00e4ge."
+      "description": "Kontaktieren Sie die Immonation GmbH für Immobilienbewertung, Verkauf, Kaufberatung und Suchaufträge."
     },
     "eyebrow": "Kontakt",
-    "title": "Sprechen wir \u00fcber Ihre Immobilie.",
-    "lede": "Ob Verkauf, Bewertung, Kaufberatung oder Suchauftrag: Schreiben Sie uns oder rufen Sie an. Wir melden uns mit einer konkreten Einsch\u00e4tzung der n\u00e4chsten Schritte.",
+    "title": "Sprechen wir über Ihre Immobilie.",
+    "lede": "Ob Verkauf, Bewertung, Kaufberatung oder Suchauftrag: Schreiben Sie uns oder rufen Sie an. Wir melden uns mit einer konkreten Einschätzung der nächsten Schritte.",
     "phoneLabel": "Telefon",
     "emailLabel": "E-Mail",
     "serviceLink": "Leistungen ansehen",
@@ -112,14 +114,14 @@
       "items": [
         {
           "title": "Kurz einordnen",
-          "text": "Wir kl\u00e4ren Lage, Objektart und Ziel, damit das Gespr\u00e4ch direkt verwertbar ist."
+          "text": "Wir klären Lage, Objektart und Ziel, damit das Gespräch direkt verwertbar ist."
         },
         {
-          "title": "Daten pr\u00fcfen",
+          "title": "Daten prüfen",
           "text": "Auf Wunsch betrachten wir Unterlagen, Vergleichswerte und aktuelle Nachfrage in Ihrer Region."
         },
         {
-          "title": "N\u00e4chste Schritte festlegen",
+          "title": "Nächste Schritte festlegen",
           "text": "Sie erhalten eine klare Empfehlung, ob Bewertung, Vermarktung oder Suchauftrag der richtige Startpunkt ist."
         }
       ]
@@ -138,14 +140,17 @@
     "success": "Die Darstellung ist abgeschlossen. Es wurde keine Nachricht versendet.",
     "localOnly": "Keine Speicherung, keine E-Mail und keine Weitergabe im Frontend-Prototyp."
   },
-  "PrototypeCookie": {
+  "CookieConsent": {
     "label": "Cookie-Hinweis",
-    "prototype": "Visueller Prototyp",
     "title": "Ihre Privatsphäre, klar erklärt.",
-    "text": "Diese Vorschau zeigt die spätere Einwilligungsoberfläche. Es werden keine Präferenzen gespeichert und keine optionalen Dienste aktiviert.",
+    "text": "Notwendige Funktionen halten diese Website nutzbar. Mit „Alle erlauben“ werden zusätzlich externe Medien wie der 360°-Rundgang direkt geladen — dabei werden Daten an den jeweiligen Anbieter übertragen.",
     "accept": "Alle erlauben",
     "necessary": "Nur notwendige",
-    "note": "Beide Schaltflächen schließen nur diese lokale Vorschau."
+    "note": "Ihre Auswahl wird lokal in diesem Browser gespeichert. Ohne Einwilligung bleiben externe Medien deaktiviert und lassen sich einzeln zuschalten."
+  },
+  "VideoDialog": {
+    "play": "Video abspielen",
+    "close": "Video schließen"
   },
   "ValuationPage": {
     "metadata": {
@@ -200,31 +205,13 @@
       ]
     },
     "stats": [
-      { "value": "4,9 ★", "label": "Google-Bewertung bei 220+ Rezensionen" },
+      { "value": "300+", "label": "Bewertungen auf 10 Plattformen" },
       { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
       { "value": "8.000+", "label": "registrierte Suchkunden" },
       { "value": "360°", "label": "Rundgang bei jedem Verkaufsobjekt" }
     ],
     "faq": {
-      "title": "Häufige Fragen zur Bewertung",
-      "items": [
-        {
-          "question": "Was kostet die Immobilienbewertung?",
-          "answer": "Für Verkaufsinteressenten ist die Bewertung kostenlos und unverbindlich. Reine Gutachten für Erbschafts- oder Steuerzwecke berechnen wir transparent nach Aufwand."
-        },
-        {
-          "question": "Wie lange dauert die Bewertung?",
-          "answer": "Von der Anfrage bis zum schriftlichen Ergebnis vergehen typischerweise wenige Tage bis zwei Wochen, abhängig von Terminfindung und Unterlagen."
-        },
-        {
-          "question": "Welche Unterlagen werden benötigt?",
-          "answer": "Hilfreich sind Grundriss, Wohnflächenberechnung, Energieausweis und Grundbuchauszug. Fehlende Unterlagen können wir gemeinsam beschaffen."
-        },
-        {
-          "question": "Bin ich nach der Bewertung zu etwas verpflichtet?",
-          "answer": "Nein. Die Bewertung ist eine Entscheidungsgrundlage — ob und wann Sie verkaufen, bestimmen allein Sie."
-        }
-      ]
+      "title": "Häufige Fragen zur Bewertung"
     },
     "cta": {
       "title": "Jetzt kostenlose Bewertung starten",
@@ -293,46 +280,23 @@
   },
   "FaqPage": {
     "metadata": {
-      "title": "Häufige Fragen (FAQ)",
-      "description": "Antworten auf die häufigsten Fragen zu Immobilienverkauf, Bewertung, Provision, Dauer und Ablauf bei der Immonation GmbH."
+      "title": "Häufige Fragen zum Immobilienverkauf | Immonation Nürnberg",
+      "description": "Provision, Ablauf, Unterlagen, Dauer, Steuern: die wichtigsten Fragen zum Immobilienverkauf in Nürnberg, Fürth, Erlangen & Zirndorf – klar beantwortet von Immonation."
     },
-    "eyebrow": "FAQ",
-    "title": "Häufige Fragen, klar beantwortet",
-    "lede": "Kosten, Dauer, Ablauf, Unterlagen: die Fragen, die uns Eigentümer und Käufer am häufigsten stellen — beantwortet in wenigen Sätzen.",
-    "items": [
-      {
-        "question": "Was kostet die Immobilienbewertung?",
-        "answer": "Die Bewertung ist für Verkaufsinteressenten kostenlos und unverbindlich — inklusive Vor-Ort-Einschätzung und schriftlichem Ergebnis."
-      },
-      {
-        "question": "Wie lange dauert ein Immobilienverkauf?",
-        "answer": "Typisch sind 6 bis 12 Wochen von der Vermarktung bis zum Notartermin — abhängig von Objekt, Preisstrategie und Nachfrage."
-      },
-      {
-        "question": "Wer zahlt die Maklerprovision?",
-        "answer": "Die Provision wird je nach Objekt und Konstellation zwischen Verkäufer und Käufer aufgeteilt. Die genaue Höhe weisen wir transparent im Exposé und vor Beauftragung aus."
-      },
-      {
-        "question": "Welche Unterlagen brauche ich für den Verkauf?",
-        "answer": "Grundbuchauszug, Grundriss, Wohnflächenberechnung, Energieausweis und bei Wohnungen die Teilungserklärung. Fehlende Unterlagen beschaffen wir gemeinsam."
-      },
-      {
-        "question": "Was bringt der 360°-Rundgang?",
-        "answer": "Interessenten besichtigen zuerst digital — vor Ort erscheinen nur noch ernsthafte Kaufinteressenten. Das spart Termine und schützt Ihre Privatsphäre."
-      },
-      {
-        "question": "In welcher Region ist Immonation tätig?",
-        "answer": "Wir vermitteln Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und im Umkreis von rund 60 km um unseren Standort in Zirndorf."
-      },
-      {
-        "question": "Kann ich eine Immobilie mit bestehendem Mietverhältnis verkaufen?",
-        "answer": "Ja. Objekte mit bestehendem Mietverhältnis vermarkten wir gezielt an Kapitalanleger — inklusive Aufbereitung der relevanten Vertrags- und Renditedaten."
-      },
-      {
-        "question": "Unterstützt Immonation auch bei der Finanzierung?",
-        "answer": "Ja. Gemeinsam mit unserem Finanzierungspartner Dr. Klein prüfen wir Finanzierungen von Kaufinteressenten und beraten Käufer zu Konditionen."
-      }
-    ],
+    "eyebrow": "Ressourcen",
+    "title": "Häufige Fragen zum Immobilienverkauf",
+    "lede": "Kosten, Dauer, Ablauf, Unterlagen, Bewertung und Steuern: die Fragen, die uns Eigentümer und Käufer am häufigsten stellen — beantwortet in wenigen Sätzen.",
+    "categoryNavLabel": "FAQ-Kategorien",
+    "viewAll": "Alle Fragen im Überblick",
+    "categories": {
+      "broker-costs": "Makler & Kosten",
+      "sales-process": "Der Verkaufsprozess",
+      "documents-financing": "Unterlagen & Finanzierung",
+      "valuation-price": "Bewertung & Preis",
+      "tax-law": "Steuern & Recht",
+      "buyers": "Für Käufer",
+      "about": "Über Immonation"
+    },
     "cta": {
       "title": "Ihre Frage war nicht dabei?",
       "text": "Rufen Sie an oder starten Sie direkt mit einer kostenlosen Bewertung — wir antworten innerhalb eines Werktags.",
@@ -438,44 +402,161 @@
   "LegalTerms": {
     "metadata": {
       "title": "Allgemeine Geschäftsbedingungen (AGB)",
-      "description": "Allgemeine Geschäftsbedingungen der Immonation GmbH für Maklerleistungen."
+      "description": "Allgemeine Geschäftsbedingungen der Immonation GmbH für Maklerleistungen. Stand: Juli 2026."
     },
     "eyebrow": "Rechtliches",
     "title": "Allgemeine Geschäftsbedingungen",
-    "lede": "Grundlage unserer Maklerleistungen.",
+    "lede": "Immonation GmbH · Nürnberger Straße 18 · 90513 Zirndorf · Stand: Juli 2026.",
     "sections": [
       {
-        "heading": "§ 1 Geltungsbereich",
+        "heading": "§ 1 Geltungsbereich und Vertragspartner",
         "paragraphs": [
-          "Diese Allgemeinen Geschäftsbedingungen gelten für alle Maklerleistungen der Immonation GmbH gegenüber Verbrauchern und Unternehmern. [Vollständiger Text vor Launch von immonationgmbh.de übernehmen und prüfen]"
+          "(1) Diese AGB gelten für sämtliche Verträge und Leistungen zwischen der Immonation GmbH (nachfolgend „Immonation“) und ihren Kunden – über die Website https://www.immonationgmbh.de ebenso wie im Rahmen der zwischen den Parteien getroffenen Vereinbarung.",
+          "(2) Kunde im Sinne dieser AGB ist der Verkäufer oder Käufer einer Immobilie, im Ausnahmefall auch der Vermieter oder – unter Beachtung des Bestellerprinzips – der Wohnungssuchende. Hauptvertrag ist der jeweils vermittelte Kauf-, Miet- oder Pachtvertrag.",
+          "(3) Verbraucher ist jede natürliche Person, die den Vertrag zu überwiegend privaten Zwecken schließt (§ 13 BGB); Unternehmer, wer in Ausübung gewerblicher oder selbständiger beruflicher Tätigkeit handelt (§ 14 BGB).",
+          "(4) Individuell getroffene Vereinbarungen sowie objektbezogene Provisionsangaben gehen diesen AGB vor (§ 305b BGB)."
         ]
       },
       {
-        "heading": "§ 2 Maklerleistung",
+        "heading": "§ 2 Gegenstand und Zustandekommen des Vertrags",
         "paragraphs": [
-          "Gegenstand der Tätigkeit ist der Nachweis der Gelegenheit zum Abschluss eines Vertrags oder die Vermittlung eines Vertrags über Immobilien. [Details vor Launch ergänzen]"
+          "(1) Immonation erbringt Maklerleistungen in Form des Nachweises der Gelegenheit zum Abschluss eines Vertrages oder der Vermittlung eines solchen Vertrages über Immobilien.",
+          "(2) Der Vertrag kommt zustande, indem der Kunde Leistungen von Immonation in Anspruch nimmt – insbesondere ein Exposé oder weitere Objektinformationen abruft, eine Besichtigung vereinbart oder in Verhandlungen tritt –, nachdem Immonation als Maklerin erkennbar aufgetreten ist und ihren Provisionsanspruch für den Erfolgsfall beziffert hat.",
+          "(3) Der Nachweis oder die Vermittlung eines Kaufvertrags über eine Wohnung oder ein Einfamilienhaus an einen Verbraucher bedarf der Textform (§ 656a BGB).",
+          "(4) Besteht zwischen den Parteien eine gesonderte schriftliche Vereinbarung, gehen deren Regelungen diesen AGB im Kollisionsfall vor."
         ]
       },
       {
-        "heading": "§ 3 Provision",
+        "heading": "§ 3 Leistungen, Angebote und Objektangaben",
         "paragraphs": [
-          "Der Provisionsanspruch, dessen Höhe und die Verteilung zwischen den Parteien werden vor Beauftragung transparent ausgewiesen. [Konkrete Sätze vor Launch ergänzen]"
+          "(1) Der Leistungsumfang richtet sich nach der jeweils getroffenen Vereinbarung und umfasst insbesondere Wertermittlung, Aufbereitung der Unterlagen, Vermarktung, Qualifizierung von Interessenten, Besichtigungen und die Begleitung bis zum Notartermin.",
+          "(2) Die Angebote von Immonation sind freibleibend und unverbindlich. Zwischenverkauf, Preisänderungen und Irrtum bleiben vorbehalten.",
+          "(3) Objektbezogene Angaben beruhen regelmäßig auf Auskünften des Eigentümers, Verkäufers, Verwalters, von Behörden oder sonstigen Dritten. Immonation gibt diese sorgfältig weiter, übernimmt jedoch keine Gewähr für ihre Richtigkeit, Vollständigkeit und Aktualität, soweit ihr die Unrichtigkeit nicht bekannt ist oder bekannt sein müsste. Die Prüfung der für seine Entscheidung wesentlichen Angaben obliegt dem Kunden."
         ]
       },
       {
-        "heading": "§ 4 Haftung",
+        "heading": "§ 4 Mitwirkung und Vollmacht des Kunden",
         "paragraphs": [
-          "Für die Richtigkeit der vom Eigentümer bereitgestellten Objektangaben übernimmt der Makler keine Gewähr. [Haftungsklauseln vor Launch juristisch prüfen]"
+          "(1) Der Kunde stellt die zur Vermarktung erforderlichen Unterlagen und Informationen vollständig und richtig zur Verfügung.",
+          "(2) Der Verkäufer bevollmächtigt Immonation im Rahmen der gesonderten Vereinbarung insbesondere zur Einsichtnahme in das Grundbuch und in behördliche Akten sowie zur Anforderung und Entgegennahme erforderlicher Unterlagen bei Behörden und Notariat. Soweit gesondert vereinbart, besteht diese Vollmacht zur Prüfung der Ursächlichkeit der Maklertätigkeit bis zu zwölf Monate über den Abschluss des Hauptvertrages hinaus fort."
         ]
       },
       {
-        "heading": "§ 5 Schlussbestimmungen",
+        "heading": "§ 5 Provisionsanspruch und Höhe",
         "paragraphs": [
-          "Es gilt das Recht der Bundesrepublik Deutschland. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt."
+          "(1) Der Provisionsanspruch entsteht, sobald infolge des Nachweises oder der Vermittlung durch Immonation ein wirksamer Hauptvertrag zustande kommt (§ 652 BGB). Es genügt, dass die Tätigkeit von Immonation für den Vertragsschluss mitursächlich geworden ist.",
+          "(2) Beim Verkauf beträgt die Provision 3,57 % inkl. 19 % USt. des beurkundeten Kaufpreises je Vertragspartei (Verkäufer- und Käuferseite), soweit objektbezogen nichts anderes vereinbart ist.",
+          "(3) Wird Immonation beim Kauf einer Wohnung oder eines Einfamilienhauses durch einen Verbraucher für beide Seiten tätig, kann sie sich die Provision nur von beiden Parteien in gleicher Höhe versprechen lassen (§ 656c BGB). Ist nur eine Partei Auftraggeberin und Verbraucher, trägt die andere Partei höchstens denselben Anteil und erst, nachdem die erste Partei die Zahlung nachgewiesen hat (§ 656d BGB).",
+          "(4) Bei mehreren Verkäufern haften diese als Gesamtschuldner. Die Provisionsregelung wird mit Beitritt aller im Grundbuch eingetragenen Eigentümer oder mit wirksamer Vertretung wirksam.",
+          "(5) Bemessungsgrundlage ist der beurkundete Kaufpreis. Werden im Zuge des Geschäfts weitere geldwerte Leistungen vereinbart – etwa die Übernahme von Verbindlichkeiten, Ablöse- oder Abstandszahlungen oder mitverkauftes Inventar –, erhöht sich die Bemessungsgrundlage entsprechend, soweit diese Leistungen Bestandteil des vermittelten Geschäfts sind.",
+          "(6) Ein bereits verdienter Provisionsanspruch entfällt nicht dadurch, dass der Hauptvertrag später einvernehmlich aufgehoben oder rückgängig gemacht wird; Fälle anfänglicher Unwirksamkeit bleiben unberührt."
+        ]
+      },
+      {
+        "heading": "§ 6 Wirtschaftlich gleichwertige Geschäfte und nahestehende Personen",
+        "paragraphs": [
+          "(1) Kommt es infolge der Tätigkeit von Immonation zu einem Abschluss, bleibt der Provisionsanspruch auch dann erhalten, wenn der geschlossene Vertrag inhaltlich von der nachgewiesenen Gelegenheit abweicht oder wenn an deren Stelle ein Geschäft mit im Wesentlichen gleichem wirtschaftlichem Ergebnis tritt. Voraussetzung bleibt, dass dieser Erfolg auf der Nachweis- oder Vermittlungsleistung von Immonation beruht.",
+          "(2) Dem Abschluss mit dem Kunden steht der Abschluss durch eine Person gleich, die dem Kunden persönlich, familiär, rechtlich oder wirtschaftlich so nahesteht, dass der Vertrag wirtschaftlich ihm zugutekommt. Dazu zählen insbesondere nahe Angehörige, von ihm beherrschte oder mit ihm verbundene Gesellschaften sowie von ihm eingeschaltete Treuhänder oder benannte Erwerber."
+        ]
+      },
+      {
+        "heading": "§ 7 Fälligkeit und Mitteilungspflicht",
+        "paragraphs": [
+          "(1) Die Provision ist mit Abschluss des Hauptvertrages verdient und fällig; bei beurkundungspflichtigen Verträgen mit der notariellen Beurkundung. Sie ist nach Rechnungserteilung zahlbar.",
+          "(2) Immonation ist berechtigt, am Abschluss des Hauptvertrages teilzunehmen. Schließt der Kunde den Vertrag ohne Beteiligung von Immonation, informiert er sie unverzüglich über den Abschluss und über die für die Provisionsberechnung maßgeblichen Vertragsinhalte."
+        ]
+      },
+      {
+        "heading": "§ 8 Miete und Pacht",
+        "paragraphs": [
+          "(1) Der Schwerpunkt der Tätigkeit von Immonation liegt im Verkauf. Die Vermittlung von Miet- oder Pachtobjekten erfolgt nur im Einzelfall und setzt eine gesonderte Vereinbarung voraus.",
+          "(2) Bei der Vermittlung gewerblicher Miet- oder Pachtverträge beträgt die Provision drei Nettokaltmieten bzw. Nettopachten zzgl. gesetzlicher USt., soweit objektbezogen nichts anderes vereinbart ist. Maßgeblich ist die monatliche Nettokaltmiete bzw. Nettopacht ohne Betriebs- und Nebenkosten.",
+          "(3) Bei der Vermittlung von Wohnraum zur Miete gilt das Bestellerprinzip (§ 2 WoVermRG): Eine Provision vom Wohnungssuchenden wird nur verlangt, wenn dieser Immonation zuvor in Textform beauftragt hat und Immonation ausschließlich aufgrund dieses Auftrags tätig wird. Andernfalls wird die Vergütung ausschließlich mit dem Vermieter vereinbart.",
+          "(4) Die mit dem Vermieter vereinbarte Vergütung beträgt zwei Nettokaltmieten zzgl. gesetzlicher USt., soweit objektbezogen nichts anderes vereinbart ist."
+        ]
+      },
+      {
+        "heading": "§ 9 Doppeltätigkeit",
+        "paragraphs": [
+          "Beim Kaufvertrag darf Immonation für Verkäufer und Käufer provisionspflichtig tätig werden und ist beiden Seiten zur redlichen Behandlung verpflichtet. Bei der Vermittlung von Wohnraum zur Miete darf sie nur für eine der beiden Seiten provisionspflichtig tätig sein. Zwingende gesetzliche Vorgaben zur Verteilung der Maklerkosten bleiben unberührt."
+        ]
+      },
+      {
+        "heading": "§ 10 Vorkenntnis",
+        "paragraphs": [
+          "(1) Ist dem Kunden das nachgewiesene Objekt, die Vertragsgelegenheit oder der benannte Vertragspartner bereits bekannt, teilt er dies Immonation unverzüglich in Textform mit und benennt die Quelle seiner Kenntnis nachvollziehbar.",
+          "(2) Eine Vorkenntnis lässt den Provisionsanspruch unberührt, wenn die Nachweis- oder Vermittlungsleistung von Immonation für den Vertragsschluss zumindest mitursächlich war. Unterbleibt der Hinweis oder erfolgt er verspätet, kann dies bei der Beurteilung der Ursächlichkeit berücksichtigt werden."
+        ]
+      },
+      {
+        "heading": "§ 11 Beendigung der Zusammenarbeit; Aufwendungen",
+        "paragraphs": [
+          "(1) Die Zusammenarbeit ist nicht befristet und kann von beiden Seiten jederzeit mit angemessener Vorankündigung beendet werden.",
+          "(2) Wird die Immobilie mindestens drei Monate erfolglos vermarktet und beendet der Kunde anschließend die Zusammenarbeit, entstehen ihm hierfür keine Kosten. Die Frist von drei Monaten beginnt mit der ersten Online-Schaltung der Immobilie durch Immonation.",
+          "(3) Beendet der Kunde die Zusammenarbeit vor Ablauf dieser drei Monate, kann Immonation den Ersatz der bis dahin tatsächlich entstandenen und nachgewiesenen Aufwendungen (z. B. Insertions-, Foto- und Videokosten, Fahrtkosten) verlangen, begrenzt auf höchstens 25 % der bei Erfolg zu erwartenden Provision. Dem Kunden bleibt der Nachweis vorbehalten, dass keine oder wesentlich geringere Aufwendungen entstanden sind (§ 309 Nr. 5 BGB).",
+          "(4) Hatte Immonation vor der Beendigung noch keine Gelegenheit zur Online-Vermarktung, gilt Absatz 3 entsprechend."
+        ]
+      },
+      {
+        "heading": "§ 12 Eigenverkauf und Rücktritt nach Reservierung",
+        "paragraphs": [
+          "(1) Veräußert der Kunde die Immobilie nach Auftragserteilung selbst, ohne Immonation zuvor Gelegenheit zur Vermarktung über die vorgesehenen Kanäle gegeben zu haben, kann Immonation die bis dahin erbrachten, nachgewiesenen Leistungen nach Maßgabe von § 11 in Rechnung stellen.",
+          "(2) Hat ein von Immonation nachgewiesener Interessent eine verbindliche Reservierung zum vereinbarten Kaufpreis erklärt und tritt der Kunde sodann vom Verkauf zurück oder schließt er den Hauptvertrag mit diesem Interessenten selbst ab, steht Immonation die vereinbarte Provision zu."
+        ]
+      },
+      {
+        "heading": "§ 13 Nachwirkende Provision",
+        "paragraphs": [
+          "Schließt der Kunde innerhalb von sechs Monaten nach Beendigung der Zusammenarbeit einen Hauptvertrag mit einem Interessenten ab, den Immonation ihm zuvor nachweislich benannt oder nachgewiesen hat, ist die vereinbarte Provision zu zahlen, sofern der Nachweis oder die Vermittlung für den Vertragsschluss ursächlich ist."
+        ]
+      },
+      {
+        "heading": "§ 14 Vertraulichkeit und Weitergabe von Informationen",
+        "paragraphs": [
+          "(1) Die von Immonation überlassenen Angebote, Exposés und Objektunterlagen sind vertraulich und ausschließlich für den Kunden bestimmt; eine Weitergabe an Dritte bedarf der vorherigen Zustimmung in Textform.",
+          "(2) Zulässig bleibt die Weitergabe an die finanzierende Bank, an Notar, Rechtsanwalt oder Steuerberater sowie an sonstige unmittelbar mit der Prüfung oder Abwicklung des konkreten Geschäfts befasste Berater, sofern diese zur Vertraulichkeit verpflichtet sind und nicht selbst als Erwerber oder wirtschaftlich Berechtigte auftreten.",
+          "(3) Führt eine unbefugte Weitergabe dazu, dass ein Dritter den Hauptvertrag schließt, kann Immonation Schadensersatz verlangen; der Schaden kann insbesondere in der entgangenen Provision liegen. Dem Kunden bleibt der Nachweis vorbehalten, dass kein oder ein geringerer Schaden entstanden ist."
+        ]
+      },
+      {
+        "heading": "§ 15 Haftung",
+        "paragraphs": [
+          "(1) Immonation gibt Angaben Dritter ungeprüft weiter; deren Prüfung auf Richtigkeit und Vollständigkeit obliegt dem Kunden.",
+          "(2) Für leichte Fahrlässigkeit haftet Immonation nur bei Verletzung wesentlicher Vertragspflichten und begrenzt auf den vertragstypischen, vorhersehbaren Schaden. Die Haftung für Vorsatz und grobe Fahrlässigkeit, für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie nach dem Produkthaftungsgesetz bleibt unberührt."
+        ]
+      },
+      {
+        "heading": "§ 16 Widerrufsrecht für Verbraucher",
+        "paragraphs": [
+          "Schließt ein Verbraucher den Vertrag im Fernabsatz oder außerhalb von Geschäftsräumen (z. B. beim Termin in der Immobilie), steht ihm ein gesetzliches Widerrufsrecht von 14 Tagen zu (§§ 312b, 312g, 355 BGB). Einzelheiten ergeben sich aus der gesondert erteilten Widerrufsbelehrung nebst Muster-Widerrufsformular. Verlangt der Verbraucher ausdrücklich den Leistungsbeginn vor Ablauf der Frist, kann bei Widerruf ein anteiliger Wertersatz entstehen; vollständige Leistung vor Fristablauf kann das Widerrufsrecht erlöschen lassen."
+        ]
+      },
+      {
+        "heading": "§ 17 Verjährung",
+        "paragraphs": [
+          "Ansprüche des Kunden gegen Immonation verjähren in drei Jahren, sofern das Gesetz nicht eine kürzere oder für bestimmte Ansprüche eine andere Frist vorsieht."
+        ]
+      },
+      {
+        "heading": "§ 18 Datenschutz",
+        "paragraphs": [
+          "Immonation verarbeitet personenbezogene Daten nach DSGVO und BDSG. Einzelheiten ergeben sich aus der Datenschutzerklärung auf der Website."
+        ]
+      },
+      {
+        "heading": "§ 19 Schlussbestimmungen",
+        "paragraphs": [
+          "(1) Änderungen und Ergänzungen bedürfen der Textform.",
+          "(2) Ist eine Bestimmung unwirksam, bleibt die Wirksamkeit der übrigen unberührt; an die Stelle der unwirksamen Bestimmung treten die gesetzlichen Vorschriften.",
+          "(3) Es gilt deutsches Recht. Erfüllungsort und – soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist – Gerichtsstand ist Fürth. Gegenüber Verbrauchern gelten die gesetzlichen Gerichtsstände."
         ]
       }
     ],
-    "note": "Diese AGB sind ein strukturierter Platzhalter und werden vor Launch durch die geprüfte Fassung ersetzt."
+    "relatedLink": {
+      "href": "/withdrawal",
+      "label": "Zur Widerrufsbelehrung und zum Muster-Widerrufsformular"
+    },
+    "note": "Stand: Juli 2026. Individuelle Vereinbarungen und objektbezogene Provisionsangaben gehen diesen AGB vor."
   },
   "CareersPage": {
     "metadata": {
@@ -539,28 +620,86 @@
   },
   "DownloadsPage": {
     "metadata": {
-      "title": "Downloads & Checklisten",
-      "description": "Checklisten und Unterlagen für Eigentümer und Käufer: Verkaufs-Checkliste, Unterlagen-Checkliste und Marktberichte der Immonation GmbH."
+      "title": "Kostenlose Dokumente, REVIER Magazin & Handbuch",
+      "description": "Übergabeprotokolle und Mietvorlagen nach E-Mail-Freigabe herunterladen, das REVIER Magazin online lesen und das Immonation Handbuch per Anfrage erhalten."
     },
     "eyebrow": "Ressourcen",
-    "title": "Downloads & Checklisten",
-    "lede": "Praktische Unterlagen für Eigentümer und Käufer — kompakt, verständlich und kostenlos.",
-    "sections": [
-      {
-        "heading": "In Vorbereitung",
-        "paragraphs": [
-          "Verkaufs-Checkliste: alle Schritte vom Entschluss bis zum Notartermin.",
-          "Unterlagen-Checkliste: welche Dokumente Sie für Verkauf oder Bewertung benötigen.",
-          "Marktberichte für Nürnberg, Fürth, Erlangen und Zirndorf."
-        ]
+    "title": "Kostenlose Dokumente. Ein Magazin zum Lesen. Ein Handbuch auf Anfrage.",
+    "lede": "Laden Sie Vorlagen für Übergabe und Miete nach kurzer E-Mail-Freigabe herunter. Das REVIER Magazin ist frei lesbar; das Verkaufs-Handbuch senden wir persönlich per E-Mail.",
+    "freedocs": {
+      "eyebrow": "Kostenlose Dokumente",
+      "title": "Vorlagen für Übergabe und Vermietung — direkt zum Download.",
+      "lede": "Geben Sie Ihre E-Mail-Adresse an. Nach erfolgreicher Formatprüfung schalten wir die Downloads frei. Die Dateien werden nicht per E-Mail versendet.",
+      "fileType": "PDF",
+      "disclaimer": "Die Vorlagen dienen der Vorbereitung und ersetzen keine individuelle rechtliche Beratung.",
+      "gate": {
+        "eyebrow": "Freischaltung",
+        "email": "E-Mail-Adresse",
+        "emailPlaceholder": "name@beispiel.de",
+        "continue": "Downloads freischalten",
+        "invalid": "Bitte eine gültige E-Mail-Adresse eingeben.",
+        "helper": "Nur zur Freischaltung — wir senden Ihnen die Dateien nicht zu.",
+        "unlockedHint": "Downloads freigeschaltet. Sie können die PDFs jetzt speichern.",
+        "lockedCta": "E-Mail eingeben"
+      },
+      "categories": {
+        "handover": "Übergabe",
+        "tenancy": "Miete"
+      },
+      "documents": {
+        "house-handover": {
+          "title": "Protokoll Hausübergabe",
+          "description": "Musterprotokoll für die Schlüsselübergabe eines Hauses beim Kauf — Parteien, Zähler, Schlüssel und Zustand.",
+          "downloadLabel": "PDF herunterladen"
+        },
+        "apartment-handover": {
+          "title": "Protokoll Wohnungsübergabe",
+          "description": "Musterprotokoll für die Wohnungsübergabe beim Kauf — Räume, Mängel, Zählerstände und Unterschriften.",
+          "downloadLabel": "PDF herunterladen"
+        },
+        "tenant-self-disclosure": {
+          "title": "Mieterselbstauskunft",
+          "description": "Formular zur Selbstauskunft für Mietinteressenten — Angaben zu Person, Einkommen und Mietverhältnis.",
+          "downloadLabel": "PDF herunterladen"
+        },
+        "tenant-self-disclosure-commercial": {
+          "title": "Mieterselbstauskunft Gewerbe",
+          "description": "Selbstauskunft für gewerbliche Mietinteressenten — strukturierte Angaben zum Unternehmen und zur Nutzung.",
+          "downloadLabel": "PDF herunterladen"
+        },
+        "landlord-confirmation-nuremberg": {
+          "title": "Wohnungsgeberbestätigung Nürnberg",
+          "description": "Vordruck der Wohnungsgeberbestätigung für die Anmeldung in Nürnberg.",
+          "downloadLabel": "PDF herunterladen"
+        }
       }
-    ],
-    "note": "Die Downloads werden derzeit erstellt. Bis dahin senden wir Ihnen die Checklisten gern persönlich zu — eine kurze Nachricht genügt.",
-    "cta": {
-      "title": "Checkliste direkt anfordern",
-      "text": "Sagen Sie uns, welche Unterlagen Sie brauchen — wir senden sie Ihnen per E-Mail.",
-      "primaryLabel": "Unterlagen anfordern"
+    },
+    "handbook": {
+      "eyebrow": "Immonation Handbuch",
+      "title": "Der klare Leitfaden für einen gut vorbereiteten Immobilienverkauf.",
+      "text": "Das Handbuch bündelt die entscheidenden Schritte, Unterlagen und Fragen vor dem Verkauf. Damit es aktuell bleibt und passend eingeordnet werden kann, stellen wir es nicht als öffentlichen Download bereit.",
+      "accessTitle": "Persönlich statt öffentlicher Download",
+      "accessText": "Nennen Sie uns Ihre Kontaktdaten und Ihre Situation. Anschließend erhalten Sie das Handbuch über einen kontrollierten E-Mail-Versand."
     }
+  },
+  "HandbookRequest": {
+    "eyebrow": "Handbuch anfordern",
+    "title": "Handbuch per E-Mail erhalten",
+    "text": "Ihre Angaben helfen uns, den Versand passend zuzuordnen.",
+    "name": "Name",
+    "email": "E-Mail-Adresse",
+    "situation": "Ihre Situation",
+    "situationPlaceholder": "Bitte auswählen",
+    "situations": [
+      "Ich plane einen Verkauf",
+      "Ich bereite mich auf einen Verkauf vor",
+      "Ich möchte mich zunächst informieren"
+    ],
+    "consent": "Ich stimme der Verarbeitung meiner Angaben gemäß der",
+    "privacyLink": "Datenschutzerklärung",
+    "submit": "Handbuch anfordern",
+    "success": "Vielen Dank. Ihre Anfrage ist vorgemerkt.",
+    "prototypeNote": "Der E-Mail-Versand ist in dieser Vorschau noch nicht angebunden. Das Handbuch bleibt bis zur späteren, kontrollierten Zustellung nicht öffentlich zugänglich."
   },
   "Audience": {
     "sellerCta": "Kostenlose Bewertung starten",
@@ -585,8 +724,8 @@
         "ctaPrimary": "Immobilie suchen",
         "ctaSecondary": "Suchauftrag anlegen"
       },
-      "ratingLabel": "Google-Bewertung · 220+ Rezensionen",
-      "ratingValue": "4,9 ★★★★★",
+      "ratingLabel": "Bewertungen auf 10 Plattformen",
+      "ratingValue": "300+",
       "imageAlt": "Immobilienvermarktung der Immonation GmbH",
       "playWithAudio": "Film mit Ton starten"
     },
@@ -597,11 +736,59 @@
     },
     "proof": {
       "eyebrow": "Lokal verankert · messbar wirksam",
+      "trailHint": "Referenzen entdecken",
+      "exampleLabel": "Beispielobjekte",
+      "trailBadges": {
+        "reviews": "5-Sterne-Verkauf",
+        "sales": "Verkaufte Referenz",
+        "volume": "Investment-Referenz",
+        "search": "Regionale Nachfrage"
+      },
       "items": [
-        { "value": "4,9 / 5", "label": "Google-Bewertung bei 220+ Rezensionen" },
+        { "value": "300+", "label": "Bewertungen auf 10 Plattformen" },
         { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
         { "value": "30 Mio. €", "label": "jährliches Transaktionsvolumen" },
         { "value": "8.000+", "label": "registrierte Suchkunden" }
+      ]
+    },
+    "awards": {
+      "eyebrow": "Ausgezeichnet & geprüft",
+      "title": "Von unabhängiger Stelle bestätigt",
+      "text": "Qualität lässt sich behaupten — oder prüfen lassen. Diese Auszeichnungen stammen von Wirtschaftsmedien, Instituten und Bewertungsplattformen, die unsere Arbeit unabhängig bewertet haben.",
+      "sourceLabel": "Nachweis ansehen",
+      "items": [
+        {
+          "id": "faz-top-makler-2026",
+          "title": "TOP Makler 2026",
+          "issuer": "F.A.Z. Institut",
+          "meta": "2026",
+          "note": "Namentlich genannt in der FAZ-Sonderbeilage vom 11. März 2026, in Kooperation mit QuantiQuest.",
+          "alt": "Siegel TOP Makler 2026 des F.A.Z. Instituts"
+        },
+        {
+          "id": "capital-makler-kompass-2024",
+          "title": "Top-Makler Nürnberg, vier Sterne",
+          "issuer": "Capital Makler-Kompass",
+          "meta": "2024",
+          "note": "Geprüft vom unabhängigen IIB Institut — Qualifikation, Prozessqualität, Exposé, Vertrag und Service.",
+          "alt": "Capital-Siegel Top-Makler Nürnberg 2024"
+        },
+        {
+          "id": "immowelt-business-partner",
+          "title": "immowelt Business Partner",
+          "issuer": "immowelt",
+          "meta": "2024–2026",
+          "note": "Seit 2024 ohne Unterbrechung ausgezeichnet, zuletzt für das Jahr 2026.",
+          "alt": "immowelt Business Partner Siegel 2026"
+        },
+        {
+          "id": "deutscher-immobilienpreis-2021",
+          "title": "Deutscher Immobilienpreis, Kategorie Network",
+          "issuer": "immowelt",
+          "meta": "2021",
+          "note": "Ausgezeichnet in der Kategorie Network beim Deutschen Immobilienpreis von immowelt.",
+          "alt": "Siegel Deutscher Immobilienpreis Network 2021"
+        }
       ]
     },
     "process": {
@@ -706,95 +893,123 @@
     },
     "reviews": {
       "eyebrow": "Bewertungen",
-      "title": "Was unsere Kundinnen und Kunden sagen",
+      "title": "Ausgewählte Stimmen zu echten Verkäufen",
+      "lead": "Immonation ist auf 10 Bewertungsportalen mit einem eigenen Profil vertreten — zusammen über 300 Bewertungen. Jede Kundenstimme unten ist mit der passenden Verkaufsreferenz verbunden.",
       "ratingSuffix": "von 5",
-      "primaryProfiles": [
+      "referenceLink": "Zur Verkaufsreferenz",
+      "reviewSource": "Google · {rating} von 5 Sternen",
+      "selectionNote": "Jede Kundenstimme ist mit der passenden Verkaufsreferenz verbunden. Den originalen Google-Screenshot finden Sie direkt beim jeweiligen Objekt.",
+      "headline": {
+        "platform": "Google",
+        "rating": "4,9",
+        "count": "226 Bewertungen",
+        "link": "Alle Google-Bewertungen lesen"
+      },
+      "stats": [
+        {
+          "value": "300+",
+          "label": "Bewertungen gesamt"
+        },
+        {
+          "value": "10",
+          "label": "Bewertungsportale"
+        },
+        {
+          "value": "5,0",
+          "label": "Bestnote auf 5 Portalen"
+        }
+      ],
+      "portalTitle": "Unsere Bewertungsprofile",
+      "portalClaim": "300+ Bewertungen auf 10 Portalen",
+      "portalIntro": "Jedes Profil ist öffentlich einsehbar. Klicken Sie auf ein Portal, um die Originalbewertungen dort zu lesen.",
+      "portalNote": "Die Gesamtzahl zählt jede zugrunde liegende Bewertungsquelle einmal. Als „Aggregat“ markierte Profile bündeln Bewertungen anderer Portale und zeigen dieselben Stimmen deshalb erneut an.",
+      "sourceDirect": "Direktquelle",
+      "sourceAggregate": "Aggregat",
+      "openProfile": "Profil öffnen",
+      "verifiedProfile": "Verifiziertes Profil bei Maklersieger",
+      "sealAlt": "Siegel „Verifizierter Makler“ von maklersieger.de für die Immonation GmbH",
+      "sealNote": "Unabhängig geprüftes Maklerprofil. Das Siegel ist als lokale Kopie eingebunden — kein externes Tracking.",
+      "asOf": "Stand: August 2026",
+      "portals": [
         {
           "id": "google",
           "name": "Google",
           "rating": "4,9",
-          "count": "220+ Bewertungen",
-          "link": "Auf Google lesen →"
+          "scale": "/ 5",
+          "basis": "226 Bewertungen",
+          "kind": "direct"
         },
         {
           "id": "trustpilot",
           "name": "Trustpilot",
           "rating": "4,7",
-          "count": "30 Bewertungen",
-          "link": "Auf Trustpilot lesen →"
+          "scale": "/ 5",
+          "basis": "30 Bewertungen",
+          "kind": "direct"
         },
         {
           "id": "immowelt",
           "name": "Immowelt",
           "rating": "4,5",
-          "count": "55 Bewertungen",
-          "link": "Auf Immowelt lesen →"
-        }
-      ],
-      "secondaryTitle": "Weitere Bewertungsprofile",
-      "asOf": "Stand: Juli 2026",
-      "aggregationNote": "Hinweis: Einige Profile bündeln Bewertungen anderer Plattformen. Die Quellenbasis ist deshalb direkt an jedem Profil angegeben.",
-      "screenshots": [
-        {
-          "src": "/images/reviews/google-patric-mago.png",
-          "alt": "Gelieferter Screenshot einer Google-Bewertung von Patric Mago"
+          "scale": "/ 5",
+          "basis": "55 Bewertungen",
+          "kind": "direct"
         },
-        {
-          "src": "/images/reviews/google-ursula-troeger.png",
-          "alt": "Gelieferter Screenshot einer Google-Bewertung von Ursula Tröger"
-        },
-        {
-          "src": "/images/reviews/google-customer-review.png",
-          "alt": "Gelieferter Screenshot einer ausführlichen Google-Kundenbewertung"
-        }
-      ],
-      "screenshotNote": "Gelieferte Bewertungs-Screenshots im Prototyp. Plattform- und Nutzungsfreigabe bleibt vor Veröffentlichung zu prüfen.",
-      "secondaryProfiles": [
         {
           "id": "provenexpert",
           "name": "ProvenExpert",
-          "rating": "5,0",
-          "suffix": "von 5",
+          "rating": "5,00",
+          "scale": "/ 5",
           "basis": "173 Bewertungen · aus Google",
-          "link": "Profil öffnen"
-        },
-        {
-          "id": "trustlocal",
-          "name": "Trustlocal",
-          "rating": "9,4",
-          "suffix": "von 10",
-          "basis": "160 Bewertungen · aus 3 Quellen",
-          "link": "Profil öffnen"
+          "kind": "aggregate"
         },
         {
           "id": "jacasa",
           "name": "Jacasa",
           "rating": "4,8",
-          "suffix": "von 5",
-          "basis": "271 Bewertungen · aus 2 Portalen",
-          "link": "Profil öffnen"
+          "scale": "/ 5",
+          "basis": "284 Bewertungen · aus 2 Portalen",
+          "kind": "aggregate"
         },
         {
-          "id": "dasoertliche",
-          "name": "Das Örtliche",
+          "id": "werkenntdenbesten",
+          "name": "Wer kennt den Besten",
           "rating": "5,0",
-          "suffix": "von 5",
-          "basis": "3 Bewertungen · Golocal & 11880",
-          "link": "Profil öffnen"
-        }
-      ],
-      "items": [
-        {
-          "quote": "„Von der Bewertung bis zum Notartermin lief alles schneller als gedacht — und wir waren jederzeit informiert.“",
-          "source": "Google ★★★★★ · Hausverkauf Zirndorf"
+          "scale": "/ 5",
+          "basis": "280 Bewertungen · aus mehreren Quellen",
+          "kind": "aggregate"
         },
         {
-          "quote": "„Der 360°-Rundgang hat uns viele unnötige Besichtigungen erspart. Es kamen nur ernsthafte Interessenten.“",
-          "source": "Google ★★★★★ · Wohnungsverkauf Nürnberg"
+          "id": "trustlocal",
+          "name": "Trustlocal",
+          "rating": "9,4",
+          "scale": "/ 10",
+          "basis": "160 Bewertungen · aus 3 Quellen",
+          "kind": "aggregate"
         },
         {
-          "quote": "„Professionell, jederzeit erreichbar und ehrlich in der Preiseinschätzung. Klare Empfehlung.“",
-          "source": "Trustpilot ★★★★★ · Verkauf Fürth"
+          "id": "kennstdueinen",
+          "name": "KennstDuEinen",
+          "rating": "5,0",
+          "scale": "/ 5",
+          "basis": "3 Bewertungen",
+          "kind": "aggregate"
+        },
+        {
+          "id": "elf880",
+          "name": "11880",
+          "rating": "5,0",
+          "scale": "/ 5",
+          "basis": "4 Bewertungen",
+          "kind": "direct"
+        },
+        {
+          "id": "golocal",
+          "name": "golocal",
+          "rating": "5,0",
+          "scale": "/ 5",
+          "basis": "4 Bewertungen",
+          "kind": "direct"
         }
       ]
     },
@@ -927,10 +1142,10 @@
           "alt": "immowelt Business Partner Logo"
         },
         {
-          "id": "rewe",
-          "name": "REWE",
-          "role": "Regionale Marktpräsenz",
-          "alt": "REWE Logo"
+          "id": "tsv-zirndorf",
+          "name": "TSV Zirndorf Leichtathletik",
+          "role": "Förderpartner von Eni Kuske und Amelie Giese",
+          "alt": "Eni Kuske vom TSV Zirndorf beim Hürdenlauf"
         }
       ],
       "groupItems": [
@@ -1066,29 +1281,7 @@
       "guides": "Verkaufsleitfäden ansehen"
     },
     "faq": {
-      "title": "Häufige Fragen zum Ablauf eines Immobilienverkaufs",
-      "items": [
-        {
-          "question": "Welche Unterlagen werden für den Immobilienverkauf benötigt?",
-          "answer": "Zur Grundausstattung gehören Grundbuchauszug, Lageplan oder Flurkarte, Energieausweis sowie Eckdaten und Fotos. Je nach Objektart kommen zum Beispiel Grundrisse, Wohnflächenberechnung, Teilungserklärung, Protokolle, Mietunterlagen oder ein Bebauungsplan hinzu. Fehlende Unterlagen beschaffen wir über unser Spezialistennetzwerk; dort können bei Bedarf auch Grundrisse und Wohnflächenberechnungen vorbereitet werden."
-        },
-        {
-          "question": "Wann wird die Immobilie veröffentlicht?",
-          "answer": "Die Veröffentlichung erfolgt erst, wenn Objektaufnahme, Bewertung, Verkaufsstrategie und professionelle Aufbereitung abgeschlossen sind. Exposé, Preis und Vermarktungsweg gehen nach Ihrer Freigabe auf die relevanten Portale und in die abgestimmten Kanäle."
-        },
-        {
-          "question": "Wie werden Kaufinteressenten geprüft?",
-          "answer": "Wir bearbeiten alle Anfragen, prüfen Ernsthaftigkeit und Bonität, klären die Finanzierung und koordinieren erst danach passende Besichtigungen. So werden Termine auf Käufer konzentriert, die das Objekt wirklich kaufen wollen und können."
-        },
-        {
-          "question": "Was passiert nach einem Kaufangebot?",
-          "answer": "Wir prüfen Preis und Konditionen, bewerten Käuferprofil und Finanzierung und führen die Verhandlung in Ihrem Interesse. Anschließend koordinieren wir Kaufvertragsvorbereitung, Notariat und Beurkundung."
-        },
-        {
-          "question": "Endet die Maklerbegleitung mit dem Notartermin?",
-          "answer": "Nein. Nach der Beurkundung organisieren wir die Übergabe, dokumentieren Zählerstände und klären offene Punkte. Die Begleitung reicht bis zur Schlüsselübergabe und darüber hinaus."
-        }
-      ]
+      "title": "Häufige Fragen zum Ablauf eines Immobilienverkaufs"
     },
     "cta": {
       "title": "Starten Sie mit einem belastbaren ersten Schritt",
@@ -1239,6 +1432,144 @@
       }
     ]
   },
+  "FloorPlansPage": {
+    "serviceType": "Aufmaß, Grundriss und Wohnflächenberechnung",
+    "areaServed": "Metropolregion Nürnberg",
+    "metadata": {
+      "title": "Bankfähiger Grundriss & Wohnflächenberechnung",
+      "description": "Bemaßte Grundrisse und eine prüffähige Wohnflächenberechnung nach Wohnflächenverordnung – aufgemessen vor Ort von unserem eigenen Ingenieur. Für Verkäufe in Nürnberg, Fürth, Erlangen und Zirndorf."
+    },
+    "hero": {
+      "eyebrow": "Eigener Ingenieur im Haus",
+      "title": "Bankfähige Grundrisse und eine Wohnfläche, die standhält",
+      "lede": "Alte Bestandspläne und Skizzen halten der Prüfung durch eine finanzierende Bank selten stand. Unser Ingenieur misst Ihre Immobilie vor Ort auf, zeichnet den Grundriss bemaßt neu und berechnet die Wohnfläche nachvollziehbar – bevor der erste Interessent fragt."
+    },
+    "answer": "Ein bankfähiger Grundriss ist ein maßstäblicher, durchgehend bemaßter Plan, aus dem sich jede Raumfläche unabhängig nachrechnen lässt – ergänzt um eine Wohnflächenberechnung nach Wohnflächenverordnung. Genau diese Grundlage prüft die finanzierende Bank des Käufers, bevor sie ein Darlehen zusagt. Bei Immonation übernimmt das ein eigener Ingenieur: Aufmaß vor Ort, bemaßte Neuzeichnung, prüffähige Flächenberechnung. Fehlt sie, verzögert sich die Finanzierung – oder der Kaufpreis wird nachverhandelt.",
+    "comparison": {
+      "eyebrow": "Der Unterschied in einem Bild",
+      "title": "Was eine Bank akzeptiert – und was nicht",
+      "text": "Beide Darstellungen zeigen dieselbe Art von Information: Räume, Wände, Öffnungen. Prüfen lässt sich nur eine davon. Der Unterschied liegt nicht in der Sorgfalt der Zeichnung, sondern darin, ob jede Fläche aus dem Plan heraus nachgerechnet werden kann.",
+      "criteriaLabel": "Woran man das erkennt",
+      "disclaimer": "Beide Abbildungen sind illustrative Beispiele zur Veranschaulichung des Unterschieds. Sie zeigen keine von Immonation erstellten Kundenunterlagen.",
+      "accepted": {
+        "badge": "Bankfähig",
+        "title": "Maßstäblicher Grundriss mit durchgehender Bemaßung",
+        "text": "Jede Wand, jede Öffnung und jeder Raum ist vermaßt. Ein Sachbearbeiter kann die Wohnfläche unabhängig nachrechnen, ohne die Immobilie je gesehen zu haben.",
+        "alt": "Technischer Grundriss eines Erdgeschosses mit durchgehenden Maßketten, Raumbezeichnungen und Angaben zu Bauteilen.",
+        "criteria": [
+          "Durchgehende Maßketten außen und innen",
+          "Maßstab, Geschoss und Nordrichtung eindeutig angegeben",
+          "Raumbezeichnungen und Flächen ablesbar",
+          "Wandstärken, Öffnungen und Treppen maßhaltig dargestellt",
+          "Jede Fläche ist ohne Ortstermin nachrechenbar"
+        ]
+      },
+      "rejected": {
+        "badge": "Nicht bankfähig",
+        "title": "Freihandskizze ohne prüfbare Maße",
+        "text": "Die Skizze vermittelt eine Idee vom Schnitt der Wohnung, mehr nicht. Ohne Maße und Maßstab bleibt die Wohnfläche eine Behauptung – für eine Finanzierungsprüfung ist sie wertlos.",
+        "alt": "Handgezeichnete Grundrissskizze mit Möblierung und Raumnamen, jedoch ohne Maßangaben und ohne Maßstab.",
+        "criteria": [
+          "Keine Maßketten, kein Maßstab",
+          "Wandstärken frei gezeichnet statt maßhaltig",
+          "Flächen lassen sich nicht nachrechnen",
+          "Möblierung statt Bauteilinformation",
+          "Für Kreditakte und Exposé nicht verwendbar"
+        ]
+      }
+    },
+    "scope": {
+      "eyebrow": "Leistungsumfang",
+      "title": "Vom Aufmaß vor Ort bis zur prüffähigen Berechnung",
+      "text": "Wir arbeiten am Gebäude, nicht am Papier aus dem Bauakt. Was dabei entsteht, geht anschließend unverändert in Exposé, Portale und Kreditakte.",
+      "items": [
+        {
+          "num": "01",
+          "title": "Aufmaß vor Ort",
+          "text": "Unser Ingenieur nimmt jeden Raum selbst auf: Längen, Höhen, Dachschrägen, Erker und Nischen. Grundlage ist der gebaute Zustand, nicht der genehmigte."
+        },
+        {
+          "num": "02",
+          "title": "Bemaßte Neuzeichnung",
+          "text": "Aus dem Aufmaß entsteht je Geschoss ein maßstäblicher Grundriss – durchgehend bemaßt, mit Raumbezeichnungen und Flächen, digital und druckfähig."
+        },
+        {
+          "num": "03",
+          "title": "Wohnflächenberechnung nach WoFlV",
+          "text": "Die Flächen werden nach Wohnflächenverordnung ermittelt: Dachschrägen anteilig, Balkone und Terrassen mit zulässigem Ansatz, Keller- und Nebenflächen getrennt ausgewiesen."
+        },
+        {
+          "num": "04",
+          "title": "Abgleich mit Ihren Unterlagen",
+          "text": "Wir gleichen das Ergebnis mit Teilungserklärung, Bauplänen und Kaufvertrag ab. Weicht die tatsächliche Fläche ab, erfahren Sie es vor der Vermarktung – nicht in der Verhandlung."
+        }
+      ]
+    },
+    "impact": {
+      "eyebrow": "Wirkung im Verkauf",
+      "title": "Warum eine belastbare Fläche über Preis und Tempo entscheidet",
+      "items": [
+        {
+          "title": "Die Finanzierung läuft durch",
+          "text": "Die Bank des Käufers prüft Plan und Fläche, bevor sie zusagt. Liegen beide prüffähig vor, entfallen Rückfragen und die Zeit bis zum Notartermin verkürzt sich."
+        },
+        {
+          "title": "Sie haften nicht für falsche Quadratmeter",
+          "text": "Eine im Exposé zu hoch angesetzte Wohnfläche kann den Käufer nach dem Kauf zur Minderung berechtigen. Eine dokumentierte Berechnung nimmt diesem Streit die Grundlage."
+        },
+        {
+          "title": "Kein Preisabschlag für Unsicherheit",
+          "text": "Wer an der Fläche zweifelt, rechnet den Zweifel in sein Gebot ein. Belegte Zahlen nehmen dem Käufer dieses Argument – verhandelt wird über die Immobilie, nicht über den Plan."
+        },
+        {
+          "title": "Abweichungen bei Eigentumswohnungen",
+          "text": "Gerade bei Dachgeschoss- und Maisonettewohnungen weicht die Teilungserklärung häufig von der tatsächlichen Wohnfläche ab. Ein aktuelles Aufmaß klärt das früh und für alle Seiten."
+        }
+      ]
+    },
+    "related": {
+      "eyebrow": "Eingeordnet",
+      "title": "Ein Baustein im gesamten Verkaufsprozess",
+      "text": "Aufmaß und Grundriss stehen am Anfang: Sie sind die Grundlage für Bewertung, Exposé und Finanzierung. Wie die weiteren Schritte aufeinander folgen, zeigt unser Verkaufsfahrplan.",
+      "process": "Ablauf des Verkaufs ansehen",
+      "guides": "Verkaufsleitfäden ansehen"
+    },
+    "faq": {
+      "title": "Häufige Fragen zu Grundriss und Wohnflächenberechnung",
+      "items": [
+        {
+          "question": "Was ist ein bankfähiger Grundriss?",
+          "answer": "Ein maßstäblicher, durchgehend bemaßter Plan je Geschoss, aus dem sich jede Raumfläche nachrechnen lässt. Zusammen mit einer Wohnflächenberechnung nach Wohnflächenverordnung bildet er die Grundlage, auf der die finanzierende Bank den Beleihungswert ermittelt."
+        },
+        {
+          "question": "Warum verlangt die Bank überhaupt einen Grundriss?",
+          "answer": "Die Bank finanziert nicht den Kaufpreis, sondern den Wert der Immobilie. Diesen Wert leitet sie aus Fläche, Schnitt und Zustand ab. Ohne prüfbaren Plan fehlt ihr die Grundlage – die Zusage verzögert sich oder fällt niedriger aus als erwartet."
+        },
+        {
+          "question": "Reicht ein alter Bestandsplan aus dem Bauakt?",
+          "answer": "Selten. Bauakten zeigen den genehmigten, nicht den gebauten Zustand; Dachausbauten, versetzte Wände oder Anbauten fehlen. Wir prüfen vorhandene Pläne und sagen Ihnen, ob eine Aufbereitung genügt oder ein neues Aufmaß nötig ist."
+        },
+        {
+          "question": "Was kostet das Aufmaß durch Ihren Ingenieur?",
+          "answer": "Für Eigentümer, die eine Bewertung bei uns beauftragen, ist das Aufmaß Teil der kostenlosen Wertermittlung vor Ort. Vorabkosten entstehen Ihnen nicht, und Sie gehen damit keine Verpflichtung zum Verkauf ein."
+        },
+        {
+          "question": "Wie wird die Wohnfläche bei Dachschrägen berechnet?",
+          "answer": "Nach Wohnflächenverordnung zählen Flächen ab zwei Metern Höhe voll, zwischen einem und zwei Metern zur Hälfte, darunter gar nicht. Balkone und Terrassen fließen in der Regel zu einem Viertel ein. Diese Ansätze weisen wir in der Berechnung getrennt aus."
+        },
+        {
+          "question": "Was passiert, wenn die tatsächliche Fläche abweicht?",
+          "answer": "Dann besprechen wir das vor der Vermarktung. Eine nach unten korrigierte Fläche ist unangenehm, aber beherrschbar. Eine zu hoch angesetzte Fläche kann nach dem Verkauf zu Minderung führen. Wir vermarkten ausschließlich mit belegbaren Zahlen."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Lassen Sie Ihre Fläche prüfen, bevor der Markt es tut",
+      "text": "Die kostenlose Bewertung vor Ort schließt das Aufmaß durch unseren Ingenieur ein. Sie erfahren, was Ihre Immobilie wert ist – und ob Ihre Unterlagen einer Finanzierungsprüfung standhalten.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Erstgespräch vereinbaren"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER Magazin",
     "title": "Ein Blick in unsere Arbeit, unsere Haltung und echte Verkaufsgeschichten.",
@@ -1282,6 +1613,30 @@
     "result": "Ihr Vorteil",
     "videoLabel": "Beispiel einer digitalen Immobilienpräsentation von Immonation",
     "videoFallback": "Ihr Browser kann das Präsentationsvideo nicht abspielen.",
+    "tourTitle": "360°-Rundgang ansehen: Einfamilienhaus in Hagenbüchach",
+    "tourConsentNote": "Erst mit Ihrem Klick wird der Rundgang von {provider} geladen. Dabei werden Daten an den Anbieter übertragen.",
+    "tourOpenLabel": "Rundgang bei {provider} öffnen",
+    "tourOpenOverlayLabel": "360°-Rundgang öffnen",
+    "tourCloseOverlayLabel": "Schließen",
+    "tourLoadingLabel": "Rundgang wird geladen …",
+    "tourFailedTitle": "Der Rundgang lässt sich hier nicht anzeigen.",
+    "tourFailedText": "Möglicherweise blockiert Ihr Browser eingebettete Inhalte oder die Verbindung zu {provider} ist gestört. Sie können den Rundgang direkt beim Anbieter öffnen.",
+    "aiVisualization": "KI-Visualisierung",
+    "visualizationExamplesLabel": "Beispiele für KI-Visualisierungen",
+    "visualizationExamples": [
+      {
+        "id": "apartment",
+        "tab": "Wohnung",
+        "title": "Eigentumswohnung, Nürnberg",
+        "description": "Aus schlichten Aufnahmen leerer Räume entsteht ein möbliertes Wohngefühl, das Nutzung und Proportionen leichter erfassbar macht."
+      },
+      {
+        "id": "property",
+        "tab": "Grundstück",
+        "title": "Grundstück, Schwabach",
+        "description": "Eine frühe Grundstücks- und Baustellensituation entwickelt sich zur anschaulichen Architekturvision."
+      }
+    ],
     "services": [
       {
         "id": "system",
@@ -1405,22 +1760,22 @@
       },
       {
         "id": "visualisation",
-        "tab": "Visualisierung",
-        "kicker": "Potenzial verständlich machen",
-        "title": "Raum- und Nutzungsideen machen Potenzial sichtbar.",
-        "text": "Bei leeren, sanierungsbedürftigen oder noch nicht realisierten Flächen zeigen Visualisierungen, wie Räume genutzt und gestaltet werden könnten – immer klar als Darstellung gekennzeichnet.",
-        "highlight": "Vorstellbar, ohne den Ist-Zustand zu verschleiern.",
+        "tab": "KI-Visualisierung",
+        "kicker": "KI-gestützte Vermarktung",
+        "title": "Aus einfachen Aufnahmen wird eine starke Immobilienvision.",
+        "text": "Auch wenn nur schlichte oder wenig aussagekräftige Ausgangsbilder vorliegen, entwickeln wir daraus anschauliche Raum- und Nutzungsideen. Jede KI-Visualisierung bleibt klar als mögliche Darstellung gekennzeichnet.",
+        "highlight": "Vom Ist-Bild zur emotionalen Vorstellung.",
         "bullets": [
-          "Virtuelles Home Staging für leere Räume",
-          "Visualisierung möglicher Raum- und Nutzungsideen",
-          "Vorher-Nachher-Einordnung mit klarer Kennzeichnung",
-          "Gezielter Einsatz nur bei echtem Erklärungsbedarf"
+          "KI-gestütztes Home Staging für leere Räume",
+          "Aufwertung wenig aussagekräftiger Ausgangsaufnahmen",
+          "Architektur- und Nutzungsideen für Grundstücke",
+          "Klare Kennzeichnung als mögliche Visualisierung"
         ],
-        "result": "Interessenten erkennen das Potenzial schneller, während die tatsächliche Beschaffenheit der Immobilie transparent bleibt.",
+        "result": "Interessenten verstehen Nutzung, Atmosphäre und Entwicklungspotenzial schneller – auch wenn das vorhandene Bildmaterial die Möglichkeiten der Immobilie noch nicht transportiert.",
         "proof": [
-          { "value": "Vorher", "label": "der dokumentierte Ist-Zustand" },
-          { "value": "Möglichkeit", "label": "eine verständliche Raumidee" },
-          { "value": "Transparent", "label": "als Visualisierung gekennzeichnet" }
+          { "value": "Ausgangsbild", "label": "der dokumentierte Ist-Zustand" },
+          { "value": "KI-Vision", "label": "Potenzial emotional erfassbar" },
+          { "value": "Transparent", "label": "klar als Visualisierung markiert" }
         ]
       },
       {
@@ -1518,6 +1873,8 @@
     "valuationCta": "Bewertung starten",
     "processEyebrow": "Vorbereitung & Vermarktung",
     "processTitle": "Die entscheidenden Schritte",
+    "documentsEyebrow": "Checkliste",
+    "documentsTitle": "Diese Unterlagen brauchen Sie",
     "faqTitle": "Häufige Fragen",
     "cta": {
       "title": "Verkauf fundiert vorbereiten",
@@ -1731,7 +2088,7 @@
         },
         {
           "question": "Kann ich Checklisten direkt herunterladen?",
-          "answer": "Downloads werden erst verlinkt, wenn Inhalt, Rechte, Barrierefreiheit und Aktualität geprüft sind. Der Downloadbereich zeigt den jeweiligen Stand."
+          "answer": "Ja. Unter Downloads stehen kostenlose Vorlagen (Übergabeprotokolle und Mietformulare) bereit. Nach Eingabe einer gültigen E-Mail-Adresse schalten Sie die PDFs frei und laden sie direkt herunter — ohne Versand an Ihr Postfach."
         },
         {
           "question": "Ersetzt ein Ratgeber die persönliche Beratung?",
@@ -1753,6 +2110,13 @@
     "challenge": "Herausforderung",
     "approach": "Unser Ansatz",
     "result": "Ergebnis",
+    "review": {
+      "eyebrow": "Kundenstimme zur Referenz",
+      "title": "Was der Eigentümer über die Zusammenarbeit sagt",
+      "source": "{rating} von 5 Sternen bei Google",
+      "screenshotLabel": "Originalbewertung",
+      "screenshotNote": "Diese Google-Bewertung gehört zu genau dieser Verkaufsreferenz."
+    },
     "prototypeNote": "Die Kennzahlen stammen aus den bereitgestellten Referenzunterlagen und sind für diesen Prototyp freigegeben. Vor einer öffentlichen Veröffentlichung bleiben Nachweis und Zustimmung erforderlich.",
     "allReferences": "Alle Referenzen ansehen",
     "cta": {
@@ -1909,13 +2273,15 @@
       { "value": "60 km", "label": "Beratungsradius um Zirndorf" },
       { "value": "6–12", "label": "Wochen typische Vermarktungsdauer" },
       { "value": "360°", "label": "Rundgang bei jedem Objekt" },
-      { "value": "4,9 ★", "label": "Google-Bewertung" }
+      { "value": "300+", "label": "Bewertungen auf 10 Plattformen" }
     ],
     "sell": {
       "title": "Verkaufen",
       "valuation": "Immobilienbewertung",
       "house": "Haus verkaufen",
-      "apartment": "Wohnung verkaufen"
+      "apartment": "Wohnung verkaufen",
+      "land": "Grundstück verkaufen",
+      "apartmentBuilding": "Mehrfamilienhaus verkaufen"
     },
     "buy": {
       "title": "Kaufen",
@@ -1939,6 +2305,58 @@
     "rights": "Alle Rechte vorbehalten.",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
-    "terms": "AGB"
+    "terms": "AGB",
+    "withdrawal": "Widerruf"
+  },
+  "LegalWithdrawal": {
+    "metadata": {
+      "title": "Widerrufsbelehrung",
+      "description": "Widerrufsbelehrung und Muster-Widerrufsformular der Immonation GmbH für Verbraucher. Stand: Juli 2026."
+    },
+    "eyebrow": "Rechtliches",
+    "title": "Widerrufsbelehrung",
+    "lede": "für Verbraucher · Immonation GmbH · Nürnberger Straße 18 · 90513 Zirndorf · Stand: Juli 2026.",
+    "sections": [
+      {
+        "heading": "Widerrufsrecht",
+        "paragraphs": [
+          "Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.",
+          "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns — Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Telefon: 0911 212 838 90, E-Mail: info@immonations.de — mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.",
+          "Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden."
+        ]
+      },
+      {
+        "heading": "Folgen des Widerrufs",
+        "paragraphs": [
+          "Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.",
+          "Haben Sie verlangt, dass die Dienstleistungen während der Widerrufsfrist beginnen sollen, so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht."
+        ]
+      },
+      {
+        "heading": "Vorzeitiges Erlöschen des Widerrufsrechts",
+        "paragraphs": [
+          "Ihr Widerrufsrecht erlischt bei einem Vertrag über die Erbringung von Dienstleistungen, wenn wir die Dienstleistung vollständig erbracht haben und mit der Ausführung der Dienstleistung erst begonnen haben, nachdem Sie dazu Ihre ausdrückliche Zustimmung gegeben haben und gleichzeitig Ihre Kenntnis davon bestätigt haben, dass Sie Ihr Widerrufsrecht bei vollständiger Vertragserfüllung durch uns verlieren."
+        ]
+      }
+    ],
+    "form": {
+      "title": "Muster-Widerrufsformular",
+      "instruction": "(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)",
+      "recipient": "An: Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, E-Mail: info@immonations.de",
+      "declaration": "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistung:",
+      "orderedReceived": "Bestellt am (*) / erhalten am (*):",
+      "consumerName": "Name des/der Verbraucher(s):",
+      "consumerAddress": "Anschrift des/der Verbraucher(s):",
+      "signature": "Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)",
+      "date": "Datum:",
+      "footnote": "(*) Unzutreffendes streichen.",
+      "downloadLabel": "Als ausfüllbares PDF öffnen",
+      "downloadHint": "Das PDF öffnet sich in einem neuen Tab. Füllen Sie die Felder digital aus (z. B. in Adobe Acrobat) — oder drucken Sie es aus und senden Sie es per Post bzw. E-Mail."
+    },
+    "relatedLink": {
+      "href": "/terms",
+      "label": "Zu den Allgemeinen Geschäftsbedingungen"
+    },
+    "note": "Stand: Juli 2026. Das Muster-Widerrufsformular ist nicht vorgeschrieben."
   }
 }

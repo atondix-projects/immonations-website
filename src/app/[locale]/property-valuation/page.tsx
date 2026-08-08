@@ -2,19 +2,20 @@ import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { routing } from '@/i18n/routing'
-import { buildMetadata } from '@/lib/seo/metadata'
-import { localizePath } from '@/lib/seo/routes'
+import { FaqHubLink } from '@/components/site/faq-category-nav'
 import { JsonLd } from '@/components/site/json-ld'
-import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
-import { SITE } from '@/lib/seo/site'
 import {
   ValuationPage,
   type ValuationFeature,
   type ValuationStat,
   type ValuationStep,
 } from '@/components/site/templates/valuation-page'
-import type { FaqItem } from '@/components/site/templates/faq-section'
+import { routing } from '@/i18n/routing'
+import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
+import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
+import { buildMetadata } from '@/lib/seo/metadata'
+import { localizePath } from '@/lib/seo/routes'
+import { SITE } from '@/lib/seo/site'
 
 export const dynamic = 'force-static'
 
@@ -53,12 +54,13 @@ export default async function PropertyValuationPage({
   setRequestLocale(locale)
 
   const t = await getTranslations('ValuationPage')
+  const faqT = await getTranslations('FaqPage')
   const nav = await getTranslations('Nav')
   const features = t.raw('features.items') as ValuationFeature[]
   const stepsRaw = t.raw('steps.items') as Array<{ title: string; text: string }>
   const steps: ValuationStep[] = stepsRaw.map(({ title, text }) => ({ title, text }))
   const stats = t.raw('stats') as ValuationStat[]
-  const faqItems = t.raw('faq.items') as FaqItem[]
+  const faqItems = toFaqSectionItems(selectFaqsForPage(locale, 'property-valuation'))
   const publicPath = localizePath('/property-valuation', locale)
   const url = `${SITE.url}/${locale}${publicPath}`
 
@@ -78,7 +80,7 @@ export default async function PropertyValuationPage({
             serviceType: 'Real estate valuation',
             areaServed: 'Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung',
           }),
-          faqPage(faqItems.map((item) => ({ question: item.question, answer: item.answer }))),
+          faqPage(faqItems),
         ]}
       />
       <ValuationPage
@@ -89,6 +91,7 @@ export default async function PropertyValuationPage({
         steps={{ title: t('steps.title'), items: steps }}
         stats={stats}
         faq={{ title: t('faq.title'), items: faqItems }}
+        faqFooter={<FaqHubLink label={faqT('viewAll')} />}
         cta={{
           title: t('cta.title'),
           text: t('cta.text'),

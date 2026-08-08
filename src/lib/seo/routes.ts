@@ -16,6 +16,7 @@ export const STATIC_ROUTES = [
   { internal: '/services', priority: 0.9, changefreq: 'monthly' as const },
   { internal: '/sell', priority: 0.9, changefreq: 'monthly' as const },
   { internal: '/sales-process', priority: 0.8, changefreq: 'monthly' as const },
+  { internal: '/floor-plans', priority: 0.7, changefreq: 'monthly' as const },
   { internal: '/locations', priority: 0.8, changefreq: 'monthly' as const },
   { internal: '/property-valuation', priority: 0.9, changefreq: 'monthly' as const },
   { internal: '/blog', priority: 0.7, changefreq: 'weekly' as const },
@@ -34,6 +35,7 @@ export const STATIC_ROUTES = [
   { internal: '/imprint', priority: 0.3, changefreq: 'yearly' as const },
   { internal: '/privacy', priority: 0.3, changefreq: 'yearly' as const },
   { internal: '/terms', priority: 0.3, changefreq: 'yearly' as const },
+  { internal: '/withdrawal', priority: 0.3, changefreq: 'yearly' as const },
 ] as const
 
 type LocaleKey = (typeof routing.locales)[number]

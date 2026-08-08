@@ -34,7 +34,25 @@ export type ReferenceDetail = {
   result: { de: string; en: string }
   challenge: { de: string; en: string }
   approach: { de: string; en: string }
+  review?: {
+    reviewer: string
+    rating: 4 | 5
+    date: { de: string; en: string }
+    quote: { de: string; en: string }
+    screenshot: {
+      src: string
+      width: number
+      height: number
+      alt: { de: string; en: string }
+    }
+  }
 }
+
+export const FEATURED_REVIEW_IDS = [
+  'deining-neubauwohnung',
+  'fuerth-mehrfamilienhaus',
+  'langenzenn-terrassenwohnung',
+] as const satisfies readonly ReferenceId[]
 
 export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
   'deining-neubauwohnung': {
@@ -50,6 +68,24 @@ export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
     approach: {
       de: 'Hochwertige Präsentation, klare Einordnung der Neubauqualität und gezielte Ansprache passender Interessenten.',
       en: 'A high-quality presentation, clear positioning of the new-build specification, and targeted buyer outreach.',
+    },
+    review: {
+      reviewer: 'Waweina',
+      rating: 5,
+      date: { de: 'vor einem Monat', en: 'one month ago' },
+      quote: {
+        de: 'Besonders positiv fand ich die hochwertige Erstellung des Exposés inklusive Video- und Social-Media-Präsentation. Dadurch wurde die Wohnung optimal präsentiert und tatsächlich konnte bereits innerhalb eines Monats ein Käufer gefunden werden.',
+        en: 'I particularly appreciated the high-quality brochure, including the video and social media presentation. It showcased the apartment at its best, and a buyer was found within just one month.',
+      },
+      screenshot: {
+        src: '/images/reviews/google-waweina-deining.png',
+        width: 508,
+        height: 533,
+        alt: {
+          de: 'Originale Google-Bewertung von Waweina zur verkauften Wohnung in Deining',
+          en: 'Original Google review by Waweina for the sold apartment in Deining',
+        },
+      },
     },
   },
   'erlangen-eigentumswohnung': {
@@ -156,6 +192,24 @@ export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
       de: 'Belastbare Unterlagen, klare Investmentstory und qualifizierte Ansprache des Anlegernetzwerks.',
       en: 'Robust documentation, a clear investment story, and qualified investor-network outreach.',
     },
+    review: {
+      reviewer: 'Markus Biegel',
+      rating: 5,
+      date: { de: 'vor einem Jahr', en: 'one year ago' },
+      quote: {
+        de: 'Der Verkauf meines Mehrfamilienhauses in Fürth wurde von der Immonation GmbH von Anfang bis Ende professionell begleitet. Besonders positiv fand ich die regelmäßigen Updates zum aktuellen Stand, wodurch ich immer bestens informiert war.',
+        en: 'Immonation supported the sale of my apartment building in Fürth professionally from start to finish. I particularly valued the regular progress updates, which kept me fully informed throughout.',
+      },
+      screenshot: {
+        src: '/images/reviews/google-markus-biegel-fuerth-mehrfamilienhaus.png',
+        width: 515,
+        height: 406,
+        alt: {
+          de: 'Originale Google-Bewertung von Markus Biegel zum verkauften Mehrfamilienhaus in Fürth',
+          en: 'Original Google review by Markus Biegel for the sold apartment building in Fürth',
+        },
+      },
+    },
   },
   'heroldsbach-mehrfamilienhaus': {
     id: 'heroldsbach-mehrfamilienhaus',
@@ -185,6 +239,24 @@ export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
     approach: {
       de: 'Fokus auf Wohnqualität und Außenraum sowie eine kompakte, vorqualifizierte Besichtigungsphase.',
       en: 'A focus on living quality and outdoor space, followed by a compact, pre-qualified viewing phase.',
+    },
+    review: {
+      reviewer: 'Hermann Meier',
+      rating: 5,
+      date: { de: 'vor einem Jahr', en: 'one year ago' },
+      quote: {
+        de: 'Es war einfach wohltuend, mit richtigen Profis zusammenzuarbeiten. Der Verkauf unserer Wohnung wurde vom Immonation-Team kompetent durchgeführt – von der Marktanalyse über die Anzeigenerstellung und Besichtigungen bis zum Notartermin.',
+        en: 'It was genuinely reassuring to work with true professionals. The Immonation team handled the sale of our apartment with expertise, from market analysis and the listing through viewings and the notary appointment.',
+      },
+      screenshot: {
+        src: '/images/reviews/google-hermann-meier-langenzenn.png',
+        width: 518,
+        height: 289,
+        alt: {
+          de: 'Originale Google-Bewertung von Hermann Meier zur verkauften Terrassenwohnung in Langenzenn',
+          en: 'Original Google review by Hermann Meier for the sold terrace apartment in Langenzenn',
+        },
+      },
     },
   },
   'nuernberg-einfamilienhaus': {

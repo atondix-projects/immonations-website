@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
+import { AnimatedNumber } from '@/components/site/animated-number'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
@@ -67,6 +68,8 @@ export default async function ReferenceDetailPage({
   const item = items.find((candidate) => candidate.id === detail.id)
   if (!item) notFound()
 
+  const language = locale === 'en' ? 'en' : 'de'
+  const review = detail.review
   const pagePath = localizePath(`/references/${slug}`, locale)
   const referencesPath = localizePath('/references', locale)
   const metrics = [
@@ -126,11 +129,13 @@ export default async function ReferenceDetailPage({
 
       <section className="border-border border-b py-10 md:py-14">
         <div className="mx-auto grid w-full max-w-[1320px] grid-cols-3 gap-5 px-5 sm:px-7 lg:px-12">
-          {metrics.map((metric) => (
+          {metrics.map((metric, index) => (
             <div key={metric.label}>
-              <span className="font-serif text-3xl font-medium tabular-nums md:text-5xl">
-                {metric.value}
-              </span>
+              <AnimatedNumber
+                value={metric.value}
+                delay={index * 0.08}
+                className="font-serif text-3xl font-medium md:text-5xl"
+              />
               <p className="text-muted-foreground mt-2 text-xs leading-snug sm:text-sm">
                 {metric.label}
               </p>
@@ -172,6 +177,53 @@ export default async function ReferenceDetailPage({
         </div>
       </section>
 
+      {review ? (
+        <section className="bg-muted/65 border-y border-neutral-200 py-18 md:py-24">
+          <div className="mx-auto grid w-full max-w-[1120px] gap-10 px-5 sm:px-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-20">
+            <div>
+              <p className="text-brand-700 text-[11px] font-semibold tracking-[0.2em] uppercase">
+                {labels('review.eyebrow')}
+              </p>
+              <h2 className="mt-4 max-w-[16ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
+                {labels('review.title')}
+              </h2>
+              <blockquote className="border-brand-700 mt-9 max-w-[43ch] border-l-2 pl-6 font-serif text-2xl leading-[1.5] font-medium text-pretty">
+                „{review.quote[language]}“
+              </blockquote>
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p className="text-sm font-semibold">{review.reviewer}</p>
+                <div
+                  className="text-brand-700 flex gap-0.5"
+                  aria-label={labels('review.source', { rating: review.rating })}
+                >
+                  {Array.from({ length: review.rating }, (_, index) => (
+                    <Star key={index} className="size-3.5 fill-current" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-xs">Google · {review.date[language]}</p>
+              </div>
+            </div>
+
+            <figure className="border-border bg-background border p-4 sm:p-6">
+              <figcaption className="mb-5 flex items-center justify-between gap-4 text-xs font-semibold tracking-[0.14em] uppercase">
+                <span>{labels('review.screenshotLabel')}</span>
+                <span className="text-brand-700">Google</span>
+              </figcaption>
+              <Image
+                src={review.screenshot.src}
+                alt={review.screenshot.alt[language]}
+                width={review.screenshot.width}
+                height={review.screenshot.height}
+                sizes="(min-width: 1024px) 430px, calc(100vw - 4rem)"
+                className="mx-auto h-auto w-full max-w-[32rem]"
+              />
+              <p className="text-muted-foreground mt-5 text-xs leading-relaxed">
+                {labels('review.screenshotNote')}
+              </p>
+            </figure>
+          </div>
+        </section>
+      ) : null}
       <section className="bg-muted/65 border-y border-neutral-200 py-14">
         <div className="mx-auto flex w-full max-w-[1120px] flex-col justify-between gap-6 px-5 sm:px-7 md:flex-row md:items-center">
           <p className="max-w-[52ch] text-sm leading-relaxed text-neutral-600">

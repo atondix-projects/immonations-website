@@ -16,6 +16,7 @@ import {
   Home,
   KeyRound,
   Phone,
+  Ruler,
   Search,
   ShieldCheck,
   Star,
@@ -98,6 +99,12 @@ const menuGroups: MenuGroup[] = [
             descriptionKey: 'mega.sellingDesc',
             href: '/sell',
             icon: Home,
+          },
+          {
+            labelKey: 'mega.floorPlans',
+            descriptionKey: 'mega.floorPlansDesc',
+            href: '/floor-plans',
+            icon: Ruler,
           },
           {
             labelKey: 'mega.virtualTour',

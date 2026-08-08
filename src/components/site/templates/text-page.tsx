@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { PageHero } from './page-hero'
 
 export type TextSection = {
@@ -15,12 +16,14 @@ export function TextPage({
   lede,
   sections,
   note,
+  afterSections,
 }: {
   eyebrow: string
   title: string
   lede?: string
   sections: TextSection[]
   note?: string
+  afterSections?: ReactNode
 }) {
   return (
     <div className="bg-background">
@@ -41,6 +44,7 @@ export function TextPage({
               ))}
             </div>
           ))}
+          {afterSections}
           {note ? (
             <p className="text-muted-foreground bg-muted/60 px-5 py-4 text-sm leading-relaxed">
               {note}

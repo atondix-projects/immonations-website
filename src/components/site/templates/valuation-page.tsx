@@ -1,7 +1,8 @@
-import { Suspense, type ComponentProps } from 'react'
+import { Suspense, type ComponentProps, type ReactNode } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
+import { AnimatedNumber } from '@/components/site/animated-number'
 import { ValuationWizard } from '@/components/site/valuation/valuation-wizard'
 import { FaqSection, type FaqItem } from './faq-section'
 import { CtaBand } from './cta-band'
@@ -20,6 +21,7 @@ export type ValuationPageProps = {
   steps: { title: string; items: ValuationStep[] }
   stats: ValuationStat[]
   faq: { title: string; items: FaqItem[] }
+  faqFooter?: ReactNode
   cta: {
     title: string
     text?: string
@@ -38,6 +40,7 @@ export function ValuationPage({
   steps,
   stats,
   faq,
+  faqFooter,
   cta,
 }: ValuationPageProps) {
   const labels =
@@ -140,11 +143,13 @@ export function ValuationPage({
       <section className="py-14 md:py-16">
         <div className={CONTAINER}>
           <div className="border-border grid grid-cols-2 gap-8 border-y py-10 lg:grid-cols-4">
-            {stats.map((stat) => (
+            {stats.map((stat, index) => (
               <div key={stat.label} className="flex flex-col gap-2">
-                <span className="font-serif text-3xl font-semibold tabular-nums md:text-4xl">
-                  {stat.value}
-                </span>
+                <AnimatedNumber
+                  value={stat.value}
+                  delay={index * 0.08}
+                  className="font-serif text-3xl font-semibold md:text-4xl"
+                />
                 <p className="text-muted-foreground text-sm leading-snug">{stat.label}</p>
               </div>
             ))}
@@ -152,7 +157,7 @@ export function ValuationPage({
         </div>
       </section>
 
-      <FaqSection title={faq.title} items={faq.items} />
+      <FaqSection title={faq.title} items={faq.items} footer={faqFooter} />
       <CtaBand title={cta.title} text={cta.text} primary={cta.primary} secondary={cta.secondary} />
     </div>
   )
