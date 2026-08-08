@@ -17,6 +17,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/de/faq',
+        destination: '/de/ressourcen/faq',
+        permanent: true,
+      },
+      {
+        source: '/en/faq',
+        destination: '/en/resources/faq',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withNextIntl(nextConfig)
