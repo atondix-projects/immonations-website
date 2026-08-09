@@ -47,13 +47,17 @@ export function FreedocsDownloadGate({
   const [unlocked, setUnlocked] = useState(false)
 
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem(STORAGE_KEY) === '1') {
-        setUnlocked(true)
+    const frame = requestAnimationFrame(() => {
+      try {
+        if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+          setUnlocked(true)
+        }
+      } catch {
+        // sessionStorage may be unavailable
       }
-    } catch {
-      // sessionStorage may be unavailable
-    }
+    })
+
+    return () => cancelAnimationFrame(frame)
   }, [])
 
   function unlock() {
@@ -81,7 +85,7 @@ export function FreedocsDownloadGate({
   )
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14 lg:items-start">
+    <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
       <form
         className="border-border bg-background border p-6 shadow-sm sm:p-8"
         onSubmit={handleSubmit}
@@ -151,8 +155,8 @@ export function FreedocsDownloadGate({
                     key={doc.id}
                     className="flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8"
                   >
-                    <div className="min-w-0 max-w-[52ch]">
-                      <h3 className="text-[17px] font-semibold leading-snug">{doc.title}</h3>
+                    <div className="max-w-[52ch] min-w-0">
+                      <h3 className="text-[17px] leading-snug font-semibold">{doc.title}</h3>
                       <p className="text-muted-foreground mt-1.5 text-sm leading-relaxed">
                         {doc.description}
                       </p>

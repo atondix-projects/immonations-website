@@ -76,7 +76,10 @@ export function HandbookRequestForm() {
         </label>
       </div>
 
-      <label className="text-muted-foreground mt-6 flex items-start gap-3 text-xs leading-relaxed" htmlFor="handbook-consent">
+      <label
+        className="text-muted-foreground mt-6 flex items-start gap-3 text-xs leading-relaxed"
+        htmlFor="handbook-consent"
+      >
         <input
           id="handbook-consent"
           name="consent"

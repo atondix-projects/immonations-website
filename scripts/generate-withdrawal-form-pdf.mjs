@@ -82,8 +82,7 @@ const LOCALES = [
     locale: 'en',
     filename: 'model-withdrawal-form.pdf',
     title: 'Model withdrawal form',
-    instruction:
-      '(Complete and return this form only if you wish to withdraw from the contract.)',
+    instruction: '(Complete and return this form only if you wish to withdraw from the contract.)',
     recipient:
       'To: Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf, Email: info@immonations.de',
     declaration:

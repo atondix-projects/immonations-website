@@ -192,7 +192,10 @@ export function MagazineFlipbook({
       const pageElements = pages.map((page, index) => {
         const pageElement = document.createElement('div')
         pageElement.className = 'magazine-flip-page bg-white'
-        pageElement.setAttribute('aria-label', labels.pageAlt.replace('{page}', String(page.number)))
+        pageElement.setAttribute(
+          'aria-label',
+          labels.pageAlt.replace('{page}', String(page.number)),
+        )
 
         if (index === 0 || index === lastPageIndex) {
           pageElement.dataset.density = 'hard'
@@ -345,8 +348,7 @@ export function MagazineFlipbook({
     <div
       className={cn(
         'flex flex-col gap-5',
-        isExpanded &&
-          'bg-background fixed inset-0 z-50 overflow-y-auto px-4 py-5 md:px-8 md:py-8',
+        isExpanded && 'bg-background fixed inset-0 z-50 overflow-y-auto px-4 py-5 md:px-8 md:py-8',
       )}
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -454,12 +456,7 @@ export function MagazineFlipbook({
           <Button type="button" variant="ghost" size="sm" onClick={() => goToPage(0)}>
             {labels.firstPage}
           </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            onClick={() => goToPage(lastPageIndex)}
-          >
+          <Button type="button" variant="ghost" size="sm" onClick={() => goToPage(lastPageIndex)}>
             {labels.lastPage}
           </Button>
         </div>

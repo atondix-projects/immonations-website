@@ -67,8 +67,10 @@ const EYEBROW_LIGHT =
   'text-brand-700 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
 const EYEBROW_DARK =
   'text-brand-300 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
+// `break-words hyphens-auto`: deutsche Komposita wie "Wohnflächenberechnung"
+// passen bei 2.35rem nicht in eine 375px-Spalte (siehe PageHero, gleiche Lösung).
 const SECTION_TITLE =
-  'mt-4 font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.2rem]'
+  'mt-4 font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance break-words hyphens-auto md:text-[3.2rem]'
 const CONTAINER = 'mx-auto w-full max-w-[1320px] px-5 sm:px-7 lg:px-12'
 
 /**

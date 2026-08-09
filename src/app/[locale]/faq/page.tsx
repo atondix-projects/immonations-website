@@ -63,14 +63,15 @@ export default async function FaqHubPage({ params }: { params: Promise<{ locale:
     groups.some((group) => group.category === id),
   ).map((id) => ({ id, label: categoryLabels[id] }))
 
-  const groupsWithStart = groups.reduce<
-    Array<(typeof groups)[number] & { startIndex: number }>
-  >((acc, group) => {
-    const previous = acc.at(-1)
-    const startIndex = previous ? previous.startIndex + previous.items.length : 1
-    acc.push({ ...group, startIndex })
-    return acc
-  }, [])
+  const groupsWithStart = groups.reduce<Array<(typeof groups)[number] & { startIndex: number }>>(
+    (acc, group) => {
+      const previous = acc.at(-1)
+      const startIndex = previous ? previous.startIndex + previous.items.length : 1
+      acc.push({ ...group, startIndex })
+      return acc
+    },
+    [],
+  )
 
   return (
     <div className="bg-background">

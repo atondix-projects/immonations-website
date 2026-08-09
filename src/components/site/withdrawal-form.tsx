@@ -16,22 +16,16 @@ type WithdrawalFormCopy = {
 }
 
 function FillLine({ className = 'w-full' }: { className?: string }) {
-  return <span aria-hidden className={`mt-2 block border-b border-foreground/70 ${className}`} />
+  return <span aria-hidden className={`border-foreground/70 mt-2 block border-b ${className}`} />
 }
 
 /**
  * Printable model withdrawal form (Muster-Widerrufsformular).
  * Presentational on-page; consumers can also download a fillable PDF.
  */
-export function WithdrawalForm({
-  copy,
-  pdfHref,
-}: {
-  copy: WithdrawalFormCopy
-  pdfHref: string
-}) {
+export function WithdrawalForm({ copy, pdfHref }: { copy: WithdrawalFormCopy; pdfHref: string }) {
   return (
-    <div className="rounded-sm border border-border/70 bg-background px-6 py-8 sm:px-8 sm:py-10">
+    <div className="border-border/70 bg-background rounded-sm border px-6 py-8 sm:px-8 sm:py-10">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
           <h2 className="text-brand-600 text-xl font-semibold tracking-tight sm:text-2xl">

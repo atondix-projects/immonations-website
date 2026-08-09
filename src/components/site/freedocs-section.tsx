@@ -41,7 +41,10 @@ export async function FreedocsSection() {
   }
 
   return (
-    <section id="dokumente" className="scroll-mt-24 border-border bg-muted/45 border-t py-16 md:py-24">
+    <section
+      id="dokumente"
+      className="border-border bg-muted/45 scroll-mt-24 border-t py-16 md:py-24"
+    >
       <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         <div className="max-w-[62ch]">
           <p className="text-primary text-[11px] font-semibold tracking-[0.18em] uppercase">

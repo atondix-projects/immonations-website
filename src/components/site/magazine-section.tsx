@@ -37,7 +37,7 @@ export async function MagazineSection({ tone = 'light' }: { tone?: 'light' | 'mu
       <div className="mx-auto grid w-full max-w-[1240px] items-start gap-10 px-6 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14 lg:px-10">
         <div className="flex flex-col gap-6 lg:sticky lg:top-28">
           <div className="flex flex-col gap-3.5">
-            <span className="text-neutral-600 text-[13px] font-semibold tracking-[0.14em] uppercase">
+            <span className="text-[13px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
               {t('eyebrow')}
             </span>
             <h2 className="font-serif text-3xl leading-[1.2] font-semibold text-balance md:text-[38px]">
