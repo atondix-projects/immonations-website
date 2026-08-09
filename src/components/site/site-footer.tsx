@@ -68,7 +68,8 @@ export async function SiteFooter() {
               className={LINK_CLASSES}
             >
               {t('sell.apartment')}
-            </Link>            <Link
+            </Link>{' '}
+            <Link
               href={{
                 pathname: '/sell/[slug]',
                 params: { slug: locale === 'de' ? 'grundstueck' : 'land' },

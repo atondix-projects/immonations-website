@@ -34,6 +34,10 @@ export const routing = defineRouting({
       de: '/leistungen/wohnflaechenberechnung-grundrisse',
       en: '/services/floor-plans-and-living-area',
     },
+    '/land-value': {
+      de: '/immobilienmarkt/bodenrichtwert',
+      en: '/property-market/standard-land-value',
+    },
     '/locations': {
       de: '/immobilienmakler-region',
       en: '/real-estate-agent-locations',

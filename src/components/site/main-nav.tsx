@@ -415,17 +415,20 @@ export function MainNav({
   const t = useTranslations('Nav')
   const locale = useLocale()
 
+  const navItemSurface = light
+    ? 'text-white hover:bg-white/10 focus:bg-white/10'
+    : 'text-foreground hover:bg-muted focus:bg-muted'
   const plainLinkClasses = cn(
-    'inline-flex items-center px-2.5 transition-[color,height,font-size] duration-300 motion-reduce:transition-none',
+    'inline-flex items-center px-2.5 transition-[color,background-color,height,font-size] duration-300 motion-reduce:transition-none',
     compact ? 'h-8 text-[15px]' : 'h-9 text-base',
-    light ? 'text-white hover:text-brand-200' : 'text-foreground hover:text-primary',
+    navItemSurface,
   )
   const triggerClasses = cn(
     'bg-transparent px-2.5 font-normal transition-[color,background-color,height,font-size] duration-300 motion-reduce:transition-none',
     compact ? 'h-8 text-[15px]' : 'h-9 text-base',
-    light
-      ? 'text-white hover:bg-white/10 focus:bg-white/10 data-open:bg-white/10 data-open:hover:bg-white/10 data-open:focus:bg-white/10 data-popup-open:bg-white/10 data-popup-open:hover:bg-white/10 data-popup-open:focus:bg-white/10'
-      : 'text-foreground hover:bg-muted',
+    navItemSurface,
+    light &&
+      'data-open:bg-white/10 data-open:hover:bg-white/10 data-open:focus:bg-white/10 data-popup-open:bg-white/10 data-popup-open:hover:bg-white/10 data-popup-open:focus:bg-white/10',
   )
 
   return (

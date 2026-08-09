@@ -17,6 +17,7 @@ export const STATIC_ROUTES = [
   { internal: '/sell', priority: 0.9, changefreq: 'monthly' as const },
   { internal: '/sales-process', priority: 0.8, changefreq: 'monthly' as const },
   { internal: '/floor-plans', priority: 0.7, changefreq: 'monthly' as const },
+  { internal: '/land-value', priority: 0.7, changefreq: 'monthly' as const },
   { internal: '/locations', priority: 0.8, changefreq: 'monthly' as const },
   { internal: '/property-valuation', priority: 0.9, changefreq: 'monthly' as const },
   { internal: '/blog', priority: 0.7, changefreq: 'weekly' as const },
