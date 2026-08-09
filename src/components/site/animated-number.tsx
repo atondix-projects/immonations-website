@@ -75,11 +75,9 @@ export function AnimatedNumber({ value, delay = 0, className, ...props }: Animat
         decimalPlaces={parsed.decimalPlaces}
         delay={delay}
         locale={locale}
-        className="text-inherit tracking-[inherit]"
+        className="tracking-[inherit] text-inherit"
       />
-      {parsed.suffix ? (
-        <span aria-hidden="true">{parsed.suffix}</span>
-      ) : null}
+      {parsed.suffix ? <span aria-hidden="true">{parsed.suffix}</span> : null}
     </span>
   )
 }
@@ -150,7 +148,7 @@ function LocaleNumberTicker({
     <span
       ref={ref}
       aria-hidden="true"
-      className={cn('inline-block tabular-nums tracking-wider', className)}
+      className={cn('inline-block tracking-wider tabular-nums', className)}
     >
       {formattedStart}
     </span>

@@ -15,6 +15,7 @@ import {
   referenceImage,
   type ReferenceItem,
 } from '@/lib/content/references'
+import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
 import { breadcrumbList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -218,7 +219,16 @@ export default async function ReferenceDetailPage({
                 className="mx-auto h-auto w-full max-w-[32rem]"
               />
               <p className="text-muted-foreground mt-5 text-xs leading-relaxed">
-                {labels('review.screenshotNote')}
+                {labels('review.screenshotNote')}{' '}
+                <Link
+                  href={{
+                    pathname: '/blog/[slug]',
+                    params: { slug: REAL_REVIEWS_POST_SLUG[language] },
+                  }}
+                  className="text-brand-700 hover:text-brand-800 font-semibold transition-colors"
+                >
+                  {labels('review.guideLink')}
+                </Link>
               </p>
             </figure>
           </div>

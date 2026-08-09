@@ -8,6 +8,7 @@ import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
+import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import {
@@ -16,6 +17,7 @@ import {
   getSellerGuideFaqPageKey,
   listAllSellerGuides,
 } from '@/lib/content/seller-guides'
+import { storyForSellerGuide } from '@/lib/content/testimonials'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -75,9 +77,10 @@ export default async function SellerGuidePage({
   const faqT = await getTranslations('FaqPage')
   const detailPath = localizePath('/sell/[slug]', locale).replace('[slug]', slug)
   const url = `${SITE.url}/${locale}${detailPath}`
-  const faqItems = toFaqSectionItems(
-    selectFaqsForPage(locale, getSellerGuideFaqPageKey(guide)),
-  )
+  const faqItems = toFaqSectionItems(selectFaqsForPage(locale, getSellerGuideFaqPageKey(guide)))
+  // Passende Verkaufsgeschichte zur Objektart; für Grundstück und
+  // Mehrfamilienhaus liegt keine vor, dort bleibt die Sektion aus.
+  const storyId = storyForSellerGuide(guide.translationKey)
 
   return (
     <article className="bg-background">
@@ -172,13 +175,19 @@ export default async function SellerGuidePage({
           <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
             {guide.documents.map((document) => (
               <li key={document} className="flex items-start gap-3 text-sm leading-6">
-                <Check className="text-primary mt-1 size-4 shrink-0" strokeWidth={2} aria-hidden="true" />
+                <Check
+                  className="text-primary mt-1 size-4 shrink-0"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
                 <span>{document}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      {storyId ? <TestimonialSpotlight id={storyId} /> : null}
 
       <FaqSection
         title={t('faqTitle')}

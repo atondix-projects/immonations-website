@@ -360,7 +360,7 @@ export function ProcessTimeline({
                     onKeyDown={(event) => handleKeyDown(event, index)}
                     className={cn(
                       'relative z-10 flex h-11 shrink-0 items-center overflow-hidden border font-mono text-[11px] whitespace-nowrap transition-[width,background-color,color,border-color,transform] duration-300 outline-none active:scale-95 motion-reduce:transition-none',
-                      'focus-visible:ring-2 focus-visible:ring-brand-300',
+                      'focus-visible:ring-brand-300 focus-visible:ring-2',
                       isActive
                         ? 'w-[154px] justify-start border-white bg-white px-3.5 text-neutral-950'
                         : 'w-11 justify-center border-white/35 bg-neutral-950/80 text-neutral-300 hover:border-white/70 hover:text-white',

@@ -2,40 +2,34 @@ import Image from 'next/image'
 import { Clock3, Play } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { VideoDialog } from '@/components/site/video-dialog'
+import { testimonialImage, testimonialVideo, type TestimonialId } from '@/lib/content/testimonials'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 type VideoItem = {
-  id: 'viktor-emter' | 'markus-burkhard' | 'sandra-boerschlein'
+  id: TestimonialId
   name: string
   title: string
   alt: string
   available: boolean
 }
 
-const VIDEO_MEDIA = {
-  'viktor-emter': {
-    poster: '/images/testimonials/viktor-emter.webp',
-    video: '/videos/testimonials/viktor-emter.mp4',
-    // Echte Maße der Datei — das Overlay spielt im Hochformat ohne Beschnitt.
-    videoWidth: 720,
-    videoHeight: 1280,
-  },
-  'markus-burkhard': {
-    poster: '/images/testimonials/markus-burkhard.webp',
-  },
-  'sandra-boerschlein': {
-    poster: '/images/testimonials/sandra-boerschlein.webp',
-  },
-} as const
-
-export async function FeedbackVideos() {
+export async function FeedbackVideos({
+  /**
+   * Anker der Sektion. `customer-stories` belegt denselben Namen; landen beide
+   * je auf einer Seite, bleibt der Sprung aus der Navigation eindeutig.
+   */
+  anchorId = 'kundenstimmen',
+}: {
+  anchorId?: string
+} = {}) {
   const t = await getTranslations('Home.feedback')
+  const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
   const items = t.raw('items') as VideoItem[]
   const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
-    <section id="kundenstimmen" className="bg-background scroll-mt-24 py-16 md:py-24">
+    <section id={anchorId} className="bg-background scroll-mt-24 py-16 md:py-24">
       <div className={CONTAINER}>
         <div className="mb-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="flex flex-col gap-3.5">
@@ -49,21 +43,20 @@ export async function FeedbackVideos() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => {
-            const media = VIDEO_MEDIA[item.id]
-            // Auf dem ganzen Objekt eingegrenzt, damit auch die Videomaße typisiert bleiben.
-            const videoMedia = 'video' in media ? media : null
+            const poster = testimonialImage(item.id)
+            const video = item.available ? testimonialVideo(item.id) : null
 
             return (
               <article key={item.id} className="group flex flex-col gap-4">
                 <div className="bg-surface-dark relative aspect-[9/12] overflow-hidden">
-                  {item.available && videoMedia ? (
+                  {video ? (
                     <VideoDialog
-                      src={videoMedia.video}
-                      poster={videoMedia.poster}
-                      width={videoMedia.videoWidth}
-                      height={videoMedia.videoHeight}
+                      src={video.src}
+                      poster={poster}
+                      width={video.width}
+                      height={video.height}
                       title={`${item.name}: ${item.title}`}
-                      fallback={t('videoFallback')}
+                      fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
                       className="size-full"
                       posterSizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -71,7 +64,7 @@ export async function FeedbackVideos() {
                   ) : (
                     <>
                       <Image
-                        src={media.poster}
+                        src={poster}
                         alt={item.alt}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

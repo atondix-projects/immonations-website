@@ -3,35 +3,18 @@ import { Play } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import { VideoDialog } from '@/components/site/video-dialog'
+import {
+  testimonialImage,
+  testimonialVideo,
+  type TestimonialStory,
+} from '@/lib/content/testimonials'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
-
-type Story = {
-  id: 'viktor-emter' | 'markus-burkhard' | 'herr-sippel' | 'frau-hartmann'
-  name: string
-  context: string
-  quote: string
-  result: string
-  alt: string
-  video: boolean
-}
-
-const STORY_MEDIA = {
-  'viktor-emter': {
-    image: '/images/testimonials/viktor-emter.webp',
-    video: '/videos/testimonials/viktor-emter.mp4',
-    // Echte Maße der Datei — das Overlay spielt im Hochformat ohne Beschnitt.
-    videoWidth: 720,
-    videoHeight: 1280,
-  },
-  'markus-burkhard': { image: '/images/testimonials/markus-burkhard.webp' },
-  'herr-sippel': { image: '/images/testimonials/herr-sippel-property.jpg' },
-  'frau-hartmann': { image: '/images/testimonials/frau-hartmann-property.jpg' },
-} as const
 
 export async function CustomerStories() {
   const t = await getTranslations('Home.stories')
+  const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
-  const items = t.raw('items') as Story[]
+  const items = tTestimonials.raw('items') as TestimonialStory[]
   const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
@@ -49,9 +32,8 @@ export async function CustomerStories() {
 
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           {items.map((item, index) => {
-            const media = STORY_MEDIA[item.id]
-            // Auf dem ganzen Objekt eingegrenzt, damit auch die Videomaße typisiert bleiben.
-            const videoMedia = 'video' in media ? media : null
+            const image = testimonialImage(item.id)
+            const video = item.video ? testimonialVideo(item.id) : null
             const isFirst = index === 0
             const isLast = index === items.length - 1
 
@@ -71,14 +53,14 @@ export async function CustomerStories() {
                     isLast && 'lg:aspect-auto lg:min-h-[440px]',
                   )}
                 >
-                  {item.video && videoMedia ? (
+                  {video ? (
                     <VideoDialog
-                      src={videoMedia.video}
-                      poster={videoMedia.image}
-                      width={videoMedia.videoWidth}
-                      height={videoMedia.videoHeight}
+                      src={video.src}
+                      poster={image}
+                      width={video.width}
+                      height={video.height}
                       title={`${item.name}: ${item.context}`}
-                      fallback={t('videoFallback')}
+                      fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
                       className="size-full"
                       posterPriority
@@ -90,7 +72,7 @@ export async function CustomerStories() {
                     />
                   ) : (
                     <Image
-                      src={media.image}
+                      src={image}
                       alt={item.alt}
                       fill
                       loading="eager"
@@ -127,7 +109,7 @@ export async function CustomerStories() {
           })}
         </div>
         <p className="text-muted-foreground mt-5 max-w-[76ch] text-xs leading-relaxed">
-          {t('prototypeNote')}
+          {tTestimonials('prototypeNote')}
         </p>
       </div>
     </section>

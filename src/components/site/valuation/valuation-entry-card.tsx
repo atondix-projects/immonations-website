@@ -15,10 +15,7 @@ type ValuationEntryCardProps = {
   variant?: 'light' | 'glass'
 }
 
-export function ValuationEntryCard({
-  className,
-  variant = 'light',
-}: ValuationEntryCardProps) {
+export function ValuationEntryCard({ className, variant = 'light' }: ValuationEntryCardProps) {
   const t = useTranslations('ValuationWizard')
   const homeT = useTranslations('Home.valuation')
   const router = useRouter()
@@ -98,10 +95,10 @@ export function ValuationEntryCard({
                 selectedType === id
                   ? isGlass
                     ? 'border-brand-400 bg-brand-500 text-white focus-visible:outline-white'
-                    : 'border-brand-700 bg-brand-700 text-white focus-visible:outline-brand-700'
+                    : 'border-brand-700 bg-brand-700 focus-visible:outline-brand-700 text-white'
                   : isGlass
                     ? 'border-white/15 bg-white/[0.06] text-white hover:border-white/40 hover:bg-white/10 focus-visible:outline-white'
-                    : 'border-neutral-200 bg-white text-neutral-900 hover:border-neutral-500 focus-visible:outline-brand-700',
+                    : 'focus-visible:outline-brand-700 border-neutral-200 bg-white text-neutral-900 hover:border-neutral-500',
               )}
             >
               {label}
@@ -126,9 +123,7 @@ export function ValuationEntryCard({
         type="submit"
         className={cn(
           'mt-5 inline-flex min-h-12 w-full items-center justify-between gap-3 px-5 text-sm font-semibold text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:translate-y-px',
-          isGlass
-            ? 'bg-brand-500 hover:bg-brand-400'
-            : 'bg-brand-700 hover:bg-brand-800',
+          isGlass ? 'bg-brand-500 hover:bg-brand-400' : 'bg-brand-700 hover:bg-brand-800',
         )}
       >
         {t('next')}

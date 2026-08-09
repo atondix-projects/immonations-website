@@ -5,12 +5,14 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import type { SalesProcessStep } from '@/components/site/home/process-timeline'
 import { FaqHubLink } from '@/components/site/faq-category-nav'
+import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
 import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
+import { listHandoverPolaroids } from '@/lib/content/handover-polaroids'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, howTo, service as serviceJsonLd } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -57,6 +59,7 @@ export default async function SalesProcessPage({
 
   const t = await getTranslations('SalesProcess')
   const faqT = await getTranslations('FaqPage')
+  const handoverT = await getTranslations('HandoverPolaroids')
   const nav = await getTranslations('Nav')
   const steps = t.raw('steps') as SalesProcessStep[]
   const ownerItems = t.raw('owner.items') as OwnerItem[]
@@ -206,6 +209,16 @@ export default async function SalesProcessPage({
           ))}
         </div>
       </section>
+
+      {/* Schritt 10 endet mit der Schlüsselübergabe — hier steht, was danach
+          bleibt. Bewusst eine eigene Sektion und nicht im Artikel von Schritt
+          10: alle zehn Schritte teilen sich dasselbe Raster. */}
+      <HandoverPolaroidWall
+        items={listHandoverPolaroids()}
+        eyebrow={handoverT('eyebrow')}
+        title={handoverT('title')}
+        text={handoverT('text')}
+      />
 
       <section className="py-16 md:py-20">
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">

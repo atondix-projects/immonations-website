@@ -14,6 +14,10 @@ import { JsonLd } from '@/components/site/json-ld'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { ReferenceGallery } from '@/components/site/references/reference-gallery'
+import { SoldVideoReel } from '@/components/site/sold/sold-video-reel'
+import { listSoldVideos } from '@/lib/content/sold-videos'
+import { BellVideoWall } from '@/components/site/sold/bell-video-wall'
+import { listBellVideos } from '@/lib/content/bell-videos'
 import { FeedbackVideos } from '@/components/site/home/feedback-videos'
 
 export const dynamic = 'force-static'
@@ -47,6 +51,7 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
 
   const t = await getTranslations('ReferencesPage')
   const nav = await getTranslations('Nav')
+  const soldT = await getTranslations('SoldVideos')
   const items = t.raw('items') as ReferenceItem[]
   const pagePath = localizePath('/references', locale)
 
@@ -140,6 +145,17 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
           </div>
         </div>
       </section>
+
+      {/* Verkauft-Clips inkl. Ortschaften */}
+      <SoldVideoReel
+        items={listSoldVideos()}
+        eyebrow={soldT('eyebrow')}
+        title={soldT('title')}
+        text={soldT('text')}
+      />
+
+      {/* Verkaufsglocke — gesprochene Ansage nach jedem Abschluss */}
+      <BellVideoWall items={listBellVideos()} className="bg-muted border-border border-y" />
 
       <FeedbackVideos />
 

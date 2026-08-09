@@ -7,8 +7,14 @@ import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
+import { SoldVideoReel } from '@/components/site/sold/sold-video-reel'
+import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
+import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
 import { routing } from '@/i18n/routing'
 import { getLocation, listAllLocations } from '@/lib/content/locations'
+import { listSoldVideosByLocation } from '@/lib/content/sold-videos'
+import { listHandoverPolaroidsByLocation } from '@/lib/content/handover-polaroids'
+import { storyForLocation } from '@/lib/content/testimonials'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -55,6 +61,13 @@ export default async function LocationPage({
 
   const nav = await getTranslations('Nav')
   const t = await getTranslations('LocationDetailPage')
+  const soldT = await getTranslations('SoldVideos')
+  const soldVideos = listSoldVideosByLocation(slug)
+  const handoverT = await getTranslations('HandoverPolaroids')
+  const handoverPolaroids = listHandoverPolaroidsByLocation(slug)
+  // Verkaufsgeschichte aus genau dieser Stadt; zu Fürth liegt bisher keine
+  // freigegebene vor, dort bleibt die Sektion aus.
+  const storyId = storyForLocation(slug)
   const path = localizePath('/locations/[slug]', locale).replace('[slug]', slug)
   const url = `${SITE.url}/${locale}${path}`
 
@@ -129,6 +142,26 @@ export default async function LocationPage({
           </div>
         </div>
       </section>
+
+      {/* Verkauft-Clips aus genau dieser Ortschaft */}
+      <SoldVideoReel
+        items={soldVideos}
+        layout="grid"
+        eyebrow={soldT('location.eyebrow')}
+        title={soldT('location.title', { town: location.name })}
+        text={soldT('location.text', { town: location.name })}
+        className="border-border bg-muted border-y"
+      />
+
+      {/* Übergabe-Polaroid derselben Ortschaft — entfällt still, wo es keins gibt */}
+      <HandoverPolaroidWall
+        items={handoverPolaroids}
+        eyebrow={handoverT('location.eyebrow', { town: location.name })}
+        title={handoverT('location.title', { town: location.name })}
+        text={handoverT('location.text', { town: location.name })}
+      />
+
+      {storyId ? <TestimonialSpotlight id={storyId} /> : null}
 
       <FaqSection title={t('faqTitle', { city: location.name })} items={location.faq} />
       <CtaBand

@@ -150,7 +150,9 @@ export function TourOverlay({
             <X className="size-5" aria-hidden="true" />
           </button>
         </div>
-        <div className="min-h-0 flex-1">{open ? <TourFrame url={url} labels={labels} /> : null}</div>
+        <div className="min-h-0 flex-1">
+          {open ? <TourFrame url={url} labels={labels} /> : null}
+        </div>
       </div>
     </dialog>
   )

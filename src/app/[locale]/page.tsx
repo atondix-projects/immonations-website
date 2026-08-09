@@ -17,7 +17,11 @@ import { ContactBooking } from '@/components/site/home/contact-booking'
 import { ProcessTimeline, type SalesProcessStep } from '@/components/site/home/process-timeline'
 import { CONTAINER, SectionHeader } from '@/components/site/home/section-shell'
 import { ReferenceGallery } from '@/components/site/references/reference-gallery'
+import { SoldVideoReel } from '@/components/site/sold/sold-video-reel'
+import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
+import { listSoldVideos } from '@/lib/content/sold-videos'
+import { listHandoverPolaroids } from '@/lib/content/handover-polaroids'
 import type { ReferenceItem } from '@/lib/content/references'
 
 export const dynamic = 'force-static'
@@ -33,7 +37,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   const t = await getTranslations('Home')
   const referencesT = await getTranslations('ReferencesPage')
+  const soldT = await getTranslations('SoldVideos')
   const processT = await getTranslations('SalesProcess')
+  const handoverT = await getTranslations('HandoverPolaroids')
   const processSteps = processT.raw('steps') as SalesProcessStep[]
   const references = (referencesT.raw('items') as ReferenceItem[]).slice(0, 3)
 
@@ -70,6 +76,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
+      {/* Verkauft-Clips inkl. Ortschaften */}
+      <SoldVideoReel
+        items={listSoldVideos()}
+        eyebrow={soldT('eyebrow')}
+        title={soldT('title')}
+        text={soldT('text')}
+        className="bg-muted border-border border-y"
+      />
+
       <ProcessTimeline
         steps={processSteps}
         eyebrow={t('process.eyebrow')}
@@ -84,6 +99,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           activities: t('process.activities'),
           outcome: t('process.outcome'),
         }}
+      />
+
+      {/* Übergabe-Polaroids — die Auflösung des Fahrplans direkt darüber */}
+      <HandoverPolaroidWall
+        items={listHandoverPolaroids()}
+        eyebrow={handoverT('eyebrow')}
+        title={handoverT('title')}
+        text={handoverT('text')}
+        className="bg-muted border-border border-y"
       />
 
       <PremiumMarketing />

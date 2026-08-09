@@ -8,6 +8,7 @@ import {
   type ReferenceDetail,
   type ReferenceItem,
 } from '@/lib/content/references'
+import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { cn } from '@/lib/utils'
 import { GOOGLE_PROFILE, ReviewPortalGrid, type ReviewPortal } from './review-portals'
@@ -218,7 +219,16 @@ export async function Reviews() {
           ))}
         </div>
         <p className="text-muted-foreground mt-4 max-w-[62ch] text-xs leading-relaxed text-pretty">
-          {t('selectionNote')}
+          {t('selectionNote')}{' '}
+          <Link
+            href={{
+              pathname: '/blog/[slug]',
+              params: { slug: REAL_REVIEWS_POST_SLUG[language] },
+            }}
+            className="text-brand-700 hover:text-brand-800 font-semibold transition-colors"
+          >
+            {t('guideLink')}
+          </Link>
         </p>
 
         {/* Every public review profile, with its rating and source basis. */}
