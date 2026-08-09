@@ -189,6 +189,13 @@ export function person(input: {
   }
 }
 
+/** `dayOfWeek` uses schema.org DayOfWeek names; times are local `HH:MM`. */
+export type OpeningHours = {
+  dayOfWeek: string[]
+  opens: string
+  closes: string
+}
+
 export function localBusiness(input: {
   locale: string
   name: string
@@ -200,6 +207,8 @@ export function localBusiness(input: {
   }
   geo?: { latitude: number; longitude: number }
   telephone?: string
+  email?: string
+  openingHours?: OpeningHours[]
 }): Thing {
   return {
     ...ctx,
@@ -209,6 +218,28 @@ export function localBusiness(input: {
     address: { '@type': 'PostalAddress', ...input.address },
     geo: input.geo ? { '@type': 'GeoCoordinates', ...input.geo } : undefined,
     telephone: input.telephone ?? SITE.contact.phone,
+    email: input.email,
+    openingHoursSpecification: input.openingHours?.map((slot) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: slot.dayOfWeek,
+      opens: slot.opens,
+      closes: slot.closes,
+    })),
     url: SITE.url,
   }
 }
+
+/**
+ * Office hours of the Zirndorf branch, for structured data.
+ * These times are also stated as prose in `ContactPage.office.hours` and
+ * `ContactPage.channels.phone.note` (both locales), in the `opening-hours` FAQ
+ * entry, and in `public/llms-full.txt` — change them together.
+ */
+export const OFFICE_OPENING_HOURS: OpeningHours[] = [
+  {
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+  { dayOfWeek: ['Saturday'], opens: '10:30', closes: '14:00' },
+]

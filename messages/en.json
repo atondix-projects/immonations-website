@@ -99,15 +99,135 @@
   },
   "ContactPage": {
     "metadata": {
-      "title": "Contact",
-      "description": "Contact Immonation GmbH for property valuation, sales advisory, buyer advisory, and search requests."
+      "title": "Contact, opening hours & directions",
+      "description": "Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf. Mon–Fri 9:00–18:00, Sat 10:30–14:00, or by appointment. Directions from Nuremberg, Fürth, Erlangen, and Forchheim."
     },
     "eyebrow": "Contact",
     "title": "Let us talk about your property.",
-    "lede": "Whether you are selling, valuing, buying, or creating a search request: send us a message or call us. We will respond with a concrete view of the next steps.",
-    "phoneLabel": "Phone",
-    "emailLabel": "Email",
+    "lede": "Whether you are selling, valuing, buying, or creating a search request: send us a message, call us, or visit our office in Zirndorf. We will respond with a concrete view of the next steps.",
+    "channels": {
+      "phone": {
+        "label": "Phone",
+        "note": "Mon–Fri 9:00–18:00, Sat 10:30–14:00"
+      },
+      "email": {
+        "label": "Email",
+        "note": "Reply within one working day"
+      },
+      "office": {
+        "label": "Office",
+        "note": "Central in Zirndorf, appointments on request"
+      }
+    },
     "serviceLink": "View services",
+    "faqTitle": "Common questions about contact and our office",
+    "office": {
+      "eyebrow": "Opening hours & office",
+      "title": "Visit us in Zirndorf",
+      "intro": "Our office is at Nürnberger Straße 18 in 90513 Zirndorf — centrally located and only minutes away from anywhere in the metropolitan region. Whether you come from Nuremberg, Fürth, Erlangen, or Forchheim: we are your local estate agent, with short distances and an open door.",
+      "addressLabel": "Address",
+      "addressLines": ["Immonation GmbH", "Nürnberger Straße 18", "90513 Zirndorf"],
+      "routeCta": "Plan your route",
+      "hoursLabel": "Opening hours",
+      "hours": [
+        { "days": "Monday – Friday", "time": "9:00 – 18:00" },
+        { "days": "Saturday", "time": "10:30 – 14:00" },
+        { "days": "Sunday", "time": "closed", "closed": true }
+      ],
+      "appointmentTitle": "Appointments outside opening hours",
+      "appointmentText": "By prior arrangement we are happy to work around your calendar. A property sale is rarely something to discuss in passing.",
+      "appointmentCtaLabel": "Call us"
+    },
+    "directions": {
+      "eyebrow": "Directions",
+      "title": "How to reach us",
+      "intro": "Zirndorf sits just west of Fürth with good connections in every direction. By car, on the Rangaubahn regional line, or by bike, you reach us quickly from across the Nuremberg metropolitan region.",
+      "modes": [
+        {
+          "id": "car",
+          "title": "By car",
+          "routes": [
+            {
+              "from": "From Nuremberg",
+              "meta": "approx. 15 km · 20–25 minutes",
+              "text": "Take Rothenburger Straße west and continue via Oberasbach straight to Zirndorf — or take the A73 towards Fürth and then follow signs to Zirndorf. Nürnberger Straße leads directly to our door."
+            },
+            {
+              "from": "From Fürth",
+              "meta": "approx. 7 km · 10–15 minutes",
+              "text": "The shortest route: Schwabacher Straße heading south-west, then via Dambach to Zirndorf. You arrive practically on Nürnberger Straße."
+            },
+            {
+              "from": "From Erlangen",
+              "meta": "approx. 25 km · 30 minutes",
+              "text": "Take the A73 towards Nuremberg/Fürth, exit towards Fürth, and continue to Zirndorf."
+            },
+            {
+              "from": "From Forchheim",
+              "meta": "approx. 45 km · 40 minutes",
+              "text": "Stay on the A73 towards Nuremberg all the way, then follow signs to Zirndorf from Fürth."
+            }
+          ]
+        },
+        {
+          "id": "transit",
+          "title": "By bus & train",
+          "intro": "Zirndorf is connected to the VGN network by the RB11 “Rangaubahn”. The line links Fürth Hauptbahnhof via Zirndorf with Cadolzburg and runs hourly.",
+          "routes": [
+            {
+              "from": "From Fürth",
+              "meta": "around 10 minutes",
+              "text": "Take the RB11 from Fürth Hauptbahnhof (platform 7) to Zirndorf."
+            },
+            {
+              "from": "From Nuremberg",
+              "meta": "around 30 minutes",
+              "text": "Take the S1 or the U1 underground to Fürth Hauptbahnhof and change to the RB11 there."
+            },
+            {
+              "from": "From Erlangen",
+              "meta": "one change",
+              "text": "Take the S1 directly to Fürth Hauptbahnhof, then continue on the RB11 to Zirndorf."
+            },
+            {
+              "from": "From Forchheim",
+              "meta": "one change",
+              "text": "Take the S1 via Erlangen to Fürth Hauptbahnhof and change to the RB11 there."
+            }
+          ],
+          "note": "Zirndorf station was comprehensively modernised recently and is step-free. Buses also run between Zirndorf and Fürth."
+        },
+        {
+          "id": "bike",
+          "title": "By bike",
+          "intro": "Zirndorf lies on the cycle paths of the Bibert valley and is easy to reach by bike from across the metropolitan region.",
+          "routes": [
+            {
+              "from": "From Fürth",
+              "meta": "approx. 7 km · 25 minutes",
+              "text": "Along the cycle paths through Dambach."
+            },
+            {
+              "from": "From Nuremberg",
+              "meta": "approx. 15 km · 45–50 minutes",
+              "text": "Via Stein and Oberasbach, mostly on dedicated cycle paths."
+            },
+            {
+              "from": "From Erlangen and Forchheim",
+              "meta": "via Fürth",
+              "text": "Follow the Regnitz cycle route to Fürth and continue towards Zirndorf — a pleasant stretch along the water."
+            }
+          ],
+          "note": "The Rangaubahn carries bicycles, so combining train and bike works comfortably from anywhere in the VGN area."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prefer to start with a number?",
+      "text": "A valuation of your property is free and without obligation — often the easiest way into the conversation.",
+      "primary": "Start a free valuation",
+      "secondary": "See all questions"
+    },
     "steps": {
       "eyebrow": "Continue personally",
       "title": "What happens next",
@@ -151,6 +271,49 @@
   "VideoDialog": {
     "play": "Play video",
     "close": "Close video"
+  },
+  "Testimonials": {
+    "spotlightEyebrow": "Customer story",
+    "videoFallback": "Your browser cannot play this client interview.",
+    "prototypeNote": "Names, statements, and results are used as supplied in this prototype. Documented consent remains required before public release.",
+    "items": [
+      {
+        "id": "viktor-emter",
+        "name": "Viktor Emter",
+        "context": "After a private-sale attempt",
+        "quote": "Open communication and a clear pricing strategy gave us confidence even as interest rates changed.",
+        "result": "Professionally managed apartment sale",
+        "alt": "Preview image for the client interview with Viktor Emter",
+        "video": true
+      },
+      {
+        "id": "markus-burkhard",
+        "name": "Markus Burkhard",
+        "context": "Maisonette in Zirndorf-Weiherhof",
+        "quote": "The process was clear, transparent, and genuinely fully managed for me.",
+        "result": "Sold at the desired price in around three months",
+        "alt": "Preview image for Markus Burkhard's sales story",
+        "video": false
+      },
+      {
+        "id": "herr-sippel",
+        "name": "Mr Sippel",
+        "context": "Inherited semi-detached home in Erlangen",
+        "quote": "Despite the renovation needs, Immonation found the right buyer and handled everything for me.",
+        "result": "Sold in twelve weeks",
+        "alt": "Inherited semi-detached home from Mr Sippel's sales story",
+        "video": false
+      },
+      {
+        "id": "frau-hartmann",
+        "name": "Ms Hartmann",
+        "context": "Heritage apartment in St. Johannis",
+        "quote": "Immonation immediately understood the character of my apartment and presented it perfectly.",
+        "result": "Sold in six weeks · 6% above market value",
+        "alt": "Heritage apartment from Ms Hartmann's sales story",
+        "video": false
+      }
+    ]
   },
   "ValuationPage": {
     "metadata": {
@@ -599,25 +762,108 @@
   "ReferrersPage": {
     "metadata": {
       "title": "Become a referrer",
-      "description": "Benefit as an Immonation GmbH referrer: recommend owners ready to sell and share in the successful closing."
+      "description": "Recommend a potential property sale: send Immonation a secure, non-binding tip and clarify the conditions for a referrer fee personally."
     },
     "eyebrow": "Referrers",
     "title": "Recommend and benefit",
-    "lede": "You know someone who wants to sell a property? As a referrer, you share in the successful closing — with no effort of your own.",
-    "sections": [
-      {
-        "heading": "How it works",
-        "paragraphs": [
-          "You give us a contact with intent to sell. We handle consultation, valuation, and marketing. If the sale closes successfully, you receive a referrer fee.",
-          "Discretion is a given: your contact only learns the recommendation came from you with your consent."
-        ]
-      }
-    ],
-    "note": "The details of the referrer model (fee amount, conditions) are currently being finalized and will be published here.",
+    "lede": "Do you know an owner with a concrete intention to sell? Send us only the initial property details — personally, discreetly, and without sensitive owner data in the form.",
+    "answer": "A good referral begins with consent and never disappears into an anonymous queue. You send us your own contact details plus the property type, approximate location, and timeframe. We review the tip, discuss the conditions with you personally, and only then coordinate any contact with the owner.",
+    "heroCta": "Send a tip securely",
+    "process": {
+      "title": "How a tip becomes a responsible introduction",
+      "items": [
+        {
+          "title": "You give us an initial tip",
+          "text": "Property type, approximate location, and timeframe are enough to begin. The owner's name, telephone number, and address do not belong in this form."
+        },
+        {
+          "title": "We check the conditions",
+          "text": "We contact you, clarify consent, attribution, and conditions, and check whether the contact is already known to us."
+        },
+        {
+          "title": "You receive confirmation",
+          "text": "We automatically confirm receipt. Whether and when a fee becomes payable is only confirmed after review and a successful closing."
+        }
+      ]
+    },
+    "form": {
+      "label": "Non-binding initial tip",
+      "title": "What kind of property may be sold?",
+      "text": "To begin, we only need your contact details and a few broad property facts. The owner's precise address and personal details are not required.",
+      "name": "Your full name",
+      "email": "Your email address",
+      "phone": "Your telephone number",
+      "propertyType": "Property type",
+      "propertyTypePlaceholder": "Please select",
+      "propertyTypes": {
+        "house": "House",
+        "apartment": "Apartment",
+        "apartmentBuilding": "Apartment building",
+        "land": "Land",
+        "other": "Other"
+      },
+      "location": "Approximate place or postcode",
+      "locationPlaceholder": "e.g. Zirndorf or 90513",
+      "timeline": "Expected sale timeframe",
+      "timelinePlaceholder": "Please select",
+      "timelines": {
+        "now": "As soon as possible",
+        "threeMonths": "Within 3 months",
+        "sixMonths": "Within 6 months",
+        "later": "Later",
+        "unknown": "Not known yet"
+      },
+      "note": "What should we know? (optional)",
+      "notePlaceholder": "For example, the situation, approximate size, or a preferred callback time",
+      "noOwnerData": "Please do not enter the owner's name, telephone number, email address, or precise address.",
+      "ownerConsent": "I confirm that the owner knows about my recommendation and agrees that Immonation may contact them after the next steps have been coordinated.",
+      "privacy": "I agree to the processing of my details in accordance with the",
+      "privacyLink": "privacy policy",
+      "submit": "Send non-binding tip",
+      "pending": "Sending tip …",
+      "success": "Thank you. Your tip has been received and a confirmation was sent to your email address.",
+      "successWithoutConfirmation": "Thank you. Your tip has been received. If no email arrives, please check your spam folder or contact us by telephone.",
+      "error": "Your tip could not be sent just now. Please try again or contact us by telephone.",
+      "unavailable": "Email delivery has not been configured yet. Please contact us temporarily by telephone or through the contact page."
+    },
+    "safeguards": {
+      "title": "What we clarify before an introduction",
+      "items": [
+        "The owner knows about the recommendation and agrees to possible contact.",
+        "The contact is new and can be attributed unambiguously.",
+        "The fee, due date, and exclusions are agreed personally in advance.",
+        "Receipt of a tip alone does not establish a claim to payment."
+      ],
+      "ownerTitle": "Are you the owner?",
+      "ownerText": "Then you do not need the referrer route. Speak to us directly about valuation, selling, and the right next step.",
+      "ownerCta": "Contact us directly"
+    },
+    "faq": {
+      "title": "Frequently asked questions for referrers",
+      "items": [
+        {
+          "question": "What information does Immonation need for an initial tip?",
+          "answer": "Your own contact details, the property type, an approximate place or postcode, and the expected sale timeframe are enough to begin. The form deliberately does not request the owner's contact details or precise address."
+        },
+        {
+          "question": "Does the owner need to know about the recommendation?",
+          "answer": "Yes. Only send a tip if the owner knows about the recommendation and agrees to possible contact. This keeps the introduction transparent and protects the privacy of everyone involved."
+        },
+        {
+          "question": "When does a referrer fee become payable?",
+          "answer": "Confirmation of receipt is not a promise of payment. Eligibility, amount, due date, and possible exclusions are agreed personally after the tip has been reviewed. The individual agreement and a successful closing are decisive."
+        },
+        {
+          "question": "What happens after I submit the form?",
+          "answer": "You receive an automatic receipt. Immonation then contacts you personally, checks attribution, and clarifies the next steps before owner details are exchanged or an introduction is made."
+        }
+      ]
+    },
     "cta": {
-      "title": "Have a tip for us?",
-      "text": "A short message is enough — we'll discuss everything else personally.",
-      "primaryLabel": "Submit a tip"
+      "title": "Is it your own property?",
+      "text": "Start directly with a free valuation or arrange a personal initial consultation.",
+      "primary": "Start the free valuation",
+      "secondary": "Arrange an initial consultation"
     }
   },
   "DownloadsPage": {
@@ -901,6 +1147,7 @@
       "referenceLink": "View the sales reference",
       "reviewSource": "Google · {rating} out of 5 stars",
       "selectionNote": "Each client review is connected to its sales reference. The original Google screenshot appears with the corresponding property.",
+      "guideLink": "How to tell real reviews from fakes",
       "headline": {
         "platform": "Google",
         "rating": "4.9",
@@ -1018,54 +1265,13 @@
     "stories": {
       "eyebrow": "Sales stories",
       "title": "Four situations. Four tailored strategies.",
-      "text": "A private-sale attempt, an inherited property, a character apartment, and the wish for a fully managed process: strong marketing starts with the owner's real situation.",
-      "videoFallback": "Your browser cannot play this client interview.",
-      "prototypeNote": "Names, statements, and results are used as supplied in this prototype. Documented consent remains required before public release.",
-      "items": [
-        {
-          "id": "viktor-emter",
-          "name": "Viktor Emter",
-          "context": "After a private-sale attempt",
-          "quote": "Open communication and a clear pricing strategy gave us confidence even as interest rates changed.",
-          "result": "Professionally managed apartment sale",
-          "alt": "Preview image for the client interview with Viktor Emter",
-          "video": true
-        },
-        {
-          "id": "markus-burkhard",
-          "name": "Markus Burkhard",
-          "context": "Maisonette in Zirndorf-Weiherhof",
-          "quote": "The process was clear, transparent, and genuinely fully managed for me.",
-          "result": "Sold at the desired price in around three months",
-          "alt": "Preview image for Markus Burkhard's sales story",
-          "video": false
-        },
-        {
-          "id": "herr-sippel",
-          "name": "Mr Sippel",
-          "context": "Inherited semi-detached home in Erlangen",
-          "quote": "Despite the renovation needs, Immonation found the right buyer and handled everything for me.",
-          "result": "Sold in twelve weeks",
-          "alt": "Inherited semi-detached home from Mr Sippel's sales story",
-          "video": false
-        },
-        {
-          "id": "frau-hartmann",
-          "name": "Ms Hartmann",
-          "context": "Heritage apartment in St. Johannis",
-          "quote": "Immonation immediately understood the character of my apartment and presented it perfectly.",
-          "result": "Sold in six weeks · 6% above market value",
-          "alt": "Heritage apartment from Ms Hartmann's sales story",
-          "video": false
-        }
-      ]
+      "text": "A private-sale attempt, an inherited property, a character apartment, and the wish for a fully managed process: strong marketing starts with the owner's real situation."
     },
     "feedback": {
       "eyebrow": "Client stories",
       "title": "Three personal perspectives on working with us",
       "text": "Clients describe the advice, communication, and sale in their own words. One conversation is available now; two further video slots are prepared for approved contributions.",
       "comingSoon": "Video coming soon",
-      "videoFallback": "Your browser cannot play this client interview.",
       "items": [
         {
           "id": "viktor-emter",
@@ -1653,6 +1859,104 @@
       "secondary": "Arrange an initial consultation"
     }
   },
+  "LandValuePage": {
+    "metadata": {
+      "title": "Standard land values Nuremberg, Fürth & Erlangen 2026 | Immonation",
+      "description": "How official standard land values work for Nuremberg, Fürth, Erlangen, Zirndorf & Schwabach — what they mean and what your plot is really worth."
+    },
+    "hero": {
+      "eyebrow": "Property market",
+      "title": "Standard land values in the Nuremberg metropolitan region",
+      "lede": "The standard land value is the official starting point of every plot valuation — but never the result. We show what the current figures mean for your property in practice."
+    },
+    "answer": "The standard land value is an average location value per square metre of land, derived by the local appraisal committee from actual purchase contracts. It applies to a whole zone — not to your specific plot. Whether your plot sits above or below that level depends on shape, servicing, building rights, contamination risk, and demand.",
+    "values": {
+      "eyebrow": "Draft · Orientation",
+      "title": "Current standard land values",
+      "intro": "Orientation ranges for the metropolitan region — draft figures with placeholders. The exact value for your address comes from BORIS Bayern or the competent appraisal committee; we are happy to look it up in an initial consultation.",
+      "disclaimer": "Placeholder values (draft). Replace with current, dated figures from BORIS Bayern or the appraisal committees before publication, and state the as-of date.",
+      "unit": "€/m²",
+      "draftBadge": "Draft",
+      "rows": [
+        {
+          "city": "Nuremberg",
+          "min": 450,
+          "max": 1400,
+          "source": "Appraisal committee City of Nuremberg"
+        },
+        {
+          "city": "Fürth",
+          "min": 380,
+          "max": 900,
+          "source": "Appraisal committee City of Fürth"
+        },
+        {
+          "city": "Erlangen",
+          "min": 500,
+          "max": 1500,
+          "source": "Appraisal committee City of Erlangen"
+        },
+        {
+          "city": "Zirndorf",
+          "min": 350,
+          "max": 700,
+          "source": "Appraisal committee District of Fürth"
+        },
+        {
+          "city": "Schwabach",
+          "min": 300,
+          "max": 650,
+          "source": "Appraisal committee City of Schwabach"
+        }
+      ]
+    },
+    "method": {
+      "eyebrow": "Context",
+      "title": "What the standard land value tells you",
+      "text": "The standard land value is an average location value per square metre of plot. It is derived from real purchase contracts and applies to a guideline-value zone — not automatically to your specific parcel. A corner plot with building rights for two units is a different product from a narrow residual plot in the same neighbourhood."
+    },
+    "vsPrice": {
+      "eyebrow": "Common mistake",
+      "title": "Standard land value is not the sale price",
+      "text": "For houses, land often accounts for 30–50 % of the purchase price — the rest is building value. Anyone who only multiplies the standard land value is almost always wrong. We value both together, free of charge and on site."
+    },
+    "related": {
+      "eyebrow": "Related",
+      "title": "How this connects to selling and valuation",
+      "text": "Standard land value, property type, and valuation belong together. These pages take the next steps further.",
+      "sellHouse": "Sell a house",
+      "sellLand": "Sell land",
+      "valuation": "Property valuation",
+      "faq": "FAQ"
+    },
+    "faq": {
+      "title": "Frequently asked questions about standard land values",
+      "items": [
+        {
+          "question": "What is the standard land value?",
+          "answer": "An official average location value per square metre of plot, determined by the appraisal committee from real purchase contracts. It provides orientation and is not a sale price."
+        },
+        {
+          "question": "Where do I find the standard land value for my plot?",
+          "answer": "Via the BORIS Bayern portal or directly from the appraisal committee of the relevant city or district. We are happy to look up the value for your address in an initial consultation."
+        },
+        {
+          "question": "Is my plot worth the standard land value?",
+          "answer": "Not automatically. Plot shape, servicing, building rights, and demand can move the real value up or down — sometimes substantially. Two neighbouring plots can be worth different amounts."
+        },
+        {
+          "question": "How often is the standard land value updated?",
+          "answer": "As a rule every two years as of 31 December; in many municipalities now annually. The appraisal committees publish the current values."
+        }
+      ]
+    },
+    "cta": {
+      "title": "What is your plot really worth?",
+      "text": "We put the official standard land value in context, assess building and location together, and give you a reliable estimate — free of charge and on site.",
+      "primary": "Start the free valuation",
+      "secondary": "Arrange an initial consultation"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER magazine",
     "title": "A look at our work, our principles, and real sale stories.",
@@ -2180,6 +2484,25 @@
       ]
     }
   },
+  "BlogPost": {
+    "backToOverview": "All guides",
+    "toc": {
+      "label": "Contents",
+      "aria": "Table of contents",
+      "mobileToggle": "Show contents"
+    },
+    "meta": {
+      "published": "Published on",
+      "readingTimeLabel": "Reading time",
+      "readingTime": "{minutes} min read",
+      "author": "Author"
+    },
+    "pagination": {
+      "aria": "More guides",
+      "older": "Older post",
+      "newer": "Newer post"
+    }
+  },
   "ReferenceDetailPage": {
     "eyebrow": "Sales reference",
     "back": "Back to references",
@@ -2198,7 +2521,8 @@
       "title": "What the owner says about working with us",
       "source": "{rating} out of 5 stars on Google",
       "screenshotLabel": "Original review",
-      "screenshotNote": "This Google review belongs to this specific sales reference."
+      "screenshotNote": "This Google review belongs to this specific sales reference.",
+      "guideLink": "How to tell real reviews from fakes"
     },
     "prototypeNote": "The figures come from the supplied reference material and are approved for this prototype. Evidence and consent remain required before public release.",
     "allReferences": "View all references",
@@ -2349,6 +2673,45 @@
         "alt": "Bright garden apartment in Zirndorf"
       }
     ]
+  },
+  "SoldVideos": {
+    "eyebrow": "Sold",
+    "title": "Sold across the Nuremberg metropolitan region",
+    "text": "Every clip marks a completed sale — from a terraced house in Adelsdorf to commercial land in Zirndorf. The short takes are filmed on handover day and show where we actually sell.",
+    "soldLabel": "Sold",
+    "alt": "Sold: {type} in {town}",
+    "types": {
+      "etw": "Apartment",
+      "efh": "Detached house",
+      "dhh": "Semi-detached house",
+      "rmh": "Terraced house",
+      "townhouse": "Townhouse",
+      "commercialLand": "Commercial land"
+    },
+    "location": {
+      "eyebrow": "Sold locally",
+      "title": "Sold in {town}",
+      "text": "Completed sales in {town} — filmed on handover day."
+    }
+  },
+  "HandoverPolaroids": {
+    "eyebrow": "Handover",
+    "title": "Every handover ends with a Polaroid",
+    "text": "When the keys change hands, we take an instant photo and write the town on it by hand. Not a marketing appointment, but the moment a sale is genuinely complete. The pictures hang in our office in Zirndorf — every one of them stands for a family that handed over its property.",
+    "alt": "Instant photo from the key handover in {town}, with the town name written by hand",
+    "location": {
+      "eyebrow": "Handed over in {town}",
+      "title": "The handover Polaroid from {town}",
+      "text": "On the day the keys change hands we take an instant photo and write the town on it — in {town} too."
+    }
+  },
+  "BellVideos": {
+    "eyebrow": "The sales bell",
+    "title": "Every completed sale gets rung in",
+    "text": "Once a sale is notarised, the sales bell rings in our Zirndorf office — and the deal is recorded on video right there. No cutaways, no voice-over: the same person, the same room, a short account after every closing.",
+    "videoTitle": "Sales bell: recording {position} of {total}",
+    "videoFallback": "Your browser cannot play this recording.",
+    "note": "These are unedited originals filmed in our office, spoken in German. Out of consideration for our sellers we do not name addresses here — where we sell is shown above, by town and property type."
   },
   "Footer": {
     "claim": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region.",

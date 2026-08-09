@@ -835,6 +835,22 @@ export const FAQ_ENTRIES: FaqEntryDef[] = [
     },
   },
   {
+    id: 'how-to-get-there',
+    category: 'about',
+    tags: ['about', 'locations', 'contact'],
+    priority: 45,
+    de: {
+      question: 'Wie komme ich zu Immonation nach Zirndorf?',
+      answer:
+        'Mit dem Auto aus Nürnberg in 20–25 Minuten, aus Fürth in rund 10 Minuten. Mit Bus und Bahn: ab Fürth Hauptbahnhof mit der RB11 „Rangaubahn“ in etwa 10 Minuten nach Zirndorf. Unser Büro liegt zentral in der Nürnberger Straße 18.',
+    },
+    en: {
+      question: 'How do I get to Immonation in Zirndorf?',
+      answer:
+        'By car it is 20–25 minutes from Nuremberg and about 10 minutes from Fürth. By public transport: take the RB11 “Rangaubahn” from Fürth Hauptbahnhof to Zirndorf in roughly 10 minutes. Our office is centrally located at Nürnberger Straße 18.',
+    },
+  },
+  {
     id: 'referrer-reward',
     category: 'about',
     tags: ['about', 'referrers'],

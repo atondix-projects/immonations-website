@@ -99,15 +99,135 @@
   },
   "ContactPage": {
     "metadata": {
-      "title": "Kontakt",
-      "description": "Kontaktieren Sie die Immonation GmbH für Immobilienbewertung, Verkauf, Kaufberatung und Suchaufträge."
+      "title": "Kontakt, Öffnungszeiten & Anfahrt",
+      "description": "Immonation GmbH, Nürnberger Straße 18, 90513 Zirndorf. Mo–Fr 9–18 Uhr, Sa 10:30–14 Uhr oder nach Termin. Anfahrt aus Nürnberg, Fürth, Erlangen und Forchheim."
     },
     "eyebrow": "Kontakt",
     "title": "Sprechen wir über Ihre Immobilie.",
-    "lede": "Ob Verkauf, Bewertung, Kaufberatung oder Suchauftrag: Schreiben Sie uns oder rufen Sie an. Wir melden uns mit einer konkreten Einschätzung der nächsten Schritte.",
-    "phoneLabel": "Telefon",
-    "emailLabel": "E-Mail",
+    "lede": "Ob Verkauf, Bewertung, Kaufberatung oder Suchauftrag: Schreiben Sie uns, rufen Sie an oder kommen Sie in unser Büro in Zirndorf. Wir melden uns mit einer konkreten Einschätzung der nächsten Schritte.",
+    "channels": {
+      "phone": {
+        "label": "Telefon",
+        "note": "Mo–Fr 9–18 Uhr, Sa 10:30–14 Uhr"
+      },
+      "email": {
+        "label": "E-Mail",
+        "note": "Antwort innerhalb eines Werktags"
+      },
+      "office": {
+        "label": "Büro",
+        "note": "Zentral in Zirndorf, Termine nach Absprache"
+      }
+    },
     "serviceLink": "Leistungen ansehen",
+    "faqTitle": "Häufige Fragen zu Kontakt und Büro",
+    "office": {
+      "eyebrow": "Öffnungszeiten & Büro",
+      "title": "Besuchen Sie uns in Zirndorf",
+      "intro": "Unser Büro liegt in der Nürnberger Straße 18 in 90513 Zirndorf – zentral gelegen und aus der gesamten Metropolregion in wenigen Minuten erreichbar. Ob Sie aus Nürnberg, Fürth, Erlangen oder Forchheim kommen: Wir sind Ihr Immobilienmakler vor Ort, mit kurzen Wegen und einem offenen Büro.",
+      "addressLabel": "Adresse",
+      "addressLines": ["Immonation GmbH", "Nürnberger Straße 18", "90513 Zirndorf"],
+      "routeCta": "Route planen",
+      "hoursLabel": "Öffnungszeiten",
+      "hours": [
+        { "days": "Montag – Freitag", "time": "9:00 – 18:00 Uhr" },
+        { "days": "Samstag", "time": "10:30 – 14:00 Uhr" },
+        { "days": "Sonntag", "time": "geschlossen", "closed": true }
+      ],
+      "appointmentTitle": "Termine auch außerhalb der Öffnungszeiten",
+      "appointmentText": "Nach vorheriger Absprache richten wir uns gern nach Ihrem Kalender. Denn ein Immobilienverkauf lässt sich selten zwischen Tür und Angel besprechen.",
+      "appointmentCtaLabel": "Anrufen"
+    },
+    "directions": {
+      "eyebrow": "Anfahrt",
+      "title": "So kommen Sie zu uns",
+      "intro": "Zirndorf liegt verkehrsgünstig westlich von Fürth. Mit dem Auto, mit der Rangaubahn oder mit dem Rad sind Sie aus der Metropolregion Nürnberg in kurzer Zeit bei uns.",
+      "modes": [
+        {
+          "id": "car",
+          "title": "Mit dem Auto",
+          "routes": [
+            {
+              "from": "Aus Nürnberg",
+              "meta": "ca. 15 km · 20–25 Minuten",
+              "text": "Über die Rothenburger Straße Richtung Westen und weiter über Oberasbach direkt nach Zirndorf – oder über die A73 Richtung Fürth und anschließend Richtung Zirndorf. Die Nürnberger Straße führt Sie direkt zu uns."
+            },
+            {
+              "from": "Aus Fürth",
+              "meta": "ca. 7 km · 10–15 Minuten",
+              "text": "Die kürzeste Verbindung: über die Schwabacher Straße Richtung Südwesten und weiter über Dambach nach Zirndorf. Sie kommen praktisch direkt auf der Nürnberger Straße an."
+            },
+            {
+              "from": "Aus Erlangen",
+              "meta": "ca. 25 km · 30 Minuten",
+              "text": "Über die A73 Richtung Nürnberg/Fürth, dann Richtung Fürth verlassen und weiter nach Zirndorf."
+            },
+            {
+              "from": "Aus Forchheim",
+              "meta": "ca. 45 km · 40 Minuten",
+              "text": "Durchgehend über die A73 Richtung Nürnberg, ab Fürth Richtung Zirndorf."
+            }
+          ]
+        },
+        {
+          "id": "transit",
+          "title": "Mit Bus & Bahn",
+          "intro": "Zirndorf ist über die RB11 „Rangaubahn“ an das VGN-Netz angebunden. Die Linie verbindet Fürth Hauptbahnhof über Zirndorf mit Cadolzburg und verkehrt stündlich.",
+          "routes": [
+            {
+              "from": "Aus Fürth",
+              "meta": "rund 10 Minuten",
+              "text": "Ab Fürth Hauptbahnhof (Gleis 7) mit der RB11 nach Zirndorf."
+            },
+            {
+              "from": "Aus Nürnberg",
+              "meta": "rund 30 Minuten",
+              "text": "Mit der S1 oder der U-Bahn U1 nach Fürth Hauptbahnhof, dort in die RB11 umsteigen."
+            },
+            {
+              "from": "Aus Erlangen",
+              "meta": "mit einem Umstieg",
+              "text": "Mit der S1 direkt nach Fürth Hauptbahnhof, dann weiter mit der RB11 nach Zirndorf."
+            },
+            {
+              "from": "Aus Forchheim",
+              "meta": "mit einem Umstieg",
+              "text": "Mit der S1 über Erlangen nach Fürth Hauptbahnhof, dort Umstieg in die RB11."
+            }
+          ],
+          "note": "Der Bahnhof Zirndorf wurde zuletzt umfassend modernisiert und ist barrierefrei erreichbar. Alternativ verkehren Busse zwischen Zirndorf und Fürth."
+        },
+        {
+          "id": "bike",
+          "title": "Mit dem Fahrrad",
+          "intro": "Zirndorf liegt verkehrsgünstig an den Radwegen des Biberttals und ist aus der ganzen Metropolregion gut mit dem Rad erreichbar.",
+          "routes": [
+            {
+              "from": "Aus Fürth",
+              "meta": "ca. 7 km · 25 Minuten",
+              "text": "Entlang der Radwege durch Dambach."
+            },
+            {
+              "from": "Aus Nürnberg",
+              "meta": "ca. 15 km · 45–50 Minuten",
+              "text": "Über Stein und Oberasbach, überwiegend auf ausgebauten Radwegen."
+            },
+            {
+              "from": "Aus Erlangen und Forchheim",
+              "meta": "über Fürth",
+              "text": "Über den Regnitz-Radweg bis Fürth und von dort weiter Richtung Zirndorf – eine schöne Strecke entlang des Wassers."
+            }
+          ],
+          "note": "Die Rangaubahn nimmt Fahrräder mit – die Kombination aus Bahn und Rad ist aus dem gesamten VGN-Gebiet bequem möglich."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Lieber mit einer Zahl starten?",
+      "text": "Die Bewertung Ihrer Immobilie ist kostenlos und unverbindlich – und oft der einfachste Einstieg ins Gespräch.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Alle Fragen ansehen"
+    },
     "steps": {
       "eyebrow": "Persönlich weiter",
       "title": "So geht es weiter",
@@ -151,6 +271,49 @@
   "VideoDialog": {
     "play": "Video abspielen",
     "close": "Video schließen"
+  },
+  "Testimonials": {
+    "spotlightEyebrow": "Kundenstimme",
+    "videoFallback": "Ihr Browser kann dieses Kundeninterview nicht abspielen.",
+    "prototypeNote": "Namen, Aussagen und Ergebnisse werden im Prototyp wie geliefert verwendet. Die dokumentierte Einwilligung bleibt Voraussetzung für die öffentliche Veröffentlichung.",
+    "items": [
+      {
+        "id": "viktor-emter",
+        "name": "Viktor Emter",
+        "context": "Nach privatem Verkaufsversuch",
+        "quote": "Die offene Kommunikation und die nachvollziehbare Preisstrategie haben uns auch in einem schwierigen Zinsumfeld Sicherheit gegeben.",
+        "result": "Professionell gesteuerter Wohnungsverkauf",
+        "alt": "Vorschaubild zum Kundeninterview mit Viktor Emter",
+        "video": true
+      },
+      {
+        "id": "markus-burkhard",
+        "name": "Markus Burkhard",
+        "context": "Maisonette in Zirndorf-Weiherhof",
+        "quote": "Der Ablauf war klar, transparent und für mich ein echtes Rundum-sorglos-Paket.",
+        "result": "In etwa drei Monaten zum Wunschpreis verkauft",
+        "alt": "Vorschaubild zur Verkaufsgeschichte von Markus Burkhard",
+        "video": false
+      },
+      {
+        "id": "herr-sippel",
+        "name": "Herr Sippel",
+        "context": "Geerbte Doppelhaushälfte in Erlangen",
+        "quote": "Immonation hat trotz Sanierungsbedarf den passenden Käufer gefunden und alles für mich geregelt.",
+        "result": "In zwölf Wochen verkauft",
+        "alt": "Geerbte Doppelhaushälfte aus der Verkaufsgeschichte von Herrn Sippel",
+        "video": false
+      },
+      {
+        "id": "frau-hartmann",
+        "name": "Frau Hartmann",
+        "context": "Denkmalgeschützte Wohnung in St. Johannis",
+        "quote": "Immonation hat den Charakter meiner Wohnung sofort verstanden und perfekt in Szene gesetzt.",
+        "result": "In sechs Wochen · 6 % über Marktwert",
+        "alt": "Denkmalgeschützte Altbauwohnung aus der Verkaufsgeschichte von Frau Hartmann",
+        "video": false
+      }
+    ]
   },
   "ValuationPage": {
     "metadata": {
@@ -597,25 +760,108 @@
   "ReferrersPage": {
     "metadata": {
       "title": "Tippgeber werden",
-      "description": "Als Tippgeber der Immonation GmbH profitieren: Verkaufsbereite Eigentümer empfehlen und am erfolgreichen Abschluss beteiligt werden."
+      "description": "Immobilienverkauf empfehlen: Tipp sicher und unverbindlich an Immonation übermitteln und die Voraussetzungen einer Tippgeber-Vergütung persönlich klären."
     },
     "eyebrow": "Tippgeber",
     "title": "Empfehlen und profitieren",
-    "lede": "Sie kennen jemanden, der eine Immobilie verkaufen möchte? Als Tippgeber werden Sie am erfolgreichen Abschluss beteiligt — ohne eigenen Aufwand.",
-    "sections": [
-      {
-        "heading": "So funktioniert es",
-        "paragraphs": [
-          "Sie nennen uns einen Kontakt mit Verkaufsabsicht. Wir übernehmen Beratung, Bewertung und Vermarktung. Kommt es zum erfolgreichen Abschluss, erhalten Sie eine Tippgeber-Vergütung.",
-          "Diskretion ist selbstverständlich: Ihr Kontakt erfährt nur mit Ihrer Zustimmung, dass die Empfehlung von Ihnen stammt."
-        ]
-      }
-    ],
-    "note": "Die Details des Tippgeber-Modells (Vergütungshöhe, Bedingungen) werden derzeit finalisiert und hier veröffentlicht.",
+    "lede": "Sie kennen eine Eigentümerin oder einen Eigentümer mit konkreter Verkaufsabsicht? Übermitteln Sie uns zunächst nur die Eckdaten — persönlich, diskret und ohne sensible Eigentümerdaten im Formular.",
+    "answer": "Ein guter Tipp beginnt mit Einverständnis und endet nicht in einem anonymen Verteiler. Sie senden uns Ihre eigenen Kontaktdaten sowie Objektart, ungefähren Ort und Zeitrahmen. Wir prüfen den Hinweis, besprechen die Voraussetzungen persönlich mit Ihnen und stimmen erst dann die Kontaktaufnahme ab.",
+    "heroCta": "Tipp sicher übermitteln",
+    "process": {
+      "title": "So wird aus einem Hinweis ein sauberer Kontakt",
+      "items": [
+        {
+          "title": "Sie geben uns einen Hinweis",
+          "text": "Objektart, ungefährer Ort und Zeitrahmen reichen für den ersten Schritt. Namen, Telefonnummer oder Adresse des Eigentümers gehören nicht in dieses Formular."
+        },
+        {
+          "title": "Wir prüfen die Voraussetzungen",
+          "text": "Wir melden uns bei Ihnen, klären Einverständnis, Zuordnung und Bedingungen und prüfen, ob der Kontakt bereits bekannt ist."
+        },
+        {
+          "title": "Sie erhalten eine Bestätigung",
+          "text": "Der Eingang wird automatisch bestätigt. Ob und wann eine Vergütung entsteht, wird erst nach Prüfung und erfolgreichem Abschluss verbindlich."
+        }
+      ]
+    },
+    "form": {
+      "label": "Unverbindlicher Ersthinweis",
+      "title": "Welches Objekt könnte verkauft werden?",
+      "text": "Wir benötigen zunächst Ihre Kontaktdaten und wenige Eckdaten zum Objekt. Eine genaue Adresse oder persönliche Daten des Eigentümers sind nicht erforderlich.",
+      "name": "Ihr Vor- und Nachname",
+      "email": "Ihre E-Mail-Adresse",
+      "phone": "Ihre Telefonnummer",
+      "propertyType": "Objektart",
+      "propertyTypePlaceholder": "Bitte auswählen",
+      "propertyTypes": {
+        "house": "Haus",
+        "apartment": "Wohnung",
+        "apartmentBuilding": "Mehrfamilienhaus",
+        "land": "Grundstück",
+        "other": "Sonstiges"
+      },
+      "location": "Ungefährer Ort oder PLZ",
+      "locationPlaceholder": "z. B. Zirndorf oder 90513",
+      "timeline": "Voraussichtlicher Verkaufszeitpunkt",
+      "timelinePlaceholder": "Bitte auswählen",
+      "timelines": {
+        "now": "So bald wie möglich",
+        "threeMonths": "Innerhalb von 3 Monaten",
+        "sixMonths": "Innerhalb von 6 Monaten",
+        "later": "Später",
+        "unknown": "Noch nicht bekannt"
+      },
+      "note": "Was sollten wir wissen? (optional)",
+      "notePlaceholder": "Zum Beispiel Anlass, grobe Objektgröße oder gewünschter Rückrufzeitpunkt",
+      "noOwnerData": "Bitte keine Namen, Telefonnummern, E-Mail-Adressen oder genaue Anschriften des Eigentümers eintragen.",
+      "ownerConsent": "Ich bestätige, dass der Eigentümer von meiner Empfehlung weiß und mit einer möglichen Kontaktaufnahme durch Immonation einverstanden ist.",
+      "privacy": "Ich stimme der Verarbeitung meiner Angaben gemäß der",
+      "privacyLink": "Datenschutzerklärung zu",
+      "submit": "Tipp unverbindlich senden",
+      "pending": "Tipp wird gesendet …",
+      "success": "Vielen Dank. Ihr Tipp ist eingegangen; eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.",
+      "successWithoutConfirmation": "Vielen Dank. Ihr Tipp ist eingegangen. Falls keine E-Mail ankommt, prüfen Sie bitte den Spam-Ordner oder melden Sie sich telefonisch.",
+      "error": "Der Tipp konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.",
+      "unavailable": "Der E-Mail-Versand ist noch nicht konfiguriert. Bitte kontaktieren Sie uns vorübergehend telefonisch oder über die Kontaktseite."
+    },
+    "safeguards": {
+      "title": "Was vor der Vermittlung geklärt wird",
+      "items": [
+        "Der Eigentümer kennt die Empfehlung und stimmt einer Kontaktaufnahme zu.",
+        "Der Kontakt ist neu und kann eindeutig zugeordnet werden.",
+        "Vergütung, Fälligkeit und Ausschlüsse werden vorab persönlich vereinbart.",
+        "Die Eingangsbestätigung allein begründet noch keinen Vergütungsanspruch."
+      ],
+      "ownerTitle": "Sie sind selbst Eigentümer?",
+      "ownerText": "Dann benötigen Sie keinen Tippgeberweg. Sprechen Sie direkt mit uns über Bewertung, Verkauf und die nächsten Schritte.",
+      "ownerCta": "Direkt Kontakt aufnehmen"
+    },
+    "faq": {
+      "title": "Häufige Fragen für Tippgeber",
+      "items": [
+        {
+          "question": "Welche Angaben braucht Immonation für einen ersten Tipp?",
+          "answer": "Für den ersten Schritt reichen Ihre eigenen Kontaktdaten, die Objektart, ein ungefährer Ort oder eine Postleitzahl und der erwartete Verkaufszeitraum. Persönliche Kontaktdaten oder die genaue Anschrift des Eigentümers werden im Formular bewusst nicht abgefragt."
+        },
+        {
+          "question": "Muss der Eigentümer von der Empfehlung wissen?",
+          "answer": "Ja. Übermitteln Sie nur Hinweise, bei denen der Eigentümer von der Empfehlung weiß und mit einer möglichen Kontaktaufnahme einverstanden ist. So bleiben der Einstieg transparent und die Privatsphäre aller Beteiligten geschützt."
+        },
+        {
+          "question": "Wann entsteht eine Tippgeber-Vergütung?",
+          "answer": "Die Eingangsbestätigung ist noch keine Vergütungszusage. Voraussetzungen, Höhe, Fälligkeit und mögliche Ausschlüsse werden nach Prüfung des Hinweises persönlich vereinbart. Maßgeblich ist die individuelle Vereinbarung und ein erfolgreicher Abschluss."
+        },
+        {
+          "question": "Was passiert nach dem Absenden?",
+          "answer": "Sie erhalten eine automatische Eingangsbestätigung. Anschließend meldet sich Immonation persönlich bei Ihnen, prüft die Zuordnung und klärt das weitere Vorgehen, bevor Eigentümerdaten ausgetauscht oder Kontakte hergestellt werden."
+        }
+      ]
+    },
     "cta": {
-      "title": "Sie haben einen Tipp für uns?",
-      "text": "Kurz melden genügt — wir besprechen alles Weitere persönlich.",
-      "primaryLabel": "Tipp übermitteln"
+      "title": "Es geht um Ihre eigene Immobilie?",
+      "text": "Starten Sie direkt mit einer kostenlosen Bewertung oder vereinbaren Sie ein persönliches Erstgespräch.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Erstgespräch vereinbaren"
     }
   },
   "DownloadsPage": {
@@ -899,6 +1145,7 @@
       "referenceLink": "Zur Verkaufsreferenz",
       "reviewSource": "Google · {rating} von 5 Sternen",
       "selectionNote": "Jede Kundenstimme ist mit der passenden Verkaufsreferenz verbunden. Den originalen Google-Screenshot finden Sie direkt beim jeweiligen Objekt.",
+      "guideLink": "So erkennen Sie echte von gefälschten Bewertungen",
       "headline": {
         "platform": "Google",
         "rating": "4,9",
@@ -1016,54 +1263,13 @@
     "stories": {
       "eyebrow": "Verkaufsgeschichten",
       "title": "Vier Situationen. Vier passende Strategien.",
-      "text": "Ein privater Verkaufsversuch, eine geerbte Immobilie, eine charakterstarke Altbauwohnung und der Wunsch nach einem Rundum-sorglos-Prozess: gute Vermarktung beginnt mit der tatsächlichen Situation des Eigentümers.",
-      "videoFallback": "Ihr Browser kann dieses Kundeninterview nicht abspielen.",
-      "prototypeNote": "Namen, Aussagen und Ergebnisse werden im Prototyp wie geliefert verwendet. Die dokumentierte Einwilligung bleibt Voraussetzung für die öffentliche Veröffentlichung.",
-      "items": [
-        {
-          "id": "viktor-emter",
-          "name": "Viktor Emter",
-          "context": "Nach privatem Verkaufsversuch",
-          "quote": "Die offene Kommunikation und die nachvollziehbare Preisstrategie haben uns auch in einem schwierigen Zinsumfeld Sicherheit gegeben.",
-          "result": "Professionell gesteuerter Wohnungsverkauf",
-          "alt": "Vorschaubild zum Kundeninterview mit Viktor Emter",
-          "video": true
-        },
-        {
-          "id": "markus-burkhard",
-          "name": "Markus Burkhard",
-          "context": "Maisonette in Zirndorf-Weiherhof",
-          "quote": "Der Ablauf war klar, transparent und für mich ein echtes Rundum-sorglos-Paket.",
-          "result": "In etwa drei Monaten zum Wunschpreis verkauft",
-          "alt": "Vorschaubild zur Verkaufsgeschichte von Markus Burkhard",
-          "video": false
-        },
-        {
-          "id": "herr-sippel",
-          "name": "Herr Sippel",
-          "context": "Geerbte Doppelhaushälfte in Erlangen",
-          "quote": "Immonation hat trotz Sanierungsbedarf den passenden Käufer gefunden und alles für mich geregelt.",
-          "result": "In zwölf Wochen verkauft",
-          "alt": "Geerbte Doppelhaushälfte aus der Verkaufsgeschichte von Herrn Sippel",
-          "video": false
-        },
-        {
-          "id": "frau-hartmann",
-          "name": "Frau Hartmann",
-          "context": "Denkmalgeschützte Wohnung in St. Johannis",
-          "quote": "Immonation hat den Charakter meiner Wohnung sofort verstanden und perfekt in Szene gesetzt.",
-          "result": "In sechs Wochen · 6 % über Marktwert",
-          "alt": "Denkmalgeschützte Altbauwohnung aus der Verkaufsgeschichte von Frau Hartmann",
-          "video": false
-        }
-      ]
+      "text": "Ein privater Verkaufsversuch, eine geerbte Immobilie, eine charakterstarke Altbauwohnung und der Wunsch nach einem Rundum-sorglos-Prozess: gute Vermarktung beginnt mit der tatsächlichen Situation des Eigentümers."
     },
     "feedback": {
       "eyebrow": "Kundenstimmen",
       "title": "Drei persönliche Perspektiven auf die Zusammenarbeit",
       "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Ein Gespräch ist bereits verfügbar; zwei weitere Videoplätze sind für freigegebene Beiträge vorbereitet.",
       "comingSoon": "Video folgt",
-      "videoFallback": "Ihr Browser kann dieses Kundeninterview nicht abspielen.",
       "items": [
         {
           "id": "viktor-emter",
@@ -1651,6 +1857,104 @@
       "secondary": "Erstgespräch vereinbaren"
     }
   },
+  "LandValuePage": {
+    "metadata": {
+      "title": "Bodenrichtwert Nürnberg, Fürth & Erlangen 2026 | Immonation",
+      "description": "Aktuelle Bodenrichtwerte für Nürnberg, Fürth, Erlangen, Zirndorf & Schwabach – was sie aussagen und was Ihr Grundstück wirklich wert ist."
+    },
+    "hero": {
+      "eyebrow": "Immobilienmarkt",
+      "title": "Bodenrichtwerte in der Metropolregion Nürnberg",
+      "lede": "Der Bodenrichtwert ist der amtliche Startpunkt jeder Grundstücksbewertung – aber nie das Ergebnis. Wir zeigen Ihnen, was die aktuellen Werte für Ihre Immobilie konkret bedeuten."
+    },
+    "answer": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert je Quadratmeter Grund, den der Gutachterausschuss aus tatsächlichen Kaufverträgen ableitet. Er gilt für ein ganzes Gebiet – nicht für Ihr konkretes Grundstück. Ob Ihr Grundstück darüber oder darunter liegt, entscheiden Zuschnitt, Erschließung, Baurecht, Altlasten und Nachfrage.",
+    "values": {
+      "eyebrow": "Entwurf · Orientierung",
+      "title": "Aktuelle Bodenrichtwerte",
+      "intro": "Orientierungsspannen für die Metropolregion – als Entwurf mit Platzhalterwerten. Den genauen Wert für Ihre Adresse liefert BORIS Bayern bzw. der zuständige Gutachterausschuss; wir schlagen ihn gern im Erstgespräch nach.",
+      "disclaimer": "Platzhalter-Werte (Entwurf). Vor Veröffentlichung durch aktuelle, datierte Angaben aus BORIS Bayern bzw. den Gutachterausschüssen ersetzen und Stand-Datum angeben.",
+      "unit": "€/m²",
+      "draftBadge": "Entwurf",
+      "rows": [
+        {
+          "city": "Nürnberg",
+          "min": 450,
+          "max": 1400,
+          "source": "Gutachterausschuss Stadt Nürnberg"
+        },
+        {
+          "city": "Fürth",
+          "min": 380,
+          "max": 900,
+          "source": "Gutachterausschuss Stadt Fürth"
+        },
+        {
+          "city": "Erlangen",
+          "min": 500,
+          "max": 1500,
+          "source": "Gutachterausschuss Stadt Erlangen"
+        },
+        {
+          "city": "Zirndorf",
+          "min": 350,
+          "max": 700,
+          "source": "Gutachterausschuss Landkreis Fürth"
+        },
+        {
+          "city": "Schwabach",
+          "min": 300,
+          "max": 650,
+          "source": "Gutachterausschuss Stadt Schwabach"
+        }
+      ]
+    },
+    "method": {
+      "eyebrow": "Einordnung",
+      "title": "Was der Bodenrichtwert aussagt",
+      "text": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert je Quadratmeter Grundstücksfläche. Er wird aus echten Kaufverträgen abgeleitet und gilt für ein Richtwertgebiet – nicht automatisch für Ihr konkretes Grundstück. Ein Eckgrundstück mit Baurecht für zwei Einheiten ist ein anderes Produkt als eine schmale Restfläche im selben Viertel."
+    },
+    "vsPrice": {
+      "eyebrow": "Häufiger Irrtum",
+      "title": "Bodenrichtwert ist nicht der Verkaufspreis",
+      "text": "Bei Häusern macht der Bodenwert häufig 30–50 % des Kaufpreises aus – der Rest ist Gebäudewert. Wer nur den Bodenrichtwert hochrechnet, liegt fast immer falsch. Wir bewerten beides zusammen, kostenlos und vor Ort."
+    },
+    "related": {
+      "eyebrow": "Passend dazu",
+      "title": "Wie das mit Verkauf und Bewertung zusammenhängt",
+      "text": "Bodenrichtwert, Objektart und Wertermittlung greifen ineinander. Diese Seiten führen die nächsten Schritte weiter.",
+      "sellHouse": "Haus verkaufen",
+      "sellLand": "Grundstück verkaufen",
+      "valuation": "Immobilienbewertung",
+      "faq": "FAQ"
+    },
+    "faq": {
+      "title": "Häufige Fragen zum Bodenrichtwert",
+      "items": [
+        {
+          "question": "Was ist der Bodenrichtwert?",
+          "answer": "Ein amtlicher, durchschnittlicher Lagewert je Quadratmeter Grundstücksfläche, den der Gutachterausschuss aus echten Kaufverträgen ermittelt. Er dient der Orientierung und ist kein Verkaufspreis."
+        },
+        {
+          "question": "Wo finde ich den Bodenrichtwert für mein Grundstück?",
+          "answer": "Über das Portal BORIS Bayern oder direkt beim Gutachterausschuss der jeweiligen Stadt bzw. des Landkreises. Wir schlagen den Wert für Ihre Adresse gern im Erstgespräch nach."
+        },
+        {
+          "question": "Ist mein Grundstück den Bodenrichtwert wert?",
+          "answer": "Nicht automatisch. Zuschnitt, Erschließung, Baurecht und Nachfrage verschieben den realen Wert nach oben oder unten – teils erheblich. Zwei benachbarte Grundstücke können unterschiedlich viel wert sein."
+        },
+        {
+          "question": "Wie oft wird der Bodenrichtwert aktualisiert?",
+          "answer": "In der Regel alle zwei Jahre zum Stichtag 31. Dezember, in vielen Kommunen inzwischen jährlich. Die aktuellen Werte veröffentlichen die Gutachterausschüsse."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Was ist Ihr Grundstück wirklich wert?",
+      "text": "Wir ordnen den amtlichen Bodenrichtwert ein, bewerten Gebäude und Lage zusammen und geben Ihnen eine belastbare Einschätzung – kostenlos und vor Ort.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Erstgespräch vereinbaren"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER Magazin",
     "title": "Ein Blick in unsere Arbeit, unsere Haltung und echte Verkaufsgeschichten.",
@@ -2178,6 +2482,25 @@
       ]
     }
   },
+  "BlogPost": {
+    "backToOverview": "Alle Ratgeber",
+    "toc": {
+      "label": "Inhalt",
+      "aria": "Inhaltsverzeichnis",
+      "mobileToggle": "Inhalt anzeigen"
+    },
+    "meta": {
+      "published": "Veröffentlicht am",
+      "readingTimeLabel": "Lesezeit",
+      "readingTime": "{minutes} Min. Lesezeit",
+      "author": "Autor"
+    },
+    "pagination": {
+      "aria": "Weitere Ratgeber",
+      "older": "Älterer Beitrag",
+      "newer": "Neuerer Beitrag"
+    }
+  },
   "ReferenceDetailPage": {
     "eyebrow": "Verkaufsreferenz",
     "back": "Zurück zu den Referenzen",
@@ -2196,7 +2519,8 @@
       "title": "Was der Eigentümer über die Zusammenarbeit sagt",
       "source": "{rating} von 5 Sternen bei Google",
       "screenshotLabel": "Originalbewertung",
-      "screenshotNote": "Diese Google-Bewertung gehört zu genau dieser Verkaufsreferenz."
+      "screenshotNote": "Diese Google-Bewertung gehört zu genau dieser Verkaufsreferenz.",
+      "guideLink": "So erkennen Sie echte von gefälschten Bewertungen"
     },
     "prototypeNote": "Die Kennzahlen stammen aus den bereitgestellten Referenzunterlagen und sind für diesen Prototyp freigegeben. Vor einer öffentlichen Veröffentlichung bleiben Nachweis und Zustimmung erforderlich.",
     "allReferences": "Alle Referenzen ansehen",
@@ -2347,6 +2671,45 @@
         "alt": "Helle Gartenwohnung in Zirndorf"
       }
     ]
+  },
+  "SoldVideos": {
+    "eyebrow": "Verkauft",
+    "title": "Verkauft in der Metropolregion Nürnberg",
+    "text": "Jeder Clip steht für eine abgeschlossene Vermarktung — vom Reihenhaus in Adelsdorf bis zum Gewerbegrundstück in Zirndorf. Die kurzen Aufnahmen entstehen am Tag der Übergabe und zeigen, wo wir tatsächlich verkaufen.",
+    "soldLabel": "Verkauft",
+    "alt": "Verkauft: {type} in {town}",
+    "types": {
+      "etw": "Eigentumswohnung",
+      "efh": "Einfamilienhaus",
+      "dhh": "Doppelhaushälfte",
+      "rmh": "Reihenmittelhaus",
+      "townhouse": "Stadthaus",
+      "commercialLand": "Gewerbegrundstück"
+    },
+    "location": {
+      "eyebrow": "Vor Ort verkauft",
+      "title": "Verkauft in {town}",
+      "text": "Abgeschlossene Vermarktungen in {town} — aufgenommen am Tag der Übergabe."
+    }
+  },
+  "HandoverPolaroids": {
+    "eyebrow": "Übergabe",
+    "title": "Nach jeder Übergabe entsteht ein Polaroid",
+    "text": "Wenn die Schlüssel den Besitzer wechseln, machen wir ein Sofortbild und schreiben den Ort mit der Hand darauf. Kein Termin für die Vermarktung, sondern der Moment, in dem ein Verkauf wirklich abgeschlossen ist. Die Bilder hängen bei uns im Büro in Zirndorf — jedes einzelne steht für eine Familie, die ihre Immobilie übergeben hat.",
+    "alt": "Sofortbild von der Schlüsselübergabe in {town}, mit handschriftlichem Ortsnamen",
+    "location": {
+      "eyebrow": "Übergeben in {town}",
+      "title": "Das Polaroid zur Übergabe in {town}",
+      "text": "Am Tag der Schlüsselübergabe entsteht ein Sofortbild mit handschriftlichem Ortsnamen — auch in {town}."
+    }
+  },
+  "BellVideos": {
+    "eyebrow": "Verkaufsglocke",
+    "title": "Jeder Abschluss wird bei uns geläutet",
+    "text": "Ist ein Verkauf beurkundet, läutet bei uns im Zirndorfer Büro die Verkaufsglocke — und die Vermarktung wird direkt vor Ort auf Video gesprochen. Kein Schnittbild, kein Sprecher: dieselbe Person, derselbe Raum, ein kurzer Bericht nach jedem Abschluss.",
+    "videoTitle": "Verkaufsglocke: Aufnahme {position} von {total}",
+    "videoFallback": "Ihr Browser kann diese Aufnahme nicht abspielen.",
+    "note": "Die Aufnahmen sind ungeschnittene Originale aus unserem Büro. Aus Rücksicht auf die Verkäuferinnen und Verkäufer nennen wir hier keine Adressen — wo wir verkaufen, zeigt die Übersicht oben mit Ort und Objektart."
   },
   "Footer": {
     "claim": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung.",

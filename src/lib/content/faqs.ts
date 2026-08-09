@@ -138,7 +138,7 @@ const PAGE_FAQ_PROFILES: Record<PageFaqKey, PageFaqProfile> = {
   },
   contact: {
     tags: ['contact', 'about'],
-    forceIds: ['opening-hours', 'service-region', 'dedicated-contact'],
+    forceIds: ['opening-hours', 'how-to-get-there', 'service-region', 'dedicated-contact'],
     limit: 4,
     categoryBoost: ['about'],
   },
@@ -190,9 +190,7 @@ export function listFaqsByCategory(locale: Locale): Array<{
   const all = listAllFaqs(locale)
   return FAQ_CATEGORY_ORDER.map((category) => ({
     category,
-    items: all
-      .filter((item) => item.category === category)
-      .sort((a, b) => a.priority - b.priority),
+    items: all.filter((item) => item.category === category).sort((a, b) => a.priority - b.priority),
   })).filter((group) => group.items.length > 0)
 }
 

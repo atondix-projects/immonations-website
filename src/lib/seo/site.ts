@@ -17,7 +17,10 @@ export const SITE = {
   },
   contact: {
     email: 'info@immonations.de',
+    /** E.164 — used for `tel:` hrefs and structured data. */
     phone: '+49 911 21283890',
+    /** Local notation — the only form shown to visitors. */
+    phoneDisplay: '0911 / 212 838 90',
   },
   address: {
     streetAddress: 'Nürnberger Straße 18',

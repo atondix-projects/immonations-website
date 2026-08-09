@@ -14,6 +14,8 @@ Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Verm
 
 Immonation bewertet Haeuser, Wohnungen, Mehrfamilienhaeuser und weitere Immobilien anhand von Lage, Zustand, Groesse, Marktumfeld, Vergleichswerten und regionaler Nachfrage. Die Bewertung dient Eigentuemern als Grundlage fuer Verkauf, Erbschaft, Finanzierung oder strategische Entscheidungen.
 
+Der Ratgeber zum Bodenrichtwert unter `/de/immobilienmarkt/bodenrichtwert` beziehungsweise `/en/property-market/standard-land-value` erklaert den amtlichen Lagewert je Quadratmeter als Orientierung, nicht als Verkaufspreis. Er verweist auf BORIS Bayern und die zustaendigen Gutachterausschuesse fuer Nuernberg, Fuerth, Erlangen, Zirndorf und Schwabach und veroeffentlicht keine inventierten €/m²-Spannen ohne datierte Amtsquelle.
+
 ### Immobilienverkauf
 
 Immonation begleitet Eigentuemer vom Erstgespraech bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Expose, Fotos, Video, virtuelle Besichtigung, Vermarktung, Kaeuferqualifizierung, Finanzierungsklaerung, Vertragsvorbereitung und Abschluss.
@@ -34,11 +36,23 @@ Kaeufer erhalten auf `/de/immobilie-kaufen` beziehungsweise `/en/buy-property` Z
 
 ### Ratgeber, FAQ und Downloads
 
-Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/ressourcen/faq` beziehungsweise `/en/resources/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit (Haus- und Wohnungsübergabeprotokolle, Mieterselbstauskunft privat und gewerblich, Wohnungsgeberbestätigung Nürnberg). Nach Eingabe einer gültigen E-Mail-Adresse werden die PDFs freigeschaltet und direkt heruntergeladen; sie werden nicht per E-Mail versendet. Das REVIER Magazin ist frei online lesbar. Das Immonation Handbuch zum Immobilienverkauf ist kein öffentlicher Download und wird nach einer Anfrage persönlich per E-Mail bereitgestellt.
+Der Ratgeber-Hub liegt unter `/de/ratgeber` beziehungsweise `/en/guides`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Darunter der Leitfaden zu echten Google-Bewertungen unter `/de/ratgeber/echte-bewertungen-immobilienmakler` beziehungsweise `/en/guides/real-google-reviews-real-estate-agents`. Die zentrale FAQ liegt unter `/de/ressourcen/faq` beziehungsweise `/en/resources/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit (Haus- und Wohnungsübergabeprotokolle, Mieterselbstauskunft privat und gewerblich, Wohnungsgeberbestätigung Nürnberg). Nach Eingabe einer gültigen E-Mail-Adresse werden die PDFs freigeschaltet und direkt heruntergeladen; sie werden nicht per E-Mail versendet. Das REVIER Magazin ist frei online lesbar. Das Immonation Handbuch zum Immobilienverkauf ist kein öffentlicher Download und wird nach einer Anfrage persönlich per E-Mail bereitgestellt.
 
 ### Referenzen und Kundenstimmen
 
 Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Veroeffentlicht werden nur belegbare Objektarten und Orte; unbestaetigte Vermarktungszahlen oder Verkaufsergebnisse bleiben ausgeschlossen. Der Bereich enthaelt ausserdem den Einstieg zur virtuellen Besichtigung und drei Plaetze fuer freigegebene Kundeninterviews.
+
+### Verkauft-Clips inkl. Ortschaften
+
+Startseite und Referenz-Hub zeigen eine laufende Leiste mit 18 kurzen, tonlosen Clips (je 4 bis 5 Sekunden, Hochformat), die am Tag der Uebergabe entstehen. Jeder Clip steht fuer eine abgeschlossene Vermarktung und nennt Ort und Objektart: Adelsdorf (Reihenmittelhaus), Deining (Eigentumswohnung), Erlangen (zwei Eigentumswohnungen), Forchheim (Eigentumswohnung, Stadthaus), Fuerth (zwei Eigentumswohnungen), Hagenbuechach (Einfamilienhaus), Herzogenaurach (Eigentumswohnung), Nuernberg (Einfamilienhaus, Doppelhaushaelfte, Eigentumswohnung), Oberasbach (Einfamilienhaus), Schwabach (zwei Eigentumswohnungen) sowie Zirndorf (Eigentumswohnung, Gewerbegrundstueck). Die Regionsseiten zeigen jeweils nur die Clips der eigenen Ortschaft. Belegt sind Ort und Objektart; Verkaufspreise, Vermarktungsdauern oder Angebotsueberschreitungen werden bewusst nicht ausgewiesen.
+
+### Verkaufsglocke
+
+Der Referenz-Hub zeigt ausserdem sechs Videoaufnahmen der Verkaufsglocke. Nach jedem beurkundeten Verkauf wird im Zirndorfer Buero die Glocke gelaeutet und die abgeschlossene Vermarktung unmittelbar vor Ort auf Video gesprochen — ungeschnitten, ohne Sprecher, jeweils rund 17 bis 22 Sekunden im Hochformat. Die Aufnahmen starten erst nach Klick und laufen dann mit Ton. Zu den einzelnen Clips werden bewusst keine Adressen, Orte oder Objektarten ausgewiesen: Die Quellaufnahmen sind nach Strassennamen benannt, und eine Strasse in Verbindung mit einem Verkauf wuerde auf ein konkretes Privatobjekt zeigen. Wo verkauft wurde, weisen ausschliesslich die Verkauft-Clips mit Ort und Objektart aus.
+
+### Uebergabe-Polaroids
+
+Nach jeder Schluesseluebergabe entsteht ein Sofortbild mit einer Polaroidkamera; der Ort wird direkt auf den Rand geschrieben. Die Originale haengen im Zirndorfer Buero. Acht dieser Aufnahmen sind veroeffentlicht: Adelsdorf (zwei Uebergaben), Erlangen, Heroldsbach, Nuernberg, Schwabach, Seukendorf und Zirndorf. Sie stehen auf der Startseite, auf der Ablaufseite `/de/immobilie-verkaufen/ablauf` als Abschluss des zehnten Schritts und auf den Regionsseiten der jeweiligen Ortschaft. Ausgewiesen wird ausschliesslich der Ort — keine Adressen, keine Namen der abgebildeten Personen, keine Verkaufspreise. Die Bilder ergaenzen die Verkauft-Clips um den Moment, in dem eine Vermarktung tatsaechlich endet: die Uebergabe der Schluessel.
 
 ### Karriere und freie Partner
 
@@ -50,7 +64,7 @@ Die eigene Makler-Karriereseite unter `/de/immobilienmakler-werden` beziehungswe
 
 Primaere Region: Zirndorf, Nuernberg, Fuerth, Erlangen und ein Umkreis von ca. 60 km. Lokale SEO-Seiten sollen konkrete Fragen zu Verkauf, Bewertung, Marktpreisen, Nachfrage und Prozess in den jeweiligen Orten oder Stadtteilen beantworten.
 
-Die dauerhaften Regionsseiten unter `/de/immobilienmakler-region` beziehungsweise `/en/real-estate-agent-locations` erklaeren Mikrolage, Objektart, Vorbereitung und Verkaufsstrategie fuer Zirndorf, Nuernberg, Fuerth und Erlangen. Sie enthalten keine vermeintlich aktuellen Quadratmeterpreise oder Marktdaten ohne freigegebene Quelle und Aktualitaetsangabe.
+Die dauerhaften Regionsseiten unter `/de/immobilienmakler-region` beziehungsweise `/en/real-estate-agent-locations` erklaeren Mikrolage, Objektart, Vorbereitung und Verkaufsstrategie fuer Zirndorf, Nuernberg, Fuerth und Erlangen. Sie enthalten keine vermeintlich aktuellen Quadratmeterpreise oder Marktdaten ohne freigegebene Quelle und Aktualitaetsangabe. Zusaetzlich zeigt jede Regionsseite die Verkauft-Clips der eigenen Ortschaft als Beleg fuer abgeschlossene Vermarktungen vor Ort.
 
 ## Auszeichnungen
 
@@ -76,3 +90,8 @@ Fuer Eigentuemer heisst das: Wer in Nuernberg, Fuerth, Erlangen oder Zirndorf ve
 - Email: info@immonations.de
 - Phone: +49 911 21283890
 - Web: https://www.immonationgmbh.de
+- Buero: Immonation GmbH, Nuernberger Strasse 18, 90513 Zirndorf
+- Oeffnungszeiten: Montag bis Freitag 9:00-18:00 Uhr, Samstag 10:30-14:00 Uhr, Sonntag geschlossen. Termine ausserhalb der Oeffnungszeiten nach vorheriger Absprache.
+- Anfahrt mit dem Auto: aus Nuernberg 20-25 Minuten, aus Fuerth 10-15 Minuten, aus Erlangen rund 30 Minuten, aus Forchheim rund 40 Minuten.
+- Anfahrt mit Bus und Bahn: RB11 "Rangaubahn" ab Fuerth Hauptbahnhof nach Zirndorf in rund 10 Minuten, stuendlicher Takt im VGN-Netz. Der Bahnhof Zirndorf ist barrierefrei.
+- Anfahrt mit dem Fahrrad: aus Fuerth rund 7 km, aus Nuernberg rund 15 km ueber Stein und Oberasbach. Die Rangaubahn nimmt Fahrraeder mit.
