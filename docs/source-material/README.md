@@ -10,6 +10,7 @@ This directory documents the curation of `ZZZ EK Themen -20260717T182100Z-1-002.
 - [Document review](./document-review.md): review status and disposition for every DOCX/PDF source.
 - [Reference catalog](./reference-catalog.md): 26 supplied reference cases plus testimonial-specific stories.
 - [Publishing backlog](./publishing-backlog.md): implementation-ready content opportunities ordered by value and evidence readiness.
+- [Customer master prototype extraction](./customer-master-prototype-extraction.md): exhaustive feature inventory and adopt/adapt/defer guidance for the later customer-supplied HTML prototype, including the Tippgeber funnel.
 - [Asset manifest](./asset-manifest.csv): one row for each of the 108 ZIP files, including source path, size, SHA-256, outcome, curated destination, and notes.
 - [Machine-readable customer-file references](./customer-files/): full normalized Markdown for all 20 documents, a current-folder inventory, source-to-curated-to-public asset mappings, and a page-structure comparison against implemented routes.
 - [Retained originals](./originals/): DOCX and legal PDF sources that should not be publicly served.

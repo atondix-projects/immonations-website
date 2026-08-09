@@ -539,10 +539,7 @@
         },
         "visual_summary": {
           "content_type": "Vector brand logo",
-          "visible_text": [
-            "IMMONATION GMBH",
-            "Ihr Partner für Immobilien"
-          ],
+          "visible_text": ["IMMONATION GMBH", "Ihr Partner für Immobilien"],
           "visual_description": "Immonation lockup with a layered blue, light-blue, and gray geometric mark to the left of the company name and tagline."
         }
       },
@@ -1548,10 +1545,7 @@
         },
         "visual_summary": {
           "content_type": "Vector brand logo",
-          "visible_text": [
-            "DREAM LIVING GMBH",
-            "WIR REVITALISIEREN WOHNRAUM"
-          ],
+          "visible_text": ["DREAM LIVING GMBH", "WIR REVITALISIEREN WOHNRAUM"],
           "visual_description": "Dream Living lockup with an outlined light-blue monogram, black and charcoal wordmark, and a horizontal light-blue rule above the tagline."
         }
       },
