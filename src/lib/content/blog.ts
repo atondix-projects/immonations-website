@@ -5,6 +5,11 @@ import matter from 'gray-matter'
 
 type LocaleKey = (typeof routing.locales)[number]
 
+export type PostFaq = {
+  question: string
+  answer: string
+}
+
 export type PostFrontmatter = {
   title: string
   description: string
@@ -13,6 +18,7 @@ export type PostFrontmatter = {
   tags?: string[]
   cover?: string
   author?: string
+  faqs?: PostFaq[]
 }
 
 export type PostSummary = PostFrontmatter & {
@@ -74,6 +80,36 @@ export async function getPost(locale: LocaleKey, slug: string): Promise<PostFull
   }
 }
 
+/**
+ * Neighbours of `slug` inside its own locale. The list is sorted newest first,
+ * so the entry before it is the newer post and the entry after it the older one.
+ */
+export async function getAdjacentPosts(
+  locale: LocaleKey,
+  slug: string,
+): Promise<{ newer: PostSummary | null; older: PostSummary | null }> {
+  const posts = await readPostsForLocale(locale)
+  const index = posts.findIndex((post) => post.slug === slug)
+  if (index === -1) return { newer: null, older: null }
+  return {
+    newer: posts[index - 1] ?? null,
+    older: posts[index + 1] ?? null,
+  }
+}
+
+const WORDS_PER_MINUTE = 200
+
+/** Rounded reading time in minutes, markdown syntax stripped out first. */
+export function readingTimeMinutes(body: string): number {
+  const words = body
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#>*_`[\]()!|-]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean).length
+  return Math.max(1, Math.round(words / WORDS_PER_MINUTE))
+}
+
 export async function getPostAlternates(
   post: Pick<PostSummary, 'locale' | 'slug' | 'translationKey'>,
 ): Promise<Partial<Record<LocaleKey, string>>> {
@@ -92,3 +128,9 @@ export async function getPostAlternates(
 
   return paths
 }
+
+/** Locale-specific slug for the “spot real reviews” guide. */
+export const REAL_REVIEWS_POST_SLUG = {
+  de: 'echte-bewertungen-immobilienmakler',
+  en: 'real-google-reviews-real-estate-agents',
+} as const satisfies Record<LocaleKey, string>
