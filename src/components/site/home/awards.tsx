@@ -132,22 +132,25 @@ function AwardCard({
   return <div className={shell}>{content}</div>
 }
 
-export async function Awards() {
+export async function Awards({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.awards')
   const items = t.raw('items') as AwardItem[]
 
   return (
     <section
       id="auszeichnungen"
-      className="bg-muted border-border scroll-mt-24 border-b py-14 md:py-18"
+      className={cn(
+        'bg-muted border-border scroll-mt-24 border-b',
+        compact ? 'py-12 md:py-16' : 'py-14 md:py-18',
+      )}
     >
       <div className={CONTAINER}>
         <div className="grid gap-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div className="flex flex-col gap-3.5">
             <span className={EYEBROW}>{t('eyebrow')}</span>
-            <h2 className="max-w-[18ch] font-serif text-[1.625rem] leading-[1.12] font-semibold text-balance sm:text-3xl md:text-[40px]">
+            <h3 className="max-w-[18ch] font-serif text-[1.625rem] leading-[1.12] font-semibold text-balance sm:text-3xl md:text-[40px]">
               {t('title')}
-            </h2>
+            </h3>
           </div>
           <p className="text-muted-foreground max-w-[64ch] text-[16px] leading-[1.65] lg:justify-self-end">
             {t('text')}

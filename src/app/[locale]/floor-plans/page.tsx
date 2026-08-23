@@ -53,12 +53,9 @@ export async function generateMetadata({
     path: '/floor-plans',
     title: t('metadata.title'),
     description: t('metadata.description'),
-    // Die DE-URL liegt bewusst unter /leistungen/…: next-intl bevorzugt den
-    // statischen Pfad gegenüber dem /services/[slug]-Muster. Ein Service-Eintrag
-    // mit dem Slug "wohnflaechenberechnung-grundrisse" würde daher verdeckt.
     localizedPaths: {
-      de: '/leistungen/wohnflaechenberechnung-grundrisse',
-      en: '/services/floor-plans-and-living-area',
+      de: localizePath('/floor-plans', 'de'),
+      en: localizePath('/floor-plans', 'en'),
     },
   })
 }
@@ -444,7 +441,7 @@ export default async function FloorPlansPage({ params }: { params: Promise<{ loc
                 [
                   { key: 'valuation', href: '/property-valuation' },
                   { key: 'selling', href: '/sell' },
-                  { key: 'financing', href: '/services' },
+                  { key: 'financing', href: '/financing' },
                   { key: 'downloads', href: '/downloads' },
                 ] as const
               ).map((link) => (

@@ -1,45 +1,43 @@
 # Immonation
 
-> Immobilienmakler und Immobilienberatung aus Zirndorf fuer Nuernberg, Fuerth, Erlangen und die Metropolregion. German-first bilingual website with seller, buyer, guide, reference, and contact funnels.
+> Regionales, inhabergeführtes Immobilienunternehmen aus Zirndorf für Nürnberg, Fürth, Erlangen, Schwabach und die Metropolregion. Die Website ist vollständig auf Deutsch und Englisch verfügbar.
 
-Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndorf. Die Website ist fuer Suchmaschinen, Antwortmaschinen und KI-gestuetzte Recherche strukturiert, damit Leistungen, regionale Zustaendigkeit, Verkaufsprozess und Kontaktwege korrekt zitiert werden koennen.
+## Primäre Einstiegspunkte
 
-## Primaere Einstiegspunkte
+- [Startseite DE](https://www.immonationgmbh.de/de) · [Home EN](https://www.immonationgmbh.de/en)
+- [Immobilienbewertung](https://www.immonationgmbh.de/de/bewertung) · [Valuation](https://www.immonationgmbh.de/en/valuation)
+- [Preisatlas](https://www.immonationgmbh.de/de/preisatlas) · [Price atlas](https://www.immonationgmbh.de/en/price-atlas)
+- [Immobilie verkaufen](https://www.immonationgmbh.de/de/verkaufen) · [Sell a property](https://www.immonationgmbh.de/en/sell)
+- [Verkaufsanlässe](https://www.immonationgmbh.de/de/nischen) · [Selling situations](https://www.immonationgmbh.de/en/selling-situations)
+- [Aktuelle Angebote](https://www.immonationgmbh.de/de/angebote) · [Current properties](https://www.immonationgmbh.de/en/properties)
+- [Immobilienpreise und Trends](https://www.immonationgmbh.de/de/marktdaten) · [Property prices and trends](https://www.immonationgmbh.de/en/market-data)
+- [Städte und Stadtteile](https://www.immonationgmbh.de/de/staedte) · [Cities and districts](https://www.immonationgmbh.de/en/cities)
+- [Bodenrichtwert](https://www.immonationgmbh.de/de/bodenrichtwert) · [Standard land value](https://www.immonationgmbh.de/en/land-value)
+- [Ratgeber und News](https://www.immonationgmbh.de/de/news) · [Guides and news](https://www.immonationgmbh.de/en/news)
+- [FAQ](https://www.immonationgmbh.de/de/faq) · [FAQ EN](https://www.immonationgmbh.de/en/faq)
+- [Über Immonation](https://www.immonationgmbh.de/de/ueber) · [About Immonation](https://www.immonationgmbh.de/en/about)
+- [Referenzen](https://www.immonationgmbh.de/de/referenzen) · [References](https://www.immonationgmbh.de/en/references)
+- [Kontakt](https://www.immonationgmbh.de/de/kontakt) · [Contact](https://www.immonationgmbh.de/en/contact)
+- [HTML-Sitemap](https://www.immonationgmbh.de/de/sitemap) · [XML-Sitemap](https://www.immonationgmbh.de/sitemap.xml)
 
-- [Startseite (DE)](https://www.immonationgmbh.de/de) - Positionierung, Leistungsuebersicht, virtuelle 360-Grad-Besichtigung, KI-Visualisierungen, Kundenbewertungen, Unternehmensgruppe, Bewertung, Kontakt und Terminbuchung
-- [Home (EN)](https://www.immonationgmbh.de/en) - English entry point
-- [Kaeuferseite](https://www.immonationgmbh.de/de/immobilie-kaufen) - Kaeuferstrecke mit Objektteasern, Suchanfrage und Kontaktweg
-- [Leistungen](https://www.immonationgmbh.de/de/leistungen) - Bewertung, Verkauf, Vermarktung und Transaktion
-- [Immobilie verkaufen](https://www.immonationgmbh.de/de/immobilie-verkaufen) - Verkaufsleitfäden für Haus, Wohnung, Grundstück und Mehrfamilienhaus
-- [Ablauf Immobilienverkauf](https://www.immonationgmbh.de/de/immobilie-verkaufen/ablauf) - der vollständige Verkaufsfahrplan in zehn Schritten von der Objektaufnahme bis zur Übergabe
-- [Regionen](https://www.immonationgmbh.de/de/immobilienmakler-region) - lokale Orientierung für Zirndorf, Nürnberg, Fürth und Erlangen ohne unbestätigte Live-Preise
-- [Immobilienbewertung](https://www.immonationgmbh.de/de/immobilienbewertung) - kostenlose, unverbindliche Wertermittlung mit Vor-Ort-Einschaetzung und schriftlichem Ergebnis
-- [Bodenrichtwert Metropolregion](https://www.immonationgmbh.de/de/immobilienmarkt/bodenrichtwert) - was amtliche Bodenrichtwerte aussagen, wo man sie nachschlaegt (BORIS Bayern / Gutachterausschuesse) und warum sie kein Verkaufspreis sind; EN: [/en/property-market/standard-land-value](https://www.immonationgmbh.de/en/property-market/standard-land-value)
-- [Ueber uns](https://www.immonationgmbh.de/de/ueber-uns) - Unternehmen, regionale Verankerung und Arbeitsweise
-- [Kontakt](https://www.immonationgmbh.de/de/kontakt) - Telefon, E-Mail, Anfragewege, Bueroadresse, Oeffnungszeiten und Anfahrt fuer Eigentuemer, Kaeufer und Partner
-- [FAQ](https://www.immonationgmbh.de/de/ressourcen/faq) - Kosten, Provision, Dauer, Unterlagen, Region und Ablauf in Kurzantworten, gruppiert nach Thema
-- [Blog / Ratgeber](https://www.immonationgmbh.de/de/ratgeber) - Immobilienwissen, Marktkommentare und Entscheidungsfragen
-- [Echte Google-Bewertungen erkennen](https://www.immonationgmbh.de/de/ratgeber/echte-bewertungen-immobilienmakler) - Leitfaden zu echten vs. gefaelschten Bewertungen; EN: [/en/guides/real-google-reviews-real-estate-agents](https://www.immonationgmbh.de/en/guides/real-google-reviews-real-estate-agents)
-- [Karriere](https://www.immonationgmbh.de/de/karriere) - Festangestellte und freie Vertriebspartner
-- [Immobilienmakler werden](https://www.immonationgmbh.de/de/immobilienmakler-werden) - Aufgaben, Zusammenarbeit, Profil und Kontaktweg für freie Vertriebspartner
-- [Tippgeber](https://www.immonationgmbh.de/de/tippgeber) - Empfehlungskanal fuer Immobilienkontakte
-- [Kostenlose Dokumente, REVIER Magazin & Handbuch](https://www.immonationgmbh.de/de/downloads) - Vorlagen (Übergabeprotokolle, Mietformulare) nach E-Mail-Freigabe direkt herunterladen; Magazin frei lesbar; Verkaufs-Handbuch nach Anfrage per E-Mail.
-- [Referenzen](https://www.immonationgmbh.de/de/referenzen) - 15 ausgewaehlte Referenzimmobilien mit echten Objektfotos, virtueller Besichtigung und drei Kundenstimmen-Plaetzen
-- [References (EN)](https://www.immonationgmbh.de/en/references) - English reference-property hub
-- Verkauft-Clips: 18 kurze, tonlose Uebergabe-Aufnahmen aus Adelsdorf, Deining, Erlangen, Forchheim, Fuerth, Hagenbuechach, Herzogenaurach, Nuernberg, Oberasbach, Schwabach und Zirndorf; eingebunden auf Startseite, Referenz-Hub und den jeweiligen Regionsseiten
-- Verkaufsglocke: sechs gesprochene Videoaufnahmen (je rund 20 Sekunden) aus dem Zirndorfer Buero, in denen nach jedem beurkundeten Verkauf die Glocke gelaeutet und der Abschluss berichtet wird; eingebunden im Referenz-Hub, ohne Adress- oder Ortsangabe je Clip
-- Uebergabe-Polaroids: nach jeder Schluesseluebergabe entsteht ein Sofortbild, auf das der Ort von Hand geschrieben wird; acht veroeffentlichte Aufnahmen aus Adelsdorf (zwei), Erlangen, Heroldsbach, Nuernberg, Schwabach, Seukendorf und Zirndorf; eingebunden auf Startseite, Ablaufseite und den jeweiligen Regionsseiten
-- [AGB](https://www.immonationgmbh.de/de/agb) - Allgemeine Geschaeftsbedingungen (Stand Juli 2026)
-- [Widerrufsbelehrung](https://www.immonationgmbh.de/de/widerruf) - Widerrufsrecht und Muster-Widerrufsformular fuer Verbraucher
+## Struktur
+
+- Objektarten: `/de/objektart/{slug}` ↔ `/en/property-type/{slug}`
+- Verkaufsanlässe: `/de/nische/{slug}` ↔ `/en/selling-situation/{slug}`
+- Städte: `/de/stadt/{slug}` ↔ `/en/city/{slug}`
+- Stadtteile: `/de/stadtteil/{stadt}/{stadtteil}` ↔ `/en/district/{city}/{district}`
+- Objekte: `/de/objekt/{slug}` ↔ `/en/property/{slug}`
+- Kundenstimmen: `/de/stimme/{slug}` ↔ `/en/testimonial/{slug}`
+
+`/kundenbereich` ist reserviert und nicht veröffentlicht. `/staging` und `/seo` sind nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.
 
 ## Auszeichnungen
 
-- TOP Makler 2026 - F.A.Z. Institut in Kooperation mit QuantiQuest, namentliche Nennung in der Sonderbeilage der Frankfurter Allgemeinen Zeitung vom 11.03.2026, veroeffentlicht auf topmakler.faz.net
-- Top-Makler Nuernberg mit vier Sternen - Capital Makler-Kompass 2024, geprueft vom unabhaengigen IIB Institut, veroeffentlicht in Capital 10/2024
-- immowelt Business Partner - durchgehend ausgezeichnet fuer 2024, 2025 und 2026
-- Deutscher Immobilienpreis 2021, Kategorie Network - immowelt
+- TOP Makler 2026 – F.A.Z. Institut und QuantiQuest
+- Capital Makler-Kompass 2024 – Top-Makler Nürnberg mit vier Sternen
+- immowelt Business Partner 2024, 2025 und 2026
+- Deutscher Immobilienpreis 2021, Kategorie Network
 
-## Weitere Maschinenlese-Hinweise
+## Weitere Referenz
 
-- [Full content (llms-full.txt)](https://www.immonationgmbh.de/llms-full.txt) - ausfuehrliche Leistungs-, Prozess- und Regionalbeschreibung
-- [Sitemap](https://www.immonationgmbh.de/sitemap.xml)
+- [Ausführliche Inhalte für Antwortmaschinen](https://www.immonationgmbh.de/llms-full.txt)

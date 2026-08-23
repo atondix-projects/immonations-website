@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ComponentPropsWithoutRef } from 'react'
 import { useLocale } from 'next-intl'
-import { useInView, useMotionValue, useSpring } from 'motion/react'
+import { useInView, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 type ParsedNumber = {
@@ -46,6 +46,13 @@ type AnimatedNumberProps = Omit<ComponentPropsWithoutRef<'span'>, 'children'> & 
   value: string
   /** Stagger delay in seconds before the count starts. */
   delay?: number
+}
+
+function formatLocaleNumber(value: number, locale: string, decimalPlaces: number) {
+  return Intl.NumberFormat(locale, {
+    minimumFractionDigits: decimalPlaces,
+    maximumFractionDigits: decimalPlaces,
+  }).format(value)
 }
 
 /**
@@ -110,12 +117,16 @@ function LocaleNumberTicker({
     stiffness: 100,
   })
   const isInView = useInView(ref, { once: true, margin: '0px' })
+  const prefersReducedMotion = useReducedMotion()
   const intlLocale = locale === 'de' ? 'de-DE' : 'en-US'
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | null = null
 
-    if (isInView) {
+    if (prefersReducedMotion) {
+      if (ref.current)
+        ref.current.textContent = formatLocaleNumber(value, intlLocale, decimalPlaces)
+    } else if (isInView) {
       timer = setTimeout(() => {
         motionValue.set(direction === 'down' ? startValue : value)
       }, delay * 1000)
@@ -124,25 +135,38 @@ function LocaleNumberTicker({
     return () => {
       if (timer !== null) clearTimeout(timer)
     }
-  }, [motionValue, isInView, delay, value, direction, startValue])
+  }, [
+    motionValue,
+    isInView,
+    delay,
+    value,
+    direction,
+    startValue,
+    prefersReducedMotion,
+    intlLocale,
+    decimalPlaces,
+  ])
 
-  useEffect(
-    () =>
-      springValue.on('change', (latest) => {
-        if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat(intlLocale, {
-            minimumFractionDigits: decimalPlaces,
-            maximumFractionDigits: decimalPlaces,
-          }).format(Number(latest.toFixed(decimalPlaces)))
-        }
-      }),
-    [springValue, decimalPlaces, intlLocale],
-  )
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      if (ref.current) {
+        ref.current.textContent = formatLocaleNumber(value, intlLocale, decimalPlaces)
+      }
+      return
+    }
 
-  const formattedStart = Intl.NumberFormat(intlLocale, {
-    minimumFractionDigits: decimalPlaces,
-    maximumFractionDigits: decimalPlaces,
-  }).format(startValue)
+    return springValue.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = formatLocaleNumber(
+          Number(latest.toFixed(decimalPlaces)),
+          intlLocale,
+          decimalPlaces,
+        )
+      }
+    })
+  }, [springValue, decimalPlaces, intlLocale, prefersReducedMotion, value])
+
+  const formattedStart = formatLocaleNumber(startValue, intlLocale, decimalPlaces)
 
   return (
     <span

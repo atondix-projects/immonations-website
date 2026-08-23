@@ -72,7 +72,7 @@ export function ReferenceGallery({
             <Link
               key={item.id}
               id={item.id}
-              href={{ pathname: '/references/[slug]', params: { slug: item.id } }}
+              href="/references"
               className={cn(
                 'group relative isolate block min-h-[320px] scroll-mt-28 overflow-hidden bg-neutral-900 md:min-h-[380px]',
                 featured && 'md:col-span-2 lg:min-h-[440px]',

@@ -34,7 +34,7 @@ const CATEGORY_LINKS = {
   valuation: '/property-valuation',
   buying: '/buy',
   local: '/locations',
-  careers: '/real-estate-agent-career',
+  careers: '/careers',
   downloads: '/downloads',
 } as const
 

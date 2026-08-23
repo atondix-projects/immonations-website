@@ -67,7 +67,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
         feature={
           <section className="mx-auto mb-12 w-full max-w-[1240px] px-6 lg:px-10">
             <Link
-              href="/real-estate-agent-career"
+              href="/partners"
               className="group bg-surface-dark grid gap-6 p-7 text-white md:grid-cols-[1fr_auto] md:items-end md:p-9"
             >
               <div>

@@ -178,7 +178,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               ))}
             </ol>
             <Link
-              href="/services"
+              href="/sell"
               className="border-border mt-8 inline-flex min-h-11 items-center gap-2 border px-5 py-2.5 text-sm font-semibold transition-colors hover:border-neutral-900 active:translate-y-px"
             >
               {t('serviceLink')}

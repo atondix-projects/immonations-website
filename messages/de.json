@@ -291,7 +291,7 @@
         "name": "Markus Burkhard",
         "context": "Maisonette in Zirndorf-Weiherhof",
         "quote": "Der Ablauf war klar, transparent und für mich ein echtes Rundum-sorglos-Paket.",
-        "result": "In etwa drei Monaten zum Wunschpreis verkauft",
+        "result": "Transparent begleiteter Immobilienverkauf",
         "alt": "Vorschaubild zur Verkaufsgeschichte von Markus Burkhard",
         "video": false
       },
@@ -300,7 +300,7 @@
         "name": "Herr Sippel",
         "context": "Geerbte Doppelhaushälfte in Erlangen",
         "quote": "Immonation hat trotz Sanierungsbedarf den passenden Käufer gefunden und alles für mich geregelt.",
-        "result": "In zwölf Wochen verkauft",
+        "result": "Verkauf einer geerbten Immobilie",
         "alt": "Geerbte Doppelhaushälfte aus der Verkaufsgeschichte von Herrn Sippel",
         "video": false
       },
@@ -309,7 +309,7 @@
         "name": "Frau Hartmann",
         "context": "Denkmalgeschützte Wohnung in St. Johannis",
         "quote": "Immonation hat den Charakter meiner Wohnung sofort verstanden und perfekt in Szene gesetzt.",
-        "result": "In sechs Wochen · 6 % über Marktwert",
+        "result": "Strategische Vermarktung einer Altbauwohnung",
         "alt": "Denkmalgeschützte Altbauwohnung aus der Verkaufsgeschichte von Frau Hartmann",
         "video": false
       }
@@ -991,10 +991,9 @@
         "search": "Regionale Nachfrage"
       },
       "items": [
-        { "value": "300+", "label": "Bewertungen auf 10 Plattformen" },
+        { "value": "4,9 / 5", "label": "bei 226 Google-Bewertungen · Stand August 2026" },
         { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
-        { "value": "30 Mio. €", "label": "jährliches Transaktionsvolumen" },
-        { "value": "8.000+", "label": "registrierte Suchkunden" }
+        { "value": "30 Mio. €", "label": "jährliches Transaktionsvolumen" }
       ]
     },
     "awards": {
@@ -1054,6 +1053,38 @@
       "title": "Referenzen aus Ihrer Nachbarschaft",
       "link": "Alle 15 Referenzobjekte →"
     },
+    "difference": {
+      "eyebrow": "Darum Immonation",
+      "title": "Was uns von „einfach inserieren“ unterscheidet",
+      "lede": "Ein Portal schafft Sichtbarkeit. Ein erfolgreicher Verkauf braucht darüber hinaus eine klare Strategie, belastbare Unterlagen und persönliche Steuerung bis zum Abschluss.",
+      "principle": "Wir überlassen Ihren Verkauf nicht dem Zufall.",
+      "items": [
+        {
+          "title": "Aktiv gesteuert",
+          "text": "Wir warten nicht auf Anfragen – wir vermarkten mit Strategie, Video und einem gewachsenen Netzwerk."
+        },
+        {
+          "title": "Ingenieur im Haus",
+          "text": "Zertifizierte Wohnflächen und präzise Grundrisse sorgen dafür, dass kein Quadratmeter verloren geht."
+        },
+        {
+          "title": "Video & 360°-Rundgang",
+          "text": "Wir präsentieren Immobilien als Film und begehbaren Rundgang statt als liebloses Portal-Inserat."
+        },
+        {
+          "title": "Diskret verkaufen",
+          "text": "Auf Wunsch vermarkten wir ganz ohne öffentliches Inserat – direkt über unser Suchkunden-Netzwerk."
+        },
+        {
+          "title": "Beurkundet, nicht behauptet",
+          "text": "Jeder Abschluss ist notariell belegt: nachprüfbare Ergebnisse statt bloßer Marketing-Versprechen."
+        },
+        {
+          "title": "Persönlich bis zum Notar",
+          "text": "Ein fester Ansprechpartner begleitet Sie vom ersten Gespräch bis zur notariellen Unterschrift."
+        }
+      ]
+    },
     "valuation": {
       "eyebrow": "Kostenlos & unverbindlich",
       "title": "Was ist Ihre Immobilie heute wert?",
@@ -1075,33 +1106,45 @@
     },
     "servicesOverview": {
       "eyebrow": "Leistungen",
-      "title": "Alles rund um Ihre Immobilie — aus einer Hand",
+      "title": "Alles rund um den Verkauf. Aus einer Hand.",
       "link": "Alle Leistungen ansehen →",
       "itemLink": "Mehr erfahren →",
       "items": [
         {
-          "title": "Immobilienverkauf",
-          "text": "Aktiv gesteuerter Verkauf mit klarem 10-Schritte-System — von der Preisstrategie bis zum Notartermin."
+          "title": "Immobilie verkaufen",
+          "text": "Aktiv gesteuerter Verkauf mit klarem 10-Schritte-System."
         },
         {
           "title": "Immobilienbewertung",
-          "text": "Kostenlose, fundierte Wertermittlung auf Basis aktueller Verkaufsdaten aus Ihrer Nachbarschaft."
+          "text": "Kostenlose Wertermittlung mit sofortiger Preisspanne."
         },
         {
-          "title": "Premium-Vermarktung",
-          "text": "Professionelle Fotografie, Video, 360°-Rundgang und digitale Reichweite für einen überzeugenden Marktauftritt."
+          "title": "Wohnfläche & Grundrisse",
+          "text": "Ingenieur im Haus: keinen Quadratmeter verschenken – und die Finanzierung Ihres Käufers läuft durch."
         },
         {
-          "title": "Suchauftrag & Kaufberatung",
-          "text": "Über 8.000 registrierte Suchkunden — als Käufer erfahren Sie von passenden Objekten vor allen anderen."
+          "title": "Verkaufsanlässe",
+          "text": "Trennung, Erbe, Notlage – wir kennen Ihre Situation."
+        },
+        {
+          "title": "Virtuelle Besichtigung",
+          "text": "360°-Rundgang, Vorqualifizierung, Tracking."
+        },
+        {
+          "title": "Home Staging",
+          "text": "KI-Visualisierung: Potenzial sichtbar machen."
+        },
+        {
+          "title": "Video-Marketing",
+          "text": "Objekte als Film statt als Inserat."
+        },
+        {
+          "title": "Aktive Suchkunden",
+          "text": "Verkauf oft ohne Inserat – direkt aus dem Netzwerk."
         },
         {
           "title": "Finanzierung",
-          "text": "Baufinanzierung zu Top-Konditionen mit unserem langjährigen Partner Dr. Klein — persönlich beraten."
-        },
-        {
-          "title": "Projektentwicklung & Investment",
-          "text": "Ankauf, Entwicklung und Revitalisierung von Objekten — gebündelt in der Immonation-Gruppe."
+          "text": "Top-Konditionen mit unserem Partner Dr. Klein."
         }
       ]
     },
@@ -1140,11 +1183,15 @@
     "reviews": {
       "eyebrow": "Bewertungen",
       "title": "Ausgewählte Stimmen zu echten Verkäufen",
-      "lead": "Immonation ist auf 10 Bewertungsportalen mit einem eigenen Profil vertreten — zusammen über 300 Bewertungen. Jede Kundenstimme unten ist mit der passenden Verkaufsreferenz verbunden.",
+      "lead": "Immonation ist auf 10 Bewertungsportalen mit einem eigenen Profil vertreten — zusammen über 300 Bewertungen. Die Diashow zeigt ausgewählte Originalstimmen aus nachprüfbaren Verkäufen.",
       "ratingSuffix": "von 5",
       "referenceLink": "Zur Verkaufsreferenz",
       "reviewSource": "Google · {rating} von 5 Sternen",
-      "selectionNote": "Jede Kundenstimme ist mit der passenden Verkaufsreferenz verbunden. Den originalen Google-Screenshot finden Sie direkt beim jeweiligen Objekt.",
+      "carouselLabel": "Ausgewählte Google-Bewertungen",
+      "previousReview": "Vorherige Bewertung",
+      "nextReview": "Nächste Bewertung",
+      "reviewSlide": "Bewertung",
+      "selectionNote": "Die Diashow zeigt originale Google-Screenshots aus drei nachprüfbaren Verkäufen.",
       "guideLink": "So erkennen Sie echte von gefälschten Bewertungen",
       "headline": {
         "platform": "Google",
@@ -1173,6 +1220,7 @@
       "sourceDirect": "Direktquelle",
       "sourceAggregate": "Aggregat",
       "openProfile": "Profil öffnen",
+      "allProfilesLink": "Alle Bewertungsprofile ansehen →",
       "verifiedProfile": "Verifiziertes Profil bei Maklersieger",
       "sealAlt": "Siegel „Verifizierter Makler“ von maklersieger.de für die Immonation GmbH",
       "sealNote": "Unabhängig geprüftes Maklerprofil. Das Siegel ist als lokale Kopie eingebunden — kein externes Tracking.",
@@ -1440,6 +1488,181 @@
         "title": "Mit Dr. Klein als benanntem Finanzierungspartner.",
         "text": "Kaufinteressenten erhalten auf Wunsch eine separate Orientierung zur Finanzierung. Der Prototyp zeigt die Einbindung als klar abgegrenzten Partnerweg.",
         "prototypeNote": "Partnerstatus und finale öffentliche Formulierung bleiben vor dem Launch zu bestätigen."
+      }
+    },
+    "clientSections": {
+      "propertyTypes": {
+        "eyebrow": "Was verkaufen Sie?",
+        "title": "Für jede Objektart der richtige Weg",
+        "text": "Haus, Wohnung, Grundstück oder Mehrfamilienhaus: Unterlagen, Bewertung und Käuferansprache folgen jeweils eigenen Regeln.",
+        "link": "So verkaufen wir →",
+        "cardLink": "Ratgeber öffnen"
+      },
+      "verified": {
+        "eyebrow": "Nachweisbare Ergebnisse",
+        "title": "Beurkundet, nicht behauptet.",
+        "text": "Verkaufserfolg ist für uns keine Werbebehauptung. Wir dokumentieren echte Abschlüsse, zeigen die Immobilien dahinter und machen unser Vorgehen nachvollziehbar.",
+        "videoTitle": "Ein echtes Objekt. Der Weg wird sichtbar.",
+        "videoNote": "Das Video begleitet eine reale Immobilienentwicklung vom Grundstück bis zum fertigen Objekt — als konkreter Einblick statt austauschbarem Werbeversprechen.",
+        "videoFallback": "Ihr Browser kann dieses Video nicht abspielen.",
+        "points": [
+          {
+            "title": "Notariell dokumentiert",
+            "text": "Jeder Abschluss basiert auf einem tatsächlich beurkundeten Kaufvertrag."
+          },
+          {
+            "title": "Mit Objektbezug",
+            "text": "Referenzen zeigen Lage, Ausgangssituation und den gewählten Verkaufsweg."
+          },
+          {
+            "title": "Nachprüfbar statt pauschal",
+            "text": "Zahlen, Bewertungen und Ergebnisse bleiben ihrem konkreten Kontext zugeordnet."
+          }
+        ]
+      },
+      "priceAtlas": {
+        "eyebrow": "Neu · Preisatlas",
+        "title": "Was kostet der m² in Ihrem Stadtteil?",
+        "text": "Der Immobilien-Preisatlas ordnet Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach ein — getrennt nach Objektart und mit dem nötigen Blick auf die Mikrolage.",
+        "link": "Zum Preisatlas",
+        "points": [
+          {
+            "title": "5 Städte",
+            "text": "Vom regionalen Überblick bis zur konkreten Lage im Stadtteil."
+          },
+          {
+            "title": "Haus & Wohnung",
+            "text": "Preisniveaus werden nach Objektart getrennt betrachtet."
+          }
+        ]
+      },
+      "marketData": {
+        "eyebrow": "Immobilienpreise & Trends",
+        "title": "Was hier wirklich bezahlt wird",
+        "text": "Angebotspreise zeigen Wünsche. Unsere Markteinordnung verbindet tatsächlich beurkundete Abschlüsse mit Lage, Zustand, Unterlagen und aktueller Nachfrage.",
+        "link": "Preise & Trends ansehen",
+        "points": [
+          {
+            "title": "Echte Abschlüsse",
+            "text": "Die belastbare Grundlage sind Verkäufe, die tatsächlich beim Notar abgeschlossen wurden."
+          },
+          {
+            "title": "Mikrolage statt Mittelwert",
+            "text": "Straße, Umfeld und Zielgruppe erklären oft mehr als ein stadtweiter Durchschnitt."
+          },
+          {
+            "title": "Preis mit Kontext",
+            "text": "Objektart, Zustand und Unterlagen machen aus Marktdaten eine realistische Preisstrategie."
+          }
+        ]
+      },
+      "knowledge": {
+        "eyebrow": "Wissen für Eigentümer",
+        "title": "Verstehen, bevor Sie verkaufen",
+        "link": "Zum Ratgeber →",
+        "items": [
+          {
+            "title": "Ratgeber & News",
+            "text": "Fundierte Beiträge rund um Verkauf, Preise, Vermarktung und Recht.",
+            "link": "Beiträge lesen"
+          },
+          {
+            "title": "Lexikon A–Z",
+            "text": "77 Fachbegriffe aus Verkauf, Finanzierung und Notariat verständlich erklärt.",
+            "link": "Begriff nachschlagen"
+          },
+          {
+            "title": "Häufige Fragen",
+            "text": "Konkrete Antworten auf die Fragen, die Eigentümer und Käufer wirklich stellen.",
+            "link": "Antworten ansehen"
+          },
+          {
+            "title": "Downloads",
+            "text": "Checklisten, Formulare und Unterlagen für eine gut vorbereitete Entscheidung.",
+            "link": "Unterlagen öffnen"
+          }
+        ]
+      },
+      "regions": {
+        "eyebrow": "Regionen",
+        "title": "Wir kennen jede Lage",
+        "link": "Alle Städte & Stadtteile →",
+        "cardLink": "Lage kennenlernen"
+      },
+      "properties": {
+        "eyebrow": "Aktuell im Angebot",
+        "title": "Aktuelle Immobilien in der Region",
+        "link": "Alle Objekte & Filter →",
+        "rooms": "Zimmer",
+        "items": [
+          {
+            "type": "Wohnung",
+            "title": "Maisonette mit Balkon"
+          },
+          {
+            "type": "Wohnung",
+            "title": "3-Zimmer mit Balkon"
+          },
+          {
+            "type": "Wohnung",
+            "title": "Eigentumswohnung im Röthelheimpark"
+          }
+        ]
+      },
+      "assistant": {
+        "eyebrow": "Neu · Immobilien-KI",
+        "title": "Ihr digitaler Immobilien-Assistent",
+        "text": "Erste Orientierung, passende nächste Schritte und Antworten rund um die Uhr: Der Assistent unterstützt vom ersten Gedanken bis zum persönlichen Termin.",
+        "link": "Immobilien-KI ausprobieren",
+        "capabilities": [
+          "Erste Preis-Orientierung für Ihre Lage",
+          "Einordnung von Verkauf, Bewertung und Finanzierung",
+          "Antworten auf häufige Fragen — jederzeit"
+        ]
+      },
+      "about": {
+        "eyebrow": "Wer wir sind",
+        "title": "Inhabergeführt seit 2017. Kein Franchise.",
+        "text": "Ein lokales Team mit Namen, Gesicht und Verantwortung — verbunden mit spezialisierten Gesellschaften und Engagement in der Region.",
+        "link": "Über Immonation →",
+        "items": [
+          {
+            "title": "Unser Anspruch",
+            "text": "Persönliche Begleitung, belastbare Zahlen und ein klar gesteuerter Prozess bis zum Notar.",
+            "link": "Team kennenlernen"
+          },
+          {
+            "title": "Unternehmensgruppe",
+            "text": "Spezialisierte Gesellschaften für Vermittlung, Ankauf, Entwicklung und Revitalisierung.",
+            "link": "Gruppe ansehen"
+          },
+          {
+            "title": "Engagement",
+            "text": "Unterstützung für den TSV Zirndorf und ausgewählte Bildungsprojekte in Uganda.",
+            "link": "Engagement entdecken"
+          }
+        ]
+      },
+      "collaboration": {
+        "eyebrow": "Zusammenarbeiten",
+        "title": "Zwei Wege, gemeinsam mehr zu erreichen",
+        "items": [
+          {
+            "title": "Partnermakler werden",
+            "text": "Geprüfte Kooperation für Immobilienmakler — mit klaren Modellen, Zuständigkeiten und Qualitätsstandards.",
+            "link": "Zur Partnerschaft"
+          },
+          {
+            "title": "Tippgeber werden",
+            "text": "Empfehlen Sie Eigentümer mit Verkaufsabsicht und profitieren Sie von einem erfolgreich abgeschlossenen Verkauf.",
+            "link": "Empfehlen & profitieren"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Häufige Fragen — kurz beantwortet",
+        "text": "Weitere Antworten zu Bewertung, Kosten, Unterlagen, Verkauf und Kauf finden Sie im vollständigen FAQ-Bereich.",
+        "link": "Alle Fragen ansehen →"
       }
     }
   },
@@ -1991,6 +2214,8 @@
     "eyebrow": "Das Immonation-Verkaufssystem",
     "title": "Premium-Vermarktung ist bei uns ein System.",
     "lede": "Vom marktfähigen Preis über bankfähige Unterlagen bis zur gezielten Käuferansprache: Zehn Leistungen greifen ineinander, damit Ihr Verkauf vorbereitet, sichtbar und sicher zum Abschluss kommt.",
+    "networkProofValue": "8.000+",
+    "networkProofLabel": "registrierte Suchkunden für direkte und diskrete Käuferansprache",
     "primaryCta": "Immobilie bewerten",
     "secondaryCta": "Verkaufswege ansehen",
     "tabList": "Leistungen im Immonation-Verkaufssystem",

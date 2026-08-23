@@ -98,10 +98,10 @@ export async function SiteFooter() {
             <Link href="/contact" className={LINK_CLASSES}>
               {t('buy.searchRequest')}
             </Link>
-            <Link href="/services" className={LINK_CLASSES}>
+            <Link href="/financing" className={LINK_CLASSES}>
               {t('buy.financing')}
             </Link>
-            <Link href="/services" className={LINK_CLASSES}>
+            <Link href="/sell" className={LINK_CLASSES}>
               {t('buy.buyerAdvice')}
             </Link>
           </div>
@@ -155,12 +155,6 @@ export async function SiteFooter() {
               className="text-sm text-neutral-600 transition-colors hover:text-white"
             >
               {t('terms')}
-            </Link>
-            <Link
-              href="/withdrawal"
-              className="text-sm text-neutral-600 transition-colors hover:text-white"
-            >
-              {t('withdrawal')}
             </Link>
           </div>
         </div>

@@ -2,110 +2,55 @@ import Image from 'next/image'
 import { ArrowUpRight, BadgeCheck, Star } from 'lucide-react'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import {
-  FEATURED_REVIEW_IDS,
-  REFERENCE_DETAILS,
-  type ReferenceDetail,
-  type ReferenceItem,
-} from '@/lib/content/references'
+import { FEATURED_REVIEW_IDS, REFERENCE_DETAILS } from '@/lib/content/references'
 import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
 import { AnimatedNumber } from '@/components/site/animated-number'
-import { cn } from '@/lib/utils'
+import { ReviewRotator, type ReviewScreenshot } from './review-rotator'
 import { GOOGLE_PROFILE, ReviewPortalGrid, type ReviewPortal } from './review-portals'
 import { CONTAINER, SectionHeader } from './section-shell'
 
 type Headline = { platform: string; rating: string; count: string; link: string }
 type Stat = { value: string; label: string }
-type FeaturedReview = {
-  item: ReferenceItem
-  review: NonNullable<ReferenceDetail['review']>
-}
 
 const MAKLER_SIEGER_PROFILE = 'https://maklersieger.de/makler/immonation-gmbh'
 
-function getFeaturedReviews(items: ReferenceItem[]) {
+function getReviewScreenshots(language: 'de' | 'en') {
   return FEATURED_REVIEW_IDS.flatMap((id) => {
-    const item = items.find((candidate) => candidate.id === id)
     const review = REFERENCE_DETAILS[id].review
 
-    return item && review ? [{ item, review }] : []
-  }) satisfies FeaturedReview[]
+    return review
+      ? [
+          {
+            src: review.screenshot.src,
+            alt: review.screenshot.alt[language],
+            width: review.screenshot.width,
+            height: review.screenshot.height,
+          },
+        ]
+      : []
+  }) satisfies ReviewScreenshot[]
 }
 
-function ReviewCard({
-  entry,
-  language,
-  linkLabel,
-  sourceLabel,
-  isLead = false,
-}: {
-  entry: FeaturedReview
-  language: 'de' | 'en'
-  linkLabel: string
-  sourceLabel: string
-  isLead?: boolean
-}) {
-  return (
-    <article
-      className={cn(
-        'bg-background flex flex-col justify-between gap-8 p-6 sm:p-8',
-        isLead && 'md:col-span-2 md:min-h-[300px] md:p-11',
-      )}
-    >
-      <div>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-brand-700 text-[11px] font-semibold tracking-[0.16em] uppercase">
-            {entry.item.title}
-          </p>
-          <div className="text-brand-700 flex gap-0.5" aria-label={sourceLabel}>
-            {Array.from({ length: entry.review.rating }, (_, index) => (
-              <Star key={index} className="size-3.5 fill-current" aria-hidden="true" />
-            ))}
-          </div>
-        </div>
-        <blockquote
-          className={cn(
-            'mt-7 max-w-[42ch] font-serif text-xl leading-[1.48] font-medium text-pretty',
-            isLead && 'md:max-w-[54ch] md:text-[1.9rem] md:leading-[1.42]',
-          )}
-        >
-          „{entry.review.quote[language]}“
-        </blockquote>
-      </div>
-      <footer className="border-border flex flex-wrap items-end justify-between gap-5 border-t pt-5">
-        <div>
-          <p className="text-sm font-semibold">{entry.review.reviewer}</p>
-          <p className="text-muted-foreground mt-1 text-xs">
-            Google · {entry.review.date[language]}
-          </p>
-        </div>
-        <Link
-          href={{ pathname: '/references/[slug]', params: { slug: entry.item.id } }}
-          className="text-brand-700 hover:text-brand-800 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
-        >
-          {linkLabel}
-          <ArrowUpRight className="size-4" aria-hidden="true" />
-        </Link>
-      </footer>
-    </article>
-  )
-}
-
-export async function Reviews() {
+export async function Reviews({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.reviews')
-  const referencesT = await getTranslations('ReferencesPage')
   const locale = await getLocale()
   const language = locale === 'en' ? 'en' : 'de'
   const headline = t.raw('headline') as Headline
   const stats = t.raw('stats') as Stat[]
   const portals = t.raw('portals') as ReviewPortal[]
-  const referenceItems = referencesT.raw('items') as ReferenceItem[]
-  const featuredReviews = getFeaturedReviews(referenceItems)
+  const visiblePortals = compact
+    ? portals.filter((portal) => portal.kind === 'direct').slice(0, 5)
+    : portals
+  const screenshots = getReviewScreenshots(language)
 
   return (
     <section
       id="bewertungen"
-      className="border-border bg-muted/65 scroll-mt-24 border-y py-18 md:py-28"
+      className={
+        compact
+          ? 'border-border bg-muted/65 scroll-mt-24 border-y py-16 md:py-22'
+          : 'border-border bg-muted/65 scroll-mt-24 border-y py-18 md:py-28'
+      }
     >
       <div className={CONTAINER}>
         <SectionHeader eyebrow={t('eyebrow')} title={t('title')} />
@@ -205,18 +150,17 @@ export async function Reviews() {
           </div>
         </div>
 
-        {/* Featured client quotes, each tied to a sales reference. */}
-        <div className="border-border mt-14 grid gap-px overflow-hidden border bg-neutral-300 md:mt-16 md:grid-cols-2">
-          {featuredReviews.map((entry, index) => (
-            <ReviewCard
-              key={entry.item.id}
-              entry={entry}
-              language={language}
-              linkLabel={t('referenceLink')}
-              sourceLabel={t('reviewSource', { rating: entry.review.rating })}
-              isLead={index === 0}
-            />
-          ))}
+        {/* Original Google profiles rotate like the approved prototype. */}
+        <div className="mt-14 md:mt-16">
+          <ReviewRotator
+            screenshots={screenshots}
+            labels={{
+              carousel: t('carouselLabel'),
+              previous: t('previousReview'),
+              next: t('nextReview'),
+              slide: t('reviewSlide'),
+            }}
+          />
         </div>
         <p className="text-muted-foreground mt-4 max-w-[62ch] text-xs leading-relaxed text-pretty">
           {t('selectionNote')}{' '}
@@ -248,18 +192,28 @@ export async function Reviews() {
           </div>
 
           <ReviewPortalGrid
-            portals={portals}
+            portals={visiblePortals}
             labels={{
               direct: t('sourceDirect'),
               aggregate: t('sourceAggregate'),
               openProfile: t('openProfile'),
             }}
+            compact={compact}
           />
 
-          <div className="text-muted-foreground mt-4 flex flex-wrap items-start justify-between gap-x-10 gap-y-2 text-xs leading-relaxed">
-            <p className="max-w-3xl text-pretty">{t('portalNote')}</p>
-            <p className="whitespace-nowrap">{t('asOf')}</p>
-          </div>
+          {compact ? (
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+              <Link href="/reviews" className="text-brand-700 text-sm font-semibold">
+                {t('allProfilesLink')}
+              </Link>
+              <p className="text-muted-foreground text-xs whitespace-nowrap">{t('asOf')}</p>
+            </div>
+          ) : (
+            <div className="text-muted-foreground mt-4 flex flex-wrap items-start justify-between gap-x-10 gap-y-2 text-xs leading-relaxed">
+              <p className="max-w-3xl text-pretty">{t('portalNote')}</p>
+              <p className="whitespace-nowrap">{t('asOf')}</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

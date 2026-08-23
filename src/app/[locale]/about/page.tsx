@@ -9,6 +9,7 @@ import { buildMetadata } from '@/lib/seo/metadata'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { SITE } from '@/lib/seo/site'
+import { localizePath } from '@/lib/seo/routes'
 
 export const dynamic = 'force-static'
 
@@ -36,7 +37,7 @@ export async function generateMetadata({
     path: '/about',
     title: t('metadata.title'),
     description: t('metadata.description'),
-    localizedPaths: { de: '/ueber-uns', en: '/about' },
+    localizedPaths: { de: localizePath('/about', 'de'), en: localizePath('/about', 'en') },
   })
 }
 
@@ -48,7 +49,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations('AboutPage')
   const nav = await getTranslations('Nav')
   const values = t.raw('values.items') as ValueItem[]
-  const path = locale === 'de' ? '/ueber-uns' : '/about'
+  const path = localizePath('/about', locale)
 
   return (
     <main className="bg-background">

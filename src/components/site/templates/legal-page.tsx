@@ -10,7 +10,7 @@ import { TextPage, type TextSection } from './text-page'
 type LegalNamespace = 'LegalImprint' | 'LegalPrivacy' | 'LegalTerms' | 'LegalWithdrawal'
 
 type RelatedLink = {
-  href: '/terms' | '/withdrawal'
+  href: '/terms'
   label: string
 }
 
@@ -40,16 +40,13 @@ export async function LegalPage({
 }: {
   locale: 'de' | 'en'
   namespace: LegalNamespace
-  internalPath: '/imprint' | '/privacy' | '/terms' | '/withdrawal'
+  internalPath: '/imprint' | '/privacy' | '/terms'
 }) {
   const t = await getTranslations(namespace)
   const nav = await getTranslations('Nav')
   const sections = t.raw('sections') as TextSection[]
   const publicPath = localizePath(internalPath, locale)
-  const relatedLink =
-    namespace === 'LegalTerms' || namespace === 'LegalWithdrawal'
-      ? (t.raw('relatedLink') as RelatedLink)
-      : null
+  const relatedLink = namespace === 'LegalWithdrawal' ? (t.raw('relatedLink') as RelatedLink) : null
   const form = namespace === 'LegalWithdrawal' ? (t.raw('form') as WithdrawalFormCopy) : null
   const pdfHref =
     namespace === 'LegalWithdrawal'

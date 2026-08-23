@@ -10,7 +10,7 @@ const OG_LOCALES: Record<(typeof routing.locales)[number], string> = {
 
 type BuildMetadataInput = {
   locale: string
-  /** Locale-agnostic canonical path, leading slash. e.g. "/services/initial-consultation" */
+  /** Locale-agnostic canonical path, leading slash. e.g. "/sell/house" */
   path: string
   title: string
   description: string

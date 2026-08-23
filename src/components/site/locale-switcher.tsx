@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { useTransition } from 'react'
+import { getRouteByPath, type CatalogLocale } from '@/lib/routing/route-catalog'
 import { cn } from '@/lib/utils'
 
 /** Single-button locale toggle: shows the language you would switch TO. */
@@ -20,9 +21,17 @@ export function LocaleSwitcher({ light = false }: { light?: boolean }) {
       type="button"
       disabled={isPending}
       onClick={() => {
+        const currentLocale = locale as CatalogLocale
+        const targetLocale = target as CatalogLocale
+        const publicPath = window.location.pathname.replace(new RegExp(`^/${currentLocale}(?=/|$)`), '') || '/'
+        const catalogRoute = getRouteByPath(currentLocale, publicPath)
+
+        if (catalogRoute) {
+          window.location.assign(`/${targetLocale}${catalogRoute.paths[targetLocale]}`.replace(/\/$/, ''))
+          return
+        }
+
         startTransition(() => {
-          // pathname is the canonical (locale-stripped) path; cast keeps the
-          // typed-routes helper happy when we don't know the exact pathname union.
           router.replace(pathname as Parameters<typeof router.replace>[0], { locale: target })
         })
       }}

@@ -291,7 +291,7 @@
         "name": "Markus Burkhard",
         "context": "Maisonette in Zirndorf-Weiherhof",
         "quote": "The process was clear, transparent, and genuinely fully managed for me.",
-        "result": "Sold at the desired price in around three months",
+        "result": "A transparently guided property sale",
         "alt": "Preview image for Markus Burkhard's sales story",
         "video": false
       },
@@ -300,7 +300,7 @@
         "name": "Mr Sippel",
         "context": "Inherited semi-detached home in Erlangen",
         "quote": "Despite the renovation needs, Immonation found the right buyer and handled everything for me.",
-        "result": "Sold in twelve weeks",
+        "result": "Sale of an inherited property",
         "alt": "Inherited semi-detached home from Mr Sippel's sales story",
         "video": false
       },
@@ -309,7 +309,7 @@
         "name": "Ms Hartmann",
         "context": "Heritage apartment in St. Johannis",
         "quote": "Immonation immediately understood the character of my apartment and presented it perfectly.",
-        "result": "Sold in six weeks · 6% above market value",
+        "result": "Strategic marketing of a period apartment",
         "alt": "Heritage apartment from Ms Hartmann's sales story",
         "video": false
       }
@@ -993,10 +993,9 @@
         "search": "Regional demand"
       },
       "items": [
-        { "value": "300+", "label": "reviews across 10 platforms" },
+        { "value": "4.9 / 5", "label": "from 226 Google reviews · as of August 2026" },
         { "value": "60+", "label": "property sales per year" },
-        { "value": "€30m", "label": "annual transaction volume" },
-        { "value": "8,000+", "label": "registered search clients" }
+        { "value": "€30m", "label": "annual transaction volume" }
       ]
     },
     "awards": {
@@ -1056,6 +1055,38 @@
       "title": "References from your neighborhood",
       "link": "View all 15 reference properties →"
     },
+    "difference": {
+      "eyebrow": "Why Immonation",
+      "title": "What sets us apart from simply listing a property",
+      "lede": "A portal creates visibility. A successful sale also needs a clear strategy, reliable documentation, and personal direction through to completion.",
+      "principle": "We do not leave your sale to chance.",
+      "items": [
+        {
+          "title": "Actively managed",
+          "text": "We do not wait for enquiries — we market with a clear strategy, video, and an established network."
+        },
+        {
+          "title": "In-house engineer",
+          "text": "Certified floor areas and precise plans ensure that not a single square metre is overlooked."
+        },
+        {
+          "title": "Video & 360° tours",
+          "text": "We present properties through film and immersive tours instead of relying on a basic portal listing."
+        },
+        {
+          "title": "Discreet sales",
+          "text": "If you prefer, we market without a public listing — directly through our network of registered buyers."
+        },
+        {
+          "title": "Notarised, not claimed",
+          "text": "Every completion is documented by a notary: verifiable results instead of marketing promises."
+        },
+        {
+          "title": "Personally guided to the notary",
+          "text": "One dedicated contact supports you from the first conversation through to the notarised signature."
+        }
+      ]
+    },
     "valuation": {
       "eyebrow": "Free & non-binding",
       "title": "What is your property worth today?",
@@ -1077,33 +1108,45 @@
     },
     "servicesOverview": {
       "eyebrow": "Services",
-      "title": "Everything around your property — from one team",
+      "title": "Everything around the sale. From one team.",
       "link": "View all services →",
       "itemLink": "Learn more →",
       "items": [
         {
-          "title": "Property sales",
-          "text": "An actively managed sale with a clear 10-step system — from pricing strategy to the notary appointment."
+          "title": "Sell your property",
+          "text": "An actively managed sale with a clear 10-step system."
         },
         {
           "title": "Property valuation",
-          "text": "A free, well-founded valuation based on current sales data from your neighborhood."
+          "text": "A free valuation with an immediate price range."
         },
         {
-          "title": "Premium marketing",
-          "text": "Professional photography, video, 360° tours, and digital reach for a compelling market presence."
+          "title": "Floor area & plans",
+          "text": "An in-house engineer ensures no square metre is lost — and your buyer's financing stays on track."
         },
         {
-          "title": "Search requests & buyer advisory",
-          "text": "Over 8,000 registered search clients — as a buyer, you hear about matching properties before anyone else."
+          "title": "Selling situations",
+          "text": "Separation, inheritance, financial pressure — we understand your situation."
+        },
+        {
+          "title": "Virtual viewings",
+          "text": "360° tours, pre-qualification, and tracking."
+        },
+        {
+          "title": "Home staging",
+          "text": "AI visualisation makes a property's potential visible."
+        },
+        {
+          "title": "Video marketing",
+          "text": "Properties presented as films rather than listings."
+        },
+        {
+          "title": "Active buyers",
+          "text": "Often sold without a public listing — directly through our network."
         },
         {
           "title": "Financing",
-          "text": "Construction financing at top conditions with our long-standing partner Dr. Klein — with personal advice."
-        },
-        {
-          "title": "Project development & investment",
-          "text": "Acquisition, development, and revitalization of properties — bundled within the Immonation group."
+          "text": "Competitive terms with our partner Dr. Klein."
         }
       ]
     },
@@ -1142,11 +1185,15 @@
     "reviews": {
       "eyebrow": "Reviews",
       "title": "Selected voices from real sales",
-      "lead": "Immonation maintains a profile on 10 review platforms — more than 300 reviews in total. Every client quote below links to its matching sales reference.",
+      "lead": "Immonation maintains a profile on 10 review platforms — more than 300 reviews in total. The slideshow presents selected original reviews from verifiable sales.",
       "ratingSuffix": "out of 5",
       "referenceLink": "View the sales reference",
       "reviewSource": "Google · {rating} out of 5 stars",
-      "selectionNote": "Each client review is connected to its sales reference. The original Google screenshot appears with the corresponding property.",
+      "carouselLabel": "Selected Google reviews",
+      "previousReview": "Previous review",
+      "nextReview": "Next review",
+      "reviewSlide": "Review",
+      "selectionNote": "The slideshow shows original Google screenshots from three verifiable sales.",
       "guideLink": "How to tell real reviews from fakes",
       "headline": {
         "platform": "Google",
@@ -1175,6 +1222,7 @@
       "sourceDirect": "Direct source",
       "sourceAggregate": "Aggregate",
       "openProfile": "Open profile",
+      "allProfilesLink": "View all review profiles →",
       "verifiedProfile": "Verified profile on Maklersieger",
       "sealAlt": "“Verified agent” seal issued by maklersieger.de for Immonation GmbH",
       "sealNote": "Independently verified agent profile. The seal is embedded as a local copy — no external tracking.",
@@ -1442,6 +1490,181 @@
         "title": "With Dr. Klein as the named financing partner.",
         "text": "Prospective buyers can request a separate financing orientation. The prototype presents this as a clearly separated partner journey.",
         "prototypeNote": "Partner status and final public wording remain subject to confirmation before launch."
+      }
+    },
+    "clientSections": {
+      "propertyTypes": {
+        "eyebrow": "What are you selling?",
+        "title": "The right route for every property type",
+        "text": "House, apartment, land, or apartment building: documents, valuation, and buyer outreach follow distinct rules for each.",
+        "link": "How we sell →",
+        "cardLink": "Open guide"
+      },
+      "verified": {
+        "eyebrow": "Verifiable results",
+        "title": "Notarised, not claimed.",
+        "text": "Sales success is not a marketing claim. We document real completions, show the properties behind them, and make our approach transparent.",
+        "videoTitle": "A real property. The process made visible.",
+        "videoNote": "The video follows a real property development from the plot to the completed building — a concrete insight rather than a generic marketing promise.",
+        "videoFallback": "Your browser cannot play this video.",
+        "points": [
+          {
+            "title": "Documented by a notary",
+            "text": "Every completion is based on a purchase contract that was actually notarised."
+          },
+          {
+            "title": "Connected to the property",
+            "text": "References show the location, starting situation, and chosen sales route."
+          },
+          {
+            "title": "Specific, not generic",
+            "text": "Figures, reviews, and outcomes remain connected to their concrete context."
+          }
+        ]
+      },
+      "priceAtlas": {
+        "eyebrow": "New · Price atlas",
+        "title": "What does a square metre cost in your district?",
+        "text": "The property price atlas provides district-level context for Nuremberg, Fürth, Erlangen, Zirndorf, and Schwabach — separated by property type and grounded in the micro-location.",
+        "link": "Open the price atlas",
+        "points": [
+          {
+            "title": "5 cities",
+            "text": "From a regional overview to the specific district location."
+          },
+          {
+            "title": "Houses & apartments",
+            "text": "Price levels are assessed separately by property type."
+          }
+        ]
+      },
+      "marketData": {
+        "eyebrow": "Property prices & trends",
+        "title": "What buyers actually pay here",
+        "text": "Asking prices show expectations. Our market assessment combines completed, notarised sales with location, condition, documents, and current demand.",
+        "link": "View prices & trends",
+        "points": [
+          {
+            "title": "Real completions",
+            "text": "The reliable basis is property sales that were actually completed at the notary."
+          },
+          {
+            "title": "Micro-location over averages",
+            "text": "The street, surroundings, and buyer group often explain more than a city-wide average."
+          },
+          {
+            "title": "Prices with context",
+            "text": "Property type, condition, and documents turn market data into a realistic pricing strategy."
+          }
+        ]
+      },
+      "knowledge": {
+        "eyebrow": "Knowledge for owners",
+        "title": "Understand before you sell",
+        "link": "Open the guide →",
+        "items": [
+          {
+            "title": "Guides & news",
+            "text": "Well-founded articles on sales, prices, marketing, and legal topics.",
+            "link": "Read articles"
+          },
+          {
+            "title": "Glossary A–Z",
+            "text": "77 specialist terms from sales, financing, and the notary process explained clearly.",
+            "link": "Look up a term"
+          },
+          {
+            "title": "Frequently asked questions",
+            "text": "Concrete answers to the questions that owners and buyers genuinely ask.",
+            "link": "View answers"
+          },
+          {
+            "title": "Downloads",
+            "text": "Checklists, forms, and documents for a well-prepared decision.",
+            "link": "Open documents"
+          }
+        ]
+      },
+      "regions": {
+        "eyebrow": "Regions",
+        "title": "We know every location",
+        "link": "All cities & districts →",
+        "cardLink": "Explore the location"
+      },
+      "properties": {
+        "eyebrow": "Currently available",
+        "title": "Current properties in the region",
+        "link": "All properties & filters →",
+        "rooms": "rooms",
+        "items": [
+          {
+            "type": "Apartment",
+            "title": "Duplex apartment with balcony"
+          },
+          {
+            "type": "Apartment",
+            "title": "Three-room apartment with balcony"
+          },
+          {
+            "type": "Apartment",
+            "title": "Condominium in Röthelheimpark"
+          }
+        ]
+      },
+      "assistant": {
+        "eyebrow": "New · Property AI",
+        "title": "Your digital property assistant",
+        "text": "Initial guidance, suitable next steps, and answers around the clock: the assistant supports you from the first thought to a personal appointment.",
+        "link": "Try the property AI",
+        "capabilities": [
+          "Initial price guidance for your location",
+          "Context for sales, valuation, and financing",
+          "Answers to frequent questions — anytime"
+        ]
+      },
+      "about": {
+        "eyebrow": "Who we are",
+        "title": "Owner-managed since 2017. Not a franchise.",
+        "text": "A local team with names, faces, and responsibility — connected to specialist companies and active in the region.",
+        "link": "About Immonation →",
+        "items": [
+          {
+            "title": "Our standard",
+            "text": "Personal guidance, reliable figures, and a clearly managed process through to the notary.",
+            "link": "Meet the team"
+          },
+          {
+            "title": "Company group",
+            "text": "Specialist companies for brokerage, acquisition, development, and revitalisation.",
+            "link": "Explore the group"
+          },
+          {
+            "title": "Community engagement",
+            "text": "Support for TSV Zirndorf and selected education projects in Uganda.",
+            "link": "See our engagement"
+          }
+        ]
+      },
+      "collaboration": {
+        "eyebrow": "Work with us",
+        "title": "Two ways to achieve more together",
+        "items": [
+          {
+            "title": "Become a partner agent",
+            "text": "A vetted partnership for estate agents — with clear models, responsibilities, and quality standards.",
+            "link": "Explore the partnership"
+          },
+          {
+            "title": "Become a referrer",
+            "text": "Refer an owner who intends to sell and benefit when the property sale completes successfully.",
+            "link": "Refer & benefit"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently asked questions — answered clearly",
+        "text": "Find more answers on valuation, costs, documents, selling, and buying in the complete FAQ section.",
+        "link": "View all questions →"
       }
     }
   },
@@ -1993,6 +2216,8 @@
     "eyebrow": "The Immonation sales system",
     "title": "Premium marketing works as a system.",
     "lede": "From a market-ready price and lender-ready documents to precise buyer outreach, ten connected services prepare your sale, create visibility, and guide it safely to completion.",
+    "networkProofValue": "8,000+",
+    "networkProofLabel": "registered buyers for direct and discreet outreach",
     "primaryCta": "Value your property",
     "secondaryCta": "Explore seller paths",
     "tabList": "Services in the Immonation sales system",

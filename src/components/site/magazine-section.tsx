@@ -10,7 +10,13 @@ type MagazinePoint = {
   text: string
 }
 
-export async function MagazineSection({ tone = 'light' }: { tone?: 'light' | 'muted' }) {
+export async function MagazineSection({
+  tone = 'light',
+  compact = false,
+}: {
+  tone?: 'light' | 'muted'
+  compact?: boolean
+}) {
   const t = await getTranslations('Magazine')
   const points = t.raw('points') as MagazinePoint[]
   const labels: MagazineFlipbookLabels = {
@@ -25,12 +31,14 @@ export async function MagazineSection({ tone = 'light' }: { tone?: 'light' | 'mu
     pageAlt: t.raw('reader.pageAlt') as string,
     readerLabel: t('reader.label'),
   }
+  const Heading = compact ? 'h3' : 'h2'
 
   return (
     <section
       id="magazin"
       className={cn(
-        'scroll-mt-24 border-y py-16 md:py-24',
+        'scroll-mt-24 border-y',
+        compact ? 'py-14 md:py-18' : 'py-16 md:py-24',
         tone === 'muted' ? 'bg-muted/50 border-border' : 'bg-background border-border',
       )}
     >
@@ -40,16 +48,16 @@ export async function MagazineSection({ tone = 'light' }: { tone?: 'light' | 'mu
             <span className="text-[13px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
               {t('eyebrow')}
             </span>
-            <h2 className="font-serif text-3xl leading-[1.2] font-semibold text-balance md:text-[38px]">
+            <Heading className="font-serif text-3xl leading-[1.2] font-semibold text-balance md:text-[38px]">
               {t('title')}
-            </h2>
+            </Heading>
             <p className="text-muted-foreground max-w-[58ch] text-[17px] leading-[1.6]">
               {t('text')}
             </p>
           </div>
 
           <div className="grid gap-4">
-            {points.map((point) => (
+            {(compact ? points.slice(0, 2) : points).map((point) => (
               <div key={point.title} className="flex gap-3">
                 <BookOpen className="text-primary mt-1 size-4 shrink-0" aria-hidden="true" />
                 <div className="flex flex-col gap-1">

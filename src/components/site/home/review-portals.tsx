@@ -83,10 +83,12 @@ function PortalTile({
   portal,
   media,
   labels,
+  compact = false,
 }: {
   portal: ReviewPortal
   media: PortalMedia
   labels: PortalLabels
+  compact?: boolean
 }) {
   const showsName = !media.logo || media.markOnly === true
 
@@ -96,7 +98,10 @@ function PortalTile({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${portal.name} — ${portal.rating} ${portal.scale}, ${portal.basis}. ${labels.openProfile}`}
-      className="group bg-background focus-visible:ring-brand-700 flex min-w-0 flex-col justify-between gap-7 p-5 transition-colors hover:bg-white focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
+      className={cn(
+        'group bg-background focus-visible:ring-brand-700 flex min-w-0 flex-col justify-between gap-7 p-5 transition-colors hover:bg-white focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset',
+        compact && 'w-[230px] shrink-0 snap-start',
+      )}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex h-7 min-w-0 items-center gap-2.5">
@@ -148,17 +153,34 @@ function PortalTile({
 export function ReviewPortalGrid({
   portals,
   labels,
+  compact = false,
 }: {
   portals: ReviewPortal[]
   labels: PortalLabels
+  compact?: boolean
 }) {
   return (
-    <div className="border-border grid gap-px overflow-hidden border bg-neutral-300 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+    <div
+      className={cn(
+        'border-border gap-px border bg-neutral-300',
+        compact
+          ? 'flex snap-x snap-mandatory [scrollbar-width:thin] overflow-x-auto'
+          : 'grid overflow-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
+      )}
+    >
       {portals.flatMap((portal) => {
         const media = PORTAL_MEDIA[portal.id]
 
         return media
-          ? [<PortalTile key={portal.id} portal={portal} media={media} labels={labels} />]
+          ? [
+              <PortalTile
+                key={portal.id}
+                portal={portal}
+                media={media}
+                labels={labels}
+                compact={compact}
+              />,
+            ]
           : []
       })}
     </div>

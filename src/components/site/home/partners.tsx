@@ -86,20 +86,26 @@ function LogoTile({
   return <div className="flex min-w-0 flex-col bg-white">{content}</div>
 }
 
-export async function Partners() {
+export async function Partners({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.partners')
   const partners = t.raw('items') as LogoItem<PartnerId>[]
   const group = t.raw('groupItems') as LogoItem<GroupId>[]
 
   return (
-    <section id="partner" className="bg-muted border-border scroll-mt-24 border-y py-16 md:py-22">
+    <section
+      id="partner"
+      className={cn(
+        'bg-muted border-border scroll-mt-24 border-y',
+        compact ? 'py-12 md:py-16' : 'py-16 md:py-22',
+      )}
+    >
       <div className={CONTAINER}>
         <div className="grid gap-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div className="flex flex-col gap-3.5">
             <span className={EYEBROW}>{t('eyebrow')}</span>
-            <h2 className="max-w-[18ch] font-serif text-[1.625rem] leading-[1.12] font-semibold text-balance sm:text-3xl md:text-[40px]">
+            <h3 className="max-w-[18ch] font-serif text-[1.625rem] leading-[1.12] font-semibold text-balance sm:text-3xl md:text-[40px]">
               {t('title')}
-            </h2>
+            </h3>
           </div>
           <p className="text-muted-foreground max-w-[64ch] text-[16px] leading-[1.65] lg:justify-self-end">
             {t('text')}

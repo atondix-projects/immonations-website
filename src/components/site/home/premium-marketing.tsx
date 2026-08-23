@@ -8,7 +8,11 @@ import {
   type VisualizationExample,
 } from '@/components/site/home/premium-marketing-system'
 
-export async function PremiumMarketing() {
+export async function PremiumMarketing({
+  showNetworkProof = false,
+}: {
+  showNetworkProof?: boolean
+}) {
   const t = await getTranslations('PremiumMarketing')
   const tVideo = await getTranslations('VideoDialog')
   const services = t.raw('services') as MarketingService[]
@@ -30,6 +34,16 @@ export async function PremiumMarketing() {
           <p className="mx-auto mt-5 max-w-[70ch] text-lg leading-[1.65] text-pretty text-neutral-600">
             {t('lede')}
           </p>
+          {showNetworkProof ? (
+            <div className="mx-auto mt-7 flex w-fit items-baseline gap-3 border-y border-neutral-300 px-5 py-3 text-left">
+              <span className="font-serif text-3xl leading-none font-semibold tabular-nums">
+                {t('networkProofValue')}
+              </span>
+              <span className="max-w-[28ch] text-sm leading-snug text-neutral-600">
+                {t('networkProofLabel')}
+              </span>
+            </div>
+          ) : null}
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/property-valuation"

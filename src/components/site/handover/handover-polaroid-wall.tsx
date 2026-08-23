@@ -43,6 +43,7 @@ export async function HandoverPolaroidWall({
   text,
   id = 'uebergabe',
   className,
+  compact = false,
 }: {
   items: HandoverPolaroid[]
   eyebrow?: string
@@ -50,16 +51,28 @@ export async function HandoverPolaroidWall({
   text?: string
   id?: string
   className?: string
+  compact?: boolean
 }) {
   const t = await getTranslations('HandoverPolaroids')
   if (items.length === 0) return null
 
   return (
-    <section id={id} className={cn('bg-background scroll-mt-24 py-16 md:py-24', className)}>
+    <section
+      id={id}
+      className={cn(
+        'bg-background scroll-mt-24',
+        compact ? 'py-12 md:py-16' : 'py-16 md:py-24',
+        className,
+      )}
+    >
       <div className={CONTAINER}>
         <div className="mb-12 flex flex-col gap-3.5 md:mb-16">
           {eyebrow ? <span className={EYEBROW}>{eyebrow}</span> : null}
-          <h2 className={`${SECTION_TITLE} max-w-[24ch] text-balance`}>{title}</h2>
+          {compact ? (
+            <h3 className={`${SECTION_TITLE} max-w-[24ch] text-balance`}>{title}</h3>
+          ) : (
+            <h2 className={`${SECTION_TITLE} max-w-[24ch] text-balance`}>{title}</h2>
+          )}
           {text ? (
             <p className="text-muted-foreground mt-1.5 max-w-[68ch] text-[17px] leading-[1.65]">
               {text}

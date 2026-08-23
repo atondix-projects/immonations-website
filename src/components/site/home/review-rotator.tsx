@@ -1,32 +1,37 @@
 'use client'
 
 import Image from 'next/image'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
-type Screenshot = {
+export type ReviewScreenshot = {
   src: string
   alt: string
+  width: number
+  height: number
 }
 
 type ReviewRotatorProps = {
-  screenshots: Screenshot[]
+  screenshots: ReviewScreenshot[]
+  labels: {
+    carousel: string
+    previous: string
+    next: string
+    slide: string
+  }
 }
 
 const ROTATION_INTERVAL = 5500
 
-function getDifferentIndex(length: number, current: number) {
-  if (length < 2) return 0
-
-  const candidate = Math.floor(Math.random() * (length - 1))
-  return candidate >= current ? candidate + 1 : candidate
-}
-
-export function ReviewRotator({ screenshots }: ReviewRotatorProps) {
+export function ReviewRotator({ screenshots, labels }: ReviewRotatorProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const [interactionCount, setInteractionCount] = useState(0)
 
   useEffect(() => {
+    if (screenshots.length < 2) return
+
     const frame = window.requestAnimationFrame(() => {
       setActiveIndex(Math.floor(Math.random() * screenshots.length))
     })
@@ -42,58 +47,93 @@ export function ReviewRotator({ screenshots }: ReviewRotatorProps) {
 
     const interval = window.setInterval(() => {
       if (document.visibilityState === 'visible') {
-        setActiveIndex((current) => getDifferentIndex(screenshots.length, current))
+        setActiveIndex((current) => (current + 1) % screenshots.length)
       }
     }, ROTATION_INTERVAL)
 
     return () => window.clearInterval(interval)
-  }, [isPaused, screenshots.length])
+  }, [interactionCount, isPaused, screenshots.length])
 
   if (screenshots.length === 0) return null
 
+  const selectSlide = (index: number) => {
+    setActiveIndex((index + screenshots.length) % screenshots.length)
+    setInteractionCount((count) => count + 1)
+  }
+
   return (
     <div
-      className="bg-background relative overflow-hidden border border-neutral-200 p-4 shadow-[0_24px_60px_-38px_rgba(33,39,43,0.45)] sm:p-6"
+      role="region"
+      aria-roledescription={labels.carousel}
+      className="border-border bg-background relative overflow-hidden border"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}
       onBlurCapture={() => setIsPaused(false)}
     >
-      <div className="relative h-[300px] sm:h-[340px] lg:h-[360px]">
+      <div className="relative h-[320px] sm:h-[370px] lg:h-[420px]" aria-live="off">
         {screenshots.map((screenshot, index) => (
           <div
             key={screenshot.src}
+            role="group"
+            aria-roledescription={labels.slide}
+            aria-label={`${index + 1} / ${screenshots.length}`}
+            aria-hidden={index !== activeIndex}
             className={cn(
-              'absolute inset-0 mx-auto w-full max-w-[560px] transition-opacity duration-700 ease-out motion-reduce:transition-none',
-              index === activeIndex ? 'opacity-100' : 'pointer-events-none opacity-0',
+              'absolute inset-0 mx-auto w-full max-w-[620px] p-5 transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none sm:p-8',
+              index === activeIndex
+                ? 'translate-y-0 opacity-100'
+                : 'pointer-events-none translate-y-3 opacity-0',
             )}
           >
             <Image
               src={screenshot.src}
               alt={screenshot.alt}
-              fill
-              sizes="(min-width: 640px) 560px, calc(100vw - 6rem)"
-              className="object-contain"
+              width={screenshot.width}
+              height={screenshot.height}
+              loading="eager"
+              sizes="(min-width: 1024px) 620px, (min-width: 640px) calc(100vw - 10rem), calc(100vw - 4rem)"
+              className="size-full object-contain"
             />
           </div>
         ))}
       </div>
 
       {screenshots.length > 1 ? (
-        <div className="mt-5 flex items-center justify-center gap-2">
-          {screenshots.map((screenshot, index) => (
-            <button
-              key={screenshot.src}
-              type="button"
-              aria-label={screenshot.alt}
-              aria-current={index === activeIndex ? 'true' : undefined}
-              onClick={() => setActiveIndex(index)}
-              className={cn(
-                'focus-visible:outline-brand-700 h-1.5 rounded-full transition-[width,background-color] duration-300 focus-visible:outline-2 focus-visible:outline-offset-4',
-                index === activeIndex ? 'bg-brand-700 w-8' : 'w-1.5 bg-neutral-300',
-              )}
-            />
-          ))}
+        <div className="border-border flex items-center justify-center gap-5 border-t px-5 py-4">
+          <button
+            type="button"
+            aria-label={labels.previous}
+            onClick={() => selectSlide(activeIndex - 1)}
+            className="border-border hover:border-brand-700 hover:text-brand-700 focus-visible:ring-brand-700 flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+          >
+            <ChevronLeft className="size-4" aria-hidden="true" />
+          </button>
+
+          <div className="flex items-center justify-center gap-2.5">
+            {screenshots.map((screenshot, index) => (
+              <button
+                key={screenshot.src}
+                type="button"
+                aria-label={`${labels.slide} ${index + 1} / ${screenshots.length}`}
+                aria-current={index === activeIndex ? 'true' : undefined}
+                onClick={() => selectSlide(index)}
+                className={cn(
+                  'focus-visible:ring-brand-700 h-2 rounded-full transition-[width,background-color] duration-300 focus-visible:ring-2 focus-visible:ring-offset-4 focus-visible:outline-none motion-reduce:transition-none',
+                  index === activeIndex ? 'bg-brand-700 w-7' : 'w-2 bg-neutral-300',
+                )}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            aria-label={labels.next}
+            onClick={() => selectSlide(activeIndex + 1)}
+            className="border-border hover:border-brand-700 hover:text-brand-700 focus-visible:ring-brand-700 flex size-10 shrink-0 items-center justify-center rounded-full border transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+          >
+            <ChevronRight className="size-4" aria-hidden="true" />
+          </button>
         </div>
       ) : null}
     </div>

@@ -64,7 +64,7 @@ export default async function SellerHubPage({ params }: { params: Promise<{ loca
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
           <p className="max-w-[82ch] text-[17px] leading-[1.7] text-pretty">{t('answer')}</p>
           <Link
-            href="/sales-process"
+            href="/sell"
             className="text-primary mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold"
           >
             {t('processLink')}

@@ -41,8 +41,8 @@ export async function generateMetadata({
     title: t('metadata.title'),
     description: t('metadata.description'),
     localizedPaths: {
-      de: '/immobilienmarkt/bodenrichtwert',
-      en: '/property-market/standard-land-value',
+      de: localizePath('/land-value', 'de'),
+      en: localizePath('/land-value', 'en'),
     },
   })
 }

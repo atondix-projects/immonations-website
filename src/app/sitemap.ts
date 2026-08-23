@@ -1,16 +1,9 @@
 import type { MetadataRoute } from 'next'
-import { SITE } from '@/lib/seo/site'
-import { routing } from '@/i18n/routing'
-import { STATIC_ROUTES, localizePath } from '@/lib/seo/routes'
 import { getPostAlternates, listAllPosts, type PostSummary } from '@/lib/content/blog'
-import { listAllServices } from '@/lib/content/services'
-import { listAllLocations } from '@/lib/content/locations'
-import { REFERENCE_DETAILS } from '@/lib/content/references'
-import {
-  getSellerGuideAlternates,
-  listAllSellerGuides,
-  type SellerGuide,
-} from '@/lib/content/seller-guides'
+import { routing } from '@/i18n/routing'
+import { listIndexableRoutes } from '@/lib/routing/route-catalog'
+import { localizePath } from '@/lib/seo/routes'
+import { SITE } from '@/lib/seo/site'
 
 type LocaleKey = (typeof routing.locales)[number]
 
@@ -45,60 +38,11 @@ function entryFor(
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticEntries = STATIC_ROUTES.map((route) =>
-    entryFor(route.internal, { priority: route.priority, changefreq: route.changefreq }),
-  )
-
-  const services = await listAllServices()
-  const serviceEntries = services.map((svc) =>
-    entryFor(`/services/${svc.slug}`, {
-      priority: 0.8,
-      changefreq: 'monthly',
-      lastModified: svc.updatedAt ? new Date(svc.updatedAt) : undefined,
-    }),
-  )
-
-  const sellerGuideGroups = new Map<string, SellerGuide[]>()
-  for (const guide of listAllSellerGuides()) {
-    sellerGuideGroups.set(guide.translationKey, [
-      ...(sellerGuideGroups.get(guide.translationKey) ?? []),
-      guide,
-    ])
-  }
-  const sellerGuideEntries = [...sellerGuideGroups.values()].map((group) => {
-    const fallbackGuide = group[0]
-    if (!fallbackGuide) return null
-    const guide = group.find((entry) => entry.locale === SITE.defaultLocale) ?? fallbackGuide
-    const alternates = getSellerGuideAlternates(guide)
-    const localizedPaths: Partial<Record<LocaleKey, string>> = {}
-    for (const locale of routing.locales as readonly LocaleKey[]) {
-      const slug = alternates[locale]
-      if (slug)
-        localizedPaths[locale] = localizePath('/sell/[slug]', locale).replace('[slug]', slug)
-    }
-    return entryFor(`/sell/${guide.slug}`, {
-      priority: 0.8,
-      changefreq: 'monthly',
-      localizedPaths,
-    })
-  })
-
-  const locations = listAllLocations().filter((location) => location.locale === SITE.defaultLocale)
-  const locationEntries = locations.map((location) =>
-    entryFor(`/locations/${location.slug}`, {
-      priority: 0.7,
-      changefreq: 'monthly',
-      localizedPaths: {
-        de: localizePath('/locations/[slug]', 'de').replace('[slug]', location.slug),
-        en: localizePath('/locations/[slug]', 'en').replace('[slug]', location.slug),
-      },
-    }),
-  )
-
-  const referenceEntries = Object.keys(REFERENCE_DETAILS).map((slug) =>
-    entryFor(`/references/${slug}`, {
-      priority: 0.7,
-      changefreq: 'yearly',
+  const catalogEntries = listIndexableRoutes().map((routeRecord) =>
+    entryFor(routeRecord.internal, {
+      priority: routeRecord.priority,
+      changefreq: routeRecord.changefreq,
+      localizedPaths: routeRecord.paths,
     }),
   )
 
@@ -131,14 +75,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   )
 
-  // Deduplicate by URL (services index + per-locale slug overrides can collide on edge cases).
   const seen = new Set<string>()
   return [
-    ...staticEntries,
-    ...serviceEntries,
-    ...sellerGuideEntries.filter((entry) => entry !== null),
-    ...locationEntries,
-    ...referenceEntries,
+    ...catalogEntries,
     ...postEntries.filter((entry) => entry !== null),
   ].filter((entry) => {
     if (seen.has(entry.url)) return false

@@ -1,30 +1,35 @@
 'use client'
 
-import type { ComponentProps, ReactNode } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import {
   ArrowRight,
   ArrowUpRight,
+  Award,
   Banknote,
   BookOpen,
+  Bot,
   Briefcase,
   Building2,
   Calculator,
+  CalendarDays,
+  ChartNoAxesCombined,
   CircleHelp,
   Download,
-  Handshake,
+  HeartHandshake,
   Home,
   KeyRound,
-  Phone,
+  Landmark,
+  MapPinned,
+  Newspaper,
   Ruler,
   Search,
   ShieldCheck,
+  Sparkles,
   Star,
+  Users,
   Video,
 } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
-import { cn } from '@/lib/utils'
+import { useLocale } from 'next-intl'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -33,374 +38,143 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { getNavigation, type NavigationIcon, type NavigationLink } from '@/content/navigation'
+import { Link } from '@/i18n/navigation'
+import type { Locale } from '@/i18n/routing'
+import { cn } from '@/lib/utils'
 
-type LinkHref = ComponentProps<typeof Link>['href']
-
-type MenuLink = {
-  labelKey: string
-  descriptionKey: string
-  href: LinkHref
-  icon: LucideIcon
-  homeAnchor?: string
+const ICONS: Record<NavigationIcon, LucideIcon> = {
+  award: Award,
+  banknote: Banknote,
+  book: BookOpen,
+  bot: Bot,
+  briefcase: Briefcase,
+  building: Building2,
+  calculator: Calculator,
+  calendar: CalendarDays,
+  chart: ChartNoAxesCombined,
+  'circle-help': CircleHelp,
+  download: Download,
+  heart: HeartHandshake,
+  home: Home,
+  key: KeyRound,
+  landmark: Landmark,
+  map: MapPinned,
+  newspaper: Newspaper,
+  ruler: Ruler,
+  search: Search,
+  shield: ShieldCheck,
+  sparkles: Sparkles,
+  star: Star,
+  users: Users,
+  video: Video,
 }
 
-type MenuSection = {
-  num: string
-  titleKey: string
-  links: MenuLink[]
-}
-
-type MenuHighlight = {
-  kickerKey: string
-  titleKey: string
-  taglineKey: string
-  bodyKey: string
-  ctaKey: string
-  href: LinkHref
-  icon: LucideIcon
-  homeAnchor?: string
-}
-
-type MenuFooter = {
-  textKey: string
-  ctaKey: string
-  href: LinkHref
-}
-
-type MenuGroup = {
-  id: string
-  labelKey: string
-  href?: LinkHref
-  homeAnchor?: string
-  sections?: MenuSection[]
-  highlight?: MenuHighlight
-  footer?: MenuFooter
-}
-
-const menuGroups: MenuGroup[] = [
-  { id: 'home', labelKey: 'home', href: '/' },
-  { id: 'about', labelKey: 'about', href: '/about' },
-  {
-    id: 'services',
-    labelKey: 'services',
-    sections: [
-      {
-        num: '01',
-        titleKey: 'mega.ownerPath',
-        links: [
-          {
-            labelKey: 'mega.valuation',
-            descriptionKey: 'mega.valuationDesc',
-            href: '/property-valuation',
-            icon: Calculator,
-          },
-          {
-            labelKey: 'mega.selling',
-            descriptionKey: 'mega.sellingDesc',
-            href: '/sell',
-            icon: Home,
-          },
-          {
-            labelKey: 'mega.floorPlans',
-            descriptionKey: 'mega.floorPlansDesc',
-            href: '/floor-plans',
-            icon: Ruler,
-          },
-          {
-            labelKey: 'mega.virtualTour',
-            descriptionKey: 'mega.virtualTourDesc',
-            href: '/',
-            homeAnchor: '#virtuelle-besichtigung',
-            icon: Video,
-          },
-        ],
-      },
-      {
-        num: '02',
-        titleKey: 'mega.buyerPath',
-        links: [
-          {
-            labelKey: 'mega.buying',
-            descriptionKey: 'mega.buyingDesc',
-            href: '/buy',
-            icon: KeyRound,
-          },
-          {
-            labelKey: 'mega.financing',
-            descriptionKey: 'mega.financingDesc',
-            href: '/services',
-            icon: Banknote,
-          },
-          {
-            labelKey: 'mega.searchRequest',
-            descriptionKey: 'mega.searchRequestDesc',
-            href: '/contact',
-            icon: Search,
-          },
-        ],
-      },
-      {
-        num: '03',
-        titleKey: 'mega.proofPath',
-        links: [
-          {
-            labelKey: 'mega.references',
-            descriptionKey: 'mega.referencesDesc',
-            href: '/references',
-            icon: Building2,
-          },
-          { labelKey: 'faq', descriptionKey: 'mega.faqDesc', href: '/faq', icon: CircleHelp },
-          {
-            labelKey: 'mega.trustProof',
-            descriptionKey: 'mega.trustProofDesc',
-            href: '/',
-            homeAnchor: '#bewertungen',
-            icon: Star,
-          },
-          {
-            labelKey: 'contact',
-            descriptionKey: 'mega.contactDesc',
-            href: '/contact',
-            icon: Phone,
-          },
-        ],
-      },
-    ],
-    highlight: {
-      kickerKey: 'mega.highlightKicker',
-      titleKey: 'mega.highlightTitle',
-      taglineKey: 'mega.highlightTagline',
-      bodyKey: 'mega.highlightBody',
-      ctaKey: 'mega.highlightCta',
-      href: '/',
-      homeAnchor: '#virtuelle-besichtigung',
-      icon: Video,
-    },
-    footer: {
-      textKey: 'mega.servicesFooter',
-      ctaKey: 'mega.servicesFooterCta',
-      href: '/services',
-    },
-  },
-  {
-    id: 'resources',
-    labelKey: 'resources',
-    sections: [
-      {
-        num: '01',
-        titleKey: 'mega.knowledgePath',
-        links: [
-          { labelKey: 'faq', descriptionKey: 'mega.faqDesc', href: '/faq', icon: CircleHelp },
-          { labelKey: 'guide', descriptionKey: 'mega.guideDesc', href: '/blog', icon: BookOpen },
-          {
-            labelKey: 'downloads',
-            descriptionKey: 'mega.downloadsDesc',
-            href: '/downloads',
-            icon: Download,
-          },
-        ],
-      },
-      {
-        num: '02',
-        titleKey: 'mega.companyPath',
-        links: [
-          {
-            labelKey: 'careers',
-            descriptionKey: 'mega.careersDesc',
-            href: '/careers',
-            icon: Briefcase,
-          },
-          {
-            labelKey: 'referrers',
-            descriptionKey: 'mega.referrersDesc',
-            href: '/referrers',
-            icon: Handshake,
-          },
-          {
-            labelKey: 'contact',
-            descriptionKey: 'mega.contactDesc',
-            href: '/contact',
-            icon: Phone,
-          },
-        ],
-      },
-    ],
-    highlight: {
-      kickerKey: 'mega.resourcesKicker',
-      titleKey: 'mega.resourcesTitle',
-      taglineKey: 'mega.resourcesTagline',
-      bodyKey: 'mega.resourcesBody',
-      ctaKey: 'mega.resourcesCta',
-      href: '/faq',
-      icon: ShieldCheck,
-    },
-    footer: {
-      textKey: 'mega.resourcesFooter',
-      ctaKey: 'mega.resourcesFooterCta',
-      href: '/downloads',
-    },
-  },
-]
-
-function localAnchor(locale: string, anchor: string) {
-  return `/${locale}${anchor}`
-}
-
-function NavAnchor({
-  href,
-  homeAnchor,
-  locale,
-  className,
-  children,
-}: {
-  href: LinkHref
-  homeAnchor?: string
-  locale: string
-  className?: string
-  children: ReactNode
-}) {
-  if (homeAnchor) {
-    return (
-      <NavigationMenuLink
-        render={<a href={localAnchor(locale, homeAnchor)} />}
-        className={className}
-      >
-        {children}
-      </NavigationMenuLink>
-    )
-  }
-
-  return (
-    <NavigationMenuLink render={<Link href={href} />} className={className}>
-      {children}
-    </NavigationMenuLink>
+function splitLinks(links: NavigationLink[]) {
+  const columnCount = links.length <= 4 ? 1 : links.length <= 10 ? 2 : 3
+  const columnSize = Math.ceil(links.length / columnCount)
+  return Array.from({ length: columnCount }, (_, index) =>
+    links.slice(index * columnSize, (index + 1) * columnSize),
   )
 }
 
-function MegaMenuEntry({ link, locale }: { link: MenuLink; locale: string }) {
-  const t = useTranslations('Nav')
-  const Icon = link.icon
+function MenuEntry({ item }: { item: NavigationLink }) {
+  const Icon = ICONS[item.icon]
 
   return (
     <li>
-      <NavAnchor
-        href={link.href}
-        homeAnchor={link.homeAnchor}
-        locale={locale}
-        className={cn(
-          'group/mega grid grid-cols-[20px_1fr] items-start gap-3 px-0 py-2.5 text-left',
-          'text-neutral-700 hover:bg-transparent focus:bg-transparent',
-        )}
+      <NavigationMenuLink
+        render={<Link href={item.href} />}
+        className="group/entry grid grid-cols-[20px_1fr] items-start gap-3 px-0 py-2.5 text-left text-neutral-700 hover:bg-transparent focus:bg-transparent"
       >
         <Icon
           aria-hidden="true"
-          className="text-brand-600 group-hover/mega:text-brand-700 mt-0.5 size-4 transition-colors"
+          className="text-brand-600 group-hover/entry:text-brand-700 mt-0.5 size-4 transition-colors"
           strokeWidth={1.75}
         />
         <span className="min-w-0">
-          <span className="group-hover/mega:text-brand-700 block text-sm leading-tight font-semibold text-neutral-900 transition-colors">
-            {t(link.labelKey)}
+          <span className="group-hover/entry:text-brand-700 block text-sm leading-tight font-semibold text-neutral-900 transition-colors">
+            {item.label}
           </span>
           <span className="mt-1 block text-[12px] leading-snug text-neutral-600">
-            {t(link.descriptionKey)}
+            {item.description}
           </span>
         </span>
-      </NavAnchor>
+      </NavigationMenuLink>
     </li>
   )
 }
 
-function MegaMenuSection({ section, locale }: { section: MenuSection; locale: string }) {
-  const t = useTranslations('Nav')
-
+function MenuColumn({
+  links,
+  index,
+  compact = false,
+}: {
+  links: NavigationLink[]
+  index: number
+  compact?: boolean
+}) {
   return (
-    <div className="border-neutral-200/80 px-5 py-6 lg:border-r">
-      <div className="flex items-center gap-3">
-        <span className="text-brand-700 font-mono text-[10px] tracking-widest tabular-nums">
-          {section.num}
-        </span>
-        <span className="font-mono text-[10px] tracking-[0.22em] text-neutral-500 uppercase">
-          {t(section.titleKey)}
-        </span>
-      </div>
-      <ul className="mt-5 flex flex-col gap-1">
-        {section.links.map((link) => (
-          <MegaMenuEntry key={link.labelKey} link={link} locale={locale} />
+    <div className={cn('border-neutral-200/80 lg:border-r', compact ? 'px-5 py-5' : 'px-5 py-6')}>
+      <span className="text-brand-700 font-mono text-[10px] tracking-widest tabular-nums">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <ul className="mt-4 flex flex-col gap-1">
+        {links.map((item) => (
+          <MenuEntry key={item.id} item={item} />
         ))}
       </ul>
     </div>
   )
 }
 
-function MegaMenuHighlight({ highlight, locale }: { highlight: MenuHighlight; locale: string }) {
-  const t = useTranslations('Nav')
-  const Icon = highlight.icon
+function MenuHighlight({
+  item,
+  locale,
+  compact = false,
+}: {
+  item: NavigationLink
+  locale: Locale
+  compact?: boolean
+}) {
+  const Icon = ICONS[item.icon]
+  const labels =
+    locale === 'de' ? { kicker: 'Fokus', open: 'Öffnen' } : { kicker: 'Featured', open: 'Open' }
 
   return (
-    <div className="px-5 py-6">
+    <div className={compact ? 'px-5 py-5' : 'px-5 py-6'}>
       <span className="text-brand-700 font-mono text-[10px] tracking-[0.22em] uppercase">
-        {t(highlight.kickerKey)}
+        {labels.kicker}
       </span>
-      <NavAnchor
-        href={highlight.href}
-        homeAnchor={highlight.homeAnchor}
-        locale={locale}
+      <NavigationMenuLink
+        render={<Link href={item.href} />}
         className={cn(
-          'group/highlight border-brand-100 bg-brand-50/70 mt-5 flex min-h-[214px] flex-col border p-5',
-          'hover:bg-brand-50 focus:bg-brand-50 text-left',
+          'group/highlight border-brand-100 bg-brand-50/70 hover:bg-brand-50 focus:bg-brand-50 flex flex-col border text-left',
+          compact ? 'mt-4 min-h-[164px] p-4' : 'mt-5 min-h-[214px] p-5',
         )}
       >
         <Icon aria-hidden="true" className="text-brand-700 size-5" strokeWidth={1.75} />
-        <span className="mt-5 block font-serif text-[22px] leading-none font-semibold text-neutral-900">
-          {t(highlight.titleKey)}
+        <span
+          className={cn(
+            'block font-serif leading-none font-semibold text-neutral-900',
+            compact ? 'mt-4 text-xl' : 'mt-5 text-[22px]',
+          )}
+        >
+          {item.label}
         </span>
-        <span className="text-brand-700 mt-2 block text-[13px] leading-snug font-semibold">
-          {t(highlight.taglineKey)}
+        <span className="mt-3 block text-[13px] leading-relaxed text-neutral-700">
+          {item.description}
         </span>
-        <span className="mt-4 block text-[13px] leading-relaxed text-neutral-700">
-          {t(highlight.bodyKey)}
-        </span>
-        <span className="group-hover/highlight:text-brand-800 text-brand-700 mt-auto inline-flex items-center gap-1.5 pt-6 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors">
-          {t(highlight.ctaKey)}
+        <span
+          className={cn(
+            'group-hover/highlight:text-brand-800 text-brand-700 mt-auto inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] uppercase transition-colors',
+            compact ? 'pt-4' : 'pt-6',
+          )}
+        >
+          {labels.open}
           <ArrowUpRight aria-hidden="true" className="size-3" strokeWidth={1.8} />
         </span>
-      </NavAnchor>
-    </div>
-  )
-}
-
-function MegaMenuPanel({ group, locale }: { group: MenuGroup; locale: string }) {
-  const t = useTranslations('Nav')
-  const sections = group.sections ?? []
-  const gridColumns =
-    sections.length === 2 ? 'lg:grid-cols-[1fr_1fr_1.05fr]' : 'lg:grid-cols-[1fr_1fr_1fr_1.08fr]'
-
-  return (
-    <div className="w-[min(calc(100vw_-_48px),1128px)] border border-neutral-900/10 bg-white/95 text-neutral-900 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-      <div className={cn('grid gap-0', gridColumns)}>
-        {sections.map((section) => (
-          <MegaMenuSection key={section.titleKey} section={section} locale={locale} />
-        ))}
-        {group.highlight ? <MegaMenuHighlight highlight={group.highlight} locale={locale} /> : null}
-      </div>
-      {group.footer ? (
-        <div className="mx-5 flex items-center justify-between gap-6 border-t border-neutral-200/80 py-5">
-          <p className="max-w-[52ch] text-xs leading-relaxed text-neutral-600">
-            {t(group.footer.textKey)}
-          </p>
-          <NavigationMenuLink
-            render={<Link href={group.footer.href} />}
-            className="group/footer text-brand-700 hover:text-brand-800 inline-flex shrink-0 items-center gap-2 p-0 font-mono text-[10px] tracking-[0.22em] uppercase hover:bg-transparent focus:bg-transparent"
-          >
-            {t(group.footer.ctaKey)}
-            <ArrowRight
-              aria-hidden="true"
-              className="size-3 transition-transform group-hover/footer:translate-x-0.5"
-              strokeWidth={1.8}
-            />
-          </NavigationMenuLink>
-        </div>
-      ) : null}
+      </NavigationMenuLink>
     </div>
   )
 }
@@ -412,17 +186,11 @@ export function MainNav({
   light?: boolean
   compact?: boolean
 }) {
-  const t = useTranslations('Nav')
-  const locale = useLocale()
-
+  const locale = useLocale() as Locale
+  const groups = getNavigation(locale)
   const navItemSurface = light
     ? 'text-white hover:bg-white/10 focus:bg-white/10'
     : 'text-foreground hover:bg-muted focus:bg-muted'
-  const plainLinkClasses = cn(
-    'inline-flex items-center px-2.5 transition-[color,background-color,height,font-size] duration-300 motion-reduce:transition-none',
-    compact ? 'h-8 text-[15px]' : 'h-9 text-base',
-    navItemSurface,
-  )
   const triggerClasses = cn(
     'bg-transparent px-2.5 font-normal transition-[color,background-color,height,font-size] duration-300 motion-reduce:transition-none',
     compact ? 'h-8 text-[15px]' : 'h-9 text-base',
@@ -442,34 +210,78 @@ export function MainNav({
       popupClassName="!h-auto !w-auto !scale-100 !rounded-none !border-0 !bg-transparent !shadow-none !ring-0 !transition-opacity !duration-150"
     >
       <NavigationMenuList className="gap-0.5">
-        {menuGroups.map((group) => (
-          <NavigationMenuItem key={group.id}>
-            {group.sections ? (
-              <>
-                <NavigationMenuTrigger className={triggerClasses}>
-                  {t(group.labelKey)}
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-0">
-                  <MegaMenuPanel group={group} locale={locale} />
-                </NavigationMenuContent>
-              </>
-            ) : group.homeAnchor ? (
-              <NavigationMenuLink
-                render={<a href={localAnchor(locale, group.homeAnchor)} />}
-                className={plainLinkClasses}
-              >
-                {t(group.labelKey)}
-              </NavigationMenuLink>
-            ) : (
-              <NavigationMenuLink
-                render={<Link href={group.href ?? '/'} />}
-                className={plainLinkClasses}
-              >
-                {t(group.labelKey)}
-              </NavigationMenuLink>
-            )}
-          </NavigationMenuItem>
-        ))}
+        {groups.map((group) => {
+          const visibleLinks = group.links.filter((item) => !item.hiddenFromList)
+          const isCompactMenu = visibleLinks.length <= 4
+          const columns = splitLinks(visibleLinks)
+          const highlight =
+            group.links.find((item) => item.id === group.highlightId) ?? group.links[0]
+
+          return (
+            <NavigationMenuItem key={group.id}>
+              <NavigationMenuTrigger className={triggerClasses}>
+                {group.label}
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="p-0">
+                <div
+                  className={cn(
+                    'border border-neutral-900/10 bg-white/95 text-neutral-900 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.45)] backdrop-blur-xl',
+                    isCompactMenu
+                      ? 'w-[min(calc(100vw_-_48px),760px)]'
+                      : 'w-[min(calc(100vw_-_48px),1128px)]',
+                  )}
+                >
+                  <div
+                    className={cn(
+                      'grid',
+                      isCompactMenu && 'grid-cols-[minmax(245px,0.9fr)_minmax(300px,1.1fr)]',
+                    )}
+                    style={
+                      isCompactMenu
+                        ? undefined
+                        : {
+                            gridTemplateColumns: `repeat(${columns.length}, minmax(0, 1fr)) minmax(240px, 1.08fr)`,
+                          }
+                    }
+                  >
+                    {columns.map((column, index) => (
+                      <MenuColumn
+                        key={`${group.id}-${index}`}
+                        links={column}
+                        index={index}
+                        compact={isCompactMenu}
+                      />
+                    ))}
+                    {highlight ? (
+                      <MenuHighlight item={highlight} locale={locale} compact={isCompactMenu} />
+                    ) : null}
+                  </div>
+                  <div
+                    className={cn(
+                      'mx-5 flex items-center justify-between gap-6 border-t border-neutral-200/80',
+                      isCompactMenu ? 'py-4' : 'py-5',
+                    )}
+                  >
+                    <p className="max-w-[52ch] text-xs leading-relaxed text-neutral-600">
+                      {group.footer.text}
+                    </p>
+                    <NavigationMenuLink
+                      render={<Link href={group.footer.href} />}
+                      className="group/footer text-brand-700 hover:text-brand-800 inline-flex shrink-0 items-center gap-2 p-0 font-mono text-[10px] tracking-[0.22em] uppercase hover:bg-transparent focus:bg-transparent"
+                    >
+                      {group.footer.label}
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="size-3 transition-transform group-hover/footer:translate-x-0.5"
+                        strokeWidth={1.8}
+                      />
+                    </NavigationMenuLink>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          )
+        })}
       </NavigationMenuList>
     </NavigationMenu>
   )

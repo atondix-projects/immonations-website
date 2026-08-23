@@ -4,7 +4,6 @@ import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { AudienceSwitch } from '@/components/site/audience-switch'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 
@@ -13,7 +12,7 @@ type Audience = 'seller' | 'buyer'
 const HERO_CTAS = {
   seller: {
     primaryHref: '/property-valuation' as const,
-    secondaryHref: '/sales-process' as const,
+    secondaryHref: '/sell' as const,
   },
   buyer: {
     primaryHref: { pathname: '/buy' as const, hash: '#angebote' },
@@ -29,7 +28,7 @@ const STAGE_DELAYS = {
   wordStep: 0.055,
   subtitle: 0.62,
   ctas: 0.78,
-  switch: 0.92,
+  rating: 0.92,
 } as const
 
 /** Rise-in: opacity + translateY, disabled entirely under prefers-reduced-motion. */
@@ -78,7 +77,7 @@ function GoogleRating() {
   )
 }
 
-export function Hero({ mode }: { mode: Audience }) {
+export function Hero({ mode, showRating = true }: { mode: Audience; showRating?: boolean }) {
   const t = useTranslations('Home.hero')
   const reduceMotion = useReducedMotion() ?? false
   const cta = HERO_CTAS[mode]
@@ -180,32 +179,34 @@ export function Hero({ mode }: { mode: Audience }) {
                   <ValuationEntryCard variant="glass" />
                 </motion.div>
               ) : null}
-              {/* Mobil: Switch + Rating unter den CTAs; Desktop: rechte Randspalte (siehe unten) */}
-              <motion.div
-                className="flex flex-col divide-y divide-white/15 self-start border border-white/15 bg-white/5 lg:hidden"
-                {...getRise(reduceMotion, STAGE_DELAYS.switch)}
-              >
-                <AudienceSwitch mode={mode} />
-                <GoogleRating />
-              </motion.div>
+              {/* Mobil: Google-Bewertung unter den CTAs; Desktop: rechte Randspalte. */}
+              {showRating ? (
+                <motion.div
+                  className="self-start border border-white/15 bg-white/5 lg:hidden"
+                  {...getRise(reduceMotion, STAGE_DELAYS.rating)}
+                >
+                  <GoogleRating />
+                </motion.div>
+              ) : null}
             </div>
           </div>
 
-          {/* Rechte Randspalte: Publikums-Switch + Bewertung, unten rechts verankert */}
+          {/* Rechte Randspalte: Bewertung unten rechts verankert. */}
           <motion.div
             key={`${mode}-rail`}
             className="relative hidden h-full flex-col items-stretch pt-28 pb-[72px] lg:flex"
-            {...getRise(reduceMotion, STAGE_DELAYS.switch)}
+            {...getRise(reduceMotion, STAGE_DELAYS.rating)}
           >
             {mode === 'seller' ? (
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
                 <ValuationEntryCard variant="glass" />
               </div>
             ) : null}
-            <div className="mt-auto flex flex-col divide-y divide-white/15 self-end border border-white/15 bg-white/5 backdrop-blur-sm">
-              <AudienceSwitch mode={mode} />
-              <GoogleRating />
-            </div>
+            {showRating ? (
+              <div className="mt-auto self-end border border-white/15 bg-white/5 backdrop-blur-sm">
+                <GoogleRating />
+              </div>
+            ) : null}
           </motion.div>
         </div>
       </div>

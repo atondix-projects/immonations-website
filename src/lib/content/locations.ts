@@ -98,6 +98,27 @@ const cityFacts = {
       ],
     },
   },
+  schwabach: {
+    name: 'Schwabach',
+    de: {
+      context:
+        'Schwabach verbindet eigenständige Stadtqualität mit kurzen Wegen nach Nürnberg. Altstadt, familiengeprägte Wohnlagen und Ortsteile am Stadtrand brauchen jeweils eine eigene Einordnung.',
+      focuses: [
+        'Familien und Eigennutzer',
+        'Altstadt und gewachsene Ortsteile',
+        'Anbindung an den Nürnberger Süden',
+      ],
+    },
+    en: {
+      context:
+        'Schwabach combines an independent city identity with short connections to Nuremberg. Its old town, family-oriented areas, and outer districts each require a distinct assessment.',
+      focuses: [
+        'Families and owner-occupiers',
+        'Old town and established districts',
+        'Connections to southern Nuremberg',
+      ],
+    },
+  },
 } as const
 
 function createLocation(locale: Locale, slug: keyof typeof cityFacts): LocationGuide {
