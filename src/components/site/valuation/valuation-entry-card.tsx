@@ -19,7 +19,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
   const t = useTranslations('ValuationWizard')
   const homeT = useTranslations('Home.valuation')
   const router = useRouter()
-  const propertyTypes = t.raw('propertyTypes') as string[]
+  const propertyTypes = t.raw('propertyTypes') as Record<PropertyTypeId, string>
   const [selectedType, setSelectedType] = useState<PropertyTypeId | null>(null)
   const [showError, setShowError] = useState(false)
   const isGlass = variant === 'glass'
@@ -77,10 +77,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
       </div>
 
       <div className="mt-5 grid grid-cols-2 gap-2">
-        {PROPERTY_TYPE_IDS.map((id, index) => {
-          const label = propertyTypes[index]
-          if (!label) return null
-
+        {PROPERTY_TYPE_IDS.map((id) => {
           return (
             <button
               key={id}
@@ -101,7 +98,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
                     : 'focus-visible:outline-brand-700 border-neutral-200 bg-white text-neutral-900 hover:border-neutral-500',
               )}
             >
-              {label}
+              {propertyTypes[id]}
             </button>
           )
         })}
