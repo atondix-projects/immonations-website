@@ -2,4 +2,3 @@ import { createCatalogMetadata, createCatalogPage } from '@/lib/content/catalog-
 
 export const generateMetadata = createCatalogMetadata('awards')
 export default createCatalogPage('awards')
-

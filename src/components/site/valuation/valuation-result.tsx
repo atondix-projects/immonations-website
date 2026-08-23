@@ -18,12 +18,7 @@ type ValuationResultProps = {
   answers: Answers
 }
 
-export function ValuationResult({
-  estimate,
-  propertyType,
-  fields,
-  answers,
-}: ValuationResultProps) {
+export function ValuationResult({ estimate, propertyType, fields, answers }: ValuationResultProps) {
   const t = useTranslations('ValuationWizard')
   const format = useFormatter()
 

@@ -24,7 +24,7 @@ export async function OfficeVisit() {
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-16">
         <div>
           <p className={EYEBROW}>{t('eyebrow')}</p>
-          <h2 className="mt-4 max-w-[16ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance break-words hyphens-headline md:text-[3.2rem]">
+          <h2 className="hyphens-headline mt-4 max-w-[16ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance break-words md:text-[3.2rem]">
             {t('title')}
           </h2>
         </div>
