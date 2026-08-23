@@ -60,7 +60,7 @@ Nach jeder Schluesseluebergabe entsteht ein Sofortbild mit einer Polaroidkamera;
 
 Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstuetzt mit Marke, Administration, Vermarktung und Prozessen.
 
-Die Partnerseite unter `/de/partner` beziehungsweise `/en/partners` beschreibt Rolle, Zusammenarbeit, passendes Profil und den Ablauf eines Kennenlerngespraechs. Konkrete Verguetungs- oder Leistungsversprechen werden persoenlich und vor einer Entscheidung transparent geklaert.
+Die Partnermakler-Seite unter `/de/partnermakler` beziehungsweise `/en/partner-agents` beschreibt zwei Kooperationsmodelle fuer selbststaendige Immobilienmakler: Objektbringer sowie Vertrieb und Besichtigungen. Es gibt keine monatliche Gebuehr, Lizenzkosten oder Mindestumsatz; abgerechnet wird ausschliesslich im Erfolgsfall. Immonation uebernimmt je nach Modell Bewertung, Preisfindung, Unterlagen, 360-Grad-Tour, Foto und Drohne, Social-Media-Vermarktung, Wohnflaechenberechnung, Grundrisse und Vertragsvorbereitung. Partner und eingebrachte Objekte werden vorab nach den Immonation-Qualitaetsstandards geprueft.
 
 ## Region
 

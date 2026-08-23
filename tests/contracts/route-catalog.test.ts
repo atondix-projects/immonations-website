@@ -26,6 +26,11 @@ describe('route catalog contract', () => {
     }
   })
 
+  it('publishes the partner-agent page under its dedicated bilingual slugs', () => {
+    expect(getRouteByPath('de', '/partnermakler')?.id).toBe('partners')
+    expect(getRouteByPath('en', '/partner-agents')?.id).toBe('partners')
+  })
+
   it('excludes reserved and noindex records from the sitemap source', () => {
     const indexableIds = new Set(listIndexableRoutes().map((route) => route.id))
     expect(indexableIds.has('client-area')).toBe(false)

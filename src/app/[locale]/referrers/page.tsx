@@ -146,6 +146,21 @@ export default async function ReferrersPage({ params }: { params: Promise<{ loca
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </Link>
             </div>
+            <div className="border-border mt-6 border p-6">
+              <h3 className="font-serif text-2xl leading-tight font-semibold">
+                {t('partnerTrack.title')}
+              </h3>
+              <p className="text-muted-foreground mt-3 text-sm leading-7">
+                {t('partnerTrack.text')}
+              </p>
+              <Link
+                href="/partners"
+                className="text-brand-700 mt-5 inline-flex items-center gap-2 text-sm font-semibold"
+              >
+                {t('partnerTrack.link')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </Link>
+            </div>
           </aside>
         </div>
       </section>

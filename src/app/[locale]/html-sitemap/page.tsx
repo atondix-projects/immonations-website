@@ -5,6 +5,7 @@ import { PageHero } from '@/components/site/templates/page-hero'
 import { routing, type Locale } from '@/i18n/routing'
 import { createCatalogMetadata } from '@/lib/content/catalog-page-route'
 import { listIndexableRoutes } from '@/lib/routing/route-catalog'
+import { groupBy } from '@/lib/utils'
 
 export const generateMetadata = createCatalogMetadata('html-sitemap')
 
@@ -17,7 +18,7 @@ export default async function HtmlSitemapPage({ params }: { params: Promise<{ lo
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
 
-  const groups = Map.groupBy(listIndexableRoutes(), (routeRecord) => routeRecord.phase)
+  const groups = groupBy(listIndexableRoutes(), (routeRecord) => routeRecord.phase)
   const labels =
     locale === 'de'
       ? {

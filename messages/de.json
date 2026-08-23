@@ -91,10 +91,201 @@
         }
       ]
     },
+    "partnerTrack": {
+      "title": "Ausgewählte Partnermakler ergänzen unser Team",
+      "text": "Bei Bedarf arbeiten wir mit ausgewählten Partnermaklern zusammen. Sie werden vorab qualifiziert und passend zum Objekttyp eingesetzt. Preisfindung, Unterlagen und Marketing bleiben immer bei uns.",
+      "link": "Partnermakler-Modell ansehen"
+    },
     "cta": {
       "title": "Sie planen einen Verkauf oder Kauf?",
       "text": "Starten Sie mit einer fundierten Ersteinschätzung und einem klaren Blick auf die nächsten Schritte.",
       "label": "Kontakt aufnehmen"
+    }
+  },
+  "PartnerAgentsPage": {
+    "metadata": {
+      "title": "Partnermakler werden in Nürnberg, Fürth & Erlangen | Immonation",
+      "description": "Partnermakler bei Immonation: keine monatliche Gebühr, Abrechnung nur im Erfolgsfall, zwei Vergütungsmodelle und das komplette Vermarktungspaket von 360°-Tour bis Kaufvertrag.",
+      "keywords": [
+        "Partnermakler werden",
+        "Makler Kooperation Nürnberg",
+        "als Makler selbständig ohne Fixkosten",
+        "Objektbringer Immobilien",
+        "Immobilienmakler Partnerprogramm Franken"
+      ],
+      "serviceName": "Partnermakler bei Immonation",
+      "serviceType": "Kooperationsmodell für selbständige Immobilienmakler",
+      "areaServed": "Metropolregion Nürnberg"
+    },
+    "hero": {
+      "eyebrow": "Partnermakler bei Immonation",
+      "title": "Nach außen Vollprofi. Im Hintergrund ein ganzes Team.",
+      "lead": "Sie beraten Ihre Kunden. Wir halten Ihnen den Rücken frei. Von der Bewertung über Drohnenaufnahmen, 360°-Rundgang und Social-Media-Kampagne bis zum Kaufvertrag läuft die komplette Abwicklung über unser Haus. Ohne monatliche Gebühr, abgerechnet ausschließlich im Erfolgsfall."
+    },
+    "metrics": {
+      "items": [
+        {
+          "value": "0 €",
+          "text": "monatliche Gebühr, Abrechnung nur im Erfolgsfall"
+        },
+        {
+          "value": "2",
+          "text": "Vergütungsmodelle: Objektbringer oder Vertrieb"
+        },
+        {
+          "value": "60+",
+          "text": "Verkäufe pro Jahr im Durchschnitt, bewährte Strukturen"
+        }
+      ]
+    },
+    "owners": {
+      "eyebrow": "Für Eigentümer",
+      "title": "Wer bei Ihnen klingelt, ist vorher geprüft",
+      "lead": "Wir arbeiten bewusst nur mit einem kleinen Kreis ausgewählter Partnermakler. Jeder wird vorab nach unseren Qualitätskriterien qualifiziert, damit Sie den bestmöglichen Besichtigungstermin bekommen. Preisfindung, Unterlagen, Marketing und Vertragsvorbereitung bleiben dabei immer bei Immonation.",
+      "items": [
+        {
+          "tag": "Qualität",
+          "title": "Vorab qualifiziert",
+          "text": "Wir nehmen nicht jeden. Jeder Partnermakler durchläuft vorab unsere Qualitätsprüfung. Erst danach betreut er Termine für unsere Kunden. Das ist der Unterschied zwischen einem Netzwerk und einer Namensliste."
+        },
+        {
+          "tag": "Passung",
+          "title": "Nach Stärken eingesetzt",
+          "text": "Nicht jeder ist bei Eigentumswohnungen und Einfamilienhäusern gleich stark. Wir kennen die Schwerpunkte unserer Partner und setzen sie gezielt dort ein, wo diese Stärken liegen."
+        },
+        {
+          "tag": "Preis",
+          "title": "Der Kaufpreis kommt von uns",
+          "text": "Wir bewerten jede Immobilie vorab gemeinsam und legen den Kaufpreis marktgerecht fest, auf Basis echter Abschlüsse. Unser Ziel ist nicht, Immobilien nur zu inserieren, sondern sie zu verkaufen."
+        },
+        {
+          "tag": "Standard",
+          "title": "Immonation-Standard",
+          "text": "Auch Objekte, die ein Partner einbringt, übernehmen wir nur, wenn sie unseren Standards entsprechen. Qualität vor Menge schützt am Ende beide Seiten."
+        }
+      ]
+    },
+    "models": {
+      "eyebrow": "Für Maklerinnen und Makler",
+      "title": "Zwei Vergütungsmodelle, die sich rechnen",
+      "lead": "Wir haben zwei klare Modelle geschaffen, die sich am tatsächlichen Beitrag orientieren. Es gibt keine Fixkosten, keine Lizenzgebühr und keinen Mindestumsatz. Wir verdienen erst, wenn Sie verkaufen. Genau deshalb haben wir ein echtes Interesse an Ihrem Erfolg.",
+      "items": [
+        {
+          "tag": "Modell 1",
+          "title": "Objektbringer",
+          "text": "Sie bringen eine Immobilie ein. Wir prüfen sie nach unseren Standards, bewerten sie gemeinsam mit Ihnen, legen den Kaufpreis fest und übernehmen die komplette Aufbereitung und Vermarktung.",
+          "noteLabel": "Wichtig",
+          "note": "Nicht jedes eingebrachte Objekt wird angenommen. Entscheidend ist, ob es dem Immonation-Standard entspricht."
+        },
+        {
+          "tag": "Modell 2",
+          "title": "Vertrieb & Besichtigungen",
+          "text": "Sie führen Besichtigungstermine für Objekte der Immonation GmbH. Preisfindung, Unterlagen, Marketing und Vertragsvorbereitung laufen vollständig über uns.",
+          "noteLabel": "Ihr Fokus",
+          "note": "Der Kontakt zu den Interessenten und die Beratung vor Ort, ohne Akquiseaufwand im Hintergrund."
+        }
+      ]
+    },
+    "package": {
+      "eyebrow": "Was wir für Sie übernehmen",
+      "title": "Das komplette Vermarktungspaket",
+      "lead": "Sie treten mit einer Ausstattung auf, die sich sonst nur größere Häuser leisten, ohne selbst in Technik, Personal oder Software investieren zu müssen.",
+      "items": [
+        {
+          "tag": "360°",
+          "title": "Virtuelle Tour",
+          "text": "Ein professioneller 360°-Rundgang für jedes Objekt. Interessenten gehen vorab durch die Immobilie. Das filtert unpassende Anfragen heraus und macht Ihre Besichtigungstermine deutlich effizienter."
+        },
+        {
+          "tag": "Social Media",
+          "title": "Kampagnen & Videos",
+          "text": "Zielgruppengenaue Social-Media-Kampagnen und eigens produzierte Objektvideos erreichen auch Käufer, die gar nicht aktiv auf den Portalen suchen."
+        },
+        {
+          "tag": "Drohne & Foto",
+          "title": "Professionelle Aufnahmen",
+          "text": "Drohnenaufnahmen, hochwertige Objektfotos und eine durchgestaltete Objektpräsentation. Der erste Eindruck entscheidet über den Preis."
+        },
+        {
+          "tag": "Ingenieur",
+          "title": "Wohnfläche & Grundrisse",
+          "text": "Unser hausinterner Ingenieur erstellt zertifizierte Wohnflächenberechnungen und verwertbare Grundrisse, genau das, was die Bank des Käufers für die Finanzierung verlangt."
+        },
+        {
+          "tag": "Netzwerk",
+          "title": "Banken, Anwälte, Notare",
+          "text": "Sie erhalten Zugriff auf unsere Bankkontakte, unter anderem die Dr. Klein AG inklusive aller Tools sowie die Max-Flessa-Bank in Fürth, ebenso auf Rechtsanwälte und Notare. Sie dürfen damit auch auf Ihrer eigenen Website werben."
+        },
+        {
+          "tag": "Team",
+          "title": "Rückendeckung im Hintergrund",
+          "text": "Bei Rückfragen und bei der Aufbereitung neu eingebrachter Objekte steht Ihnen unser gesamtes Team zur Seite, von Marketing bis Online-Schaltung."
+        }
+      ]
+    },
+    "process": {
+      "title": "So läuft die Zusammenarbeit an",
+      "lead": "Wir prüfen vorab, ob es für beide Seiten passt. Das ist fairer, als jeden aufzunehmen und später festzustellen, dass die Chemie oder die Schwerpunkte nicht stimmen.",
+      "items": [
+        {
+          "tag": "Schritt 1",
+          "title": "Kennenlernen",
+          "text": "Ein offenes Gespräch über Ihre Erfahrung, Ihre Schwerpunkte und Ihre Region, unverbindlich und ohne Verpflichtung."
+        },
+        {
+          "tag": "Schritt 2",
+          "title": "Qualifizierung",
+          "text": "Wir prüfen anhand unserer Qualitätskriterien, ob die Zusammenarbeit für beide Seiten sinnvoll ist."
+        },
+        {
+          "tag": "Schritt 3",
+          "title": "Einsatzbereich festlegen",
+          "text": "Gemeinsam bestimmen wir, bei welchen Objektarten und in welchem Modell Sie eingesetzt werden."
+        },
+        {
+          "tag": "Schritt 4",
+          "title": "Start",
+          "text": "Sie erhalten Zugriff auf Netzwerk, Tools und Team. Abgerechnet wird ausschließlich im Erfolgsfall."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen von Partnermaklern",
+      "items": [
+        {
+          "question": "Was kostet mich die Partnerschaft?",
+          "answer": "Nichts im Voraus. Es gibt keine monatliche Gebühr, keine Lizenz- oder Softwarekosten und keinen Mindestumsatz. Abgerechnet wird ausschließlich im Erfolgsfall. Wir verdienen erst, wenn Sie verkaufen."
+        },
+        {
+          "question": "Muss ich meine Selbständigkeit aufgeben?",
+          "answer": "Nein. Sie bleiben selbständig und organisieren sich frei. Wir stellen Strukturen, Netzwerk und Abwicklung zur Verfügung. Eine Anstellung entsteht dadurch nicht."
+        },
+        {
+          "question": "Kann ich mit dem Netzwerk werben?",
+          "answer": "Ja. Sie dürfen die Zusammenarbeit und unser Netzwerk offen kommunizieren, auch auf Ihrer eigenen Website."
+        },
+        {
+          "question": "Wird jedes Objekt angenommen, das ich einbringe?",
+          "answer": "Nein. Jedes eingebrachte Objekt wird geprüft und muss dem Immonation-Standard entsprechen. Das schützt unsere Qualität und Ihre Zeit, weil wir keine Objekte vermarkten, die am Markt nicht funktionieren."
+        },
+        {
+          "question": "Wer legt den Kaufpreis fest?",
+          "answer": "Wir bewerten jede Immobilie vorab gemeinsam und legen den Preis marktgerecht fest. Damit gehen Sie nicht mit einem überhöhten Preis in den Vertrieb, an dem Sie sich die Zähne ausbeißen würden."
+        },
+        {
+          "question": "In welcher Region arbeiten Sie?",
+          "answer": "Kerngebiet ist die Metropolregion Nürnberg: Nürnberg, Fürth, Erlangen, Zirndorf, Schwabach und das nähere Umland."
+        }
+      ]
+    },
+    "closing": {
+      "title": "Passt das Modell zu Ihrer Arbeitsweise?",
+      "text": "In einem offenen Gespräch klären wir Erfahrung, Region, Stärken und das passende Vergütungsmodell."
+    },
+    "actions": {
+      "contact": "Jetzt Gespräch vereinbaren",
+      "about": "Wer wir sind",
+      "referrers": "Kein Makler? Zum Tippgeber-Modell"
     }
   },
   "ContactPage": {
@@ -1139,10 +1330,10 @@
     ],
     "note": "Detaillierte Stellenangebote und das vollständige Partner-Modell folgen. Bis dahin: Melden Sie sich direkt — wir freuen uns auf das Gespräch.",
     "agentTrack": {
-      "eyebrow": "Eigener Karriereweg",
-      "title": "Als Immobilienmakler mit Immonation arbeiten",
-      "text": "Die neue Makler-Seite zeigt Aufgaben, Zusammenarbeit, passendes Profil und den direkten Weg zu einem Kennenlerngespräch.",
-      "link": "Makler-Karriere ansehen"
+      "eyebrow": "Bereits selbständig?",
+      "title": "Das Partnermakler-Modell ist vermutlich der bessere Weg",
+      "text": "Sie sind bereits als Maklerin oder Makler selbständig? Arbeiten Sie ohne Fixkosten und mit unserem Netzwerk im Rücken.",
+      "link": "Partnermakler-Modell ansehen"
     },
     "cta": {
       "title": "Interesse geweckt?",
@@ -1228,6 +1419,11 @@
       "ownerTitle": "Sie sind selbst Eigentümer?",
       "ownerText": "Dann benötigen Sie keinen Tippgeberweg. Sprechen Sie direkt mit uns über Bewertung, Verkauf und die nächsten Schritte.",
       "ownerCta": "Direkt Kontakt aufnehmen"
+    },
+    "partnerTrack": {
+      "title": "Sie sind selbst vom Fach?",
+      "text": "Für Maklerinnen und Makler gibt es statt der Tippgeberprovision unser Partnermakler-Modell.",
+      "link": "Partnermakler-Modell ansehen"
     },
     "faq": {
       "title": "Häufige Fragen für Tippgeber",
@@ -1923,12 +2119,27 @@
         "cardLink": "Ratgeber öffnen"
       },
       "verified": {
-        "eyebrow": "Nachweisbare Ergebnisse",
+        "eyebrow": "Kein Marketing-Versprechen",
         "title": "Beurkundet, nicht behauptet.",
-        "text": "Verkaufserfolg ist für uns keine Werbebehauptung. Wir dokumentieren echte Abschlüsse, zeigen die Immobilien dahinter und machen unser Vorgehen nachvollziehbar.",
-        "videoTitle": "Ein echtes Objekt. Der Weg wird sichtbar.",
-        "videoNote": "Das Video begleitet eine reale Immobilienentwicklung vom Grundstück bis zum fertigen Objekt — als konkreter Einblick statt austauschbarem Werbeversprechen.",
+        "text": "Jeder Verkauf, den wir vermitteln, hinterlässt eine notarielle Abschrift des Kaufvertrags. Allein aus 2025 und 2026 füllen sie bei uns drei Ordner – und mit jedem neuen Abschluss kommt eine Seite dazu. Kein Stockfoto, keine geschönte Statistik, sondern eine prüfbare Realität aus der Metropolregion Nürnberg.",
+        "videoTitle": "Drei Ordner, jeder Verkauf notariell beurkundet.",
+        "videoNote": "Im Video: der Nachweis – und das Einheften der jüngsten Abschrift. Aufgenommen in unserem Büro in Zirndorf; Namen der Vertragsparteien, Kaufpreise und Vertragsinhalte bleiben dabei unlesbar.",
         "videoFallback": "Ihr Browser kann dieses Video nicht abspielen.",
+        "stats": [
+          {
+            "value": "3",
+            "label": "Ordner mit notariellen Abschriften"
+          },
+          {
+            "value": "2025 & 2026",
+            "label": "Zeitraum der abgelegten Abschriften"
+          },
+          {
+            "value": "60+",
+            "label": "beurkundete Verkäufe pro Jahr"
+          }
+        ],
+        "cta": "Kostenlose Bewertung anfordern",
         "points": [
           {
             "title": "Notariell dokumentiert",
@@ -1947,7 +2158,7 @@
       "priceAtlas": {
         "eyebrow": "Neu · Preisatlas",
         "title": "Was kostet der m² in Ihrem Stadtteil?",
-        "text": "Der Immobilien-Preisatlas ordnet Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach ein — getrennt nach Objektart und mit dem nötigen Blick auf die Mikrolage.",
+        "text": "Der Immobilien-Preisatlas ordnet Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim ein — getrennt nach Objektart und mit dem nötigen Blick auf die Mikrolage.",
         "link": "Zum Preisatlas",
         "points": [
           {
@@ -1958,7 +2169,13 @@
             "title": "Haus & Wohnung",
             "text": "Preisniveaus werden nach Objektart getrennt betrachtet."
           }
-        ]
+        ],
+        "panel": {
+          "title": "{city} · Eigentumswohnungen",
+          "unit": "€/m²",
+          "note": "Ausschnitt: die teuersten und die günstigsten Lagen auf gemeinsamer Skala. Im Atlas stehen alle {districts} Stadtteile aus {cities} Städten, auch für Häuser.",
+          "link": "Alle Stadtteile ansehen"
+        }
       },
       "marketData": {
         "eyebrow": "Immobilienpreise & Trends",
@@ -2778,9 +2995,9 @@
     }
   },
   "Magazine": {
-    "eyebrow": "REVIER Magazin",
-    "title": "Ein Blick in unsere Arbeit, unsere Haltung und echte Verkaufsgeschichten.",
-    "text": "Unser Magazin zeigt ausgewählte Verkäufe aus dem Großraum Nürnberg und die Geschichten dahinter: wie Eigentümer entschieden haben, wie wir vermarkten und was eine gute Begleitung ausmacht.",
+    "eyebrow": "Immonation REVIER · Das Magazin",
+    "title": "REVIER – das Immobilienmagazin für den Großraum Nürnberg",
+    "text": "Ausgewählte, echte Verkäufe aus Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim – und die Geschichten dahinter. Blättern Sie wie in einem gedruckten Heft: mit einem Klick auf die rechte oder linke Seite, über die Pfeile oder die Pfeiltasten Ihrer Tastatur.",
     "cta": "Eigene Verkaufssituation besprechen",
     "points": [
       {
@@ -3740,7 +3957,7 @@
       "title": "Was Ihre Immobilie im Stadtteil wert ist.",
       "lede": "Quadratmeterpreise für {districts} Stadtteile in {cities} Städten — getrennt nach Eigentumswohnungen und Häusern, mit der tatsächlichen Spanne statt einer einzelnen Zahl."
     },
-    "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
+    "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
     "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
     "jsonLd": {
       "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
@@ -3785,12 +4002,6 @@
         "example": "Beispiel: {area} m² Wohnfläche ergeben in {district} rechnerisch {median} € zum Median — die Spanne reicht von {low} € bis {high} €. Wo eine konkrete Immobilie darin liegt, entscheiden Zustand, Zuschnitt und Ausstattung.",
         "thinDataNote": "Für {district} liegen nur {count} Objekte vor. Die Spanne ist ein Anhaltspunkt, keine belastbare Aussage — für eine Einschätzung sollte hier auf die Stadtebene zurückgegriffen werden.",
         "districtLink": "Stadtteilseite {district} öffnen"
-      },
-      "pending": {
-        "tag": "in Arbeit",
-        "title": "{city}: Stadtteilwerte in Aufbereitung",
-        "text": "Für {city} sind die stadtteilgenauen Quadratmeterpreise noch nicht ausgewertet. Sobald die Auswertung vorliegt, erscheint {city} hier mit denselben Spannen wie die übrigen Städte.",
-        "link": "Standortseite {city} öffnen"
       }
     },
     "method": {
@@ -3836,7 +4047,7 @@
         },
         {
           "question": "Welche Städte enthält der Preisatlas?",
-          "answer": "Erfasst sind Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet."
+          "answer": "Erfasst sind Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim — jeweils getrennt nach Eigentumswohnungen und Häusern."
         }
       ]
     },

@@ -6,7 +6,7 @@
  * Nichts hier ist positionsabhaengig — die ID ist der einzige Schluessel.
  */
 
-const OPTION_SETS = {
+export const OPTION_SETS = {
   timing: ['concrete', 'one-to-two-years', 'interest-only'],
   condition: ['first-occupancy', 'renovated', 'maintained', 'needs-renovation'],
   houseType: ['detached', 'semi-detached', 'terraced-mid', 'terraced-end'],

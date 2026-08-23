@@ -46,7 +46,7 @@ export const PATHNAMES = {
   '/engagement': { de: '/engagement', en: '/engagement' },
   '/group': { de: '/gruppe', en: '/group' },
   '/careers': { de: '/karriere', en: '/careers' },
-  '/partners': { de: '/partner', en: '/partners' },
+  '/partners': { de: '/partnermakler', en: '/partner-agents' },
   '/contact': { de: '/kontakt', en: '/contact' },
   '/imprint': { de: '/impressum', en: '/imprint' },
   '/privacy': { de: '/datenschutz', en: '/privacy' },

@@ -1,7 +1,6 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { matchesQuery, type PriceAtlasGroup } from '@/lib/content/price-atlas'
 import { AtlasRow } from './atlas-row'
 import { formatValue } from './format'
@@ -38,26 +37,9 @@ export function AtlasGroup({
     ? group.entries.filter((entry) => matchesQuery(entry, query))
     : group.entries
 
-  if (!group.scale || !group.top || !group.bottom || group.cityMedian === null) {
-    return (
-      <section id={groupId} hidden={!active} aria-label={`${group.cityName} · ${categoryLabel}`}>
-        <div className="border-border border p-8 md:p-12">
-          <h3 className="font-serif text-2xl font-medium tracking-[-0.02em]">
-            {t('atlas.pending.title', { city: group.cityName })}
-          </h3>
-          <p className="text-muted-foreground mt-4 max-w-[62ch] text-[15px] leading-[1.75] text-pretty">
-            {t('atlas.pending.text', { city: group.cityName })}
-          </p>
-          <Link
-            href={{ pathname: '/locations/[slug]', params: { slug: group.city } }}
-            className="text-brand-700 hover:text-brand-800 mt-6 inline-block text-sm font-semibold underline-offset-4 hover:underline"
-          >
-            {t('atlas.pending.link', { city: group.cityName })}
-          </Link>
-        </div>
-      </section>
-    )
-  }
+  // Typ-Guard: jede erfasste Stadt hat Werte, eine leere Gruppe kann es nur
+  // geben, solange eine neue Stadt noch ohne Datensatz im Katalog steht.
+  if (!group.scale || !group.top || !group.bottom || group.cityMedian === null) return null
 
   const { scale, top, bottom, cityMedian } = group
 
