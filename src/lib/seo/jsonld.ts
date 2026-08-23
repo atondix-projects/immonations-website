@@ -136,30 +136,6 @@ export function faqPage(qa: Array<{ question: string; answer: string }>): Thing 
   }
 }
 
-export function howTo(input: {
-  locale: string
-  url: string
-  name: string
-  description: string
-  steps: Array<{ name: string; text: string; url?: string }>
-}): Thing {
-  return {
-    ...ctx,
-    '@type': 'HowTo',
-    inLanguage: input.locale,
-    name: input.name,
-    description: input.description,
-    mainEntityOfPage: input.url,
-    step: input.steps.map((step, index) => ({
-      '@type': 'HowToStep',
-      position: index + 1,
-      name: step.name,
-      text: step.text,
-      url: step.url,
-    })),
-  }
-}
-
 export function article(input: {
   locale: string
   url: string

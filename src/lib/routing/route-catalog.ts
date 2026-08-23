@@ -2,10 +2,10 @@ import { PATHNAMES } from '@/i18n/pathnames'
 import { REFERENCE_IDS } from '@/lib/content/references'
 
 export type CatalogLocale = 'de' | 'en'
-export type RoutePhase = 1 | 2 | 3 | 4
-export type RouteStatus = 'published' | 'noindex' | 'phased' | 'reserved'
-export type IndexingState = 'index' | 'noindex' | 'excluded'
-export type ContentStatus = 'substantive' | 'draft' | 'reserved'
+type RoutePhase = 1 | 2 | 3 | 4
+type RouteStatus = 'published' | 'noindex' | 'phased' | 'reserved'
+type IndexingState = 'index' | 'noindex' | 'excluded'
+type ContentStatus = 'substantive' | 'draft' | 'reserved'
 
 export type RouteRecord = {
   id: string
@@ -349,8 +349,4 @@ export function listIndexableRoutes() {
   return ROUTE_CATALOG.filter(
     (routeRecord) => routeRecord.status === 'published' && routeRecord.indexing === 'index',
   )
-}
-
-export function getLocalizedPath(id: string, locale: CatalogLocale) {
-  return getRouteById(id)?.paths[locale]
 }

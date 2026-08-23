@@ -30,7 +30,3 @@ export function listGlossaryEntries(locale: GlossaryLocale): LocalizedGlossaryEn
     letter: glossaryLetter(entry[locale].term),
   })).sort((a, b) => collator.compare(a.term, b.term))
 }
-
-export function groupGlossaryEntries(locale: GlossaryLocale) {
-  return Map.groupBy(listGlossaryEntries(locale), (entry) => entry.letter)
-}

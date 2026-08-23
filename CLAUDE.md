@@ -37,23 +37,23 @@ src/
 │   │   ├── blog/
 │   │   │   ├── page.tsx
 │   │   │   └── [slug]/page.tsx
-│   │   └── services/
-│   │       ├── page.tsx
-│   │       └── [slug]/page.tsx  Canonical route — German URL is /de/leistungen/[slug] via pathnames
+│   │   ├── sell/                Seller hub and typed property-guide routes
+│   │   ├── locations/           Typed city routes
+│   │   ├── references/          Reference hub and detail routes
+│   │   └── blog/                MDX index and article routes
 │   ├── sitemap.ts               Bilingual sitemap with hreflang
 │   ├── robots.ts                References sitemap
 │   └── globals.css              Tailwind v4 entry + @theme tokens + base layer
 ├── components/
 │   ├── ui/                      shadcn + Magic UI (generated — do not edit)
 │   └── site/                    Project components (header, footer, json-ld, locale-switcher)
-├── content/
-│   └── services/{de,en}/        Typed Service records (TSX-driven sub-pages)
+├── content/                      FAQ, glossary, navigation, and catalog records
 ├── i18n/
 │   ├── routing.ts               defineRouting + pathnames table
 │   ├── navigation.ts            Localized Link / useRouter / usePathname
 │   └── request.ts               Server-side messages loader
 ├── lib/
-│   ├── content/                 blog (MDX reader), services (registry loader)
+│   ├── content/                 Typed content registries and MDX readers
 │   ├── seo/                     site, metadata builder, jsonld builders, routes registry
 │   └── utils.ts                 cn() helper (from shadcn init)
 └── proxy.ts                     Next.js 16 file convention (formerly middleware.ts)
@@ -62,13 +62,14 @@ content/blog/{de,en}/*.mdx       Long-form content with frontmatter
 messages/{de,en}.json            Translation JSON consumed by next-intl
 public/llms.txt                  AEO/GEO entry point
 public/llms-full.txt             AEO/GEO long-form
+TODO.md                          Canonical outstanding-work list
 ```
 
 ## 4. Routing model
 
 - All public routes live under `src/app/[locale]/...`. There is no root `app/layout.tsx`.
 - The `[locale]` segment is constrained to `de` and `en` (see `src/i18n/routing.ts`).
-- **Localized URLs are produced by `routing.pathnames`, not by parallel folders.** Example: the German URL `/de/leistungen/initial-consultation` and the English URL `/en/services/initial-consultation` both resolve to the same filesystem route `src/app/[locale]/services/[slug]/page.tsx`. The German segment `leistungen` comes from the `pathnames` table.
+- **Localized URLs are produced by `routing.pathnames`, not by parallel folders.** Example: the German URL `/de/immobilie-verkaufen` and the English URL `/en/sell-property` both resolve to the filesystem route `src/app/[locale]/sell/page.tsx`.
 - The internal route name (the key in `pathnames`) uses **English / default-locale segments** by convention. When you add a new route that needs a localized URL, add it to `routing.pathnames`.
 - Use the typed `Link` from `@/i18n/navigation` — never `next/link` directly. The locale prefix is added automatically.
 
@@ -182,7 +183,7 @@ pnpm format:check # prettier --check (use in CI)
 
 - Create a `tailwind.config.ts`. Tailwind v4 is CSS-first. Use `@theme` in `globals.css`.
 - Use `middleware.ts`. Next.js 16 renamed the file convention to `proxy.ts`. The file currently exports `default createMiddleware(routing)` — that is correct.
-- Create `[locale]/leistungen/` next to `[locale]/services/`. Use one canonical route + `routing.pathnames`.
+- Create separate locale-specific route folders. Use one canonical route + `routing.pathnames`.
 - Hand-edit `src/components/ui/*`. Re-add from registry instead.
 - Hardcode user-facing strings in JSX. Use `useTranslations` / `getTranslations`.
 - Render JSON-LD inline without the `JsonLd` component — the component escapes the `<` character for XSS safety.

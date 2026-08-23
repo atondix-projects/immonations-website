@@ -15,7 +15,7 @@ type ParsedNumber = {
  * Parse CMS display strings like `300+`, `8.000+`, `4,9`, `360°`, `60 km`.
  * Non-countable values (`6–12`, `Regional`, …) return null → render as static text.
  */
-export function parseStatNumber(raw: string): ParsedNumber | null {
+function parseStatNumber(raw: string): ParsedNumber | null {
   const trimmed = raw.trim()
   if (!trimmed) return null
 

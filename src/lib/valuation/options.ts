@@ -6,7 +6,7 @@
  * Nichts hier ist positionsabhaengig — die ID ist der einzige Schluessel.
  */
 
-export const OPTION_SETS = {
+const OPTION_SETS = {
   timing: ['concrete', 'one-to-two-years', 'interest-only'],
   condition: ['first-occupancy', 'renovated', 'maintained', 'needs-renovation'],
   houseType: ['detached', 'semi-detached', 'terraced-mid', 'terraced-end'],
@@ -31,8 +31,6 @@ export const OPTION_SETS = {
 } as const satisfies Record<string, readonly string[]>
 
 export type OptionSetId = keyof typeof OPTION_SETS
-
-export const OPTION_SET_IDS = Object.keys(OPTION_SETS) as readonly OptionSetId[]
 
 /** Optionen eines Sets — immer definiert, daher ohne Fallback nutzbar. */
 export function optionsOf(setId: OptionSetId): readonly string[] {

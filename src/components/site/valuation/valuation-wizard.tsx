@@ -38,8 +38,7 @@ const CONTACT_STEP = WIZARD_STEP_IDS.length - 1
 function focusField(fieldId: string) {
   const selector = `vw-${fieldId}`
   const target =
-    document.getElementById(selector) ??
-    document.querySelector<HTMLElement>(`[name="${selector}"]`)
+    document.getElementById(selector) ?? document.querySelector<HTMLElement>(`[name="${selector}"]`)
   target?.focus()
   target?.scrollIntoView({ block: 'center', behavior: 'smooth' })
 }
@@ -76,8 +75,7 @@ export function ValuationWizard() {
     setAnswers((current) => ({ ...current, [fieldId]: value }))
     setErrors((current) => {
       if (!(fieldId in current)) return current
-      const { [fieldId]: _removed, ...rest } = current
-      return rest
+      return Object.fromEntries(Object.entries(current).filter(([id]) => id !== fieldId))
     })
   }, [])
 

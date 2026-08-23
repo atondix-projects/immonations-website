@@ -7,7 +7,7 @@
  */
 const INTL_LOCALES: Record<string, string> = { de: 'de-DE', en: 'en-US' }
 
-export function intlLocale(locale: string): string {
+function intlLocale(locale: string): string {
   return INTL_LOCALES[locale] ?? 'de-DE'
 }
 

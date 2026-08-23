@@ -109,7 +109,7 @@ Primär belegt ist die EU-Markenregistrierung: EUIPO Nr. `019283377`, eingetrage
 - Zentrale FAQ-Seite: ja.
 - Ein gemeinsamer Content-Hub mit getrennten Seiten für Ratgeber, News, FAQ, Downloads und Newsletter.
 - Zwei Übergabeprotokolle für Haus und Wohnung liegen als PDF-Quellen vor. Vor Veröffentlichung: Branding, Formularnutzbarkeit, Barrierefreiheit und rechtliche Prüfung; danach optimierte Derivate nach `public/` übernehmen.
-- Die gelieferten Content-Entwürfe decken Haus-, Wohnungs- und Mehrfamilienhausverkauf, zentrale FAQ, Bodenrichtwert, Bewertungs-/Review-Aufklärung sowie zwölf situative Verkäuferthemen ab. Priorisierung und Freigabestatus stehen in `docs/source-material/publishing-backlog.md`.
+- Die gelieferten Content-Entwürfe decken Haus-, Wohnungs- und Mehrfamilienhausverkauf, zentrale FAQ, Bodenrichtwert, Bewertungs-/Review-Aufklärung sowie zwölf situative Verkäuferthemen ab. Verbleibende Freigaben und Produktionsaufgaben stehen in `TODO.md`.
 
 ## Technik & Tracking
 
@@ -128,9 +128,7 @@ Primär belegt ist die EU-Markenregistrierung: EUIPO Nr. `019283377`, eingetrage
 - Award-Logos/-Abbildungen, Athletenbilder, Aufnahmen von Kindern, Kundenportraits, Übergabebilder und KI-Visualisierungen werden nicht allein durch die Ablage im Archiv zur Veröffentlichung freigegeben.
 - Google-Bewertungen nicht pauschal als „verifizierte Kunden“ bezeichnen; öffentlich sichtbare Google-Konten sind kein Nachweis eines abgeschlossenen Kundenverhältnisses.
 
-## Neue offene Entscheidungen aus dem EK-Archiv
+## Offene Arbeit
 
-- Der FAQ-Entwurf nennt Dr. Klein als langjährigen Finanzierungspartner. Partnerschaft, zulässige Formulierung und Verlinkung bestätigen.
-- Der FAQ-Entwurf empfiehlt einen Suchauftrag; die bestehende Entscheidung schließt nur einen selbstverwalteten Suchauftrag als Primärfunktion aus. Gewünschte Sekundärfunktion präzisieren.
-- Bürozeiten, Telefonnummer und Anfahrtsangaben aus dem Archiv vor Übernahme live bestätigen.
-- Für jede Referenz festlegen: veröffentlichbare Ortsgenauigkeit, Kennzahlen, Ergebnisformulierung, Medien und Kundenfreigabe.
+Alle noch offenen Entscheidungen, Freigaben und Implementierungen werden ausschließlich in
+[`TODO.md`](../TODO.md) gepflegt.

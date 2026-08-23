@@ -15,12 +15,7 @@ export type PriceAtlasRow = readonly [string, string, number, number, number, nu
 export type PriceAtlasCategory = 'apartment' | 'house'
 
 export type PriceAtlasCityId =
-  | 'nuernberg'
-  | 'fuerth'
-  | 'erlangen'
-  | 'zirndorf'
-  | 'forchheim'
-  | 'schwabach'
+  'nuernberg' | 'fuerth' | 'erlangen' | 'zirndorf' | 'forchheim' | 'schwabach'
 
 export const PRICE_ATLAS_CITIES: readonly PriceAtlasCityId[] = [
   'nuernberg',
@@ -46,7 +41,7 @@ export const CITY_NAMES: Record<PriceAtlasCityId, string> = {
  * Ab wie vielen ausgewerteten Objekten eine Spanne als belastbar gilt.
  * Unterhalb der Schwelle wird die Zeile als dünne Datenlage gekennzeichnet.
  */
-export const RELIABLE_SAMPLE_SIZE = 5
+const RELIABLE_SAMPLE_SIZE = 5
 
 /** Anteil der Spanne, ab dem eine Lage als oberes bzw. mittleres Preisband gilt. */
 const UPPER_TIER_THRESHOLD = 0.62
@@ -137,10 +132,7 @@ function slugify(value: string): string {
  * Der Treffer wird immer gegen den Routen-Katalog geprüft, damit kein Link
  * auf eine Route zeigt, die `generateStaticParams` nicht erzeugt.
  */
-export function findDistrictLink(
-  city: PriceAtlasCityId,
-  district: string,
-): DistrictLinkOverride | null {
+function findDistrictLink(city: PriceAtlasCityId, district: string): DistrictLinkOverride | null {
   const known = (DISTRICTS as Partial<Record<string, readonly string[]>>)[city]
   if (!known) return null
 
@@ -188,10 +180,7 @@ function medianOf(values: readonly number[]): number | null {
 }
 
 /** Alle Stadtteilwerte einer Stadt und Objektart, teuerste Lage zuerst. */
-export function getPriceAtlasGroup(
-  city: PriceAtlasCityId,
-  category: PriceAtlasCategory,
-): PriceAtlasGroup {
+function getPriceAtlasGroup(city: PriceAtlasCityId, category: PriceAtlasCategory): PriceAtlasGroup {
   const entries = PRICE_ATLAS_ROWS[city][category]
     .map((row) => toEntry(city, category, row))
     .sort((a, b) => b.median - a.median || a.district.localeCompare(b.district, 'de'))

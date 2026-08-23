@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 
-export const PROPERTY_TYPE_IDS = ['house', 'apartment', 'apartment-building', 'land'] as const
+const PROPERTY_TYPE_IDS = ['house', 'apartment', 'apartment-building', 'land'] as const
 
 export type PropertyTypeId = (typeof PROPERTY_TYPE_IDS)[number]
 

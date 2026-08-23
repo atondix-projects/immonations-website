@@ -40,5 +40,3 @@ export const FREE_DOCS: readonly FreeDoc[] = [
     category: 'tenancy',
   },
 ] as const
-
-export const FREE_DOC_CATEGORIES: readonly FreeDocCategory[] = ['handover', 'tenancy']

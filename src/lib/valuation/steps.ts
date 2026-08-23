@@ -40,18 +40,3 @@ export function fieldsForStep(
     answers,
   )
 }
-
-/**
- * Alle Felder, die für die gewählte Objektart überhaupt erhoben werden —
- * Grundlage für Zusammenfassung und Datenübergabe.
- */
-export function allActiveFields(
-  propertyType: PropertyTypeId | null,
-  answers: Answers,
-): readonly FieldDescriptor[] {
-  return [
-    ...visibleFields(LOCATION_FIELDS, answers),
-    ...(propertyType ? visibleFields(PROPERTY_FIELDS[propertyType], answers) : []),
-    ...visibleFields(CONTACT_FIELDS, answers),
-  ]
-}

@@ -5,7 +5,7 @@
  * sie werden pro Eintrag geführt, damit das <video>-Element korrekt reserviert.
  */
 
-export type SoldPropertyType = 'etw' | 'efh' | 'dhh' | 'rmh' | 'townhouse' | 'commercialLand'
+type SoldPropertyType = 'etw' | 'efh' | 'dhh' | 'rmh' | 'townhouse' | 'commercialLand'
 
 export type SoldVideo = {
   id: string

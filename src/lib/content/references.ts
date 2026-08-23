@@ -1,4 +1,4 @@
-export const REFERENCE_MEDIA = {
+const REFERENCE_MEDIA = {
   'deining-neubauwohnung': '/images/references/deining-neubauwohnung.webp',
   'erlangen-eigentumswohnung': '/images/references/erlangen-eigentumswohnung.webp',
   'forchheim-eigentumswohnung': '/images/references/forchheim-eigentumswohnung.webp',
@@ -31,7 +31,7 @@ export type ReferenceItem = {
   alt: string
 }
 
-export type ReferenceDetail = {
+type ReferenceDetail = {
   id: ReferenceId
   requests: string
   viewings: string
@@ -53,13 +53,7 @@ export type ReferenceDetail = {
   }
 }
 
-export const FEATURED_REVIEW_IDS = [
-  'deining-neubauwohnung',
-  'fuerth-mehrfamilienhaus',
-  'langenzenn-terrassenwohnung',
-] as const satisfies readonly ReferenceId[]
-
-export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
+const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
   'deining-neubauwohnung': {
     id: 'deining-neubauwohnung',
     requests: '32',

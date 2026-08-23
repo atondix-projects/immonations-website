@@ -36,7 +36,7 @@ type TestimonialMedia = {
   review?: TestimonialReview
 }
 
-export const TESTIMONIAL_MEDIA = {
+const TESTIMONIAL_MEDIA = {
   'viktor-emter': {
     image: '/images/testimonials/viktor-emter.webp',
     video: { src: '/videos/testimonials/viktor-emter.mp4', width: 720, height: 1280 },
@@ -97,15 +97,8 @@ export type TestimonialId = keyof typeof TESTIMONIAL_MEDIA
  * Sandra Börschlein ist aus der freigegebenen Google-Bewertung ergänzt; ein
  * Video ist für sie weiterhin nicht hinterlegt.
  */
-export const STORY_IDS = [
-  'viktor-emter',
-  'sandra-boerschlein',
-  'markus-burkhard',
-  'herr-sippel',
-  'frau-hartmann',
-] as const
-
-export type StoryId = (typeof STORY_IDS)[number]
+export type StoryId =
+  'viktor-emter' | 'sandra-boerschlein' | 'markus-burkhard' | 'herr-sippel' | 'frau-hartmann'
 
 /** Textinhalt einer Verkaufsgeschichte, gelesen aus `Testimonials.items`. */
 export type TestimonialStory = {

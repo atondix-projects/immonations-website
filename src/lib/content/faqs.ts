@@ -10,7 +10,7 @@ export type FaqCategoryId =
   | 'buyers'
   | 'about'
 
-export type FaqTag =
+type FaqTag =
   | FaqCategoryId
   | 'sell'
   | 'sell-haus'
@@ -179,7 +179,7 @@ function localizeEntry(entry: FaqEntryDef, locale: Locale): FaqItem {
   }
 }
 
-export function listAllFaqs(locale: Locale): FaqItem[] {
+function listAllFaqs(locale: Locale): FaqItem[] {
   return FAQ_ENTRIES.map((entry) => localizeEntry(entry, locale))
 }
 
@@ -192,15 +192,6 @@ export function listFaqsByCategory(locale: Locale): Array<{
     category,
     items: all.filter((item) => item.category === category).sort((a, b) => a.priority - b.priority),
   })).filter((group) => group.items.length > 0)
-}
-
-export function getFaqById(locale: Locale, id: string): FaqItem | undefined {
-  const entry = FAQ_ENTRIES.find((item) => item.id === id)
-  return entry ? localizeEntry(entry, locale) : undefined
-}
-
-export function getPageFaqProfile(pageKey: PageFaqKey): PageFaqProfile {
-  return PAGE_FAQ_PROFILES[pageKey]
 }
 
 /**
