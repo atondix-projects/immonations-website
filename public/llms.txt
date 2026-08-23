@@ -14,6 +14,7 @@
 - [Städte und Stadtteile](https://www.immonationgmbh.de/de/staedte) · [Cities and districts](https://www.immonationgmbh.de/en/cities)
 - [Bodenrichtwert](https://www.immonationgmbh.de/de/bodenrichtwert) · [Standard land value](https://www.immonationgmbh.de/en/land-value)
 - [Ratgeber und News](https://www.immonationgmbh.de/de/news) · [Guides and news](https://www.immonationgmbh.de/en/news)
+- [Immobilienlexikon A–Z](https://www.immonationgmbh.de/de/lexikon) · [Property glossary A–Z](https://www.immonationgmbh.de/en/glossary)
 - [FAQ](https://www.immonationgmbh.de/de/faq) · [FAQ EN](https://www.immonationgmbh.de/en/faq)
 - [Über Immonation](https://www.immonationgmbh.de/de/ueber) · [About Immonation](https://www.immonationgmbh.de/en/about)
 - [Referenzen](https://www.immonationgmbh.de/de/referenzen) · [References](https://www.immonationgmbh.de/en/references)
@@ -28,8 +29,9 @@
 - Stadtteile: `/de/stadtteil/{stadt}/{stadtteil}` ↔ `/en/district/{city}/{district}`
 - Objekte: `/de/objekt/{slug}` ↔ `/en/property/{slug}`
 - Kundenstimmen: `/de/stimme/{slug}` ↔ `/en/testimonial/{slug}`
+- Referenzgeschichten: `/de/referenzen/{slug}` ↔ `/en/references/{slug}`
 
-`/kundenbereich` ist reserviert und nicht veröffentlicht. `/staging` und `/seo` sind nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.
+`/kundenbereich` ist reserviert und nicht veröffentlicht. `/seo` ist nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.
 
 ## Auszeichnungen
 

@@ -38,9 +38,11 @@ Kaeufer erhalten auf `/de/angebote` beziehungsweise `/en/properties` Zugang zu O
 
 Der Ratgeber-Hub liegt unter `/de/news` beziehungsweise `/en/news`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/faq` beziehungsweise `/en/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit. Das REVIER Magazin ist unter `/de/magazin` beziehungsweise `/en/magazine` frei online lesbar.
 
+Das Immobilienlexikon unter `/de/lexikon` beziehungsweise `/en/glossary` enthaelt 77 servergerenderte Fachbegriffe zu Verkauf, Bewertung, Grundbuch und Finanzierung. Die englischen Eintraege sind fachlich angepasste Erklaerungen. Ein barrierearmer A-bis-Z-Filter veraendert nur die sichtbare Auswahl; alle Begriffe stehen ohne JavaScript in alphabetischer Lesereihenfolge bereit.
+
 ### Referenzen und Kundenstimmen
 
-Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Veroeffentlicht werden nur belegbare Objektarten und Orte; unbestaetigte Vermarktungszahlen oder Verkaufsergebnisse bleiben ausgeschlossen. Der Bereich enthaelt ausserdem den Einstieg zur virtuellen Besichtigung und drei Plaetze fuer freigegebene Kundeninterviews.
+Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Jede Karte fuehrt zu einer bilingualen Geschichte unter `/de/referenzen/{slug}` beziehungsweise `/en/references/{slug}` mit Ausgangslage, Vorgehen, freigegebenem Ergebnis und – soweit vorhanden – freigegebener Originalbewertung. Unbestaetigte Anfrage-, Besichtigungs- und Dauerkennzahlen bleiben durch eine zentrale Publikationsfreigabe ausgeblendet.
 
 ### Verkauft-Clips inkl. Ortschaften
 
@@ -92,6 +94,4 @@ Fuer Eigentuemer heisst das: Wer in Nuernberg, Fuerth, Erlangen oder Zirndorf ve
 - Web: https://www.immonationgmbh.de
 - Buero: Immonation GmbH, Nuernberger Strasse 18, 90513 Zirndorf
 - Oeffnungszeiten: Montag bis Freitag 9:00-18:00 Uhr, Samstag 10:30-14:00 Uhr, Sonntag geschlossen. Termine ausserhalb der Oeffnungszeiten nach vorheriger Absprache.
-- Anfahrt mit dem Auto: aus Nuernberg 20-25 Minuten, aus Fuerth 10-15 Minuten, aus Erlangen rund 30 Minuten, aus Forchheim rund 40 Minuten.
-- Anfahrt mit Bus und Bahn: RB11 "Rangaubahn" ab Fuerth Hauptbahnhof nach Zirndorf in rund 10 Minuten, stuendlicher Takt im VGN-Netz. Der Bahnhof Zirndorf ist barrierefrei.
-- Anfahrt mit dem Fahrrad: aus Fuerth rund 7 km, aus Nuernberg rund 15 km ueber Stein und Oberasbach. Die Rangaubahn nimmt Fahrraeder mit.
+- Anfahrt: Aktuelle Routen, Parkmoeglichkeiten, Verbindungen und konkrete Zugaenglichkeit vor dem Besuch pruefen oder persoenlich mit dem Buero abstimmen. Die Website macht dazu keine unbestaetigten Reisezeit- oder Barrierefreiheitsversprechen.

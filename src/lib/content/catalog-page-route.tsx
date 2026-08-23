@@ -19,7 +19,11 @@ function getPageData(id: CatalogPageId, locale: Locale) {
 }
 
 export function createCatalogMetadata(id: CatalogPageId) {
-  return async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  return async function generateMetadata({
+    params,
+  }: {
+    params: Promise<{ locale: string }>
+  }): Promise<Metadata> {
     const { locale } = await params
     if (!hasLocale(routing.locales, locale)) notFound()
     const { content, routeRecord } = getPageData(id, locale)
@@ -45,26 +49,44 @@ export function createCatalogPage(id: CatalogPageId) {
 
     return (
       <>
-        <JsonLd data={[
-          breadcrumbList([
-            { name: locale === 'de' ? 'Start' : 'Home', url: `${SITE.url}/${locale}` },
-            { name: content.title, url: pageUrl },
-          ]),
-          service({ locale, url: pageUrl, name: content.title, description: content.description, areaServed: 'Metropolregion Nürnberg' }),
-          faqPage(content.faq),
-        ]} />
+        <JsonLd
+          data={[
+            breadcrumbList([
+              { name: locale === 'de' ? 'Start' : 'Home', url: `${SITE.url}/${locale}` },
+              { name: content.title, url: pageUrl },
+            ]),
+            service({
+              locale,
+              url: pageUrl,
+              name: content.title,
+              description: content.description,
+              areaServed: 'Metropolregion Nürnberg',
+            }),
+            faqPage(content.faq),
+          ]}
+        />
         <CatalogPage
           eyebrow={content.eyebrow}
           title={content.title}
           lede={content.lede}
           answer={content.answer}
-          sections={content.sectionTitles.map((title, index) => ({ title, text: content.sectionTexts?.[index] ?? '' }))}
+          sections={content.sectionTitles.map((title, index) => ({
+            title,
+            text: content.sectionTexts?.[index] ?? '',
+            href: content.sectionHrefs?.[index],
+          }))}
           faq={content.faq}
-          preview={content.preview ? <CatalogPreview kind={content.preview} locale={locale} /> : undefined}
-          cta={{ title: content.ctaTitle, text: content.ctaText, label: content.ctaLabel, href: content.ctaHref }}
+          preview={
+            content.preview ? <CatalogPreview kind={content.preview} locale={locale} /> : undefined
+          }
+          cta={{
+            title: content.ctaTitle,
+            text: content.ctaText,
+            label: content.ctaLabel,
+            href: content.ctaHref,
+          }}
         />
       </>
     )
   }
 }
-
