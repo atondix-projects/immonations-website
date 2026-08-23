@@ -18,6 +18,11 @@ export const REFERENCE_MEDIA = {
 
 export type ReferenceId = keyof typeof REFERENCE_MEDIA
 
+export const REFERENCE_IDS = Object.keys(REFERENCE_MEDIA) as ReferenceId[]
+
+// Numeric campaign metrics remain unpublished until content owners reconfirm them.
+export const PUBLISH_REFERENCE_METRICS = false
+
 export type ReferenceItem = {
   id: ReferenceId
   title: string

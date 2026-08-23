@@ -37,6 +37,7 @@ export const PATHNAMES = {
   '/about': { de: '/ueber', en: '/about' },
   '/magazine': { de: '/magazin', en: '/magazine' },
   '/references': { de: '/referenzen', en: '/references' },
+  '/references/[slug]': { de: '/referenzen/[slug]', en: '/references/[slug]' },
   '/sold': { de: '/verkauft', en: '/sold-properties' },
   '/reviews': { de: '/bewertungen', en: '/reviews' },
   '/testimonials': { de: '/kundenstimmen', en: '/testimonials' },
@@ -58,4 +59,3 @@ export const PATHNAMES = {
   '/seo': { de: '/seo', en: '/seo' },
   '/properties/[slug]': { de: '/objekt/[slug]', en: '/property/[slug]' },
 } as const
-
