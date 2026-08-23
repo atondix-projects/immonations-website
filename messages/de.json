@@ -1731,11 +1731,10 @@
       "text": "Ein privater Verkaufsversuch, eine geerbte Immobilie, eine charakterstarke Altbauwohnung und der Wunsch nach einem Rundum-sorglos-Prozess: gute Vermarktung beginnt mit der tatsächlichen Situation des Eigentümers."
     },
     "feedback": {
-      "eyebrow": "Kundenstimmen",
+      "eyebrow": "Kundenstimmen im Video",
       "title": "Drei persönliche Perspektiven auf die Zusammenarbeit",
       "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Ein Gespräch ist bereits verfügbar; zwei weitere Videoplätze sind für freigegebene Beiträge vorbereitet.",
       "comingSoon": "Video folgt",
-      "reviewLabel": "Originale Google-Bewertung",
       "items": [
         {
           "id": "viktor-emter",
@@ -1759,6 +1758,13 @@
           "available": false
         }
       ]
+    },
+    "feedbackReviews": {
+      "eyebrow": "Kundenstimmen als Text",
+      "title": "Dieselben Erfahrungen, schriftlich festgehalten",
+      "text": "Wer lieber liest als schaut, findet hier die Google-Bewertungen derselben Kundinnen und Kunden — unverändert als Screenshot, mit Name und Sternebewertung.",
+      "reviewLabel": "Originale Google-Bewertung",
+      "note": "Die Screenshots sind unbearbeitete Ausschnitte der öffentlichen Google-Profile. Namen und Bewertungstexte stehen so, wie sie dort veröffentlicht wurden."
     },
     "social": {
       "eyebrow": "Social Media",

@@ -1,16 +1,11 @@
 import Image from 'next/image'
 import { Clock3, Play } from 'lucide-react'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import { VideoDialog } from '@/components/site/video-dialog'
-import {
-  testimonialImage,
-  testimonialReview,
-  testimonialVideo,
-  type TestimonialId,
-} from '@/lib/content/testimonials'
+import { testimonialImage, testimonialVideo, type TestimonialId } from '@/lib/content/testimonials'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
-type VideoItem = {
+export type FeedbackVoice = {
   id: TestimonialId
   name: string
   title: string
@@ -18,6 +13,12 @@ type VideoItem = {
   available: boolean
 }
 
+/**
+ * Kundenstimmen im Video. Die schriftlichen Google-Bewertungen derselben
+ * Personen stehen bewusst in einer eigenen Sektion (`feedback-reviews.tsx`):
+ * Video und Screenshot sind zwei verschiedene Belege und wurden in einer
+ * gemeinsamen Karte gegeneinander um Aufmerksamkeit gedrängt.
+ */
 export async function FeedbackVideos({
   /**
    * Anker der Sektion. `customer-stories` belegt denselben Namen; landen beide
@@ -30,9 +31,7 @@ export async function FeedbackVideos({
   const t = await getTranslations('Home.feedback')
   const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
-  const locale = await getLocale()
-  const language = locale === 'en' ? 'en' : 'de'
-  const items = t.raw('items') as VideoItem[]
+  const items = t.raw('items') as FeedbackVoice[]
   const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
@@ -52,7 +51,6 @@ export async function FeedbackVideos({
           {items.map((item) => {
             const poster = testimonialImage(item.id)
             const video = item.available ? testimonialVideo(item.id) : null
-            const review = testimonialReview(item.id)
 
             return (
               <article key={item.id} className="group flex flex-col gap-4">
@@ -97,26 +95,6 @@ export async function FeedbackVideos({
                     <Play aria-hidden="true" className="text-primary mt-1 size-4 shrink-0" />
                   ) : null}
                 </div>
-                {review ? (
-                  <figure className="border-t border-neutral-200 pt-4">
-                    <figcaption className="text-muted-foreground flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-[10px] font-semibold tracking-[0.16em] uppercase">
-                      <span>{t('reviewLabel')}</span>
-                      <span className="tracking-normal normal-case">
-                        {item.name} · {review.rating}/5
-                      </span>
-                    </figcaption>
-                    <div className="mt-3 h-44 overflow-hidden bg-white sm:h-52">
-                      <Image
-                        src={review.screenshot.src}
-                        alt={review.screenshot.alt[language]}
-                        width={review.screenshot.width}
-                        height={review.screenshot.height}
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="size-full object-contain object-top"
-                      />
-                    </div>
-                  </figure>
-                ) : null}
               </article>
             )
           })}

@@ -19,6 +19,7 @@ import { listSoldVideos } from '@/lib/content/sold-videos'
 import { BellVideoWall } from '@/components/site/sold/bell-video-wall'
 import { listBellVideos } from '@/lib/content/bell-videos'
 import { FeedbackVideos } from '@/components/site/home/feedback-videos'
+import { FeedbackReviews } from '@/components/site/home/feedback-reviews'
 
 export const dynamic = 'force-static'
 
@@ -157,7 +158,10 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
       {/* Verkaufsglocke — gesprochene Ansage nach jedem Abschluss */}
       <BellVideoWall items={listBellVideos()} className="bg-muted border-border border-y" />
 
+      {/* Kundenstimmen getrennt nach Belegtyp: erst die Videos, dann die schriftlichen Bewertungen. */}
       <FeedbackVideos />
+
+      <FeedbackReviews className="bg-muted border-border border-y" />
 
       <CtaBand
         title={t('cta.title')}

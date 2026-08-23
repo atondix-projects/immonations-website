@@ -1733,11 +1733,10 @@
       "text": "A private-sale attempt, an inherited property, a character apartment, and the wish for a fully managed process: strong marketing starts with the owner's real situation."
     },
     "feedback": {
-      "eyebrow": "Client stories",
+      "eyebrow": "Client stories on video",
       "title": "Three personal perspectives on working with us",
       "text": "Clients describe the advice, communication, and sale in their own words. One conversation is available now; two further video slots are prepared for approved contributions.",
       "comingSoon": "Video coming soon",
-      "reviewLabel": "Original Google review",
       "items": [
         {
           "id": "viktor-emter",
@@ -1761,6 +1760,13 @@
           "available": false
         }
       ]
+    },
+    "feedbackReviews": {
+      "eyebrow": "Client stories in writing",
+      "title": "The same experiences, written down",
+      "text": "If you would rather read than watch, here are the Google reviews from the same clients — unedited screenshots, with name and star rating.",
+      "reviewLabel": "Original Google review",
+      "note": "The screenshots are unedited excerpts from the public Google profiles. Names and review texts appear exactly as published there."
     },
     "social": {
       "eyebrow": "Social media",
