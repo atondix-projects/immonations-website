@@ -25,7 +25,7 @@ const UMLAUTS: Record<string, string> = {
 }
 
 /** Deterministic, ASCII-only, German-aware slug. */
-export function slugify(input: string): string {
+function slugify(input: string): string {
   return (
     input
       .normalize('NFC') // so the umlaut map below sees composed characters
@@ -44,7 +44,7 @@ export function slugify(input: string): string {
  * Slug factory with collision suffixes (`intro`, `intro-1`, …). One instance
  * per document — never share it across posts.
  */
-export function createSlugger(): (input: string) => string {
+function createSlugger(): (input: string) => string {
   const seen = new Map<string, number>()
 
   return (input: string) => {

@@ -235,7 +235,7 @@
         "commercial or practice succession",
         "vacancy or double carrying cost"
       ],
-      "current_evidence": ["docs/site-structure.md", "docs/source-material/publishing-backlog.md"],
+      "current_evidence": ["docs/site-structure.md", "TODO.md"],
       "notes": "The cluster is planned only. Existing guidance prioritizes inheritance, renovation backlog, tenanted property, and separation rather than launching 12 thin pages at once.",
       "next_action": "Validate search intent and evidence for the first four pages; use non-exploitative language and legal review.",
       "publication_gates": [

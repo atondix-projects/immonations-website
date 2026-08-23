@@ -23,11 +23,14 @@ export function LocaleSwitcher({ light = false }: { light?: boolean }) {
       onClick={() => {
         const currentLocale = locale as CatalogLocale
         const targetLocale = target as CatalogLocale
-        const publicPath = window.location.pathname.replace(new RegExp(`^/${currentLocale}(?=/|$)`), '') || '/'
+        const publicPath =
+          window.location.pathname.replace(new RegExp(`^/${currentLocale}(?=/|$)`), '') || '/'
         const catalogRoute = getRouteByPath(currentLocale, publicPath)
 
         if (catalogRoute) {
-          window.location.assign(`/${targetLocale}${catalogRoute.paths[targetLocale]}`.replace(/\/$/, ''))
+          window.location.assign(
+            `/${targetLocale}${catalogRoute.paths[targetLocale]}`.replace(/\/$/, ''),
+          )
           return
         }
 

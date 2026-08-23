@@ -1,4 +1,4 @@
-export const REFERENCE_MEDIA = {
+const REFERENCE_MEDIA = {
   'deining-neubauwohnung': '/images/references/deining-neubauwohnung.webp',
   'erlangen-eigentumswohnung': '/images/references/erlangen-eigentumswohnung.webp',
   'forchheim-eigentumswohnung': '/images/references/forchheim-eigentumswohnung.webp',
@@ -18,6 +18,11 @@ export const REFERENCE_MEDIA = {
 
 export type ReferenceId = keyof typeof REFERENCE_MEDIA
 
+export const REFERENCE_IDS = Object.keys(REFERENCE_MEDIA) as ReferenceId[]
+
+// Numeric campaign metrics remain unpublished until content owners reconfirm them.
+export const PUBLISH_REFERENCE_METRICS = false
+
 export type ReferenceItem = {
   id: ReferenceId
   title: string
@@ -26,7 +31,7 @@ export type ReferenceItem = {
   alt: string
 }
 
-export type ReferenceDetail = {
+type ReferenceDetail = {
   id: ReferenceId
   requests: string
   viewings: string
@@ -48,13 +53,7 @@ export type ReferenceDetail = {
   }
 }
 
-export const FEATURED_REVIEW_IDS = [
-  'deining-neubauwohnung',
-  'fuerth-mehrfamilienhaus',
-  'langenzenn-terrassenwohnung',
-] as const satisfies readonly ReferenceId[]
-
-export const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
+const REFERENCE_DETAILS: Record<ReferenceId, ReferenceDetail> = {
   'deining-neubauwohnung': {
     id: 'deining-neubauwohnung',
     requests: '32',

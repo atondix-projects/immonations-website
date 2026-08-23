@@ -27,6 +27,9 @@ See [`CLAUDE.md`](./CLAUDE.md) for the directory map and the full authoring play
 
 For AI agents: [`AGENTS.md`](./AGENTS.md) is the entry point and imports `CLAUDE.md`.
 
+All verified outstanding work is tracked in [`TODO.md`](./TODO.md). Historical plans, goal
+logs, and completed checklists are intentionally not kept in the active tree.
+
 ## Environment
 
 Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_SITE_URL` to your real domain in production.

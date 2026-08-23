@@ -14,7 +14,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - TypeScript (strict + `noUncheckedIndexedAccess`)
 - **Tailwind CSS v4** (CSS-first config — tokens in `@theme` inside `src/app/globals.css`; no `tailwind.config.ts`)
 - shadcn/ui (Neutral base, Base UI primitives) + Magic UI (motion + visual flair, same registry)
-- next-intl v4 for bilingual routing (`/de`, `/en`) + localized pathnames (`/leistungen` ↔ `/services`)
+- next-intl v4 for bilingual routing (`/de`, `/en`) + localized pathnames (`/immobilie-verkaufen` ↔ `/sell-property`)
 - `next-mdx-remote` for blog content under `content/blog/{locale}/*.mdx`
 - pnpm
 
@@ -73,18 +73,19 @@ src/i18n/                routing.ts (locales + pathnames), navigation.ts, reques
 src/components/ui/       shadcn + Magic UI (generated)
 src/components/site/     Project components
 src/lib/seo/             site, metadata, jsonld, routes
-src/lib/content/         blog (MDX), services (typed records)
-src/content/services/    Per-locale typed service records
+src/lib/content/         Typed content registries and MDX readers
+src/content/             FAQ, glossary, navigation, and catalog records
 messages/                Translation JSON
 content/blog/{de,en}/    MDX posts
 public/llms.txt          AEO entry point
+TODO.md                  Canonical list of verified outstanding work
 ```
 
 ## Never
 
 - ❌ Write CSS Modules, styled-components, emotion, or any runtime CSS-in-JS.
 - ❌ Create a `tailwind.config.ts` — this project uses Tailwind v4 CSS-first config.
-- ❌ Create `[locale]/leistungen/` and `[locale]/services/` as separate folders. Use one canonical route + `routing.pathnames`.
+- ❌ Create separate locale-specific route folders. Use one canonical route + `routing.pathnames`.
 - ❌ Use `middleware.ts` — Next.js 16 renamed the convention to `proxy.ts`.
 - ❌ Render JSON-LD via `<script>` without escaping `<` to `<` (use the `JsonLd` component).
 - ❌ Hardcode locale strings in JSX — use `useTranslations` / `getTranslations` from `next-intl`.

@@ -95,8 +95,7 @@ Umgesetzt mit `next/font`: **Source Serif 4** (`--font-serif`, `font-serif`) und
 - Objektseiten und Referenzen brauchen strukturierte Fakten, Medien, Lagekontext und Ergebnisstory.
 - Ratgeberseiten sind ruhig und editorial, nicht wie Landingpages.
 
-## Offene Design-Abhängigkeiten
+## Offene Arbeit
 
-- Lokales Logo-/CI-Paket aus dem Attachment im Repository ablegen.
-- Entscheidung, ob die neue Website echte Immobilienbilder direkt aus OnOffice beziehen soll.
-- Entscheidung, ob der Hero mit realem Foto/Video, generiertem Markenbild oder interaktiver Vermarktungsszene startet.
+Verbleibende Design-, Content- und Produktionsaufgaben werden ausschließlich in
+[`TODO.md`](./TODO.md) gepflegt.

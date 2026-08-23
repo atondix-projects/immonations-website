@@ -80,6 +80,50 @@ export function itemList(
   }
 }
 
+export function definedTermSet(input: {
+  locale: string
+  url: string
+  name: string
+  description: string
+  terms: Array<{ name: string; description: string }>
+}): Thing {
+  return {
+    ...ctx,
+    '@type': 'DefinedTermSet',
+    '@id': `${input.url}#glossary`,
+    url: input.url,
+    name: input.name,
+    description: input.description,
+    inLanguage: input.locale,
+    hasDefinedTerm: input.terms.map((term) => ({
+      '@type': 'DefinedTerm',
+      name: term.name,
+      description: term.description,
+      inDefinedTermSet: `${input.url}#glossary`,
+    })),
+  }
+}
+
+export function creativeWork(input: {
+  locale: string
+  url: string
+  name: string
+  description: string
+  image?: string
+}): Thing {
+  return {
+    ...ctx,
+    '@type': 'CreativeWork',
+    '@id': input.url,
+    url: input.url,
+    name: input.name,
+    description: input.description,
+    image: input.image,
+    inLanguage: input.locale,
+    publisher: { '@id': `${SITE.url}/#organization` },
+  }
+}
+
 export function faqPage(qa: Array<{ question: string; answer: string }>): Thing {
   return {
     ...ctx,
@@ -88,30 +132,6 @@ export function faqPage(qa: Array<{ question: string; answer: string }>): Thing 
       '@type': 'Question',
       name: entry.question,
       acceptedAnswer: { '@type': 'Answer', text: entry.answer },
-    })),
-  }
-}
-
-export function howTo(input: {
-  locale: string
-  url: string
-  name: string
-  description: string
-  steps: Array<{ name: string; text: string; url?: string }>
-}): Thing {
-  return {
-    ...ctx,
-    '@type': 'HowTo',
-    inLanguage: input.locale,
-    name: input.name,
-    description: input.description,
-    mainEntityOfPage: input.url,
-    step: input.steps.map((step, index) => ({
-      '@type': 'HowToStep',
-      position: index + 1,
-      name: step.name,
-      text: step.text,
-      url: step.url,
     })),
   }
 }

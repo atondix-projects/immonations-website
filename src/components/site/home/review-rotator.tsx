@@ -78,7 +78,7 @@ function ReviewImageDialog({
         }}
         aria-haspopup="dialog"
         aria-label={labels.expand}
-        className="group relative block size-full cursor-zoom-in bg-white focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-700 focus-visible:outline-none"
+        className="group focus-visible:ring-brand-700 relative block size-full cursor-zoom-in bg-white focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
       >
         <Image
           src={screenshot.src}
@@ -194,11 +194,13 @@ export function ReviewRotator({ screenshots, labels }: ReviewRotatorProps) {
                 : 'pointer-events-none translate-y-3 opacity-0',
             )}
           >
-            <div className="grid h-full min-h-0 overflow-hidden border border-neutral-200 bg-background lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
+            <div className="bg-background grid h-full min-h-0 overflow-hidden border border-neutral-200 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
               <figure className="grid min-h-[360px] grid-rows-[auto_1fr] overflow-hidden border-b border-neutral-200 p-4 sm:min-h-[440px] sm:p-6 lg:min-h-[620px] lg:border-r lg:border-b-0 lg:p-8">
                 <figcaption className="text-muted-foreground flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-[10px] font-semibold tracking-[0.16em] uppercase">
                   <span>{screenshot.alt}</span>
-                  <span className="tracking-normal normal-case">Google · {screenshot.rating}/5</span>
+                  <span className="tracking-normal normal-case">
+                    Google · {screenshot.rating}/5
+                  </span>
                 </figcaption>
                 <div className="mt-3 h-[300px] overflow-hidden bg-white sm:h-[380px] lg:h-[520px]">
                   <ReviewImageDialog screenshot={screenshot} labels={labels} />
@@ -226,10 +228,15 @@ export function ReviewRotator({ screenshots, labels }: ReviewRotatorProps) {
                         {screenshot.story.name}
                       </h3>
                       {screenshot.story.result ? (
-                        <p className="text-muted-foreground mt-1 text-sm">{screenshot.story.result}</p>
+                        <p className="text-muted-foreground mt-1 text-sm">
+                          {screenshot.story.result}
+                        </p>
                       ) : null}
                     </div>
-                    <div className="text-brand-700 flex gap-0.5" aria-label={`${screenshot.rating}/5`}>
+                    <div
+                      className="text-brand-700 flex gap-0.5"
+                      aria-label={`${screenshot.rating}/5`}
+                    >
                       {Array.from({ length: screenshot.rating }, (_, star) => (
                         <span key={star} aria-hidden="true">
                           ★

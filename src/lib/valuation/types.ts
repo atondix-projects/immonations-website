@@ -23,21 +23,11 @@ export const WIZARD_STEP_IDS = ['type', 'location', 'core', 'details', 'contact'
 
 export type WizardStepId = (typeof WIZARD_STEP_IDS)[number]
 
-export const WIZARD_STEP_COUNT = WIZARD_STEP_IDS.length
-
-export type FieldKind =
-  | 'number'
-  | 'text'
-  | 'choice'
-  | 'boolean'
-  | 'multi'
-  | 'checkbox'
-  | 'email'
-  | 'tel'
-  | 'postcode'
+type FieldKind =
+  'number' | 'text' | 'choice' | 'boolean' | 'multi' | 'checkbox' | 'email' | 'tel' | 'postcode'
 
 /** Einheit hinter einem Zahlenfeld — rein fuer die Darstellung. */
-export type FieldUnit = 'sqm' | 'eur' | 'eurPerMonth' | 'eurPerYear' | 'year' | 'metre' | 'count'
+type FieldUnit = 'sqm' | 'eur' | 'eurPerMonth' | 'eurPerYear' | 'year' | 'metre' | 'count'
 
 export type AnswerValue = string | readonly string[]
 
@@ -81,9 +71,4 @@ export function numberAnswer(answers: Answers, id: string): number | null {
   if (raw === '') return null
   const parsed = Number(raw)
   return Number.isFinite(parsed) ? parsed : null
-}
-
-/** Ja/Nein-Felder speichern `'yes'` bzw. `'no'`. */
-export function isYes(answers: Answers, id: string): boolean {
-  return textAnswer(answers, id) === 'yes'
 }

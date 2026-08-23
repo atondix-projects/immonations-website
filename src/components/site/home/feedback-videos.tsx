@@ -101,7 +101,9 @@ export async function FeedbackVideos({
                   <figure className="border-t border-neutral-200 pt-4">
                     <figcaption className="text-muted-foreground flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-[10px] font-semibold tracking-[0.16em] uppercase">
                       <span>{t('reviewLabel')}</span>
-                      <span className="tracking-normal normal-case">{item.name} · {review.rating}/5</span>
+                      <span className="tracking-normal normal-case">
+                        {item.name} · {review.rating}/5
+                      </span>
                     </figcaption>
                     <div className="mt-3 h-44 overflow-hidden bg-white sm:h-52">
                       <Image

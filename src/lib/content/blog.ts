@@ -5,12 +5,12 @@ import matter from 'gray-matter'
 
 type LocaleKey = (typeof routing.locales)[number]
 
-export type PostFaq = {
+type PostFaq = {
   question: string
   answer: string
 }
 
-export type PostFrontmatter = {
+type PostFrontmatter = {
   title: string
   description: string
   date: string

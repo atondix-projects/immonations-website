@@ -29,5 +29,3 @@ export const SITE = {
     addressCountry: 'DE',
   },
 } as const
-
-export type SiteConfig = typeof SITE

@@ -1,10 +1,11 @@
 import { PATHNAMES } from '@/i18n/pathnames'
+import { REFERENCE_IDS } from '@/lib/content/references'
 
 export type CatalogLocale = 'de' | 'en'
-export type RoutePhase = 1 | 2 | 3 | 4
-export type RouteStatus = 'published' | 'noindex' | 'phased' | 'reserved'
-export type IndexingState = 'index' | 'noindex' | 'excluded'
-export type ContentStatus = 'substantive' | 'draft' | 'reserved'
+type RoutePhase = 1 | 2 | 3 | 4
+type RouteStatus = 'published' | 'noindex' | 'phased' | 'reserved'
+type IndexingState = 'index' | 'noindex' | 'excluded'
+type ContentStatus = 'substantive' | 'draft' | 'reserved'
 
 export type RouteRecord = {
   id: string
@@ -62,7 +63,7 @@ const STATIC_ROUTES: StaticRouteDefinition[] = [
   route('privacy', '/privacy', 1, 'published', 0.3, 'yearly'),
   route('terms', '/terms', 1, 'published', 0.3, 'yearly'),
   route('directions', '/directions', 4, 'published', 0.4, 'yearly'),
-  route('staging', '/staging', 4, 'noindex', 0, 'yearly'),
+  route('staging', '/staging', 4, 'published', 0.5, 'monthly'),
   route('video', '/video', 4, 'published', 0.5, 'monthly'),
   route('social', '/social', 4, 'published', 0.4, 'monthly'),
   route('html-sitemap', '/html-sitemap', 4, 'published', 0.3, 'monthly'),
@@ -95,32 +96,116 @@ const CITIES = ['nuernberg', 'fuerth', 'erlangen', 'zirndorf', 'schwabach'] as c
 
 export const DISTRICTS = {
   nuernberg: [
-    'almoshof', 'altenfurt', 'baerenschanze', 'boxdorf', 'brunn', 'buch', 'buchenbuehl',
-    'dutzendteich', 'eberhardshof', 'eibach', 'erlenstegen', 'fischbach', 'galgenhof',
-    'gartenstadt', 'gebersdorf', 'gibitzenhof', 'gleisshammer', 'gostenhof',
-    'grossgruendlach', 'hasenbuck', 'hoefen', 'hohe-marter', 'katzwang', 'kornburg',
-    'kraftshof', 'langwasser', 'laufamholz', 'leyh', 'maiach', 'marienvorstadt', 'maxfeld',
-    'moegeldorf', 'neunhof', 'reichelsdorf', 'rennweg', 'roethenbach', 'sandreuth',
-    'schafhof', 'schniegling', 'schoppershof', 'st-jobst', 'st-johannis', 'st-peter',
-    'st-sebald', 'steinbuehl', 'suendersbuehl', 'tafelhof', 'thon', 'tullnau', 'veilhof',
-    'werderau', 'wetzendorf', 'woehrd', 'worzeldorf', 'zabo', 'zerzabelshof', 'ziegelstein',
-    'zollhaus', 'suedstadt', 'kettlersiedlung',
+    'almoshof',
+    'altenfurt',
+    'baerenschanze',
+    'boxdorf',
+    'brunn',
+    'buch',
+    'buchenbuehl',
+    'dutzendteich',
+    'eberhardshof',
+    'eibach',
+    'erlenstegen',
+    'fischbach',
+    'galgenhof',
+    'gartenstadt',
+    'gebersdorf',
+    'gibitzenhof',
+    'gleisshammer',
+    'gostenhof',
+    'grossgruendlach',
+    'hasenbuck',
+    'hoefen',
+    'hohe-marter',
+    'katzwang',
+    'kornburg',
+    'kraftshof',
+    'langwasser',
+    'laufamholz',
+    'leyh',
+    'maiach',
+    'marienvorstadt',
+    'maxfeld',
+    'moegeldorf',
+    'neunhof',
+    'reichelsdorf',
+    'rennweg',
+    'roethenbach',
+    'sandreuth',
+    'schafhof',
+    'schniegling',
+    'schoppershof',
+    'st-jobst',
+    'st-johannis',
+    'st-peter',
+    'st-sebald',
+    'steinbuehl',
+    'suendersbuehl',
+    'tafelhof',
+    'thon',
+    'tullnau',
+    'veilhof',
+    'werderau',
+    'wetzendorf',
+    'woehrd',
+    'worzeldorf',
+    'zabo',
+    'zerzabelshof',
+    'ziegelstein',
+    'zollhaus',
+    'suedstadt',
+    'kettlersiedlung',
   ],
   fuerth: [
-    'altstadt', 'innenstadt', 'suedstadt', 'dambach', 'burgfarrnbach', 'poppenreuth',
-    'ronhof', 'stadeln', 'vach', 'unterfarrnbach', 'oberfuerberg', 'hardhoehe', 'espan',
-    'sack', 'atzenhof',
+    'altstadt',
+    'innenstadt',
+    'suedstadt',
+    'dambach',
+    'burgfarrnbach',
+    'poppenreuth',
+    'ronhof',
+    'stadeln',
+    'vach',
+    'unterfarrnbach',
+    'oberfuerberg',
+    'hardhoehe',
+    'espan',
+    'sack',
+    'atzenhof',
   ],
   erlangen: [
-    'innenstadt', 'roethelheimpark', 'alterlangen', 'sieglitzhof', 'bruck', 'buechenbach',
-    'frauenaurach', 'tennenlohe', 'eltersdorf', 'dechsendorf', 'kosbach', 'anger', 'burgberg',
+    'innenstadt',
+    'roethelheimpark',
+    'alterlangen',
+    'sieglitzhof',
+    'bruck',
+    'buechenbach',
+    'frauenaurach',
+    'tennenlohe',
+    'eltersdorf',
+    'dechsendorf',
+    'kosbach',
+    'anger',
+    'burgberg',
   ],
   zirndorf: [
-    'zirndorf-stadt', 'weiherhof', 'bronnamberg', 'wintersdorf', 'leichendorf', 'anwanden',
-    'banderbach', 'lind',
+    'zirndorf-stadt',
+    'weiherhof',
+    'bronnamberg',
+    'wintersdorf',
+    'leichendorf',
+    'anwanden',
+    'banderbach',
+    'lind',
   ],
   schwabach: [
-    'altstadt', 'limbach', 'wolkersdorf', 'penzendorf', 'unterreichenbach', 'dietersdorf',
+    'altstadt',
+    'limbach',
+    'wolkersdorf',
+    'penzendorf',
+    'unterreichenbach',
+    'dietersdorf',
     'forsthof',
   ],
 } as const
@@ -164,7 +249,10 @@ function dynamicRoute(
 ): RouteRecord {
   const pathFor = (locale: CatalogLocale) => {
     const values = { ...replacements, ...localizedReplacements[locale] }
-    return localizedTemplate(internal, locale).replace(/\[([^\]]+)\]/g, (_, key: string) => values[key] ?? '')
+    return localizedTemplate(internal, locale).replace(
+      /\[([^\]]+)\]/g,
+      (_, key: string) => values[key] ?? '',
+    )
   }
 
   return {
@@ -174,7 +262,8 @@ function dynamicRoute(
     phase,
     status,
     indexing: status === 'published' ? 'index' : status === 'reserved' ? 'excluded' : 'noindex',
-    contentStatus: status === 'phased' ? 'draft' : status === 'reserved' ? 'reserved' : 'substantive',
+    contentStatus:
+      status === 'phased' ? 'draft' : status === 'reserved' ? 'reserved' : 'substantive',
     priority,
     changefreq: 'monthly',
   }
@@ -183,8 +272,18 @@ function dynamicRoute(
 function staticRecord(definition: StaticRouteDefinition): RouteRecord {
   return {
     ...definition,
-    indexing: definition.status === 'published' ? 'index' : definition.status === 'noindex' ? 'noindex' : 'excluded',
-    contentStatus: definition.status === 'reserved' ? 'reserved' : definition.status === 'phased' ? 'draft' : 'substantive',
+    indexing:
+      definition.status === 'published'
+        ? 'index'
+        : definition.status === 'noindex'
+          ? 'noindex'
+          : 'excluded',
+    contentStatus:
+      definition.status === 'reserved'
+        ? 'reserved'
+        : definition.status === 'phased'
+          ? 'draft'
+          : 'substantive',
     paths: {
       de: localizedTemplate(definition.internal, 'de'),
       en: localizedTemplate(definition.internal, 'en'),
@@ -197,14 +296,29 @@ const DYNAMIC_ROUTES: RouteRecord[] = [
     dynamicRoute(`property-type:${de}`, '/sell/[slug]', { slug: de }, { en: { slug: en } }, 1, 0.8),
   ),
   ...SITUATIONS.map(([de, en]) =>
-    dynamicRoute(`situation:${de}`, '/situations/[slug]', { slug: de }, { en: { slug: en } }, 2, 0.8),
+    dynamicRoute(
+      `situation:${de}`,
+      '/situations/[slug]',
+      { slug: de },
+      { en: { slug: en } },
+      2,
+      0.8,
+    ),
   ),
   ...CITIES.map((city) =>
     dynamicRoute(`city:${city}`, '/locations/[slug]', { slug: city }, {}, 3, 0.8),
   ),
   ...Object.entries(DISTRICTS).flatMap(([city, districts]) =>
     districts.map((slug) =>
-      dynamicRoute(`district:${city}:${slug}`, '/districts/[city]/[slug]', { city, slug }, {}, 3, 0.7, 'phased'),
+      dynamicRoute(
+        `district:${city}:${slug}`,
+        '/districts/[city]/[slug]',
+        { city, slug },
+        {},
+        3,
+        0.7,
+        'phased',
+      ),
     ),
   ),
   ...PROPERTIES.map((slug) =>
@@ -212,6 +326,9 @@ const DYNAMIC_ROUTES: RouteRecord[] = [
   ),
   ...TESTIMONIALS.map((slug) =>
     dynamicRoute(`testimonial:${slug}`, '/testimonials/[slug]', { slug }, {}, 4, 0.6),
+  ),
+  ...REFERENCE_IDS.map((slug) =>
+    dynamicRoute(`reference:${slug}`, '/references/[slug]', { slug }, {}, 1, 0.7),
   ),
 ]
 
@@ -229,9 +346,7 @@ export function getRouteByPath(locale: CatalogLocale, path: string) {
 }
 
 export function listIndexableRoutes() {
-  return ROUTE_CATALOG.filter((routeRecord) => routeRecord.status === 'published' && routeRecord.indexing === 'index')
-}
-
-export function getLocalizedPath(id: string, locale: CatalogLocale) {
-  return getRouteById(id)?.paths[locale]
+  return ROUTE_CATALOG.filter(
+    (routeRecord) => routeRecord.status === 'published' && routeRecord.indexing === 'index',
+  )
 }

@@ -10,6 +10,7 @@ type LinkHref = ComponentProps<typeof Link>['href']
 export type CatalogSection = {
   title: string
   text: string
+  href?: LinkHref
 }
 
 export function CatalogPage({
@@ -44,12 +45,24 @@ export function CatalogPage({
         <div className="mx-auto grid w-full max-w-[1240px] gap-px bg-neutral-900/10 px-6 md:grid-cols-3 lg:px-10">
           {sections.map((section, index) => (
             <article key={section.title} className="bg-background p-7 md:p-9">
-              <span className="text-brand-700 font-mono text-xs tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-              <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold">{section.title}</h2>
-              <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">{section.text}</p>
-              <Link href={cta.href} className="text-brand-700 mt-7 inline-flex items-center gap-2 text-sm font-semibold">
-                {cta.label}<ArrowUpRight className="size-4" aria-hidden="true" />
-              </Link>
+              <span className="text-brand-700 font-mono text-xs tabular-nums">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold">
+                {section.title}
+              </h2>
+              <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">
+                {section.text}
+              </p>
+              {section.href ? (
+                <Link
+                  href={section.href}
+                  className="text-brand-700 mt-7 inline-flex items-center gap-2 text-sm font-semibold"
+                >
+                  {section.title}
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                </Link>
+              ) : null}
             </article>
           ))}
         </div>
@@ -59,4 +72,3 @@ export function CatalogPage({
     </div>
   )
 }
-

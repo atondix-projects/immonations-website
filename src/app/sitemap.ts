@@ -76,10 +76,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   )
 
   const seen = new Set<string>()
-  return [
-    ...catalogEntries,
-    ...postEntries.filter((entry) => entry !== null),
-  ].filter((entry) => {
+  return [...catalogEntries, ...postEntries.filter((entry) => entry !== null)].filter((entry) => {
     if (seen.has(entry.url)) return false
     seen.add(entry.url)
     return true

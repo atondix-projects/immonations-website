@@ -32,8 +32,6 @@ export const OPTION_SETS = {
 
 export type OptionSetId = keyof typeof OPTION_SETS
 
-export const OPTION_SET_IDS = Object.keys(OPTION_SETS) as readonly OptionSetId[]
-
 /** Optionen eines Sets — immer definiert, daher ohne Fallback nutzbar. */
 export function optionsOf(setId: OptionSetId): readonly string[] {
   return OPTION_SETS[setId]

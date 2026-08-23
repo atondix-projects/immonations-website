@@ -1,4 +1,5 @@
 import type { NavigationHref } from './navigation'
+import { SAFE_CATALOG_OVERRIDES } from './safe-catalog-pages'
 
 export type CatalogPageId =
   | 'selling-situations'
@@ -25,14 +26,15 @@ export type CatalogPageId =
   | 'html-sitemap'
   | 'seo'
 
-type LocalizedPage = {
+export type LocalizedPage = {
   eyebrow: string
   title: string
   description: string
   lede: string
   answer: string
-  sectionTitles: [string, string, string]
-  sectionTexts?: [string, string, string]
+  sectionTitles: string[]
+  sectionTexts?: string[]
+  sectionHrefs?: NavigationHref[]
   faq: Array<{ question: string; answer: string }>
   ctaTitle: string
   ctaText: string
@@ -45,7 +47,7 @@ export type CatalogPageContent = LocalizedPage & {
   ctaHref: NavigationHref
 }
 
-type PageDefinition = {
+export type PageDefinition = {
   de: LocalizedPage
   en: LocalizedPage
   preview?: CatalogPageContent['preview']
@@ -358,18 +360,19 @@ function localizedPage(
 }
 
 export function getCatalogPage(id: CatalogPageId, locale: 'de' | 'en'): CatalogPageContent {
-  const definition = DEFINITIONS[id]
+  const definition = SAFE_CATALOG_OVERRIDES[id] ?? DEFINITIONS[id]
   const localized = definition[locale]
   const fallbackTexts = localized.sectionTitles.map((sectionTitle) =>
     locale === 'de'
       ? `${sectionTitle} ist Teil eines klaren, dokumentierten Vorgehens. Immonation verbindet lokale Erfahrung, vollständige Unterlagen und persönliche Begleitung bis zur nächsten belastbaren Entscheidung.`
       : `${sectionTitle} is part of a clear, documented approach. Immonation combines local experience, complete documents, and personal guidance through to the next reliable decision.`,
-  ) as [string, string, string]
+  )
 
   return {
     id,
     ...localized,
     sectionTexts: localized.sectionTexts ?? fallbackTexts,
+    sectionHrefs: localized.sectionHrefs,
     preview: definition.preview,
     ctaHref: definition.ctaHref ?? '/property-valuation',
   }

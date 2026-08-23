@@ -31,7 +31,7 @@ function isEmpty(field: FieldDescriptor, answers: Answers): boolean {
  * Prüft ein einzelnes Feld. `currentYear` ist injizierbar, damit Tests nicht
  * von der Systemzeit abhängen.
  */
-export function validateField(
+function validateField(
   field: FieldDescriptor,
   answers: Answers,
   currentYear: number = new Date().getFullYear(),
