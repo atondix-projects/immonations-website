@@ -43,7 +43,7 @@ export type LocalizedPage = {
 
 export type CatalogPageContent = LocalizedPage & {
   id: CatalogPageId
-  preview?: 'atlas' | 'assistant' | 'appointment'
+  preview?: 'assistant' | 'appointment'
   ctaHref: NavigationHref
 }
 

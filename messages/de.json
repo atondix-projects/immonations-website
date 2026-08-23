@@ -2113,12 +2113,27 @@
         "cardLink": "Ratgeber öffnen"
       },
       "verified": {
-        "eyebrow": "Nachweisbare Ergebnisse",
+        "eyebrow": "Kein Marketing-Versprechen",
         "title": "Beurkundet, nicht behauptet.",
-        "text": "Verkaufserfolg ist für uns keine Werbebehauptung. Wir dokumentieren echte Abschlüsse, zeigen die Immobilien dahinter und machen unser Vorgehen nachvollziehbar.",
-        "videoTitle": "Ein echtes Objekt. Der Weg wird sichtbar.",
-        "videoNote": "Das Video begleitet eine reale Immobilienentwicklung vom Grundstück bis zum fertigen Objekt — als konkreter Einblick statt austauschbarem Werbeversprechen.",
+        "text": "Jeder Verkauf, den wir vermitteln, hinterlässt eine notarielle Abschrift des Kaufvertrags. Allein aus 2025 und 2026 füllen sie bei uns drei Ordner – und mit jedem neuen Abschluss kommt eine Seite dazu. Kein Stockfoto, keine geschönte Statistik, sondern eine prüfbare Realität aus der Metropolregion Nürnberg.",
+        "videoTitle": "Drei Ordner, jeder Verkauf notariell beurkundet.",
+        "videoNote": "Im Video: der Nachweis – und das Einheften der jüngsten Abschrift. Aufgenommen in unserem Büro in Zirndorf; Namen der Vertragsparteien, Kaufpreise und Vertragsinhalte bleiben dabei unlesbar.",
         "videoFallback": "Ihr Browser kann dieses Video nicht abspielen.",
+        "stats": [
+          {
+            "value": "3",
+            "label": "Ordner mit notariellen Abschriften"
+          },
+          {
+            "value": "2025 & 2026",
+            "label": "Zeitraum der abgelegten Abschriften"
+          },
+          {
+            "value": "60+",
+            "label": "beurkundete Verkäufe pro Jahr"
+          }
+        ],
+        "cta": "Kostenlose Bewertung anfordern",
         "points": [
           {
             "title": "Notariell dokumentiert",
@@ -2137,7 +2152,7 @@
       "priceAtlas": {
         "eyebrow": "Neu · Preisatlas",
         "title": "Was kostet der m² in Ihrem Stadtteil?",
-        "text": "Der Immobilien-Preisatlas ordnet Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach ein — getrennt nach Objektart und mit dem nötigen Blick auf die Mikrolage.",
+        "text": "Der Immobilien-Preisatlas ordnet Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim ein — getrennt nach Objektart und mit dem nötigen Blick auf die Mikrolage.",
         "link": "Zum Preisatlas",
         "points": [
           {
@@ -2148,7 +2163,13 @@
             "title": "Haus & Wohnung",
             "text": "Preisniveaus werden nach Objektart getrennt betrachtet."
           }
-        ]
+        ],
+        "panel": {
+          "title": "{city} · Eigentumswohnungen",
+          "unit": "€/m²",
+          "note": "Ausschnitt: die teuersten und die günstigsten Lagen auf gemeinsamer Skala. Im Atlas stehen alle {districts} Stadtteile aus {cities} Städten, auch für Häuser.",
+          "link": "Alle Stadtteile ansehen"
+        }
       },
       "marketData": {
         "eyebrow": "Immobilienpreise & Trends",
@@ -3930,7 +3951,7 @@
       "title": "Was Ihre Immobilie im Stadtteil wert ist.",
       "lede": "Quadratmeterpreise für {districts} Stadtteile in {cities} Städten — getrennt nach Eigentumswohnungen und Häusern, mit der tatsächlichen Spanne statt einer einzelnen Zahl."
     },
-    "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
+    "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
     "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
     "jsonLd": {
       "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
@@ -3975,12 +3996,6 @@
         "example": "Beispiel: {area} m² Wohnfläche ergeben in {district} rechnerisch {median} € zum Median — die Spanne reicht von {low} € bis {high} €. Wo eine konkrete Immobilie darin liegt, entscheiden Zustand, Zuschnitt und Ausstattung.",
         "thinDataNote": "Für {district} liegen nur {count} Objekte vor. Die Spanne ist ein Anhaltspunkt, keine belastbare Aussage — für eine Einschätzung sollte hier auf die Stadtebene zurückgegriffen werden.",
         "districtLink": "Stadtteilseite {district} öffnen"
-      },
-      "pending": {
-        "tag": "in Arbeit",
-        "title": "{city}: Stadtteilwerte in Aufbereitung",
-        "text": "Für {city} sind die stadtteilgenauen Quadratmeterpreise noch nicht ausgewertet. Sobald die Auswertung vorliegt, erscheint {city} hier mit denselben Spannen wie die übrigen Städte.",
-        "link": "Standortseite {city} öffnen"
       }
     },
     "method": {
@@ -4026,7 +4041,7 @@
         },
         {
           "question": "Welche Städte enthält der Preisatlas?",
-          "answer": "Erfasst sind Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet."
+          "answer": "Erfasst sind Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim — jeweils getrennt nach Eigentumswohnungen und Häusern."
         }
       ]
     },

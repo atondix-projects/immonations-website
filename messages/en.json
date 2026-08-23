@@ -2115,12 +2115,27 @@
         "cardLink": "Open guide"
       },
       "verified": {
-        "eyebrow": "Verifiable results",
+        "eyebrow": "Not a marketing promise",
         "title": "Notarised, not claimed.",
-        "text": "Sales success is not a marketing claim. We document real completions, show the properties behind them, and make our approach transparent.",
-        "videoTitle": "A real property. The process made visible.",
-        "videoNote": "The video follows a real property development from the plot to the completed building — a concrete insight rather than a generic marketing promise.",
+        "text": "Every sale we broker leaves behind a notarial copy of the purchase contract. From 2025 and 2026 alone they fill three binders in our office — and every completion adds another page. No stock photo, no polished statistic, but a verifiable reality from the Nuremberg metropolitan region.",
+        "videoTitle": "Three binders, every sale notarised.",
+        "videoNote": "In the video: the evidence — and the most recent copy being filed. Recorded at our Zirndorf office; the names of the contracting parties, purchase prices, and contract details stay unreadable.",
         "videoFallback": "Your browser cannot play this video.",
+        "stats": [
+          {
+            "value": "3",
+            "label": "binders of notarial copies"
+          },
+          {
+            "value": "2025 & 2026",
+            "label": "period of the filed copies"
+          },
+          {
+            "value": "60+",
+            "label": "notarised sales per year"
+          }
+        ],
+        "cta": "Request a free valuation",
         "points": [
           {
             "title": "Documented by a notary",
@@ -2139,7 +2154,7 @@
       "priceAtlas": {
         "eyebrow": "New · Price atlas",
         "title": "What does a square metre cost in your district?",
-        "text": "The property price atlas provides district-level context for Nuremberg, Fürth, Erlangen, Zirndorf, and Schwabach — separated by property type and grounded in the micro-location.",
+        "text": "The property price atlas puts districts in Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim into context — split by property type and with the necessary view of the micro-location.",
         "link": "Open the price atlas",
         "points": [
           {
@@ -2150,7 +2165,13 @@
             "title": "Houses & apartments",
             "text": "Price levels are assessed separately by property type."
           }
-        ]
+        ],
+        "panel": {
+          "title": "{city} · apartments",
+          "unit": "€/m²",
+          "note": "A sample: the most and least expensive locations on a shared scale. The atlas holds all {districts} districts across {cities} cities, houses included.",
+          "link": "View all districts"
+        }
       },
       "marketData": {
         "eyebrow": "Property prices & trends",
@@ -3932,7 +3953,7 @@
       "title": "What your property is worth in your district.",
       "lede": "Square-metre prices for {districts} districts across {cities} cities — separated into apartments and houses, showing the actual range instead of a single figure."
     },
-    "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. District-level figures for Schwabach are currently being prepared. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
+    "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
     "note": "All figures are guide values, not a commitment to an achievable sale price. A reliable assessment starts with a review of the specific property.",
     "jsonLd": {
       "cityDescription": "District-level square-metre prices for {city} in the Immonation price atlas."
@@ -3977,12 +3998,6 @@
         "example": "Example: {area} m² of living space in {district} works out at €{median} at the median — the range runs from €{low} to €{high}. Where a specific property sits within it depends on condition, layout, and specification.",
         "thinDataNote": "Only {count} properties are recorded for {district}. The range is an indication, not a reliable statement — for an assessment, use the city-level figures instead.",
         "districtLink": "Open the {district} district page"
-      },
-      "pending": {
-        "tag": "in progress",
-        "title": "{city}: district values in preparation",
-        "text": "District-level square-metre prices for {city} have not been analysed yet. Once the analysis is complete, {city} will appear here with the same ranges as the other cities.",
-        "link": "Open the {city} location page"
       }
     },
     "method": {
@@ -4028,7 +4043,7 @@
         },
         {
           "question": "Which cities does the price atlas cover?",
-          "answer": "It covers districts in Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim. District-level figures for Schwabach are currently being prepared."
+          "answer": "It covers districts in Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim, each split into apartments and houses."
         }
       ]
     },

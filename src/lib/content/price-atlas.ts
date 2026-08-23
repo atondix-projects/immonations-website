@@ -14,8 +14,7 @@ export type PriceAtlasRow = readonly [string, string, number, number, number, nu
 
 export type PriceAtlasCategory = 'apartment' | 'house'
 
-export type PriceAtlasCityId =
-  'nuernberg' | 'fuerth' | 'erlangen' | 'zirndorf' | 'forchheim' | 'schwabach'
+export type PriceAtlasCityId = 'nuernberg' | 'fuerth' | 'erlangen' | 'zirndorf' | 'forchheim'
 
 export const PRICE_ATLAS_CITIES: readonly PriceAtlasCityId[] = [
   'nuernberg',
@@ -23,7 +22,6 @@ export const PRICE_ATLAS_CITIES: readonly PriceAtlasCityId[] = [
   'erlangen',
   'zirndorf',
   'forchheim',
-  'schwabach',
 ]
 
 export const PRICE_ATLAS_CATEGORIES: readonly PriceAtlasCategory[] = ['apartment', 'house']
@@ -34,7 +32,6 @@ export const CITY_NAMES: Record<PriceAtlasCityId, string> = {
   erlangen: 'Erlangen',
   zirndorf: 'Zirndorf',
   forchheim: 'Forchheim',
-  schwabach: 'Schwabach',
 }
 
 /**
@@ -180,7 +177,10 @@ function medianOf(values: readonly number[]): number | null {
 }
 
 /** Alle Stadtteilwerte einer Stadt und Objektart, teuerste Lage zuerst. */
-function getPriceAtlasGroup(city: PriceAtlasCityId, category: PriceAtlasCategory): PriceAtlasGroup {
+export function getPriceAtlasGroup(
+  city: PriceAtlasCityId,
+  category: PriceAtlasCategory,
+): PriceAtlasGroup {
   const entries = PRICE_ATLAS_ROWS[city][category]
     .map((row) => toEntry(city, category, row))
     .sort((a, b) => b.median - a.median || a.district.localeCompare(b.district, 'de'))

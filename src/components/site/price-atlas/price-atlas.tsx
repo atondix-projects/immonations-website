@@ -33,11 +33,9 @@ export function PriceAtlas({
   const [openDistrict, setOpenDistrict] = useState<string | null>(null)
 
   const cities = useMemo(() => {
-    const seen = new Map<PriceAtlasCityId, { id: PriceAtlasCityId; name: string; empty: boolean }>()
+    const seen = new Map<PriceAtlasCityId, { id: PriceAtlasCityId; name: string }>()
     for (const group of groups) {
-      const existing = seen.get(group.city)
-      const empty = (existing?.empty ?? true) && group.entries.length === 0
-      seen.set(group.city, { id: group.city, name: group.cityName, empty })
+      seen.set(group.city, { id: group.city, name: group.cityName })
     }
     return [...seen.values()]
   }, [groups])
@@ -74,11 +72,6 @@ export function PriceAtlas({
                 )}
               >
                 {entry.name}
-                {entry.empty ? (
-                  <span className="ml-1.5 text-[10px] font-medium tracking-[0.08em] uppercase opacity-70">
-                    {t('atlas.pending.tag')}
-                  </span>
-                ) : null}
               </button>
             ))}
           </div>

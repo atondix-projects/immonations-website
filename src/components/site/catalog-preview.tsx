@@ -9,7 +9,7 @@ export function CatalogPreview({
   embedded = false,
   className,
 }: {
-  kind: 'atlas' | 'assistant' | 'appointment'
+  kind: 'assistant' | 'appointment'
   locale: 'de' | 'en'
   embedded?: boolean
   className?: string
@@ -19,14 +19,6 @@ export function CatalogPreview({
   const isGerman = locale === 'de'
 
   const copy = {
-    atlas: {
-      title: isGerman ? 'Preisatlas-Vorschau' : 'Price atlas preview',
-      placeholder: isGerman ? 'Stadtteil eingeben' : 'Enter a district',
-      action: isGerman ? 'Vorschau anzeigen' : 'Show preview',
-      result: isGerman
-        ? 'Eine belastbare Spanne erhalten Sie nach Objekt- und Mikrolagenprüfung.'
-        : 'A reliable range requires a review of the property and its micro-location.',
-    },
     assistant: {
       title: isGerman ? 'Immonation-Assistent – Vorschau' : 'Immonation assistant — preview',
       placeholder: isGerman ? 'Ihre Frage zum Immobilienverkauf' : 'Your property-sale question',

@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { CatalogPreview } from '@/components/site/catalog-preview'
+import { AtlasTeaserPanel } from '@/components/site/price-atlas/atlas-teaser-panel'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { VideoDialog } from '@/components/site/video-dialog'
 import { Link } from '@/i18n/navigation'
@@ -34,6 +35,23 @@ import { cn } from '@/lib/utils'
 import { CONTAINER, EYEBROW, SECTION_LINK, SECTION_TITLE, SectionHeader } from './section-shell'
 
 const PROPERTY_ICONS = [House, Building2, Map, ChartNoAxesCombined] as const
+
+/**
+ * Der Nachweis-Clip zur Sektion „Beurkundet, nicht behauptet“: die Ordner mit den
+ * notariellen Abschriften im Zirndorfer Büro und das Einheften der jüngsten Seite.
+ * Quelle ist das HEVC-Original aus `assets/notar verkaufsabschriften`, ausgeliefert
+ * wird eine H.264-Fassung — HEVC spielt weder Firefox noch Chrome unter Linux ab.
+ *
+ * Das Poster ist der Frame bei 3,6 s: der einzige Moment, in dem alle drei
+ * Ordnerrücken zugleich lesbar sind, und damit der Beleg für die Kennzahl „3“.
+ * Vertragsinhalte, Namen und Adressen bleiben über den gesamten Clip unscharf.
+ */
+const NOTARIAL_RECORDS_MEDIA = {
+  src: '/videos/notary/notarial-records.mp4',
+  poster: '/images/notary/notarial-records-poster.webp',
+  width: 1920,
+  height: 1080,
+} as const
 
 export async function PropertyTypePaths({
   locale,
@@ -105,12 +123,14 @@ export async function PropertyTypePaths({
 }
 
 type VerifiedPoint = { title: string; text: string }
+type VerifiedStat = { value: string; label: string }
 
 export async function VerifiedResults({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.clientSections.verified')
   const bellT = await getTranslations('BellVideos')
   const tVideo = await getTranslations('VideoDialog')
   const points = t.raw('points') as VerifiedPoint[]
+  const stats = t.raw('stats') as VerifiedStat[]
   const bellVideos = listBellVideos()
   const pointIcons = [FileCheck2, ShieldCheck, Scale] as const
   const Heading = compact ? 'h3' : 'h2'
@@ -156,6 +176,48 @@ export async function VerifiedResults({ compact = false }: { compact?: boolean }
             })}
           </div>
         </div>
+
+        {/* Der Beleg selbst: erst das Video, dann die Kennzahlen, die es zeigt. */}
+        <div className="mt-12 grid gap-8 md:mt-16 lg:grid-cols-[1.3fr_0.7fr] lg:items-end lg:gap-14">
+          <VideoDialog
+            src={NOTARIAL_RECORDS_MEDIA.src}
+            poster={NOTARIAL_RECORDS_MEDIA.poster}
+            width={NOTARIAL_RECORDS_MEDIA.width}
+            height={NOTARIAL_RECORDS_MEDIA.height}
+            title={t('videoTitle')}
+            fallback={t('videoFallback')}
+            labels={{ play: tVideo('play'), close: tVideo('close') }}
+            className="aspect-video w-full border border-white/12"
+            posterSizes="(min-width: 1024px) 60vw, 100vw"
+          />
+          <div className="border-brand-500 border-l-2 pl-6">
+            <h3 className="font-serif text-2xl leading-tight font-medium text-balance text-white md:text-[26px]">
+              {t('videoTitle')}
+            </h3>
+            <p className="mt-4 text-sm leading-[1.7] text-neutral-400">{t('videoNote')}</p>
+          </div>
+        </div>
+
+        <dl className="mt-9 grid gap-px bg-white/15 sm:grid-cols-3">
+          {stats.map((stat) => (
+            <div key={stat.label} className="bg-surface-dark px-6 py-7 md:px-7">
+              <dt className="text-[11px] font-semibold tracking-[0.2em] text-neutral-400 uppercase">
+                {stat.label}
+              </dt>
+              <dd className="mt-3 font-serif text-[2rem] leading-none font-medium tracking-[-0.02em] text-white md:text-[2.4rem]">
+                {stat.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <Link
+          href="/property-valuation"
+          className="bg-brand-500 hover:bg-brand-600 focus-visible:ring-brand-400 mt-9 inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold text-white transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 focus-visible:outline-none motion-reduce:transition-none"
+        >
+          {t('cta')}
+          <ArrowUpRight className="size-4" aria-hidden="true" />
+        </Link>
 
         <div className="mt-12 border-t border-white/15 pt-9 md:mt-16 md:pt-12">
           <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
@@ -239,7 +301,7 @@ export async function PriceAtlasTeaser({ locale }: { locale: Locale }) {
             ))}
           </dl>
         </div>
-        <CatalogPreview kind="atlas" locale={locale} embedded />
+        <AtlasTeaserPanel locale={locale} />
       </div>
     </section>
   )

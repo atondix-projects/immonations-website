@@ -281,12 +281,6 @@ const FORCHHEIM: Record<'apartment' | 'house', readonly PriceAtlasRow[]> = {
   ],
 }
 
-/** Schwabach ist im Stadtteilkatalog geführt, hat aber noch keine ausgewerteten Stadtteilwerte. */
-const SCHWABACH: Record<'apartment' | 'house', readonly PriceAtlasRow[]> = {
-  apartment: [],
-  house: [],
-}
-
 export const PRICE_ATLAS_ROWS: Record<
   PriceAtlasCityId,
   Record<'apartment' | 'house', readonly PriceAtlasRow[]>
@@ -296,5 +290,4 @@ export const PRICE_ATLAS_ROWS: Record<
   erlangen: ERLANGEN,
   zirndorf: ZIRNDORF,
   forchheim: FORCHHEIM,
-  schwabach: SCHWABACH,
 }
