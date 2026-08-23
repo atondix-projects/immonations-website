@@ -38,8 +38,7 @@ const CONTACT_STEP = WIZARD_STEP_IDS.length - 1
 function focusField(fieldId: string) {
   const selector = `vw-${fieldId}`
   const target =
-    document.getElementById(selector) ??
-    document.querySelector<HTMLElement>(`[name="${selector}"]`)
+    document.getElementById(selector) ?? document.querySelector<HTMLElement>(`[name="${selector}"]`)
   target?.focus()
   target?.scrollIntoView({ block: 'center', behavior: 'smooth' })
 }
@@ -74,10 +73,10 @@ export function ValuationWizard() {
 
   const update = useCallback((fieldId: string, value: AnswerValue) => {
     setAnswers((current) => ({ ...current, [fieldId]: value }))
+    // Ein korrigiertes Feld verliert seinen Fehler sofort — nicht erst beim Weiter.
     setErrors((current) => {
       if (!(fieldId in current)) return current
-      const { [fieldId]: _removed, ...rest } = current
-      return rest
+      return Object.fromEntries(Object.entries(current).filter(([key]) => key !== fieldId))
     })
   }, [])
 
@@ -202,16 +201,17 @@ export function ValuationWizard() {
       </div>
 
       <div className="flex flex-1 flex-col pt-8">
-        <h3 className="font-serif text-3xl leading-tight font-medium">
+        <h3 id="vw-step-title" className="font-serif text-3xl leading-tight font-medium">
           {t(`steps.${stepId}.title`)}
         </h3>
         <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
           {t(`steps.${stepId}.text`)}
         </p>
 
+        {/* Das Objektart-Fieldset wird von der sichtbaren Schrittüberschrift
+            beschriftet — sonst liest ein Screenreader den Titel doppelt vor. */}
         {stepId === 'type' ? (
-          <fieldset className="mt-7">
-            <legend className="sr-only">{t('steps.type.title')}</legend>
+          <fieldset className="mt-7" aria-labelledby="vw-step-title">
             <div className="grid gap-2 sm:grid-cols-2">
               {PROPERTY_TYPE_IDS.map((id) => {
                 const selected = propertyType === id

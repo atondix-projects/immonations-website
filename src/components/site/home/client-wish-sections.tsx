@@ -28,16 +28,10 @@ import type { Locale } from '@/i18n/routing'
 import { toFaqSectionItems, selectFaqsForPage } from '@/lib/content/faqs'
 import { listLocations } from '@/lib/content/locations'
 import { PROPERTY_LISTINGS } from '@/lib/content/property-listings'
+import { listBellVideos } from '@/lib/content/bell-videos'
 import { listSellerGuides } from '@/lib/content/seller-guides'
 import { cn } from '@/lib/utils'
 import { CONTAINER, EYEBROW, SECTION_LINK, SECTION_TITLE, SectionHeader } from './section-shell'
-
-const PRESENTATION_MEDIA = {
-  src: '/immonation-presentation-video.mp4',
-  poster: '/videos/immonation-presentation-poster.webp',
-  width: 1920,
-  height: 1080,
-} as const
 
 const PROPERTY_ICONS = [House, Building2, Map, ChartNoAxesCombined] as const
 
@@ -114,8 +108,10 @@ type VerifiedPoint = { title: string; text: string }
 
 export async function VerifiedResults({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.clientSections.verified')
+  const bellT = await getTranslations('BellVideos')
   const tVideo = await getTranslations('VideoDialog')
   const points = t.raw('points') as VerifiedPoint[]
+  const bellVideos = listBellVideos()
   const pointIcons = [FileCheck2, ShieldCheck, Scale] as const
   const Heading = compact ? 'h3' : 'h2'
 
@@ -127,20 +123,21 @@ export async function VerifiedResults({ compact = false }: { compact?: boolean }
         compact ? 'py-14 md:py-18' : 'py-18 md:py-26',
       )}
     >
-      <div
-        className={`${CONTAINER} grid items-center gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-18`}
-      >
-        <div>
-          <p className="text-brand-200 text-[11px] font-semibold tracking-[0.2em] uppercase md:text-xs">
-            {t('eyebrow')}
-          </p>
-          <Heading className="mt-5 max-w-[13ch] font-serif text-[2.4rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:text-[3rem] md:text-[3.8rem]">
-            {t('title')}
-          </Heading>
-          <p className="mt-6 max-w-[58ch] text-[17px] leading-[1.75] text-pretty text-neutral-300">
-            {t('text')}
-          </p>
-          <div className="mt-9 grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
+      <div className={CONTAINER}>
+        <div className="grid items-start gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-18">
+          <div>
+            <p className="text-brand-200 text-[11px] font-semibold tracking-[0.2em] uppercase md:text-xs">
+              {t('eyebrow')}
+            </p>
+            <Heading className="mt-5 max-w-[13ch] font-serif text-[2.4rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance sm:text-[3rem] md:text-[3.8rem]">
+              {t('title')}
+            </Heading>
+            <p className="mt-6 max-w-[58ch] text-[17px] leading-[1.75] text-pretty text-neutral-300">
+              {t('text')}
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
             {points.map((point, index) => {
               const Icon = pointIcons[index] ?? BadgeCheck
               return (
@@ -160,22 +157,46 @@ export async function VerifiedResults({ compact = false }: { compact?: boolean }
           </div>
         </div>
 
-        <div className="border border-white/12 bg-white/[0.04] p-3 sm:p-5">
-          <VideoDialog
-            src={PRESENTATION_MEDIA.src}
-            poster={PRESENTATION_MEDIA.poster}
-            width={PRESENTATION_MEDIA.width}
-            height={PRESENTATION_MEDIA.height}
-            title={t('videoTitle')}
-            fallback={t('videoFallback')}
-            labels={{ play: tVideo('play'), close: tVideo('close') }}
-            className="aspect-video w-full"
-            posterSizes="(min-width: 1024px) 55vw, 100vw"
-          />
-          <div className="border-t border-white/10 px-2 pt-4 pb-1 sm:px-3">
-            <p className="font-medium text-white">{t('videoTitle')}</p>
-            <p className="mt-1 text-sm leading-relaxed text-neutral-400">{t('videoNote')}</p>
+        <div className="mt-12 border-t border-white/15 pt-9 md:mt-16 md:pt-12">
+          <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-brand-200 text-[11px] font-semibold tracking-[0.2em] uppercase md:text-xs">
+                {bellT('eyebrow')}
+              </p>
+              <h3 className="mt-4 max-w-[18ch] font-serif text-3xl leading-tight font-medium text-balance text-white md:text-[40px]">
+                {bellT('title')}
+              </h3>
+            </div>
+            <p className="max-w-[62ch] text-[17px] leading-[1.7] text-neutral-300 lg:justify-self-end">
+              {bellT('text')}
+            </p>
           </div>
+
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-5 lg:grid-cols-6">
+            {bellVideos.map((item, index) => (
+              <VideoDialog
+                key={item.id}
+                src={item.video}
+                poster={item.poster}
+                width={item.width}
+                height={item.height}
+                title={bellT('videoTitle', { position: index + 1, total: bellVideos.length })}
+                fallback={bellT('videoFallback')}
+                labels={{ play: tVideo('play'), close: tVideo('close') }}
+                className="aspect-[9/16] w-full border border-white/12"
+                posterSizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                overlay={
+                  <span className="absolute top-3 left-3 border border-white/20 bg-black/45 px-2 py-1 font-mono text-[10px] tracking-[0.14em] text-white tabular-nums backdrop-blur-sm">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                }
+              />
+            ))}
+          </div>
+
+          <p className="mt-7 max-w-[68ch] text-sm leading-relaxed text-neutral-400">
+            {bellT('note')}
+          </p>
         </div>
       </div>
     </section>

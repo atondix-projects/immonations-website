@@ -91,10 +91,201 @@
         }
       ]
     },
+    "partnerTrack": {
+      "title": "Selected partner agents extend our team",
+      "text": "When needed, we work with selected partner agents who are qualified in advance and assigned to suitable property types. Pricing, documents, and marketing always remain with us.",
+      "link": "Explore the partner-agent model"
+    },
     "cta": {
       "title": "Planning to sell or buy?",
       "text": "Start with a grounded first assessment and a clear view of the next steps.",
       "label": "Contact us"
+    }
+  },
+  "PartnerAgentsPage": {
+    "metadata": {
+      "title": "Become a partner agent in Nuremberg, Fürth & Erlangen | Immonation",
+      "description": "Partner with Immonation without a monthly fee. Choose from two success-based compensation models and use our complete property marketing package.",
+      "keywords": [
+        "become a partner estate agent",
+        "estate agent cooperation Nuremberg",
+        "self-employed estate agent without fixed fees",
+        "property sourcing partner",
+        "estate agent partner programme Franconia"
+      ],
+      "serviceName": "Partner agents at Immonation",
+      "serviceType": "Partnership model for self-employed estate agents",
+      "areaServed": "Nuremberg metropolitan region"
+    },
+    "hero": {
+      "eyebrow": "Partner agents at Immonation",
+      "title": "A professional presence. A complete team behind you.",
+      "lead": "You advise your clients. We handle the work behind the scenes. From valuation, drone photography, 360° tours, and social campaigns to the purchase contract, the full process runs through our team. There is no monthly fee. We are paid only when a sale succeeds."
+    },
+    "metrics": {
+      "items": [
+        {
+          "value": "€0",
+          "text": "monthly fee, payment only after a successful sale"
+        },
+        {
+          "value": "2",
+          "text": "compensation models: property sourcing or sales"
+        },
+        {
+          "value": "60+",
+          "text": "sales per year on average, supported by proven structures"
+        }
+      ]
+    },
+    "owners": {
+      "eyebrow": "For property owners",
+      "title": "Anyone visiting you has been vetted first",
+      "lead": "We deliberately work with a small group of selected partner agents. Each one is qualified against our standards before handling appointments. Pricing, documents, marketing, and contract preparation always remain with Immonation.",
+      "items": [
+        {
+          "tag": "Quality",
+          "title": "Qualified in advance",
+          "text": "We do not accept everyone. Every partner agent completes our quality review before handling appointments for clients. That is the difference between a working network and a list of names."
+        },
+        {
+          "tag": "Fit",
+          "title": "Assigned by strength",
+          "text": "Not every agent is equally strong with apartments and detached houses. We know our partners' specialisms and place them where those strengths matter most."
+        },
+        {
+          "tag": "Price",
+          "title": "We set the asking price",
+          "text": "We assess every property together and set a market-aligned price based on real transactions. Our aim is not simply to list properties. It is to sell them."
+        },
+        {
+          "tag": "Standard",
+          "title": "The Immonation standard",
+          "text": "We only accept partner-sourced properties when they meet our standards. Quality before quantity protects both sides."
+        }
+      ]
+    },
+    "models": {
+      "eyebrow": "For estate agents",
+      "title": "Two compensation models that make sense",
+      "lead": "Our two clear models reflect the contribution you make. There are no fixed fees, licence charges, or minimum turnover. We earn only when you sell, so we have a direct interest in your success.",
+      "items": [
+        {
+          "tag": "Model 1",
+          "title": "Property sourcing",
+          "text": "You introduce a property. We review it against our standards, value it with you, set the asking price, and take over the complete preparation and marketing process.",
+          "noteLabel": "Important",
+          "note": "Not every property is accepted. The decisive question is whether it meets the Immonation standard."
+        },
+        {
+          "tag": "Model 2",
+          "title": "Sales & viewings",
+          "text": "You conduct viewings for properties marketed by Immonation GmbH. Pricing, documents, marketing, and contract preparation are handled completely by us.",
+          "noteLabel": "Your focus",
+          "note": "Buyer contact and on-site advice, without acquisition work in the background."
+        }
+      ]
+    },
+    "package": {
+      "eyebrow": "What we provide",
+      "title": "The complete marketing package",
+      "lead": "You present properties with resources normally available only to larger firms, without investing in technology, staff, or software yourself.",
+      "items": [
+        {
+          "tag": "360°",
+          "title": "Virtual tour",
+          "text": "Every property receives a professional 360° tour. Prospects can explore the property in advance, filtering unsuitable enquiries and making your viewings more efficient."
+        },
+        {
+          "tag": "Social media",
+          "title": "Campaigns & videos",
+          "text": "Targeted social campaigns and purpose-made property videos also reach buyers who are not actively searching the major portals."
+        },
+        {
+          "tag": "Drone & photo",
+          "title": "Professional imagery",
+          "text": "Drone photography, high-quality property images, and a carefully designed presentation create the strong first impression that can influence price."
+        },
+        {
+          "tag": "Engineer",
+          "title": "Living area & floor plans",
+          "text": "Our in-house engineer produces certified living-area calculations and usable floor plans, the documents a buyer's bank needs for financing."
+        },
+        {
+          "tag": "Network",
+          "title": "Banks, lawyers, notaries",
+          "text": "You gain access to our banking contacts, including Dr. Klein AG with its tools and Max-Flessa-Bank in Fürth, as well as lawyers and notaries. You may also promote this network on your own website."
+        },
+        {
+          "tag": "Team",
+          "title": "Support behind the scenes",
+          "text": "Our full team supports questions and the preparation of newly sourced properties, from marketing through to online publication."
+        }
+      ]
+    },
+    "process": {
+      "title": "How the partnership begins",
+      "lead": "We first check whether the partnership is right for both sides. That is fairer than accepting everyone and discovering later that the chemistry or specialisms do not fit.",
+      "items": [
+        {
+          "tag": "Step 1",
+          "title": "Get to know each other",
+          "text": "An open conversation about your experience, specialisms, and region, with no commitment or obligation."
+        },
+        {
+          "tag": "Step 2",
+          "title": "Qualification",
+          "text": "We use our quality criteria to assess whether working together makes sense for both sides."
+        },
+        {
+          "tag": "Step 3",
+          "title": "Agree your role",
+          "text": "Together we decide which property types and which partnership model suit your strengths."
+        },
+        {
+          "tag": "Step 4",
+          "title": "Start",
+          "text": "You gain access to the network, tools, and team. Payment is due only after a successful sale."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions from partner agents",
+      "items": [
+        {
+          "question": "What does the partnership cost?",
+          "answer": "Nothing in advance. There is no monthly fee, no licence or software cost, and no minimum turnover. Payment is due only after a successful sale. We earn only when you sell."
+        },
+        {
+          "question": "Do I have to give up self-employment?",
+          "answer": "No. You remain self-employed and organise your own work. We provide the structure, network, and transaction support. This does not create an employment relationship."
+        },
+        {
+          "question": "Can I promote the network?",
+          "answer": "Yes. You may communicate the partnership and our network openly, including on your own website."
+        },
+        {
+          "question": "Is every property I introduce accepted?",
+          "answer": "No. Every property is reviewed and must meet the Immonation standard. This protects quality and your time because we do not market properties that will not work in the market."
+        },
+        {
+          "question": "Who sets the asking price?",
+          "answer": "We assess each property together and set a market-aligned price. This means you do not enter the sales process with an inflated price that prevents a successful transaction."
+        },
+        {
+          "question": "Which region do you cover?",
+          "answer": "Our core area is the Nuremberg metropolitan region: Nuremberg, Fürth, Erlangen, Zirndorf, Schwabach, and the surrounding area."
+        }
+      ]
+    },
+    "closing": {
+      "title": "Does the model fit how you work?",
+      "text": "In an open conversation we clarify your experience, region, strengths, and the compensation model that fits."
+    },
+    "actions": {
+      "contact": "Arrange a conversation",
+      "about": "Who we are",
+      "referrers": "Not an agent? Explore referrals"
     }
   },
   "ContactPage": {
@@ -1141,10 +1332,10 @@
     ],
     "note": "Detailed job postings and the full partner model are coming. Until then: reach out directly — we look forward to talking.",
     "agentTrack": {
-      "eyebrow": "Dedicated career path",
-      "title": "Work as a real-estate agent with Immonation",
-      "text": "The dedicated agent page explains responsibilities, collaboration, candidate fit, and the direct route to an introductory conversation.",
-      "link": "Explore the agent career"
+      "eyebrow": "Already self-employed?",
+      "title": "The partner-agent model may be the better route",
+      "text": "If you already work independently as an estate agent, join without fixed fees and with our network behind you.",
+      "link": "Explore the partner-agent model"
     },
     "cta": {
       "title": "Interested?",
@@ -1230,6 +1421,11 @@
       "ownerTitle": "Are you the owner?",
       "ownerText": "Then you do not need the referrer route. Speak to us directly about valuation, selling, and the right next step.",
       "ownerCta": "Contact us directly"
+    },
+    "partnerTrack": {
+      "title": "Do you work in the industry?",
+      "text": "Estate agents can use our partner-agent model instead of the standard referrer fee route.",
+      "link": "Explore the partner-agent model"
     },
     "faq": {
       "title": "Frequently asked questions for referrers",
@@ -2774,9 +2970,9 @@
     }
   },
   "Magazine": {
-    "eyebrow": "REVIER magazine",
-    "title": "A look at our work, our principles, and real sale stories.",
-    "text": "Our magazine presents selected sales from the greater Nuremberg region and the stories behind them: how owners made decisions, how we market properties, and what good guidance looks like.",
+    "eyebrow": "Immonation REVIER · The magazine",
+    "title": "REVIER – the property magazine for greater Nuremberg",
+    "text": "Selected, genuine sales from Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim – and the stories behind them. Flip through it like a printed magazine: click the left or right page, use the buttons, or press the arrow keys on your keyboard.",
     "cta": "Discuss your own sale",
     "points": [
       {

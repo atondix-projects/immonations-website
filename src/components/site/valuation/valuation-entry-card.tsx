@@ -1,25 +1,34 @@
 'use client'
 
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
+import { PROPERTY_TYPE_IDS, WIZARD_STEP_IDS, type PropertyTypeId } from '@/lib/valuation/types'
 
-export const PROPERTY_TYPE_IDS = ['house', 'apartment', 'apartment-building', 'land'] as const
-
-export type PropertyTypeId = (typeof PROPERTY_TYPE_IDS)[number]
+/**
+ * Einstiegskarte auf Startseite und Hero: nur die erste Weiche (Objektart).
+ * Die Auswahl wird als `?type=` an den Wizard übergeben, der dort mit Schritt 2
+ * fortsetzt. Die Schrittzahl kommt aus dem Schema und kann nicht veralten.
+ */
 
 type ValuationEntryCardProps = {
   className?: string
   variant?: 'light' | 'glass'
 }
 
+/** Bei ungerader Anzahl füllt die letzte Kachel beide Spalten. */
+const SPANS_FULL_WIDTH = PROPERTY_TYPE_IDS.length % 2 === 1
+
 export function ValuationEntryCard({ className, variant = 'light' }: ValuationEntryCardProps) {
   const t = useTranslations('ValuationWizard')
   const homeT = useTranslations('Home.valuation')
   const router = useRouter()
-  const propertyTypes = t.raw('propertyTypes') as string[]
+  // Die Karte erscheint mehrfach pro Seite (Hero mobil/desktop) — die IDs
+  // muessen deshalb je Instanz eindeutig sein.
+  const titleId = useId()
+  const groupName = useId()
   const [selectedType, setSelectedType] = useState<PropertyTypeId | null>(null)
   const [showError, setShowError] = useState(false)
   const isGlass = variant === 'glass'
@@ -61,51 +70,66 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
           >
             {homeT('prototypeLabel')}
           </p>
-          <h2 className="mt-2 max-w-[20ch] font-serif text-2xl leading-tight font-medium">
+          <h2
+            id={titleId}
+            className="mt-2 max-w-[20ch] font-serif text-2xl leading-tight font-medium"
+          >
             {t('steps.type.title')}
           </h2>
         </div>
         <span
           className={cn(
-            'font-mono text-xs tabular-nums',
+            'font-mono text-xs whitespace-nowrap tabular-nums',
             isGlass ? 'text-neutral-300' : 'text-neutral-500',
           )}
           aria-label={t('progressLabel')}
         >
-          1 / 5
+          {t('stepLabel', { current: 1, total: WIZARD_STEP_IDS.length })}
         </span>
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-2">
-        {PROPERTY_TYPE_IDS.map((id, index) => {
-          const label = propertyTypes[index]
-          if (!label) return null
+      {/* Beschriftet durch die sichtbare Überschrift — sonst doppelter Vorlesetext. */}
+      <fieldset className="mt-5" aria-labelledby={titleId}>
+        <div className="grid grid-cols-2 gap-2">
+          {PROPERTY_TYPE_IDS.map((id, index) => {
+            const selected = selectedType === id
+            const isLast = index === PROPERTY_TYPE_IDS.length - 1
 
-          return (
-            <button
-              key={id}
-              type="button"
-              aria-pressed={selectedType === id}
-              onClick={() => {
-                setSelectedType(id)
-                setShowError(false)
-              }}
-              className={cn(
-                'min-h-12 border px-3 py-2 text-left text-sm font-semibold transition-[background-color,border-color,color,transform] focus-visible:outline-2 focus-visible:outline-offset-2 active:translate-y-px',
-                selectedType === id
-                  ? isGlass
-                    ? 'border-brand-400 bg-brand-500 text-white focus-visible:outline-white'
-                    : 'border-brand-700 bg-brand-700 focus-visible:outline-brand-700 text-white'
-                  : isGlass
-                    ? 'border-white/15 bg-white/[0.06] text-white hover:border-white/40 hover:bg-white/10 focus-visible:outline-white'
-                    : 'focus-visible:outline-brand-700 border-neutral-200 bg-white text-neutral-900 hover:border-neutral-500',
-              )}
-            >
-              {label}
-            </button>
-          )
-        })}
-      </div>
+            return (
+              <label
+                key={id}
+                className={cn('cursor-pointer', SPANS_FULL_WIDTH && isLast && 'col-span-2')}
+              >
+                <input
+                  type="radio"
+                  name={groupName}
+                  value={id}
+                  checked={selected}
+                  onChange={() => {
+                    setSelectedType(id)
+                    setShowError(false)
+                  }}
+                  className="peer sr-only"
+                />
+                <span
+                  className={cn(
+                    'flex min-h-12 items-center border px-3 py-2 text-left text-sm font-semibold transition-[background-color,border-color,color] peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2',
+                    selected
+                      ? isGlass
+                        ? 'border-brand-400 bg-brand-500 text-white peer-focus-visible:outline-white'
+                        : 'border-brand-700 bg-brand-700 peer-focus-visible:outline-brand-700 text-white'
+                      : isGlass
+                        ? 'border-white/15 bg-white/[0.06] text-white peer-focus-visible:outline-white hover:border-white/40 hover:bg-white/10'
+                        : 'peer-focus-visible:outline-brand-700 border-neutral-200 bg-white text-neutral-900 hover:border-neutral-500',
+                  )}
+                >
+                  {t(`propertyTypes.${id}`)}
+                </span>
+              </label>
+            )
+          })}
+        </div>
+      </fieldset>
 
       {showError ? (
         <p
@@ -115,7 +139,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
           )}
           role="alert"
         >
-          {t('error')}
+          {t('errors.required')}
         </p>
       ) : null}
 

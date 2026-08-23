@@ -16,6 +16,7 @@
 - [Ratgeber und News](https://www.immonationgmbh.de/de/news) · [Guides and news](https://www.immonationgmbh.de/en/news)
 - [FAQ](https://www.immonationgmbh.de/de/faq) · [FAQ EN](https://www.immonationgmbh.de/en/faq)
 - [Über Immonation](https://www.immonationgmbh.de/de/ueber) · [About Immonation](https://www.immonationgmbh.de/en/about)
+- [Partnermakler](https://www.immonationgmbh.de/de/partnermakler) · [Partner agents](https://www.immonationgmbh.de/en/partner-agents)
 - [Referenzen](https://www.immonationgmbh.de/de/referenzen) · [References](https://www.immonationgmbh.de/en/references)
 - [Kontakt](https://www.immonationgmbh.de/de/kontakt) · [Contact](https://www.immonationgmbh.de/en/contact)
 - [HTML-Sitemap](https://www.immonationgmbh.de/de/sitemap) · [XML-Sitemap](https://www.immonationgmbh.de/sitemap.xml)

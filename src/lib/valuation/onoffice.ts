@@ -1,4 +1,4 @@
-import { PROPERTY_FIELDS } from './fields'
+import { CONTACT_FIELDS, LOCATION_FIELDS, PROPERTY_FIELDS } from './fields'
 import { visibleFields } from './steps'
 import type { Answers, PropertyTypeId } from './types'
 import { listAnswer, textAnswer } from './types'
@@ -88,11 +88,7 @@ function put(
 }
 
 /** Ja/Nein-Felder als onOffice-Boolean („1“ / „0“), sonst kein Eintrag. */
-function putFlag(
-  target: Record<string, string>,
-  key: string,
-  raw: string,
-): Record<string, string> {
+function putFlag(target: Record<string, string>, key: string, raw: string): Record<string, string> {
   if (raw !== 'yes' && raw !== 'no') return target
   return { ...target, [key]: raw === 'yes' ? '1' : '0' }
 }
@@ -200,14 +196,18 @@ function buildNotes(answers: Answers): Readonly<Record<string, string>> {
  * Eingaben (etwa eine zuvor getippte Kaltmiete) gelangen nicht in die Übergabe.
  */
 export function toOnOfficeLead(propertyType: PropertyTypeId, answers: Answers): OnOfficeLead {
-  const activeIds = new Set(
-    visibleFields(PROPERTY_FIELDS[propertyType], answers).map((field) => field.id),
-  )
+  // Erlaubt ist, was für *diese* Objektart tatsächlich sichtbar war — plus die
+  // gemeinsamen Lage- und Kontaktfelder. Damit fallen sowohl ausgeblendete
+  // Felder als auch Reste einer zuvor gewählten Objektart heraus.
+  const allowed = new Set([
+    ...LOCATION_FIELDS.map((field) => field.id),
+    ...CONTACT_FIELDS.map((field) => field.id),
+    ...visibleFields(PROPERTY_FIELDS[propertyType], answers).map((field) => field.id),
+  ])
 
   const scoped: Record<string, string | readonly string[] | undefined> = {}
   for (const [key, value] of Object.entries(answers)) {
-    const isObjectField = PROPERTY_FIELDS[propertyType].some((field) => field.id === key)
-    if (isObjectField && !activeIds.has(key)) continue
+    if (!allowed.has(key)) continue
     scoped[key] = value
   }
 

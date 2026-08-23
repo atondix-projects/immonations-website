@@ -18,12 +18,7 @@ type ValuationResultProps = {
   answers: Answers
 }
 
-export function ValuationResult({
-  estimate,
-  propertyType,
-  fields,
-  answers,
-}: ValuationResultProps) {
+export function ValuationResult({ estimate, propertyType, fields, answers }: ValuationResultProps) {
   const t = useTranslations('ValuationWizard')
   const format = useFormatter()
 
@@ -48,10 +43,20 @@ export function ValuationResult({
     if (field.kind === 'choice' && field.optionSet) {
       return t(`options.${field.optionSet}.${raw}`)
     }
-    if (field.unit === 'sqm') return `${raw} m²`
-    if (field.unit === 'metre') return `${raw} m`
+    // „Jahr“ und „Anzahl“ beschreiben das Feld, sie gehören nicht an den Wert.
+    if (field.unit && field.unit !== 'year' && field.unit !== 'count') {
+      return `${raw} ${t(`units.${field.unit}`)}`
+    }
 
     return raw
+  }
+
+  /** Nicht beantwortete Kann-Felder blähen die Zusammenfassung nur auf. */
+  function isWorthShowing(field: FieldDescriptor): boolean {
+    if (field.status === 'required') return true
+    const value = answers[field.id]
+    if (Array.isArray(value)) return value.length > 0
+    return typeof value === 'string' && value.trim() !== ''
   }
 
   return (
@@ -73,8 +78,9 @@ export function ValuationResult({
             </p>
             <p className="text-muted-foreground mt-3 text-sm">
               {t('result.perSqm', {
-                low: estimate.perSqmLow,
-                high: estimate.perSqmHigh,
+                // Vorformatiert, damit die Tausendertrennung der Locale greift.
+                low: format.number(estimate.perSqmLow),
+                high: format.number(estimate.perSqmHigh),
                 city: estimate.cityName,
               })}
             </p>
@@ -96,8 +102,13 @@ export function ValuationResult({
           </div>
         )}
 
-        <p className="text-muted-foreground mt-4 text-xs leading-relaxed">{t('result.derived')}</p>
-        <p className="mt-2 flex items-start gap-2 text-sm leading-relaxed font-semibold">
+        {/* Die Herleitung nur zeigen, wenn es auch eine Spanne gibt. */}
+        {estimate.kind === 'range' ? (
+          <p className="text-muted-foreground mt-4 text-xs leading-relaxed">
+            {t('result.derived')}
+          </p>
+        ) : null}
+        <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed font-semibold">
           <Check className="text-brand-700 mt-0.5 size-4 shrink-0" aria-hidden="true" />
           {t('result.onSite')}
         </p>
@@ -111,7 +122,7 @@ export function ValuationResult({
             <dt className="text-neutral-600">{t('summary.propertyType')}</dt>
             <dd className="text-right font-semibold">{t(`propertyTypes.${propertyType}`)}</dd>
           </div>
-          {fields.map((field) => (
+          {fields.filter(isWorthShowing).map((field) => (
             <div key={field.id} className="grid grid-cols-[1fr_auto] gap-4 py-3">
               <dt className="text-neutral-600">{t(`fields.${field.id}.label`)}</dt>
               <dd className="text-right font-semibold">{displayValue(field)}</dd>

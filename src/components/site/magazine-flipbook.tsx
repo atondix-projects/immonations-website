@@ -1,10 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
-import { ArrowLeft, ArrowRight, Maximize2, Minimize2 } from 'lucide-react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useReducedMotion } from 'motion/react'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 type MagazinePage = {
@@ -12,453 +10,260 @@ type MagazinePage = {
   src: string
 }
 
-type FlipEvent = {
-  data: number | string | boolean | object
-}
+type Spread = readonly [number | null, number | null]
 
-type FlipMode = 'portrait' | 'landscape'
-
-type PageFlipInstance = {
-  destroy(): void
-  update(): void
-  loadFromHTML(items: HTMLElement[]): void
-  flipNext(corner?: 'top' | 'bottom'): void
-  flipPrev(corner?: 'top' | 'bottom'): void
-  flip(page: number, corner?: 'top' | 'bottom'): void
-  turnToPage(page: number): void
-  getCurrentPageIndex(): number
-  getOrientation(): FlipMode
-  on(event: 'flip' | 'changeOrientation' | 'init', callback: (event: FlipEvent) => void): void
-}
-
-type PageFlipConstructor = new (
-  element: HTMLElement,
-  settings: {
-    width: number
-    height: number
-    size: 'fixed' | 'stretch'
-    minWidth: number
-    maxWidth: number
-    minHeight: number
-    maxHeight: number
-    drawShadow: boolean
-    flippingTime: number
-    usePortrait: boolean
-    autoSize: boolean
-    maxShadowOpacity: number
-    showCover: boolean
-    mobileScrollSupport: boolean
-    showPageCorners: boolean
-    disableFlipByClick: boolean
-    clickEventForward: boolean
-  },
-) => PageFlipInstance
-
-type PageFlipModule = {
-  PageFlip: PageFlipConstructor
+type Turn = {
+  direction: -1 | 1
+  from: Spread
+  to: Spread
 }
 
 export type MagazineFlipbookLabels = {
   previous: string
   next: string
-  expand: string
-  collapse: string
   firstPage: string
-  lastPage: string
   pageProgress: string
   spreadProgress: string
   pageAlt: string
   readerLabel: string
 }
 
-const BASE_PAGE_WIDTH = 420
-const BASE_PAGE_HEIGHT = 589
-const MIN_PAGE_WIDTH = 240
-const MAX_PAGE_WIDTH = 680
-const MIN_PAGE_HEIGHT = 337
-const MAX_PAGE_HEIGHT = 960
+function createSpreads(pageCount: number): Spread[] {
+  const spreads: Spread[] = [[null, 0]]
 
-function asPageIndex(value: FlipEvent['data'], fallback: number) {
-  return typeof value === 'number' ? value : fallback
+  for (let index = 1; index < pageCount; index += 2) {
+    spreads.push([index, index + 1 < pageCount ? index + 1 : null])
+  }
+
+  return spreads
+}
+
+function PageImage({
+  pageIndex,
+  pages,
+  labels,
+}: {
+  pageIndex: number | null
+  pages: readonly MagazinePage[]
+  labels: MagazineFlipbookLabels
+}) {
+  const page = pageIndex === null ? undefined : pages[pageIndex]
+
+  if (!page) return null
+
+  return (
+    <Image
+      src={page.src}
+      alt={labels.pageAlt.replace('{page}', String(page.number))}
+      fill
+      priority={page.number <= 3}
+      sizes="(min-width: 1024px) 460px, 42vw"
+      className="pointer-events-none object-cover select-none"
+      draggable={false}
+    />
+  )
 }
 
 export function MagazineFlipbook({
-  title,
   pages,
-  pageWidth,
-  pageHeight,
   labels,
 }: {
-  title: string
   pages: readonly MagazinePage[]
-  pageWidth: number
-  pageHeight: number
   labels: MagazineFlipbookLabels
 }) {
-  const stageRef = useRef<HTMLDivElement>(null)
-  const bookMountRef = useRef<HTMLDivElement>(null)
-  const bookRootRef = useRef<HTMLDivElement | null>(null)
-  const pageFlipRef = useRef<PageFlipInstance | null>(null)
-  const [currentPage, setCurrentPage] = useState(0)
-  const [mode, setMode] = useState<FlipMode>('landscape')
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [shouldInitialize, setShouldInitialize] = useState(false)
-  const [isReady, setIsReady] = useState(false)
-  const [isWideLayout, setIsWideLayout] = useState(false)
+  const spreads = useMemo(() => createSpreads(pages.length), [pages.length])
+  const [spreadIndex, setSpreadIndex] = useState(0)
+  const [turn, setTurn] = useState<Turn | null>(null)
+  const [turnStarted, setTurnStarted] = useState(false)
   const reduceMotion = useReducedMotion()
-  const lastPageIndex = pages.length - 1
-  const pageAspectRatio = pageWidth / pageHeight
+  const animationFrameRef = useRef<number | null>(null)
+  const secondAnimationFrameRef = useRef<number | null>(null)
+  const finishTimerRef = useRef<number | null>(null)
+  const isTurningRef = useRef(false)
 
-  const visibleRange = useMemo(() => {
-    if (mode === 'portrait' || currentPage === 0 || currentPage === lastPageIndex) {
-      return { first: currentPage + 1, last: currentPage + 1 }
+  const currentSpread = useMemo<Spread>(
+    () => spreads[spreadIndex] ?? [null, null],
+    [spreadIndex, spreads],
+  )
+  const canGoPrevious = spreadIndex > 0
+  const canGoNext = spreadIndex < spreads.length - 1
+
+  const clearTurnTimers = useCallback(() => {
+    if (animationFrameRef.current !== null) cancelAnimationFrame(animationFrameRef.current)
+    if (secondAnimationFrameRef.current !== null) {
+      cancelAnimationFrame(secondAnimationFrameRef.current)
     }
-
-    const start = currentPage % 2 === 1 ? currentPage : Math.max(1, currentPage - 1)
-    return { first: start + 1, last: Math.min(start + 2, pages.length) }
-  }, [currentPage, lastPageIndex, mode, pages.length])
-
-  const progressLabel = useMemo(() => {
-    const template =
-      visibleRange.first === visibleRange.last ? labels.pageProgress : labels.spreadProgress
-
-    return template
-      .replace('{page}', String(visibleRange.first))
-      .replace('{from}', String(visibleRange.first))
-      .replace('{to}', String(visibleRange.last))
-      .replace('{total}', String(pages.length))
-  }, [labels.pageProgress, labels.spreadProgress, pages.length, visibleRange])
-
-  const updateBookShift = useCallback(() => {
-    const root = bookRootRef.current
-    if (!root) return
-
-    const shouldShift = isWideLayout
-    if (shouldShift && currentPage === 0) {
-      root.style.transform = 'translateX(-25%)'
-    } else if (shouldShift && currentPage === lastPageIndex) {
-      root.style.transform = 'translateX(25%)'
-    } else {
-      root.style.transform = 'translateX(0)'
-    }
-  }, [currentPage, isWideLayout, lastPageIndex])
-
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 768px)')
-    const update = () => setIsWideLayout(media.matches)
-
-    update()
-    media.addEventListener('change', update)
-    return () => media.removeEventListener('change', update)
+    if (finishTimerRef.current !== null) window.clearTimeout(finishTimerRef.current)
   }, [])
 
-  useEffect(() => {
-    const stage = stageRef.current
-    if (!stage) return
+  useEffect(() => clearTurnTimers, [clearTurnTimers])
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setShouldInitialize(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '600px 0px' },
-    )
+  const go = useCallback(
+    (direction: -1 | 1) => {
+      if (isTurningRef.current) return
 
-    observer.observe(stage)
-    return () => observer.disconnect()
-  }, [])
+      const targetIndex = spreadIndex + direction
+      const from = spreads[spreadIndex]
+      const to = spreads[targetIndex]
+      if (!from || !to) return
 
-  useEffect(() => {
-    if (!shouldInitialize || pageFlipRef.current || !bookMountRef.current) return
-
-    let isActive = true
-    const mount = bookMountRef.current
-
-    async function initialize() {
-      const { PageFlip } = (await import('page-flip')) as PageFlipModule
-      if (!isActive || !mount) return
-
-      const root = document.createElement('div')
-      root.className = 'magazine-pageflip-root h-full w-full transition-transform duration-300'
-      if (window.matchMedia('(min-width: 768px)').matches) {
-        root.style.transform = 'translateX(-25%)'
-      }
-      mount.innerHTML = ''
-      mount.appendChild(root)
-      bookRootRef.current = root
-
-      const pageElements = pages.map((page, index) => {
-        const pageElement = document.createElement('div')
-        pageElement.className = 'magazine-flip-page bg-white'
-        pageElement.setAttribute(
-          'aria-label',
-          labels.pageAlt.replace('{page}', String(page.number)),
-        )
-
-        if (index === 0 || index === lastPageIndex) {
-          pageElement.dataset.density = 'hard'
-        }
-
-        const image = document.createElement('img')
-        image.src = page.src
-        image.alt = labels.pageAlt.replace('{page}', String(page.number))
-        image.decoding = 'async'
-        image.draggable = false
-        image.loading = index <= 2 ? 'eager' : 'lazy'
-        pageElement.appendChild(image)
-
-        return pageElement
-      })
-
-      const pageFlip = new PageFlip(root, {
-        width: BASE_PAGE_WIDTH,
-        height: BASE_PAGE_HEIGHT,
-        size: 'stretch',
-        minWidth: MIN_PAGE_WIDTH,
-        maxWidth: MAX_PAGE_WIDTH,
-        minHeight: MIN_PAGE_HEIGHT,
-        maxHeight: MAX_PAGE_HEIGHT,
-        drawShadow: true,
-        flippingTime: reduceMotion ? 1 : 900,
-        usePortrait: true,
-        autoSize: false,
-        maxShadowOpacity: 0.42,
-        showCover: true,
-        mobileScrollSupport: true,
-        showPageCorners: !reduceMotion,
-        disableFlipByClick: false,
-        clickEventForward: true,
-      })
-
-      pageFlipRef.current = pageFlip
-      pageFlip.loadFromHTML(pageElements)
-
-      const wrapper = root.querySelector<HTMLElement>('.stf__wrapper')
-      if (wrapper) {
-        wrapper.style.width = '100%'
-        wrapper.style.height = '100%'
+      if (reduceMotion) {
+        setSpreadIndex(targetIndex)
+        return
       }
 
-      pageFlip.on('init', (event) => {
-        const data = event.data as { page?: number; mode?: FlipMode }
-        setCurrentPage(typeof data.page === 'number' ? data.page : pageFlip.getCurrentPageIndex())
-        setMode(data.mode ?? pageFlip.getOrientation())
-        setIsReady(true)
+      isTurningRef.current = true
+      clearTurnTimers()
+      setTurn({ direction, from, to })
+      setTurnStarted(false)
+
+      animationFrameRef.current = requestAnimationFrame(() => {
+        secondAnimationFrameRef.current = requestAnimationFrame(() => setTurnStarted(true))
       })
 
-      pageFlip.on('flip', (event) => {
-        setCurrentPage(asPageIndex(event.data, pageFlip.getCurrentPageIndex()))
-      })
+      finishTimerRef.current = window.setTimeout(() => {
+        setSpreadIndex(targetIndex)
+        setTurn(null)
+        setTurnStarted(false)
+        isTurningRef.current = false
+      }, 720)
+    },
+    [clearTurnTimers, reduceMotion, spreadIndex, spreads],
+  )
 
-      pageFlip.on('changeOrientation', (event) => {
-        setMode(event.data === 'portrait' ? 'portrait' : 'landscape')
-      })
-
-      requestAnimationFrame(() => {
-        pageFlip.update()
-        setMode(pageFlip.getOrientation())
-        setCurrentPage(pageFlip.getCurrentPageIndex())
-        setIsReady(true)
-      })
-    }
-
-    initialize()
-
-    return () => {
-      isActive = false
-      pageFlipRef.current?.destroy()
-      pageFlipRef.current = null
-      bookRootRef.current = null
-      setIsReady(false)
-    }
-  }, [labels.pageAlt, lastPageIndex, pages, reduceMotion, shouldInitialize])
-
-  useEffect(() => {
-    updateBookShift()
-  }, [isReady, updateBookShift])
-
-  useEffect(() => {
-    const stage = stageRef.current
-    const pageFlip = pageFlipRef.current
-    if (!stage || !pageFlip) return
-
-    const observer = new ResizeObserver(() => {
-      requestAnimationFrame(() => {
-        pageFlip.update()
-        setMode(pageFlip.getOrientation())
-      })
-    })
-
-    observer.observe(stage)
-    return () => observer.disconnect()
-  }, [isReady])
-
-  useEffect(() => {
-    const pageFlip = pageFlipRef.current
-    if (!pageFlip) return
-
-    const timeout = window.setTimeout(() => {
-      pageFlip.update()
-      setMode(pageFlip.getOrientation())
-    }, 320)
-
-    return () => window.clearTimeout(timeout)
-  }, [isExpanded])
-
-  const goPrevious = useCallback(() => {
-    pageFlipRef.current?.flipPrev('top')
-  }, [])
-
-  const goNext = useCallback(() => {
-    pageFlipRef.current?.flipNext('top')
-  }, [])
-
-  const goToPage = useCallback((pageIndex: number) => {
-    const pageFlip = pageFlipRef.current
-    if (!pageFlip) return
-
-    if (Math.abs(pageFlip.getCurrentPageIndex() - pageIndex) <= 2) {
-      pageFlip.flip(pageIndex, 'top')
-      return
-    }
-
-    pageFlip.turnToPage(pageIndex)
-    setCurrentPage(pageIndex)
-  }, [])
+  const jumpToSpread = useCallback(
+    (targetIndex: number) => {
+      if (isTurningRef.current || !spreads[targetIndex]) return
+      setSpreadIndex(targetIndex)
+    },
+    [spreads],
+  )
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'ArrowRight') goNext()
-      if (event.key === 'ArrowLeft') goPrevious()
-      if (event.key === 'Home') goToPage(0)
-      if (event.key === 'End') goToPage(lastPageIndex)
-      if (event.key === 'Escape') setIsExpanded(false)
+      if (event.key === 'ArrowRight') go(1)
+      if (event.key === 'ArrowLeft') go(-1)
     }
 
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [goNext, goPrevious, goToPage, lastPageIndex])
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [go])
 
-  const canGoPrevious = currentPage > 0
-  const canGoNext = currentPage < lastPageIndex
+  const displayedLeft = turn?.direction === -1 ? turn.to[0] : currentSpread[0]
+  const displayedRight = turn?.direction === 1 ? turn.to[1] : currentSpread[1]
+  const leafFront = turn ? (turn.direction === 1 ? turn.from[1] : turn.from[0]) : null
+  const leafBack = turn ? (turn.direction === 1 ? turn.to[0] : turn.to[1]) : null
+
+  const progressLabel = useMemo(() => {
+    if (spreadIndex === 0) return `${labels.firstPage} · 1 / ${pages.length}`
+
+    const [left, right] = currentSpread
+    if (left === null && right === null) return ''
+    if (right === null) {
+      return labels.pageProgress
+        .replace('{page}', String((left ?? 0) + 1))
+        .replace('{total}', String(pages.length))
+    }
+
+    return labels.spreadProgress
+      .replace('{from}', String((left ?? 0) + 1))
+      .replace('{to}', String(right + 1))
+      .replace('{total}', String(pages.length))
+  }, [
+    currentSpread,
+    labels.firstPage,
+    labels.pageProgress,
+    labels.spreadProgress,
+    pages.length,
+    spreadIndex,
+  ])
 
   return (
-    <div
-      className={cn(
-        'flex flex-col gap-5',
-        isExpanded && 'bg-background fixed inset-0 z-50 overflow-y-auto px-4 py-5 md:px-8 md:py-8',
-      )}
-    >
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-col">
-          <span className="text-[13px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
-            {title}
-          </span>
-          <span className="text-muted-foreground text-sm">{progressLabel}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            onClick={goPrevious}
-            disabled={!canGoPrevious || !isReady}
-            aria-label={labels.previous}
-            title={labels.previous}
-          >
-            <ArrowLeft aria-hidden="true" />
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            onClick={goNext}
-            disabled={!canGoNext || !isReady}
-            aria-label={labels.next}
-            title={labels.next}
-          >
-            <ArrowRight aria-hidden="true" />
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            onClick={() => setIsExpanded((value) => !value)}
-            aria-label={isExpanded ? labels.collapse : labels.expand}
-            title={isExpanded ? labels.collapse : labels.expand}
-          >
-            {isExpanded ? <Minimize2 aria-hidden="true" /> : <Maximize2 aria-hidden="true" />}
-          </Button>
-        </div>
-      </div>
+    <div className="mt-[26px]">
+      <div className="flex items-center justify-center gap-1.5 sm:gap-3">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          disabled={!canGoPrevious || turn !== null}
+          aria-label={labels.previous}
+          className="border-border bg-background text-foreground focus-visible:ring-brand-400 flex size-[38px] shrink-0 cursor-pointer items-center justify-center rounded-full border text-[1.6rem] leading-none shadow-[0_4px_14px_rgba(20,23,29,0.1)] transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-default disabled:opacity-35 sm:size-12"
+        >
+          <span aria-hidden="true">‹</span>
+        </button>
 
-      <div
-        ref={stageRef}
-        className={cn(
-          'bg-surface-dark relative mx-auto flex h-[560px] w-full max-w-[1040px] items-center justify-center overflow-hidden border border-neutral-900 shadow-2xl shadow-neutral-950/25 outline-none md:h-[540px] lg:h-[560px]',
-          isExpanded && 'h-[calc(100vh-172px)] max-w-[min(1500px,96vw)] md:h-[calc(100vh-186px)]',
-        )}
-        tabIndex={0}
-        aria-label={labels.readerLabel}
-      >
-        {!isReady ? (
-          <div
-            className="absolute inset-0 flex items-center justify-center p-4"
-            aria-hidden={shouldInitialize ? 'true' : undefined}
-          >
-            <div className="relative h-full max-h-[min(100%,760px)] w-auto overflow-hidden bg-white shadow-xl">
-              <Image
-                src={pages[0]?.src ?? ''}
-                alt={labels.pageAlt.replace('{page}', '1')}
-                width={pageWidth}
-                height={pageHeight}
-                sizes="(min-width: 1024px) 420px, 82vw"
-                className="h-full w-auto object-contain"
-                draggable={false}
-              />
-            </div>
-          </div>
-        ) : null}
         <div
-          ref={bookMountRef}
-          className={cn(
-            'magazine-flip-stage relative h-full w-full',
-            isReady ? 'opacity-100' : 'opacity-0',
-          )}
-          style={{ '--magazine-page-ratio': String(pageAspectRatio) } as CSSProperties}
-        />
+          role="group"
+          tabIndex={0}
+          aria-label={labels.readerLabel}
+          onClick={(event) => {
+            const bounds = event.currentTarget.getBoundingClientRect()
+            go(event.clientX - bounds.left < bounds.width / 2 ? -1 : 1)
+          }}
+          className="focus-visible:ring-brand-400 relative aspect-[2/1.402] w-full max-w-[920px] cursor-pointer overflow-hidden rounded-[6px] bg-[#e9e4d8] shadow-[0_30px_70px_rgba(20,23,29,0.28),0_4px_14px_rgba(20,23,29,0.2)] [perspective:2400px] focus-visible:ring-2 focus-visible:outline-none"
+        >
+          <div className="absolute top-0 left-0 h-full w-1/2 overflow-hidden rounded-l-[6px] bg-[#f4f1ea] shadow-[inset_-18px_0_30px_-18px_rgba(0,0,0,0.35)] [backface-visibility:hidden]">
+            <PageImage pageIndex={displayedLeft} pages={pages} labels={labels} />
+          </div>
+          <div className="absolute top-0 left-1/2 h-full w-1/2 overflow-hidden rounded-r-[6px] bg-[#f4f1ea] shadow-[inset_18px_0_30px_-18px_rgba(0,0,0,0.35)] [backface-visibility:hidden]">
+            <PageImage pageIndex={displayedRight} pages={pages} labels={labels} />
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="absolute top-0 left-1/2 z-6 h-full w-0.5 -translate-x-px bg-[linear-gradient(90deg,rgba(0,0,0,0.22),rgba(0,0,0,0.05),rgba(0,0,0,0.22))]"
+          />
+
+          {turn ? (
+            <div
+              aria-hidden="true"
+              className={cn(
+                'absolute top-0 z-7 h-full w-1/2 [will-change:transform] [transform-style:preserve-3d]',
+                turn.direction === 1 ? 'left-1/2 origin-left' : 'left-0 origin-right',
+                turnStarted &&
+                  '[transition-property:transform] duration-700 ease-[cubic-bezier(.3,.1,.2,1)]',
+                turnStarted && turn.direction === 1 && '[transform:rotateY(-179deg)]',
+                turnStarted && turn.direction === -1 && '[transform:rotateY(179deg)]',
+              )}
+            >
+              <div className="absolute inset-0 overflow-hidden bg-[#f4f1ea] shadow-[0_0_24px_rgba(0,0,0,0.18)] [backface-visibility:hidden]">
+                <PageImage pageIndex={leafFront} pages={pages} labels={labels} />
+              </div>
+              <div className="absolute inset-0 [transform:rotateY(180deg)] overflow-hidden bg-[#f4f1ea] shadow-[0_0_24px_rgba(0,0,0,0.18)] [backface-visibility:hidden]">
+                <PageImage pageIndex={leafBack} pages={pages} labels={labels} />
+              </div>
+            </div>
+          ) : null}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => go(1)}
+          disabled={!canGoNext || turn !== null}
+          aria-label={labels.next}
+          className="border-border bg-background text-foreground focus-visible:ring-brand-400 flex size-[38px] shrink-0 cursor-pointer items-center justify-center rounded-full border text-[1.6rem] leading-none shadow-[0_4px_14px_rgba(20,23,29,0.1)] transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none disabled:cursor-default disabled:opacity-35 sm:size-12"
+        >
+          <span aria-hidden="true">›</span>
+        </button>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-1.5">
-          {pages.map((page) => {
-            const isActive = page.number >= visibleRange.first && page.number <= visibleRange.last
-
-            return (
-              <button
-                key={page.number}
-                type="button"
-                onClick={() => goToPage(page.number - 1)}
-                className={cn(
-                  'size-2.5 rounded-full border border-neutral-300 transition-colors',
-                  isActive ? 'bg-primary border-primary' : 'bg-white hover:border-neutral-500',
-                )}
-                aria-label={labels.pageProgress
-                  .replace('{page}', String(page.number))
-                  .replace('{total}', String(pages.length))}
-              />
-            )
-          })}
-        </div>
-        <div className="flex gap-2">
-          <Button type="button" variant="ghost" size="sm" onClick={() => goToPage(0)}>
-            {labels.firstPage}
-          </Button>
-          <Button type="button" variant="ghost" size="sm" onClick={() => goToPage(lastPageIndex)}>
-            {labels.lastPage}
-          </Button>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+        <span className="text-muted-foreground text-sm tabular-nums">{progressLabel}</span>
+        <div className="flex flex-wrap justify-center gap-[7px]">
+          {spreads.map((spread, index) => (
+            <button
+              key={`${spread[0] ?? 'cover'}-${spread[1] ?? 'back'}-${index}`}
+              type="button"
+              onClick={() => jumpToSpread(index)}
+              aria-label={labels.spreadProgress
+                .replace('{from}', String((spread[0] ?? spread[1] ?? 0) + 1))
+                .replace('{to}', String((spread[1] ?? spread[0] ?? 0) + 1))
+                .replace('{total}', String(pages.length))}
+              className={cn(
+                'bg-brand-600 focus-visible:ring-brand-400 size-[9px] cursor-pointer rounded-full border-0 p-0 transition-opacity focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+                index === spreadIndex ? 'opacity-100' : 'opacity-30 hover:opacity-60',
+              )}
+            />
+          ))}
         </div>
       </div>
     </div>

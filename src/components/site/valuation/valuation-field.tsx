@@ -48,9 +48,7 @@ export function ValuationField({ field, value, error, onChange }: ValuationField
   const label = t(`fields.${field.id}.label`)
   const optionalSuffix =
     field.status === 'optional' && field.kind !== 'checkbox' ? (
-      <span className="text-muted-foreground ml-2 text-xs font-normal">
-        {t('optionalBadge')}
-      </span>
+      <span className="text-muted-foreground ml-2 text-xs font-normal">{t('optionalBadge')}</span>
     ) : null
 
   const errorNode = error ? (
@@ -101,9 +99,7 @@ export function ValuationField({ field, value, error, onChange }: ValuationField
     const isMulti = field.kind === 'multi'
 
     const optionLabel = (option: string) =>
-      field.kind === 'boolean'
-        ? t(`boolean.${option}`)
-        : t(`options.${field.optionSet}.${option}`)
+      field.kind === 'boolean' ? t(`boolean.${option}`) : t(`options.${field.optionSet}.${option}`)
 
     return (
       <fieldset aria-describedby={describedBy || undefined}>

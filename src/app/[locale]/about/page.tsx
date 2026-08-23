@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ArrowUpRight } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -10,6 +11,7 @@ import { PageHero } from '@/components/site/templates/page-hero'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { SITE } from '@/lib/seo/site'
 import { localizePath } from '@/lib/seo/routes'
+import { Link } from '@/i18n/navigation'
 
 export const dynamic = 'force-static'
 
@@ -79,6 +81,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <p className="text-muted-foreground leading-7">{item.text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="border-border border-b py-12 md:py-16">
+        <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+          <Link
+            href="/partners"
+            className="group border-border hover:border-brand-300 grid gap-5 border p-7 transition-colors md:grid-cols-[1fr_auto] md:items-end md:p-9"
+          >
+            <div>
+              <h2 className="max-w-[24ch] font-serif text-3xl leading-tight font-semibold text-balance">
+                {t('partnerTrack.title')}
+              </h2>
+              <p className="text-muted-foreground mt-4 max-w-[70ch] leading-7 text-pretty">
+                {t('partnerTrack.text')}
+              </p>
+            </div>
+            <span className="text-brand-700 inline-flex min-h-11 items-center gap-2 text-sm font-semibold">
+              {t('partnerTrack.link')}
+              <ArrowUpRight
+                className="size-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
         </div>
       </section>
 
