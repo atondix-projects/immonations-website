@@ -130,9 +130,19 @@
       "routeCta": "Plan your route",
       "hoursLabel": "Opening hours",
       "hours": [
-        { "days": "Monday – Friday", "time": "9:00 – 18:00" },
-        { "days": "Saturday", "time": "10:30 – 14:00" },
-        { "days": "Sunday", "time": "closed", "closed": true }
+        {
+          "days": "Monday – Friday",
+          "time": "9:00 – 18:00"
+        },
+        {
+          "days": "Saturday",
+          "time": "10:30 – 14:00"
+        },
+        {
+          "days": "Sunday",
+          "time": "closed",
+          "closed": true
+        }
       ],
       "appointmentTitle": "Appointments outside opening hours",
       "appointmentText": "By prior arrangement we are happy to work around your calendar. A property sale is rarely something to discuss in passing.",
@@ -287,6 +297,15 @@
         "video": true
       },
       {
+        "id": "sandra-boerschlein",
+        "name": "Sandra Börschlein",
+        "context": "House sale with personal support",
+        "quote": "I was completely delighted with the support and the process of selling my house. From the first consultation, I felt in the best hands.",
+        "result": "A fast, transparent, stress-free house sale",
+        "alt": "Preview image for Sandra Börschlein's sales story",
+        "video": false
+      },
+      {
         "id": "markus-burkhard",
         "name": "Markus Burkhard",
         "context": "Maisonette in Zirndorf-Weiherhof",
@@ -368,10 +387,22 @@
       ]
     },
     "stats": [
-      { "value": "300+", "label": "reviews across 10 platforms" },
-      { "value": "60+", "label": "property sales per year" },
-      { "value": "8,000+", "label": "registered search clients" },
-      { "value": "360°", "label": "tour for every listing" }
+      {
+        "value": "300+",
+        "label": "reviews across 10 platforms"
+      },
+      {
+        "value": "60+",
+        "label": "property sales per year"
+      },
+      {
+        "value": "8,000+",
+        "label": "registered search clients"
+      },
+      {
+        "value": "360°",
+        "label": "tour for every listing"
+      }
     ],
     "faq": {
       "title": "Common questions about the valuation"
@@ -387,48 +418,410 @@
     "prototypeLabel": "Frontend prototype",
     "title": "Classify your property",
     "progressLabel": "Valuation progress",
-    "propertyTypes": ["House", "Apartment", "Apartment building", "Land"],
-    "conditions": ["Modernised", "Well maintained", "Needs renovation"],
-    "timings": ["0–3 months", "3–12 months", "Orientation only"],
+    "stepLabel": "Step {current} of {total}",
+    "back": "Back",
+    "next": "Continue",
+    "finish": "Request my analysis",
+    "restart": "Start over",
+    "optionalBadge": "optional",
+    "optionalStepNote": "Everything in this step is voluntary. It sharpens the range — you can skip it at any time.",
+    "skip": "Skip",
+    "localOnly": "Completing the flow only opens the local thank-you page. No request is transmitted.",
+    "propertyTypes": {
+      "house": "House",
+      "apartment": "Apartment",
+      "land": "Land",
+      "apartment-building": "Apartment building",
+      "commerce": "Commercial"
+    },
     "steps": {
       "type": {
         "title": "Which property would you like to value?",
-        "text": "Select the property type for a relevant first classification."
+        "text": "The property type determines which details we ask for next."
       },
       "location": {
         "title": "Where is the property?",
-        "text": "Postcode and city are enough for this prototype.",
-        "postcode": "Postcode",
-        "city": "City"
+        "text": "Location is the strongest value driver. Postcode and city are enough for a first classification."
+      },
+      "core": {
+        "title": "The key facts",
+        "text": "A handful of required details is enough for a rough range."
       },
       "details": {
-        "title": "How large is the property?",
-        "text": "Approximate figures are enough for this first classification.",
-        "area": "Living area in m²",
-        "rooms": "Rooms"
+        "title": "Optional details",
+        "text": "The more you add, the more precise the classification becomes."
       },
-      "context": {
-        "title": "Condition and timing",
-        "condition": "How would you describe its condition?",
-        "timing": "When could a sale become relevant?"
+      "contact": {
+        "title": "Where may we send your analysis?",
+        "text": "We send you the classification and get in touch about the free on-site appointment."
+      }
+    },
+    "units": {
+      "sqm": "m²",
+      "eur": "€",
+      "eurPerMonth": "€ / month",
+      "eurPerYear": "€ / year",
+      "year": "Year",
+      "metre": "m",
+      "count": "Number"
+    },
+    "boolean": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "errors": {
+      "required": "Please complete this field.",
+      "min": "Please enter a plausible value.",
+      "max": "That value is too high.",
+      "postcode": "Please enter a five-digit postcode.",
+      "email": "Please enter a valid email address.",
+      "futureYear": "That construction year is too far in the future.",
+      "summary": "Please check the highlighted fields."
+    },
+    "fields": {
+      "postcode": {
+        "label": "Postcode"
       },
-      "summary": {
-        "title": "Your details at a glance",
-        "text": "Review the key facts. Nothing is sent or stored in this prototype."
+      "city": {
+        "label": "City"
+      },
+      "street": {
+        "label": "Street and number"
+      },
+      "timing": {
+        "label": "Intention to sell and time frame"
+      },
+      "livingArea": {
+        "label": "Living area"
+      },
+      "usableArea": {
+        "label": "Usable area"
+      },
+      "totalArea": {
+        "label": "Total living and usable area"
+      },
+      "plotArea": {
+        "label": "Plot area"
+      },
+      "rooms": {
+        "label": "Number of rooms"
+      },
+      "constructionYear": {
+        "label": "Year built"
+      },
+      "floorLevel": {
+        "label": "Floor"
+      },
+      "floors": {
+        "label": "Number of floors"
+      },
+      "condition": {
+        "label": "Condition"
+      },
+      "houseType": {
+        "label": "House type"
+      },
+      "rented": {
+        "label": "Is the apartment rented out?"
+      },
+      "rentalStatus": {
+        "label": "Rented out or vacant?"
+      },
+      "tenure": {
+        "label": "Owner-occupied or rented out?"
+      },
+      "coldRent": {
+        "label": "Current net cold rent"
+      },
+      "annualNetRent": {
+        "label": "Actual annual net cold rent"
+      },
+      "leaseRemainingYears": {
+        "label": "Remaining lease term",
+        "hint": "in years"
+      },
+      "tenantCredit": {
+        "label": "Tenant credit standing"
+      },
+      "elevator": {
+        "label": "Is there a lift?"
+      },
+      "balcony": {
+        "label": "Balcony or terrace?"
+      },
+      "balconyArea": {
+        "label": "Balcony / terrace area"
+      },
+      "garden": {
+        "label": "Garden or exclusive-use right?"
+      },
+      "parking": {
+        "label": "Parking space / garage"
+      },
+      "parkingSpaces": {
+        "label": "Parking spaces"
+      },
+      "fitout": {
+        "label": "Fit-out"
+      },
+      "serviceCharge": {
+        "label": "Service charge"
+      },
+      "energyClass": {
+        "label": "Energy rating"
+      },
+      "basement": {
+        "label": "Basement"
+      },
+      "modernisations": {
+        "label": "Modernisations"
+      },
+      "modernisationYear": {
+        "label": "Year of the most recent modernisation"
+      },
+      "heating": {
+        "label": "Heating system / energy source"
+      },
+      "buildingRight": {
+        "label": "Building rights / status"
+      },
+      "development": {
+        "label": "Site servicing"
+      },
+      "existingBuilding": {
+        "label": "Existing building on site?",
+        "hint": "For example a teardown."
+      },
+      "plotShape": {
+        "label": "Plot shape and orientation"
+      },
+      "planningNotes": {
+        "label": "Site coverage ratio or development plan",
+        "hint": "If known."
+      },
+      "unitsResidential": {
+        "label": "Residential units"
+      },
+      "unitsCommercial": {
+        "label": "Commercial units"
+      },
+      "vacancy": {
+        "label": "Any vacancy?"
+      },
+      "vacancyExtent": {
+        "label": "Extent of the vacancy"
+      },
+      "maintenanceBacklog": {
+        "label": "Deferred maintenance?"
+      },
+      "maintenanceNote": {
+        "label": "Description of the deferred maintenance"
+      },
+      "commerceType": {
+        "label": "Type of commercial property"
+      },
+      "hallHeight": {
+        "label": "Ceiling height"
+      },
+      "loadingRamp": {
+        "label": "Loading ramp or dock?"
+      },
+      "technicalFitout": {
+        "label": "Technical fit-out"
+      },
+      "salutation": {
+        "label": "Salutation"
+      },
+      "firstName": {
+        "label": "First name"
+      },
+      "lastName": {
+        "label": "Last name"
+      },
+      "email": {
+        "label": "Email",
+        "hint": "Your analysis goes to this address."
+      },
+      "phone": {
+        "label": "Phone",
+        "hint": "We call briefly to arrange the on-site assessment."
+      },
+      "preferredChannel": {
+        "label": "Preferred channel"
+      },
+      "preferredTime": {
+        "label": "Preferred time"
+      },
+      "role": {
+        "label": "Role"
+      },
+      "source": {
+        "label": "How did you hear about us?"
+      },
+      "consent": {
+        "label": "I consent to Immonation GmbH processing my details for the valuation and for getting in touch. <link>Privacy policy</link>"
+      },
+      "marketingConsent": {
+        "label": "I would also like to receive the market report and newsletter. This consent is voluntary and can be withdrawn at any time."
+      }
+    },
+    "options": {
+      "timing": {
+        "concrete": "Concretely planned",
+        "one-to-two-years": "In 1–2 years",
+        "interest-only": "Just interested"
+      },
+      "condition": {
+        "first-occupancy": "First occupancy",
+        "renovated": "Refurbished",
+        "maintained": "Well maintained",
+        "needs-renovation": "Needs renovation"
+      },
+      "houseType": {
+        "detached": "Detached",
+        "semi-detached": "Semi-detached",
+        "terraced-mid": "Mid-terrace",
+        "terraced-end": "End-of-terrace"
+      },
+      "floorLevel": {
+        "ground": "Ground floor",
+        "upper-1": "1st floor",
+        "upper-2": "2nd floor",
+        "upper-3": "3rd floor",
+        "upper-4-plus": "4th floor or higher",
+        "attic": "Attic floor"
+      },
+      "parking": {
+        "none": "None",
+        "outdoor": "Outdoor space",
+        "garage": "Garage",
+        "underground": "Underground garage"
+      },
+      "fitout": {
+        "simple": "Basic",
+        "normal": "Standard",
+        "upscale": "Upscale"
+      },
+      "basement": {
+        "none": "None",
+        "unfinished": "Unconverted",
+        "finished": "Converted"
+      },
+      "buildingRight": {
+        "building-land": "Building land (serviced)",
+        "expectant-land": "Prospective building land",
+        "no-building-right": "No building rights"
+      },
+      "development": {
+        "full": "Fully serviced",
+        "partial": "Partly serviced",
+        "none": "Not serviced"
+      },
+      "heating": {
+        "gas": "Gas",
+        "oil": "Oil",
+        "heat-pump": "Heat pump",
+        "district": "District heating",
+        "pellets": "Pellets",
+        "electric": "Electric",
+        "other": "Other"
+      },
+      "energyClass": {
+        "a-plus": "A+",
+        "a": "A",
+        "b": "B",
+        "c": "C",
+        "d": "D",
+        "e": "E",
+        "f": "F",
+        "g": "G",
+        "h": "H",
+        "unknown": "Not known"
+      },
+      "modernisation": {
+        "roof": "Roof",
+        "windows": "Windows",
+        "heating": "Heating",
+        "bathroom": "Bathroom"
+      },
+      "commerceType": {
+        "office": "Office",
+        "retail": "Retail unit",
+        "hall": "Hall / warehouse / logistics",
+        "practice": "Medical practice",
+        "gastronomy": "Hospitality",
+        "special": "Special-purpose"
+      },
+      "rentalStatus": {
+        "vacant": "Vacant",
+        "rented": "Rented out"
+      },
+      "tenure": {
+        "owner-occupied": "Owner-occupied",
+        "rented": "Rented out"
+      },
+      "tenantCredit": {
+        "strong": "Very strong",
+        "medium": "Solid",
+        "weak": "Rather weak",
+        "unknown": "Not known"
+      },
+      "salutation": {
+        "mr": "Mr",
+        "ms": "Ms",
+        "none": "Prefer not to say"
+      },
+      "preferredChannel": {
+        "phone": "Phone",
+        "email": "Email"
+      },
+      "preferredTime": {
+        "morning": "Morning",
+        "afternoon": "Afternoon",
+        "evening": "Evening"
+      },
+      "role": {
+        "owner": "Owner",
+        "co-owner": "Co-owner",
+        "heir": "Heir / community of heirs",
+        "authorised": "Authorised representative",
+        "agent": "Estate agent"
+      },
+      "source": {
+        "google": "Google",
+        "referral": "Referral",
+        "portal": "Property portal",
+        "social": "Social media",
+        "other": "Other"
+      }
+    },
+    "trust": {
+      "headline": "No sharing with third parties, no spam, revocable at any time.",
+      "doubleOptIn": "Before any mailing goes out you confirm your email address via double opt-in."
+    },
+    "result": {
+      "eyebrow": "Rough online range",
+      "title": "Your first classification",
+      "rangeLabel": "Orientation range",
+      "perSqm": "{low} – {high} € per m² in {city}",
+      "districts": "Data basis: {districts}",
+      "derived": "Derived, not guessed: the range comes from published district figures and your key facts.",
+      "thinData": "Few evaluated properties exist for this location — the range is deliberately wider.",
+      "onSite": "The reliable figure is established during the free on-site appointment.",
+      "unavailable": {
+        "unsupported-type": "We deliberately publish no online range for this property type — value and multiplier depend too heavily on the lease, condition and use. We work it through properly at the appointment.",
+        "unknown-location": "We hold no published district figures for this postcode. We will classify the location personally at the appointment.",
+        "missing-area": "Without a floor area no serious range can be formed."
       }
     },
     "summary": {
-      "type": "Property type",
+      "title": "Your details at a glance",
+      "text": "Review the key facts before requesting your analysis.",
+      "propertyType": "Property type",
       "location": "Location",
-      "details": "Size",
-      "rooms": "rooms",
-      "context": "Context"
-    },
-    "localOnly": "Completing the flow only opens the local thank-you page. No request is transmitted.",
-    "error": "Please complete the details in this step.",
-    "back": "Back",
-    "next": "Continue",
-    "finish": "Complete prototype"
+      "empty": "Not specified",
+      "edit": "Change"
+    }
   },
   "ValuationThankYou": {
     "metadata": {
@@ -993,10 +1386,22 @@
         "search": "Regional demand"
       },
       "items": [
-        { "value": "4.9 / 5", "label": "from 226 Google reviews · as of August 2026" },
-        { "value": "60+", "label": "property sales per year" },
-        { "value": "€30m", "label": "annual transaction volume" },
-        { "value": "8,000+", "label": "registered search clients" }
+        {
+          "value": "4.9 / 5",
+          "label": "from 226 Google reviews · as of August 2026"
+        },
+        {
+          "value": "60+",
+          "label": "property sales per year"
+        },
+        {
+          "value": "€30m",
+          "label": "annual transaction volume"
+        },
+        {
+          "value": "8,000+",
+          "label": "registered search clients"
+        }
       ]
     },
     "awards": {
@@ -1174,9 +1579,18 @@
         }
       ],
       "stats": [
-        { "value": "360°", "label": "Tour for every property" },
-        { "value": "8,000+", "label": "registered search clients" },
-        { "value": "60+", "label": "property sales per year" }
+        {
+          "value": "360°",
+          "label": "Tour for every property"
+        },
+        {
+          "value": "8,000+",
+          "label": "registered search clients"
+        },
+        {
+          "value": "60+",
+          "label": "property sales per year"
+        }
       ],
       "demoLabel": "Property presentation · From plot to completed home",
       "demoNote": "The video shows how a plot of land becomes a completed real-estate project step by step.",
@@ -1194,7 +1608,9 @@
       "previousReview": "Previous review",
       "nextReview": "Next review",
       "reviewSlide": "Review",
-      "selectionNote": "The slideshow shows original Google screenshots from three verifiable sales.",
+      "expandReview": "Expand Google review",
+      "closeReview": "Close Google review",
+      "selectionNote": "Each view connects the original screenshot to the matching sales story — including its story image, context, and result.",
       "guideLink": "How to tell real reviews from fakes",
       "headline": {
         "platform": "Google",
@@ -1321,6 +1737,7 @@
       "title": "Three personal perspectives on working with us",
       "text": "Clients describe the advice, communication, and sale in their own words. One conversation is available now; two further video slots are prepared for approved contributions.",
       "comingSoon": "Video coming soon",
+      "reviewLabel": "Original Google review",
       "items": [
         {
           "id": "viktor-emter",
@@ -1991,7 +2408,10 @@
       "eyebrow": "Especially valuable",
       "title": "When this pays off most",
       "items": [
-        { "lead": "You have inherited", "text": "and no documents exist, or only very old ones." },
+        {
+          "lead": "You have inherited",
+          "text": "and no documents exist, or only very old ones."
+        },
         {
           "lead": "Your property has been altered",
           "text": "— attic conversion, extension, conservatory — and the old plans no longer match."
@@ -2004,14 +2424,21 @@
           "lead": "You are selling an apartment",
           "text": "and the declaration of division differs from reality."
         },
-        { "lead": "Your buyer needs financing", "text": "— which is to say, in almost every sale." }
+        {
+          "lead": "Your buyer needs financing",
+          "text": "— which is to say, in almost every sale."
+        }
       ]
     },
     "process": {
       "eyebrow": "How it works",
       "title": "Five steps to documents that hold up",
       "steps": [
-        { "num": "1", "title": "Arrange an appointment", "text": "Our engineer comes to you." },
+        {
+          "num": "1",
+          "title": "Arrange an appointment",
+          "text": "Our engineer comes to you."
+        },
         {
           "num": "2",
           "title": "On-site survey",
@@ -2181,6 +2608,171 @@
       "secondary": "Arrange an initial consultation"
     }
   },
+  "FinancingPage": {
+    "serviceType": "Mortgage and property financing advice",
+    "areaServed": "Nuremberg metropolitan region",
+    "metadata": {
+      "title": "Property financing in Nuremberg, Fürth, Erlangen & Zirndorf – partner Dr. Klein",
+      "description": "Property financing across the Nuremberg metropolitan region with our long-standing partner Stefan Vogelsang (Dr. Klein): the right financing structure, solutions for difficult cases, prioritised handling and fast feedback."
+    },
+    "hero": {
+      "eyebrow": "Property financing · Nuremberg metropolitan region",
+      "title": "Property financing in Nuremberg, Fürth, Erlangen, Zirndorf & Forchheim",
+      "lede": "A property is only as good as the financing behind it. That is why we work closely with Stefan Vogelsang of Dr. Klein: he builds the right financing structure for our buyers, finds a way through difficult cases, and makes himself and his team available to Immonation clients.",
+      "primary": "Request financing advice",
+      "secondary": "View current properties"
+    },
+    "answer": "At Immonation your property financing runs through our long-standing partner Stefan Vogelsang of Dr. Klein. He compares conditions across a wide range of banks, builds the financing that fits, and finds a solution even when a case falls outside the standard template — for example with self-employment or an unusual property type. Because the partnership is a fixed one, your case is handled with priority: as soon as your documents are complete you receive an initial assessment quickly. A purely advisory conversation is expressly possible — you are not required to take out your financing through him.",
+    "metrics": {
+      "eyebrow": "What the partnership delivers",
+      "title": "Three differences you notice in the process",
+      "intro": "A fixed partnership is more than a referral. It changes how quickly your case is handled, how early you get clarity, and how much room remains when your starting position does not match the textbook.",
+      "items": [
+        {
+          "title": "Prioritised",
+          "text": "Our fixed partnership means your case is handled with priority — you do not end up at the back of an anonymous queue."
+        },
+        {
+          "title": "Fast",
+          "text": "Feedback on your financing structure as soon as your documents are complete. That shortens the time to a dependable offer."
+        },
+        {
+          "title": "Difficult cases too",
+          "text": "Solution-driven rather than one-size-fits-all — not every case is standard, and that is exactly what the partnership is for."
+        }
+      ]
+    },
+    "partner": {
+      "eyebrow": "Your contact",
+      "title": "Stefan Vogelsang – Dr. Klein",
+      "intro": "Stefan Vogelsang builds the right financing for our clients — from the straightforward purchase to the demanding constellation. He is a sportsman and lives by the motto “the best for the client”. That is precisely why we fit together so well: the same attitude, the same clear focus on the outcome for you.",
+      "advice": "Together with his team he is a dependable point of contact for Immonation clients. A purely advisory conversation is expressly possible — you are not required to take out your financing through him. Clarity comes first, not the deal.",
+      "brokers": "Stefan Vogelsang and his team are also available to our partner agents — so their clients benefit from the same fast, prioritised access to financing.",
+      "logoAlt": "Dr. Klein logo",
+      "card": {
+        "title": "What the partnership means for you",
+        "items": [
+          "Prioritised handling of your case thanks to the fixed partnership.",
+          "Fast initial feedback as soon as your documents are complete.",
+          "Solutions even in a difficult starting position — for example self-employment or an unusual property type.",
+          "Independent bank comparison via the Dr. Klein platform."
+        ],
+        "cta": "Arrange an advisory appointment"
+      }
+    },
+    "appraisal": {
+      "eyebrow": "Advance bank appraisal",
+      "title": "Every property we market is appraised by the bank beforehand",
+      "lead": "A difference that is worth real money: we have our properties appraised by the bank in advance. That way we know before marketing begins which conditions have to be met for the asking price to be financeable — and how the bank values the property.",
+      "cards": [
+        {
+          "title": "For buyers: certainty before you commit",
+          "text": "You know early how the bank values the property and what level of equity — and unsecured share — is realistic. That spares you unpleasant surprises when the financing commitment arrives, and makes your offer more credible to the seller."
+        },
+        {
+          "title": "For owners: a realistic, financeable asking price",
+          "text": "Because we know how the bank values your property and what the unsecured share looks like, we set the price so that buyers can actually finance it. A price no bank will support only costs you time in the end."
+        }
+      ],
+      "note": {
+        "title": "In brief",
+        "text": "The mortgage lending value (Beleihungswert) is the value a bank applies as long-term security — usually below the purchase price. The unsecured share (Blankoanteil) is the part of the loan that exceeds this value and is therefore not covered by the property. The smaller the unsecured share, the better the conditions tend to be."
+      }
+    },
+    "calculator": {
+      "eyebrow": "Calculators",
+      "title": "Run the numbers before you go into the conversation",
+      "lead": "Budget, monthly instalment, purchase costs and interest-rate trends: get an overview before you go into the conversation.",
+      "tools": [
+        {
+          "name": "Interest-rate chart",
+          "text": "How have mortgage rates moved recently? Shows the trend and puts the current level in context."
+        },
+        {
+          "name": "Budget calculator",
+          "text": "What can I afford? Derives a possible purchase price from your equity and monthly instalment."
+        },
+        {
+          "name": "Home loan calculator",
+          "text": "How high will the instalment and term be? Shows how repayment rate and fixed-rate period change the burden."
+        },
+        {
+          "name": "Land registry calculator",
+          "text": "What do notary and land registry cost? Estimates the incidental costs on top of the purchase price."
+        },
+        {
+          "name": "Mortgage rate calculator",
+          "text": "Which conditions are realistic? Works out an interest-rate range for your constellation."
+        },
+        {
+          "name": "Rent-versus-buy calculator",
+          "text": "Is buying worth it compared with renting? Compares both routes over the full term."
+        }
+      ],
+      "panel": {
+        "title": "Open all calculators at Dr. Klein",
+        "text": "The calculators are provided by Dr. Klein and operated on their platform. They open in a new tab — doing so transfers data to the provider.",
+        "cta": "Go to the Dr. Klein calculators"
+      },
+      "disclaimer": "The calculators provide non-binding orientation, not a financing offer. Binding conditions only follow once the lending bank has reviewed your documents."
+    },
+    "related": {
+      "eyebrow": "Related",
+      "title": "Property and financing belong together",
+      "text": "Knowing early what is financeable makes for surer negotiation. These pages carry the thread onwards — from the current listings and our work with partner agents to the documents your buyer’s bank will want to see.",
+      "properties": "Current properties",
+      "partners": "Partner agents",
+      "valuation": "Property valuation",
+      "floorPlans": "Living area & floor plans"
+    },
+    "faq": {
+      "title": "Frequently asked questions about property financing",
+      "items": [
+        {
+          "question": "How much equity do I need for property financing?",
+          "answer": "As a rule of thumb you should cover at least the incidental purchase costs — around 5 to 6 percent in Bavaria — from your own funds, and ideally a further 20 percent of the purchase price. More equity improves your interest rate. Solutions exist with less equity too — Stefan Vogelsang assesses that case by case."
+        },
+        {
+          "question": "Can I get financing if I am self-employed or in a difficult position?",
+          "answer": "Often yes. Not every case fits the standard template — that is exactly what the partnership is for. Through the bank comparison and experience with demanding constellations, a solution can frequently be found. A binding answer follows once your documents have been reviewed."
+        },
+        {
+          "question": "What is the mortgage lending value and why is it below the purchase price?",
+          "answer": "The mortgage lending value is the value a bank cautiously and durably assigns to a property as security. It sits deliberately below the current purchase price because the bank factors in value fluctuations. It helps determine how much of the loan is well secured."
+        },
+        {
+          "question": "What does the unsecured share mean?",
+          "answer": "The unsecured share is the part of the loan that exceeds the mortgage lending value and is therefore not covered by the property. The smaller this share — for example through more equity — the better the conditions tend to be."
+        },
+        {
+          "question": "Do I have to arrange my financing through Dr. Klein if I buy via Immonation?",
+          "answer": "No. A purely advisory conversation is expressly possible, with no obligation at all. You decide freely where you arrange your financing — what matters to us first is that you have clarity."
+        },
+        {
+          "question": "How quickly will I get feedback?",
+          "answer": "As soon as your documents are complete you receive an initial assessment of a possible financing structure at short notice. Thanks to our fixed partnership your case is handled with priority."
+        },
+        {
+          "question": "What does the financing advice cost me?",
+          "answer": "As a rule no separate costs arise for you — the financing broker is remunerated by the bank if a contract is concluded. Mr Vogelsang discusses the exact conditions with you transparently."
+        },
+        {
+          "question": "Is the financing advice also available to partner agents?",
+          "answer": "Yes. Stefan Vogelsang and his team are also available to our partner agents and their clients — with the same prioritised access and fast feedback as for Immonation clients."
+        },
+        {
+          "question": "Which locations do you cover for financing?",
+          "answer": "We and our financing partner are active across the entire metropolitan region: Zirndorf, Fürth, Erlangen, Nuremberg, Forchheim and the surrounding area."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Clarify the financing first, then view",
+      "text": "One conversation is enough to know what is realistic — non-binding and with no obligation to sign.",
+      "primary": "Request free financing advice",
+      "secondary": "Get your property valued"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER magazine",
     "title": "A look at our work, our principles, and real sale stories.",
@@ -2218,7 +2810,8 @@
     "title": "Premium marketing works as a system.",
     "lede": "From a market-ready price and lender-ready documents to precise buyer outreach, ten connected services prepare your sale, create visibility, and guide it safely to completion.",
     "networkProofValue": "8,000+",
-    "networkProofLabel": "registered buyers for direct and discreet outreach",
+    "networkProofLabel": "registered buyers",
+    "networkProofNote": "for direct and discreet buyer outreach",
     "primaryCta": "Value your property",
     "secondaryCta": "Explore seller paths",
     "tabList": "Services in the Immonation sales system",
@@ -2266,9 +2859,18 @@
         ],
         "result": "Preparation, marketing, and completion work as one process. Your sale remains manageable, and no important step is left to chance.",
         "proof": [
-          { "value": "10", "label": "coordinated steps" },
-          { "value": "1 team", "label": "instead of one individual agent" },
-          { "value": "To completion", "label": "support beyond the notary appointment" }
+          {
+            "value": "10",
+            "label": "coordinated steps"
+          },
+          {
+            "value": "1 team",
+            "label": "instead of one individual agent"
+          },
+          {
+            "value": "To completion",
+            "label": "support beyond the notary appointment"
+          }
         ]
       },
       {
@@ -2286,9 +2888,18 @@
         ],
         "result": "The asking price reaches the right search filters and uses the high-attention launch phase without losing potential through an unrealistic opening position.",
         "proof": [
-          { "value": "3 pillars", "label": "experience, data, and comparison" },
-          { "value": "Regional", "label": "context for the greater Nuremberg area" },
-          { "value": "Market-ready", "label": "price as the basis of strategy" }
+          {
+            "value": "3 pillars",
+            "label": "experience, data, and comparison"
+          },
+          {
+            "value": "Regional",
+            "label": "context for the greater Nuremberg area"
+          },
+          {
+            "value": "Market-ready",
+            "label": "price as the basis of strategy"
+          }
         ]
       },
       {
@@ -2306,9 +2917,18 @@
         ],
         "result": "Valuation, brochure, and buyer checks rely on dependable information, so open questions do not surface only during finance or contract review.",
         "proof": [
-          { "value": "Complete", "label": "property and documents recorded" },
-          { "value": "Specific", "label": "requirements matched to property type" },
-          { "value": "Resolved early", "label": "missing documents obtained" }
+          {
+            "value": "Complete",
+            "label": "property and documents recorded"
+          },
+          {
+            "value": "Specific",
+            "label": "requirements matched to property type"
+          },
+          {
+            "value": "Resolved early",
+            "label": "missing documents obtained"
+          }
         ]
       },
       {
@@ -2326,9 +2946,18 @@
         ],
         "result": "Buyers can submit usable plans with their finance application, while questions about dimensions and areas are resolved early.",
         "proof": [
-          { "value": "Measured", "label": "exact dimensions instead of a sketch" },
-          { "value": "Living area", "label": "calculated transparently" },
-          { "value": "Network", "label": "prepared by coordinated specialists" }
+          {
+            "value": "Measured",
+            "label": "exact dimensions instead of a sketch"
+          },
+          {
+            "value": "Living area",
+            "label": "calculated transparently"
+          },
+          {
+            "value": "Network",
+            "label": "prepared by coordinated specialists"
+          }
         ]
       },
       {
@@ -2346,9 +2975,18 @@
         ],
         "result": "The listing communicates quality and orientation before a prospect reads the first paragraph or requests an appointment.",
         "proof": [
-          { "value": "Inside & out", "label": "one consistent visual language" },
-          { "value": "In context", "label": "location and plot made clear" },
-          { "value": "Purposeful", "label": "every perspective earns its place" }
+          {
+            "value": "Inside & out",
+            "label": "one consistent visual language"
+          },
+          {
+            "value": "In context",
+            "label": "location and plot made clear"
+          },
+          {
+            "value": "Purposeful",
+            "label": "every perspective earns its place"
+          }
         ]
       },
       {
@@ -2366,9 +3004,18 @@
         ],
         "result": "Your privacy is protected, and viewing time is focused on people who are seriously considering the property.",
         "proof": [
-          { "value": "Anytime", "label": "digital and location-independent" },
-          { "value": "Controlled", "label": "access after qualification" },
-          { "value": "Prepared", "label": "clearer spatial understanding before a visit" }
+          {
+            "value": "Anytime",
+            "label": "digital and location-independent"
+          },
+          {
+            "value": "Controlled",
+            "label": "access after qualification"
+          },
+          {
+            "value": "Prepared",
+            "label": "clearer spatial understanding before a visit"
+          }
         ]
       },
       {
@@ -2386,9 +3033,18 @@
         ],
         "result": "Prospects understand use, atmosphere, and development potential faster, even when the available imagery does not yet convey what the property could become.",
         "proof": [
-          { "value": "Source image", "label": "the documented current state" },
-          { "value": "AI vision", "label": "potential made emotionally clear" },
-          { "value": "Transparent", "label": "clearly marked as a visualisation" }
+          {
+            "value": "Source image",
+            "label": "the documented current state"
+          },
+          {
+            "value": "AI vision",
+            "label": "potential made emotionally clear"
+          },
+          {
+            "value": "Transparent",
+            "label": "clearly marked as a visualisation"
+          }
         ]
       },
       {
@@ -2406,9 +3062,18 @@
         ],
         "result": "Buyers receive a dependable basis for their decision, and questions focus on what genuinely matters to the purchase.",
         "proof": [
-          { "value": "One brochure", "label": "media and facts connected" },
-          { "value": "Approved", "label": "you retain control" },
-          { "value": "Relevant", "label": "portals suited to the property" }
+          {
+            "value": "One brochure",
+            "label": "media and facts connected"
+          },
+          {
+            "value": "Approved",
+            "label": "you retain control"
+          },
+          {
+            "value": "Relevant",
+            "label": "portals suited to the property"
+          }
         ]
       },
       {
@@ -2426,9 +3091,18 @@
         ],
         "result": "The property receives the attention it needs without confusing broad reach with genuine demand.",
         "proof": [
-          { "value": "Portals", "label": "reach within the active search market" },
-          { "value": "Social", "label": "campaigns aligned with the audience" },
-          { "value": "Network", "label": "direct and discreet outreach" }
+          {
+            "value": "Portals",
+            "label": "reach within the active search market"
+          },
+          {
+            "value": "Social",
+            "label": "campaigns aligned with the audience"
+          },
+          {
+            "value": "Network",
+            "label": "direct and discreet outreach"
+          }
         ]
       },
       {
@@ -2446,9 +3120,18 @@
         ],
         "result": "Reach becomes dependable offers, and the strongest overall package becomes a securely coordinated completion.",
         "proof": [
-          { "value": "Qualified", "label": "seriousness and financing reviewed" },
-          { "value": "Negotiated", "label": "price and terms kept in view" },
-          { "value": "Coordinated", "label": "through to the handover of keys" }
+          {
+            "value": "Qualified",
+            "label": "seriousness and financing reviewed"
+          },
+          {
+            "value": "Negotiated",
+            "label": "price and terms kept in view"
+          },
+          {
+            "value": "Coordinated",
+            "label": "through to the handover of keys"
+          }
         ]
       }
     ]
@@ -2942,10 +3625,22 @@
   "Footer": {
     "claim": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region.",
     "stats": [
-      { "value": "60 km", "label": "Advisory radius around Zirndorf" },
-      { "value": "6–12", "label": "Weeks typical time on market" },
-      { "value": "360°", "label": "Tour for every property" },
-      { "value": "300+", "label": "reviews across 10 platforms" }
+      {
+        "value": "60 km",
+        "label": "Advisory radius around Zirndorf"
+      },
+      {
+        "value": "6–12",
+        "label": "Weeks typical time on market"
+      },
+      {
+        "value": "360°",
+        "label": "Tour for every property"
+      },
+      {
+        "value": "300+",
+        "label": "reviews across 10 platforms"
+      }
     ],
     "sell": {
       "title": "Selling",
@@ -3030,5 +3725,122 @@
       "label": "Go to the terms and conditions"
     },
     "note": "As of July 2026. The German version is authoritative. The model withdrawal form is not obligatory."
+  },
+  "PriceAtlasPage": {
+    "metadata": {
+      "title": "Property price atlas, Nuremberg metropolitan region | Immonation",
+      "description": "Square-metre prices for {districts} districts across Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim — as a range with median, split by apartments and houses."
+    },
+    "hero": {
+      "eyebrow": "Price atlas · Nuremberg metropolitan region",
+      "title": "What your property is worth in your district.",
+      "lede": "Square-metre prices for {districts} districts across {cities} cities — separated into apartments and houses, showing the actual range instead of a single figure."
+    },
+    "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. District-level figures for Schwabach are currently being prepared. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
+    "note": "All figures are guide values, not a commitment to an achievable sale price. A reliable assessment starts with a review of the specific property.",
+    "jsonLd": {
+      "cityDescription": "District-level square-metre prices for {city} in the Immonation price atlas."
+    },
+    "atlas": {
+      "eyebrow": "District values",
+      "heading": "Price bands by district",
+      "unit": "€/m²",
+      "cityGroupLabel": "Select a city",
+      "categoryGroupLabel": "Property type",
+      "searchLabel": "Search district or postcode",
+      "searchPlaceholder": "District or postcode",
+      "scaleLabel": "Price range per m²",
+      "empty": "No district found. Try a different spelling or a postcode.",
+      "thinData": "Thin data",
+      "category": {
+        "apartment": "Apartments",
+        "house": "Houses"
+      },
+      "categoryInline": {
+        "apartment": "apartments",
+        "house": "houses"
+      },
+      "stats": {
+        "range": "Overall range",
+        "middle": "Median district",
+        "highest": "Highest level",
+        "lowest": "Lowest level"
+      },
+      "summary": "In {city}, square-metre prices for {category} across {count} districts range from {low} to {high} {unit}. The median district sits at {median} {unit}; {top} is highest at {topValue} {unit}, {bottom} lowest at {bottomValue} {unit}.",
+      "legend": {
+        "upper": "Upper price band",
+        "mid": "Middle price band",
+        "lower": "Lower price band",
+        "median": "District median"
+      },
+      "detail": {
+        "from": "from",
+        "to": "to",
+        "median": "Median",
+        "sample": "Properties",
+        "example": "Example: {area} m² of living space in {district} works out at €{median} at the median — the range runs from €{low} to €{high}. Where a specific property sits within it depends on condition, layout, and specification.",
+        "thinDataNote": "Only {count} properties are recorded for {district}. The range is an indication, not a reliable statement — for an assessment, use the city-level figures instead.",
+        "districtLink": "Open the {district} district page"
+      },
+      "pending": {
+        "tag": "in progress",
+        "title": "{city}: district values in preparation",
+        "text": "District-level square-metre prices for {city} have not been analysed yet. Once the analysis is complete, {city} will appear here with the same ranges as the other cities.",
+        "link": "Open the {city} location page"
+      }
+    },
+    "method": {
+      "eyebrow": "Methodology",
+      "title": "How the ranges are derived",
+      "items": [
+        {
+          "title": "A range, not a single value",
+          "text": "The “from” and “to” figures cover the middle 80 percent of properties. Individual outliers in either direction are excluded so the range stays meaningful."
+        },
+        {
+          "title": "Median, not average",
+          "text": "The median is the value with half the properties above it and half below. It is less sensitive to individual expensive sales than the mean."
+        },
+        {
+          "title": "Thin data is labelled",
+          "text": "Districts with fewer than five analysed properties are marked as “thin data”. In the current dataset, every district is above that threshold."
+        },
+        {
+          "title": "What the atlas cannot do",
+          "text": "A square-metre price does not replace a valuation. Layout, specification, floor, condition, and micro-location shift the value considerably — in both directions."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions about the price atlas",
+      "items": [
+        {
+          "question": "What does the price atlas show?",
+          "answer": "For every recorded district, the atlas shows a price range per square metre and the median, separated into apartments and houses. It indicates which price band a location falls into."
+        },
+        {
+          "question": "Why a range instead of a single square-metre price?",
+          "answer": "Properties within one district often differ widely. A range makes that spread visible, whereas a single average would hide it."
+        },
+        {
+          "question": "Why is the median used instead of the average?",
+          "answer": "The median splits properties into two equal halves and is barely distorted by individual very expensive sales. It describes the typical level of a district more accurately than the mean."
+        },
+        {
+          "question": "Does the price atlas replace a property valuation?",
+          "answer": "No. The figures are guide values. A reliable assessment starts with a review of the specific property — layout, condition, specification, floor, and micro-location shift the value significantly."
+        },
+        {
+          "question": "Which cities does the price atlas cover?",
+          "answer": "It covers districts in Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim. District-level figures for Schwabach are currently being prepared."
+        }
+      ]
+    },
+    "cta": {
+      "title": "What is your property actually worth?",
+      "text": "The atlas sets the direction. The reliable figure comes from the property itself — free and without obligation.",
+      "label": "Start a valuation",
+      "secondaryLabel": "View locations"
+    }
   }
 }

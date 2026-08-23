@@ -50,7 +50,7 @@ export async function generateMetadata({
 const EYEBROW_LIGHT =
   'text-brand-700 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs'
 const SECTION_TITLE =
-  'mt-4 font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance break-words hyphens-auto md:text-[3.2rem]'
+  'mt-4 font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance break-words hyphens-headline md:text-[3.2rem]'
 const CONTAINER = 'mx-auto w-full max-w-[1320px] px-5 sm:px-7 lg:px-12'
 
 function sellerSlug(locale: Locale, translationKey: string) {

@@ -156,7 +156,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <PrototypeContactForm />
           <div className="lg:pt-4">
             <p className={EYEBROW}>{t('steps.eyebrow')}</p>
-            <h2 className="mt-4 max-w-[16ch] font-serif text-[2.1rem] leading-[1.06] font-medium tracking-[-0.025em] text-balance break-words hyphens-auto md:text-[2.6rem]">
+            <h2 className="mt-4 max-w-[16ch] font-serif text-[2.1rem] leading-[1.06] font-medium tracking-[-0.025em] text-balance break-words hyphens-headline md:text-[2.6rem]">
               {t('steps.title')}
             </h2>
             <ol className="divide-border border-border mt-10 grid divide-y border-t">

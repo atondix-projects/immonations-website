@@ -2,37 +2,64 @@ import Image from 'next/image'
 import { ArrowUpRight, BadgeCheck, Star } from 'lucide-react'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
-import { FEATURED_REVIEW_IDS, REFERENCE_DETAILS } from '@/lib/content/references'
 import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
+import {
+  testimonialImage,
+  testimonialReview,
+  type TestimonialId,
+  type TestimonialStory,
+} from '@/lib/content/testimonials'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { ReviewRotator, type ReviewScreenshot } from './review-rotator'
 import { GOOGLE_PROFILE, ReviewPortalGrid, type ReviewPortal } from './review-portals'
-import { CONTAINER, SectionHeader } from './section-shell'
+import { CONTAINER, SECTION_LINK, SectionHeader } from './section-shell'
 
 type Headline = { platform: string; rating: string; count: string; link: string }
 type Stat = { value: string; label: string }
+type FeedbackVoice = {
+  id: TestimonialId
+  name: string
+  title: string
+  alt: string
+  available: boolean
+}
 
 const MAKLER_SIEGER_PROFILE = 'https://maklersieger.de/makler/immonation-gmbh'
 
-function getReviewScreenshots(language: 'de' | 'en') {
-  return FEATURED_REVIEW_IDS.flatMap((id) => {
-    const review = REFERENCE_DETAILS[id].review
+function getReviewScreenshots(
+  stories: TestimonialStory[],
+  voices: FeedbackVoice[],
+  language: 'de' | 'en',
+) {
+  return voices.flatMap((voice) => {
+    const review = testimonialReview(voice.id)
+    if (!review) return []
+    const story = stories.find((item) => item.id === voice.id)
 
-    return review
-      ? [
-          {
-            src: review.screenshot.src,
-            alt: review.screenshot.alt[language],
-            width: review.screenshot.width,
-            height: review.screenshot.height,
-          },
-        ]
-      : []
+    return [
+      {
+        src: review.screenshot.src,
+        alt: review.screenshot.alt[language],
+        width: review.screenshot.width,
+        height: review.screenshot.height,
+        rating: review.rating,
+        story: {
+          name: story?.name ?? voice.name,
+          context: story?.context ?? voice.title,
+          quote: story?.quote,
+          result: story?.result,
+          image: testimonialImage(voice.id),
+          imageAlt: story?.alt ?? voice.alt,
+        },
+      },
+    ]
   }) satisfies ReviewScreenshot[]
 }
 
 export async function Reviews({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.reviews')
+  const tTestimonials = await getTranslations('Testimonials')
+  const tFeedback = await getTranslations('Home.feedback')
   const locale = await getLocale()
   const language = locale === 'en' ? 'en' : 'de'
   const headline = t.raw('headline') as Headline
@@ -41,7 +68,9 @@ export async function Reviews({ compact = false }: { compact?: boolean }) {
   const visiblePortals = compact
     ? portals.filter((portal) => portal.kind === 'direct').slice(0, 5)
     : portals
-  const screenshots = getReviewScreenshots(language)
+  const testimonialItems = tTestimonials.raw('items') as TestimonialStory[]
+  const feedbackItems = tFeedback.raw('items') as FeedbackVoice[]
+  const screenshots = getReviewScreenshots(testimonialItems, feedbackItems, language)
 
   return (
     <section
@@ -159,6 +188,8 @@ export async function Reviews({ compact = false }: { compact?: boolean }) {
               previous: t('previousReview'),
               next: t('nextReview'),
               slide: t('reviewSlide'),
+              expand: t('expandReview'),
+              close: t('closeReview'),
             }}
           />
         </div>
@@ -202,8 +233,8 @@ export async function Reviews({ compact = false }: { compact?: boolean }) {
           />
 
           {compact ? (
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-              <Link href="/reviews" className="text-brand-700 text-sm font-semibold">
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-x-10 gap-y-3">
+              <Link href="/reviews" className={SECTION_LINK}>
                 {t('allProfilesLink')}
               </Link>
               <p className="text-muted-foreground text-xs whitespace-nowrap">{t('asOf')}</p>

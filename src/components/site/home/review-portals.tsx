@@ -84,11 +84,14 @@ function PortalTile({
   media,
   labels,
   compact = false,
+  showSource = true,
 }: {
   portal: ReviewPortal
   media: PortalMedia
   labels: PortalLabels
   compact?: boolean
+  /** Hidden where every visible tile carries the same kind — the label would say nothing. */
+  showSource?: boolean
 }) {
   const showsName = !media.logo || media.markOnly === true
 
@@ -100,7 +103,7 @@ function PortalTile({
       aria-label={`${portal.name} — ${portal.rating} ${portal.scale}, ${portal.basis}. ${labels.openProfile}`}
       className={cn(
         'group bg-background focus-visible:ring-brand-700 flex min-w-0 flex-col justify-between gap-7 p-5 transition-colors hover:bg-white focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset',
-        compact && 'w-[230px] shrink-0 snap-start',
+        compact && 'shrink-0 grow basis-[230px] snap-start',
       )}
     >
       <div className="flex items-start justify-between gap-3">
@@ -118,11 +121,15 @@ function PortalTile({
               )}
             />
           ) : null}
-          {showsName ? <span className="truncate text-sm font-semibold">{portal.name}</span> : null}
+          {showsName ? (
+            <span className="group-hover:text-brand-700 truncate text-sm font-semibold transition-colors">
+              {portal.name}
+            </span>
+          ) : null}
         </div>
         <ArrowUpRight
           aria-hidden="true"
-          className="text-muted-foreground mt-0.5 size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+          className="text-muted-foreground group-hover:text-brand-700 mt-0.5 size-4 shrink-0 transition-[color,transform] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
         />
       </div>
 
@@ -137,14 +144,16 @@ function PortalTile({
         <p className="text-muted-foreground mt-2.5 text-xs leading-relaxed text-pretty">
           {portal.basis}
         </p>
-        <span
-          className={cn(
-            'mt-3.5 inline-block text-[10px] font-semibold tracking-[0.14em] uppercase',
-            portal.kind === 'direct' ? 'text-brand-700' : 'text-muted-foreground',
-          )}
-        >
-          {portal.kind === 'direct' ? labels.direct : labels.aggregate}
-        </span>
+        {showSource ? (
+          <span
+            className={cn(
+              'mt-3.5 inline-block text-[10px] font-semibold tracking-[0.14em] uppercase',
+              portal.kind === 'direct' ? 'text-brand-700' : 'text-muted-foreground',
+            )}
+          >
+            {portal.kind === 'direct' ? labels.direct : labels.aggregate}
+          </span>
+        ) : null}
       </div>
     </a>
   )
@@ -159,13 +168,17 @@ export function ReviewPortalGrid({
   labels: PortalLabels
   compact?: boolean
 }) {
+  // With a single kind on screen the label repeats on every tile and says
+  // nothing; it only earns its space where direct and aggregate sit side by side.
+  const showsSource = new Set(portals.map((portal) => portal.kind)).size > 1
+
   return (
     <div
       className={cn(
         'border-border gap-px border bg-neutral-300',
         compact
           ? 'flex snap-x snap-mandatory [scrollbar-width:thin] overflow-x-auto'
-          : 'grid overflow-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
+          : 'grid overflow-hidden sm:grid-cols-2 lg:grid-cols-5',
       )}
     >
       {portals.flatMap((portal) => {
@@ -179,6 +192,7 @@ export function ReviewPortalGrid({
                 media={media}
                 labels={labels}
                 compact={compact}
+                showSource={showsSource}
               />,
             ]
           : []

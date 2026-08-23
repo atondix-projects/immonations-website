@@ -130,9 +130,19 @@
       "routeCta": "Route planen",
       "hoursLabel": "Öffnungszeiten",
       "hours": [
-        { "days": "Montag – Freitag", "time": "9:00 – 18:00 Uhr" },
-        { "days": "Samstag", "time": "10:30 – 14:00 Uhr" },
-        { "days": "Sonntag", "time": "geschlossen", "closed": true }
+        {
+          "days": "Montag – Freitag",
+          "time": "9:00 – 18:00 Uhr"
+        },
+        {
+          "days": "Samstag",
+          "time": "10:30 – 14:00 Uhr"
+        },
+        {
+          "days": "Sonntag",
+          "time": "geschlossen",
+          "closed": true
+        }
       ],
       "appointmentTitle": "Termine auch außerhalb der Öffnungszeiten",
       "appointmentText": "Nach vorheriger Absprache richten wir uns gern nach Ihrem Kalender. Denn ein Immobilienverkauf lässt sich selten zwischen Tür und Angel besprechen.",
@@ -287,6 +297,15 @@
         "video": true
       },
       {
+        "id": "sandra-boerschlein",
+        "name": "Sandra Börschlein",
+        "context": "Hausverkauf mit persönlicher Begleitung",
+        "quote": "Ich bin rundum begeistert von der Betreuung und dem Ablauf meines Hausverkaufs. Vom ersten Beratungsgespräch an fühlte ich mich bestens aufgehoben.",
+        "result": "Schneller, transparenter und stressfreier Hausverkauf",
+        "alt": "Vorschaubild zur Verkaufsgeschichte von Sandra Börschlein",
+        "video": false
+      },
+      {
         "id": "markus-burkhard",
         "name": "Markus Burkhard",
         "context": "Maisonette in Zirndorf-Weiherhof",
@@ -368,10 +387,22 @@
       ]
     },
     "stats": [
-      { "value": "300+", "label": "Bewertungen auf 10 Plattformen" },
-      { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
-      { "value": "8.000+", "label": "registrierte Suchkunden" },
-      { "value": "360°", "label": "Rundgang bei jedem Verkaufsobjekt" }
+      {
+        "value": "300+",
+        "label": "Bewertungen auf 10 Plattformen"
+      },
+      {
+        "value": "60+",
+        "label": "Immobilienverkäufe pro Jahr"
+      },
+      {
+        "value": "8.000+",
+        "label": "registrierte Suchkunden"
+      },
+      {
+        "value": "360°",
+        "label": "Rundgang bei jedem Verkaufsobjekt"
+      }
     ],
     "faq": {
       "title": "Häufige Fragen zur Bewertung"
@@ -387,48 +418,410 @@
     "prototypeLabel": "Frontend-Prototyp",
     "title": "Immobilie einordnen",
     "progressLabel": "Fortschritt der Bewertung",
-    "propertyTypes": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
-    "conditions": ["Modernisiert", "Gepflegt", "Renovierungsbedarf"],
-    "timings": ["0–3 Monate", "3–12 Monate", "Nur Orientierung"],
+    "stepLabel": "Schritt {current} von {total}",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Auswertung anfordern",
+    "restart": "Neu beginnen",
+    "optionalBadge": "optional",
+    "optionalStepNote": "Alle Angaben in diesem Schritt sind freiwillig. Sie verfeinern die Spanne — überspringen ist jederzeit möglich.",
+    "skip": "Überspringen",
+    "localOnly": "Mit Abschluss öffnen Sie ausschließlich die lokale Danke-Seite. Es wird keine Anfrage übertragen.",
+    "propertyTypes": {
+      "house": "Haus",
+      "apartment": "Wohnung",
+      "land": "Grundstück",
+      "apartment-building": "Mehrfamilienhaus",
+      "commerce": "Gewerbe"
+    },
     "steps": {
       "type": {
         "title": "Welche Immobilie möchten Sie bewerten?",
-        "text": "Wählen Sie die Objektart für eine passende Einordnung."
+        "text": "Die Objektart bestimmt, welche Angaben danach gefragt werden."
       },
       "location": {
         "title": "Wo befindet sich die Immobilie?",
-        "text": "Für den Prototyp genügen Postleitzahl und Ort.",
-        "postcode": "Postleitzahl",
-        "city": "Ort"
+        "text": "Die Lage ist der stärkste Werttreiber. Postleitzahl und Ort genügen für die erste Einordnung."
+      },
+      "core": {
+        "title": "Die wichtigsten Eckdaten",
+        "text": "Wenige Pflichtangaben reichen für eine grobe Spanne."
       },
       "details": {
-        "title": "Wie groß ist die Immobilie?",
-        "text": "Näherungswerte reichen für diese erste Einordnung.",
-        "area": "Wohnfläche in m²",
-        "rooms": "Zimmer"
+        "title": "Optionale Details",
+        "text": "Je mehr Sie ergänzen, desto genauer wird die Einordnung."
       },
-      "context": {
-        "title": "Zustand und Zeitplan",
-        "condition": "Wie würden Sie den Zustand beschreiben?",
-        "timing": "Wann könnte ein Verkauf relevant werden?"
+      "contact": {
+        "title": "Wohin dürfen wir Ihre Auswertung senden?",
+        "text": "Wir schicken Ihnen die Einordnung zu und melden uns für den kostenlosen Vor-Ort-Termin."
+      }
+    },
+    "units": {
+      "sqm": "m²",
+      "eur": "€",
+      "eurPerMonth": "€ / Monat",
+      "eurPerYear": "€ / Jahr",
+      "year": "Jahr",
+      "metre": "m",
+      "count": "Anzahl"
+    },
+    "boolean": {
+      "yes": "Ja",
+      "no": "Nein"
+    },
+    "errors": {
+      "required": "Bitte ausfüllen.",
+      "min": "Bitte einen plausiblen Wert eingeben.",
+      "max": "Der Wert ist zu hoch.",
+      "postcode": "Bitte eine fünfstellige Postleitzahl eingeben.",
+      "email": "Bitte eine gültige E-Mail-Adresse eingeben.",
+      "futureYear": "Das Baujahr liegt zu weit in der Zukunft.",
+      "summary": "Bitte prüfen Sie die markierten Felder."
+    },
+    "fields": {
+      "postcode": {
+        "label": "Postleitzahl"
       },
-      "summary": {
-        "title": "Ihre Angaben auf einen Blick",
-        "text": "Prüfen Sie die Eckdaten. Im Prototyp wird nichts versendet oder gespeichert."
+      "city": {
+        "label": "Ort"
+      },
+      "street": {
+        "label": "Straße und Hausnummer"
+      },
+      "timing": {
+        "label": "Verkaufsabsicht und Zeithorizont"
+      },
+      "livingArea": {
+        "label": "Wohnfläche"
+      },
+      "usableArea": {
+        "label": "Nutzfläche"
+      },
+      "totalArea": {
+        "label": "Gesamt-Wohn- und Nutzfläche"
+      },
+      "plotArea": {
+        "label": "Grundstücksfläche"
+      },
+      "rooms": {
+        "label": "Zimmerzahl"
+      },
+      "constructionYear": {
+        "label": "Baujahr"
+      },
+      "floorLevel": {
+        "label": "Etage"
+      },
+      "floors": {
+        "label": "Anzahl Etagen"
+      },
+      "condition": {
+        "label": "Zustand"
+      },
+      "houseType": {
+        "label": "Haustyp"
+      },
+      "rented": {
+        "label": "Ist die Wohnung vermietet?"
+      },
+      "rentalStatus": {
+        "label": "Vermietet oder frei?"
+      },
+      "tenure": {
+        "label": "Eigengenutzt oder vermietet?"
+      },
+      "coldRent": {
+        "label": "Aktuelle Kaltmiete"
+      },
+      "annualNetRent": {
+        "label": "Jahresnettokaltmiete (Ist)"
+      },
+      "leaseRemainingYears": {
+        "label": "Restlaufzeit Mietvertrag",
+        "hint": "in Jahren"
+      },
+      "tenantCredit": {
+        "label": "Mieterbonität"
+      },
+      "elevator": {
+        "label": "Aufzug vorhanden?"
+      },
+      "balcony": {
+        "label": "Balkon oder Terrasse?"
+      },
+      "balconyArea": {
+        "label": "Fläche Balkon / Terrasse"
+      },
+      "garden": {
+        "label": "Garten oder Sondernutzungsrecht?"
+      },
+      "parking": {
+        "label": "Stellplatz / Garage"
+      },
+      "parkingSpaces": {
+        "label": "Stellplätze"
+      },
+      "fitout": {
+        "label": "Ausstattung"
+      },
+      "serviceCharge": {
+        "label": "Hausgeld"
+      },
+      "energyClass": {
+        "label": "Energiekennwert"
+      },
+      "basement": {
+        "label": "Keller"
+      },
+      "modernisations": {
+        "label": "Modernisierungen"
+      },
+      "modernisationYear": {
+        "label": "Jahr der letzten Modernisierung"
+      },
+      "heating": {
+        "label": "Heizungsart / Energieträger"
+      },
+      "buildingRight": {
+        "label": "Baurecht / Status"
+      },
+      "development": {
+        "label": "Erschließung"
+      },
+      "existingBuilding": {
+        "label": "Vorhandene Bebauung?",
+        "hint": "Etwa ein Abrissobjekt."
+      },
+      "plotShape": {
+        "label": "Zuschnitt und Ausrichtung"
+      },
+      "planningNotes": {
+        "label": "GRZ / GFZ bzw. B-Plan",
+        "hint": "Falls bekannt."
+      },
+      "unitsResidential": {
+        "label": "Wohneinheiten"
+      },
+      "unitsCommercial": {
+        "label": "Gewerbeeinheiten"
+      },
+      "vacancy": {
+        "label": "Leerstand?"
+      },
+      "vacancyExtent": {
+        "label": "Umfang des Leerstands"
+      },
+      "maintenanceBacklog": {
+        "label": "Instandhaltungsstau?"
+      },
+      "maintenanceNote": {
+        "label": "Beschreibung des Instandhaltungsstaus"
+      },
+      "commerceType": {
+        "label": "Gewerbeart"
+      },
+      "hallHeight": {
+        "label": "Deckenhöhe"
+      },
+      "loadingRamp": {
+        "label": "Rampe / Andienung vorhanden?"
+      },
+      "technicalFitout": {
+        "label": "Technische Ausstattung"
+      },
+      "salutation": {
+        "label": "Anrede"
+      },
+      "firstName": {
+        "label": "Vorname"
+      },
+      "lastName": {
+        "label": "Nachname"
+      },
+      "email": {
+        "label": "E-Mail",
+        "hint": "An diese Adresse geht Ihre Auswertung."
+      },
+      "phone": {
+        "label": "Telefon",
+        "hint": "Für die Vor-Ort-Einschätzung rufen wir kurz zurück."
+      },
+      "preferredChannel": {
+        "label": "Bevorzugter Kontaktweg"
+      },
+      "preferredTime": {
+        "label": "Bevorzugte Zeit"
+      },
+      "role": {
+        "label": "Rolle / Funktion"
+      },
+      "source": {
+        "label": "Wie sind Sie auf uns aufmerksam geworden?"
+      },
+      "consent": {
+        "label": "Ich willige ein, dass die Immonation GmbH meine Angaben zur Bewertung und Kontaktaufnahme verarbeitet. <link>Datenschutzerklärung</link>"
+      },
+      "marketingConsent": {
+        "label": "Ich möchte zusätzlich den Marktbericht und den Newsletter erhalten. Diese Einwilligung ist freiwillig und jederzeit widerrufbar."
+      }
+    },
+    "options": {
+      "timing": {
+        "concrete": "Konkret geplant",
+        "one-to-two-years": "In 1–2 Jahren",
+        "interest-only": "Nur Interesse"
+      },
+      "condition": {
+        "first-occupancy": "Erstbezug",
+        "renovated": "Saniert",
+        "maintained": "Gepflegt",
+        "needs-renovation": "Renovierungsbedürftig"
+      },
+      "houseType": {
+        "detached": "Freistehend",
+        "semi-detached": "Doppelhaushälfte",
+        "terraced-mid": "Reihenmittelhaus",
+        "terraced-end": "Reihenendhaus"
+      },
+      "floorLevel": {
+        "ground": "Erdgeschoss",
+        "upper-1": "1. Obergeschoss",
+        "upper-2": "2. Obergeschoss",
+        "upper-3": "3. Obergeschoss",
+        "upper-4-plus": "4. Obergeschoss oder höher",
+        "attic": "Dachgeschoss"
+      },
+      "parking": {
+        "none": "Keiner",
+        "outdoor": "Stellplatz",
+        "garage": "Garage",
+        "underground": "Tiefgarage"
+      },
+      "fitout": {
+        "simple": "Einfach",
+        "normal": "Normal",
+        "upscale": "Gehoben"
+      },
+      "basement": {
+        "none": "Keiner",
+        "unfinished": "Nicht ausgebaut",
+        "finished": "Ausgebaut"
+      },
+      "buildingRight": {
+        "building-land": "Bauland (erschlossen)",
+        "expectant-land": "Bauerwartungsland",
+        "no-building-right": "Kein Baurecht"
+      },
+      "development": {
+        "full": "Voll erschlossen",
+        "partial": "Teilweise erschlossen",
+        "none": "Nicht erschlossen"
+      },
+      "heating": {
+        "gas": "Gas",
+        "oil": "Öl",
+        "heat-pump": "Wärmepumpe",
+        "district": "Fernwärme",
+        "pellets": "Pellets",
+        "electric": "Strom",
+        "other": "Sonstige"
+      },
+      "energyClass": {
+        "a-plus": "A+",
+        "a": "A",
+        "b": "B",
+        "c": "C",
+        "d": "D",
+        "e": "E",
+        "f": "F",
+        "g": "G",
+        "h": "H",
+        "unknown": "Nicht bekannt"
+      },
+      "modernisation": {
+        "roof": "Dach",
+        "windows": "Fenster",
+        "heating": "Heizung",
+        "bathroom": "Bad"
+      },
+      "commerceType": {
+        "office": "Büro",
+        "retail": "Ladenlokal",
+        "hall": "Halle / Lager / Logistik",
+        "practice": "Praxis",
+        "gastronomy": "Gastronomie",
+        "special": "Spezialimmobilie"
+      },
+      "rentalStatus": {
+        "vacant": "Frei",
+        "rented": "Vermietet"
+      },
+      "tenure": {
+        "owner-occupied": "Eigengenutzt",
+        "rented": "Vermietet"
+      },
+      "tenantCredit": {
+        "strong": "Sehr gut",
+        "medium": "Solide",
+        "weak": "Eher schwach",
+        "unknown": "Nicht bekannt"
+      },
+      "salutation": {
+        "mr": "Herr",
+        "ms": "Frau",
+        "none": "Keine Angabe"
+      },
+      "preferredChannel": {
+        "phone": "Telefon",
+        "email": "E-Mail"
+      },
+      "preferredTime": {
+        "morning": "Vormittags",
+        "afternoon": "Nachmittags",
+        "evening": "Abends"
+      },
+      "role": {
+        "owner": "Eigentümer",
+        "co-owner": "Miteigentümer",
+        "heir": "Erbe / Erbengemeinschaft",
+        "authorised": "Bevollmächtigter",
+        "agent": "Makler"
+      },
+      "source": {
+        "google": "Google",
+        "referral": "Empfehlung",
+        "portal": "Immobilienportal",
+        "social": "Social Media",
+        "other": "Sonstiges"
+      }
+    },
+    "trust": {
+      "headline": "Keine Weitergabe an Dritte, kein Spam, jederzeit widerrufbar.",
+      "doubleOptIn": "Vor dem Versand von Mailings bestätigen Sie Ihre E-Mail-Adresse per Double-Opt-in."
+    },
+    "result": {
+      "eyebrow": "Grobe Online-Spanne",
+      "title": "Ihre erste Einordnung",
+      "rangeLabel": "Orientierungsspanne",
+      "perSqm": "{low} – {high} € je m² in {city}",
+      "districts": "Datenbasis: {districts}",
+      "derived": "Hergeleitet, nicht geraten: Die Spanne stammt aus veröffentlichten Stadtteilwerten und Ihren Eckdaten.",
+      "thinData": "Für diese Lage liegen wenige ausgewertete Objekte vor — die Spanne ist daher bewusst weiter gefasst.",
+      "onSite": "Der belastbare Wert wird im kostenlosen Vor-Ort-Termin ermittelt.",
+      "unavailable": {
+        "unsupported-type": "Für diese Objektart geben wir online bewusst keine Spanne aus — Wert und Faktor hängen zu stark von Mietvertrag, Zustand und Nutzung ab. Wir rechnen das im Termin sauber durch.",
+        "unknown-location": "Für diese Postleitzahl liegen uns keine veröffentlichten Stadtteilwerte vor. Wir ordnen die Lage im Termin persönlich ein.",
+        "missing-area": "Ohne Flächenangabe lässt sich keine seriöse Spanne bilden."
       }
     },
     "summary": {
-      "type": "Objektart",
+      "title": "Ihre Angaben auf einen Blick",
+      "text": "Prüfen Sie die Eckdaten, bevor Sie die Auswertung anfordern.",
+      "propertyType": "Objektart",
       "location": "Lage",
-      "details": "Größe",
-      "rooms": "Zimmer",
-      "context": "Kontext"
-    },
-    "localOnly": "Mit Abschluss öffnen Sie ausschließlich die lokale Danke-Seite. Es wird keine Anfrage übertragen.",
-    "error": "Bitte ergänzen Sie die Angaben in diesem Schritt.",
-    "back": "Zurück",
-    "next": "Weiter",
-    "finish": "Prototyp abschließen"
+      "empty": "Keine Angabe",
+      "edit": "Ändern"
+    }
   },
   "ValuationThankYou": {
     "metadata": {
@@ -991,10 +1384,22 @@
         "search": "Regionale Nachfrage"
       },
       "items": [
-        { "value": "4,9 / 5", "label": "bei 226 Google-Bewertungen · Stand August 2026" },
-        { "value": "60+", "label": "Immobilienverkäufe pro Jahr" },
-        { "value": "30 Mio. €", "label": "jährliches Transaktionsvolumen" },
-        { "value": "8.000+", "label": "registrierte Suchkunden" }
+        {
+          "value": "4,9 / 5",
+          "label": "bei 226 Google-Bewertungen · Stand August 2026"
+        },
+        {
+          "value": "60+",
+          "label": "Immobilienverkäufe pro Jahr"
+        },
+        {
+          "value": "30 Mio. €",
+          "label": "jährliches Transaktionsvolumen"
+        },
+        {
+          "value": "8.000+",
+          "label": "registrierte Suchkunden"
+        }
       ]
     },
     "awards": {
@@ -1172,9 +1577,18 @@
         }
       ],
       "stats": [
-        { "value": "360°", "label": "Rundgang bei jedem Objekt" },
-        { "value": "8.000+", "label": "registrierte Suchkunden" },
-        { "value": "60+", "label": "Immobilienverkäufe pro Jahr" }
+        {
+          "value": "360°",
+          "label": "Rundgang bei jedem Objekt"
+        },
+        {
+          "value": "8.000+",
+          "label": "registrierte Suchkunden"
+        },
+        {
+          "value": "60+",
+          "label": "Immobilienverkäufe pro Jahr"
+        }
       ],
       "demoLabel": "Immobilienpräsentation · Vom Grundstück zur fertigen Immobilie",
       "demoNote": "Das Video zeigt, wie aus einem Grundstück Schritt für Schritt ein vollständiges Immobilienprojekt entsteht.",
@@ -1192,7 +1606,9 @@
       "previousReview": "Vorherige Bewertung",
       "nextReview": "Nächste Bewertung",
       "reviewSlide": "Bewertung",
-      "selectionNote": "Die Diashow zeigt originale Google-Screenshots aus drei nachprüfbaren Verkäufen.",
+      "expandReview": "Google-Bewertung vergrößern",
+      "closeReview": "Google-Bewertung schließen",
+      "selectionNote": "Jede Ansicht verbindet den Original-Screenshot mit der passenden Verkaufsgeschichte — inklusive Story-Bild, Kontext und Ergebnis.",
       "guideLink": "So erkennen Sie echte von gefälschten Bewertungen",
       "headline": {
         "platform": "Google",
@@ -1319,6 +1735,7 @@
       "title": "Drei persönliche Perspektiven auf die Zusammenarbeit",
       "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Ein Gespräch ist bereits verfügbar; zwei weitere Videoplätze sind für freigegebene Beiträge vorbereitet.",
       "comingSoon": "Video folgt",
+      "reviewLabel": "Originale Google-Bewertung",
       "items": [
         {
           "id": "viktor-emter",
@@ -1997,19 +2414,29 @@
           "lead": "Ihre Immobilie wurde umgebaut",
           "text": "– Dachausbau, Anbau, Wintergarten – und die alten Pläne stimmen nicht mehr."
         },
-        { "lead": "Ihr Objekt hat ausgebaute Flächen", "text": "deren Anrechnung strittig ist." },
+        {
+          "lead": "Ihr Objekt hat ausgebaute Flächen",
+          "text": "deren Anrechnung strittig ist."
+        },
         {
           "lead": "Sie verkaufen eine Eigentumswohnung",
           "text": "und die Teilungserklärung weicht von der Realität ab."
         },
-        { "lead": "Ihr Käufer muss finanzieren", "text": "– also in fast jedem Verkaufsfall." }
+        {
+          "lead": "Ihr Käufer muss finanzieren",
+          "text": "– also in fast jedem Verkaufsfall."
+        }
       ]
     },
     "process": {
       "eyebrow": "Ablauf",
       "title": "In fünf Schritten zu belastbaren Unterlagen",
       "steps": [
-        { "num": "1", "title": "Terminvereinbarung", "text": "Unser Ingenieur kommt zu Ihnen." },
+        {
+          "num": "1",
+          "title": "Terminvereinbarung",
+          "text": "Unser Ingenieur kommt zu Ihnen."
+        },
         {
           "num": "2",
           "title": "Aufmaß vor Ort",
@@ -2179,6 +2606,171 @@
       "secondary": "Erstgespräch vereinbaren"
     }
   },
+  "FinancingPage": {
+    "serviceType": "Baufinanzierungsberatung",
+    "areaServed": "Metropolregion Nürnberg",
+    "metadata": {
+      "title": "Baufinanzierung Nürnberg, Fürth, Erlangen & Zirndorf – Partner Dr. Klein",
+      "description": "Baufinanzierung in der Metropolregion Nürnberg mit unserem festen Partner Stefan Vogelsang (Dr. Klein): optimale Finanzierung, Lösungen auch für schwierige Fälle, priorisierte Bearbeitung und schnelle Rückmeldung."
+    },
+    "hero": {
+      "eyebrow": "Baufinanzierung · Metropolregion Nürnberg",
+      "title": "Baufinanzierung in Nürnberg, Fürth, Erlangen, Zirndorf & Forchheim",
+      "lede": "Eine Immobilie ist so gut wie ihre Finanzierung. Deshalb arbeiten wir fest mit Stefan Vogelsang von Dr. Klein zusammen: Er erarbeitet für unsere Käuferinnen und Käufer die optimale Finanzierung, findet auch für schwierige Fälle eine Lösung und stellt sich mit seinem Team für Immonation-Kunden zur Verfügung.",
+      "primary": "Finanzierungsberatung anfragen",
+      "secondary": "Aktuelle Objekte ansehen"
+    },
+    "answer": "Ihre Baufinanzierung läuft bei Immonation über unseren festen Partner Stefan Vogelsang von Dr. Klein. Er vergleicht die Konditionen einer großen Zahl von Banken, erarbeitet daraus die passende Finanzierung und findet auch dann eine Lösung, wenn der Fall nicht ins Standardraster passt – etwa bei Selbstständigkeit oder besonderer Objektart. Durch die feste Zusammenarbeit wird Ihr Fall priorisiert bearbeitet: Sobald Ihre Unterlagen vollständig sind, erhalten Sie kurzfristig eine erste Einschätzung. Ein reines Beratungsgespräch ist ausdrücklich möglich – Sie müssen Ihre Finanzierung nicht über ihn abschließen.",
+    "metrics": {
+      "eyebrow": "Was die Zusammenarbeit bringt",
+      "title": "Drei Unterschiede, die Sie im Verfahren merken",
+      "intro": "Eine feste Partnerschaft ist mehr als eine Empfehlung. Sie ändert, wie schnell Ihr Fall bearbeitet wird, wie früh Sie Klarheit bekommen und wie viel Spielraum bleibt, wenn die Ausgangslage nicht dem Lehrbuch entspricht.",
+      "items": [
+        {
+          "title": "Priorisiert",
+          "text": "Ihr Fall wird durch unsere feste Zusammenarbeit bevorzugt bearbeitet – Sie landen nicht am Ende einer anonymen Warteschlange."
+        },
+        {
+          "title": "Schnell",
+          "text": "Rückmeldung zur Finanzierungskonstellation, sobald Ihre Unterlagen vollständig sind. Das verkürzt die Zeit bis zum belastbaren Angebot."
+        },
+        {
+          "title": "Auch schwierige Fälle",
+          "text": "Lösungsorientiert statt Schema F – nicht jeder Fall ist Standard, und genau dafür ist die Zusammenarbeit da."
+        }
+      ]
+    },
+    "partner": {
+      "eyebrow": "Ihr Ansprechpartner",
+      "title": "Stefan Vogelsang – Dr. Klein",
+      "intro": "Stefan Vogelsang erarbeitet für unsere Kunden die passende Finanzierung – vom klassischen Kauf bis zur anspruchsvollen Konstellation. Er ist Sportsmann und lebt nach dem Motto „Das Beste für den Kunden“. Genau deshalb passen wir so gut zusammen: gleiche Haltung, klarer Fokus auf das Ergebnis für Sie.",
+      "advice": "Mit seinem Team steht er Immonation-Kunden verlässlich zur Seite. Reine Beratungsgespräche sind ausdrücklich möglich – Sie müssen Ihre Finanzierung nicht über ihn abschließen. Es geht zuerst um Klarheit, nicht um den Abschluss.",
+      "brokers": "Auch unseren Partnermaklern steht Stefan Vogelsang mit seinem Team zur Verfügung – so profitieren deren Kunden vom selben schnellen, priorisierten Zugang zur Finanzierung.",
+      "logoAlt": "Logo von Dr. Klein",
+      "card": {
+        "title": "Was die Zusammenarbeit für Sie bedeutet",
+        "items": [
+          "Priorisierte Bearbeitung Ihres Falls durch die feste Zusammenarbeit.",
+          "Schnelle erste Rückmeldung, sobald Ihre Unterlagen vollständig sind.",
+          "Lösungen auch bei schwieriger Ausgangslage – etwa bei Selbstständigkeit oder besonderer Objektart.",
+          "Unabhängiger Bankenvergleich über die Dr.-Klein-Plattform."
+        ],
+        "cta": "Beratungstermin vereinbaren"
+      }
+    },
+    "appraisal": {
+      "eyebrow": "Bank-Vorabbewertung",
+      "title": "Jede unserer Immobilien ist vorab von der Bank bewertet",
+      "lead": "Ein Unterschied, der bares Geld wert ist: Wir lassen unsere Objekte im Vorfeld durch die Bank bewerten. So wissen wir schon vor der Vermarktung, welche Voraussetzungen erfüllt sein müssen, damit der aufgerufene Kaufpreis finanzierbar ist – und wie die Bank die Immobilie einwertet.",
+      "cards": [
+        {
+          "title": "Für Käufer: Sicherheit schon vor dem Kauf",
+          "text": "Sie wissen früh, wie die Bank das Objekt bewertet und welcher Eigenkapital- beziehungsweise Blankoanteil realistisch ist. Das erspart böse Überraschungen bei der Finanzierungszusage – und macht Ihr Angebot gegenüber dem Verkäufer belastbarer."
+        },
+        {
+          "title": "Für Eigentümer: realistische, finanzierbare Preisfindung",
+          "text": "Weil wir wissen, wie die Bank Ihre Immobilie einwertet und wie der Blankoanteil aussieht, setzen wir den Preis so an, dass Käufer ihn auch finanziert bekommen. Ein Preis, den keine Bank mitgeht, kostet am Ende nur Zeit."
+        }
+      ],
+      "note": {
+        "title": "Kurz erklärt",
+        "text": "Der Beleihungswert ist der Wert, den die Bank dauerhaft als Sicherheit ansetzt – meist unter dem Kaufpreis. Der Blankoanteil ist der Teil des Darlehens, der über diesen Wert hinausgeht und nicht durch die Immobilie gedeckt ist. Je kleiner der Blankoanteil, desto besser sind in der Regel die Konditionen."
+      }
+    },
+    "calculator": {
+      "eyebrow": "Rechner",
+      "title": "Rechnen Sie selbst – bevor Sie ins Gespräch gehen",
+      "lead": "Budget, Rate, Nebenkosten und Zinsentwicklung: Verschaffen Sie sich vorab einen Überblick, bevor Sie ins Gespräch gehen.",
+      "tools": [
+        {
+          "name": "Bauzinschart",
+          "text": "Wie haben sich die Bauzinsen zuletzt entwickelt? Zeigt den Verlauf und ordnet das aktuelle Niveau ein."
+        },
+        {
+          "name": "Budgetrechner",
+          "text": "Was kann ich mir leisten? Rechnet aus Eigenkapital und monatlicher Rate den möglichen Kaufpreis."
+        },
+        {
+          "name": "Hauskreditrechner",
+          "text": "Wie hoch werden Rate und Laufzeit? Zeigt, wie Tilgung und Zinsbindung die Belastung verändern."
+        },
+        {
+          "name": "Grundbuchrechner",
+          "text": "Was kosten Notar und Grundbuch? Schätzt die Nebenkosten, die neben dem Kaufpreis anfallen."
+        },
+        {
+          "name": "Bauzinsrechner",
+          "text": "Welche Konditionen sind realistisch? Ermittelt einen Zinsrahmen für Ihre Konstellation."
+        },
+        {
+          "name": "Mietkaufrechner",
+          "text": "Lohnt sich Kaufen gegenüber Mieten? Stellt beide Wege über die Laufzeit gegenüber."
+        }
+      ],
+      "panel": {
+        "title": "Alle Rechner bei Dr. Klein öffnen",
+        "text": "Die Rechner werden von Dr. Klein bereitgestellt und auf deren Plattform betrieben. Sie öffnen sich in einem neuen Tab — dabei werden Daten an den Anbieter übertragen.",
+        "cta": "Zu den Rechnern von Dr. Klein"
+      },
+      "disclaimer": "Die Rechner liefern eine unverbindliche Orientierung, kein Finanzierungsangebot. Verbindliche Konditionen ergeben sich erst nach Prüfung Ihrer Unterlagen durch die finanzierende Bank."
+    },
+    "related": {
+      "eyebrow": "Passend dazu",
+      "title": "Objekt und Finanzierung gehören zusammen",
+      "text": "Wer früh weiß, was finanzierbar ist, verhandelt sicherer. Diese Seiten führen den Faden weiter – vom aktuellen Angebot über die Zusammenarbeit mit Partnermaklern bis zu den Unterlagen, die die Bank Ihres Käufers sehen will.",
+      "properties": "Aktuelle Objekte",
+      "partners": "Partnermakler",
+      "valuation": "Immobilienbewertung",
+      "floorPlans": "Wohnfläche & Grundrisse"
+    },
+    "faq": {
+      "title": "Häufige Fragen zur Baufinanzierung",
+      "items": [
+        {
+          "question": "Wie viel Eigenkapital brauche ich für eine Baufinanzierung?",
+          "answer": "Als Faustregel sollten Sie mindestens die Kaufnebenkosten – in Bayern rund 5 bis 6 Prozent – aus Eigenkapital tragen, besser zusätzlich etwa 20 Prozent des Kaufpreises. Mehr Eigenkapital verbessert Ihren Zins. Auch mit wenig Eigenkapital gibt es Lösungen – das prüft Stefan Vogelsang individuell."
+        },
+        {
+          "question": "Bekomme ich auch bei Selbstständigkeit oder schwieriger Ausgangslage eine Finanzierung?",
+          "answer": "Oft ja. Nicht jeder Fall passt ins Standardraster – genau dafür ist die Zusammenarbeit da. Über den Bankenvergleich und die Erfahrung mit anspruchsvollen Konstellationen findet sich häufig eine Lösung. Verbindlich lässt sich das nach Prüfung Ihrer Unterlagen sagen."
+        },
+        {
+          "question": "Was ist der Beleihungswert und warum liegt er unter dem Kaufpreis?",
+          "answer": "Der Beleihungswert ist der Wert, den die Bank einer Immobilie dauerhaft und vorsichtig als Sicherheit beimisst. Er liegt bewusst unter dem aktuellen Kaufpreis, weil die Bank Wertschwankungen einkalkuliert. Er bestimmt mit, wie viel Darlehen gut besichert ist."
+        },
+        {
+          "question": "Was bedeutet Blankoanteil?",
+          "answer": "Der Blankoanteil ist der Teil des Darlehens, der über den Beleihungswert hinausgeht und damit nicht durch die Immobilie gedeckt ist. Je kleiner dieser Anteil – etwa durch mehr Eigenkapital –, desto besser sind in der Regel die Konditionen."
+        },
+        {
+          "question": "Muss ich meine Finanzierung über Dr. Klein abschließen, wenn ich über Immonation kaufe?",
+          "answer": "Nein. Ein reines Beratungsgespräch ist ausdrücklich möglich, ganz ohne Verpflichtung. Sie entscheiden frei, wo Sie Ihre Finanzierung abschließen – uns geht es zuerst darum, dass Sie Klarheit haben."
+        },
+        {
+          "question": "Wie schnell bekomme ich eine Rückmeldung?",
+          "answer": "Sobald Ihre Unterlagen vollständig sind, erhalten Sie kurzfristig eine erste Einschätzung zu einer möglichen Finanzierungskonstellation. Durch unsere feste Zusammenarbeit wird Ihr Fall dabei priorisiert bearbeitet."
+        },
+        {
+          "question": "Was kostet mich die Finanzierungsberatung?",
+          "answer": "Für die Vermittlung fallen für Sie in der Regel keine gesonderten Kosten an – der Finanzierungsvermittler wird im Abschlussfall über die Bank vergütet. Die genauen Konditionen bespricht Herr Vogelsang transparent mit Ihnen."
+        },
+        {
+          "question": "Steht die Finanzierungsberatung auch Partnermaklern zur Verfügung?",
+          "answer": "Ja. Stefan Vogelsang und sein Team stehen auch unseren Partnermaklern und deren Kunden zur Verfügung – mit demselben priorisierten Zugang und schnellen Rückmeldungen wie für Immonation-Kunden."
+        },
+        {
+          "question": "In welchen Orten helfen Sie bei der Finanzierung?",
+          "answer": "Wir und unser Finanzierungspartner sind in der gesamten Metropolregion aktiv: Zirndorf, Fürth, Erlangen, Nürnberg, Forchheim und im näheren Umland."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Erst die Finanzierung klären, dann besichtigen",
+      "text": "Ein Gespräch genügt, um zu wissen, was realistisch ist – unverbindlich und ohne Abschlusszwang.",
+      "primary": "Kostenlose Finanzierungsberatung anfragen",
+      "secondary": "Immobilie bewerten lassen"
+    }
+  },
   "Magazine": {
     "eyebrow": "REVIER Magazin",
     "title": "Ein Blick in unsere Arbeit, unsere Haltung und echte Verkaufsgeschichten.",
@@ -2216,7 +2808,8 @@
     "title": "Premium-Vermarktung ist bei uns ein System.",
     "lede": "Vom marktfähigen Preis über bankfähige Unterlagen bis zur gezielten Käuferansprache: Zehn Leistungen greifen ineinander, damit Ihr Verkauf vorbereitet, sichtbar und sicher zum Abschluss kommt.",
     "networkProofValue": "8.000+",
-    "networkProofLabel": "registrierte Suchkunden für direkte und diskrete Käuferansprache",
+    "networkProofLabel": "registrierte Suchkunden",
+    "networkProofNote": "für direkte und diskrete Käuferansprache",
     "primaryCta": "Immobilie bewerten",
     "secondaryCta": "Verkaufswege ansehen",
     "tabList": "Leistungen im Immonation-Verkaufssystem",
@@ -2264,9 +2857,18 @@
         ],
         "result": "Vorbereitung, Vermarktung und Abwicklung greifen ineinander. So bleibt der Verkauf steuerbar und kein wichtiger Schritt dem Zufall überlassen.",
         "proof": [
-          { "value": "10", "label": "aufeinander abgestimmte Schritte" },
-          { "value": "1 Team", "label": "statt eines Einzelkämpfers" },
-          { "value": "Bis zum Schluss", "label": "Begleitung über den Notartermin hinaus" }
+          {
+            "value": "10",
+            "label": "aufeinander abgestimmte Schritte"
+          },
+          {
+            "value": "1 Team",
+            "label": "statt eines Einzelkämpfers"
+          },
+          {
+            "value": "Bis zum Schluss",
+            "label": "Begleitung über den Notartermin hinaus"
+          }
         ]
       },
       {
@@ -2284,9 +2886,18 @@
         ],
         "result": "Der Angebotspreis erreicht die passenden Suchfilter und nutzt die aufmerksamkeitsstarke Startphase, ohne Potenzial durch einen unrealistischen Einstieg zu verschenken.",
         "proof": [
-          { "value": "3 Säulen", "label": "Erfahrung, Daten und Vergleich" },
-          { "value": "Regional", "label": "Einordnung im Großraum Nürnberg" },
-          { "value": "Marktfähig", "label": "Preis als Basis der Strategie" }
+          {
+            "value": "3 Säulen",
+            "label": "Erfahrung, Daten und Vergleich"
+          },
+          {
+            "value": "Regional",
+            "label": "Einordnung im Großraum Nürnberg"
+          },
+          {
+            "value": "Marktfähig",
+            "label": "Preis als Basis der Strategie"
+          }
         ]
       },
       {
@@ -2304,9 +2915,18 @@
         ],
         "result": "Bewertung, Exposé und Käuferprüfung bauen auf belastbaren Angaben auf – damit offene Punkte nicht erst in Finanzierung oder Kaufvertrag auftauchen.",
         "proof": [
-          { "value": "Vollständig", "label": "Objekt und Unterlagen erfasst" },
-          { "value": "Objektbezogen", "label": "Anforderungen je Immobilienart" },
-          { "value": "Früh geklärt", "label": "fehlende Dokumente beschafft" }
+          {
+            "value": "Vollständig",
+            "label": "Objekt und Unterlagen erfasst"
+          },
+          {
+            "value": "Objektbezogen",
+            "label": "Anforderungen je Immobilienart"
+          },
+          {
+            "value": "Früh geklärt",
+            "label": "fehlende Dokumente beschafft"
+          }
         ]
       },
       {
@@ -2324,9 +2944,18 @@
         ],
         "result": "Käufer können die Finanzierung mit verwertbaren Plänen einreichen – und Rückfragen zu Flächen oder Maßen werden früh geklärt.",
         "proof": [
-          { "value": "Bemaßt", "label": "exakte Maße statt Skizze" },
-          { "value": "Wohnfläche", "label": "nachvollziehbar berechnet" },
-          { "value": "Netzwerk", "label": "durch koordinierte Spezialisten" }
+          {
+            "value": "Bemaßt",
+            "label": "exakte Maße statt Skizze"
+          },
+          {
+            "value": "Wohnfläche",
+            "label": "nachvollziehbar berechnet"
+          },
+          {
+            "value": "Netzwerk",
+            "label": "durch koordinierte Spezialisten"
+          }
         ]
       },
       {
@@ -2344,9 +2973,18 @@
         ],
         "result": "Das Inserat vermittelt Qualität und Orientierung, bevor Interessenten den ersten Text gelesen oder einen Termin angefragt haben.",
         "proof": [
-          { "value": "Innen & außen", "label": "eine konsistente Bildsprache" },
-          { "value": "Im Kontext", "label": "Lage und Grundstück verständlich" },
-          { "value": "Objektgerecht", "label": "jede Perspektive mit Zweck" }
+          {
+            "value": "Innen & außen",
+            "label": "eine konsistente Bildsprache"
+          },
+          {
+            "value": "Im Kontext",
+            "label": "Lage und Grundstück verständlich"
+          },
+          {
+            "value": "Objektgerecht",
+            "label": "jede Perspektive mit Zweck"
+          }
         ]
       },
       {
@@ -2364,9 +3002,18 @@
         ],
         "result": "Ihre Privatsphäre wird geschützt und Besichtigungszeit auf Menschen konzentriert, die sich ernsthaft mit der Immobilie beschäftigen.",
         "proof": [
-          { "value": "Jederzeit", "label": "digital und ortsunabhängig" },
-          { "value": "Kontrolliert", "label": "Zugang nach Qualifizierung" },
-          { "value": "Vorbereitet", "label": "klarerer Raumeindruck vor Ort" }
+          {
+            "value": "Jederzeit",
+            "label": "digital und ortsunabhängig"
+          },
+          {
+            "value": "Kontrolliert",
+            "label": "Zugang nach Qualifizierung"
+          },
+          {
+            "value": "Vorbereitet",
+            "label": "klarerer Raumeindruck vor Ort"
+          }
         ]
       },
       {
@@ -2384,9 +3031,18 @@
         ],
         "result": "Interessenten verstehen Nutzung, Atmosphäre und Entwicklungspotenzial schneller – auch wenn das vorhandene Bildmaterial die Möglichkeiten der Immobilie noch nicht transportiert.",
         "proof": [
-          { "value": "Ausgangsbild", "label": "der dokumentierte Ist-Zustand" },
-          { "value": "KI-Vision", "label": "Potenzial emotional erfassbar" },
-          { "value": "Transparent", "label": "klar als Visualisierung markiert" }
+          {
+            "value": "Ausgangsbild",
+            "label": "der dokumentierte Ist-Zustand"
+          },
+          {
+            "value": "KI-Vision",
+            "label": "Potenzial emotional erfassbar"
+          },
+          {
+            "value": "Transparent",
+            "label": "klar als Visualisierung markiert"
+          }
         ]
       },
       {
@@ -2404,9 +3060,18 @@
         ],
         "result": "Käufer erhalten eine verlässliche Entscheidungsgrundlage und Rückfragen konzentrieren sich auf das, was für den Kauf wirklich wichtig ist.",
         "proof": [
-          { "value": "Ein Exposé", "label": "Medien und Fakten verbunden" },
-          { "value": "Mit Freigabe", "label": "Sie behalten die Kontrolle" },
-          { "value": "Relevant", "label": "Portale passend zum Objekt" }
+          {
+            "value": "Ein Exposé",
+            "label": "Medien und Fakten verbunden"
+          },
+          {
+            "value": "Mit Freigabe",
+            "label": "Sie behalten die Kontrolle"
+          },
+          {
+            "value": "Relevant",
+            "label": "Portale passend zum Objekt"
+          }
         ]
       },
       {
@@ -2424,9 +3089,18 @@
         ],
         "result": "Die Immobilie erhält die notwendige Aufmerksamkeit, ohne ungezielte Reichweite mit echter Nachfrage zu verwechseln.",
         "proof": [
-          { "value": "Portale", "label": "Reichweite im aktiven Suchmarkt" },
-          { "value": "Social", "label": "Kampagnen nach Zielgruppe" },
-          { "value": "Netzwerk", "label": "direkte und diskrete Ansprache" }
+          {
+            "value": "Portale",
+            "label": "Reichweite im aktiven Suchmarkt"
+          },
+          {
+            "value": "Social",
+            "label": "Kampagnen nach Zielgruppe"
+          },
+          {
+            "value": "Netzwerk",
+            "label": "direkte und diskrete Ansprache"
+          }
         ]
       },
       {
@@ -2444,9 +3118,18 @@
         ],
         "result": "Aus Reichweite werden belastbare Angebote – und aus dem besten Gesamtpaket ein sicher koordinierter Abschluss.",
         "proof": [
-          { "value": "Qualifiziert", "label": "Ernsthaftigkeit und Finanzierung" },
-          { "value": "Verhandelt", "label": "Preis und Konditionen im Blick" },
-          { "value": "Koordiniert", "label": "bis zur Schlüsselübergabe" }
+          {
+            "value": "Qualifiziert",
+            "label": "Ernsthaftigkeit und Finanzierung"
+          },
+          {
+            "value": "Verhandelt",
+            "label": "Preis und Konditionen im Blick"
+          },
+          {
+            "value": "Koordiniert",
+            "label": "bis zur Schlüsselübergabe"
+          }
         ]
       }
     ]
@@ -2940,10 +3623,22 @@
   "Footer": {
     "claim": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung.",
     "stats": [
-      { "value": "60 km", "label": "Beratungsradius um Zirndorf" },
-      { "value": "6–12", "label": "Wochen typische Vermarktungsdauer" },
-      { "value": "360°", "label": "Rundgang bei jedem Objekt" },
-      { "value": "300+", "label": "Bewertungen auf 10 Plattformen" }
+      {
+        "value": "60 km",
+        "label": "Beratungsradius um Zirndorf"
+      },
+      {
+        "value": "6–12",
+        "label": "Wochen typische Vermarktungsdauer"
+      },
+      {
+        "value": "360°",
+        "label": "Rundgang bei jedem Objekt"
+      },
+      {
+        "value": "300+",
+        "label": "Bewertungen auf 10 Plattformen"
+      }
     ],
     "sell": {
       "title": "Verkaufen",
@@ -3028,5 +3723,122 @@
       "label": "Zu den Allgemeinen Geschäftsbedingungen"
     },
     "note": "Stand: Juli 2026. Das Muster-Widerrufsformular ist nicht vorgeschrieben."
+  },
+  "PriceAtlasPage": {
+    "metadata": {
+      "title": "Immobilien-Preisatlas Metropolregion Nürnberg | Immonation",
+      "description": "Quadratmeterpreise für {districts} Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim — als Spanne mit Median, getrennt nach Eigentumswohnungen und Häusern."
+    },
+    "hero": {
+      "eyebrow": "Preisatlas · Metropolregion Nürnberg",
+      "title": "Was Ihre Immobilie im Stadtteil wert ist.",
+      "lede": "Quadratmeterpreise für {districts} Stadtteile in {cities} Städten — getrennt nach Eigentumswohnungen und Häusern, mit der tatsächlichen Spanne statt einer einzelnen Zahl."
+    },
+    "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
+    "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
+    "jsonLd": {
+      "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
+    },
+    "atlas": {
+      "eyebrow": "Stadtteilwerte",
+      "heading": "Preisbänder je Stadtteil",
+      "unit": "€/m²",
+      "cityGroupLabel": "Stadt auswählen",
+      "categoryGroupLabel": "Objektart",
+      "searchLabel": "Stadtteil oder Postleitzahl suchen",
+      "searchPlaceholder": "Stadtteil oder PLZ",
+      "scaleLabel": "Preisspanne je m²",
+      "empty": "Kein Stadtteil gefunden. Andere Schreibweise oder Postleitzahl versuchen.",
+      "thinData": "Wenige Daten",
+      "category": {
+        "apartment": "Eigentumswohnungen",
+        "house": "Häuser"
+      },
+      "categoryInline": {
+        "apartment": "Eigentumswohnungen",
+        "house": "Häuser"
+      },
+      "stats": {
+        "range": "Spanne gesamt",
+        "middle": "Mittlerer Stadtteil",
+        "highest": "Höchstes Niveau",
+        "lowest": "Niedrigstes Niveau"
+      },
+      "summary": "In {city} liegen die Quadratmeterpreise für {category} über {count} Stadtteile zwischen {low} und {high} {unit}. Der mittlere Stadtteil liegt bei {median} {unit}; am höchsten notiert {top} mit {topValue} {unit}, am niedrigsten {bottom} mit {bottomValue} {unit}.",
+      "legend": {
+        "upper": "Oberes Preisband",
+        "mid": "Mittleres Preisband",
+        "lower": "Unteres Preisband",
+        "median": "Median des Stadtteils"
+      },
+      "detail": {
+        "from": "von",
+        "to": "bis",
+        "median": "Median",
+        "sample": "Objekte",
+        "example": "Beispiel: {area} m² Wohnfläche ergeben in {district} rechnerisch {median} € zum Median — die Spanne reicht von {low} € bis {high} €. Wo eine konkrete Immobilie darin liegt, entscheiden Zustand, Zuschnitt und Ausstattung.",
+        "thinDataNote": "Für {district} liegen nur {count} Objekte vor. Die Spanne ist ein Anhaltspunkt, keine belastbare Aussage — für eine Einschätzung sollte hier auf die Stadtebene zurückgegriffen werden.",
+        "districtLink": "Stadtteilseite {district} öffnen"
+      },
+      "pending": {
+        "tag": "in Arbeit",
+        "title": "{city}: Stadtteilwerte in Aufbereitung",
+        "text": "Für {city} sind die stadtteilgenauen Quadratmeterpreise noch nicht ausgewertet. Sobald die Auswertung vorliegt, erscheint {city} hier mit denselben Spannen wie die übrigen Städte.",
+        "link": "Standortseite {city} öffnen"
+      }
+    },
+    "method": {
+      "eyebrow": "Zur Methodik",
+      "title": "Wie die Spannen entstehen",
+      "items": [
+        {
+          "title": "Spanne statt Einzelwert",
+          "text": "Die Werte „von“ und „bis“ umfassen die mittleren 80 Prozent der Objekte. Einzelne Ausreißer nach oben oder unten bleiben außen vor, damit die Spanne aussagekräftig bleibt."
+        },
+        {
+          "title": "Median statt Durchschnitt",
+          "text": "Der Median ist der Wert, bei dem die Hälfte der Objekte darüber und die Hälfte darunter liegt. Er reagiert weniger empfindlich auf einzelne teure Verkäufe als der Mittelwert."
+        },
+        {
+          "title": "Dünne Datenlage wird benannt",
+          "text": "Stadtteile mit weniger als fünf ausgewerteten Objekten werden als „Wenige Daten“ gekennzeichnet. Im aktuellen Bestand liegt jeder Stadtteil über dieser Schwelle."
+        },
+        {
+          "title": "Was der Atlas nicht kann",
+          "text": "Ein Quadratmeterpreis ersetzt keine Bewertung. Zuschnitt, Ausstattung, Etage, Zustand und Mikrolage verschieben den Wert erheblich — in beide Richtungen."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Häufige Fragen zum Preisatlas",
+      "items": [
+        {
+          "question": "Was zeigt der Preisatlas?",
+          "answer": "Der Preisatlas zeigt für jeden erfassten Stadtteil eine Preisspanne je Quadratmeter sowie den Median, getrennt nach Eigentumswohnungen und Häusern. Er ordnet ein, in welchem Preisband eine Lage liegt."
+        },
+        {
+          "question": "Warum eine Spanne statt eines einzelnen Quadratmeterpreises?",
+          "answer": "Innerhalb eines Stadtteils liegen Objekte oft weit auseinander. Eine Spanne macht diese Streuung sichtbar; ein einzelner Durchschnittswert würde sie verdecken."
+        },
+        {
+          "question": "Warum wird der Median und nicht der Durchschnitt genannt?",
+          "answer": "Der Median teilt die Objekte in zwei gleich große Hälften und wird von einzelnen sehr teuren Verkäufen kaum verzerrt. Er beschreibt das typische Niveau eines Stadtteils genauer als der Mittelwert."
+        },
+        {
+          "question": "Ersetzt der Preisatlas eine Immobilienbewertung?",
+          "answer": "Nein. Die Werte sind Orientierungswerte. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts — Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage verschieben den Wert deutlich."
+        },
+        {
+          "question": "Welche Städte enthält der Preisatlas?",
+          "answer": "Erfasst sind Stadtteile in Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim. Für Schwabach werden die stadtteilgenauen Werte derzeit aufbereitet."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Was ist Ihre Immobilie wirklich wert?",
+      "text": "Der Atlas gibt die Richtung vor. Die belastbare Zahl entsteht am Objekt — kostenlos und unverbindlich.",
+      "label": "Bewertung starten",
+      "secondaryLabel": "Standorte ansehen"
+    }
   }
 }

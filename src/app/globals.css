@@ -257,3 +257,20 @@
     -webkit-user-drag: none;
   }
 }
+
+@layer utilities {
+  /*
+   * Überschriften: Trennung nur, wenn ein Wort sonst wirklich zu breit wird.
+   * `hyphens-auto` allein trennt auch kurze Wörter und Eigennamen ("Nürn-berg",
+   * "Er-langen"). Mit der Zeichen-Untergrenze bleiben Orts- und Alltagswörter
+   * ganz, während lange Komposita ("Wohnflächenberechnung") weiter umbrechen.
+   * Ältere Browser ohne `hyphenate-limit-chars` fallen auf `hyphens: auto` zurück.
+   */
+  .hyphens-headline {
+    hyphens: auto;
+    hyphenate-limit-chars: 14 5 4;
+    -webkit-hyphenate-limit-before: 5;
+    -webkit-hyphenate-limit-after: 4;
+    -webkit-hyphenate-limit-lines: 2;
+  }
+}

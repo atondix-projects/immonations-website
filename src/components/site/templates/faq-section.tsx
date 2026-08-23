@@ -51,9 +51,10 @@ export function FaqSection({
         {title ? (
           <Heading
             className={cn(
-              // `break-words hyphens-auto`: lange deutsche Komposita sprengen
-              // sonst die Spalte auf schmalen Viewports.
-              'font-serif font-medium tracking-[-0.025em] break-words hyphens-auto',
+              // `break-words hyphens-headline`: lange deutsche Komposita sprengen
+              // sonst die Spalte auf schmalen Viewports; kurze Wörter und
+              // Ortsnamen bleiben ungetrennt (siehe globals.css).
+              'hyphens-headline font-serif font-medium tracking-[-0.025em] break-words',
               headingLevel === 'h2' &&
                 'mb-12 max-w-[18ch] text-[2.35rem] leading-[1.04] md:text-[3.2rem]',
               headingLevel === 'h3' && 'mb-8 max-w-[28ch] text-2xl leading-tight md:text-3xl',

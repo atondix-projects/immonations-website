@@ -7,10 +7,12 @@ export function CatalogPreview({
   kind,
   locale,
   embedded = false,
+  className,
 }: {
   kind: 'atlas' | 'assistant' | 'appointment'
   locale: 'de' | 'en'
   embedded?: boolean
+  className?: string
 }) {
   const [value, setValue] = useState('')
   const [result, setResult] = useState('')
@@ -44,7 +46,9 @@ export function CatalogPreview({
   }[kind]
 
   const preview = (
-    <div className={cn('bg-surface-dark p-7 text-white md:p-10', !embedded && 'max-w-3xl')}>
+    <div
+      className={cn('bg-surface-dark p-7 text-white md:p-10', !embedded && 'max-w-3xl', className)}
+    >
       <p className="text-brand-300 text-xs font-semibold tracking-[0.16em] uppercase">
         {copy.title}
       </p>

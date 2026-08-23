@@ -476,40 +476,51 @@ export async function DigitalAssistant({
         compact ? 'py-14 md:py-18' : 'py-18 md:py-24',
       )}
     >
-      <div
-        className={`${CONTAINER} grid items-center gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16`}
-      >
-        <div>
-          <Bot className="text-brand-200 size-8" strokeWidth={1.5} aria-hidden="true" />
+      <div className={CONTAINER}>
+        <div className="mx-auto flex max-w-[42rem] flex-col items-center text-center">
+          <span className="border border-white/15 bg-white/[0.05] p-3.5">
+            <Bot className="text-brand-200 size-7" strokeWidth={1.5} aria-hidden="true" />
+          </span>
           <p className="text-brand-200 mt-7 text-[11px] font-semibold tracking-[0.2em] uppercase md:text-xs">
             {t('eyebrow')}
           </p>
-          <Heading className="mt-5 max-w-[15ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
+          <Heading className="mt-5 max-w-[17ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
             {t('title')}
           </Heading>
-          <p className="mt-6 max-w-[58ch] text-[17px] leading-[1.75] text-neutral-300">
+          <p className="mt-6 text-[17px] leading-[1.75] text-pretty text-neutral-300">
             {t('text')}
           </p>
-          <ul className="mt-8 space-y-3">
-            {capabilities.map((capability) => (
-              <li
-                key={capability}
-                className="flex items-start gap-3 text-sm leading-relaxed text-neutral-300"
-              >
-                <span className="bg-brand-300 mt-2 size-1.5 shrink-0" aria-hidden="true" />
-                {capability}
+        </div>
+
+        <div className="mx-auto mt-11 w-full max-w-[60rem] md:mt-14">
+          <CatalogPreview
+            kind="assistant"
+            locale={locale}
+            embedded
+            className="border border-white/12 bg-white/[0.04]"
+          />
+
+          <ul className="grid gap-px border-x border-b border-white/12 bg-white/12 sm:grid-cols-3">
+            {capabilities.map((capability, index) => (
+              <li key={capability} className="flex flex-col gap-3 bg-white/[0.04] p-6 md:p-7">
+                <span className="text-brand-200/70 font-mono text-[11px] tabular-nums">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="text-sm leading-[1.65] text-neutral-300">{capability}</p>
               </li>
             ))}
           </ul>
-          <Link
-            href="/ai"
-            className="text-brand-200 border-brand-200/35 mt-8 inline-flex items-center gap-2 border-b pb-1 text-sm font-semibold"
-          >
-            {t('link')}
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </Link>
+
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/ai"
+              className="text-brand-200 border-brand-200/35 hover:border-brand-200 inline-flex items-center gap-2 border-b pb-1 text-sm font-semibold transition-colors"
+            >
+              {t('link')}
+              <ArrowUpRight className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
-        <CatalogPreview kind="assistant" locale={locale} embedded />
       </div>
     </section>
   )

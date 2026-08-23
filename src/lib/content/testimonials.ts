@@ -19,18 +19,73 @@ type TestimonialVideo = {
   height: number
 }
 
+export type TestimonialReview = {
+  reviewer: string
+  rating: 5
+  screenshot: {
+    src: string
+    width: number
+    height: number
+    alt: { de: string; en: string }
+  }
+}
+
 type TestimonialMedia = {
   image: string
   video?: TestimonialVideo
+  review?: TestimonialReview
 }
 
 export const TESTIMONIAL_MEDIA = {
   'viktor-emter': {
     image: '/images/testimonials/viktor-emter.webp',
     video: { src: '/videos/testimonials/viktor-emter.mp4', width: 720, height: 1280 },
+    review: {
+      reviewer: 'Viktor Emter',
+      rating: 5,
+      screenshot: {
+        src: '/images/reviews/google-viktor-emter.png',
+        width: 522,
+        height: 749,
+        alt: {
+          de: 'Originale Google-Bewertung von Viktor Emter',
+          en: 'Original Google review by Viktor Emter',
+        },
+      },
+    },
   },
-  'markus-burkhard': { image: '/images/testimonials/markus-burkhard.webp' },
-  'sandra-boerschlein': { image: '/images/testimonials/sandra-boerschlein.webp' },
+  'markus-burkhard': {
+    image: '/images/testimonials/markus-burkhard.webp',
+    review: {
+      reviewer: 'Markus Burkhardt',
+      rating: 5,
+      screenshot: {
+        src: '/images/reviews/google-markus-burkhardt.png',
+        width: 518,
+        height: 315,
+        alt: {
+          de: 'Originale Google-Bewertung von Markus Burkhardt',
+          en: 'Original Google review by Markus Burkhardt',
+        },
+      },
+    },
+  },
+  'sandra-boerschlein': {
+    image: '/images/testimonials/sandra-boerschlein.webp',
+    review: {
+      reviewer: 'Cyber 86',
+      rating: 5,
+      screenshot: {
+        src: '/images/reviews/google-customer-review.png',
+        width: 509,
+        height: 513,
+        alt: {
+          de: 'Originale Google-Bewertung zur Kundenstimme von Sandra Börschlein',
+          en: "Original Google review attached to Sandra Börschlein's customer story",
+        },
+      },
+    },
+  },
   'herr-sippel': { image: '/images/testimonials/herr-sippel-property.jpg' },
   'frau-hartmann': { image: '/images/testimonials/frau-hartmann-property.jpg' },
 } as const satisfies Record<string, TestimonialMedia>
@@ -39,12 +94,12 @@ export type TestimonialId = keyof typeof TESTIMONIAL_MEDIA
 
 /**
  * Kundenstimmen mit vollständiger Verkaufsgeschichte (Zitat, Kontext, Ergebnis).
- * Sandra Börschlein fehlt hier bewusst: Zu ihr liegt bislang nur ein Titelbild
- * ohne freigegebenen Text vor, sie erscheint daher ausschließlich als
- * angekündigter Videoplatz.
+ * Sandra Börschlein ist aus der freigegebenen Google-Bewertung ergänzt; ein
+ * Video ist für sie weiterhin nicht hinterlegt.
  */
 export const STORY_IDS = [
   'viktor-emter',
+  'sandra-boerschlein',
   'markus-burkhard',
   'herr-sippel',
   'frau-hartmann',
@@ -75,6 +130,11 @@ export function testimonialImage(id: TestimonialId) {
 export function testimonialVideo(id: TestimonialId): TestimonialVideo | null {
   const media: TestimonialMedia = TESTIMONIAL_MEDIA[id]
   return media.video ?? null
+}
+
+export function testimonialReview(id: TestimonialId): TestimonialReview | null {
+  const media: TestimonialMedia = TESTIMONIAL_MEDIA[id]
+  return media.review ?? null
 }
 
 /**

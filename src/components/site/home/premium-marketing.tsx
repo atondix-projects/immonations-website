@@ -1,6 +1,7 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Users } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { AnimatedNumber } from '@/components/site/animated-number'
 import { VIRTUAL_TOUR } from '@/lib/content/virtual-tour'
 import {
   PremiumMarketingSystem,
@@ -35,12 +36,26 @@ export async function PremiumMarketing({
             {t('lede')}
           </p>
           {showNetworkProof ? (
-            <div className="mx-auto mt-7 flex w-fit items-baseline gap-3 border-y border-neutral-300 px-5 py-3 text-left">
-              <span className="font-serif text-3xl leading-none font-semibold tabular-nums">
-                {t('networkProofValue')}
+            <div className="mx-auto mt-7 flex w-fit max-w-full items-center gap-4 bg-white px-5 py-4 text-left shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.04)]">
+              <span
+                aria-hidden="true"
+                className="bg-brand-50 text-brand-700 flex size-11 shrink-0 items-center justify-center"
+              >
+                <Users className="size-5" strokeWidth={1.6} />
               </span>
-              <span className="max-w-[28ch] text-sm leading-snug text-neutral-600">
-                {t('networkProofLabel')}
+              <span className="flex flex-col gap-1">
+                <span className="flex flex-wrap items-baseline gap-x-2.5">
+                  <AnimatedNumber
+                    value={t('networkProofValue')}
+                    className="font-serif text-[1.75rem] leading-none font-semibold tracking-[-0.02em] md:text-3xl"
+                  />
+                  <span className="text-[15px] leading-tight font-semibold text-neutral-900">
+                    {t('networkProofLabel')}
+                  </span>
+                </span>
+                <span className="max-w-[34ch] text-[13px] leading-snug text-neutral-500">
+                  {t('networkProofNote')}
+                </span>
               </span>
             </div>
           ) : null}

@@ -41,7 +41,7 @@ export async function CustomerStories() {
               <article
                 key={item.id}
                 className={cn(
-                  'bg-neutral-0 grid min-w-0 overflow-hidden border border-neutral-200',
+                  'bg-neutral-0 grid min-w-0 overflow-visible border border-neutral-200',
                   isFirst && 'lg:col-span-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]',
                   isLast && 'lg:col-span-2 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]',
                 )}

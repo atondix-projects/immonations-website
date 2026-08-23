@@ -207,7 +207,7 @@ export default async function BlogPostPage({
             {t('backToOverview')}
           </Link>
 
-          <h1 className="mt-7 max-w-[20ch] font-serif text-[2.6rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance break-words hyphens-auto md:text-[3.8rem] lg:text-[4.4rem]">
+          <h1 className="mt-7 max-w-[20ch] font-serif text-[2.6rem] leading-[1.02] font-medium tracking-[-0.03em] text-balance break-words hyphens-headline md:text-[3.8rem] lg:text-[4.4rem]">
             {post.title}
           </h1>
 
