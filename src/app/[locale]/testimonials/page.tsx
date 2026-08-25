@@ -61,20 +61,18 @@ export default async function TestimonialsPage({
   const faq = t.raw('faq.items') as FaqItem[]
   const publicPath = localizePath('/testimonials', language)
   const pageUrl = `${SITE.url}/${language}${publicPath}`
-  const slides = reviews.map(
-    (item): SlideshowReview => ({
-      id: item.id,
-      author: item.author,
-      quote: item.quote,
-      rating: item.rating,
-      source: item.source === 'google' ? t('source.google') : t('source.golocal'),
-      sourceUrl: item.sourceUrl,
-      authorUrl: item.authorUrl,
-      authorPhotoUrl: item.authorPhotoUrl,
-      isLiveGoogle: item.isLiveGoogle,
-      date: item.relativePublished ?? formatReviewDate(item, language),
-    }),
-  )
+  const slides = reviews.map((item): SlideshowReview => ({
+    id: item.id,
+    author: item.author,
+    quote: item.quote,
+    rating: item.rating,
+    source: item.source === 'google' ? t('source.google') : t('source.golocal'),
+    sourceUrl: item.sourceUrl,
+    authorUrl: item.authorUrl,
+    authorPhotoUrl: item.authorPhotoUrl,
+    isLiveGoogle: item.isLiveGoogle,
+    date: item.relativePublished ?? formatReviewDate(item, language),
+  }))
 
   return (
     <div className="bg-background">

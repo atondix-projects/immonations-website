@@ -28,8 +28,7 @@ const REVIEW_SOURCES = [
   { kind: 'reference', id: 'deining-neubauwohnung' },
   { kind: 'testimonial', id: 'viktor-emter' },
 ] as const satisfies readonly (
-  | { kind: 'reference'; id: ReferenceId }
-  | { kind: 'testimonial'; id: TestimonialId }
+  { kind: 'reference'; id: ReferenceId } | { kind: 'testimonial'; id: TestimonialId }
 )[]
 
 /** Verkaufte Objekte für „Immobilienverkäufe pro Jahr". */

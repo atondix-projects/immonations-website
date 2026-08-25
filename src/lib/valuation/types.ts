@@ -24,15 +24,7 @@ export const WIZARD_STEP_IDS = ['type', 'location', 'core', 'details', 'contact'
 export type WizardStepId = (typeof WIZARD_STEP_IDS)[number]
 
 type FieldKind =
-  | 'number'
-  | 'text'
-  | 'choice'
-  | 'boolean'
-  | 'multi'
-  | 'checkbox'
-  | 'email'
-  | 'tel'
-  | 'postcode'
+  'number' | 'text' | 'choice' | 'boolean' | 'multi' | 'checkbox' | 'email' | 'tel' | 'postcode'
 
 /** Einheit hinter einem Zahlenfeld — rein fuer die Darstellung. */
 type FieldUnit = 'sqm' | 'eur' | 'eurPerMonth' | 'eurPerYear' | 'year' | 'metre' | 'count'
