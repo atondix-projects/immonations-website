@@ -19,6 +19,7 @@
 # local test/debug output
 /output/
 /tmp/
+/.impeccable/
 
 # local source inputs and generated Python caches
 /assets/

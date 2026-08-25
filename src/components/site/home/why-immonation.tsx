@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { DIFFERENCE_ICONS } from './why-immonation-icons'
 import { CONTAINER } from './section-shell'
 
 type DifferenceItem = {
@@ -44,22 +45,27 @@ export async function WhyImmonation() {
           </header>
 
           <ol className="border-t border-white/18">
-            {items.map((item, index) => (
-              <li
-                key={item.title}
-                className="group grid gap-4 border-b border-white/18 py-7 transition-colors duration-300 hover:border-white/35 sm:grid-cols-[3.5rem_minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-6 sm:py-8 md:grid-cols-[4.5rem_minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-8"
-              >
-                <span className="text-brand-200 pt-1 font-mono text-xs tracking-[0.16em] tabular-nums">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3 className="group-hover:text-brand-200 max-w-[18ch] font-serif text-[1.6rem] leading-[1.12] font-medium tracking-[-0.02em] text-balance transition-colors duration-300 md:text-[1.8rem]">
-                  {item.title}
-                </h3>
-                <p className="max-w-[48ch] text-[15px] leading-[1.7] text-pretty text-neutral-300 sm:pt-0.5 md:text-[16px]">
-                  {item.text}
-                </p>
-              </li>
-            ))}
+            {items.map((item, index) => {
+              const Icon = DIFFERENCE_ICONS[index]
+
+              return (
+                <li
+                  key={item.title}
+                  className="group grid gap-4 border-b border-white/18 py-7 transition-colors duration-300 hover:border-white/35 sm:grid-cols-[3.5rem_minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-6 sm:py-8 md:grid-cols-[4.5rem_minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-8"
+                >
+                  {/* Optisch auf die erste Zeile der Überschrift gesetzt, nicht auf
+                    deren Oberkante — das Icon ist doppelt so hoch wie die Ziffern,
+                    die hier vorher standen. */}
+                  {Icon ? <Icon className="text-brand-200 mt-0.5 size-6" /> : null}
+                  <h3 className="group-hover:text-brand-200 max-w-[18ch] font-serif text-[1.6rem] leading-[1.12] font-medium tracking-[-0.02em] text-balance transition-colors duration-300 md:text-[1.8rem]">
+                    {item.title}
+                  </h3>
+                  <p className="max-w-[48ch] text-[15px] leading-[1.7] text-pretty text-neutral-300 sm:pt-0.5 md:text-[16px]">
+                    {item.text}
+                  </p>
+                </li>
+              )
+            })}
           </ol>
         </div>
       </div>

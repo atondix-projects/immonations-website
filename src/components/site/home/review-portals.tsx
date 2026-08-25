@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { AnimatedNumber } from '@/components/site/animated-number'
+import { GOOGLE_PROFILE } from '@/lib/content/google-reviews'
 import { cn } from '@/lib/utils'
 
 export type ReviewPortal = {
@@ -30,7 +31,7 @@ type PortalMedia = {
   markOnly?: boolean
 }
 
-export const GOOGLE_PROFILE = 'https://www.google.com/maps?cid=3199252424447906498'
+export { GOOGLE_PROFILE }
 
 const PORTAL_MEDIA: Record<string, PortalMedia> = {
   google: {
@@ -112,7 +113,7 @@ function PortalTile({
             <Image
               src={media.logo}
               alt={showsName ? '' : portal.name}
-              width={128}
+              width={media.markOnly ? 28 : 128}
               height={28}
               unoptimized
               className={cn(

@@ -78,8 +78,8 @@ export default async function SellerGuidePage({
   const detailPath = localizePath('/sell/[slug]', locale).replace('[slug]', slug)
   const url = `${SITE.url}/${locale}${detailPath}`
   const faqItems = toFaqSectionItems(selectFaqsForPage(locale, getSellerGuideFaqPageKey(guide)))
-  // Passende Verkaufsgeschichte zur Objektart; für Grundstück und
-  // Mehrfamilienhaus liegt keine vor, dort bleibt die Sektion aus.
+  // Passende Verkaufsgeschichte zur Objektart; für Mehrfamilienhaus
+  // liegt keine vor, dort bleibt die Sektion aus.
   const storyId = storyForSellerGuide(guide.translationKey)
 
   return (

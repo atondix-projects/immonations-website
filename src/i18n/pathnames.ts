@@ -52,7 +52,7 @@ export const PATHNAMES = {
   '/privacy': { de: '/datenschutz', en: '/privacy' },
   '/terms': { de: '/agb', en: '/terms' },
   '/directions': { de: '/anfahrt', en: '/directions' },
-  '/staging': { de: '/staging', en: '/staging' },
+  '/staging': { de: '/ki-visualisierung-home-staging', en: '/ai-visualisation-home-staging' },
   '/video': { de: '/video', en: '/video' },
   '/social': { de: '/social', en: '/social' },
   '/html-sitemap': { de: '/sitemap', en: '/sitemap' },

@@ -15,7 +15,7 @@ import {
   Landmark,
   Megaphone,
   MessageSquareText,
-  Route,
+  ShieldCheck,
 } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { Link } from '@/i18n/navigation'
@@ -49,12 +49,12 @@ const STEP_IMAGES = [
 ] as const
 
 const STEP_ICONS = [
-  ClipboardCheck,
   BarChart3,
-  Route,
+  MessageSquareText,
+  ClipboardCheck,
   Camera,
   Megaphone,
-  MessageSquareText,
+  ShieldCheck,
   Eye,
   HandCoins,
   Landmark,

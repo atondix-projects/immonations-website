@@ -43,8 +43,8 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
         'Ein einzelnes Warnsignal beweist noch kein Fehlverhalten. Häufen sich unklare Versprechen, Zeitdruck und fehlende Nachweise, sollten Eigentümer innehalten, Angebote vergleichen und offene Punkte schriftlich klären.',
       sectionTitles: [
         'Phantom-Käufer',
-        'Preis ohne Herleitung',
-        'Druck zur Unterschrift',
+        'Lockpreis',
+        'Unterschrifts-Druck',
         'Unklarer Leistungsumfang',
         'Schwache Unterlagenprüfung',
         'Keine Käuferqualifizierung',
@@ -54,8 +54,8 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
       ],
       sectionTexts: [
         'Eine angeblich fertige Käuferliste ist nur hilfreich, wenn Suchprofil, Qualifizierung und Einwilligung zur Ansprache nachvollziehbar sind.',
-        'Ein hoher Angebotspreis braucht Vergleichsdaten und eine Strategie. Ohne Herleitung kann er die Vermarktung unnötig verlängern.',
-        'Verträge sollten ohne künstliche Eile gelesen werden können. Laufzeit, Kündigung und Vollmachten gehören vorab erklärt.',
+        'Ein überhöhter Startpreis ohne Vergleichsdaten und Strategie verlängert oft die Vermarktung. Folgt danach die öffentliche Preis-Salami, wird der belastbare Wert erst spät sichtbar.',
+        'Verträge sollten ohne künstliche Eile gelesen werden können – auch wenn ein Angebot „nur heute gültig“ sein soll. Laufzeit, Kündigung und Vollmachten gehören vorab erklärt.',
         'Foto, Exposé, Portale, Besichtigungen, Berichte und Dokumentenbeschaffung sollten im Auftrag konkret beschrieben sein.',
         'Grundbuch, Flächen, Energieausweis und Objektangaben brauchen eine erkennbare Plausibilitätsprüfung.',
         'Besichtigungen ohne Identitäts-, Interessen- oder Finanzierungsprüfung belasten Eigentümer und erzeugen wenig belastbare Nachfrage.',
@@ -88,7 +88,7 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
         'One warning sign does not prove misconduct. When vague promises, pressure, and missing evidence accumulate, owners should pause, compare proposals, and resolve open questions in writing.',
       sectionTitles: [
         'Phantom buyers',
-        'Unsupported asking price',
+        'Bait asking price',
         'Pressure to sign',
         'Unclear service scope',
         'Weak document review',
@@ -99,8 +99,8 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
       ],
       sectionTexts: [
         'A claimed buyer list is useful only when search criteria, qualification, and permission to make contact can be explained.',
-        'An ambitious price needs relevant evidence and a strategy. Without either, it can prolong the campaign unnecessarily.',
-        'Owners should be able to compare contracts without artificial urgency. Term, termination, and authority must be clear first.',
+        'An inflated starting price without comparables and a strategy often prolongs the campaign. If public drip-feed reductions follow, the reliable value appears only late.',
+        'Owners should be able to compare contracts without artificial urgency — even when an offer is said to be “only valid today”. Term, termination, and authority must be clear first.',
         'Photography, brochures, portals, viewings, reporting, and document work should be described specifically.',
         'Land-register information, areas, energy data, and property statements need visible plausibility checks.',
         'Viewings without identity, intent, or finance checks burden owners and create little reliable evidence of demand.',
@@ -316,64 +316,6 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
         {
           question: 'What happens to private items?',
           answer: 'Sensitive information is removed, concealed, or excluded from capture.',
-        },
-      ],
-    },
-  ),
-  staging: define(
-    {
-      title: 'Home Staging: physisch oder digital',
-      lede: 'Staging macht Nutzung und Proportion verständlich, ohne Zustand oder Ausstattung vorzutäuschen.',
-      answer:
-        'Physisches Staging arbeitet mit realen Möbeln vor Ort. Digitales Staging ergänzt Bilder um klar gekennzeichnete Visualisierungen. Auswahl und Veröffentlichung werden mit dem Eigentümer abgestimmt.',
-      sectionTitles: [
-        'Geeignete Ausgangslage',
-        'Freigabe & Kennzeichnung',
-        'Grenzen der Inszenierung',
-      ],
-      sectionTexts: [
-        'Leere, überfüllte oder stark personalisierte Räume können von einer reduzierten Darstellung profitieren.',
-        'Digital ergänzte Bilder werden freigegeben, eindeutig bezeichnet und mit realen Aufnahmen kombiniert.',
-        'Staging ändert weder Grundriss noch Zustand und darf keine nicht vorhandene Ausstattung suggerieren.',
-      ],
-      faq: [
-        {
-          question: 'Wann ist digitales Staging sinnvoll?',
-          answer: 'Vor allem bei leeren Räumen, wenn Nutzung und Maßstab schwer erkennbar sind.',
-        },
-        {
-          question: 'Müssen Bilder gekennzeichnet werden?',
-          answer: 'Ja. Digitale Veränderungen sollten eindeutig als Visualisierung erkennbar sein.',
-        },
-        {
-          question: 'Kann Staging Mängel verdecken?',
-          answer: 'Nein. Relevante Merkmale und Mängel müssen transparent bleiben.',
-        },
-      ],
-    },
-    {
-      title: 'Home staging: physical or digital',
-      lede: 'Staging clarifies use and proportion without misrepresenting condition or specification.',
-      answer:
-        'Physical staging uses real furniture on site. Digital staging adds clearly labelled visualisations. Selection and publication are approved by the owner.',
-      sectionTitles: ['Suitable starting points', 'Approval & disclosure', 'Limits of staging'],
-      sectionTexts: [
-        'Empty, overcrowded, or highly personalised rooms may benefit from a restrained presentation.',
-        'Digital additions are approved, clearly labelled, and shown with genuine photographs.',
-        'Staging changes neither layout nor condition and must not suggest features that do not exist.',
-      ],
-      faq: [
-        {
-          question: 'When is digital staging useful?',
-          answer: 'Especially for empty rooms where use and scale are hard to read.',
-        },
-        {
-          question: 'Should edited images be disclosed?',
-          answer: 'Yes. Digital changes should be clearly recognisable as visualisations.',
-        },
-        {
-          question: 'Can staging hide defects?',
-          answer: 'No. Relevant characteristics and defects must remain transparent.',
         },
       ],
     },

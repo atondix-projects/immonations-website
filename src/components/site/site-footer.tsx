@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import { getLocale, getTranslations } from 'next-intl/server'
-import { AnimatedNumber } from '@/components/site/animated-number'
 import { Link } from '@/i18n/navigation'
-
-type FooterStat = { value: string; label: string }
 
 const LINK_CLASSES = 'text-[15px] text-neutral-400 transition-colors hover:text-white'
 const COLUMN_TITLE_CLASSES = 'text-brand-500 mb-1 text-xs font-semibold uppercase tracking-[0.14em]'
@@ -12,28 +9,13 @@ export async function SiteFooter() {
   const t = await getTranslations('Footer')
   const tSite = await getTranslations('Site')
   const locale = await getLocale()
-  const stats = t.raw('stats') as FooterStat[]
   const year = new Date().getFullYear()
 
   return (
     <footer className="bg-surface-dark pt-18 pb-10">
       <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-        {/* Stats band */}
-        <div className="grid grid-cols-2 gap-8 border-b border-white/12 pb-12 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="flex flex-col gap-1.5">
-              <AnimatedNumber
-                value={stat.value}
-                delay={index * 0.08}
-                className="text-brand-500 font-serif text-3xl font-semibold md:text-[40px]"
-              />
-              <span className="text-[15px] text-neutral-500">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-
         {/* Link columns */}
-        <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <Image
               src="/immonation-logo-white-text.png"
@@ -68,7 +50,7 @@ export async function SiteFooter() {
               className={LINK_CLASSES}
             >
               {t('sell.apartment')}
-            </Link>{' '}
+            </Link>
             <Link
               href={{
                 pathname: '/sell/[slug]',

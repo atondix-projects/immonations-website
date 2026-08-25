@@ -10,6 +10,7 @@ import { Awards } from '@/components/site/home/awards'
 import { TrustProof } from '@/components/site/home/trust-proof'
 import { ServicesOverview } from '@/components/site/home/services-overview'
 import { PremiumMarketing } from '@/components/site/home/premium-marketing'
+import { SocialMedia } from '@/components/site/home/social-media'
 import { Reviews } from '@/components/site/home/reviews'
 import { CustomerStories } from '@/components/site/home/customer-stories'
 import { Partners } from '@/components/site/home/partners'
@@ -18,6 +19,7 @@ import { HomeChapter } from '@/components/site/home/home-chapter'
 import { ProcessTimeline, type SalesProcessStep } from '@/components/site/home/process-timeline'
 import { CONTAINER, SectionHeader } from '@/components/site/home/section-shell'
 import { WhyImmonation } from '@/components/site/home/why-immonation'
+import { WarningSigns } from '@/components/site/home/warning-signs'
 import { ReferenceGallery } from '@/components/site/references/reference-gallery'
 import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
@@ -96,6 +98,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <HomeChapter id="difference">
         <WhyImmonation />
+        <WarningSigns />
+      </HomeChapter>
+
+      <HomeChapter id="market">
+        <PriceAtlasTeaser locale={locale} />
+        <MarketDataTeaser compact />
       </HomeChapter>
 
       <HomeChapter id="process">
@@ -118,6 +126,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <HomeChapter id="sales-system">
         <PremiumMarketing showNetworkProof />
+        <SocialMedia />
         <PropertyTypePaths locale={locale} compact />
         <ServicesOverview compact />
       </HomeChapter>
@@ -156,11 +165,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           className="bg-muted border-border border-y"
           compact
         />
-      </HomeChapter>
-
-      <HomeChapter id="market">
-        <PriceAtlasTeaser locale={locale} />
-        <MarketDataTeaser compact />
       </HomeChapter>
 
       <HomeChapter id="local">

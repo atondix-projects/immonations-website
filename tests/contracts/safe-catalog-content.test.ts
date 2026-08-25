@@ -5,7 +5,6 @@ const scopedIds: CatalogPageId[] = [
   'warning-signs',
   'selling-situations',
   'virtual-tour',
-  'staging',
   'video',
   'social',
   'group',

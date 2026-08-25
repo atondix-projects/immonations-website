@@ -2,8 +2,14 @@ import Image from 'next/image'
 import { Clock3, Play } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { VideoDialog } from '@/components/site/video-dialog'
-import { testimonialImage, testimonialVideo, type TestimonialId } from '@/lib/content/testimonials'
+import {
+  testimonialCoverClass,
+  testimonialImage,
+  testimonialVideo,
+  type TestimonialId,
+} from '@/lib/content/testimonials'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
+import { cn } from '@/lib/utils'
 
 export type FeedbackVoice = {
   id: TestimonialId
@@ -47,10 +53,11 @@ export async function FeedbackVideos({
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => {
             const poster = testimonialImage(item.id)
             const video = item.available ? testimonialVideo(item.id) : null
+            const coverClass = testimonialCoverClass(item.id)
 
             return (
               <article key={item.id} className="group flex flex-col gap-4">
@@ -65,7 +72,8 @@ export async function FeedbackVideos({
                       fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
                       className="size-full"
-                      posterSizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      posterClassName={coverClass}
+                      posterSizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                     />
                   ) : (
                     <>
@@ -73,8 +81,11 @@ export async function FeedbackVideos({
                         src={poster}
                         alt={item.alt}
                         fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover opacity-75 transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+                        sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className={cn(
+                          'object-cover opacity-75 transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none',
+                          coverClass,
+                        )}
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/5 to-transparent" />
                       <div className="absolute inset-0 flex items-center justify-center">

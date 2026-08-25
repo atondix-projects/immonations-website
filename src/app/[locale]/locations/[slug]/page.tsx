@@ -66,7 +66,8 @@ export default async function LocationPage({
   const handoverT = await getTranslations('HandoverPolaroids')
   const handoverPolaroids = listHandoverPolaroidsByLocation(slug)
   // Verkaufsgeschichte aus genau dieser Stadt; zu Fürth liegt bisher keine
-  // freigegebene vor, dort bleibt die Sektion aus.
+  // freigegebene vor, dort bleibt die Sektion aus. Schwabach zeigt Sandra
+  // Börschlein, Zirndorf Markus Burkhard.
   const storyId = storyForLocation(slug)
   const path = localizePath('/locations/[slug]', locale).replace('[slug]', slug)
   const url = `${SITE.url}/${locale}${path}`

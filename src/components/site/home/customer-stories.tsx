@@ -4,6 +4,8 @@ import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import { VideoDialog } from '@/components/site/video-dialog'
 import {
+  homeStories,
+  testimonialCoverClass,
   testimonialImage,
   testimonialVideo,
   type TestimonialStory,
@@ -14,7 +16,7 @@ export async function CustomerStories() {
   const t = await getTranslations('Home.stories')
   const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
-  const items = tTestimonials.raw('items') as TestimonialStory[]
+  const items = homeStories(tTestimonials.raw('items') as TestimonialStory[])
   const videoLabels = { play: tVideo('play'), close: tVideo('close') }
 
   return (
@@ -34,6 +36,7 @@ export async function CustomerStories() {
           {items.map((item, index) => {
             const image = testimonialImage(item.id)
             const video = item.video ? testimonialVideo(item.id) : null
+            const coverClass = testimonialCoverClass(item.id)
             const isFirst = index === 0
             const isLast = index === items.length - 1
 
@@ -63,7 +66,7 @@ export async function CustomerStories() {
                       fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
                       className="size-full"
-                      posterPriority
+                      posterClassName={coverClass}
                       posterSizes={
                         isFirst
                           ? '(min-width: 1024px) 58vw, 100vw'
@@ -75,13 +78,15 @@ export async function CustomerStories() {
                       src={image}
                       alt={item.alt}
                       fill
-                      loading="eager"
                       sizes={
                         isFirst
                           ? '(min-width: 1024px) 58vw, 100vw'
                           : '(min-width: 1024px) 50vw, 100vw'
                       }
-                      className="object-cover transition-transform duration-700 hover:scale-[1.025] motion-reduce:transition-none"
+                      className={cn(
+                        'object-cover transition-transform duration-700 hover:scale-[1.025] motion-reduce:transition-none',
+                        coverClass,
+                      )}
                     />
                   )}
                 </div>

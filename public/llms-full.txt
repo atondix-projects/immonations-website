@@ -18,17 +18,21 @@ Der Ratgeber zum Bodenrichtwert unter `/de/bodenrichtwert` beziehungsweise `/en/
 
 ### Immobilienverkauf
 
-Immonation begleitet Eigentuemer vom Erstgespraech bis zum Notartermin. Der Verkaufsprozess umfasst Bewertung, Vor-Ort-Termin, Preis- und Vertriebsstrategie, Objektaufnahme, Expose, Fotos, Video, virtuelle Besichtigung, Vermarktung, Kaeuferqualifizierung, Finanzierungsklaerung, Vertragsvorbereitung und Abschluss.
+Immonation begleitet Eigentuemer von der kostenlosen Bewertung bis zur Uebergabe. Der Verkaufsprozess umfasst zehn Schritte: kostenlose Bewertung, persoenliche Beratung, Unterlagenpruefung, professionelle Objektaufnahme, Marketingstrategie, Kaeuferqualifizierung, Besichtigungen, Verhandlung, Notar und Uebergabe.
 
 Der Verkaufsbereich unter `/de/verkaufen` beziehungsweise `/en/sell` trennt die Vorbereitung nach Haus, Eigentumswohnung, Grundstueck und Mehrfamilienhaus. Die Detailseiten liegen unter `/de/objektart/{slug}` beziehungsweise `/en/property-type/{slug}`. Jeder Leitfaden beschreibt objektartspezifische Unterlagen, Zielgruppen, Prueffragen und Vermarktungsschritte und endet mit konkreten FAQ.
 
-Der vollstaendige Verkaufsfahrplan liegt unter `/de/verkaufen` beziehungsweise `/en/sell`. Er dokumentiert zehn aufeinander abgestimmte Schritte: Auftrag und Objektaufnahme, Bewertung und Marktanalyse, Verkaufsstrategie, professionelle Aufbereitung, Veroeffentlichung, Interessentenmanagement, Besichtigungen, Angebot und Verhandlung, Notar und Beurkundung sowie Uebergabe und Abschluss.
+Der vollstaendige Verkaufsfahrplan liegt unter `/de/verkaufen` beziehungsweise `/en/sell`. Er dokumentiert zehn aufeinander abgestimmte Schritte: kostenlose Bewertung, persoenliche Beratung, Unterlagenpruefung, professionelle Objektaufnahme, Marketingstrategie, Kaeuferqualifizierung, Besichtigungen, Verhandlung, Notar und Uebergabe.
 
 ### Vermarktung
 
 Die Vermarktung kombiniert professionelle Objektpraesentation, Immobilienportale, Social Media, regionale Reichweite und vorgemerkte Suchkunden. Ziel ist eine hohe Nachfrage bei passenden Kaeufern, nicht nur moeglichst viele unqualifizierte Anfragen.
 
 KI-gestuetzte Visualisierungen machen das Potenzial leerer Raeume, einfacher Ausgangsaufnahmen und noch nicht fertig entwickelter Grundstuecke anschaulich. Immonation kennzeichnet solche Darstellungen transparent als moegliche Visualisierung und dokumentiert den tatsaechlichen Ist-Zustand weiterhin klar.
+
+Die eigene Seite dazu liegt unter `/de/ki-visualisierung-home-staging` beziehungsweise `/en/ai-visualisation-home-staging`. KI-Visualisierung, auch digitales oder virtuelles Home Staging genannt, bearbeitet die Originalfotos digital: leere Raeume werden moebliert, veraltete Einrichtung modernisiert, Fassade und Garten im hergerichteten Zustand dargestellt und unbebaute Grundstuecke mit einer moeglichen Bebauung gezeigt. Anders als beim physischen Home Staging wird nichts geliefert, aufgebaut oder gemietet; die Bilder liegen in wenigen Tagen vor und kosten einen Bruchteil. Damit lassen sich renovierungsbeduerftige, vermietete, leerstehende und geerbte Objekte sowie unbebaute Grundstuecke verkaufen, ohne vorher zu renovieren oder auszuraeumen.
+
+Die Seite zeigt vier geprueft zusammengehoerende Vorher-Nachher-Paare aus eigenen Vermarktungen — Grundstueck Schwabach, Wohn- und Essbereich sowie Hauseingang eines Reihenmittelhauses in Nuernberg, Schlafzimmer einer Eigentumswohnung in Nuernberg — jeweils Originalfoto und Visualisierung nebeneinander aus derselben Kameraposition, dazu drei Filme. Es gelten vier feste Regeln: jedes bearbeitete Bild ist als Visualisierung gekennzeichnet, das Originalfoto wird immer mitveroeffentlicht, Grundriss und Bausubstanz und Fenster und erkennbare Maengel bleiben unveraendert, und Moebel und Bepflanzung aus einer Visualisierung sind kein Bestandteil des Kaufgegenstands. Die Visualisierung ist Teil der Vermarktung und wird ueber die Erfolgsprovision abgegolten; ein separates Honorar faellt nicht an.
 
 ### Kaufinteressenten
 
@@ -43,6 +47,8 @@ Das Immobilienlexikon unter `/de/lexikon` beziehungsweise `/en/glossary` enthael
 ### Referenzen und Kundenstimmen
 
 Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Jede Karte fuehrt zu einer bilingualen Geschichte unter `/de/referenzen/{slug}` beziehungsweise `/en/references/{slug}` mit Ausgangslage, Vorgehen, freigegebenem Ergebnis und – soweit vorhanden – freigegebener Originalbewertung. Unbestaetigte Anfrage-, Besichtigungs- und Dauerkennzahlen bleiben durch eine zentrale Publikationsfreigabe ausgeblendet.
+
+Die Kundenstimmen-Seite unter `/de/kundenstimmen` beziehungsweise `/en/testimonials` zeigt Originalbewertungen als Diashow. Primaerquelle ist das oeffentliche Google-Profil der Immonation GmbH in Zirndorf (4,9 von 5, 226 Bewertungen). Wo ein Places-API-Schluessel hinterlegt ist, werden bis zu fuenf von Google Maps nach Relevanz ausgewaehlte Stimmen aktuell abgerufen und mit dokumentierten Originalzitaten aus abgeschlossenen Verkaeufen zusammengefuehrt. Jede Stimme nennt Name, Quelle und Datum; der vollstaendige Google-Bestand bleibt auf dem oeffentlichen Profil nachlesbar.
 
 ### Verkauft-Clips inkl. Ortschaften
 

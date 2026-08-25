@@ -63,7 +63,7 @@ const STATIC_ROUTES: StaticRouteDefinition[] = [
   route('privacy', '/privacy', 1, 'published', 0.3, 'yearly'),
   route('terms', '/terms', 1, 'published', 0.3, 'yearly'),
   route('directions', '/directions', 4, 'published', 0.4, 'yearly'),
-  route('staging', '/staging', 4, 'published', 0.5, 'monthly'),
+  route('staging', '/staging', 1, 'published', 0.7, 'monthly'),
   route('video', '/video', 4, 'published', 0.5, 'monthly'),
   route('social', '/social', 4, 'published', 0.4, 'monthly'),
   route('html-sitemap', '/html-sitemap', 4, 'published', 0.3, 'monthly'),

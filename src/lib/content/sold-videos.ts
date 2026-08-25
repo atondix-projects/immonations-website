@@ -198,6 +198,10 @@ export function listSoldVideos(): SoldVideo[] {
   return [...SOLD_VIDEOS]
 }
 
+export function getSoldVideo(id: string): SoldVideo | undefined {
+  return SOLD_VIDEOS.find((item) => item.id === id)
+}
+
 export function listSoldVideosByLocation(locationSlug: string): SoldVideo[] {
   return SOLD_VIDEOS.filter((item) => item.locationSlug === locationSlug)
 }

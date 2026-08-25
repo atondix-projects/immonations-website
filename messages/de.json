@@ -494,7 +494,7 @@
         "quote": "Ich bin rundum begeistert von der Betreuung und dem Ablauf meines Hausverkaufs. Vom ersten Beratungsgespräch an fühlte ich mich bestens aufgehoben.",
         "result": "Schneller, transparenter und stressfreier Hausverkauf",
         "alt": "Vorschaubild zur Verkaufsgeschichte von Sandra Börschlein",
-        "video": false
+        "video": true
       },
       {
         "id": "markus-burkhard",
@@ -503,7 +503,16 @@
         "quote": "Der Ablauf war klar, transparent und für mich ein echtes Rundum-sorglos-Paket.",
         "result": "Transparent begleiteter Immobilienverkauf",
         "alt": "Vorschaubild zur Verkaufsgeschichte von Markus Burkhard",
-        "video": false
+        "video": true
+      },
+      {
+        "id": "andres-gugel",
+        "name": "Andres Gugel",
+        "context": "Gewerbeimmobilie in einem anspruchsvollen Marktumfeld",
+        "quote": "Zielorientiert, kompetent und zuverlässig – auch bei einem anspruchsvollen Verkaufsprozess war jederzeit ein persönlicher Ansprechpartner erreichbar.",
+        "result": "Professionell begleiteter Verkauf einer Gewerbeimmobilie",
+        "alt": "Vorschaubild zur Verkaufsgeschichte von Andres Gugel",
+        "video": true
       },
       {
         "id": "herr-sippel",
@@ -1134,7 +1143,8 @@
       {
         "heading": "Externe Inhalte",
         "paragraphs": [
-          "Videos von YouTube werden im erweiterten Datenschutzmodus und erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen."
+          "Videos von YouTube werden im erweiterten Datenschutzmodus und erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen.",
+          "Auf der Kundenstimmen-Seite können aktuelle Bewertungen serverseitig über die Google Places API abgerufen werden. Bei live geladenen Stimmen können Profilbilder direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Es gelten die Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) und die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
         ]
       },
       {
@@ -1571,8 +1581,18 @@
     },
     "proof": {
       "eyebrow": "Lokal verankert · messbar wirksam",
-      "trailHint": "Referenzen entdecken",
-      "exampleLabel": "Beispielobjekte",
+      "trailHints": {
+        "reviews": "Bewertungen entdecken",
+        "sales": "Verkäufe entdecken",
+        "volume": "Investments entdecken",
+        "search": "Kunden entdecken"
+      },
+      "exampleLabels": {
+        "reviews": "Beispielbewertungen",
+        "sales": "Beispielobjekte",
+        "volume": "Investment-Beispiele",
+        "search": "Kundenstimmen"
+      },
       "trailBadges": {
         "reviews": "5-Sterne-Verkauf",
         "sales": "Verkaufte Referenz",
@@ -1684,6 +1704,26 @@
         {
           "title": "Persönlich bis zum Notar",
           "text": "Ein fester Ansprechpartner begleitet Sie vom ersten Gespräch bis zur notariellen Unterschrift."
+        }
+      ]
+    },
+    "warningSigns": {
+      "eyebrow": "Ehrliche Aufklärung",
+      "title": "Woran Sie unseriöse Makler erkennen",
+      "lede": "„Ich hätte da schon einen Käufer.“ „Setzen wir den Preis ruhig hoch an.“ Neun typische Maschen, die Eigentümer Zeit, Nerven und bares Geld kosten – und woran Sie einen seriösen Partner erkennen.",
+      "cta": "Die 9 Warnsignale ansehen",
+      "items": [
+        {
+          "title": "Phantom-Käufer",
+          "text": "Ein Käufer, der nie greifbar wird – nur, um den Auftrag zu gewinnen."
+        },
+        {
+          "title": "Lockpreis",
+          "text": "Überhöhter Startpreis, danach die öffentliche Preis-Salami."
+        },
+        {
+          "title": "Unterschrifts-Druck",
+          "text": "„Nur heute gültig“ – damit Sie nicht in Ruhe prüfen."
         }
       ]
     },
@@ -1928,8 +1968,8 @@
     },
     "feedback": {
       "eyebrow": "Kundenstimmen im Video",
-      "title": "Drei persönliche Perspektiven auf die Zusammenarbeit",
-      "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Ein Gespräch ist bereits verfügbar; zwei weitere Videoplätze sind für freigegebene Beiträge vorbereitet.",
+      "title": "Vier persönliche Perspektiven auf die Zusammenarbeit",
+      "text": "Kundinnen und Kunden erzählen selbst, wie sie Beratung, Kommunikation und Verkauf erlebt haben. Alle vier freigegebenen Gespräche können direkt angesehen werden.",
       "comingSoon": "Video folgt",
       "items": [
         {
@@ -1944,14 +1984,21 @@
           "name": "Markus Burkhard",
           "title": "Kundenstimme aus Zirndorf-Weiherhof",
           "alt": "Vorschaubild für die Kundenstimme von Markus Burkhard",
-          "available": false
+          "available": true
         },
         {
           "id": "sandra-boerschlein",
           "name": "Sandra Börschlein",
           "title": "Persönlicher Rückblick auf die Zusammenarbeit",
           "alt": "Vorschaubild für die Kundenstimme von Sandra Börschlein",
-          "available": false
+          "available": true
+        },
+        {
+          "id": "andres-gugel",
+          "name": "Andres Gugel",
+          "title": "Gewerbeverkauf in einem anspruchsvollen Markt",
+          "alt": "Vorschaubild zum Kundeninterview mit Andres Gugel",
+          "available": true
         }
       ]
     },
@@ -1964,13 +2011,27 @@
     },
     "social": {
       "eyebrow": "Social Media",
-      "title": "Vermarktung dort, wo Käufer heute suchen",
-      "text": "Objektvideos, Reels und Einblicke hinter die Kulissen: Auf Instagram, TikTok und YouTube erreichen unsere Immobilien auch Käufergruppen, die kein Portal durchsuchen.",
-      "followLabel": "Profil ansehen",
-      "platforms": {
-        "instagram": "Objektvideos, Neuzugänge und Einblicke ins Team — regelmäßig auf Instagram.",
-        "tiktok": "Immobilien-Reels mit Reichweite: So erreichen Objekte auch jüngere Käufergruppen.",
-        "youtube": "Ausführliche Objektvideos und 360°-Einblicke zum Ansehen in voller Länge."
+      "title": "Verkauft, bevor das Inserat online geht",
+      "text": "Kurze Objektvideos auf Instagram, TikTok und YouTube, plus ein Netzwerk, das weiß, wer sucht. Viele Objekte verkaufen wir so ganz ohne öffentliches Inserat.",
+      "cta": "Videos & Erfolge ansehen",
+      "videoFallback": "Ihr Browser kann dieses Objektvideo nicht abspielen.",
+      "openOnTikTok": "Auf TikTok ansehen",
+      "items": {
+        "deining": {
+          "badge": "Objektfilm",
+          "title": "Neubauwohnung",
+          "location": "Deining"
+        },
+        "nuernberg": {
+          "badge": "Verkauft",
+          "title": "Einfamilienhaus",
+          "location": "Nürnberg"
+        },
+        "guide": {
+          "badge": "TikTok",
+          "title": "3 Fehler beim Verkauf",
+          "meta": "Ratgeber"
+        }
       }
     },
     "group": {
@@ -2729,6 +2790,248 @@
       "text": "Aufmaß, Wohnflächenberechnung und Grundrisse gehören bei uns zur Vermarktung – ohne separate Rechnung. Starten Sie mit einer kostenlosen Bewertung oder einem Erstgespräch.",
       "primary": "Kostenlose Bewertung starten",
       "secondary": "Erstgespräch vereinbaren"
+    }
+  },
+  "TestimonialsPage": {
+    "metadata": {
+      "title": "Kundenstimmen und Erfahrungen | Immonation",
+      "description": "Originale Kundenbewertungen zur Zusammenarbeit mit Immonation beim Immobilienverkauf in der Metropolregion Nürnberg."
+    },
+    "eyebrow": "Kundenstimmen",
+    "title": "Was Eigentümer über die Zusammenarbeit sagen.",
+    "lede": "{rating} von 5 Sternen aus {count} Google-Bewertungen: Lesen Sie dokumentierte Originalstimmen aus echten Verkaufsprozessen.",
+    "source": {
+      "google": "Google Maps",
+      "golocal": "golocal"
+    },
+    "carousel": {
+      "label": "Karussell mit Kundenbewertungen",
+      "previous": "Vorherige Bewertung",
+      "next": "Nächste Bewertung",
+      "slide": "Bewertung",
+      "expand": "Ganze Bewertung lesen",
+      "collapse": "Bewertung einklappen",
+      "openSource": "Originalbewertung öffnen"
+    },
+    "allLink": "Alle Bewertungen auf Google Maps ansehen",
+    "attribution": {
+      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Bewertungen. Diese werden mit dokumentierten Originalstimmen zusammengeführt und anschließend nach Veröffentlichungsdatum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Veröffentlichungsdatum sortiert. Der vollständige aktuelle Bestand ist auf Google Maps einsehbar."
+    },
+    "faq": {
+      "title": "Häufige Fragen zu unseren Kundenstimmen",
+      "items": [
+        {
+          "question": "Sind die Bewertungen echt?",
+          "answer": "Ja. Jede gezeigte Stimme stammt aus einem dokumentierten öffentlichen Bewertungsprofil. Name, Quelle und Veröffentlichungsdatum werden direkt an der Bewertung genannt."
+        },
+        {
+          "question": "Wie werden die Bewertungen ausgewählt?",
+          "answer": "Wenn die Google-Places-API verfügbar ist, liefert Google Maps bis zu fünf nach Relevanz ausgewählte Stimmen. Ergänzend zeigen wir dokumentierte Originalbewertungen; die gemeinsame Liste wird nach Datum sortiert."
+        },
+        {
+          "question": "Wo kann ich alle Google-Bewertungen lesen?",
+          "answer": "Über den Link auf dieser Seite gelangen Sie direkt zum öffentlichen Google-Maps-Profil der Immonation GmbH mit dem vollständigen aktuellen Bewertungsbestand."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ihr Verkauf soll die nächste gute Geschichte werden?",
+      "text": "Starten Sie mit einer kostenlosen Bewertung und lernen Sie unser Vorgehen unverbindlich kennen.",
+      "label": "Kostenlose Bewertung starten"
+    }
+  },
+  "StagingPage": {
+    "serviceType": "KI-Visualisierung und digitales Home Staging",
+    "areaServed": "Metropolregion Nürnberg",
+    "metadata": {
+      "title": "KI-Visualisierung & digitales Home Staging Nürnberg",
+      "description": "Renovierungsbedürftig, vermietet oder leerstehend verkaufen: Mit KI-Visualisierung zeigen wir das Potenzial Ihrer Immobilie als Bild und Video – gekennzeichnet und dem Originalfoto gegenübergestellt."
+    },
+    "hero": {
+      "eyebrow": "KI-Visualisierung & digitales Home Staging",
+      "title": "Verkaufen, ohne vorher zu renovieren oder auszuräumen",
+      "lede": "Ob leerstehendes Einfamilienhaus, renovierungsbedürftiges Objekt oder vermietete Wohnung: Mit KI-Visualisierung machen wir das Potenzial Ihrer Immobilie sichtbar – als Bild und als Video. Leere Räume werden möbliert, veraltete Einrichtung modernisiert, Fassade und Außenanlage im gepflegten Zustand gezeigt."
+    },
+    "answer": "KI-Visualisierung – auch digitales oder virtuelles Home Staging genannt – bearbeitet die Originalfotos Ihrer Immobilie digital: Leere Räume werden möbliert, veraltete Einrichtung modernisiert, Fassade und Garten im hergerichteten Zustand dargestellt, unbebaute Grundstücke mit einer möglichen Bebauung gezeigt. Anders als beim physischen Home Staging wird nichts geliefert, aufgebaut oder gemietet: Die Bilder liegen in wenigen Tagen vor und kosten einen Bruchteil. Bei Immonation gehört das zur Vermarktung. Jedes bearbeitete Bild kennzeichnen wir als Visualisierung und stellen es dem Originalfoto gegenüber.",
+    "pillars": {
+      "eyebrow": "Was wir sichtbar machen",
+      "title": "Vier Wege, das Potenzial zu zeigen",
+      "items": [
+        {
+          "title": "Leere Räume möblieren",
+          "text": "Aus einem leeren oder ausgeräumten Zimmer wird eine einladende Wohnwelt – eingerichtet passend zur Zielgruppe, damit Käufer Nutzung und Maßstab sofort erfassen."
+        },
+        {
+          "title": "Veraltete Einrichtung modernisieren",
+          "text": "Vorhandene, aber in die Jahre gekommene Möblierung wird digital umdekoriert und modernisiert – ohne dass ein einziges Möbelstück bewegt werden muss."
+        },
+        {
+          "title": "Fassade und Außenanlage zeigen",
+          "text": "Wir zeigen, wie Eingang, Fassade und Garten nach einer Aufwertung wirken. Ein Wintermotiv mit kahlem Vorgarten verliert damit seine abschreckende Wirkung."
+        },
+        {
+          "title": "Bebauungspotenzial darstellen",
+          "text": "Bei Grundstücken visualisieren wir eine mögliche Bebauung mit Haus, Zufahrt und Garten. Käufer und Bauträger sehen, was sich realisieren lässt, statt es sich vorstellen zu müssen."
+        }
+      ]
+    },
+    "compare": {
+      "eyebrow": "Vorher / Nachher",
+      "title": "Original und Visualisierung, direkt nebeneinander",
+      "intro": "Vier Beispiele aus eigenen Vermarktungen: jeweils das unbearbeitete Foto und die Visualisierung, gekennzeichnet mit „Original“ und „Visualisierung“. Beide Aufnahmen zeigen dieselbe Kameraposition, damit der Unterschied nachvollziehbar bleibt.",
+      "beforeLabel": "Original",
+      "afterLabel": "Visualisierung",
+      "items": {
+        "plot-schwabach": {
+          "title": "Unbebautes Grundstück, Schwabach",
+          "text": "Aus der Luftaufnahme des unbebauten Grundstücks entsteht eine mögliche Bebauung mit Haus, Garage, Zufahrt und Garten. Grundstücksverkäufer verhandeln damit auf Augenhöhe mit Bauträgern, die ohnehin vom Verkaufserlös rückwärts rechnen.",
+          "beforeAlt": "Luftaufnahme eines unbebauten, bewachsenen Grundstücks in Schwabach",
+          "afterAlt": "Visualisierung desselben Grundstücks mit Einfamilienhaus, Garage, Zufahrt und angelegtem Garten"
+        },
+        "living-room-nuremberg": {
+          "title": "Wohn- und Essbereich, Reihenmittelhaus Nürnberg",
+          "text": "Der leere Raum lässt offen, wie er sich nutzen lässt: Wo steht der Esstisch, passt eine Couchgarnitur daneben? Die Visualisierung beantwortet beides in einem Bild.",
+          "beforeAlt": "Leerer Wohn- und Essbereich eines Reihenmittelhauses mit Parkettboden",
+          "afterAlt": "Visualisierung desselben Raums mit Esstisch, Sofalandschaft und Teppich"
+        },
+        "entrance-nuremberg": {
+          "title": "Hauseingang und Außenanlage, Nürnberg",
+          "text": "Das Bestandsfoto entstand im Winter, mit kahlen Sträuchern. Die Visualisierung zeigt denselben Eingang bepflanzt – der erste Eindruck im Exposé entscheidet über den Klick.",
+          "beforeAlt": "Hauseingang eines Reihenmittelhauses im Winter mit kahlen Sträuchern",
+          "afterAlt": "Visualisierung desselben Hauseingangs mit begrüntem Vorgarten und blühender Bepflanzung"
+        },
+        "bedroom-nuremberg": {
+          "title": "Schlafzimmer, Eigentumswohnung Nürnberg",
+          "text": "Ein leeres Schlafzimmer wirkt schnell kleiner, als es ist. Mit Bett, Schrankfront und Textilien wird die Raumgröße lesbar, ohne dass etwas verändert wurde.",
+          "beforeAlt": "Leeres Schlafzimmer einer Eigentumswohnung mit Balkontür",
+          "afterAlt": "Visualisierung desselben Schlafzimmers mit Doppelbett, Sessel und Teppich"
+        }
+      },
+      "disclaimer": "Die mit „Visualisierung“ gekennzeichnete Aufnahme ist digital erzeugt. Sie zeigt einen möglichen, nicht den aktuellen Zustand. Grundriss, Bausubstanz, Fenster und Mängel bleiben unverändert – Möbel und Bepflanzung sind nicht Bestandteil des Kaufgegenstands."
+    },
+    "video": {
+      "eyebrow": "Aus Bildern wird Bewegtbild",
+      "title": "Video-Material, das die Vision erlebbar macht",
+      "intro": "Aus denselben Visualisierungen entsteht ein kurzer Film für Exposé, Website und Social Media. Der Aufbau läuft im Bild ab: Aus dem leeren Raum wird der eingerichtete, aus dem Grundstück das fertige Haus.",
+      "badge": "Visualisierung",
+      "items": {
+        "house": {
+          "title": "Reihenmittelhaus, Nürnberg",
+          "text": "Eingang, Wohn- und Essbereich, Schlafräume, Balkon und Hobbyraum im Durchlauf."
+        },
+        "apartment": {
+          "title": "Eigentumswohnung, Nürnberg",
+          "text": "Drei Räume, jeweils vom leeren Zustand bis zur fertigen Einrichtung."
+        },
+        "plot": {
+          "title": "Grundstück, Schwabach",
+          "text": "Vom unbebauten Grundstück über den Rohbau bis zum fertigen Haus mit Garten."
+        }
+      },
+      "fallback": "Ihr Browser kann dieses Video nicht abspielen."
+    },
+    "fit": {
+      "eyebrow": "Für diese Situationen gemacht",
+      "title": "Wann sich KI-Visualisierung besonders lohnt",
+      "intro": "Genau die Fälle, in denen klassisches Home Staging scheitert oder eine Renovierung zu teuer wäre – hier spielt digitale Visualisierung ihre Stärke aus.",
+      "items": [
+        {
+          "title": "Renovierungsbedürftige Immobilie verkaufen",
+          "text": "Sanierungsstau schreckt viele Käufer ab. Wir zeigen den möglichen Zustand nach der Renovierung, sodass Interessenten das Potenzial erkennen – und Sie verkaufen, ohne selbst Geld in die Sanierung zu stecken."
+        },
+        {
+          "title": "Vermietete Immobilie verkaufen",
+          "text": "Bei bewohnten Wohnungen ist physisches Home Staging kaum möglich. Wir visualisieren die Räume digital, ohne den Mieter zu stören – und sprechen gezielt Kapitalanleger oder Eigennutzer an."
+        },
+        {
+          "title": "Leerstehendes, veraltetes Einfamilienhaus",
+          "text": "Ein leeres oder in die Jahre gekommenes Haus wirkt schnell kalt und abgewohnt. Digitale Möblierung und Modernisierung machen aus dem Ist-Zustand ein einladendes Zuhause."
+        },
+        {
+          "title": "Geerbte Immobilie oder Grundstück verkaufen",
+          "text": "Erbobjekte stehen oft leer, Grundstücke liegen brach. Wir machen sichtbar, was möglich ist – ideal, wenn zügig und ohne eigene Investition verkauft werden soll."
+        }
+      ],
+      "link": "Alle Verkaufsanlässe ansehen"
+    },
+    "benefits": {
+      "eyebrow": "Warum das überzeugt",
+      "title": "Bessere Bilder verkaufen schneller",
+      "items": [
+        {
+          "title": "Vorstellungsvermögen",
+          "text": "Käufer erkennen sofort, was aus den Räumen werden kann – statt sich einen leeren oder veralteten Zustand schönrechnen zu müssen."
+        },
+        {
+          "title": "Mehr ernsthafte Anfragen",
+          "text": "Attraktive Bilder heben das Inserat aus der Masse der Portaltreffer und ziehen genau die Interessenten an, die wirklich kaufen wollen."
+        },
+        {
+          "title": "Schneller und günstiger",
+          "text": "Digitale Visualisierung kostet einen Bruchteil von physischem Staging oder einer echten Renovierung – und ist in Tagen statt Wochen fertig."
+        }
+      ]
+    },
+    "honesty": {
+      "eyebrow": "Unser Anspruch",
+      "title": "Mit fachlichem Auge – und mit Augenmaß",
+      "text": "Jede Visualisierung wird kuratiert, bevor sie veröffentlicht wird. Wir entscheiden bewusst, was wir zeigen und was nicht: realistisch, zurückhaltend und passend zu Objekt und Zielgruppe. Eine Visualisierung darf Potenzial zeigen. Sie darf keinen Mangel verdecken und keine Ausstattung suggerieren, die es nicht gibt.",
+      "rulesLabel": "Woran wir uns halten",
+      "rules": [
+        "Jedes bearbeitete Bild ist eindeutig als Visualisierung gekennzeichnet.",
+        "Das Originalfoto wird immer mitveröffentlicht – im Exposé und auf den Portalen.",
+        "Grundriss, Bausubstanz, Fenster und erkennbare Mängel bleiben unverändert.",
+        "Möbel und Bepflanzung aus der Visualisierung sind kein Bestandteil des Kaufgegenstands."
+      ]
+    },
+    "related": {
+      "eyebrow": "Passt dazu",
+      "title": "Wie die Visualisierung in die Vermarktung greift",
+      "text": "Visualisierung steht nicht allein. Sie entsteht aus derselben Aufnahme wie Grundrisse, Rundgang und Objektvideo – und wirkt am stärksten, wenn Preis und Zielgruppe vorher geklärt sind.",
+      "valuation": "Kostenlose Bewertung",
+      "virtualTour": "Virtuelle Besichtigung",
+      "video": "Video-Marketing",
+      "floorPlans": "Grundrisse & Wohnfläche"
+    },
+    "faq": {
+      "title": "Rund um Visualisierung, Renovierung und Verkauf",
+      "items": [
+        {
+          "question": "Kann ich eine renovierungsbedürftige Immobilie verkaufen, ohne vorher zu renovieren?",
+          "answer": "Ja. Mit KI-Visualisierung zeigen wir den möglichen Zustand nach einer Sanierung. Käufer erkennen das Potenzial, und Sie verkaufen, ohne selbst Geld in die Renovierung zu stecken."
+        },
+        {
+          "question": "Was ist der Unterschied zwischen Home Staging und KI-Visualisierung?",
+          "answer": "Klassisches Home Staging möbliert real: Möbel werden angeliefert, aufgebaut und wieder abgeholt – das kostet meist einen vierstelligen Betrag und mehrere Wochen. KI-Visualisierung bearbeitet stattdessen die Fotos digital. Leere Räume werden möbliert, veraltete modernisiert, Fassaden hergerichtet dargestellt – deutlich günstiger und in wenigen Tagen fertig."
+        },
+        {
+          "question": "Wie verkaufe ich eine vermietete Wohnung ansprechend?",
+          "answer": "Bei bewohnten Objekten ist physisches Home Staging kaum möglich. Wir visualisieren die Räume digital, ohne den Mieter zu stören, und sprechen gezielt Kapitalanleger oder Eigennutzer an."
+        },
+        {
+          "question": "Lohnt sich das auch für ein altes, leerstehendes Einfamilienhaus?",
+          "answer": "Gerade dann. Ein leeres, in die Jahre gekommenes Haus wirkt kalt und abgewohnt. Digitale Möblierung und Modernisierung machen das Potenzial sichtbar und ziehen mehr ernsthafte Interessenten an."
+        },
+        {
+          "question": "Funktioniert das auch für ein unbebautes Grundstück?",
+          "answer": "Ja. Wir visualisieren eine mögliche Bebauung mit Haus, Zufahrt und Garten. Das hilft besonders gegenüber Bauträgern, die vom erzielbaren Verkaufserlös rückwärts rechnen – wer die mögliche Bebauung sauber aufbereitet, verhandelt auf Augenhöhe."
+        },
+        {
+          "question": "Ist das nicht Täuschung der Käufer?",
+          "answer": "Nein. Wir kennzeichnen jede Visualisierung eindeutig und veröffentlichen sie zusammen mit dem Originalfoto. Gezeigt wird das Potenzial, nicht der heutige Zustand. Grundriss, Bausubstanz und erkennbare Mängel bleiben unverändert dargestellt."
+        },
+        {
+          "question": "Was kostet die KI-Visualisierung bei Immonation?",
+          "answer": "Nichts zusätzlich. Sie ist Teil unserer Vermarktung und wird über die Provision im Erfolgsfall abgegolten – es fällt kein separates Honorar an."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sollen wir das Potenzial Ihrer Immobilie sichtbar machen?",
+      "text": "Ob renovierungsbedürftig, vermietet, leerstehend oder unbebaut – wir zeigen Ihnen kostenlos, was mit Visualisierung möglich ist und wie sich Ihre Immobilie damit besser verkauft.",
+      "primary": "Kostenlose Einschätzung",
+      "secondary": "Erstgespräch buchen"
     }
   },
   "LandValuePage": {

@@ -9,6 +9,7 @@
 - [Preisatlas](https://www.immonationgmbh.de/de/preisatlas) · [Price atlas](https://www.immonationgmbh.de/en/price-atlas)
 - [Immobilie verkaufen](https://www.immonationgmbh.de/de/verkaufen) · [Sell a property](https://www.immonationgmbh.de/en/sell)
 - [Verkaufsanlässe](https://www.immonationgmbh.de/de/nischen) · [Selling situations](https://www.immonationgmbh.de/en/selling-situations)
+- [KI-Visualisierung und Home Staging](https://www.immonationgmbh.de/de/ki-visualisierung-home-staging) · [AI visualisation and home staging](https://www.immonationgmbh.de/en/ai-visualisation-home-staging)
 - [Aktuelle Angebote](https://www.immonationgmbh.de/de/angebote) · [Current properties](https://www.immonationgmbh.de/en/properties)
 - [Immobilienpreise und Trends](https://www.immonationgmbh.de/de/marktdaten) · [Property prices and trends](https://www.immonationgmbh.de/en/market-data)
 - [Städte und Stadtteile](https://www.immonationgmbh.de/de/staedte) · [Cities and districts](https://www.immonationgmbh.de/en/cities)
@@ -29,7 +30,8 @@
 - Städte: `/de/stadt/{slug}` ↔ `/en/city/{slug}`
 - Stadtteile: `/de/stadtteil/{stadt}/{stadtteil}` ↔ `/en/district/{city}/{district}`
 - Objekte: `/de/objekt/{slug}` ↔ `/en/property/{slug}`
-- Kundenstimmen: `/de/stimme/{slug}` ↔ `/en/testimonial/{slug}`
+- Kundenstimmen: `/de/kundenstimmen` ↔ `/en/testimonials`
+- Einzelne Stimmen: `/de/stimme/{slug}` ↔ `/en/testimonial/{slug}`
 - Referenzgeschichten: `/de/referenzen/{slug}` ↔ `/en/references/{slug}`
 
 `/kundenbereich` ist reserviert und nicht veröffentlicht. `/seo` ist nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.

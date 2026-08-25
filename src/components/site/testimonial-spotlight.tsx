@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { cn } from '@/lib/utils'
 import { VideoDialog } from '@/components/site/video-dialog'
 import {
+  testimonialCoverClass,
   testimonialImage,
   testimonialVideo,
   type StoryId,
@@ -12,11 +13,11 @@ import {
 /**
  * Einzelne Kundenstimme zum Einsetzen auf Unterseiten.
  *
- * Die Startseite zeigt über `home/customer-stories.tsx` alle vier Geschichten
- * nebeneinander. Auf Verkaufsratgebern, Standort- und Kontaktseiten passt genau
- * eine — die zur Objektart, zur Stadt oder zum Anlass. Der Baustein liest
- * denselben Textbestand (`Testimonials.items`) und dieselbe Medienzuordnung,
- * damit Zitat und Ergebnis nirgends auseinanderlaufen.
+ * Die Startseite zeigt über `home/customer-stories.tsx` die vier
+ * Feedback-Videos. Auf Verkaufsratgebern, Standort- und Kontaktseiten passt
+ * genau eine Geschichte — die zur Objektart, zur Stadt oder zum Anlass. Der
+ * Baustein liest denselben Textbestand (`Testimonials.items`) und dieselbe
+ * Medienzuordnung, damit Zitat und Ergebnis nirgends auseinanderlaufen.
  */
 export async function TestimonialSpotlight({
   id,
@@ -43,6 +44,7 @@ export async function TestimonialSpotlight({
 
   const video = story.video ? testimonialVideo(id) : null
   const image = testimonialImage(id)
+  const coverClass = testimonialCoverClass(id)
 
   return (
     <section
@@ -70,6 +72,7 @@ export async function TestimonialSpotlight({
                 fallback={t('videoFallback')}
                 labels={{ play: tVideo('play'), close: tVideo('close') }}
                 className="size-full"
+                posterClassName={coverClass}
                 posterSizes="(min-width: 1024px) 42vw, 100vw"
               />
             ) : (
@@ -78,7 +81,7 @@ export async function TestimonialSpotlight({
                 alt={story.alt}
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover"
+                className={cn('object-cover', coverClass)}
               />
             )}
           </div>

@@ -47,6 +47,8 @@ type VideoDialogProps = {
   className?: string
   posterSizes?: string
   posterPriority?: boolean
+  /** Zusätzliche Klassen für Poster und Vorschau-Video, etwa `object-top`. */
+  posterClassName?: string
   /**
    * `image` zeigt das Standbild, `loop` eine stumme Endlosschleife des Videos.
    * Die Schleife nutzt dieselbe Datei und denselben Ausschnitt — der Wechsel ins
@@ -55,6 +57,12 @@ type VideoDialogProps = {
   preview?: 'image' | 'loop'
   /** Zusätzliche Auszeichnung über der Vorschau, etwa ein Themen-Label. */
   overlay?: ReactNode
+  /**
+   * `brand` ist der Standard-Abspielmarken-Knopf. `reel` ist die helle
+   * Kreisfläche der Social-Reels (weiß, Markendreieck), ohne die restliche
+   * Seite umzubauen.
+   */
+  playAppearance?: 'brand' | 'reel'
 }
 
 export function VideoDialog({
@@ -68,19 +76,21 @@ export function VideoDialog({
   className,
   posterSizes = '(min-width: 1024px) 50vw, 100vw',
   posterPriority = false,
+  posterClassName,
   preview = 'image',
   overlay,
+  playAppearance = 'brand',
 }: VideoDialogProps) {
   const [isOpen, setIsOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const shouldReduceMotion = useReducedMotion()
+  const previewMode = preview === 'loop' && shouldReduceMotion !== true ? 'loop' : 'image'
 
   const close = useCallback(() => setIsOpen(false), [])
 
   useEffect(() => {
     const dialog = dialogRef.current
     if (!dialog || !isOpen || dialog.open) return
-
     dialog.showModal()
   }, [isOpen])
 
@@ -149,14 +159,15 @@ export function VideoDialog({
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label={`${labels.play}: ${title}`}
+        data-video-dialog={isOpen ? 'open' : 'closed'}
         className={cn(
           'group focus-visible:ring-brand-400 relative block cursor-pointer overflow-hidden bg-black focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset',
           className,
         )}
       >
-        {preview === 'loop' ? (
+        {previewMode === 'loop' ? (
           <video
-            className="pointer-events-none size-full object-cover"
+            className={cn('pointer-events-none size-full object-cover', posterClassName)}
             autoPlay
             muted
             loop
@@ -176,7 +187,10 @@ export function VideoDialog({
             fill
             priority={posterPriority}
             sizes={posterSizes}
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none"
+            className={cn(
+              'object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025] motion-reduce:transition-none',
+              posterClassName,
+            )}
           />
         )}
 
@@ -185,12 +199,18 @@ export function VideoDialog({
           className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15"
           aria-hidden="true"
         />
-        <span className="absolute inset-0 flex items-center justify-center">
-          <span className="border-brand-500 bg-brand-500/25 group-hover:bg-brand-500 flex size-14 items-center justify-center border text-white backdrop-blur-[2px] transition-colors duration-200 group-hover:scale-105 motion-reduce:transition-none">
-            <Play className="size-5 fill-current" aria-hidden="true" />
-          </span>
+        <span className="absolute inset-0 z-20 flex items-center justify-center">
+          {playAppearance === 'reel' ? (
+            <span className="flex size-14 items-center justify-center rounded-full bg-white shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
+              <Play className="text-brand-600 ml-0.5 size-5 fill-current" aria-hidden="true" />
+            </span>
+          ) : (
+            <span className="border-brand-500 bg-brand-500/25 group-hover:bg-brand-500 flex size-14 items-center justify-center border text-white backdrop-blur-[2px] transition-colors duration-200 group-hover:scale-105 motion-reduce:transition-none">
+              <Play className="size-5 fill-current" aria-hidden="true" />
+            </span>
+          )}
         </span>
-        {overlay}
+        {overlay ? <span className="contents">{overlay}</span> : null}
       </button>
 
       <dialog
@@ -223,7 +243,7 @@ export function VideoDialog({
                 controls
                 autoPlay
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster={poster}
                 width={width}
                 height={height}

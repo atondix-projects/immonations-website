@@ -34,12 +34,22 @@ type TestimonialMedia = {
   image: string
   video?: TestimonialVideo
   review?: TestimonialReview
+  /**
+   * `object-position` in Querformat-Kacheln. Der Play-Button bleibt zentriert;
+   * der Anker schiebt das Gesicht nach oben, damit der Button auf der Brust
+   * landet. Höheres Y zeigt weiter unten im Hochformat — Gesicht steigt.
+   * Markus (3:4, Mitte) ist die Referenz; nicht anfassen.
+   */
+  coverClass?: string
 }
+
+const PORTRAIT_VIDEO = { width: 720, height: 1280 } as const
 
 const TESTIMONIAL_MEDIA = {
   'viktor-emter': {
     image: '/images/testimonials/viktor-emter.webp',
-    video: { src: '/videos/testimonials/viktor-emter.mp4', width: 720, height: 1280 },
+    video: { src: '/videos/testimonials/viktor-emter.mp4', ...PORTRAIT_VIDEO },
+    coverClass: 'object-[center_72%] scale-110',
     review: {
       reviewer: 'Viktor Emter',
       rating: 5,
@@ -56,8 +66,9 @@ const TESTIMONIAL_MEDIA = {
   },
   'markus-burkhard': {
     image: '/images/testimonials/markus-burkhard.webp',
+    video: { src: '/videos/testimonials/markus-burkhard.mp4', ...PORTRAIT_VIDEO },
     review: {
-      reviewer: 'Markus Burkhardt',
+      reviewer: 'Markus Burkhard',
       rating: 5,
       screenshot: {
         src: '/images/reviews/google-markus-burkhardt.png',
@@ -72,6 +83,8 @@ const TESTIMONIAL_MEDIA = {
   },
   'sandra-boerschlein': {
     image: '/images/testimonials/sandra-boerschlein.webp',
+    video: { src: '/videos/testimonials/sandra-boerschlein.mp4', ...PORTRAIT_VIDEO },
+    coverClass: 'object-[center_42%]',
     review: {
       reviewer: 'Cyber 86',
       rating: 5,
@@ -86,6 +99,11 @@ const TESTIMONIAL_MEDIA = {
       },
     },
   },
+  'andres-gugel': {
+    image: '/images/testimonials/andres-gugel.webp',
+    video: { src: '/videos/testimonials/andres-gugel.mp4', ...PORTRAIT_VIDEO },
+    coverClass: 'object-[center_38%]',
+  },
   'herr-sippel': { image: '/images/testimonials/herr-sippel-property.jpg' },
   'frau-hartmann': { image: '/images/testimonials/frau-hartmann-property.jpg' },
 } as const satisfies Record<string, TestimonialMedia>
@@ -94,11 +112,24 @@ export type TestimonialId = keyof typeof TESTIMONIAL_MEDIA
 
 /**
  * Kundenstimmen mit vollständiger Verkaufsgeschichte (Zitat, Kontext, Ergebnis).
- * Sandra Börschlein ist aus der freigegebenen Google-Bewertung ergänzt; ein
- * Video ist für sie weiterhin nicht hinterlegt.
+ * Die vier Video-Interviews aus `assets/Verkäufer Feedback Videos` stehen auf der
+ * Startseite; Sippel und Hartmann bleiben für Ratgeber- und Standortseiten.
  */
 export type StoryId =
-  'viktor-emter' | 'sandra-boerschlein' | 'markus-burkhard' | 'herr-sippel' | 'frau-hartmann'
+  | 'viktor-emter'
+  | 'sandra-boerschlein'
+  | 'markus-burkhard'
+  | 'andres-gugel'
+  | 'herr-sippel'
+  | 'frau-hartmann'
+
+/** Die vier Feedback-Videos der Startseite, in der Reihenfolge der Sektion. */
+export const HOME_STORY_IDS = [
+  'viktor-emter',
+  'sandra-boerschlein',
+  'markus-burkhard',
+  'andres-gugel',
+] as const satisfies readonly StoryId[]
 
 /** Textinhalt einer Verkaufsgeschichte, gelesen aus `Testimonials.items`. */
 export type TestimonialStory = {
@@ -113,6 +144,12 @@ export type TestimonialStory = {
 
 export function testimonialImage(id: TestimonialId) {
   return TESTIMONIAL_MEDIA[id].image
+}
+
+/** `object-position` für Kacheln, die das Hochformat-Poster quer beschneiden. */
+export function testimonialCoverClass(id: TestimonialId) {
+  const media: TestimonialMedia = TESTIMONIAL_MEDIA[id]
+  return media.coverClass ?? 'object-center'
 }
 
 /**
@@ -130,6 +167,15 @@ export function testimonialReview(id: TestimonialId): TestimonialReview | null {
   return media.review ?? null
 }
 
+/** Startseiten-Geschichten in fester Reihenfolge, ohne Sippel/Hartmann. */
+export function homeStories(items: TestimonialStory[]): TestimonialStory[] {
+  const byId = new Map(items.map((item) => [item.id, item]))
+  return HOME_STORY_IDS.flatMap((id) => {
+    const item = byId.get(id)
+    return item ? [item] : []
+  })
+}
+
 /**
  * Verkaufsgeschichte passend zur Objektart einer Ratgeberseite.
  * Verschlüsselt über `translationKey` aus `seller-guides.ts`, nicht über den
@@ -141,8 +187,8 @@ export function testimonialReview(id: TestimonialId): TestimonialReview | null {
  */
 const SELLER_GUIDE_STORIES: Record<string, StoryId | null> = {
   'sell-house': 'herr-sippel',
-  'sell-apartment': 'frau-hartmann',
-  'sell-land': null,
+  'sell-apartment': 'sandra-boerschlein',
+  'sell-land': 'andres-gugel',
   'sell-apartment-building': null,
 }
 
@@ -160,6 +206,7 @@ const LOCATION_STORIES: Record<string, StoryId | null> = {
   nuernberg: 'frau-hartmann',
   erlangen: 'herr-sippel',
   fuerth: null,
+  schwabach: 'sandra-boerschlein',
 }
 
 export function storyForLocation(slug: string): StoryId | null {

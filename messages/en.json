@@ -494,7 +494,7 @@
         "quote": "I was completely delighted with the support and the process of selling my house. From the first consultation, I felt in the best hands.",
         "result": "A fast, transparent, stress-free house sale",
         "alt": "Preview image for Sandra Börschlein's sales story",
-        "video": false
+        "video": true
       },
       {
         "id": "markus-burkhard",
@@ -503,7 +503,16 @@
         "quote": "The process was clear, transparent, and genuinely fully managed for me.",
         "result": "A transparently guided property sale",
         "alt": "Preview image for Markus Burkhard's sales story",
-        "video": false
+        "video": true
+      },
+      {
+        "id": "andres-gugel",
+        "name": "Andres Gugel",
+        "context": "Commercial property in a challenging market",
+        "quote": "Focused, competent, and reliable – even through a demanding sale, a personal contact was always available.",
+        "result": "Professionally managed sale of a commercial property",
+        "alt": "Preview image for Andres Gugel's sales story",
+        "video": true
       },
       {
         "id": "herr-sippel",
@@ -1136,7 +1145,8 @@
       {
         "heading": "External content",
         "paragraphs": [
-          "YouTube videos load in privacy-enhanced mode and only after a click. Links to Google, Trustpilot, Instagram, TikTok, and Facebook lead to external providers with their own privacy policies."
+          "YouTube videos load in privacy-enhanced mode and only after a click. Links to Google, Trustpilot, Instagram, TikTok, and Facebook lead to external providers with their own privacy policies.",
+          "The testimonials page may retrieve current reviews server-side through the Google Places API. Live reviews can include profile images loaded directly from Google, which transfers your IP address to Google. The Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) and Google Privacy Policy (https://policies.google.com/privacy) apply."
         ]
       },
       {
@@ -1573,8 +1583,18 @@
     },
     "proof": {
       "eyebrow": "Locally rooted · measurably effective",
-      "trailHint": "Explore references",
-      "exampleLabel": "Example properties",
+      "trailHints": {
+        "reviews": "Explore reviews",
+        "sales": "Explore sales",
+        "volume": "Explore investments",
+        "search": "Explore clients"
+      },
+      "exampleLabels": {
+        "reviews": "Example reviews",
+        "sales": "Example properties",
+        "volume": "Example investments",
+        "search": "Client voices"
+      },
       "trailBadges": {
         "reviews": "Five-star sale",
         "sales": "Sold reference",
@@ -1686,6 +1706,26 @@
         {
           "title": "Personally guided to the notary",
           "text": "One dedicated contact supports you from the first conversation through to the notarised signature."
+        }
+      ]
+    },
+    "warningSigns": {
+      "eyebrow": "Honest briefing",
+      "title": "How to spot unreliable estate agents",
+      "lede": "“I’ve already got a buyer.” “Let’s set the price high.” Nine typical tactics that cost owners time, nerves, and real money — and how to recognise a reliable partner.",
+      "cta": "View the 9 warning signs",
+      "items": [
+        {
+          "title": "Phantom buyers",
+          "text": "A buyer who never materialises — used only to win the mandate."
+        },
+        {
+          "title": "Bait asking price",
+          "text": "An inflated starting price, then the public drip of reductions."
+        },
+        {
+          "title": "Pressure to sign",
+          "text": "“Only valid today” — so you cannot check the contract in peace."
         }
       ]
     },
@@ -1930,8 +1970,8 @@
     },
     "feedback": {
       "eyebrow": "Client stories on video",
-      "title": "Three personal perspectives on working with us",
-      "text": "Clients describe the advice, communication, and sale in their own words. One conversation is available now; two further video slots are prepared for approved contributions.",
+      "title": "Four personal perspectives on working with us",
+      "text": "Clients describe the advice, communication, and sale in their own words. All four approved conversations are available to watch directly.",
       "comingSoon": "Video coming soon",
       "items": [
         {
@@ -1946,14 +1986,21 @@
           "name": "Markus Burkhard",
           "title": "A client story from Zirndorf-Weiherhof",
           "alt": "Preview image for Markus Burkhard's client story",
-          "available": false
+          "available": true
         },
         {
           "id": "sandra-boerschlein",
           "name": "Sandra Börschlein",
           "title": "A personal look back at the collaboration",
           "alt": "Preview image for Sandra Börschlein's client story",
-          "available": false
+          "available": true
+        },
+        {
+          "id": "andres-gugel",
+          "name": "Andres Gugel",
+          "title": "A commercial sale in a challenging market",
+          "alt": "Preview image for the client interview with Andres Gugel",
+          "available": true
         }
       ]
     },
@@ -1966,13 +2013,27 @@
     },
     "social": {
       "eyebrow": "Social media",
-      "title": "Marketing where buyers actually look",
-      "text": "Property videos, reels, and behind-the-scenes insights: on Instagram, TikTok, and YouTube our listings also reach buyers who never browse the portals.",
-      "followLabel": "View profile",
-      "platforms": {
-        "instagram": "Property videos, new listings, and team insights — regularly on Instagram.",
-        "tiktok": "Real-estate reels with reach: how listings connect with younger buyer groups.",
-        "youtube": "Full-length property videos and 360° insights to watch in detail."
+      "title": "Sold before the listing goes online",
+      "text": "Short property videos on Instagram, TikTok and YouTube, plus a network that already knows who is looking. Many properties sell this way without a public listing.",
+      "cta": "View videos and results",
+      "videoFallback": "Your browser cannot play this property video.",
+      "openOnTikTok": "Watch on TikTok",
+      "items": {
+        "deining": {
+          "badge": "Property film",
+          "title": "New-build apartment",
+          "location": "Deining"
+        },
+        "nuernberg": {
+          "badge": "Sold",
+          "title": "Detached house",
+          "location": "Nuremberg"
+        },
+        "guide": {
+          "badge": "TikTok",
+          "title": "3 mistakes when selling",
+          "meta": "Guide"
+        }
       }
     },
     "group": {
@@ -2731,6 +2792,248 @@
       "text": "Survey, living-area calculation, and floor plans are part of our marketing service — no separate invoice. Start with a free valuation or an initial consultation.",
       "primary": "Start the free valuation",
       "secondary": "Arrange an initial consultation"
+    }
+  },
+  "TestimonialsPage": {
+    "metadata": {
+      "title": "Client testimonials and reviews | Immonation",
+      "description": "Original client reviews about working with Immonation on property sales across the Nuremberg metropolitan region."
+    },
+    "eyebrow": "Client testimonials",
+    "title": "What property owners say about working with us.",
+    "lede": "{rating} out of 5 from {count} Google reviews: read documented original accounts from real property sales.",
+    "source": {
+      "google": "Google Maps",
+      "golocal": "golocal"
+    },
+    "carousel": {
+      "label": "Client review carousel",
+      "previous": "Previous review",
+      "next": "Next review",
+      "slide": "Review",
+      "expand": "Read the full review",
+      "collapse": "Collapse review",
+      "openSource": "Open the original review"
+    },
+    "allLink": "View all reviews on Google Maps",
+    "attribution": {
+      "live": "The Google Places API returns up to five reviews selected by relevance. They are merged with documented original reviews and then ordered by publication date. Review text is shown in its original language.",
+      "curated": "These original accounts come from documented public reviews and are ordered by publication date. The complete current set is available on Google Maps."
+    },
+    "faq": {
+      "title": "Frequently asked questions about our reviews",
+      "items": [
+        {
+          "question": "Are these reviews genuine?",
+          "answer": "Yes. Every review shown comes from a documented public review profile. The reviewer name, source, and publication date appear with each review."
+        },
+        {
+          "question": "How are the reviews selected?",
+          "answer": "When the Google Places API is available, Google Maps returns up to five reviews selected by relevance. We add documented original reviews and order the combined list by date."
+        },
+        {
+          "question": "Where can I read every Google review?",
+          "answer": "The link on this page opens the public Google Maps profile of Immonation GmbH, where the complete current set of reviews is available."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Could your sale become the next good story?",
+      "text": "Start with a free valuation and get to know our process without obligation.",
+      "label": "Start a free valuation"
+    }
+  },
+  "StagingPage": {
+    "serviceType": "AI visualisation and digital home staging",
+    "areaServed": "Nuremberg metropolitan region",
+    "metadata": {
+      "title": "AI visualisation & digital home staging in Nuremberg",
+      "description": "Selling a property that needs renovation, is tenanted, or stands empty: AI visualisation shows its potential as images and video – clearly labelled and shown alongside the original photograph."
+    },
+    "hero": {
+      "eyebrow": "AI visualisation & digital home staging",
+      "title": "Sell without renovating or clearing out first",
+      "lede": "Whether it is an empty detached house, a property in need of renovation, or a tenanted apartment: AI visualisation makes the potential of your property visible – as images and as video. Empty rooms are furnished, dated interiors modernised, façades and gardens shown in cared-for condition."
+    },
+    "answer": "AI visualisation – also called digital or virtual home staging – edits the original photographs of your property digitally: empty rooms are furnished, dated interiors modernised, façade and garden shown in cared-for condition, and undeveloped plots shown with a possible building scheme. Unlike physical home staging, nothing is delivered, assembled, or hired: the images are ready within days and cost a fraction. At Immonation this is part of the marketing. Every edited image is labelled as a visualisation and published alongside the original photograph.",
+    "pillars": {
+      "eyebrow": "What we make visible",
+      "title": "Four ways to show the potential",
+      "items": [
+        {
+          "title": "Furnish empty rooms",
+          "text": "An empty or cleared room becomes an inviting living space – furnished for the target audience so buyers grasp use and scale immediately."
+        },
+        {
+          "title": "Modernise dated interiors",
+          "text": "Existing but dated furnishings are redecorated and modernised digitally – without a single piece of furniture being moved."
+        },
+        {
+          "title": "Show façade and grounds",
+          "text": "We show how entrance, façade, and garden look once tidied up. A winter photograph with a bare front garden loses its off-putting effect."
+        },
+        {
+          "title": "Show development potential",
+          "text": "For plots we visualise a possible scheme with house, driveway, and garden. Buyers and developers see what can be built instead of having to imagine it."
+        }
+      ]
+    },
+    "compare": {
+      "eyebrow": "Before / after",
+      "title": "Original and visualisation, side by side",
+      "intro": "Four examples from our own marketing: the unedited photograph and the visualisation, labelled “Original” and “Visualisation”. Both frames share the same camera position, so the difference stays verifiable.",
+      "beforeLabel": "Original",
+      "afterLabel": "Visualisation",
+      "items": {
+        "plot-schwabach": {
+          "title": "Undeveloped plot, Schwabach",
+          "text": "The aerial photograph of the undeveloped plot becomes a possible scheme with house, garage, driveway, and garden. Sellers negotiate on equal terms with developers, who calculate backwards from the resale value anyway.",
+          "beforeAlt": "Aerial photograph of an undeveloped, overgrown plot in Schwabach",
+          "afterAlt": "Visualisation of the same plot with a detached house, garage, driveway, and landscaped garden"
+        },
+        "living-room-nuremberg": {
+          "title": "Living and dining area, terraced house in Nuremberg",
+          "text": "An empty room leaves the question of use open: where does the dining table go, and does a sofa still fit beside it? The visualisation answers both in one image.",
+          "beforeAlt": "Empty living and dining area of a terraced house with wooden flooring",
+          "afterAlt": "Visualisation of the same room with dining table, sofa arrangement, and rug"
+        },
+        "entrance-nuremberg": {
+          "title": "Entrance and grounds, Nuremberg",
+          "text": "The existing photograph was taken in winter, with bare shrubs. The visualisation shows the same entrance planted up – the first impression in the brochure decides whether buyers click.",
+          "beforeAlt": "Entrance of a terraced house in winter with bare shrubs",
+          "afterAlt": "Visualisation of the same entrance with a green front garden and flowering planting"
+        },
+        "bedroom-nuremberg": {
+          "title": "Bedroom, apartment in Nuremberg",
+          "text": "An empty bedroom quickly reads as smaller than it is. With a bed, wardrobe front, and textiles the room size becomes legible, without anything having been changed.",
+          "beforeAlt": "Empty bedroom of an apartment with a balcony door",
+          "afterAlt": "Visualisation of the same bedroom with a double bed, armchair, and rug"
+        }
+      },
+      "disclaimer": "The frame labelled “Visualisation” is digitally generated. It shows a possible condition, not the current one. Layout, building fabric, windows, and defects remain unchanged – furniture and planting are not part of the property being sold."
+    },
+    "video": {
+      "eyebrow": "From images to moving pictures",
+      "title": "Video material that makes the vision tangible",
+      "intro": "The same visualisations become a short film for the brochure, the website, and social media. The transformation plays out on screen: the empty room becomes the furnished one, the plot becomes the finished house.",
+      "badge": "Visualisation",
+      "items": {
+        "house": {
+          "title": "Terraced house, Nuremberg",
+          "text": "Entrance, living and dining area, bedrooms, balcony, and hobby room in sequence."
+        },
+        "apartment": {
+          "title": "Apartment, Nuremberg",
+          "text": "Three rooms, each from the empty state to the finished furnishing."
+        },
+        "plot": {
+          "title": "Plot, Schwabach",
+          "text": "From the undeveloped plot through the shell to the finished house with garden."
+        }
+      },
+      "fallback": "Your browser cannot play this video."
+    },
+    "fit": {
+      "eyebrow": "Made for these situations",
+      "title": "When AI visualisation pays off most",
+      "intro": "Precisely the cases where physical home staging fails or a renovation would cost too much – this is where digital visualisation plays to its strength.",
+      "items": [
+        {
+          "title": "Selling a property in need of renovation",
+          "text": "A renovation backlog puts many buyers off. We show the possible condition after refurbishment so interested parties recognise the potential – and you sell without putting your own money into the work."
+        },
+        {
+          "title": "Selling a tenanted property",
+          "text": "In occupied apartments physical home staging is barely possible. We visualise the rooms digitally, without disturbing the tenant – and address investors or owner-occupiers directly."
+        },
+        {
+          "title": "An empty, dated detached house",
+          "text": "An empty or dated house quickly feels cold and worn. Digital furnishing and modernisation turn the current state into an inviting home."
+        },
+        {
+          "title": "Selling an inherited property or plot",
+          "text": "Inherited properties often stand empty and plots lie fallow. We make visible what is possible – ideal when the sale should happen promptly and without your own investment."
+        }
+      ],
+      "link": "See all selling situations"
+    },
+    "benefits": {
+      "eyebrow": "Why it works",
+      "title": "Better images sell faster",
+      "items": [
+        {
+          "title": "Imagination",
+          "text": "Buyers see immediately what the rooms could become – instead of having to talk themselves into an empty or dated state."
+        },
+        {
+          "title": "More serious enquiries",
+          "text": "Attractive images lift the listing out of the mass of portal results and attract exactly the people who genuinely intend to buy."
+        },
+        {
+          "title": "Faster and cheaper",
+          "text": "Digital visualisation costs a fraction of physical staging or an actual renovation – and is ready in days rather than weeks."
+        }
+      ]
+    },
+    "honesty": {
+      "eyebrow": "Our standard",
+      "title": "A trained eye – and a sense of proportion",
+      "text": "Every visualisation is curated before it is published. We decide deliberately what to show and what not to: realistic, restrained, and appropriate to the property and its audience. A visualisation may show potential. It must not conceal a defect or suggest features that do not exist.",
+      "rulesLabel": "What we hold ourselves to",
+      "rules": [
+        "Every edited image is clearly labelled as a visualisation.",
+        "The original photograph is always published with it – in the brochure and on the portals.",
+        "Layout, building fabric, windows, and visible defects remain unchanged.",
+        "Furniture and planting shown in a visualisation are not part of the property being sold."
+      ]
+    },
+    "related": {
+      "eyebrow": "Related",
+      "title": "How visualisation fits into the marketing",
+      "text": "Visualisation does not stand alone. It comes out of the same shoot as floor plans, virtual tour, and property video – and works best once price and target audience have been settled.",
+      "valuation": "Free valuation",
+      "virtualTour": "Virtual viewing",
+      "video": "Video marketing",
+      "floorPlans": "Floor plans & living area"
+    },
+    "faq": {
+      "title": "About visualisation, renovation, and selling",
+      "items": [
+        {
+          "question": "Can I sell a property in need of renovation without renovating first?",
+          "answer": "Yes. AI visualisation shows the possible condition after refurbishment. Buyers recognise the potential, and you sell without putting your own money into the work."
+        },
+        {
+          "question": "What is the difference between home staging and AI visualisation?",
+          "answer": "Classic home staging furnishes physically: furniture is delivered, assembled, and collected again – which usually costs a four-figure sum and several weeks. AI visualisation edits the photographs digitally instead. Empty rooms are furnished, dated ones modernised, façades shown tidied up – considerably cheaper and ready within days."
+        },
+        {
+          "question": "How do I present a tenanted apartment attractively?",
+          "answer": "In occupied properties physical home staging is barely possible. We visualise the rooms digitally, without disturbing the tenant, and address investors or owner-occupiers directly."
+        },
+        {
+          "question": "Is it worthwhile for an old, empty detached house?",
+          "answer": "Especially then. An empty, dated house feels cold and worn. Digital furnishing and modernisation make the potential visible and attract more serious enquiries."
+        },
+        {
+          "question": "Does this also work for an undeveloped plot?",
+          "answer": "Yes. We visualise a possible scheme with house, driveway, and garden. That helps particularly against developers, who calculate backwards from the achievable resale value – presenting the possible scheme properly means negotiating on equal terms."
+        },
+        {
+          "question": "Isn't this misleading buyers?",
+          "answer": "No. We label every visualisation clearly and publish it together with the original photograph. What is shown is the potential, not today's condition. Layout, building fabric, and visible defects remain unchanged."
+        },
+        {
+          "question": "What does AI visualisation cost at Immonation?",
+          "answer": "Nothing extra. It is part of our marketing and covered by the commission payable on a successful sale – there is no separate fee."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Shall we make your property's potential visible?",
+      "text": "Whether it needs renovation, is tenanted, stands empty, or is undeveloped – we show you free of charge what visualisation can do and how it helps your property sell.",
+      "primary": "Free assessment",
+      "secondary": "Book an initial conversation"
     }
   },
   "LandValuePage": {

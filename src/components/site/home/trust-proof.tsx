@@ -1,26 +1,60 @@
 import { getTranslations } from 'next-intl/server'
-import { referenceImage, type ReferenceId, type ReferenceItem } from '@/lib/content/references'
+import {
+  getReferenceDetail,
+  referenceImage,
+  type ReferenceId,
+  type ReferenceItem,
+} from '@/lib/content/references'
+import { testimonialImage, testimonialReview, type TestimonialId } from '@/lib/content/testimonials'
 import { TrustProofGrid, type TrustProofExample } from './trust-proof-grid'
 import { CONTAINER } from './section-shell'
 
 type ProofItem = { value: string; label: string }
 
-const TRAIL_IDS = [
-  ['deining-neubauwohnung', 'fuerth-mehrfamilienhaus', 'langenzenn-terrassenwohnung'],
-  [
-    'forchheim-eigentumswohnung',
-    'fuerth-altbauwohnung',
-    'nuernberg-reihenendhaus',
-    'zirndorf-gartenwohnung',
-  ],
-  ['fuerth-versorgungszentrum', 'fuerth-mehrfamilienhaus', 'heroldsbach-mehrfamilienhaus'],
-  [
-    'nuernberg-einfamilienhaus',
-    'oberasbach-einfamilienhaus',
-    'erlangen-eigentumswohnung',
-    'forchheim-reihenhaus',
-  ],
-] as const satisfies readonly (readonly ReferenceId[])[]
+/** Kundenstimmen-Texte aus `Home.feedback.items` — Name und Anlass der Aufnahme. */
+type FeedbackItem = { id: TestimonialId; name: string; title: string }
+
+/**
+ * Belegquelle je Kennzahl. Die Bewertungsnote zeigt Bewertungen, Verkaufszahl
+ * und Transaktionsvolumen zeigen verkaufte Objekte, die Suchkundenzahl zeigt
+ * die Kundinnen und Kunden aus den Bewertungsvideos. Vier Listen statt einer,
+ * weil dieselbe Objektkachel unter „4,9 / 5" nichts belegt.
+ */
+
+/** Bewertungs-Screenshots: Referenz-Reviews plus die Kundenstimmen-Reviews. */
+const REVIEW_SOURCES = [
+  { kind: 'reference', id: 'langenzenn-terrassenwohnung' },
+  { kind: 'reference', id: 'fuerth-mehrfamilienhaus' },
+  { kind: 'reference', id: 'deining-neubauwohnung' },
+  { kind: 'testimonial', id: 'viktor-emter' },
+] as const satisfies readonly (
+  | { kind: 'reference'; id: ReferenceId }
+  | { kind: 'testimonial'; id: TestimonialId }
+)[]
+
+/** Verkaufte Objekte für „Immobilienverkäufe pro Jahr". */
+const SALES_IDS = [
+  'forchheim-eigentumswohnung',
+  'fuerth-altbauwohnung',
+  'nuernberg-reihenendhaus',
+  'zirndorf-gartenwohnung',
+] as const satisfies readonly ReferenceId[]
+
+/** Größere Objekte für „jährliches Transaktionsvolumen". */
+const VOLUME_IDS = [
+  'fuerth-versorgungszentrum',
+  'fuerth-mehrfamilienhaus',
+  'heroldsbach-mehrfamilienhaus',
+  'nuernberg-einfamilienhaus',
+] as const satisfies readonly ReferenceId[]
+
+/** Kundinnen und Kunden, die vor der Kamera über die Zusammenarbeit berichtet haben. */
+const PERSON_IDS = [
+  'viktor-emter',
+  'markus-burkhard',
+  'sandra-boerschlein',
+  'andres-gugel',
+] as const satisfies readonly TestimonialId[]
 
 export async function TrustProof() {
   const [t, references] = await Promise.all([
@@ -30,34 +64,101 @@ export async function TrustProof() {
   const proof = t.raw('proof.items') as ProofItem[]
   const referenceItems = references.raw('items') as ReferenceItem[]
   const referencesById = new Map(referenceItems.map((item) => [item.id, item]))
-  const trailBadges = [
-    t('proof.trailBadges.reviews'),
-    t('proof.trailBadges.sales'),
-    t('proof.trailBadges.volume'),
-    t('proof.trailBadges.search'),
-  ]
+  const feedbackById = new Map(
+    (t.raw('feedback.items') as FeedbackItem[]).map((item) => [item.id, item]),
+  )
 
-  const proofItems = proof.map((item, index) => {
-    const badge = trailBadges[index] ?? ''
-    const examples = (TRAIL_IDS[index] ?? []).flatMap<TrustProofExample>((id) => {
+  const propertyExamples = (ids: readonly ReferenceId[], badge: string) =>
+    ids.flatMap<TrustProofExample>((id) => {
       const reference = referencesById.get(id)
+      if (!reference) return []
 
-      return reference
-        ? [
-            {
-              id,
-              title: reference.title,
-              type: reference.type,
-              location: reference.location,
-              image: referenceImage(id),
-              badge,
-            },
-          ]
-        : []
+      return [
+        {
+          kind: 'property',
+          id,
+          image: referenceImage(id),
+          badge,
+          srLabel: reference.title,
+          title: reference.title,
+          type: reference.type,
+          location: reference.location,
+        },
+      ]
     })
 
-    return { ...item, examples }
-  })
+  const reviewExamples = (badge: string) =>
+    REVIEW_SOURCES.flatMap<TrustProofExample>((source) => {
+      const review =
+        source.kind === 'reference'
+          ? getReferenceDetail(source.id)?.review
+          : testimonialReview(source.id)
+      if (!review) return []
+
+      return [
+        {
+          kind: 'review',
+          id: `review-${source.id}`,
+          image: review.screenshot.src,
+          // Ohne Hover erscheint nur eine 64-px-Kachel. Dort steht das Objekt
+          // bzw. die Person zur Bewertung — der Screenshot selbst wäre in
+          // dieser Größe ein grauer Streifen.
+          thumb:
+            source.kind === 'reference' ? referenceImage(source.id) : testimonialImage(source.id),
+          badge,
+          srLabel: review.reviewer,
+          reviewer: review.reviewer,
+          width: review.screenshot.width,
+          height: review.screenshot.height,
+        },
+      ]
+    })
+
+  const personExamples = (badge: string) =>
+    PERSON_IDS.flatMap<TrustProofExample>((id) => {
+      const feedback = feedbackById.get(id)
+      if (!feedback) return []
+
+      return [
+        {
+          kind: 'person',
+          id: `person-${id}`,
+          image: testimonialImage(id),
+          badge,
+          srLabel: feedback.name,
+          name: feedback.name,
+          role: feedback.title,
+        },
+      ]
+    })
+
+  const examplesByIndex = [
+    reviewExamples(t('proof.trailBadges.reviews')),
+    propertyExamples(SALES_IDS, t('proof.trailBadges.sales')),
+    propertyExamples(VOLUME_IDS, t('proof.trailBadges.volume')),
+    personExamples(t('proof.trailBadges.search')),
+  ]
+
+  const trailHints = [
+    t('proof.trailHints.reviews'),
+    t('proof.trailHints.sales'),
+    t('proof.trailHints.volume'),
+    t('proof.trailHints.search'),
+  ]
+
+  const exampleLabels = [
+    t('proof.exampleLabels.reviews'),
+    t('proof.exampleLabels.sales'),
+    t('proof.exampleLabels.volume'),
+    t('proof.exampleLabels.search'),
+  ]
+
+  const proofItems = proof.map((item, index) => ({
+    ...item,
+    trailHint: trailHints[index] ?? '',
+    exampleLabel: exampleLabels[index] ?? '',
+    examples: examplesByIndex[index] ?? [],
+  }))
 
   return (
     <section className="border-border bg-background border-b py-16 md:py-22">
@@ -81,11 +182,7 @@ export async function TrustProof() {
           </div>
         </div>
 
-        <TrustProofGrid
-          items={proofItems}
-          trailHint={t('proof.trailHint')}
-          exampleLabel={t('proof.exampleLabel')}
-        />
+        <TrustProofGrid items={proofItems} />
       </div>
     </section>
   )

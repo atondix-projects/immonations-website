@@ -20,7 +20,6 @@ export type CatalogPageId =
   | 'group'
   | 'partners'
   | 'directions'
-  | 'staging'
   | 'video'
   | 'social'
   | 'html-sitemap'
@@ -236,16 +235,6 @@ const DEFINITIONS: Record<CatalogPageId, PageDefinition> = {
     'Our office is at Nürnberger Straße 18, 90513 Zirndorf. Appointments are arranged in advance so the right contact has time for your request.',
     ['Route planen', 'Öffnungszeiten prüfen', 'Termin abstimmen'],
     ['Plan the route', 'Check opening hours', 'Arrange a visit'],
-  ),
-  staging: definition(
-    'Home Staging',
-    'Home staging',
-    'Interne Vorschau für Inszenierung und Visualisierung',
-    'Internal preview for staging and visualisation',
-    'Diese nicht indexierte Vorschau dokumentiert, wie reale und digitale Inszenierung Potenzial sichtbar macht. Sie dient der internen Abstimmung.',
-    'This noindex preview documents how physical and digital staging can reveal potential. It is intended for internal review.',
-    ['Ausgangslage prüfen', 'Visualisierung planen', 'Freigabe dokumentieren'],
-    ['Review the starting point', 'Plan visualisation', 'Document approval'],
   ),
   video: definition(
     'Video-Marketing',

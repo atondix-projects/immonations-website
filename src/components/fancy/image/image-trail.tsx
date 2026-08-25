@@ -148,7 +148,8 @@ const ImageTrail = ({
     const trailItems =
       allImages.current ??
       (containerRef.current?.querySelectorAll('.image-trail-item') as
-        NodeListOf<HTMLElement> | undefined)
+        | NodeListOf<HTMLElement>
+        | undefined)
 
     if (distance > threshold && trailItems?.length) {
       const images = trailItems

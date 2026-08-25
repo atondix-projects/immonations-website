@@ -4,12 +4,12 @@ const HOME_CHAPTERS = [
   'hero',
   'proof',
   'difference',
+  'market',
   'process',
   'sales-system',
   'situations',
   'results',
   'trust',
-  'market',
   'local',
   'guidance',
   'company',
@@ -20,8 +20,10 @@ const HOME_CHAPTERS = [
 
 const CLIENT_TOPIC_ANCHORS = [
   'darum-immonation',
+  'warnsignale',
   'verkaufen',
   'virtuelle-besichtigung',
+  'social',
   'objektarten',
   'leistungen',
   'kundenstimmen',
@@ -76,7 +78,9 @@ test('homepage valuation entry keeps the primary journey client-side until navig
   const hero = page.locator('[data-home-chapter="hero"]')
   const valuationEntry = hero.locator('form:visible')
 
-  await valuationEntry.getByRole('button', { name: 'Haus', exact: true }).click()
+  const houseOption = valuationEntry.getByRole('radio', { name: 'Haus', exact: true })
+  await valuationEntry.getByText('Haus', { exact: true }).click()
+  await expect(houseOption).toBeChecked()
   await valuationEntry.getByRole('button', { name: /Weiter/ }).click()
 
   await expect(page).toHaveURL(/\/de\/bewertung\?type=house$/)
