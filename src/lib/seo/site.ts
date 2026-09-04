@@ -13,6 +13,8 @@ export const SITE = {
     linkedin: 'https://www.linkedin.com/company/immonation-gmbh',
     instagram: 'https://www.instagram.com/immonationgmbh',
     tiktok: 'https://www.tiktok.com/@immonationgmbh',
+    /** Der Kanal trägt ein automatisch vergebenes Handle — es ist das echte. */
+    youtube: 'https://www.youtube.com/@immonationgmbh4352',
     facebook: 'https://www.facebook.com/immonationgmbh',
   },
   contact: {

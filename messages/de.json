@@ -2171,27 +2171,11 @@
     "social": {
       "eyebrow": "Social Media",
       "title": "Verkauft, bevor das Inserat online geht",
-      "text": "Kurze Objektvideos auf Instagram, TikTok und YouTube, plus ein Netzwerk, das weiß, wer sucht. Viele Objekte verkaufen wir so ganz ohne öffentliches Inserat.",
+      "text": "Kurze Objektvideos auf TikTok, Instagram und YouTube, plus ein Netzwerk, das weiß, wer sucht. Viele Objekte verkaufen wir so ganz ohne öffentliches Inserat.",
       "cta": "Videos & Erfolge ansehen",
-      "videoFallback": "Ihr Browser kann dieses Objektvideo nicht abspielen.",
-      "openOnTikTok": "Auf TikTok ansehen",
-      "items": {
-        "deining": {
-          "badge": "Objektfilm",
-          "title": "Neubauwohnung",
-          "location": "Deining"
-        },
-        "nuernberg": {
-          "badge": "Verkauft",
-          "title": "Einfamilienhaus",
-          "location": "Nürnberg"
-        },
-        "guide": {
-          "badge": "TikTok",
-          "title": "3 Fehler beim Verkauf",
-          "meta": "Ratgeber"
-        }
-      }
+      "viewsLabel": "Aufrufe",
+      "watchOn": "Auf {platform} ansehen",
+      "metricsNote": "Je Kanal das meistgesehene Objektvideo. Aufrufe laut Plattform, teils gerundet, Stand {date}."
     },
     "group": {
       "eyebrow": "Unternehmensgruppe",
@@ -4665,6 +4649,63 @@
       "eyebrow": "Vor Ort verkauft",
       "title": "Verkauft in {town}",
       "text": "Abgeschlossene Vermarktungen in {town} — aufgenommen am Tag der Übergabe."
+    }
+  },
+  "SocialPage": {
+    "reasons": {
+      "eyebrow": "Warum über Social Media?",
+      "title": "Käufer sind längst dort — wir zeigen die Immobilie, wo sie hinschauen",
+      "items": {
+        "reach": {
+          "title": "Reichweite mit Wirkung",
+          "text": "Ein gutes Objektvideo erreicht in Tagen mehr passende Menschen als ein Portalinserat in Wochen — gezielt in der Metropolregion Nürnberg."
+        },
+        "emotion": {
+          "title": "Emotion statt Datenblatt",
+          "text": "Bewegtbild, 360°-Rundgang und der echte Raumeindruck wecken Kaufinteresse, das ein Foto nicht transportiert."
+        },
+        "speed": {
+          "title": "Geschwindigkeit",
+          "text": "Wer schon folgt, reagiert sofort. Objekte finden häufig Käufer, bevor sie überhaupt inseriert werden müssten."
+        },
+        "discretion": {
+          "title": "Diskretion bleibt möglich",
+          "text": "Auf Wunsch vermarkten wir ganz ohne öffentliches Inserat — nur im Netzwerk, damit Ihr Umfeld nichts erfährt."
+        }
+      }
+    },
+    "levers": {
+      "eyebrow": "Die drei Hebel",
+      "title": "Wie ein einziges Video zum Verkauf führt",
+      "text": "Ein Clip aktiviert mehrere Wege gleichzeitig — und oft reicht schon einer davon.",
+      "items": {
+        "network": {
+          "title": "„Einer kennt einen“",
+          "text": "Jemand aus dem Netzwerk sieht das Video und denkt sofort an eine Person, die genau so etwas sucht — und teilt oder markiert sie."
+        },
+        "follower": {
+          "title": "„Das suche ich selbst“",
+          "text": "Ein Follower sucht ohnehin gerade, und das Objekt passt. Kein Umweg über Portale, sondern direkter Kontakt."
+        },
+        "algorithm": {
+          "title": "Der Algorithmus verteilt",
+          "text": "Reels und TikToks werden gezielt Menschen in der Region ausgespielt, die sich für Immobilien interessieren — auch weit außerhalb unserer Follower."
+        }
+      }
+    },
+    "topPosts": {
+      "eyebrow": "Aus unseren Kanälen",
+      "title": "Die meistgesehenen Objektvideos",
+      "text": "Jeder Eintrag führt zum Originalbeitrag auf der Plattform. Gelistet sind ausschließlich Objektvideos: Beiträge zu Sponsoring, Partnern oder Jahresrückblicken erreichen teils mehr Menschen, sagen über Immobilienvermarktung aber nichts aus.",
+      "views": "Aufrufe",
+      "openOn": "auf {platform} ansehen",
+      "caseLink": "Zum Referenzfall",
+      "channelLink": "{platform}-Kanal öffnen",
+      "note": "Aufrufe laut Plattform, teils gerundet, Stand {date}. TikTok weist große Zahlen gerundet aus (etwa „44,9 Tsd.“); die Angaben hier folgen dieser Anzeige. Follower- und Abonnentenzahlen führen wir bewusst nicht auf — sie beschreiben nicht, wie viele Menschen ein einzelnes Objekt tatsächlich gesehen haben."
+    },
+    "channels": {
+      "eyebrow": "Folgen & ansehen",
+      "title": "Unsere Kanäle"
     }
   },
   "HandoverPolaroids": {

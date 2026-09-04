@@ -11,9 +11,12 @@ import { DigitalAssistant } from './home/client-wish-sections'
 import { FeedbackReviews } from './home/feedback-reviews'
 import { FeedbackVideos } from './home/feedback-videos'
 import { PremiumMarketing } from './home/premium-marketing'
-import { SocialMedia } from './home/social-media'
 import { ReferenceGallery } from './references/reference-gallery'
 import { PropertyTourSection } from './social/property-tour'
+import { SocialChannelRow } from './social/social-channel-row'
+import { SocialLevers } from './social/social-levers'
+import { SocialReasons } from './social/social-reasons'
+import { SocialTopPosts } from './social/top-posts'
 import { BellVideoWall } from './sold/bell-video-wall'
 import { SoldVideoReel } from './sold/sold-video-reel'
 import { CatalogPreview } from './catalog-preview'
@@ -278,7 +281,9 @@ export async function SocialContent({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <SocialMedia />
+      <SocialReasons />
+      <SocialLevers />
+      <SocialTopPosts locale={locale} />
       <PropertyTourSection locale={locale} />
       <SoldVideoReel
         items={listSoldVideos()}
@@ -301,6 +306,7 @@ export async function SocialContent({ locale }: { locale: Locale }) {
           ))}
         </div>
       </section>
+      <SocialChannelRow locale={locale} />
     </>
   )
 }

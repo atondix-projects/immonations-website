@@ -43,6 +43,21 @@ items below remain open.
     title card naming Großreuth bei Schweinau, and the house number is briefly legible in the
     opening shot. The reference record publishes at `city-area`, and the page copy stays at
     "Nürnberg". Confirm the seller approves the clip as it stands, or request a re-cut.
+  - [ ] **YouTube-Shorts — street names in the linked titles.** `/social` and the homepage now
+    link four Shorts on `@immonationgmbh4352`. Their YouTube titles name the street
+    (Bürgermeister-Keckl-Straße, Seidelbastweg, An den Hausäckern, Wörnitzstraße); our own copy
+    stays at city precision, as `references.ts` requires. The titles are Immonation's own public
+    publication, but confirm the sellers approve them — or ask for the titles to be re-cut to
+    city precision before the site drives traffic to them.
+- [ ] **Refresh the social view counts.** `src/lib/content/social-channels.ts` holds a hand-taken
+  snapshot from 2026-09-04 (`SOCIAL_METRICS_CAPTURED_ON`, rendered as an as-of date on both the
+  homepage teaser and `/social`). Numbers go stale; agree a refresh cadence, or replace the file
+  with a fetch. Two open product decisions recorded there: only property videos are listed (the
+  highest-reach Instagram posts are the TSV sponsorship reel and a partner post), and follower or
+  subscriber counts are deliberately not published (Instagram 477, TikTok 874, YouTube 5).
+- [ ] **Fix the YouTube icon on the live site.** `immonationgmbh.de` links its YouTube social icon
+  to a single video (`watch?v=6YEjaovRBFk`) that no longer resolves. The channel is
+  `https://www.youtube.com/@immonationgmbh4352` — now recorded in `SITE.socials.youtube`.
 - [ ] Confirm the Dr. Klein relationship and allowed wording/linking; confirm the employee versus
   independent-agent model, current vacancies, referral terms, and any secondary buyer-search offer.
 - [x] Complete legal review of imprint, privacy, terms, cookies, forms, tracking, financing,

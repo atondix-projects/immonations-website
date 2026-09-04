@@ -36,6 +36,14 @@ Die eigene Seite dazu liegt unter `/de/ki-visualisierung-home-staging` beziehung
 
 Die Seite zeigt vier geprueft zusammengehoerende Vorher-Nachher-Paare aus eigenen Vermarktungen — Grundstueck Schwabach, Wohn- und Essbereich sowie Hauseingang eines Reihenmittelhauses in Nuernberg, Schlafzimmer einer Eigentumswohnung in Nuernberg — jeweils Originalfoto und Visualisierung nebeneinander aus derselben Kameraposition, dazu drei Filme. Es gelten vier feste Regeln: jedes bearbeitete Bild ist als Visualisierung gekennzeichnet, das Originalfoto wird immer mitveroeffentlicht, Grundriss und Bausubstanz und Fenster und erkennbare Maengel bleiben unveraendert, und Moebel und Bepflanzung aus einer Visualisierung sind kein Bestandteil des Kaufgegenstands. Die Visualisierung ist Teil der Vermarktung und wird ueber die Erfolgsprovision abgegolten; ein separates Honorar faellt nicht an.
 
+### Social Media und Video
+
+Die eigene Seite dazu liegt unter `/de/social` beziehungsweise `/en/social`. Immonation betreibt vier Kanaele: TikTok `@immonationgmbh` mit der groessten Reichweite, Instagram `@immonationgmbh` fuer Reels und Einblicke, YouTube `@immonationgmbh4352` fuer die vollstaendigen Objektfilme und Facebook `/immonationgmbh` fuer regionale Reichweite. Objektvideos entstehen im 9:16-Hochformat und laufen zusaetzlich zum Portalinserat.
+
+Die Seite listet die meistgesehenen Objektvideos je Kanal mit Aufrufzahl und Link auf den Originalbeitrag. Stand 4. September 2026 sind das auf TikTok ein Einfamilienhaus in Nuernberg-Gaulnhofen mit rund 44.900 Aufrufen, ein Architektenhaus in Nuernberg mit rund 33.100 und eine Villa in Nuernberg mit rund 24.000; auf Instagram ein Maisonette-Loft in Nuernberg mit 523 Aufrufen; auf YouTube eine Neubauwohnung in Deining mit 1.401 Aufrufen. Gelistet sind ausschliesslich Objektvideos — Beitraege zu Sponsoring, Partnern oder Jahresrueckblicken erreichen teils mehr Menschen, sagen ueber Immobilienvermarktung aber nichts aus. Follower- und Abonnentenzahlen werden bewusst nicht veroeffentlicht.
+
+Drei Wege fuehren von einem Clip zum Verkauf: jemand aus dem Netzwerk kennt eine passende Person und teilt das Video, ein Follower sucht selbst gerade, oder der Algorithmus spielt den Clip Menschen in der Region aus. Auf Wunsch vermarktet Immonation ganz ohne oeffentliches Inserat, nur ueber Netzwerk und Suchkundenkartei. Plattform-Feeds werden auf der Website nicht eingebettet; es gibt lediglich Links, damit keine Plattformskripte ohne Einwilligung laden.
+
 ### Kaufinteressenten
 
 Kaeufer erhalten auf `/de/angebote` beziehungsweise `/en/properties` Zugang zu Objektteasern, Suchanfrage, Finanzierungshinweisen und persoenlicher Beratung. Wenn kein passendes Objekt verfuegbar ist, kann eine Suchanfrage vorbereitet werden.

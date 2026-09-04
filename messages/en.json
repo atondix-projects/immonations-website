@@ -2164,27 +2164,11 @@
     "social": {
       "eyebrow": "Social media",
       "title": "Sold before the listing goes online",
-      "text": "Short property videos on Instagram, TikTok and YouTube, plus a network that already knows who is looking. Many properties sell this way without a public listing.",
-      "cta": "View videos and results",
-      "videoFallback": "Your browser cannot play this property video.",
-      "openOnTikTok": "Watch on TikTok",
-      "items": {
-        "deining": {
-          "badge": "Property film",
-          "title": "New-build apartment",
-          "location": "Deining"
-        },
-        "nuernberg": {
-          "badge": "Sold",
-          "title": "Detached house",
-          "location": "Nuremberg"
-        },
-        "guide": {
-          "badge": "TikTok",
-          "title": "3 mistakes when selling",
-          "meta": "Guide"
-        }
-      }
+      "text": "Short property videos on TikTok, Instagram and YouTube, plus a network that already knows who is looking. Many properties sell this way without a public listing.",
+      "cta": "See videos and results",
+      "viewsLabel": "views",
+      "watchOn": "Watch on {platform}",
+      "metricsNote": "The most-watched property video per channel. View counts as reported by each platform, partly rounded, as of {date}."
     },
     "group": {
       "eyebrow": "Company group",
@@ -4658,6 +4642,63 @@
       "eyebrow": "Sold locally",
       "title": "Sold in {town}",
       "text": "Completed sales in {town} — filmed on handover day."
+    }
+  },
+  "SocialPage": {
+    "reasons": {
+      "eyebrow": "Why social media?",
+      "title": "Buyers are already there — we show the property where they are looking",
+      "items": {
+        "reach": {
+          "title": "Reach that works",
+          "text": "A good property video reaches more relevant people in days than a portal listing does in weeks — targeted at the Nuremberg metropolitan region."
+        },
+        "emotion": {
+          "title": "Emotion, not a data sheet",
+          "text": "Moving images, a 360° tour and a real sense of the rooms create buying interest that a photo cannot convey."
+        },
+        "speed": {
+          "title": "Speed",
+          "text": "People who already follow react immediately. Properties often find buyers before they would even need to be listed."
+        },
+        "discretion": {
+          "title": "Discretion stays possible",
+          "text": "On request we market entirely without a public listing — inside the network only, so your surroundings hear nothing."
+        }
+      }
+    },
+    "levers": {
+      "eyebrow": "The three levers",
+      "title": "How a single video leads to a sale",
+      "text": "One clip activates several routes at once — and often one of them is enough.",
+      "items": {
+        "network": {
+          "title": "\"Someone knows someone\"",
+          "text": "Someone in the network sees the video and immediately thinks of a person looking for exactly this — and shares or tags them."
+        },
+        "follower": {
+          "title": "\"That is what I am looking for\"",
+          "text": "A follower is already searching and the property fits. No detour through portals, just direct contact."
+        },
+        "algorithm": {
+          "title": "The algorithm distributes",
+          "text": "Reels and TikToks are served to people in the region who are interested in property — well beyond our own followers."
+        }
+      }
+    },
+    "topPosts": {
+      "eyebrow": "From our channels",
+      "title": "The most-watched property videos",
+      "text": "Every entry links to the original post on the platform. Only property videos are listed: posts about sponsorship, partners or year-end reviews sometimes reach more people but say nothing about property marketing.",
+      "views": "views",
+      "openOn": "watch on {platform}",
+      "caseLink": "See the reference case",
+      "channelLink": "Open the {platform} channel",
+      "note": "View counts as reported by each platform, partly rounded, as of {date}. TikTok reports large numbers rounded (for example \"44.9K\"); the figures here follow that display. Follower and subscriber counts are deliberately not listed — they do not describe how many people actually watched a given property."
+    },
+    "channels": {
+      "eyebrow": "Follow and watch",
+      "title": "Our channels"
     }
   },
   "HandoverPolaroids": {
