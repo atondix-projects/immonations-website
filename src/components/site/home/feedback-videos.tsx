@@ -38,7 +38,11 @@ export async function FeedbackVideos({
   const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
   const items = t.raw('items') as FeedbackVoice[]
-  const videoLabels = { play: tVideo('play'), close: tVideo('close') }
+  const videoLabels = {
+    play: tVideo('play'),
+    close: tVideo('close'),
+    transcript: tVideo('transcript'),
+  }
 
   return (
     <section id={anchorId} className="bg-background scroll-mt-24 py-16 md:py-24">
@@ -71,6 +75,7 @@ export async function FeedbackVideos({
                       title={`${item.name}: ${item.title}`}
                       fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
+                      captions={video.captions}
                       className="size-full"
                       posterClassName={coverClass}
                       posterSizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"

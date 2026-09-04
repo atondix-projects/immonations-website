@@ -13,6 +13,8 @@
  * ItemList-/VideoObject-Auszeichnung — ausgewiesen wird nur, was belegt ist.
  */
 
+import type { VideoCaptionTrack } from '@/components/site/video-dialog'
+
 export type BellVideo = {
   id: string
   video: string
@@ -20,6 +22,12 @@ export type BellVideo = {
   /** Echte Pixelmaße — `VideoDialog` reserviert daraus das Seitenverhältnis. */
   width: number
   height: number
+  /**
+   * Untertitelspuren zur gesprochenen Ansage. Alle sechs Clips führen Ton; die
+   * WebVTT-Dateien stehen noch aus. Ein Eintrag hier genügt — `VideoDialog`
+   * rendert die Spur ohne weitere Codeänderung.
+   */
+  captions?: readonly VideoCaptionTrack[]
 }
 
 const WIDTH = 720

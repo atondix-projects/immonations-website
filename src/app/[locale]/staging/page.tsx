@@ -15,14 +15,17 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import {
+  LEAD_PAIR_COUNT,
   PAIR_SLUGS,
   VisualizationCompare,
   type VisualizationPair,
 } from '@/components/site/staging/visualization-compare'
 import {
+  FILM_GROUPS,
   FILM_IDS,
   VisualizationFilms,
   type Film,
+  type FilmGroupId,
 } from '@/components/site/staging/visualization-films'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection, type FaqItem } from '@/components/site/templates/faq-section'
@@ -107,6 +110,13 @@ export default async function StagingPage({ params }: { params: Promise<{ locale
     text: t(`video.items.${id}.text`),
   }))
 
+  const filmGroupLabels = Object.fromEntries(
+    FILM_GROUPS.map((group) => [group.id, t(`video.groups.${group.id}`)]),
+  ) as Record<FilmGroupId, string>
+
+  const leadPairs = pairs.slice(0, LEAD_PAIR_COUNT)
+  const restPairs = pairs.slice(LEAD_PAIR_COUNT)
+
   const pageUrl = `${SITE.url}/${locale}${localizePath('/staging', locale)}`
 
   return (
@@ -150,16 +160,30 @@ export default async function StagingPage({ params }: { params: Promise<{ locale
             </p>
           </div>
 
-          <div className="mt-14 flex flex-col gap-10 md:gap-14">
-            {pairs.map((pair, index) => (
+          <div className="mt-14 flex flex-col gap-12 md:gap-16">
+            {leadPairs.map((pair, index) => (
               <VisualizationCompare
                 key={pair.slug}
                 pair={pair}
                 index={index}
                 beforeLabel={t('compare.beforeLabel')}
                 afterLabel={t('compare.afterLabel')}
+                size="lead"
               />
             ))}
+
+            <div className="border-border grid gap-x-12 gap-y-12 border-t pt-12 md:grid-cols-2 md:gap-y-14 md:pt-14">
+              {restPairs.map((pair, index) => (
+                <VisualizationCompare
+                  key={pair.slug}
+                  pair={pair}
+                  index={index + LEAD_PAIR_COUNT}
+                  beforeLabel={t('compare.beforeLabel')}
+                  afterLabel={t('compare.afterLabel')}
+                  size="compact"
+                />
+              ))}
+            </div>
           </div>
 
           <p className="text-muted-foreground mt-10 max-w-[80ch] text-[13px] leading-[1.7] text-pretty">
@@ -210,6 +234,7 @@ export default async function StagingPage({ params }: { params: Promise<{ locale
           <div className="mt-14">
             <VisualizationFilms
               films={films}
+              groupLabels={filmGroupLabels}
               badge={t('video.badge')}
               fallback={t('video.fallback')}
               labels={{ play: videoLabels('play'), close: videoLabels('close') }}

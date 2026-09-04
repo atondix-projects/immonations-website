@@ -15,14 +15,19 @@ import {
   readingTimeMinutes,
   type PostSummary,
 } from '@/lib/content/blog'
+import { imageDimensions } from '@/lib/content/article-images'
 import { extractToc, rehypeHeadingIds } from '@/lib/content/toc'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { JsonLd } from '@/components/site/json-ld'
 import { ArticleToc } from '@/components/site/blog/article-toc'
 import { ReadingProgress } from '@/components/site/blog/reading-progress'
+import { ArticleVideo } from '@/components/site/blog/article-video'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
+import type { VideoDialogLabels } from '@/components/site/video-dialog'
 import { article, breadcrumbList, faqPage } from '@/lib/seo/jsonld'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
+import { listAllReferences } from '@/lib/content/references'
 
 export const dynamic = 'force-static'
 
@@ -67,84 +72,123 @@ export async function generateMetadata({
  */
 const HEADING_SCROLL_MARGIN = 'scroll-mt-[calc(var(--header-height)+2rem)]'
 
-const mdxComponents = {
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2
-      className={`${HEADING_SCROLL_MARGIN} mt-14 mb-4 font-serif text-[1.9rem] leading-[1.15] font-medium tracking-[-0.02em] text-balance first:mt-0 md:text-[2.25rem]`}
-      {...props}
-    />
-  ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3
-      className={`${HEADING_SCROLL_MARGIN} mt-10 mb-3 font-serif text-xl leading-snug font-medium text-balance md:text-2xl`}
-      {...props}
-    />
-  ),
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="text-foreground/90 mb-5 text-[17px] leading-[1.75] text-pretty" {...props} />
-  ),
-  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul
-      className="marker:text-brand-600 mb-5 ml-5 list-disc space-y-2 text-[17px] leading-[1.7]"
-      {...props}
-    />
-  ),
-  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol
-      className="marker:text-brand-600 mb-5 ml-5 list-decimal space-y-2 text-[17px] leading-[1.7]"
-      {...props}
-    />
-  ),
-  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      className="text-brand-700 decoration-brand-300 hover:decoration-brand-600 underline underline-offset-4 transition-colors"
-      {...props}
-    />
-  ),
-  blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote
-      className="border-brand-600 text-foreground/85 my-8 border-l-2 py-1 pl-6 text-[18px] leading-[1.7] italic"
-      {...props}
-    />
-  ),
-  strong: (props: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="text-foreground font-semibold" {...props} />
-  ),
-  hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
-    <hr className="border-border my-12" {...props} />
-  ),
-  table: (props: React.TableHTMLAttributes<HTMLTableElement>) => (
-    <div
-      className="border-border my-8 overflow-x-auto border"
-      tabIndex={0}
-      role="region"
-      aria-label="Tabelle"
-    >
-      <table className="w-full min-w-[36rem] border-collapse text-left" {...props} />
-    </div>
-  ),
-  th: (props: React.ThHTMLAttributes<HTMLTableCellElement>) => (
-    <th
-      className="border-border bg-muted/70 border-b px-4 py-3 font-mono text-[11px] tracking-[0.14em] uppercase"
-      {...props}
-    />
-  ),
-  td: (props: React.TdHTMLAttributes<HTMLTableCellElement>) => (
-    <td
-      className="border-border text-foreground/85 border-b px-4 py-3 align-top text-[15px] leading-relaxed"
-      {...props}
-    />
-  ),
-  code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code className="bg-muted rounded-sm px-1.5 py-0.5 font-mono text-[0.9em]" {...props} />
-  ),
-  pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre
-      tabIndex={0}
-      className="border-border bg-muted/50 my-8 overflow-x-auto border p-5 font-mono text-[13px] leading-relaxed"
-      {...props}
-    />
-  ),
+/**
+ * Die Karte wird pro Anfrage gebaut, weil `ArticleVideo` die übersetzten
+ * Bedienbeschriftungen des Overlays braucht. MDX selbst kann sie nicht liefern —
+ * dort steht nur, welcher Clip gemeint ist.
+ */
+function createMdxComponents({
+  videoLabels,
+  videoFallback,
+}: {
+  videoLabels: VideoDialogLabels
+  videoFallback: string
+}) {
+  return {
+    h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h2
+        className={`${HEADING_SCROLL_MARGIN} mt-14 mb-4 font-serif text-[1.9rem] leading-[1.15] font-medium tracking-[-0.02em] text-balance first:mt-0 md:text-[2.25rem]`}
+        {...props}
+      />
+    ),
+    h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+      <h3
+        className={`${HEADING_SCROLL_MARGIN} mt-10 mb-3 font-serif text-xl leading-snug font-medium text-balance md:text-2xl`}
+        {...props}
+      />
+    ),
+    p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+      <p className="text-foreground/90 mb-5 text-[17px] leading-[1.75] text-pretty" {...props} />
+    ),
+    ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
+      <ul
+        className="marker:text-brand-600 mb-5 ml-5 list-disc space-y-2 text-[17px] leading-[1.7]"
+        {...props}
+      />
+    ),
+    ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+      <ol
+        className="marker:text-brand-600 mb-5 ml-5 list-decimal space-y-2 text-[17px] leading-[1.7]"
+        {...props}
+      />
+    ),
+    a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+      <a
+        className="text-brand-700 decoration-brand-300 hover:decoration-brand-600 underline underline-offset-4 transition-colors"
+        {...props}
+      />
+    ),
+    blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
+      <blockquote
+        className="border-brand-600 text-foreground/85 my-8 border-l-2 py-1 pl-6 text-[18px] leading-[1.7] italic"
+        {...props}
+      />
+    ),
+    strong: (props: React.HTMLAttributes<HTMLElement>) => (
+      <strong className="text-foreground font-semibold" {...props} />
+    ),
+    hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
+      <hr className="border-border my-12" {...props} />
+    ),
+    /* Article images stay plain <img>: markdown syntax carries only src/alt, so
+       next/image has no dimensions to work with. Intrinsic width/height come from
+       the image registry instead (`imageDimensions`), which keeps the browser from
+       reflowing the article once a lazy image decodes. The paragraph that follows
+       an image carries the caption as normal emphasised prose. */
+    img: ({ src, alt, ...rest }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        {...rest}
+        {...imageDimensions(typeof src === 'string' ? src : undefined)}
+        src={typeof src === 'string' ? src : undefined}
+        alt={alt ?? ''}
+        className="border-border bg-muted my-8 h-auto w-full border"
+        loading="lazy"
+        decoding="async"
+      />
+    ),
+    table: (props: React.TableHTMLAttributes<HTMLTableElement>) => (
+      <div
+        className="border-border my-8 overflow-x-auto border"
+        tabIndex={0}
+        role="region"
+        aria-label="Tabelle"
+      >
+        <table className="w-full min-w-[36rem] border-collapse text-left" {...props} />
+      </div>
+    ),
+    th: (props: React.ThHTMLAttributes<HTMLTableCellElement>) => (
+      <th
+        className="border-border bg-muted/70 border-b px-4 py-3 font-mono text-[11px] tracking-[0.14em] uppercase"
+        {...props}
+      />
+    ),
+    td: (props: React.TdHTMLAttributes<HTMLTableCellElement>) => (
+      <td
+        className="border-border text-foreground/85 border-b px-4 py-3 align-top text-[15px] leading-relaxed"
+        {...props}
+      />
+    ),
+    code: (props: React.HTMLAttributes<HTMLElement>) => (
+      <code className="bg-muted rounded-sm px-1.5 py-0.5 font-mono text-[0.9em]" {...props} />
+    ),
+    pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
+      <pre
+        tabIndex={0}
+        className="border-border bg-muted/50 my-8 overflow-x-auto border p-5 font-mono text-[13px] leading-relaxed"
+        {...props}
+      />
+    ),
+    /* `width`/`height` kommen als String an: Ausdrucksattribute (`width={1080}`)
+       überleben diese MDX-Pipeline nicht — siehe `ArticleVideo`. */
+    ArticleVideo: (props: {
+      src: string
+      poster: string
+      width: string
+      height: string
+      title: string
+    }) => <ArticleVideo {...props} fallback={videoFallback} labels={videoLabels} />,
+  }
 }
 
 export default async function BlogPostPage({
@@ -161,6 +205,13 @@ export default async function BlogPostPage({
 
   const nav = await getTranslations('Nav')
   const t = await getTranslations('BlogPost')
+  const referencesT = await getTranslations('ReferencesPage')
+  const tVideo = await getTranslations('VideoDialog')
+
+  const mdxComponents = createMdxComponents({
+    videoLabels: { play: tVideo('play'), close: tVideo('close') },
+    videoFallback: t('videoFallback'),
+  })
 
   const toc = extractToc(post.body)
   const minutes = readingTimeMinutes(post.body)
@@ -294,6 +345,15 @@ export default async function BlogPostPage({
       {/* No frontmatter FAQ block here on purpose: posts that declare `faqs`
           also spell the same Q&A out in their MDX body, so rendering both
           would duplicate them. The frontmatter still drives faqPage() JSON-LD. */}
+
+      <ReferenceProofRail
+        references={listAllReferences().slice(0, 3)}
+        locale={locale}
+        eyebrow={referencesT('gallery.eyebrow')}
+        title={referencesT('proof.title')}
+        text={referencesT('proof.text')}
+        referenceLabel={referencesT('gallery.referenceLabel')}
+      />
 
       {newer || older ? (
         <nav

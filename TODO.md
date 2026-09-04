@@ -1,13 +1,23 @@
 # Outstanding work
 
-Last audited: 2026-08-23.
+Last audited: 2026-09-03.
 
 This is the only active project TODO. Add new work here only after confirming that it is not
 already implemented. Source records under `docs/source-material/` may describe historical gaps or
 publication gates; they are evidence, not parallel backlogs.
 
-Current baseline: lint, typecheck, unit tests, and the production build pass. The repository ships a
-complete bilingual prototype, but it is not production-cleared while the items below remain open.
+Current baseline (2026-09-03): format check, lint, typecheck, all 88 unit tests, and the
+production build (396 static pages) pass.
+
+> **Environment note.** The direct dependencies were pruned out of `node_modules` mid-session
+> while transitive packages remained, breaking `next build` with `Cannot find module 'react'`.
+> `npm install` restored them. Root cause is a package-manager split: `CLAUDE.md` specifies
+> pnpm, but the repo tracks `package-lock.json` and no `pnpm-lock.yaml`, so a pnpm invocation
+> treats the npm-installed tree as extraneous and prunes it. Pick one manager and commit its
+> lockfile, or this recurs.
+
+The repository ships a complete bilingual prototype, but it is not production-cleared while the
+items below remain open.
 
 ## P0 — launch blockers
 
@@ -21,10 +31,23 @@ complete bilingual prototype, but it is not production-cleared while the items b
 - [ ] Obtain written publication permission for every testimonial, review screenshot, customer or
   property image/video, sold-property case, partner logo, award, athlete/child image, and AI
   visualization. Record approved location precision and metrics per reference.
+  - [x] **Uganda donation photos — written releases filed 2026-09-03.** All seven photos under
+    `public/images/engagement/` render on `/engagement` and in both articles.
+  - [x] **TSV Zirndorf sponsorship media — written releases filed 2026-09-03.** Covers both
+    athletes' likeness (including Amelie Giese as a minor), Marcus Grun's on-camera statement,
+    and both films, for the public site in DE + EN.
+  - [x] **TSV videos — audio reviewed 2026-09-03.** Nothing said in either film contradicts the
+    confidentiality agreement or the claims on the page.
+  - [ ] **Objektvideo Wörnitzstraße — confirm the location precision.** The 38 s property tour on
+    `/social` (`public/videos/property-tours/nuernberg-woernitzstrasse.mp4`) carries a burnt-in
+    title card naming Großreuth bei Schweinau, and the house number is briefly legible in the
+    opening shot. The reference record publishes at `city-area`, and the page copy stays at
+    "Nürnberg". Confirm the seller approves the clip as it stands, or request a re-cut.
 - [ ] Confirm the Dr. Klein relationship and allowed wording/linking; confirm the employee versus
   independent-agent model, current vacancies, referral terms, and any secondary buyer-search offer.
-- [ ] Complete legal review of imprint, privacy, terms, cookies, forms, tracking, financing,
+- [x] Complete legal review of imprint, privacy, terms, cookies, forms, tracking, financing,
   commission/tax/energy-certificate language, downloads, awards, and sensitive seller guidance.
+  Approved 2026-09-03.
 
 ### Production data and conversions
 
@@ -58,24 +81,81 @@ complete bilingual prototype, but it is not production-cleared while the items b
 
 ## P1 — content and operational follow-through
 
-- [ ] Establish content owners, review cadence, source links, checked-at dates, and expiry rules for
-  claims, market data, legal guidance, listings, references, awards, reviews, and local pages.
-- [ ] Validate local city/district content against official sources and real regional evidence;
-  noindex or consolidate thin/duplicated pages before launch.
-- [ ] Replace provisional ground-value and price-atlas data with dated official sources and a visible
-  methodology, or keep those pages clearly non-authoritative/noindex.
-- [ ] Publish only approved testimonial stories, review evidence, awards, handover downloads, and
-  community/news material; provide transcripts, captions, text alternatives, and AI labels.
-- [ ] Expand the small bilingual article library, define news/newsletter ownership, and measure which
-  situational seller topics warrant distinct pages instead of overlapping thin content.
-- [ ] Reconcile the source asset manifest with the unavailable offline `assets/media-library/`, or
-  archive that library in an approved durable location so provenance checks can be reproduced.
+The machinery for these landed on 2026-09-03. What remains under each item is the part only a
+person can close. Run `python scripts/content-governance-report.py` for the current list.
 
-## P2 — optional product decisions
+- [x] Establish content owners, review cadence, source links, checked-at dates, and expiry rules.
+  `src/lib/content/provenance.ts` holds the typed `Provenance` record and the `CLAIM_REGISTRY`;
+  `tests/contracts/provenance.test.ts` asserts the fields are present and coherent — deliberately
+  not that a claim is true, so honest gaps stay recorded instead of being papered over.
+  - [ ] **Assign real owners.** Four claims still read `owner: 'unassigned'` /
+    `state: 'unverified'` — buyer network, annual sales, transaction volume, and the
+    "fast jede zweite Immobilie" floor-area statistic. All four belong to the open P0
+    numeric-claims reconciliation above.
+- [x] Validate local city/district content; noindex or consolidate thin/duplicated pages.
+  The 103 district pages were already `noindex` and stay so. The five city hub pages remain
+  indexed by decision — only their per-city context and focuses are hand-written, so they are
+  recorded as `provisional` under `locations:city-hubs` rather than pulled from the index.
+  `isRouteNoindex()` is now the single path from the route catalog to the robots tag; the
+  district route and the generic catalog route previously branched on different fields.
+  - [ ] **Write real local content** for the five city hubs so the templated sections go away.
+- [x] Replace provisional ground-value and price-atlas data with dated sources and visible
+  methodology. `/land-value` no longer ships its internal to-do note or "Entwurf" badges to
+  visitors, `/market` no longer calls its own figures "aus dem Prototyp", and the previously
+  dead `MarketCity.source` field now renders. All four data pages carry a shared
+  `<DataProvenance>` block with `Stand: September 2026` and a named source.
+- [x] Provide captions, text alternatives, and AI labels. `VideoDialog` renders
+  `<track kind="captions">`, and every registry behind a video with sound (testimonials, TSV,
+  bell, presentation, notary) carries an optional `captions` field that is passed at the call
+  site — so a supplied WebVTT file renders with no code change. Alt text was already systematic,
+  and AI visualizations were already labelled with the label baked into the image.
+  - [ ] **Supply WebVTT caption files** for the 14 videos that carry an audio track (measured
+    with ffprobe, not assumed — the AI-visualization clips and the 18 sold-property clips are
+    silent and need none). This is the WCAG 1.2.2 gap.
+  - [ ] **Full transcripts are only half-wired.** `VideoDialog` has the disclosure and the
+    `VideoDialog.transcript` label in both locales, but no registry carries transcript *text*
+    yet, so nothing renders it. Add a `transcript` field alongside `captions` when the wording
+    is available.
+- [x] Measure which situational seller topics warrant distinct pages. The governance report
+  compares the 12 situational routes against the article library; none is currently supported
+  by an article.
+  - [ ] **Write the articles**, and define news/newsletter ownership. `/magazine` is a static
+    one-issue flipbook with no cadence or owner, and there is no newsletter anywhere in `src/`.
+  - [ ] **Give articles a per-person byline** — all eight currently say "Immonation Redaktion" /
+    "Immonation Editorial".
+- [x] Reconcile the source asset manifest with `assets/media-library/`. The governance report
+  checks every curated destination; all 104 are present on this checkout.
+  - [ ] **Archive the library durably.** `assets/` is gitignored, so a fresh clone has the
+    manifest but not the files and `scripts/verify-ek-source-assets.py` cannot reproduce the
+    hash check. Choosing that location is an open decision.
 
-- [ ] Decide whether the Immonation Assistant should be built; first define approved knowledge
-  sources, answer boundaries, escalation, lead handling, privacy, and operational ownership.
-- [ ] Decide whether reliable data justifies an interactive market heatmap or expanded price tools.
-- [ ] Decide whether accounts, favorites, saved searches, or buyer profiles have enough value to
-  justify authentication, data protection, support, and lifecycle costs.
-- [ ] Decide whether community content deserves permanent homepage placement.
+## P2 — product decisions (taken 2026-09-03)
+
+All four were decided on 2026-09-03. They are now scoped work, not open questions. None should
+start before the P0 blockers they depend on are closed.
+
+- [ ] **Build the Immonation Assistant, full version with lead capture.** Answers grounded in the
+  approved corpus only (FAQ registries, the 77-entry glossary, catalog pages, `llms-full.txt`),
+  with an explicit refusal boundary outside it, plus qualification and routing into the existing
+  valuation and contact flows.
+  - Depends on the same P0 gaps as the valuation form: consent evidence, retention policy,
+    failure recovery, notification ownership, and a response SLA. Do not ship lead capture
+    before those exist — it would create a second unowned lead path.
+  - Still needs defining: escalation to a human, and who owns answer quality.
+- [ ] **Build the market heatmap, gated on a sample threshold.** Render only districts whose
+  sample count clears a stated minimum; grey out the rest and name the threshold on the page,
+  consistent with the price atlas's existing "Dünne Datenlage wird benannt" methodology card.
+  - Label the greyed-out districts explicitly as *no data*, not as *no market* — an unlabelled
+    gap on a map reads as the latter.
+  - Reassess coverage once OnOffice inventory lands (P0); the current 38–85 samples per district
+    are first-party only.
+- [ ] **Email-based saved searches. No accounts.** Alerts by email with no login, no password
+  storage, no account recovery, no session security. Explicitly rules out favorites and buyer
+  profiles.
+  - Needs a real submission and consent flow — the current download gate validates an address
+    and transmits nothing (see P0). Reuse whatever that gap is closed with.
+- [ ] **Give community content a full homepage section.** Same weight as the marketing and
+  testimonial sections, drawing on `/engagement` (Uganda donation, TSV Zirndorf sponsorship —
+  releases filed 2026-09-03).
+  - Watch the conversion path: the homepage already runs long, so verify the valuation
+    call-to-action is still reachable without excessive scrolling after this lands.

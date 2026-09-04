@@ -25,9 +25,6 @@ type TitledItem = { title: string; text: string }
 type NumberedItem = { num: string; title: string; text: string }
 type FitItem = { lead: string; text: string }
 
-/** Beide Pläne liegen in 2000 × 1216 vor. */
-const PLAN_SIZE = { width: 2000, height: 1216 } as const
-
 const PLAN_MEDIA = {
   accepted: '/images/engineering/floor-plan-bank-ready.jpg',
   rejected: '/images/engineering/floor-plan-not-bank-ready.jpg',
@@ -104,12 +101,11 @@ function PlanCard({
         <Image
           src={src}
           alt={alt}
-          width={PLAN_SIZE.width}
-          height={PLAN_SIZE.height}
+          fill
           sizes="(min-width: 1024px) 46vw, 100vw"
           // `object-contain`: die Maßketten laufen bis an den Bildrand — ein
           // Beschnitt würde genau das entfernen, worum es auf dieser Seite geht.
-          className="h-full w-full object-contain"
+          className="object-contain"
         />
         <span
           className={cn(

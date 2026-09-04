@@ -35,6 +35,396 @@ const guides = (slugs: string[]) =>
   slugs.map((slug) => ({ pathname: '/situations/[slug]' as const, params: { slug } }))
 
 export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinition>> = {
+  'buyer-search': define(
+    {
+      title: 'Beschreibt gerade jemand Ihre Immobilie?',
+      lede: 'Konkrete Suchprofile aus der Region können den passenden Käufer schon vor dem öffentlichen Inserat sichtbar machen.',
+      answer:
+        'Immonation führt Suchprofile für Häuser, Wohnungen, Grundstücke und Anlageobjekte. Passt Ihre Immobilie zu einem dieser Profile, kann ein diskreter Verkauf ohne öffentliche Vermarktung sinnvoll sein – immer mit qualifizierter Anfrage, abgestimmter Kommunikation und Ihrer Freigabe.',
+      sectionTitles: [
+        '8.000+ Suchkunden im Netzwerk',
+        'Vorqualifiziert statt Besichtigungstourismus',
+        'Diskret verkaufen',
+        'Suchauftrag anlegen',
+      ],
+      sectionTexts: [
+        'Unser Netzwerk verbindet konkrete Wohnwünsche mit Lage, Objektart, Budget und Zeitplan. So wird aus Reichweite eine relevante Vorauswahl.',
+        'Wir prüfen Anfrage, Käuferprofil und Finanzierbarkeit, bevor ein Termin mit Eigentümern abgestimmt wird.',
+        'Auf Wunsch sprechen wir passende Suchkunden direkt an, ohne die Immobilie öffentlich zu inserieren.',
+        'Wer selbst sucht, kann ein Profil hinterlegen und neue passende Objekte vor der öffentlichen Vermarktung erhalten.',
+      ],
+      faq: [
+        {
+          question: 'Wird meine Immobilie automatisch an alle Suchkunden gesendet?',
+          answer:
+            'Nein. Wir gleichen Objektmerkmale und Suchprofil ab und sprechen passende Interessenten nur im abgestimmten Umfang an.',
+        },
+        {
+          question: 'Wie werden Interessenten geprüft?',
+          answer:
+            'Wir klären Interesse, Objektpassung und – soweit für den nächsten Schritt erforderlich – die Finanzierung, bevor eine Besichtigung koordiniert wird.',
+        },
+        {
+          question: 'Kann der Verkauf vollständig diskret bleiben?',
+          answer:
+            'Ja. Zielgruppe, Informationsumfang und Zeitpunkt der Ansprache werden vor Beginn gemeinsam festgelegt.',
+        },
+      ],
+    },
+    {
+      title: 'Is someone already looking for your property?',
+      lede: 'Specific buyer profiles from the region can reveal a suitable buyer before a public listing is needed.',
+      answer:
+        'Immonation maintains search profiles for homes, apartments, land, and investment property. If your property fits one of them, a discreet sale without public marketing may be sensible – with qualified enquiries, agreed communication, and your approval.',
+      sectionTitles: [
+        '8,000+ buyer profiles',
+        'Qualified instead of crowded viewings',
+        'Discreet by design',
+        'Create a search request',
+      ],
+      sectionTexts: [
+        'Our network connects concrete requirements with location, property type, budget, and timing.',
+        'We clarify interest, fit, and finance before arranging a viewing with an owner.',
+        'When requested, suitable buyers can be approached directly without a public listing.',
+        'People looking to buy can leave a profile and hear about suitable properties before public marketing.',
+      ],
+      faq: [
+        {
+          question: 'Is my property automatically sent to every buyer?',
+          answer:
+            'No. We match property details and search criteria and contact suitable buyers only within the agreed scope.',
+        },
+        {
+          question: 'How are buyers checked?',
+          answer:
+            'We clarify interest, fit, and – where needed for the next step – financing before arranging a viewing.',
+        },
+        {
+          question: 'Can the sale remain completely discreet?',
+          answer: 'Yes. Audience, information, and timing are agreed before contact begins.',
+        },
+      ],
+    },
+  ),
+  ai: define(
+    {
+      title: 'Fragen Sie den Immonation-Assistenten',
+      lede: 'Antworten zu Verkauf, Bewertung, Ablauf, Provision und Finanzierung – rund um die Uhr als erste Orientierung.',
+      answer:
+        'Die Demo zeigt, wie häufige Fragen strukturiert eingeordnet werden können. Sie ersetzt keine persönliche, rechtliche oder steuerliche Beratung und ist nicht mit unseren internen Systemen verbunden.',
+      sectionTitles: ['Bewertung & Preis', 'Verkaufsprozess', 'Persönlicher Termin'],
+      sectionTexts: [
+        'Der Assistent erklärt, welche Faktoren den Wert beeinflussen und warum ein Klickwert keine persönliche Bewertung ersetzt.',
+        'Fragen zu Unterlagen, Vermarktung, Käufersuche, Besichtigungen und Notar werden in den passenden Prozessschritt eingeordnet.',
+        'Wenn es konkret wird, führt der nächste Schritt zum persönlichen Gespräch mit unserem Team.',
+      ],
+      faq: [
+        {
+          question: 'Erteilt der Assistent eine verbindliche Bewertung?',
+          answer:
+            'Nein. Er liefert allgemeine Orientierung. Eine belastbare Einschätzung entsteht erst aus Objekt, Lage, Zustand und Nachfrage.',
+        },
+        {
+          question: 'Werden meine Fragen gespeichert?',
+          answer:
+            'Die Vorschau übermittelt und speichert keine Eingaben. Die konkrete technische Ausgestaltung der finalen Version wird vor dem Livegang festgelegt.',
+        },
+        {
+          question: 'Kann die KI einen Termin buchen?',
+          answer:
+            'Nein. Für eine verbindliche Beratung nutzen Sie den persönlichen Kontakt oder die Terminabstimmung.',
+        },
+      ],
+    },
+    {
+      title: 'Ask the Immonation assistant',
+      lede: 'Answers about sales, valuation, process, commission, and finance – available around the clock as a first orientation.',
+      answer:
+        'The demo shows how common questions can be structured. It does not replace personal, legal, or tax advice and is not connected to our internal systems.',
+      sectionTitles: ['Valuation & price', 'The sales process', 'A personal conversation'],
+      sectionTexts: [
+        'The assistant explains which factors influence value and why a click-based estimate cannot replace a personal valuation.',
+        'Questions about documents, marketing, buyer searches, viewings, and the notary are placed into the appropriate process step.',
+        'When the situation becomes specific, the next step is a personal conversation with our team.',
+      ],
+      faq: [
+        {
+          question: 'Does the assistant provide a binding valuation?',
+          answer:
+            'No. It offers general orientation. A robust assessment combines the property, location, condition, and demand.',
+        },
+        {
+          question: 'Are my questions stored?',
+          answer:
+            'The preview does not transmit or store inputs. The final technical setup will be defined before launch.',
+        },
+        {
+          question: 'Can the AI book an appointment?',
+          answer: 'No. For binding advice, use personal contact or appointment coordination.',
+        },
+      ],
+    },
+  ),
+  appointment: {
+    ...define(
+      {
+        title: 'Termin online buchen',
+        lede: 'Wählen Sie ein passendes Zeitfenster für Ihr Erstgespräch – vor Ort in Zirndorf, telefonisch oder per Video.',
+        answer:
+          'Im Erstgespräch klären wir Immobilie, Ziel, Zeitplan und die nächsten Unterlagen. Die Vorschau bildet den Buchungsablauf ab; sie reserviert noch keinen echten Kalendertermin.',
+        sectionTitles: ['Anliegen wählen', 'Zeitfenster abstimmen', 'Gespräch vorbereiten'],
+        sectionTexts: [
+          'Beschreiben Sie kurz, ob es um Bewertung, Verkauf, Kauf oder eine besondere Verkaufssituation geht.',
+          'Ein passendes Zeitfenster wird mit dem zuständigen Ansprechpartner abgestimmt.',
+          'Unterlagen und offene Fragen können vor dem Gespräch gesammelt werden, damit der Termin konkret bleibt.',
+        ],
+        faq: [
+          {
+            question: 'Ist die Buchung auf dieser Seite verbindlich?',
+            answer:
+              'Die Vorschau reserviert keinen Termin. Die verbindliche Abstimmung erfolgt über den Kontakt mit unserem Team.',
+          },
+          {
+            question: 'Kann das Gespräch auch außerhalb der Öffnungszeiten stattfinden?',
+            answer:
+              'Ja, Termine außerhalb der Öffnungszeiten sind nach vorheriger Absprache möglich.',
+          },
+          {
+            question: 'Was sollte ich vorbereiten?',
+            answer:
+              'Hilfreich sind Adresse, Objektart, grober Zeitplan und die Unterlagen, die bereits vorliegen.',
+          },
+        ],
+      },
+      {
+        title: 'Book an appointment online',
+        lede: 'Choose a suitable time for your initial conversation – in Zirndorf, by phone, or by video.',
+        answer:
+          'The initial conversation covers the property, goal, timing, and next documents. The preview shows the booking flow; it does not reserve a real calendar slot.',
+        sectionTitles: ['Choose the topic', 'Coordinate a time', 'Prepare the conversation'],
+        sectionTexts: [
+          'Briefly describe whether the topic is valuation, selling, buying, or a specific selling situation.',
+          'A suitable time is coordinated with the responsible contact.',
+          'Documents and open questions can be collected beforehand so the meeting stays focused.',
+        ],
+        faq: [
+          {
+            question: 'Is the booking on this page binding?',
+            answer:
+              'The preview does not reserve an appointment. Binding coordination takes place through contact with our team.',
+          },
+          {
+            question: 'Can the conversation take place outside opening hours?',
+            answer: 'Yes, appointments outside opening hours are possible by prior arrangement.',
+          },
+          {
+            question: 'What should I prepare?',
+            answer:
+              'The address, property type, rough timing, and documents already available are helpful.',
+          },
+        ],
+      },
+      '/contact',
+    ),
+    preview: 'appointment',
+  },
+  awards: define(
+    {
+      title: 'Geprüft, ausgezeichnet, nachweisbar',
+      lede: 'Gute Arbeit sollte man nicht nur behaupten. Auszeichnungen werden mit Herausgeber, Jahr und Prüfkontext nachvollziehbar dokumentiert.',
+      answer:
+        'Die Seite zeigt öffentliche Anerkennungen und fachliche Qualifikation getrennt voneinander. Ein Siegel ist nur dann hilfreich, wenn Quelle, Zeitraum und Kriterien nachvollziehbar bleiben.',
+      sectionTitles: [
+        'Auszeichnungen & Siegel',
+        'F.A.Z. Institut & Capital',
+        'Immowelt Business Partner',
+        'Fachliche Qualifikation im Team',
+      ],
+      sectionTexts: [
+        'Öffentliche Anerkennungen werden mit Herausgeber und Einordnung gezeigt – ohne aus einem Logo mehr abzuleiten, als die Quelle bestätigt.',
+        'Branchenanerkennungen werden als externe Einordnung verstanden, nicht als alleiniger Qualitätsbeweis.',
+        'Die Partnerschaft ist über das öffentliche Profil von Immowelt nachvollziehbar.',
+        'Ein fest angestellter Ingenieur unterstützt Aufmaß, Wohnflächenberechnung und Grundrisserstellung für die Vermarktung.',
+      ],
+      faq: [
+        {
+          question: 'Werden die Siegel von Immonation selbst vergeben?',
+          answer:
+            'Nein. Die Seite nennt die jeweiligen Herausgeber und verlinkt öffentliche Quellen, soweit verfügbar.',
+        },
+        {
+          question: 'Was sagt eine Auszeichnung aus?',
+          answer:
+            'Sie beschreibt den jeweiligen Prüf- oder Auswahlkontext. Für die eigene Entscheidung sollten zusätzlich Vorgehen, Unterlagen und Referenzen geprüft werden.',
+        },
+        {
+          question: 'Welche fachliche Qualifikation gibt es im Team?',
+          answer:
+            'Hubert Christian Mahlich ist fest angestellter Ingenieur und für Aufmaß, Wohnflächenberechnung und Grundrisserstellung zuständig.',
+        },
+      ],
+    },
+    {
+      title: 'Checked, recognised, verifiable',
+      lede: 'Good work should not be claimed only. Awards are documented with issuer, year, and assessment context.',
+      answer:
+        'This page separates public recognition from professional qualification. A seal is useful only when its source, period, and criteria remain understandable.',
+      sectionTitles: [
+        'Awards & seals',
+        'F.A.Z. Institute & Capital',
+        'Immowelt Business Partner',
+        'Professional qualification',
+      ],
+      sectionTexts: [
+        'Public recognition is shown with its issuer and context – without claiming more than the source supports.',
+        'Industry recognition is an external signal, not the only basis for a decision.',
+        'The partnership can be checked through Immowelt’s public profile.',
+        'A permanently employed engineer supports measurement, floor-area calculation, and plan preparation.',
+      ],
+      faq: [
+        {
+          question: 'Does Immonation issue these seals?',
+          answer: 'No. The page names the issuers and links public sources where available.',
+        },
+        {
+          question: 'What does an award prove?',
+          answer:
+            'It describes its own assessment or selection context. Also review the agency’s process, documents, and references.',
+        },
+        {
+          question: 'What professional qualification is represented?',
+          answer:
+            'Hubert Christian Mahlich is a permanently employed engineer responsible for measurement, floor-area calculation, and plan preparation.',
+        },
+      ],
+    },
+  ),
+  magazine: define(
+    {
+      title: 'REVIER – das Immobilienmagazin für den Großraum Nürnberg',
+      lede: 'Ausgewählte, echte Verkäufe aus Nürnberg, Fürth, Erlangen, Zirndorf und Forchheim – und die Geschichten dahinter.',
+      answer:
+        'REVIER ist kein Werbeprospekt. Jede Ausgabe verbindet konkrete Immobilien, Ausgangslage, Vermarktungsweg und Ergebnis und macht den Grundsatz „beurkundet, nicht behauptet“ an echten Fällen sichtbar.',
+      sectionTitles: ['Gemachte Projekte', 'Unsere Haltung', 'Online blättern'],
+      sectionTexts: [
+        'Konkrete Beispiele statt Behauptungen: Objekte, Ausgangslagen und Ergebnisse aus der Region.',
+        'Realistische Preise, saubere Vorbereitung und Vermarktung, die Käufer ernsthaft qualifiziert.',
+        'Per Klick, Pfeiltasten oder Vollbildansicht direkt durch die digitale Ausgabe lesen.',
+      ],
+      faq: [
+        {
+          question: 'Sind die gezeigten Verkäufe echt?',
+          answer:
+            'Das Magazin zeigt ausgewählte Immobilien aus tatsächlich vermittelten und freigegebenen Verkaufsfällen.',
+        },
+        {
+          question: 'Kann ich das Magazin auf dem Smartphone lesen?',
+          answer:
+            'Ja. Der Reader passt sich an kleine Bildschirme an und kann per Klick oder Wisch bedient werden.',
+        },
+        {
+          question: 'Wie geht es nach dem Magazin weiter?',
+          answer:
+            'Wenn Sie Ihre eigene Situation einordnen möchten, starten Sie mit einer kostenlosen, unverbindlichen Bewertung.',
+        },
+      ],
+    },
+    {
+      title: 'REVIER – the property magazine for greater Nuremberg',
+      lede: 'Selected, genuine sales from Nuremberg, Fürth, Erlangen, Zirndorf, and Forchheim – and the stories behind them.',
+      answer:
+        'REVIER is not an advertising brochure. Each issue connects a real property with its starting point, marketing route, and outcome and makes “documented, not claimed” tangible through actual cases.',
+      sectionTitles: ['Completed projects', 'Our principles', 'Read online'],
+      sectionTexts: [
+        'Concrete examples instead of claims: properties, starting points, and outcomes from the region.',
+        'Realistic pricing, careful preparation, and marketing that qualifies buyers seriously.',
+        'Read the digital issue by click, arrow keys, or fullscreen view.',
+      ],
+      faq: [
+        {
+          question: 'Are the sales shown genuine?',
+          answer:
+            'The magazine presents selected properties from completed and approved sales cases.',
+        },
+        {
+          question: 'Can I read the magazine on a phone?',
+          answer: 'Yes. The reader adapts to small screens and can be used with clicks or swipes.',
+        },
+        {
+          question: 'What comes after the magazine?',
+          answer:
+            'If you want to assess your own situation, start with a free, non-binding valuation.',
+        },
+      ],
+    },
+  ),
+  sold: define(
+    {
+      title: 'Verkaufte Immobilien – echte Abschlüsse aus der Region',
+      lede: 'Ausgewählte Verkäufe aus Nürnberg, Fürth, Erlangen, Zirndorf und dem weiteren Großraum – ergänzt um Video-Belege vom Tag der Übergabe.',
+      answer:
+        'Jeder gezeigte Fall steht für eine abgeschlossene Vermarktung. Veröffentlicht werden nur freigegebene Angaben; Adressen, Namen und vertrauliche Vertragsinhalte bleiben geschützt.',
+      sectionTitles: [
+        'Ausgewählte Referenzen',
+        'Verkauft-Clips',
+        'Verkaufsglocke',
+        'Nachvollziehbare Ergebnisse',
+      ],
+      sectionTexts: [
+        'Ausgangslage, Vorgehen und Ergebnis machen sichtbar, wie unterschiedlich ein Verkauf vorbereitet werden kann.',
+        'Kurze Clips vom Übergabetag zeigen Objektart und Ort der abgeschlossenen Vermarktung.',
+        'Die gesprochenen Glocken-Videos dokumentieren Abschlüsse aus dem Büro – erst nach Klick und mit Ton.',
+        'Bewertungen und Referenzen bleiben ihrer Quelle und dem jeweiligen Verkaufsfall zugeordnet.',
+      ],
+      faq: [
+        {
+          question: 'Warum sind nicht alle Verkäufe aufgeführt?',
+          answer:
+            'Die Übersicht zeigt ausgewählte und freigegebene Fälle. Eine vollständige Liste wäre mit Rücksicht auf die Privatsphäre unserer Kunden nicht sinnvoll.',
+        },
+        {
+          question: 'Sind die Kaufpreise öffentlich?',
+          answer:
+            'Nein. Wir nennen nur Angaben, die für die jeweilige Referenz freigegeben und belastbar dokumentiert sind.',
+        },
+        {
+          question: 'Kann ich eine ähnliche Referenz besprechen?',
+          answer:
+            'Ja. In einer kostenlosen Bewertung ordnen wir Objektart, Lage, Ausgangslage und passende Vermarktungswege persönlich ein.',
+        },
+      ],
+    },
+    {
+      title: 'Sold properties – genuine completions from the region',
+      lede: 'Selected sales from Nuremberg, Fürth, Erlangen, Zirndorf, and the wider region, supplemented by handover-day video proof.',
+      answer:
+        'Every case shown represents a completed campaign. Only approved information is published; addresses, names, and confidential contract details remain protected.',
+      sectionTitles: ['Selected references', 'Sold clips', 'The sales bell', 'Traceable outcomes'],
+      sectionTexts: [
+        'Starting point, approach, and outcome show how differently a sale can be prepared.',
+        'Short handover-day clips show the property type and town of completed campaigns.',
+        'Spoken bell videos document completions from the office and start only after a click.',
+        'Reviews and references remain linked to their source and the relevant sales case.',
+      ],
+      faq: [
+        {
+          question: 'Why are not all sales listed?',
+          answer:
+            'The overview shows selected approved cases. A complete list would not be appropriate out of respect for client privacy.',
+        },
+        {
+          question: 'Are purchase prices public?',
+          answer:
+            'No. We publish only information approved and reliably documented for the reference.',
+        },
+        {
+          question: 'Can I discuss a similar reference?',
+          answer:
+            'Yes. A free valuation can cover the property type, location, starting point, and suitable marketing routes.',
+        },
+      ],
+    },
+  ),
   'warning-signs': define(
     {
       title: 'Warnsignale beim Immobilienverkauf',
@@ -564,68 +954,71 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
         },
       ],
     },
-    '/contact',
   ),
   engagement: define(
     {
-      title: 'Engagement mit nachvollziehbarem Bezug',
-      lede: 'Immonation unterstützt dokumentierte lokale und soziale Vorhaben. Veröffentlicht wird nur, was Partnerbezug und Medienfreigabe tragen.',
+      title: 'Engagement, das man nachsehen kann',
+      lede: 'Immonation unterstützt Sport und Bildung dort, wo es sichtbar ankommt — regional in Zirndorf und weltweit in Uganda. Jeder Partner hat die Zusammenarbeit selbst öffentlich gemacht, Sie können also alles nachlesen.',
       answer:
-        'Dokumentiert ist die Partnerschaft mit der Leichtathletik des TSV Zirndorf, insbesondere im Umfeld von Eni Kuske und Amelie Giese. Quellenmaterial beschreibt außerdem Bildungsunterstützung in Uganda; Bilder mit Minderjährigen bleiben ohne geklärte Rechte unveröffentlicht.',
+        'Zwei Vorhaben tragen dieses Engagement. Seit Dezember 2025 ist Immonation Partner der Leichtathletikabteilung des TSV Zirndorf und fördert die Bundeskadertalente Eni Kuske und Amelie Giese sowie die gesamte Nachwuchsarbeit. Im April 2026 kam die Bildungsarbeit der Organisation Pateka in Uganda dazu, deren Schulgebühren Immonation mitträgt. Beide Partner haben die Zusammenarbeit selbst öffentlich gemacht — die Quellen sind auf dieser Seite verlinkt.',
       sectionTitles: [
         'TSV Zirndorf Leichtathletik',
         'Bildungsunterstützung in Uganda',
-        'Transparenz & Medienrechte',
+        'Alles aus erster Hand',
       ],
       sectionTexts: [
-        'Die Quelle nennt Immonation als Partner und hebt die Unterstützung der Athletinnen Eni Kuske und Amelie Giese hervor.',
-        'Vorhandenes Material dokumentiert Unterstützung für Bildungsprojekte; unbestätigte Wirkungszahlen werden nicht veröffentlicht.',
-        'Partner, Art der Unterstützung und Bildrechte werden je Beitrag geprüft, besonders bei Athleten und Minderjährigen.',
+        'Partner der Leichtathletikabteilung seit Dezember 2025 — mit Athletensponsoring für Eni Kuske und Amelie Giese und einer Zuwendung an die Nachwuchsarbeit.',
+        'Seit April 2026 trägt Immonation die Schulgebühren der Organisation Pateka mit — von Pateka selbst öffentlich dokumentiert.',
+        'Jede Angabe hier stammt vom Partner selbst und ist verlinkt. Bilder und Filme zeigen wir nur mit Freigabe — bei jungen Athletinnen selbstverständlich.',
       ],
       faq: [
         {
-          question: 'Welche lokale Partnerschaft ist dokumentiert?',
+          question: 'Welche lokale Partnerschaft besteht?',
           answer:
-            'Die Partnerschaft mit der Leichtathletik des TSV Zirndorf und der Bezug zu Eni Kuske und Amelie Giese.',
+            'Seit Dezember 2025 ist Immonation Partner der Leichtathletikabteilung des TSV Zirndorf und fördert Eni Kuske, Amelie Giese und die Nachwuchsarbeit.',
         },
         {
-          question: 'Warum gibt es keine Wirkungszahlen?',
-          answer: 'Zahlen erscheinen erst mit eindeutiger Quelle, Zeitraum und Freigabe.',
+          question: 'Woher stammen die Angaben auf dieser Seite?',
+          answer:
+            'Von den Partnern selbst: dem TSV Zirndorf und der Organisation Pateka. Beide Bekanntgaben sind hier verlinkt, Zahlen nennen wir nur, wenn sie dort stehen.',
         },
         {
           question: 'Wie werden Bildrechte behandelt?',
-          answer: 'Medien werden nur mit passender Freigabe für Personen, Motiv und Kanal genutzt.',
+          answer:
+            'Fotos und Filme veröffentlichen wir nur mit Freigabe für Person, Motiv und Kanal — für alles auf dieser Seite liegt sie vor.',
         },
       ],
     },
     {
-      title: 'Community support with traceable context',
-      lede: 'Immonation supports documented local and social initiatives. Publication is limited to material supported by the relationship and media permissions.',
+      title: 'Support you can look up',
+      lede: 'Immonation backs sport and education where it visibly lands — locally in Zirndorf and internationally in Uganda. Every partner made the collaboration public themselves, so you can read all of it first-hand.',
       answer:
-        'The partnership with TSV Zirndorf Athletics is documented, particularly around Eni Kuske and Amelie Giese. Source material also describes education support in Uganda; images involving minors remain unpublished without confirmed rights.',
+        'Two commitments carry this work. Since December 2025 Immonation has been a partner of the athletics division at TSV Zirndorf, backing national squad talents Eni Kuske and Amelie Giese along with the entire youth programme. In April 2026 education support in Uganda joined it: Immonation helps cover school fees through the organisation Pateka. Both partners made the collaboration public themselves — the sources are linked on this page.',
       sectionTitles: [
         'TSV Zirndorf Athletics',
         'Education support in Uganda',
-        'Transparency & media rights',
+        'Everything first-hand',
       ],
       sectionTexts: [
-        'The source names Immonation as a partner and highlights support for Eni Kuske and Amelie Giese.',
-        'Existing material documents education support; unconfirmed impact figures are not published.',
-        'Partner, form of support, and image rights are reviewed for each story, especially for athletes and minors.',
+        'Partner of the athletics division since December 2025 — with athlete sponsorship for Eni Kuske and Amelie Giese and a contribution to the youth programme.',
+        'Since April 2026 Immonation helps cover school fees through the organisation Pateka — documented publicly by Pateka themselves.',
+        'Every statement here comes from the partner and is linked. Photos and films appear only with permission — for young athletes, as a matter of course.',
       ],
       faq: [
         {
-          question: 'Which local partnership is documented?',
+          question: 'Which local partnership is in place?',
           answer:
-            'The relationship with TSV Zirndorf Athletics and its connection to Eni Kuske and Amelie Giese.',
+            'Since December 2025 Immonation has been a partner of the athletics division at TSV Zirndorf, backing Eni Kuske, Amelie Giese, and the youth programme.',
         },
         {
-          question: 'Why are there no impact figures?',
-          answer: 'Figures appear only with a clear source, period, and approval.',
+          question: 'Where do the details on this page come from?',
+          answer:
+            'From the partners themselves: TSV Zirndorf and the organisation Pateka. Both announcements are linked here, and figures appear only where the source states them.',
         },
         {
           question: 'How are image rights handled?',
-          answer: 'Media is used only with suitable permission for people, subject, and channel.',
+          answer:
+            'Photos and films are published only with permission for the person, subject, and channel — and that permission is in place for everything on this page.',
         },
       ],
     },

@@ -27,25 +27,28 @@ type LinkHref = ComponentProps<typeof Link>['href']
 export type SalesProcessStep = {
   id: string
   num: string
-  phase: string
+  phase?: string
   title: string
   summary: string
-  detail: string
-  activities: string[]
-  outcome: string
+  detail?: string
+  activities?: string[]
+  outcome?: string
 }
 
+/** Anonymisierte Stimmungsbilder statt konkreter Referenzobjekte — die Karussell-Bilder
+ * illustrieren die abstrakten Prozessschritte und sind keinem bestimmten Kundenobjekt
+ * zugeordnet, damit kein realer Referenzfall in einem unpassenden Kontext auftaucht. */
 const STEP_IMAGES = [
-  '/images/process/step-01.webp',
-  '/images/process/step-02.webp',
-  '/images/process/step-03.webp',
-  '/images/process/step-04.webp',
-  '/images/process/step-05.webp',
-  '/images/process/step-06.webp',
-  '/images/process/step-07.webp',
-  '/images/process/step-08.webp',
-  '/images/process/step-09.webp',
-  '/images/process/step-10.webp',
+  '/images/generic/generic-exterior-garden-view.webp',
+  '/images/generic/generic-living-kitchen-open.webp',
+  '/images/generic/generic-storage-documents-nook.webp',
+  '/images/generic/generic-loft-kitchen-skylights.webp',
+  '/images/generic/generic-loft-staircase-dining.webp',
+  '/images/generic/generic-bathroom-balcony.webp',
+  '/images/generic/generic-living-room-lounge.webp',
+  '/images/generic/generic-house-driveway-exterior.webp',
+  '/images/generic/generic-aerial-house-garage.webp',
+  '/images/generic/generic-empty-living-room.webp',
 ] as const
 
 const STEP_ICONS = [
@@ -96,12 +99,14 @@ export function ProcessTimeline({
   lede,
   link,
   labels,
+  showDetails = true,
 }: {
   steps: SalesProcessStep[]
   eyebrow: string
   title: string
   lede: string
   link: { label: string; href: LinkHref }
+  showDetails?: boolean
   labels: {
     previous: string
     next: string
@@ -176,6 +181,9 @@ export function ProcessTimeline({
 
   if (!activeStep) return null
 
+  const activeActivities = activeStep.activities ?? []
+  const activeOutcome = activeStep.outcome ?? activeStep.summary
+
   return (
     <section
       id="verkaufen"
@@ -207,7 +215,12 @@ export function ProcessTimeline({
 
         <div
           data-testid="sales-process-carousel"
-          className="bg-surface-dark relative mt-10 min-h-[720px] overflow-hidden text-white shadow-[0_20px_55px_rgba(0,0,0,0.14)] sm:min-h-[660px] md:mt-12 lg:min-h-[600px]"
+          className={cn(
+            'bg-surface-dark relative mt-10 overflow-hidden text-white shadow-[0_20px_55px_rgba(0,0,0,0.14)] md:mt-12',
+            showDetails
+              ? 'min-h-[720px] sm:min-h-[660px] lg:min-h-[600px]'
+              : 'min-h-[540px] sm:min-h-[500px] lg:min-h-[460px]',
+          )}
           onMouseOver={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onPointerEnter={() => setIsHovered(true)}
@@ -247,7 +260,14 @@ export function ProcessTimeline({
             aria-hidden="true"
           />
 
-          <div className="relative z-10 flex min-h-[720px] flex-col p-7 pb-28 sm:min-h-[660px] sm:p-9 sm:pb-32 lg:min-h-[600px] lg:p-12 lg:pb-32 xl:p-14 xl:pb-32">
+          <div
+            className={cn(
+              'relative z-10 flex flex-col p-7 pb-28 sm:p-9 sm:pb-32 lg:p-12 lg:pb-32 xl:p-14 xl:pb-32',
+              showDetails
+                ? 'min-h-[720px] sm:min-h-[660px] lg:min-h-[600px]'
+                : 'min-h-[540px] sm:min-h-[500px] lg:min-h-[460px]',
+            )}
+          >
             <div className="ml-auto flex items-center gap-2">
               <button
                 type="button"
@@ -288,7 +308,10 @@ export function ProcessTimeline({
                     delay: prefersReducedMotion ? 0 : 0.08,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="focus-visible:ring-brand-300 grid gap-7 outline-none focus-visible:ring-2 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-12"
+                  className={cn(
+                    'focus-visible:ring-brand-300 grid gap-7 outline-none focus-visible:ring-2',
+                    showDetails && 'lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-12',
+                  )}
                 >
                   <div className="max-w-[650px]">
                     <span className="flex size-11 items-center justify-center border border-white/25 bg-white/10 backdrop-blur-md">
@@ -302,30 +325,32 @@ export function ProcessTimeline({
                     </p>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                    <article className="border border-white/20 bg-black/30 p-4 backdrop-blur-md">
-                      <p className="text-[11px] font-semibold tracking-[0.14em] text-neutral-300 uppercase">
-                        {labels.activities}
-                      </p>
-                      <ul className="mt-3 grid gap-2 text-sm leading-[1.45] text-white">
-                        {activeStep.activities.slice(0, 2).map((activity) => (
-                          <li key={activity} className="flex gap-2.5">
-                            <span
-                              className="mt-[7px] size-1 shrink-0 bg-white"
-                              aria-hidden="true"
-                            />
-                            <span>{activity}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </article>
-                    <article className="border border-white/20 bg-white/90 p-4 text-neutral-950 backdrop-blur-md">
-                      <p className="text-[11px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
-                        {labels.outcome}
-                      </p>
-                      <p className="mt-2 text-sm leading-[1.5] font-medium">{activeStep.outcome}</p>
-                    </article>
-                  </div>
+                  {showDetails ? (
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                      <article className="border border-white/20 bg-black/30 p-4 backdrop-blur-md">
+                        <p className="text-[11px] font-semibold tracking-[0.14em] text-neutral-300 uppercase">
+                          {labels.activities}
+                        </p>
+                        <ul className="mt-3 grid gap-2 text-sm leading-[1.45] text-white">
+                          {activeActivities.slice(0, 2).map((activity) => (
+                            <li key={activity} className="flex gap-2.5">
+                              <span
+                                className="mt-[7px] size-1 shrink-0 bg-white"
+                                aria-hidden="true"
+                              />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                      <article className="border border-white/20 bg-white/90 p-4 text-neutral-950 backdrop-blur-md">
+                        <p className="text-[11px] font-semibold tracking-[0.14em] text-neutral-600 uppercase">
+                          {labels.outcome}
+                        </p>
+                        <p className="mt-2 text-sm leading-[1.5] font-medium">{activeOutcome}</p>
+                      </article>
+                    </div>
+                  ) : null}
                 </motion.div>
               </AnimatePresence>
             </div>

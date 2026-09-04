@@ -11,6 +11,7 @@ import { organization, website } from '@/lib/seo/jsonld'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import { CookieNotice } from '@/components/site/consent/cookie-notice'
+import { ScrollToTop } from '@/components/site/scroll-to-top'
 import '../globals.css'
 
 const jost = Jost({
@@ -87,6 +88,7 @@ export default async function LocaleLayout({
           </main>
           <SiteFooter />
           <CookieNotice />
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>

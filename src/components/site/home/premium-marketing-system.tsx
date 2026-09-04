@@ -17,7 +17,11 @@ import {
 import { cn } from '@/lib/utils'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { TourEmbed, type TourEmbedLabels } from '@/components/site/home/tour-embed'
-import { VideoDialog, type VideoDialogLabels } from '@/components/site/video-dialog'
+import {
+  VideoDialog,
+  type VideoCaptionTrack,
+  type VideoDialogLabels,
+} from '@/components/site/video-dialog'
 
 export type MarketingServiceId =
   | 'system'
@@ -82,6 +86,8 @@ const PRESENTATION_MEDIA = {
   poster: '/videos/immonation-presentation-poster.webp',
   width: 1920,
   height: 1080,
+  /** Der Film hat Ton; die WebVTT-Spur steht noch aus. Eintrag hier genügt. */
+  captions: undefined as readonly VideoCaptionTrack[] | undefined,
 } as const
 
 const SERVICE_ICONS: Record<MarketingServiceId, LucideIcon> = {
@@ -134,6 +140,7 @@ function ServiceBlueprint({
             poster={PRESENTATION_MEDIA.poster}
             width={PRESENTATION_MEDIA.width}
             height={PRESENTATION_MEDIA.height}
+            captions={PRESENTATION_MEDIA.captions}
             title={labels.videoLabel}
             fallback={labels.videoFallback}
             labels={labels.video}

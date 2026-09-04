@@ -4,14 +4,14 @@ const HOME_CHAPTERS = [
   'hero',
   'proof',
   'difference',
-  'market',
   'process',
-  'sales-system',
+  'guidance',
   'situations',
+  'sales-system',
+  'market',
   'results',
   'trust',
   'local',
-  'guidance',
   'company',
   'faq',
   'next-step',
@@ -93,4 +93,39 @@ test('homepage statistics show their final values with reduced motion', async ({
   const rating = page.locator('[data-home-chapter="proof"] [aria-label="4,9 / 5"]')
   await rating.scrollIntoViewIfNeeded()
   await expect(rating).toContainText('4,9 / 5')
+})
+
+test('homepage process matches the ten prototype steps', async ({ page }) => {
+  await page.goto('/de')
+
+  const process = page.getByTestId('sales-process-carousel')
+  const expectedSteps: Array<[string, string]> = [
+    ['Kostenlose Immobilienbewertung', 'Online-Ersteinschätzung und Terminvereinbarung.'],
+    ['Persönliche Beratung', 'Ziele, Zeitrahmen und Fragen im Erstgespräch.'],
+    ['Unterlagenprüfung', 'Wir sichten und beschaffen fehlende Dokumente.'],
+    ['Professionelle Objektaufnahme', 'Fotos, Video-Exposé und 360°-Rundgang.'],
+    ['Marketingstrategie', 'Preisstrategie, Zielgruppen und Vermarktungsplan.'],
+    ['Käuferqualifizierung', 'Solvenz- und Finanzierungsprüfung der Interessenten.'],
+    ['Besichtigungen', 'Nur ernsthafte, geprüfte Käufer vor Ort.'],
+    ['Verhandlung', 'Wir führen die Preisverhandlung für Sie.'],
+    ['Notar', 'Vertragsvorbereitung und Notartermin.'],
+    ['Übergabe', 'Schlüsselübergabe und Abschluss.'],
+  ]
+
+  await expect(process.getByRole('tab')).toHaveCount(10)
+
+  for (const [title, summary] of expectedSteps) {
+    await process.getByRole('tab', { name: new RegExp(title) }).click()
+    await expect(process.locator('h3')).toHaveText(title)
+    await expect(process.locator('p').filter({ hasText: summary })).toHaveCount(1)
+  }
+
+  await process.getByRole('tab', { name: /Kostenlose Immobilienbewertung/ }).click()
+  await expect(process.locator('article')).toHaveCount(2)
+  await expect(process.locator('article').nth(0)).toContainText(
+    'Online-Preisindikation für Ihre Immobilie erstellen',
+  )
+  await expect(process.locator('article').nth(1)).toContainText(
+    'Sie wissen, wo Ihr Verkauf sinnvoll startet',
+  )
 })

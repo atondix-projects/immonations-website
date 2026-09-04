@@ -32,7 +32,7 @@ export async function BellVideoWall({
   const tVideo = await getTranslations('VideoDialog')
   if (items.length === 0) return null
 
-  const labels = { play: tVideo('play'), close: tVideo('close') }
+  const labels = { play: tVideo('play'), close: tVideo('close'), transcript: tVideo('transcript') }
 
   return (
     <section id={id} className={cn('bg-background scroll-mt-24 py-16 md:py-24', className)}>
@@ -61,6 +61,7 @@ export async function BellVideoWall({
                 title={t('videoTitle', { position, total: items.length })}
                 fallback={t('videoFallback')}
                 labels={labels}
+                captions={item.captions}
                 posterSizes={POSTER_SIZES}
                 className="aspect-[3/4] w-full"
               />

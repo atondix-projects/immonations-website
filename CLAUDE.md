@@ -127,6 +127,47 @@ If you find yourself wanting to write a `.css` file or a styled component, stop 
 - `src/components/site/*` — **project-owned**. Build by composing `ui/*` + Tailwind. Examples: `site-header.tsx`, `site-footer.tsx`, `json-ld.tsx`, `locale-switcher.tsx`. Add new ones here.
 - Server components by default. Add `'use client'` only when the component actually needs interactivity, browser-only APIs, or motion hooks.
 
+## 6b. Brand assets
+
+Every logo on the site is generated from one vector master —
+`assets/Logos Immonation/33 - Immonation Facelift Logo.svg`. Regenerate with:
+
+```bash
+pnpm brand:assets   # scripts/generate-brand-assets.mjs
+```
+
+| Output | Use |
+|---|---|
+| `public/brand/immonation-logo.svg` | Wordmark on light grounds (header, light sections) |
+| `public/brand/immonation-logo-inverse.svg` | Wordmark on dark grounds (footer, transparent header, `about`) |
+| `public/brand/immonation-mark.svg` | The bare CI element, for plain `<img>` use |
+| `<ImmonationMark />` | The CI element inline (`src/components/site/brand/immonation-mark.tsx`) |
+| `src/app/icon.svg`, `favicon.ico`, `apple-icon.png` | Favicons — Next.js picks these up by file convention |
+
+**The CI element — "Einzelnes I".** The three-blade mark from the logo, shown without
+the wordmark. It is the site's recurring brand marker, and it appears in three places:
+before every section eyebrow (`SectionHeader` in `home/section-shell.tsx`, plus the
+hero's own eyebrow), once as a large bled watermark behind the hero, and on the social
+card (`opengraph-image.tsx` — Satori needs it as a data-URI `<img>`, not inline `<svg>`).
+
+Rules for it:
+
+- **Never below ~20 px tall.** Three blades in 16 px turn to mush — verified in the
+  browser, not assumed. `h-5` is the floor for the eyebrow marker; `h-6` in the hero.
+- **Scale uniformly, keep the colours.** `#1D9CD7` / `#A2D9F5` / `#737372` are
+  registered values (`assets/Zertifikat Marke Immonation.PDF`), deliberately *not*
+  routed through `@theme` tokens — brand fidelity beats token purity here. No skew,
+  no rotation, no gradient fill, no recolouring.
+- **Decorative by default.** The component is `aria-hidden` unless you pass `label`;
+  pass one only where the mark stands in for the company name with no text beside it.
+
+`tests/contracts/brand-assets.test.ts` fails if any derivative drifts from the master,
+so never hand-edit the generated files — change the master or the generator.
+
+New public derivatives also get a row in
+`docs/source-material/customer-files/public-derivative-map.csv` (the hand-maintained
+input; `asset-cross-reference.csv` is generated from it).
+
 ## 7. SEO authoring playbook
 
 When you add a new sub-page under `src/app/[locale]/...`:
@@ -156,6 +197,24 @@ When you add a new sub-page under `src/app/[locale]/...`:
 5. **Add translation keys** to both `messages/de.json` and `messages/en.json`.
 6. **Service pages**: include a FAQ section and emit `faqPage()` JSON-LD. This is the AEO win.
 7. **`params` is async in Next.js 16** — always `const { locale } = await params`.
+
+## 7b. Authoring MDX articles
+
+Posts live in `content/blog/{de,en}/*.mdx` and render through `next-mdx-remote/rsc`
+(`src/app/[locale]/blog/[slug]/page.tsx`). Two rules that are not obvious from the files:
+
+- **Pass component props as string attributes.** JSX *expression* attributes are silently
+  dropped by this pipeline — `width={1080}` arrives as `undefined` in the component and
+  nothing throws. Write `width="1080"` and coerce inside the component. Verified against the
+  rendered DOM; both forms compile, only the string form delivers a value.
+- **The components map is built per request.** `createMdxComponents({ videoLabels, videoFallback })`
+  runs inside `BlogPostPage`, because components such as `ArticleVideo` need translated labels
+  that MDX cannot supply. Add anything locale-aware there, not to a module-level const.
+
+Available beyond the plain HTML elements: `<ArticleVideo>` (see
+`src/components/site/blog/article-video.tsx`) renders a click-to-play overlay for a local MP4.
+Captions are written as the ordinary italic paragraph that follows the block — the same
+convention images use.
 
 ## 8. AEO / GEO guidance
 

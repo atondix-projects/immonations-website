@@ -17,7 +17,7 @@ export const GOOGLE_PLACE_ID = process.env.GOOGLE_PLACE_ID ?? 'ChIJcaa2LZBXn0fCU
  * aktuellen Werte liefert. Gleicher Stand wie `Home.reviews.headline`.
  */
 export const PUBLISHED_GOOGLE_RATING = 4.9
-export const PUBLISHED_GOOGLE_REVIEW_COUNT = 226
+export const PUBLISHED_GOOGLE_REVIEW_COUNT = 230
 
 const PLACES_DETAILS_URL = `https://places.googleapis.com/v1/places/${GOOGLE_PLACE_ID}`
 export type ReviewSource = 'google' | 'golocal'

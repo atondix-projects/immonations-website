@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { AnimatedNumber } from '@/components/site/animated-number'
+import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 
 type Audience = 'seller' | 'buyer'
@@ -84,17 +85,12 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
 
   return (
     <section className="bg-surface-dark relative -mt-[var(--header-height)] overflow-hidden">
-      {/* Hero-Bildfläche: Firmenlogo, gedimmt hinter der Headline */}
-      <div
-        className="absolute top-8 -right-12 -bottom-8 -left-12 md:top-10 md:-right-16 md:-bottom-10 md:-left-16 lg:-right-20 lg:-left-20"
-        aria-hidden
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className="absolute inset-0 size-full object-contain object-center opacity-55"
-          src="/immonation-logo.png"
-          alt=""
-        />
+      {/* Hero-Bildfläche: das CI-Element, gross angeschnitten hinter der Headline. */}
+      <div className="absolute inset-0" aria-hidden>
+        {/* Schmale Viewports haben keine Formular-Spalte: Das Zeichen steht mittig frei,
+            liegt dort aber hinter dem Fliesstext — daher die geringere Deckkraft.
+            Ab lg zieht es nach unten links, damit die Karte rechts frei bleibt. */}
+        <ImmonationMark className="absolute top-[30%] bottom-auto left-[-14%] h-[34%] max-w-none opacity-[0.18] sm:top-auto sm:bottom-[-16%] sm:left-[-12%] sm:h-[58%] lg:left-[-9%] lg:h-[86%] lg:opacity-[0.2]" />
         <div className="from-brand-800/40 absolute inset-0 bg-gradient-to-tr via-transparent to-transparent opacity-55" />
         <div className="from-surface-dark/95 via-surface-dark/40 absolute inset-0 bg-gradient-to-t to-transparent" />
       </div>
@@ -111,13 +107,16 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
             key={mode}
             className="relative flex max-w-[760px] min-w-0 flex-col justify-end gap-6 pt-28 pb-14 md:pb-[72px]"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
+              {/* Gleiches CI-Element wie vor den Sektions-Eyebrows — ein Marker sitewide. */}
               <motion.span
-                className="bg-brand-500 h-0.5 w-6 origin-left"
-                initial={reduceMotion ? false : { scaleX: 0 }}
-                animate={{ scaleX: 1 }}
+                className="block"
+                initial={reduceMotion ? false : { opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: reduceMotion ? 0 : 0.7, ease: EASE }}
-              />
+              >
+                <ImmonationMark className="h-6" />
+              </motion.span>
               <motion.span
                 className="text-brand-200 text-[13px] font-semibold tracking-[0.14em] uppercase"
                 {...getRise(reduceMotion, STAGE_DELAYS.eyebrow)}

@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { AnimatedNumber } from '@/components/site/animated-number'
-import { GOOGLE_PROFILE } from '@/lib/content/google-reviews'
+import {
+  GOOGLE_PROFILE,
+  reviewPortalProfile,
+  type ReviewPortalKind,
+  type ReviewPortalProfile,
+} from '@/lib/content/review-portals'
 import { cn } from '@/lib/utils'
 
 export type ReviewPortal = {
@@ -10,7 +15,7 @@ export type ReviewPortal = {
   rating: string
   scale: string
   basis: string
-  kind: 'direct' | 'aggregate'
+  kind: ReviewPortalKind
 }
 
 export type PortalLabels = {
@@ -19,66 +24,7 @@ export type PortalLabels = {
   openProfile: string
 }
 
-type PortalMedia = {
-  href: string
-  /**
-   * Local copy of the portal's own mark. Omitted where no logo file is
-   * available — the tile then falls back to a plain wordmark rather than an
-   * approximated logo.
-   */
-  logo?: string
-  /** Icon-only marks carry no name, so the tile spells it out beside them. */
-  markOnly?: boolean
-}
-
 export { GOOGLE_PROFILE }
-
-const PORTAL_MEDIA: Record<string, PortalMedia> = {
-  google: {
-    href: GOOGLE_PROFILE,
-    logo: '/images/reviews/portals/google.svg',
-    markOnly: true,
-  },
-  trustpilot: {
-    href: 'https://de.trustpilot.com/review/immonationgmbh.de',
-    logo: '/images/reviews/portals/trustpilot.svg',
-  },
-  immowelt: {
-    href: 'https://www.immowelt.de/profil/aa4a4a5bc6a949b2981f3a050371ce96',
-  },
-  provenexpert: {
-    href: 'https://www.provenexpert.com/de-de/immonation-gmbh-zirndorf/',
-    logo: '/images/reviews/portals/provenexpert.svg',
-    markOnly: true,
-  },
-  jacasa: {
-    href: 'https://www.jacasa.de/immobilienmakler/immonation-zirndorf',
-    logo: '/images/reviews/portals/jacasa.svg',
-  },
-  werkenntdenbesten: {
-    href: 'https://www.werkenntdenbesten.de/e/108894981/immobilienmakler/zirndorf-mittelfranken/immonation-gmbh-bewertungen.html',
-    logo: '/images/reviews/portals/werkenntdenbesten.png',
-    markOnly: true,
-  },
-  trustlocal: {
-    href: 'https://trustlocal.de/bayern/zirndorf/immobilienmakler/immonation-gmbh/',
-    logo: '/images/reviews/portals/trustlocal.svg',
-  },
-  kennstdueinen: {
-    href: 'https://www.kennstdueinen.de/immobilienmakler-zirndorf-immonation-gmbh-d2392865.html',
-    logo: '/images/reviews/portals/kennstdueinen.png',
-    markOnly: true,
-  },
-  elf880: {
-    href: 'https://www.11880.com/branchenbuch/zirndorf-mittelfranken/131072469B108894981/immonation-gmbh.html',
-    logo: '/images/reviews/portals/11880.svg',
-  },
-  golocal: {
-    href: 'https://www.golocal.de/zirndorf/immobilien/immonation-gmbh-MJm4N/',
-    logo: '/images/reviews/portals/golocal.svg',
-    markOnly: true,
-  },
-}
 
 function PortalTile({
   portal,
@@ -88,7 +34,7 @@ function PortalTile({
   showSource = true,
 }: {
   portal: ReviewPortal
-  media: PortalMedia
+  media: ReviewPortalProfile
   labels: PortalLabels
   compact?: boolean
   /** Hidden where every visible tile carries the same kind — the label would say nothing. */
@@ -101,7 +47,7 @@ function PortalTile({
       href={media.href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${portal.name} — ${portal.rating} ${portal.scale}, ${portal.basis}. ${labels.openProfile}`}
+      aria-label={`${portal.name}. ${portal.rating} ${portal.scale}, ${portal.basis}. ${labels.openProfile}`}
       className={cn(
         'group bg-background focus-visible:ring-brand-700 flex min-w-0 flex-col justify-between gap-7 p-5 transition-colors hover:bg-white focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset',
         compact && 'shrink-0 grow basis-[230px] snap-start',
@@ -183,7 +129,7 @@ export function ReviewPortalGrid({
       )}
     >
       {portals.flatMap((portal) => {
-        const media = PORTAL_MEDIA[portal.id]
+        const media = reviewPortalProfile(portal.id)
 
         return media
           ? [

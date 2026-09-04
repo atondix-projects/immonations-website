@@ -17,7 +17,11 @@ export async function CustomerStories() {
   const tTestimonials = await getTranslations('Testimonials')
   const tVideo = await getTranslations('VideoDialog')
   const items = homeStories(tTestimonials.raw('items') as TestimonialStory[])
-  const videoLabels = { play: tVideo('play'), close: tVideo('close') }
+  const videoLabels = {
+    play: tVideo('play'),
+    close: tVideo('close'),
+    transcript: tVideo('transcript'),
+  }
 
   return (
     <section id="kundenstimmen" className="bg-background scroll-mt-24 py-18 md:py-28">
@@ -65,6 +69,7 @@ export async function CustomerStories() {
                       title={`${item.name}: ${item.context}`}
                       fallback={tTestimonials('videoFallback')}
                       labels={videoLabels}
+                      captions={video.captions}
                       className="size-full"
                       posterClassName={coverClass}
                       posterSizes={

@@ -57,7 +57,7 @@ export function SiteHeader() {
           )}
         >
           <Image
-            src="/immonation-logo.png"
+            src="/brand/immonation-logo.svg"
             alt={`${tSite('name')} GmbH — ${tSite('tagline')}`}
             width={188}
             height={36}
@@ -68,7 +68,7 @@ export function SiteHeader() {
             )}
           />
           <Image
-            src="/immonation-logo-white-text.png"
+            src="/brand/immonation-logo-inverse.svg"
             alt=""
             width={188}
             height={36}

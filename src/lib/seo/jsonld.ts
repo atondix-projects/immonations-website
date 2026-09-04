@@ -250,6 +250,43 @@ export function localBusiness(input: {
 }
 
 /**
+ * Real-estate agent entity with a published aggregate rating and the public
+ * review profiles that back it. Used on `/reviews` so answer engines can cite
+ * the same figures the page shows.
+ */
+export function realEstateAgent(input: {
+  locale: string
+  url: string
+  name: string
+  description: string
+  ratingValue: number
+  reviewCount: number
+  sameAs: string[]
+}): Thing {
+  return {
+    ...ctx,
+    '@type': 'RealEstateAgent',
+    '@id': `${input.url}#agent`,
+    name: input.name,
+    legalName: SITE.legalName,
+    url: input.url,
+    inLanguage: input.locale,
+    description: input.description,
+    address: { '@type': 'PostalAddress', ...SITE.address },
+    telephone: SITE.contact.phone,
+    email: SITE.contact.email,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: input.ratingValue,
+      reviewCount: input.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    sameAs: input.sameAs,
+  }
+}
+
+/**
  * Office hours of the Zirndorf branch, for structured data.
  * These times are also stated as prose in `ContactPage.office.hours` and
  * `ContactPage.channels.phone.note` (both locales), in the `opening-hours` FAQ

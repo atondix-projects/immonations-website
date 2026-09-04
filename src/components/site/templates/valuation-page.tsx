@@ -59,7 +59,7 @@ export function ValuationPage({
       <section className="border-border relative overflow-hidden border-b">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <Image
-            src="/images/references/nuernberg-einfamilienhaus.webp"
+            src="/images/generic/generic-aerial-townscape.webp"
             alt=""
             fill
             sizes="100vw"

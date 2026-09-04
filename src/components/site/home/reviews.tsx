@@ -3,6 +3,7 @@ import { ArrowUpRight, BadgeCheck, Star } from 'lucide-react'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
+import { MAKLER_SIEGER_PROFILE } from '@/lib/content/review-portals'
 import {
   testimonialImage,
   testimonialReview,
@@ -23,8 +24,6 @@ type FeedbackVoice = {
   alt: string
   available: boolean
 }
-
-const MAKLER_SIEGER_PROFILE = 'https://maklersieger.de/makler/immonation-gmbh'
 
 function getReviewScreenshots(
   stories: TestimonialStory[],

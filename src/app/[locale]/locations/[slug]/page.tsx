@@ -10,12 +10,14 @@ import { PageHero } from '@/components/site/templates/page-hero'
 import { SoldVideoReel } from '@/components/site/sold/sold-video-reel'
 import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
 import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
+import { ReferenceContextSection } from '@/components/site/references/reference-context-section'
 import { routing } from '@/i18n/routing'
 import { getLocation, listAllLocations } from '@/lib/content/locations'
+import { listLocalizedReferences, listReferencesByCity } from '@/lib/content/references'
 import { listSoldVideosByLocation } from '@/lib/content/sold-videos'
 import { listHandoverPolaroidsByLocation } from '@/lib/content/handover-polaroids'
 import { storyForLocation } from '@/lib/content/testimonials'
-import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
+import { breadcrumbList, faqPage, itemList, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
@@ -65,6 +67,10 @@ export default async function LocationPage({
   const soldVideos = listSoldVideosByLocation(slug)
   const handoverT = await getTranslations('HandoverPolaroids')
   const handoverPolaroids = listHandoverPolaroidsByLocation(slug)
+  const referenceRecords = listReferencesByCity(slug)
+  const referenceItems = listLocalizedReferences(locale).filter((item) =>
+    referenceRecords.some((record) => record.id === item.id),
+  )
   // Verkaufsgeschichte aus genau dieser Stadt; zu Fürth liegt bisher keine
   // freigegebene vor, dort bleibt die Sektion aus. Schwabach zeigt Sandra
   // Börschlein, Zirndorf Markus Burkhard.
@@ -92,6 +98,14 @@ export default async function LocationPage({
             serviceType: t('serviceType'),
             areaServed: location.name,
           }),
+          itemList(
+            referenceItems.map((item) => ({
+              name: item.title,
+              description: `${item.type}, ${item.location}`,
+              image: `${SITE.url}${item.image}`,
+              url: `${SITE.url}/${locale}${localizePath(`/references/${item.id}`, locale)}`,
+            })),
+          ),
           faqPage(location.faq),
         ]}
       />
@@ -144,6 +158,20 @@ export default async function LocationPage({
         </div>
       </section>
 
+      <ReferenceContextSection
+        references={referenceRecords}
+        locale={locale}
+        eyebrow={t('references.eyebrow')}
+        title={t('references.title', { city: location.name })}
+        text={t('references.text', { city: location.name })}
+        referenceLabel={t('references.referenceLabel')}
+        filterLabel={t('references.filterLabel')}
+        allLabel={t('references.allLabel')}
+        cityFilterLabel={t('references.cityFilterLabel')}
+        allCitiesLabel={t('references.allCitiesLabel')}
+        typeFilterLabel={t('references.typeFilterLabel')}
+      />
+
       {/* Verkauft-Clips aus genau dieser Ortschaft */}
       <SoldVideoReel
         items={soldVideos}
@@ -152,6 +180,7 @@ export default async function LocationPage({
         title={soldT('location.title', { town: location.name })}
         text={soldT('location.text', { town: location.name })}
         className="border-border bg-muted border-y"
+        currentLocationSlug={slug}
       />
 
       {/* Übergabe-Polaroid derselben Ortschaft — entfällt still, wo es keins gibt */}
@@ -166,7 +195,7 @@ export default async function LocationPage({
 
       <FaqSection title={t('faqTitle', { city: location.name })} items={location.faq} />
       <CtaBand
-        title={t('cta.title')}
+        title={t('cta.title', { city: location.name })}
         text={t('cta.text', { city: location.name })}
         primary={{ label: t('cta.primary'), href: '/property-valuation' }}
         secondary={{ label: t('cta.secondary'), href: '/contact' }}

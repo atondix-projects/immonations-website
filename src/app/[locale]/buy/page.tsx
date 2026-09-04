@@ -22,6 +22,9 @@ import { breadcrumbList, service } from '@/lib/seo/jsonld'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
 import { Hero } from '@/components/site/home/hero'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
+import { listReferencesForListing } from '@/lib/content/references'
+import { PROPERTY_LISTINGS } from '@/lib/content/property-listings'
 
 export const dynamic = 'force-static'
 
@@ -43,17 +46,20 @@ const CONTAINER = 'mx-auto w-full max-w-[1240px] px-6 lg:px-10'
 const EYEBROW = 'text-primary text-[13px] font-semibold uppercase tracking-[0.22em]'
 const SECTION_TITLE = 'font-serif text-4xl font-semibold leading-[1.05] text-balance md:text-[58px]'
 
+/** Anonymisierte Stimmungsbilder: Die Suchergebnis-Kacheln zeigen Beispieldaten aus
+ * den Übersetzungen, nicht die realen Referenzobjekte, deren Fotos an anderer Stelle
+ * als Beleg für konkrete Verkaufsfälle dienen. */
 const listingVisuals = [
   {
-    src: '/images/references/oberasbach-einfamilienhaus.webp',
-    alt: 'Modern single-family home with illuminated garden',
+    src: '/images/generic/generic-house-carport-exterior.webp',
+    alt: 'Modern single-family home with carport',
   },
   {
-    src: '/images/references/fuerth-altbauwohnung.webp',
-    alt: 'Bright apartment with open living area',
+    src: '/images/generic/generic-sandstone-house-exterior.webp',
+    alt: 'Traditional house with garden entrance',
   },
   {
-    src: '/images/references/erlangen-eigentumswohnung.webp',
+    src: '/images/generic/generic-aerial-house-alt.webp',
     alt: 'Renovated residential house with garage and garden',
   },
 ] as const
@@ -122,6 +128,14 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
   const priceLabel = locale === 'de' ? 'Kaufpreis' : 'Purchase price'
   const buyPath = localizePath('/buy', locale)
   const pageUrl = `${SITE.url}/${locale}${buyPath}`
+  const listingReferences = [
+    ...new Map(
+      PROPERTY_LISTINGS.flatMap((listing) => listReferencesForListing(listing)).map((reference) => [
+        reference.id,
+        reference,
+      ]),
+    ).values(),
+  ]
 
   return (
     <>
@@ -304,6 +318,15 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
           </div>
         </div>
       </section>
+
+      <ReferenceProofRail
+        references={listingReferences}
+        locale={locale}
+        eyebrow={t('references.eyebrow')}
+        title={t('references.title')}
+        text={t('references.text')}
+        referenceLabel={t('references.referenceLabel')}
+      />
 
       <section className="border-border bg-muted/55 border-y py-16 md:py-20">
         <div className={`${CONTAINER} grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center`}>

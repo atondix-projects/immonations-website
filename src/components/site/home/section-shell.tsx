@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react'
 import { Link } from '@/i18n/navigation'
+import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 
 export const CONTAINER = 'mx-auto w-full max-w-[1320px] px-5 sm:px-7 lg:px-12'
 export const EYEBROW =
@@ -23,7 +24,13 @@ export function SectionHeader({
   return (
     <div className="mb-12 flex flex-wrap items-end justify-between gap-8 md:mb-16">
       <div className="flex flex-col gap-3.5">
-        {eyebrow ? <span className={EYEBROW}>{eyebrow}</span> : null}
+        {eyebrow ? (
+          <span className="flex items-center gap-2.5">
+            {/* Das CI-Element ersetzt hier den Strich, den der Hero vor seiner Eyebrow setzt. */}
+            <ImmonationMark className="h-5 shrink-0" />
+            <span className={EYEBROW}>{eyebrow}</span>
+          </span>
+        ) : null}
         <h2 className={`${SECTION_TITLE} max-w-[26ch] text-balance`}>{title}</h2>
       </div>
       {link ? (

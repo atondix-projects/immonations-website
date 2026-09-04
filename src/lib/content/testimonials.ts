@@ -12,11 +12,20 @@
  * damit der bilinguale Vertrag des Projekts gewahrt bleibt.
  */
 
+import type { VideoCaptionTrack } from '@/components/site/video-dialog'
+
 type TestimonialVideo = {
   src: string
   /** Echte Pixelmaße — ohne sie kennt das Overlay das Seitenverhältnis erst nach dem Laden. */
   width: number
   height: number
+  /**
+   * Untertitelspuren zum gesprochenen Inhalt. Alle vier Kundenvideos haben Ton und
+   * brauchen daher Untertitel (WCAG 1.2.2); die WebVTT-Dateien stehen noch aus.
+   * Sobald eine Datei unter `public/videos/testimonials/` liegt, genügt der Eintrag
+   * hier — `VideoDialog` rendert die Spur ohne weitere Codeänderung.
+   */
+  captions?: readonly VideoCaptionTrack[]
 }
 
 export type TestimonialReview = {
@@ -109,6 +118,8 @@ const TESTIMONIAL_MEDIA = {
 } as const satisfies Record<string, TestimonialMedia>
 
 export type TestimonialId = keyof typeof TESTIMONIAL_MEDIA
+
+export const TESTIMONIAL_IDS = Object.keys(TESTIMONIAL_MEDIA) as TestimonialId[]
 
 /**
  * Kundenstimmen mit vollständiger Verkaufsgeschichte (Zitat, Kontext, Ergebnis).

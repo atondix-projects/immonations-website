@@ -6,9 +6,12 @@ import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { PageHero } from '@/components/site/templates/page-hero'
+import { ProcessTimeline, type SalesProcessStep } from '@/components/site/home/process-timeline'
+import { ReferenceContextSection } from '@/components/site/references/reference-context-section'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { listSellerGuides } from '@/lib/content/seller-guides'
+import { listReferencesForSellerGuide } from '@/lib/content/references'
 import { breadcrumbList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -46,7 +49,16 @@ export default async function SellerHubPage({ params }: { params: Promise<{ loca
 
   const t = await getTranslations('SellerHubPage')
   const nav = await getTranslations('Nav')
+  const processT = await getTranslations('SalesProcess')
+  const processUiT = await getTranslations('Home.process')
   const guides = listSellerGuides(locale)
+  const processSteps = processT.raw('steps') as SalesProcessStep[]
+  const sellerProof = [
+    listReferencesForSellerGuide('sell-house')[0],
+    listReferencesForSellerGuide('sell-apartment')[0],
+    listReferencesForSellerGuide('sell-apartment-building')[0],
+    listReferencesForSellerGuide('sell-land')[0],
+  ].filter((reference): reference is NonNullable<typeof reference> => Boolean(reference))
   const pageUrl = `${SITE.url}/${locale}${localizePath('/sell', locale)}`
 
   return (
@@ -71,6 +83,24 @@ export default async function SellerHubPage({ params }: { params: Promise<{ loca
             <ArrowUpRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
+      </section>
+
+      <section className="border-border border-b py-16 md:py-24">
+        <ProcessTimeline
+          steps={processSteps}
+          eyebrow={processT('indexEyebrow')}
+          title={processT('indexTitle')}
+          lede={processT('answer')}
+          link={{ label: processT('related.guides'), href: '/selling-situations' }}
+          labels={{
+            previous: processUiT('previous'),
+            next: processUiT('next'),
+            tabList: processT('indexLabel'),
+            selectedStep: processUiT('selectedStep'),
+            activities: processT('activities'),
+            outcome: processT('outcome'),
+          }}
+        />
       </section>
 
       <section className="py-16 md:py-20">
@@ -118,6 +148,20 @@ export default async function SellerHubPage({ params }: { params: Promise<{ loca
           </ul>
         </div>
       </section>
+
+      <ReferenceContextSection
+        references={sellerProof}
+        locale={locale}
+        eyebrow={t('references.eyebrow')}
+        title={t('references.title')}
+        text={t('references.text')}
+        referenceLabel={t('references.referenceLabel')}
+        filterLabel={t('references.filterLabel')}
+        allLabel={t('references.allLabel')}
+        cityFilterLabel={t('references.cityFilterLabel')}
+        allCitiesLabel={t('references.allCitiesLabel')}
+        typeFilterLabel={t('references.typeFilterLabel')}
+      />
 
       <section className="border-border border-t py-14 md:py-18">
         <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-10">

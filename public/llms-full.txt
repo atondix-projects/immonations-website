@@ -8,6 +8,8 @@ Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndor
 
 Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Praesentation, 360-Grad-Rundgaenge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
 
+Die Marke Immonation ist als Unionsmarke beim Amt der Europaeischen Union fuer geistiges Eigentum (EUIPO) unter der Nummer `019283377` eingetragen. Die Eintragung erfolgte am 15. Maerz 2026 fuer immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37. Die Eintragungsurkunde steht als [PDF-Zertifikat](https://www.immonationgmbh.de/downloads/Zertifikat-Marke-Immonation.pdf) zum Download bereit.
+
 ## Leistungen
 
 ### Immobilienbewertung
@@ -40,15 +42,15 @@ Kaeufer erhalten auf `/de/angebote` beziehungsweise `/en/properties` Zugang zu O
 
 ### Ratgeber, FAQ und Downloads
 
-Der Ratgeber-Hub liegt unter `/de/news` beziehungsweise `/en/news`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/faq` beziehungsweise `/en/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit. Das REVIER Magazin ist unter `/de/magazin` beziehungsweise `/en/magazine` frei online lesbar.
+Der Ratgeber-Hub liegt unter `/de/news` beziehungsweise `/en/news`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/faq` beziehungsweise `/en/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen sowie das [EU-Marken-Zertifikat](https://www.immonationgmbh.de/downloads/Zertifikat-Marke-Immonation.pdf) bereit. Das REVIER Magazin ist unter `/de/magazin` beziehungsweise `/en/magazine` frei online lesbar.
 
 Das Immobilienlexikon unter `/de/lexikon` beziehungsweise `/en/glossary` enthaelt 77 servergerenderte Fachbegriffe zu Verkauf, Bewertung, Grundbuch und Finanzierung. Die englischen Eintraege sind fachlich angepasste Erklaerungen. Ein barrierearmer A-bis-Z-Filter veraendert nur die sichtbare Auswahl; alle Begriffe stehen ohne JavaScript in alphabetischer Lesereihenfolge bereit.
 
 ### Referenzen und Kundenstimmen
 
-Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 15 ausgewaehlte Immobilien aus Deining, Erlangen, Forchheim, Fuerth, Heroldsbach, Langenzenn, Nuernberg, Oberasbach und Zirndorf mit echten Objektfotos. Jede Karte fuehrt zu einer bilingualen Geschichte unter `/de/referenzen/{slug}` beziehungsweise `/en/references/{slug}` mit Ausgangslage, Vorgehen, freigegebenem Ergebnis und – soweit vorhanden – freigegebener Originalbewertung. Unbestaetigte Anfrage-, Besichtigungs- und Dauerkennzahlen bleiben durch eine zentrale Publikationsfreigabe ausgeblendet.
+Der Referenz-Hub liegt unter `/de/referenzen` beziehungsweise `/en/references`. Er zeigt 29 archivierte Immobilien aus Adelsdorf, Deining, Erlangen, Forchheim, Fuerth, Hagenbuechach, Heroldsbach, Herzogenaurach, Langenzenn, Nuernberg, Oberasbach, Schwabach und Zirndorf mit echten Objektfotos. Jede Karte fuehrt zu einer bilingualen Geschichte unter `/de/referenzen/{slug}` beziehungsweise `/en/references/{slug}` mit Ausgangslage, Vorgehen, freigegebenem Ergebnis und – soweit vorhanden – freigegebener Originalbewertung. Unbestaetigte Anfrage-, Besichtigungs- und Dauerkennzahlen bleiben durch eine zentrale Publikationsfreigabe ausgeblendet. Exakte Strassenadressen werden nicht oeffentlich genannt; jeder Datensatz fuehrt Quellen, Bildrechte, Ortsfreigabe, Textfreigabe und das letzte Review-Datum.
 
-Die Kundenstimmen-Seite unter `/de/kundenstimmen` beziehungsweise `/en/testimonials` zeigt Originalbewertungen als Diashow. Primaerquelle ist das oeffentliche Google-Profil der Immonation GmbH in Zirndorf (4,9 von 5, 226 Bewertungen). Wo ein Places-API-Schluessel hinterlegt ist, werden bis zu fuenf von Google Maps nach Relevanz ausgewaehlte Stimmen aktuell abgerufen und mit dokumentierten Originalzitaten aus abgeschlossenen Verkaeufen zusammengefuehrt. Jede Stimme nennt Name, Quelle und Datum; der vollstaendige Google-Bestand bleibt auf dem oeffentlichen Profil nachlesbar.
+Die Kundenstimmen-Seite unter `/de/kundenstimmen` beziehungsweise `/en/testimonials` zeigt Originalbewertungen als Diashow. Primaerquelle ist das oeffentliche Google-Profil der Immonation GmbH in Zirndorf (4,9 von 5, 230Bewertungen). Wo ein Places-API-Schluessel hinterlegt ist, werden bis zu fuenf von Google Maps nach Relevanz ausgewaehlte Stimmen aktuell abgerufen und mit dokumentierten Originalzitaten aus abgeschlossenen Verkaeufen zusammengefuehrt. Jede Stimme nennt Name, Quelle und Datum; der vollstaendige Google-Bestand bleibt auf dem oeffentlichen Profil nachlesbar.
 
 ### Verkauft-Clips inkl. Ortschaften
 
@@ -67,6 +69,26 @@ Nach jeder Schluesseluebergabe entsteht ein Sofortbild mit einer Polaroidkamera;
 Die Karrierestrecke richtet sich an Festangestellte, freie Vertriebspartner und Tippgeber. Freie Partner fokussieren sich auf Akquise und Vertrieb; Immonation unterstuetzt mit Marke, Administration, Vermarktung und Prozessen.
 
 Die Partnermakler-Seite unter `/de/partnermakler` beziehungsweise `/en/partner-agents` beschreibt zwei Kooperationsmodelle fuer selbststaendige Immobilienmakler: Objektbringer sowie Vertrieb und Besichtigungen. Es gibt keine monatliche Gebuehr, Lizenzkosten oder Mindestumsatz; abgerechnet wird ausschliesslich im Erfolgsfall. Immonation uebernimmt je nach Modell Bewertung, Preisfindung, Unterlagen, 360-Grad-Tour, Foto und Drohne, Social-Media-Vermarktung, Wohnflaechenberechnung, Grundrisse und Vertragsvorbereitung. Partner und eingebrachte Objekte werden vorab nach den Immonation-Qualitaetsstandards geprueft.
+
+## Engagement
+
+Die Engagement-Seite liegt unter `/de/engagement` beziehungsweise `/en/engagement`. Dokumentiert sind zwei Straenge: die Partnerschaft mit der Leichtathletik des TSV Zirndorf im Umfeld von Eni Kuske und Amelie Giese sowie eine Bildungsspende in Uganda.
+
+### Sponsoring Leichtathletik TSV Zirndorf (seit Dezember 2025)
+
+Seit Dezember 2025 unterstuetzt die Immonation GmbH die Leichtathletikabteilung des TSV Zirndorf. Geschaeftsfuehrer Erman Karabacak ist persoenlich Athletensponsor der beiden Bundeskaderathletinnen Eni Kuske (Jahrgang 2007, 400 Meter) und Amelie Giese (Jahrgang 2010, Weitsprung und Huerden); zusaetzlich fliesst eine Zuwendung in die Nachwuchsarbeit der Abteilung. Zweck laut Quelle: Training, Wettkampfreisen und Equipment. Bekannt gegeben hat die Partnerschaft die Leichtathletikabteilung selbst am 14. Dezember 2025. Quelle: https://www.la-zirndorf.de/index.php/848-immonation-gmbh-wird-neuer-starker-partner
+
+Nicht oeffentlich und deshalb auch auf dieser Website nicht genannt: Hoehe und formale Details der Unterstuetzung. Beide Seiten haben darueber ausdruecklich Stillschweigen vereinbart — das ist eine Abrede, keine offene Frage. Veroeffentlichtes Material: von Immonation produzierte Autogramm- und Erfolgskarten beider Athletinnen (Stand Juli 2026), ein Sponsoringfilm zur Unterzeichnung der Vereinbarung sowie eine Videoaufnahme von Abteilungsleiter Marcus Grun im Immonation-Buero. Der Wortlaut der Videos ist nicht verschriftlicht und wird deshalb nirgends zusammengefasst.
+
+Der ausfuehrliche Beitrag steht unter `/de/news/sponsoring-tsv-zirndorf-leichtathletik` beziehungsweise `/en/news/tsv-zirndorf-athletics-sponsorship`.
+
+### Bildungsspende Uganda (April 2026)
+
+Im April 2026 hat die Immonation GmbH die Organisation Pateka unterstuetzt. Die Spende traegt dazu bei, Schulgebuehren fuer Schuelerinnen und Schueler in Uganda zu decken. Die Empfaengerorganisation hat den Vorgang am 28. April 2026 selbst oeffentlich dokumentiert und dabei die Immonation GmbH sowie Erman Karabacak namentlich genannt. Quelle: https://pateka.de/de/2026/04/28/we-are-grateful-to-share-an-important-moment-for-our-community/
+
+Nicht veroeffentlicht und deshalb auch auf dieser Website nicht genannt: Spendenhoehe, Schuelerzahl, Schulname und Zeitraum. Das veroeffentlichte Bildmaterial zeigt Schulmaterial und Hygieneartikel aus der Projektarbeit vor Ort; es zeigt nicht den Gegenwert der Spende, die Schulgebuehren betrifft. Aufnahmen mit erkennbaren Minderjaehrigen bleiben ohne schriftliche Veroeffentlichungsfreigabe unpubliziert.
+
+Der ausfuehrliche Beitrag steht unter `/de/news/bildungsspende-uganda` beziehungsweise `/en/news/uganda-education-donation`.
 
 ## Region
 

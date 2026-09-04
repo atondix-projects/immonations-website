@@ -24,7 +24,8 @@ import { ReferenceGallery } from '@/components/site/references/reference-gallery
 import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 import { listHandoverPolaroids } from '@/lib/content/handover-polaroids'
-import type { ReferenceItem } from '@/lib/content/references'
+import type { ReferenceId } from '@/lib/content/references'
+import { listLocalizedReferences } from '@/lib/content/references'
 import { MagazineSection } from '@/components/site/magazine-section'
 import {
   CollaborationPaths,
@@ -45,7 +46,7 @@ const HOME_REFERENCE_IDS = [
   'deining-neubauwohnung',
   'nuernberg-einfamilienhaus',
   'fuerth-versorgungszentrum',
-] as const satisfies readonly ReferenceItem['id'][]
+] as const satisfies readonly ReferenceId[]
 
 export const dynamic = 'force-static'
 
@@ -60,10 +61,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   const t = await getTranslations('Home')
   const referencesT = await getTranslations('ReferencesPage')
-  const processT = await getTranslations('SalesProcess')
   const handoverT = await getTranslations('HandoverPolaroids')
-  const processSteps = processT.raw('steps') as SalesProcessStep[]
-  const referenceItems = referencesT.raw('items') as ReferenceItem[]
+  const processSteps = t.raw('process.steps') as SalesProcessStep[]
+  const referenceItems = listLocalizedReferences(locale)
   const references = HOME_REFERENCE_IDS.flatMap((id) => {
     const reference = referenceItems.find((item) => item.id === id)
     return reference ? [reference] : []
@@ -98,17 +98,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <HomeChapter id="difference">
         <WhyImmonation />
-        <WarningSigns />
-      </HomeChapter>
-
-      <HomeChapter id="market">
-        <PriceAtlasTeaser locale={locale} />
-        <MarketDataTeaser compact />
       </HomeChapter>
 
       <HomeChapter id="process">
         <ProcessTimeline
           steps={processSteps}
+          showDetails
           eyebrow={t('process.eyebrow')}
           title={t('process.title')}
           lede={t('process.lede')}
@@ -124,15 +119,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         />
       </HomeChapter>
 
-      <HomeChapter id="sales-system">
-        <PremiumMarketing showNetworkProof />
-        <SocialMedia />
-        <PropertyTypePaths locale={locale} compact />
-        <ServicesOverview compact />
+      <HomeChapter id="guidance">
+        <DigitalAssistant locale={locale} compact teaser />
       </HomeChapter>
 
       <HomeChapter id="situations">
         <CustomerStories />
+      </HomeChapter>
+
+      <HomeChapter id="sales-system">
+        <PropertyTypePaths locale={locale} compact />
+        <PremiumMarketing showNetworkProof />
+        <SocialMedia />
+        <ServicesOverview compact />
+      </HomeChapter>
+
+      <HomeChapter id="market">
+        <PriceAtlasTeaser locale={locale} />
+        <MarketDataTeaser compact />
       </HomeChapter>
 
       <HomeChapter id="results">
@@ -158,13 +162,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Reviews compact />
         <Awards compact />
         <HandoverPolaroidWall
-          items={listHandoverPolaroids().slice(0, 6)}
+          items={listHandoverPolaroids()}
           eyebrow={handoverT('eyebrow')}
           title={handoverT('title')}
           text={handoverT('text')}
           className="bg-muted border-border border-y"
           compact
         />
+        <WarningSigns />
       </HomeChapter>
 
       <HomeChapter id="local">
@@ -172,12 +177,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <CurrentProperties locale={locale} compact />
       </HomeChapter>
 
-      <HomeChapter id="guidance">
-        <OwnerKnowledge />
-        <DigitalAssistant locale={locale} compact />
-      </HomeChapter>
-
       <HomeChapter id="company">
+        <OwnerKnowledge />
         <CompanyOverview />
         <Partners compact />
         <CollaborationPaths compact />

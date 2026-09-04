@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import {
   Calculator,
@@ -15,16 +16,35 @@ import { CONTAINER } from './section-shell'
 
 type ServiceItem = { title: string; text: string }
 
+/**
+ * Nur die drei Schwerpunktleistungen tragen ein Motiv — und nur dort, wo es die Leistung
+ * tatsächlich zeigt: der Grundriss ist die echte Ingenieurs-Zeichnung von der Leistungsseite,
+ * die beiden Objektfotos sind anonymisierte Gattungsbilder ohne konkretes Kundenobjekt.
+ * Für Bewertungsanlässe, Käufersuche oder Finanzierung gibt es kein ehrliches Motiv;
+ * diese Kacheln bleiben deshalb bewusst textbasiert statt mit Stockfotos gefüllt.
+ */
 const SERVICES = [
-  { href: '/sell', icon: KeyRound },
-  { href: '/property-valuation', icon: Calculator },
-  { href: '/floor-plans', icon: ScanLine },
-  { href: '/selling-situations', icon: Waypoints },
-  { href: '/virtual-tour', icon: Search },
-  { href: '/staging', icon: Sparkles },
-  { href: '/video', icon: Video },
-  { href: '/buyer-search', icon: UsersRound },
-  { href: '/financing', icon: Landmark },
+  { href: '/sell', icon: KeyRound, image: '/images/generic/generic-sandstone-house-exterior.webp' },
+  {
+    href: '/property-valuation',
+    icon: Calculator,
+    image: '/images/generic/generic-aerial-house-alt.webp',
+  },
+  {
+    // Nicht die Grundriss-Zeichnung: Sie besteht aus hellen Haarlinien auf Weiß und ist in
+    // einer 228 px breiten Kachel zu 96 % weiße Fläche (gemessen: Mittelwert 241/255,
+    // 3,4 % Tintenpixel) — auch mit Zoom und Kontrast bleibt sie eine leere Box.
+    // Der leere, unmöblierte Raum zeigt dagegen genau das, was hier aufgemessen wird.
+    href: '/floor-plans',
+    icon: ScanLine,
+    image: '/images/generic/generic-empty-living-room.webp',
+  },
+  { href: '/selling-situations', icon: Waypoints, image: null },
+  { href: '/virtual-tour', icon: Search, image: null },
+  { href: '/staging', icon: Sparkles, image: null },
+  { href: '/video', icon: Video, image: null },
+  { href: '/buyer-search', icon: UsersRound, image: null },
+  { href: '/financing', icon: Landmark, image: null },
 ] as const
 
 export async function ServicesOverview({ compact = false }: { compact?: boolean }) {
@@ -37,40 +57,52 @@ export async function ServicesOverview({ compact = false }: { compact?: boolean 
     const service = SERVICES[index] ?? SERVICES[0]
     const Icon = service.icon
 
+    if (isPriority) {
+      return (
+        <Link
+          key={item.title}
+          href={service.href}
+          className="border-border hover:border-foreground group flex flex-col border bg-white transition-colors"
+        >
+          {service.image ? (
+            <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200">
+              <Image
+                src={service.image}
+                alt=""
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+              />
+              <span
+                className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+                aria-hidden="true"
+              />
+              <span className="absolute bottom-3 left-3 flex size-10 items-center justify-center bg-white/95 backdrop-blur-sm">
+                <Icon className="text-primary size-5" strokeWidth={1.75} aria-hidden />
+              </span>
+            </div>
+          ) : null}
+          <div className="flex flex-1 flex-col gap-3 p-7">
+            <h4 className="text-[21px] leading-tight font-semibold">{item.title}</h4>
+            <p className="text-muted-foreground text-[15px] leading-[1.55]">{item.text}</p>
+            <span className="text-primary mt-auto pt-2 text-sm font-medium tracking-[0.04em]">
+              {t('itemLink')}
+            </span>
+          </div>
+        </Link>
+      )
+    }
+
     return (
       <Link
         key={item.title}
         href={service.href}
-        className={
-          isPriority
-            ? 'border-border hover:border-foreground group flex min-h-64 flex-col gap-4 border bg-white p-7 transition-colors'
-            : 'border-border hover:border-foreground group grid min-h-40 grid-cols-[auto_1fr] gap-x-4 gap-y-2 border bg-white p-5 transition-colors'
-        }
+        className="group hover:bg-muted/60 grid min-h-40 grid-cols-[auto_1fr] gap-x-4 gap-y-2 bg-white p-6 transition-colors"
       >
-        <Icon
-          className={isPriority ? 'text-primary size-6' : 'text-primary mt-0.5 size-5'}
-          strokeWidth={1.75}
-          aria-hidden
-        />
-        <h4 className={isPriority ? 'text-[21px] leading-tight font-semibold' : 'font-semibold'}>
-          {item.title}
-        </h4>
-        <p
-          className={
-            isPriority
-              ? 'text-muted-foreground text-[15px] leading-[1.55]'
-              : 'text-muted-foreground col-start-2 text-sm leading-[1.55]'
-          }
-        >
-          {item.text}
-        </p>
-        <span
-          className={
-            isPriority
-              ? 'text-primary mt-auto text-sm font-medium tracking-[0.04em]'
-              : 'text-primary col-start-2 mt-auto text-xs font-semibold'
-          }
-        >
+        <Icon className="text-primary mt-0.5 size-5" strokeWidth={1.75} aria-hidden />
+        <h4 className="font-semibold">{item.title}</h4>
+        <p className="text-muted-foreground col-start-2 text-sm leading-[1.55]">{item.text}</p>
+        <span className="text-primary col-start-2 mt-auto text-xs font-semibold">
           {t('itemLink')}
         </span>
       </Link>
@@ -103,7 +135,10 @@ export async function ServicesOverview({ compact = false }: { compact?: boolean 
         <div className="grid gap-5 md:grid-cols-3">
           {priorityItems.map((item, index) => renderService(item, index, true))}
         </div>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Hairline-Raster statt einzeln umrandeter Kacheln: Die sechs ergänzenden
+            Leistungen lesen sich als ein zusammenhängender Block und konkurrieren
+            optisch nicht mehr mit den drei Schwerpunktkarten darüber. */}
+        <div className="border-border mt-5 grid gap-px border bg-neutral-900/10 sm:grid-cols-2 lg:grid-cols-3">
           {supportingItems.map((item, index) => renderService(item, index + 3, false))}
         </div>
       </div>

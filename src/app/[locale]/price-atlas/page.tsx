@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { DataProvenance } from '@/components/site/data-provenance'
 import { JsonLd } from '@/components/site/json-ld'
 import { PriceAtlas } from '@/components/site/price-atlas/price-atlas'
 import { CtaBand } from '@/components/site/templates/cta-band'
@@ -14,6 +15,7 @@ import {
   listPriceAtlasGroups,
   PRICE_ATLAS_CITIES,
 } from '@/lib/content/price-atlas'
+import { DATA_AS_OF } from '@/lib/content/provenance'
 import { breadcrumbList, faqPage, itemList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -109,6 +111,8 @@ export default async function PriceAtlasPage({ params }: { params: Promise<{ loc
             <p className="border-brand-600 text-muted-foreground mt-12 max-w-[80ch] border-l-2 pl-5 text-[14px] leading-[1.7] text-pretty">
               {t('note')}
             </p>
+
+            <DataProvenance asOf={DATA_AS_OF[locale]} source={t('source')} />
           </div>
         </section>
 

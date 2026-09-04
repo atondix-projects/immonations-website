@@ -35,7 +35,7 @@
       "floorPlans": "Grundriss & Wohnfläche",
       "floorPlansDesc": "Bankfähige Pläne und Aufmaß vom eigenen Ingenieur.",
       "references": "Referenzobjekte",
-      "referencesDesc": "15 ausgewählte Immobilien aus unserer Region.",
+      "referencesDesc": "29 ausgewählte Immobilien aus unserer Region.",
       "buying": "Immobilie kaufen",
       "buyingDesc": "Aktuelle Angebote aus der Region.",
       "financing": "Finanzierung",
@@ -69,12 +69,20 @@
   "AboutPage": {
     "metadata": {
       "title": "Über Immonation",
-      "description": "Erfahren Sie, wie die Immonation GmbH Eigentümer und Käufer in Zirndorf, Nürnberg, Fürth und Erlangen begleitet."
+      "description": "Erfahren Sie, wie die Immonation GmbH und die Immonation-Unternehmensgruppe Eigentümer und Käufer in Zirndorf, Nürnberg, Fürth und Erlangen begleiten."
     },
     "eyebrow": "Immonation GmbH",
     "title": "Immobilienberatung, die lokal verwurzelt und digital stark ist.",
     "lede": "Immonation begleitet Eigentümer, Käufer und Investoren in Zirndorf, Nürnberg, Fürth, Erlangen und der umliegenden Region mit Bewertung, Vermarktung und persönlicher Beratung.",
     "body": "Unser Anspruch ist ein transparenter Prozess mit belastbaren Zahlen, klarer Kommunikation und Vermarktung, die mehr leistet als ein Standardinserat.",
+    "trademark": {
+      "eyebrow": "Markenschutz",
+      "title": "Immonation ist als Unionsmarke eingetragen.",
+      "text": "Die Marke Immonation ist beim Amt der Europäischen Union für geistiges Eigentum (EUIPO) unter der Nummer 019283377 eingetragen. Die Eintragung erfolgte am 15.03.2026 für immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37.",
+      "registrationLabel": "EUIPO-Registrierung",
+      "registration": "Nr. 019283377 · eingetragen am 15.03.2026",
+      "downloadLabel": "Zertifikat als PDF herunterladen"
+    },
     "values": {
       "items": [
         {
@@ -90,6 +98,42 @@
           "text": "Ein fester Ansprechpartner führt Sie vom ersten Gespräch bis zum Notartermin durch den gesamten Prozess."
         }
       ]
+    },
+    "companyProfile": {
+      "eyebrow": "Wer wir sind",
+      "title": "Inhabergeführt seit 2017. Kein Franchise.",
+      "text": "Regionale Stärke in Nürnberg und der Metropolregion, ein eigenes Netzwerk und interne Schulungen: Immonation verbindet persönliche Verantwortung mit einer professionellen Vermarktungsstruktur.",
+      "logoAlt": "Immonation GmbH",
+      "resourceTitle": "Unternehmensunterlagen",
+      "resourceText": "Weitere Einblicke in unsere Arbeit, unsere Region und den Immobilienverkauf finden Sie in Magazin und Downloads.",
+      "resourceLink": "Magazin & Unterlagen ansehen",
+      "stats": [
+        {
+          "value": "60+",
+          "label": "Immobilienverkäufe pro Jahr"
+        },
+        {
+          "value": "30 Mio. €",
+          "label": "jährliches Transaktionsvolumen"
+        },
+        {
+          "value": "4,9 / 5",
+          "label": "bei 230 Google-Bewertungen"
+        },
+        {
+          "value": "60 km",
+          "label": "regionaler Wirkungskreis"
+        }
+      ]
+    },
+    "group": {
+      "eyebrow": "Unternehmensgruppe",
+      "title": "Vier Gesellschaften. Klare Zuständigkeiten.",
+      "text": "Die Immonation GmbH gehört zu einer Gruppe aus vier rechtlich eigenständigen Gesellschaften. Vermittlung, Holding, Ankauf und Projektentwicklung sowie Revitalisierung sind klar voneinander getrennt.",
+      "link": "Unternehmensgruppe ansehen",
+      "imageAlt": "Northdata-Netzwerkdarstellung der Immonation GmbH und verbundener Gesellschaften",
+      "caption": "Öffentlich dargestellte Verbindungen im Unternehmensnetzwerk.",
+      "sourceLabel": "Quelle: Northdata"
     },
     "partnerTrack": {
       "title": "Ausgewählte Partnermakler ergänzen unser Team",
@@ -471,7 +515,8 @@
   },
   "VideoDialog": {
     "play": "Video abspielen",
-    "close": "Video schließen"
+    "close": "Video schließen",
+    "transcript": "Transkript anzeigen"
   },
   "Testimonials": {
     "spotlightEyebrow": "Kundenstimme",
@@ -622,7 +667,7 @@
     "back": "Zurück",
     "next": "Weiter",
     "finish": "Auswertung anfordern",
-    "restart": "Neu beginnen",
+    "edit": "Angaben ändern",
     "optionalBadge": "optional",
     "optionalStepNote": "Alle Angaben in diesem Schritt sind freiwillig. Sie verfeinern die Spanne — überspringen ist jederzeit möglich.",
     "skip": "Überspringen",
@@ -1471,6 +1516,14 @@
     "eyebrow": "Ressourcen",
     "title": "Kostenlose Dokumente. Ein Magazin zum Lesen. Ein Handbuch auf Anfrage.",
     "lede": "Laden Sie Vorlagen für Übergabe und Miete nach kurzer E-Mail-Freigabe herunter. Das REVIER Magazin ist frei lesbar; das Verkaufs-Handbuch senden wir persönlich per E-Mail.",
+    "trademark": {
+      "eyebrow": "Markenschutz",
+      "title": "Das Zertifikat der eingetragenen Immonation-Marke.",
+      "text": "Hier finden Sie die Eintragungsurkunde der Unionsmarke Immonation. Das EUIPO führt die Marke unter der Nummer 019283377; eingetragen am 15.03.2026 für immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37.",
+      "registrationLabel": "EUIPO-Registrierung",
+      "registration": "Nr. 019283377 · eingetragen am 15.03.2026",
+      "downloadLabel": "Zertifikat als PDF herunterladen"
+    },
     "freedocs": {
       "eyebrow": "Kostenlose Dokumente",
       "title": "Vorlagen für Übergabe und Vermietung — direkt zum Download.",
@@ -1581,12 +1634,6 @@
     },
     "proof": {
       "eyebrow": "Lokal verankert · messbar wirksam",
-      "trailHints": {
-        "reviews": "Bewertungen entdecken",
-        "sales": "Verkäufe entdecken",
-        "volume": "Investments entdecken",
-        "search": "Kunden entdecken"
-      },
       "exampleLabels": {
         "reviews": "Beispielbewertungen",
         "sales": "Beispielobjekte",
@@ -1602,7 +1649,7 @@
       "items": [
         {
           "value": "4,9 / 5",
-          "label": "bei 226 Google-Bewertungen · Stand August 2026"
+          "label": "bei 230 Google-Bewertungen · Stand August 2026"
         },
         {
           "value": "60+",
@@ -1668,12 +1715,124 @@
       "tabList": "Die zehn Schritte des Immobilienverkaufs",
       "selectedStep": "Ausgewählter Schritt",
       "activities": "Was wir tun",
-      "outcome": "Ihr Ergebnis"
+      "outcome": "Ihr Ergebnis",
+      "steps": [
+        {
+          "id": "valuation",
+          "num": "01",
+          "title": "Kostenlose Immobilienbewertung",
+          "summary": "Online-Ersteinschätzung und Terminvereinbarung.",
+          "activities": [
+            "Online-Preisindikation für Ihre Immobilie erstellen",
+            "Termin für die persönliche Einschätzung vereinbaren"
+          ],
+          "outcome": "Sie wissen, wo Ihr Verkauf sinnvoll startet und was als Nächstes passiert."
+        },
+        {
+          "id": "consultation",
+          "num": "02",
+          "title": "Persönliche Beratung",
+          "summary": "Ziele, Zeitrahmen und Fragen im Erstgespräch.",
+          "activities": [
+            "Ziele und Zeitrahmen gemeinsam klären",
+            "Fragen und Prioritäten im Erstgespräch ordnen"
+          ],
+          "outcome": "Sie erhalten einen klaren Plan, der zu Ihrer Situation passt."
+        },
+        {
+          "id": "documents",
+          "num": "03",
+          "title": "Unterlagenprüfung",
+          "summary": "Wir sichten und beschaffen fehlende Dokumente.",
+          "activities": [
+            "Vorhandene Unterlagen auf Vollständigkeit prüfen",
+            "Fehlende Nachweise gezielt beschaffen"
+          ],
+          "outcome": "Ihre Verkaufsunterlagen sind vollständig und verlässlich."
+        },
+        {
+          "id": "property-capture",
+          "num": "04",
+          "title": "Professionelle Objektaufnahme",
+          "summary": "Fotos, Video-Exposé und 360°-Rundgang.",
+          "activities": [
+            "Professionelle Fotos und ein Video-Exposé erstellen",
+            "360°-Rundgang für digitale Besichtigungen ergänzen"
+          ],
+          "outcome": "Interessenten bekommen sofort ein realistisches Bild der Immobilie."
+        },
+        {
+          "id": "marketing-strategy",
+          "num": "05",
+          "title": "Marketingstrategie",
+          "summary": "Preisstrategie, Zielgruppen und Vermarktungsplan.",
+          "activities": [
+            "Preis und Positionierung festlegen",
+            "Zielgruppen und Kanäle aufeinander abstimmen"
+          ],
+          "outcome": "Ihre Immobilie geht mit einer klaren Marktansprache live."
+        },
+        {
+          "id": "buyer-qualification",
+          "num": "06",
+          "title": "Käuferqualifizierung",
+          "summary": "Solvenz- und Finanzierungsprüfung der Interessenten.",
+          "activities": [
+            "Interessenten vorqualifizieren",
+            "Solvenz und Finanzierung vor der Besichtigung prüfen"
+          ],
+          "outcome": "Besichtigungen finden mit belastbaren Kaufinteressenten statt."
+        },
+        {
+          "id": "viewings",
+          "num": "07",
+          "title": "Besichtigungen",
+          "summary": "Nur ernsthafte, geprüfte Käufer vor Ort.",
+          "activities": [
+            "Termine koordinieren und Besichtigungen begleiten",
+            "Rückmeldungen und Fragen bündeln"
+          ],
+          "outcome": "Sie sparen Zeit und sprechen vor Ort nur mit geprüften Käufern."
+        },
+        {
+          "id": "negotiation",
+          "num": "08",
+          "title": "Verhandlung",
+          "summary": "Wir führen die Preisverhandlung für Sie.",
+          "activities": [
+            "Angebote einordnen und vergleichbar machen",
+            "Die Verhandlung zielorientiert für Sie führen"
+          ],
+          "outcome": "Sie erhalten Unterstützung für eine tragfähige Preisentscheidung."
+        },
+        {
+          "id": "notary",
+          "num": "09",
+          "title": "Notar",
+          "summary": "Vertragsvorbereitung und Notartermin.",
+          "activities": [
+            "Vertrag mit den Beteiligten vorbereiten",
+            "Notartermin koordinieren und begleiten"
+          ],
+          "outcome": "Der Verkauf ist rechtssicher für die Beurkundung vorbereitet."
+        },
+        {
+          "id": "handover",
+          "num": "10",
+          "title": "Übergabe",
+          "summary": "Schlüsselübergabe und Abschluss.",
+          "activities": [
+            "Die Übergabe gemeinsam abstimmen",
+            "Schlüssel und letzte Unterlagen vollständig übergeben"
+          ],
+          "outcome": "Der Verkauf wird sauber und vollständig abgeschlossen."
+        }
+      ]
     },
     "references": {
       "eyebrow": "Ausgewählte Referenzen",
       "title": "Referenzen aus Ihrer Nachbarschaft",
-      "link": "Alle 15 Referenzobjekte →"
+      "link": "Alle 29 Referenzobjekte →"
     },
     "difference": {
       "eyebrow": "Darum Immonation",
@@ -1849,7 +2008,7 @@
       "headline": {
         "platform": "Google",
         "rating": "4,9",
-        "count": "226 Bewertungen",
+        "count": "230Bewertungen",
         "link": "Alle Google-Bewertungen lesen"
       },
       "stats": [
@@ -1884,7 +2043,7 @@
           "name": "Google",
           "rating": "4,9",
           "scale": "/ 5",
-          "basis": "226 Bewertungen",
+          "basis": "230Bewertungen",
           "kind": "direct"
         },
         {
@@ -2135,6 +2294,12 @@
       "newBadge": "Neu",
       "exposeLink": "Beispiel-Exposé",
       "photoAlt": "Objektfoto",
+      "references": {
+        "eyebrow": "Lokale Verkaufsbelege",
+        "title": "Was in der Region bereits vermittelt wurde",
+        "text": "Archivierte Referenzobjekte helfen bei der Einordnung. Sie sind keine aktuellen Kaufangebote und ihre Fotos werden nicht als Listing-Galerie verwendet.",
+        "referenceLabel": "Archivierte Referenz"
+      },
       "items": [
         {
           "isNew": true,
@@ -2315,6 +2480,7 @@
         "eyebrow": "Neu · Immobilien-KI",
         "title": "Ihr digitaler Immobilien-Assistent",
         "text": "Erste Orientierung, passende nächste Schritte und Antworten rund um die Uhr: Der Assistent unterstützt vom ersten Gedanken bis zum persönlichen Termin.",
+        "promptPlaceholder": "Ihre Frage zum Immobilienverkauf",
         "link": "Immobilien-KI ausprobieren",
         "capabilities": [
           "Erste Preis-Orientierung für Ihre Lage",
@@ -2469,7 +2635,7 @@
         "phase": "Phase 03 · Sichtbarkeit und Käufer",
         "title": "Professionelle Aufbereitung",
         "summary": "Fotos, Grundrisse, Exposé und digitale Präsentation zeigen die Immobilie aus ihrer stärksten Perspektive.",
-        "detail": "Wir erstellen eine aussagekräftige Objektbeschreibung, hochwertige Fotos und aufbereitete Grundrisse. Je nach Immobilie ergänzen ein virtueller Rundgang oder klar gekennzeichnete Visualisierungen die Präsentation. Fehlende, bankfähige Grundrisse und Wohnflächenberechnungen können über unser Spezialistennetzwerk vorbereitet werden.",
+        "detail": "Wir erstellen eine aussagekräftige Objektbeschreibung, hochwertige Fotos und aufbereitete Grundrisse. Je nach Immobilie ergänzen ein virtueller Rundgang oder klar gekennzeichnete Visualisierungen die Präsentation. Fehlende, bankfähige Grundrisse und Wohnflächenberechnungen erstellt unser fest angestellter Bauingenieur im Haus.",
         "activities": [
           "Exposé, Objektbeschreibung und professionelle Aufnahmen erstellen",
           "Grundrisse prüfen, aufbereiten oder bei Bedarf neu bemessen",
@@ -2739,7 +2905,7 @@
         {
           "num": "5",
           "title": "Verwendung",
-          "text": "Die Unterlagen fließen direkt in Exposé, Vermarktung und Kundenbereich ein."
+          "text": "Die Unterlagen fließen direkt in Exposé und Vermarktung ein."
         }
       ]
     },
@@ -2790,6 +2956,95 @@
       "text": "Aufmaß, Wohnflächenberechnung und Grundrisse gehören bei uns zur Vermarktung – ohne separate Rechnung. Starten Sie mit einer kostenlosen Bewertung oder einem Erstgespräch.",
       "primary": "Kostenlose Bewertung starten",
       "secondary": "Erstgespräch vereinbaren"
+    }
+  },
+  "ReviewsPage": {
+    "metadata": {
+      "title": "Bewertungen auf 10 Portalen | Immonation",
+      "description": "Immonation ist auf zehn Bewertungsportalen mit mehr als 300 Stimmen vertreten. 4,9 von 5 auf Google, plus Trustpilot, Immowelt und sieben weitere öffentliche Profile."
+    },
+    "eyebrow": "Bewertungen",
+    "title": "Mehr als 300 Bewertungen auf zehn Portalen",
+    "lede": "Google, Trustpilot, Immowelt und sieben weitere öffentliche Profile. Jede Zahl auf dieser Seite führt zum Original.",
+    "answer": "Immonation unterhält eigene Profile auf zehn Bewertungsportalen. Zusammen liegen mehr als 300 Bewertungen vor. Auf Google stehen {rating} von 5 Sternen aus {count} Stimmen. Fünf Portale vergeben die Bestnote 5,0. Direkte Profile zählen eigene Einträge; als Aggregat gekennzeichnete Portale bündeln Bewertungen anderer Quellen und zeigen dieselben Stimmen deshalb erneut.",
+    "claimTitle": "Zehn Portale, mehr als 300 Stimmen.",
+    "claimText": "Direktquellen und Aggregate sind getrennt ausgewiesen. Ein Klick öffnet das Originalprofil.",
+    "portals": {
+      "title": "Jedes Profil ist öffentlich einsehbar",
+      "intro": "Google, Trustpilot, Immowelt, 11880 und golocal zählen eigene Einträge. ProvenExpert, Jacasa, Wer kennt den Besten, Trustlocal und KennstDuEinen bündeln Bewertungen aus anderen Quellen."
+    },
+    "quotes": {
+      "title": "Originalstimmen aus abgeschlossenen Verkäufen",
+      "intro": "Die Texte stehen so, wie sie auf den Portalen veröffentlicht wurden. Name, Quelle und Datum gehören zu jeder Stimme.",
+      "listLabel": "Bewertungen nach Quelle filtern",
+      "filters": {
+        "all": "Alle Stimmen"
+      },
+      "expand": "Ganze Bewertung lesen",
+      "collapse": "Bewertung einklappen",
+      "openSource": "Originalbewertung öffnen",
+      "empty": "Für diese Quelle liegen hier keine dokumentierten Stimmen vor. Das öffentliche Profil verlinkt oben in der Übersicht."
+    },
+    "source": {
+      "google": "Google",
+      "golocal": "golocal"
+    },
+    "attribution": {
+      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Stimmen. Diese werden mit dokumentierten Originalzitaten zusammengeführt und nach Datum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Datum sortiert. Der vollständige aktuelle Bestand bleibt auf den verlinkten Profilen nachlesbar."
+    },
+    "screenshots": {
+      "title": "So stehen die Bewertungen im Original",
+      "note": "Unbearbeitete Ausschnitte öffentlicher Google-Profile, jeweils einem dokumentierten Verkauf zugeordnet."
+    },
+    "seals": {
+      "title": "Geprüfte Makler-Siegel",
+      "intro": "Drei unabhängige Stellen führen ein öffentliches Profil. Die Siegel liegen als lokale Kopie vor, ohne externes Tracking.",
+      "note": "Maklersieger prüft das Maklerprofil. Makler-Siegel.de zeichnet geprüfte Immobilienexperten aus. ProvenExpert zeigt Google-Bewertungen in einem eigenen Profil.",
+      "maklersieger": {
+        "title": "Maklersieger",
+        "text": "Verifiziertes Maklerprofil, unabhängig bewertet für den Raum Nürnberg.",
+        "alt": "Siegel Verifizierter Makler von maklersieger.de für die Immonation GmbH",
+        "open": "Profil öffnen"
+      },
+      "maklersiegel": {
+        "title": "Makler-Siegel",
+        "text": "Siegel für geprüfte Immobilienexperten. Die Grafik ist eine lokale Kopie des öffentlichen Siegels.",
+        "alt": "Makler-Siegel Zertifizierter Immobilienexperte",
+        "open": "Herausgeber öffnen"
+      },
+      "provenexpert": {
+        "title": "ProvenExpert",
+        "text": "Das ProvenExpert-Profil bündelt Google-Bewertungen. Der Link führt zur Originalseite.",
+        "alt": "ProvenExpert-Profil der Immonation GmbH Zirndorf",
+        "open": "Profil öffnen"
+      }
+    },
+    "faq": {
+      "title": "Häufige Fragen zu den Bewertungen",
+      "items": [
+        {
+          "question": "Sind die Bewertungen echt?",
+          "answer": "Ja. Jede gezeigte Stimme stammt aus einem dokumentierten öffentlichen Profil. Name, Quelle und Datum stehen direkt an der Bewertung. Die vollständigen Profile sind über die Kacheln auf dieser Seite erreichbar."
+        },
+        {
+          "question": "Warum unterscheiden sich die Zahlen je Portal?",
+          "answer": "Jedes Portal zählt nach eigenen Regeln. Google, Trustpilot und Immowelt nehmen eigene Einträge auf. ProvenExpert, Jacasa oder Trustlocal bündeln Bewertungen anderer Quellen und zeigen dieselben Stimmen deshalb erneut. Die Gesamtzahl 300+ zählt jede zugrunde liegende Quelle einmal."
+        },
+        {
+          "question": "Was bedeutet Direktquelle und Aggregat?",
+          "answer": "Direktquelle heißt: Die Bewertung wurde auf diesem Portal abgegeben. Aggregat heißt: Das Portal zeigt Bewertungen, die ursprünglich woanders stehen, häufig bei Google."
+        },
+        {
+          "question": "Wo lese ich alle Google-Bewertungen?",
+          "answer": "Über den Link neben der Google-Note gelangen Sie zum öffentlichen Maps-Profil der Immonation GmbH in Zirndorf. Dort steht der vollständige aktuelle Bestand."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ihr Verkauf soll die nächste gute Geschichte werden?",
+      "text": "Starten Sie mit einer kostenlosen Bewertung und lernen Sie unser Vorgehen unverbindlich kennen.",
+      "label": "Kostenlose Bewertung starten"
     }
   },
   "TestimonialsPage": {
@@ -2879,15 +3134,15 @@
     "compare": {
       "eyebrow": "Vorher / Nachher",
       "title": "Original und Visualisierung, direkt nebeneinander",
-      "intro": "Vier Beispiele aus eigenen Vermarktungen: jeweils das unbearbeitete Foto und die Visualisierung, gekennzeichnet mit „Original“ und „Visualisierung“. Beide Aufnahmen zeigen dieselbe Kameraposition, damit der Unterschied nachvollziehbar bleibt.",
+      "intro": "Sieben Beispiele aus eigenen Vermarktungen: jeweils das unbearbeitete Foto und die Visualisierung, gekennzeichnet mit „Original“ und „Visualisierung“. Beide Aufnahmen zeigen dieselbe Kameraposition, damit der Unterschied nachvollziehbar bleibt.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisierung",
       "items": {
-        "plot-schwabach": {
-          "title": "Unbebautes Grundstück, Schwabach",
-          "text": "Aus der Luftaufnahme des unbebauten Grundstücks entsteht eine mögliche Bebauung mit Haus, Garage, Zufahrt und Garten. Grundstücksverkäufer verhandeln damit auf Augenhöhe mit Bauträgern, die ohnehin vom Verkaufserlös rückwärts rechnen.",
-          "beforeAlt": "Luftaufnahme eines unbebauten, bewachsenen Grundstücks in Schwabach",
-          "afterAlt": "Visualisierung desselben Grundstücks mit Einfamilienhaus, Garage, Zufahrt und angelegtem Garten"
+        "bedroom-entenberg": {
+          "title": "Schlafzimmer, Einfamilienhaus Entenberg",
+          "text": "Hier wurde nichts ausgeräumt: Bett, Vorhänge und Wandfarbe stammen erkennbar aus einer früheren Zeit. Die Visualisierung zeigt denselben Raum zeitgemäß eingerichtet — Fenster, Boden, Dachschräge und Zuschnitt bleiben unverändert.",
+          "beforeAlt": "Schlafzimmer mit orangefarbenen Vorhängen, oranger Wand und altem Metallbett mit roter Tagesdecke",
+          "afterAlt": "Visualisierung desselben Schlafzimmers mit Polsterbett, hellen Vorhängen, Kommode und Spiegel"
         },
         "living-room-nuremberg": {
           "title": "Wohn- und Essbereich, Reihenmittelhaus Nürnberg",
@@ -2895,17 +3150,35 @@
           "beforeAlt": "Leerer Wohn- und Essbereich eines Reihenmittelhauses mit Parkettboden",
           "afterAlt": "Visualisierung desselben Raums mit Esstisch, Sofalandschaft und Teppich"
         },
-        "entrance-nuremberg": {
-          "title": "Hauseingang und Außenanlage, Nürnberg",
-          "text": "Das Bestandsfoto entstand im Winter, mit kahlen Sträuchern. Die Visualisierung zeigt denselben Eingang bepflanzt – der erste Eindruck im Exposé entscheidet über den Klick.",
-          "beforeAlt": "Hauseingang eines Reihenmittelhauses im Winter mit kahlen Sträuchern",
-          "afterAlt": "Visualisierung desselben Hauseingangs mit begrüntem Vorgarten und blühender Bepflanzung"
+        "office-wiesenstrasse": {
+          "title": "Kleines Dachzimmer, Dachgeschosswohnung Nürnberg",
+          "text": "Räume unter der Schräge sind schwer zu lesen: Passt da ein Bett, ein Schreibtisch, überhaupt etwas? Die Visualisierung entscheidet die Frage sichtbar — als Arbeitszimmer mit Regal, Schreibtisch und Stuhl.",
+          "beforeAlt": "Leeres kleines Dachzimmer mit Dachschräge, Fenster und Heizkörper",
+          "afterAlt": "Visualisierung desselben Zimmers als Arbeitszimmer mit Schreibtisch, Bürostuhl und Regalwand"
         },
         "bedroom-nuremberg": {
           "title": "Schlafzimmer, Eigentumswohnung Nürnberg",
           "text": "Ein leeres Schlafzimmer wirkt schnell kleiner, als es ist. Mit Bett, Schrankfront und Textilien wird die Raumgröße lesbar, ohne dass etwas verändert wurde.",
           "beforeAlt": "Leeres Schlafzimmer einer Eigentumswohnung mit Balkontür",
           "afterAlt": "Visualisierung desselben Schlafzimmers mit Doppelbett, Sessel und Teppich"
+        },
+        "terrace-entenberg": {
+          "title": "Dachterrasse, Einfamilienhaus Entenberg",
+          "text": "Eine leere Terrasse liest sich als Restfläche. Möbliert wird aus derselben Aufnahme ein Argument — der Blick über den Höhenzug war die ganze Zeit da, nur hat ihn niemand gesehen.",
+          "beforeAlt": "Leere gefliesste Dachterrasse mit Holzgeländer und Blick auf bewaldete Hügel",
+          "afterAlt": "Visualisierung derselben Terrasse mit Lounge-Sofa, Sonnenschirm, Grill und Lichterkette"
+        },
+        "entrance-nuremberg": {
+          "title": "Hauseingang und Außenanlage, Nürnberg",
+          "text": "Das Bestandsfoto entstand im Winter, mit kahlen Sträuchern. Die Visualisierung zeigt denselben Eingang bepflanzt – der erste Eindruck im Exposé entscheidet über den Klick.",
+          "beforeAlt": "Hauseingang eines Reihenmittelhauses im Winter mit kahlen Sträuchern",
+          "afterAlt": "Visualisierung desselben Hauseingangs mit begrüntem Vorgarten und blühender Bepflanzung"
+        },
+        "plot-schwabach": {
+          "title": "Unbebautes Grundstück, Schwabach",
+          "text": "Aus der Luftaufnahme des unbebauten Grundstücks entsteht eine mögliche Bebauung mit Haus, Garage, Zufahrt und Garten. Grundstücksverkäufer verhandeln damit auf Augenhöhe mit Bauträgern, die ohnehin vom Verkaufserlös rückwärts rechnen.",
+          "beforeAlt": "Luftaufnahme eines unbebauten, bewachsenen Grundstücks in Schwabach",
+          "afterAlt": "Visualisierung desselben Grundstücks mit Einfamilienhaus, Garage, Zufahrt und angelegtem Garten"
         }
       },
       "disclaimer": "Die mit „Visualisierung“ gekennzeichnete Aufnahme ist digital erzeugt. Sie zeigt einen möglichen, nicht den aktuellen Zustand. Grundriss, Bausubstanz, Fenster und Mängel bleiben unverändert – Möbel und Bepflanzung sind nicht Bestandteil des Kaufgegenstands."
@@ -2915,18 +3188,35 @@
       "title": "Video-Material, das die Vision erlebbar macht",
       "intro": "Aus denselben Visualisierungen entsteht ein kurzer Film für Exposé, Website und Social Media. Der Aufbau läuft im Bild ab: Aus dem leeren Raum wird der eingerichtete, aus dem Grundstück das fertige Haus.",
       "badge": "Visualisierung",
+      "groups": {
+        "house": "Häuser",
+        "apartment": "Wohnungen",
+        "plot": "Grundstücke"
+      },
       "items": {
         "house": {
           "title": "Reihenmittelhaus, Nürnberg",
           "text": "Eingang, Wohn- und Essbereich, Schlafräume, Balkon und Hobbyraum im Durchlauf."
         },
+        "houseEntenberg": {
+          "title": "Einfamilienhaus, Entenberg",
+          "text": "Terrasse, Schlafzimmer, Bibliothek und Ankleide — jeweils vom Bestand zur modernisierten Fassung."
+        },
         "apartment": {
           "title": "Eigentumswohnung, Nürnberg",
           "text": "Drei Räume, jeweils vom leeren Zustand bis zur fertigen Einrichtung."
         },
+        "apartmentWiesenstrasse": {
+          "title": "Dachgeschosswohnung, Nürnberg",
+          "text": "Wohnraum, Dachterrasse, Küche, Bad, Arbeits- und Schlafzimmer, jeweils vom leeren Zustand aus."
+        },
         "plot": {
           "title": "Grundstück, Schwabach",
           "text": "Vom unbebauten Grundstück über den Rohbau bis zum fertigen Haus mit Garten."
+        },
+        "plotUttenreuth": {
+          "title": "Neubaugrundstück, Uttenreuth",
+          "text": "Vom Abriss des Altbestands über Bodenplatte und Rohbau bis zum fertigen Haus mit Garten."
         }
       },
       "fallback": "Ihr Browser kann dieses Video nicht abspielen."
@@ -3046,12 +3336,11 @@
     },
     "answer": "Der Bodenrichtwert ist ein durchschnittlicher Lagewert je Quadratmeter Grund, den der Gutachterausschuss aus tatsächlichen Kaufverträgen ableitet. Er gilt für ein ganzes Gebiet – nicht für Ihr konkretes Grundstück. Ob Ihr Grundstück darüber oder darunter liegt, entscheiden Zuschnitt, Erschließung, Baurecht, Altlasten und Nachfrage.",
     "values": {
-      "eyebrow": "Entwurf · Orientierung",
+      "eyebrow": "Orientierung",
       "title": "Aktuelle Bodenrichtwerte",
-      "intro": "Orientierungsspannen für die Metropolregion – als Entwurf mit Platzhalterwerten. Den genauen Wert für Ihre Adresse liefert BORIS Bayern bzw. der zuständige Gutachterausschuss; wir schlagen ihn gern im Erstgespräch nach.",
-      "disclaimer": "Platzhalter-Werte (Entwurf). Vor Veröffentlichung durch aktuelle, datierte Angaben aus BORIS Bayern bzw. den Gutachterausschüssen ersetzen und Stand-Datum angeben.",
+      "intro": "Orientierungsspannen für die Metropolregion. Den genauen Wert für Ihre Adresse liefert BORIS Bayern bzw. der zuständige Gutachterausschuss; wir schlagen ihn gern im Erstgespräch nach.",
+      "disclaimer": "Bodenrichtwerte sind amtliche Orientierungswerte je Richtwertgebiet und keine Zusage eines erzielbaren Grundstückspreises. Für Ihr Grundstück sind Zuschnitt, Erschließung, Baurecht und Nachfrage maßgeblich.",
       "unit": "€/m²",
-      "draftBadge": "Entwurf",
       "rows": [
         {
           "city": "Nürnberg",
@@ -3460,13 +3749,13 @@
         "tab": "Grundrisse",
         "kicker": "Bankfähige Unterlagen",
         "title": "Bemaßte Grundrisse, die Finanzierungen unterstützen.",
-        "text": "Fehlende oder unbrauchbare Bestandspläne können den Käuferprozess ausbremsen. Bei Bedarf koordiniert unser Spezialistennetzwerk eine bemaßte Neuzeichnung mit nachvollziehbarer Wohnflächenberechnung.",
+        "text": "Fehlende oder unbrauchbare Bestandspläne können den Käuferprozess ausbremsen. Bei Bedarf erstellt unser fest angestellter Bauingenieur eine bemaßte Neuzeichnung mit nachvollziehbarer Wohnflächenberechnung.",
         "highlight": "Planbar für Käufer, Bank und Gutachter.",
         "bullets": [
           "Bemaßung aller relevanten Wände und Räume",
           "Wohnflächenberechnung nach Wohnflächenverordnung",
           "Nachvollziehbare Unterlage für Bank und Gutachter",
-          "Koordination über ein eingespieltes Spezialistennetzwerk"
+          "Aufmaß und Grundrisse durch unseren angestellten Bauingenieur"
         ],
         "result": "Käufer können die Finanzierung mit verwertbaren Plänen einreichen – und Rückfragen zu Flächen oder Maßen werden früh geklärt.",
         "proof": [
@@ -3675,6 +3964,17 @@
       "title": "Was möchten Sie verkaufen?",
       "link": "Leitfaden öffnen"
     },
+    "references": {
+      "eyebrow": "Beispiele je Verkaufsweg",
+      "title": "Verkaufswissen mit echten Referenzobjekten",
+      "text": "Archivierte Fälle zeigen, wie sich Objektart und Zielgruppe auf die Vermarktung auswirken. Beim Grundstücksverkauf kennzeichnen wir regionale Prozessbelege ausdrücklich als solche.",
+      "referenceLabel": "Verkaufsreferenz",
+      "filterLabel": "Referenzen nach Objektart filtern",
+      "allLabel": "Alle Objektarten",
+      "cityFilterLabel": "Stadt",
+      "typeFilterLabel": "Objektart",
+      "allCitiesLabel": "Alle Städte"
+    },
     "local": {
       "title": "Lokale Einordnung statt pauschaler Marktzahl.",
       "text": "Zirndorf, Nürnberg, Fürth und Erlangen unterscheiden sich bis auf Quartiers- und Straßenebene. Unsere Regionsseiten erklären den Verkaufsansatz ohne unbestätigte Live-Preise.",
@@ -3696,6 +3996,16 @@
     "documentsEyebrow": "Checkliste",
     "documentsTitle": "Diese Unterlagen brauchen Sie",
     "faqTitle": "Häufige Fragen",
+    "references": {
+      "eyebrow": "Passende Referenzobjekte",
+      "title": "So wird der Verkaufsweg konkret",
+      "text": "Die Fälle sind archivierte Verkaufsbeispiele und keine aktuellen Angebote. Beim Grundstücksleitfaden zeigen wir regionales Vorgehen, ohne einen Wohnimmobilienverkauf als Grundstücksverkauf auszugeben.",
+      "referenceLabel": "Archivierte Referenz",
+      "regionalEyebrow": "Regionaler Vermarktungsbeleg",
+      "regionalTitle": "Vorgehen für Grundstücke regional einordnen",
+      "regionalText": "Diese archivierten Wohn- und Gewerbefälle belegen regionale Aufbereitung und Käuferansprache. Sie sind ausdrücklich kein Nachweis eines Grundstücksverkaufs.",
+      "regionalReferenceLabel": "Regionaler Prozessbeleg"
+    },
     "cta": {
       "title": "Verkauf fundiert vorbereiten",
       "text": "Wir klären Wert, Unterlagen, Zielgruppe und Zeitplan, bevor Ihre Immobilie auf den Markt geht.",
@@ -3727,6 +4037,17 @@
     "contentEyebrow": "Lokal gedacht",
     "contentTitle": "Immobilienverkauf in {city}",
     "faqTitle": "Häufige Fragen zu Immobilien in {city}",
+    "references": {
+      "eyebrow": "Lokale Verkaufsreferenzen",
+      "title": "Referenzobjekte aus {city}",
+      "text": "Archivierte Verkaufsbeispiele aus genau dieser Stadt. Sie zeigen Objektart, Lagebezug und Vermarktungsqualität – nicht aktuelle Angebote.",
+      "referenceLabel": "Archivierte Referenz",
+      "filterLabel": "Lokale Referenzen filtern",
+      "allLabel": "Alle Objektarten",
+      "cityFilterLabel": "Stadt",
+      "typeFilterLabel": "Objektart",
+      "allCitiesLabel": "Diese Stadt"
+    },
     "cta": {
       "title": "Ihre Immobilie in {city} bewerten lassen",
       "text": "Wir verbinden die konkrete Mikrolage in {city} mit Zustand, Unterlagen und aktueller Zielgruppe.",
@@ -3919,6 +4240,7 @@
   },
   "BlogPost": {
     "backToOverview": "Alle Ratgeber",
+    "videoFallback": "Ihr Browser kann dieses Video nicht abspielen.",
     "toc": {
       "label": "Inhalt",
       "aria": "Inhaltsverzeichnis",
@@ -3966,25 +4288,121 @@
       "secondary": "Verkaufsprozess ansehen"
     }
   },
+  "PropertyDetailPage": {
+    "relatedEyebrow": "Ähnlich verkauft",
+    "relatedTitle": "Ähnlich verkauft / lokale Referenz",
+    "relatedText": "Archivierte Referenzobjekte aus derselben Stadt oder Region. Diese Bilder gehören nicht zur aktuellen Immobilie.",
+    "referenceLabel": "Archivierte Referenz"
+  },
   "ReferencesPage": {
     "metadata": {
       "title": "Referenzobjekte in Nürnberg, Fürth & Region",
-      "description": "15 ausgewählte Referenzimmobilien von Immonation aus Nürnberg, Fürth, Erlangen, Zirndorf und der Region – mit echten Objektfotos und Kundeninterviews."
+      "description": "29 ausgewählte Referenzimmobilien von Immonation aus Nürnberg, Fürth, Erlangen, Zirndorf und der Region – mit echten Objektfotos und freigegebenen Verkaufsfällen."
     },
-    "eyebrow": "Referenzen & Einblicke",
-    "title": "Immobilien, die wir bereits begleiten durften",
-    "lede": "Vom Apartment bis zum Mehrfamilienhaus: Diese Auswahl zeigt echte Immobilien aus unserer Region und die Bandbreite der Objekte, die Immonation professionell präsentiert und persönlich begleitet.",
+    "eyebrow": "Referenzen",
+    "title": "Verkauft mit Immonation",
+    "lede": "Ausgangslage → Herausforderung → Ergebnis. Wir zeigen bewusst nur ausgewählte Referenzen – echt, nachvollziehbar, mit Zustimmung unserer Kunden.",
+    "stories": {
+      "eyebrow": "Kundengeschichten",
+      "title": "Ausgangslage, Herausforderung, Ergebnis",
+      "text": "Drei freigegebene Verkaufsfälle mit konkreten Kennzahlen – von der Denkmalwohnung bis zur Terrassenwohnung, die nie online ging.",
+      "soldLabel": "Verkauft",
+      "viewSold": "Alle verkauften Objekte ansehen",
+      "note": "Weitere Referenzobjekte finden Sie in unserer Objektgalerie und im REVIER-Magazin. Vermarktungsdauer und Verkaufsergebnisse ergänzen wir erst nach dokumentierter Freigabe.",
+      "labels": {
+        "startingPoint": "Ausgangslage.",
+        "challenge": "Herausforderung.",
+        "result": "Ergebnis."
+      },
+      "items": [
+        {
+          "id": "frau-hartmann",
+          "type": "Eigentumswohnung · St. Johannis",
+          "location": "Nürnberg · 87 m² · Denkmalschutz",
+          "name": "Frau Hartmann",
+          "kpis": [
+            {
+              "value": "6 Wochen",
+              "label": "bis verkauft"
+            },
+            {
+              "value": "+6 %",
+              "label": "über Marktpreis"
+            },
+            {
+              "value": "saniert 2017",
+              "label": "Fischgräten-Eiche"
+            }
+          ],
+          "startingPoint": "Denkmalgeschützte Altbauwohnung in Nürnberg-St. Johannis – 87 m², 2017 hochwertig saniert, mit Fischgräten-Eichenparkett und hohen Decken, in denen Altbaucharme und moderner Wohnkomfort verschmelzen.",
+          "challenge": "Für eine Charakterimmobilie dieser Klasse galt es, genau die Käufer zu finden, die Denkmalschutz und gehobene Sanierung wirklich zu schätzen wissen.",
+          "result": "Mit hochwertiger, editorialer Vermarktung und gezielter Ansprache in nur sechs Wochen verkauft – zu 6 % über dem Marktwert.",
+          "quote": "Immonation hat den Charakter meiner Wohnung sofort verstanden und perfekt in Szene gesetzt – verkauft in sechs Wochen und sogar über meinem Wunschpreis."
+        },
+        {
+          "id": "herr-sippel",
+          "type": "Doppelhaushälfte · Erlangen",
+          "location": "Erlangen · 138 m² · geerbt, sanierungsbedürftig",
+          "name": "Herr Sippel",
+          "kpis": [
+            {
+              "value": "12 Wochen",
+              "label": "bis verkauft"
+            },
+            {
+              "value": "geerbt",
+              "label": "nach Leerstand"
+            },
+            {
+              "value": "388 m²",
+              "label": "Grund · Garage · Keller"
+            }
+          ],
+          "startingPoint": "Geerbte Doppelhaushälfte in Erlangen, die nach langjähriger Vermietung leer stand und sanierungsbedürftig war – 138 m² Wohnfläche, 388 m² Grundstück, Garage und Vollkeller.",
+          "challenge": "Bei einem Objekt mit Sanierungsstau ist der Interessentenkreis kleiner, und das erste Kaufinteresse ließ sich zunächst zurückhaltend an.",
+          "result": "Mit klarer Positionierung als Objekt mit Potenzial und gezielter Ansprache der richtigen Käuferschicht fruchtete die Strategie nach kurzem Anlauf – verkauft in zwölf Wochen.",
+          "quote": "Meine geerbte Doppelhaushälfte stand leer und war sanierungsbedürftig – Immonation hat trotzdem den passenden Käufer gefunden und alles für mich geregelt."
+        },
+        {
+          "id": "frau-berthold",
+          "type": "Terrassenwohnung · Fürth",
+          "location": "Fürth · 79 m² · Terrasse & Tiefgarage",
+          "name": "Frau Berthold",
+          "kpis": [
+            {
+              "value": "2 Wochen",
+              "label": "bis reserviert"
+            },
+            {
+              "value": "Angebotspreis",
+              "label": "voll erzielt"
+            },
+            {
+              "value": "ohne Inserat",
+              "label": "aus dem Netzwerk"
+            }
+          ],
+          "startingPoint": "Terrassenwohnung in Fürth – 79 m², hochwertige Einbauküche, Tiefgaragenstellplatz und 16 m² Terrasse. Zunächst versuchte Frau Berthold den Verkauf allein und war frustriert.",
+          "challenge": "Nach dem gescheiterten Alleingang schnell den passenden Käufer finden – ohne langen Vermarktungsprozess.",
+          "result": "Über einen bereits vorgemerkten Suchkunden war die Wohnung in zwei Wochen reserviert – noch bevor sie online ging, verkauft zum vollen Angebotspreis.",
+          "quote": "Alleine kam ich nicht weiter – bei Immonation war meine Wohnung in zwei Wochen verkauft, zum vollen Preis und ohne dass sie je online stand."
+        }
+      ]
+    },
     "proof": {
       "title": "Ausgewählte Immobilien aus dem vorhandenen Referenzbestand",
       "text": "Wir zeigen bewusst nur belegbare Objektarten, Orte und freigegebene Bilder. Vermarktungsdauer, Nachfragezahlen und Verkaufsergebnisse ergänzen wir erst nach dokumentierter Freigabe."
     },
     "gallery": {
-      "eyebrow": "15 Referenzobjekte",
+      "eyebrow": "29 Referenzobjekte",
       "title": "So unterschiedlich wie die Menschen dahinter",
       "text": "Jede Immobilie verlangt eine eigene Positionierung. Die Auswahl reicht von Wohnungen und Einfamilienhäusern bis zu Anlage- und Gewerbeobjekten in der Metropolregion.",
       "referenceLabel": "Immonation Referenz",
       "allLabel": "Alle Objekte",
-      "filterLabel": "Referenzen nach Objektart filtern"
+      "filterLabel": "Referenzen nach Stadt und Objektart filtern",
+      "cityFilterLabel": "Stadt",
+      "typeFilterLabel": "Objektart",
+      "allCitiesLabel": "Alle Städte"
     },
     "tour": {
       "eyebrow": "Virtuelle Besichtigung",
@@ -4104,14 +4522,136 @@
         "type": "Eigentumswohnung",
         "location": "Zirndorf",
         "alt": "Helle Gartenwohnung in Zirndorf"
+      },
+      {
+        "id": "adelsdorf-reuthseering",
+        "title": "Reihenmittelhaus in Adelsdorf",
+        "type": "Reihenmittelhaus",
+        "location": "Adelsdorf",
+        "alt": "Referenzfoto eines Reihenmittelhauses in Adelsdorf"
+      },
+      {
+        "id": "nuernberg-willy-wunder",
+        "title": "Doppelhaushälfte in Nürnberg",
+        "type": "Doppelhaushälfte",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto einer Doppelhaushälfte in Nürnberg"
+      },
+      {
+        "id": "nuernberg-neutrograben",
+        "title": "Eigentumswohnung in Nürnbergs Altstadt",
+        "type": "Eigentumswohnung",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto einer Eigentumswohnung in Nürnbergs Altstadt"
+      },
+      {
+        "id": "nuernberg-zuericher-52",
+        "title": "Eigentumswohnung in Nürnberg Südost",
+        "type": "Eigentumswohnung",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto einer Eigentumswohnung in Nürnberg Südost"
+      },
+      {
+        "id": "nuernberg-zuericher-40",
+        "title": "Eigentumswohnung in Nürnberg Südost",
+        "type": "Eigentumswohnung",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto einer Eigentumswohnung in Nürnberg Südost"
+      },
+      {
+        "id": "nuernberg-haderastrasse",
+        "title": "Reihenmittelhaus in Nürnberg",
+        "type": "Reihenmittelhaus",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto eines Reihenmittelhauses in Nürnberg"
+      },
+      {
+        "id": "nuernberg-woernitzstrasse",
+        "title": "Reihenmittelhaus in Nürnberg",
+        "type": "Reihenmittelhaus",
+        "location": "Nürnberg",
+        "alt": "Referenzfoto eines Reihenmittelhauses in Nürnberg"
+      },
+      {
+        "id": "schwabach-abenberger",
+        "title": "Eigentumswohnung in Schwabach",
+        "type": "Eigentumswohnung",
+        "location": "Schwabach",
+        "alt": "Referenzfoto einer Eigentumswohnung in Schwabach"
+      },
+      {
+        "id": "zirndorf-carl-benz",
+        "title": "Reihenmittelhaus in Zirndorf",
+        "type": "Reihenmittelhaus",
+        "location": "Zirndorf",
+        "alt": "Referenzfoto eines Reihenmittelhauses in Zirndorf"
+      },
+      {
+        "id": "zirndorf-gutenbergstrasse",
+        "title": "Reihenmittelhaus in Zirndorf",
+        "type": "Reihenmittelhaus",
+        "location": "Zirndorf",
+        "alt": "Referenzfoto eines Reihenmittelhauses in Zirndorf"
+      },
+      {
+        "id": "zirndorf-homburger",
+        "title": "Einfamilienhaus in Zirndorf",
+        "type": "Einfamilienhaus",
+        "location": "Zirndorf",
+        "alt": "Referenzfoto eines Einfamilienhauses in Zirndorf"
+      },
+      {
+        "id": "zirndorf-marienbader",
+        "title": "Einfamilienhaus in Zirndorf",
+        "type": "Einfamilienhaus",
+        "location": "Zirndorf",
+        "alt": "Referenzfoto eines Einfamilienhauses in Zirndorf"
+      },
+      {
+        "id": "herzogenaurach-schuetzengraben",
+        "title": "Einfamilienhaus in Herzogenaurach",
+        "type": "Einfamilienhaus",
+        "location": "Herzogenaurach",
+        "alt": "Referenzfoto eines Einfamilienhauses in Herzogenaurach"
+      },
+      {
+        "id": "hagenbuechach-hausaeckern",
+        "title": "Einfamilienhaus in Hagenbüchach",
+        "type": "Einfamilienhaus",
+        "location": "Hagenbüchach",
+        "alt": "Referenzfoto eines Einfamilienhauses in Hagenbüchach"
       }
     ]
+  },
+  "PropertyTour": {
+    "eyebrow": "Objektvideo",
+    "title": "Ein vollständiges Objektvideo, nicht nur der Ausschnitt",
+    "text": "Kurze Clips zeigen Ausschnitte. Hier läuft der komplette Schnitt aus einer Vermarktung: ein Rundgang von der Haustür über Küche, Wohnraum und Treppe bis auf die Terrasse — im Hochformat geschnitten, wo sich in den ersten Sekunden entscheidet, ob jemand weiterschaut.",
+    "badge": "Objektvideo",
+    "videoTitle": "Objektvideo",
+    "videoFallback": "Ihr Browser kann dieses Objektvideo nicht abspielen.",
+    "caption": "Originalschnitt aus der Vermarktung. Ton: Musik, kein gesprochener Kommentar.",
+    "caseLink": "Referenzfall ansehen",
+    "facts": {
+      "type": "Objektart",
+      "location": "Ort",
+      "format": "Format",
+      "formatValue": "9:16 Hochformat",
+      "length": "Länge",
+      "lengthValue": "{seconds} Sekunden"
+    }
   },
   "SoldVideos": {
     "eyebrow": "Verkauft",
     "title": "Verkauft in der Metropolregion Nürnberg",
     "text": "Jeder Clip steht für eine abgeschlossene Vermarktung — vom Reihenhaus in Adelsdorf bis zum Gewerbegrundstück in Zirndorf. Die kurzen Aufnahmen entstehen am Tag der Übergabe und zeigen, wo wir tatsächlich verkaufen.",
     "soldLabel": "Verkauft",
+    "viewAll": "Alle verkauften Objekte ansehen",
+    "tileLink": "Verkauft: {type} in {town} – Details ansehen",
+    "carouselLabel": "Verkaufte Objekte",
+    "previousVideo": "Vorheriges Video",
+    "nextVideo": "Nächstes Video",
+    "videoSlide": "Video",
     "alt": "Verkauft: {type} in {town}",
     "types": {
       "etw": "Eigentumswohnung",
@@ -4148,56 +4688,55 @@
   },
   "Footer": {
     "claim": "Ihr Partner für Immobilien in Zirndorf, Nürnberg, Fürth, Erlangen und Umgebung.",
-    "stats": [
-      {
-        "value": "60 km",
-        "label": "Beratungsradius um Zirndorf"
-      },
-      {
-        "value": "6–12",
-        "label": "Wochen typische Vermarktungsdauer"
-      },
-      {
-        "value": "360°",
-        "label": "Rundgang bei jedem Objekt"
-      },
-      {
-        "value": "300+",
-        "label": "Bewertungen auf 10 Plattformen"
-      }
-    ],
+    "badges": {
+      "immowelt": "immowelt Business Partner 24–26",
+      "trademark": "EU-Marke 019283377",
+      "maklersiegerAlt": "Siegel „Verifizierter Makler“ von maklersieger.de für die Immonation GmbH",
+      "maklersiegelAlt": "Siegel von Makler-Siegel.de für die Immonation GmbH"
+    },
     "sell": {
       "title": "Verkaufen",
+      "sell": "Immobilie verkaufen",
       "valuation": "Immobilienbewertung",
+      "floorPlans": "Wohnfläche & Grundrisse",
+      "situations": "Verkaufsanlässe",
+      "references": "Referenzen",
+      "buyerSearch": "Aktive Suchkunden",
+      "byType": "Nach Objektart",
       "house": "Haus verkaufen",
       "apartment": "Wohnung verkaufen",
       "land": "Grundstück verkaufen",
       "apartmentBuilding": "Mehrfamilienhaus verkaufen"
     },
     "buy": {
-      "title": "Kaufen",
+      "title": "Kaufen & Service",
       "listings": "Immobilienangebote",
-      "searchRequest": "Suchauftrag",
+      "virtualTour": "Virtuelle Besichtigung",
       "financing": "Finanzierung",
-      "buyerAdvice": "Kaufberatung"
+      "ai": "Immobilien-KI",
+      "appointment": "Terminbuchung",
+      "downloads": "Downloads",
+      "faq": "FAQ"
     },
     "company": {
       "title": "Unternehmen",
-      "about": "Über uns",
-      "references": "Referenzen",
-      "guide": "Ratgeber",
-      "faq": "FAQ",
+      "about": "Wer ist Immonation?",
+      "group": "Unternehmensgruppe",
+      "awards": "Auszeichnungen",
+      "locations": "Städte & Stadtteile",
+      "reviews": "Bewertungen",
+      "engagement": "Engagement",
       "careers": "Karriere",
-      "referrers": "Tippgeber",
-      "downloads": "Downloads",
-      "contact": "Kontakt"
+      "guide": "News & Ratgeber",
+      "contact": "Kontakt",
+      "directions": "Öffnungszeiten & Anfahrt",
+      "referrers": "Tippgeber"
     },
     "copyright": "© {year} Immonation GmbH · Zirndorf",
-    "rights": "Alle Rechte vorbehalten.",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "terms": "AGB",
-    "withdrawal": "Widerruf"
+    "backToTop": "Zurück nach oben"
   },
   "LegalWithdrawal": {
     "metadata": {
@@ -4262,6 +4801,7 @@
     },
     "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
     "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
+    "source": "Datenquelle: eigene Vermittlungsdaten der Immonation GmbH.",
     "jsonLd": {
       "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
     },

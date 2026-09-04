@@ -22,6 +22,7 @@ const COPY = {
     description: `${GLOSSARY_ENTRIES.length} Immobilienbegriffe für Eigentümer und Käufer verständlich erklärt.`,
     all: 'Alle',
     filter: 'Begriffe nach Anfangsbuchstaben filtern',
+    filterHint: 'Buchstaben antippen zum Filtern.',
     countSingular: 'Begriff',
     countPlural: 'Begriffe',
     ctaTitle: 'Ein Begriff reicht für Ihre Entscheidung nicht aus?',
@@ -36,6 +37,7 @@ const COPY = {
     description: `${GLOSSARY_ENTRIES.length} property terms explained clearly for owners and buyers.`,
     all: 'All',
     filter: 'Filter terms by first letter',
+    filterHint: 'Tap a letter to filter.',
     countSingular: 'term',
     countPlural: 'terms',
     ctaTitle: 'Need more than a definition to make your decision?',
@@ -98,6 +100,7 @@ export default async function GlossaryPage({ params }: { params: Promise<{ local
         entries={entries}
         allLabel={copy.all}
         filterLabel={copy.filter}
+        filterHint={copy.filterHint}
         countSingular={copy.countSingular}
         countPlural={copy.countPlural}
       />

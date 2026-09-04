@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import { CtaBand } from '@/components/site/templates/cta-band'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
 import { FaqSection, type FaqItem } from '@/components/site/templates/faq-section'
 import {
   ReviewSlideshow,
@@ -17,6 +18,7 @@ import {
   listTestimonialReviews,
 } from '@/lib/content/google-reviews'
 import { breadcrumbList, faqPage } from '@/lib/seo/jsonld'
+import { listReferencesByPropertyType } from '@/lib/content/references'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
@@ -57,6 +59,7 @@ export default async function TestimonialsPage({
 
   const language = locale === 'en' ? 'en' : 'de'
   const t = await getTranslations('TestimonialsPage')
+  const referencesT = await getTranslations('ReferencesPage')
   const { reviews, live, rating, reviewCount } = await listTestimonialReviews(language)
   const faq = t.raw('faq.items') as FaqItem[]
   const publicPath = localizePath('/testimonials', language)
@@ -132,6 +135,15 @@ export default async function TestimonialsPage({
           </p>
         </div>
       </section>
+
+      <ReferenceProofRail
+        references={listReferencesByPropertyType('house')}
+        locale={language}
+        eyebrow={referencesT('gallery.eyebrow')}
+        title={referencesT('proof.title')}
+        text={referencesT('proof.text')}
+        referenceLabel={referencesT('gallery.referenceLabel')}
+      />
 
       <FaqSection title={t('faq.title')} items={faq} />
       <CtaBand

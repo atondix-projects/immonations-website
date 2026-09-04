@@ -11,9 +11,11 @@ import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
+import { listReferencesByCity } from '@/lib/content/references'
 import { breadcrumbList, faqPage, localBusiness, OFFICE_OPENING_HOURS } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -62,6 +64,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const steps = t.raw('steps.items') as ContactStep[]
   const faqItems = toFaqSectionItems(selectFaqsForPage(locale, 'contact'))
   const pageUrl = `${SITE.url}/${locale}${localizePath('/contact', locale)}`
+  const referencesT = await getTranslations('ReferencesPage')
 
   const channels = [
     {
@@ -204,6 +207,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           sucht den letzten Anstoß für die Kontaktaufnahme. `bg-background` hält
           den Wechsel zur vorangehenden Anfahrt-Sektion sichtbar. */}
       <TestimonialSpotlight id="viktor-emter" className="bg-background" />
+
+      <ReferenceProofRail
+        references={listReferencesByCity('zirndorf')}
+        locale={locale}
+        eyebrow={referencesT('gallery.eyebrow')}
+        title={referencesT('proof.title')}
+        text={referencesT('proof.text')}
+        referenceLabel={referencesT('gallery.referenceLabel')}
+      />
 
       <FaqSection title={t('faqTitle')} items={faqItems} className="bg-muted/45" />
 

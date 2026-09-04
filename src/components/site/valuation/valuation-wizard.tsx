@@ -49,7 +49,7 @@ export function ValuationWizard() {
   const searchParams = useSearchParams()
 
   // Der Query-Parameter ist ungeprüfte Eingabe — nur bekannte IDs zählen.
-  const seededType = searchParams.get('type')
+  const seededType = searchParams?.get('type')
   const initialType: PropertyTypeId | null = isPropertyTypeId(seededType) ? seededType : null
 
   const [propertyType, setPropertyType] = useState<PropertyTypeId | null>(initialType)
@@ -150,14 +150,11 @@ export function ValuationWizard() {
             type="button"
             onClick={() => {
               setSubmitted(false)
-              setStep(0)
-              setPropertyType(null)
-              setAnswers({})
               setErrors({})
             }}
             className="inline-flex min-h-12 items-center px-2 text-sm font-semibold text-neutral-700 underline underline-offset-4"
           >
-            {t('restart')}
+            {t('edit')}
           </button>
         </div>
         <p className="text-muted-foreground mt-4 text-xs leading-relaxed">{t('localOnly')}</p>

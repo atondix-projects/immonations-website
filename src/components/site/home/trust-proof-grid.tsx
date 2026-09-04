@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { MousePointer2, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import ImageTrail, { ImageTrailItem } from '@/components/fancy/image/image-trail'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { cn } from '@/lib/utils'
@@ -54,7 +54,6 @@ export type TrustProofExample =
 export type TrustProofItem = {
   value: string
   label: string
-  trailHint: string
   exampleLabel: string
   examples: TrustProofExample[]
 }
@@ -152,16 +151,16 @@ function TrailCardBody({ example }: { example: TrustProofExample }) {
 
 export function TrustProofGrid({ items }: { items: TrustProofItem[] }) {
   return (
-    <dl className="border-border mt-14 grid grid-cols-2 border-y md:mt-20 lg:grid-cols-4">
+    <dl className="border-border mt-10 grid grid-cols-2 border-y sm:grid-cols-4 md:mt-14">
       {items.map((item, index) => (
         <div
           key={item.label}
           className={cn(
-            'group relative min-h-52 overflow-visible p-5 lg:min-h-56 lg:p-7',
+            'relative overflow-visible px-4 py-6 sm:px-5 sm:py-7 lg:px-7',
             index < 2 && 'border-border border-b',
             index % 2 === 0 && 'border-border border-r',
-            'lg:border-r lg:border-b-0',
-            index === items.length - 1 && 'lg:border-r-0',
+            'sm:border-r sm:border-b-0',
+            index === items.length - 1 && 'sm:border-r-0',
           )}
         >
           <ImageTrail
@@ -197,41 +196,20 @@ export function TrustProofGrid({ items }: { items: TrustProofItem[] }) {
             ))}
           </ImageTrail>
 
-          {item.examples[0] ? (
-            <div
-              aria-hidden="true"
-              className="absolute top-4 right-4 size-16 overflow-hidden rounded-lg shadow-[0_8px_24px_-12px_rgba(0,0,0,0.45),0_0_0_1px_rgba(0,0,0,0.08)] [@media(hover:hover)]:hidden"
-            >
-              <Image
-                src={item.examples[0].thumb ?? item.examples[0].image}
-                alt=""
-                fill
-                sizes="64px"
-                className="object-cover object-top outline -outline-offset-1 outline-black/10"
+          <div className="pointer-events-none relative z-10">
+            <dd>
+              <AnimatedNumber
+                value={item.value}
+                delay={index * 0.08}
+                className="font-serif text-[1.85rem] leading-none font-bold tracking-[-0.03em] whitespace-nowrap md:text-[2.15rem]"
               />
-            </div>
-          ) : null}
-
-          <div className="pointer-events-none relative z-10 flex h-full min-h-42 flex-col justify-between">
-            <span className="text-muted-foreground group-hover:text-brand-700 inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.12em] uppercase transition-colors duration-200 motion-reduce:transition-none">
-              <MousePointer2 aria-hidden="true" className="size-3" strokeWidth={1.8} />
-              {item.trailHint}
+            </dd>
+            <dt className="mt-2 max-w-[22ch] text-[13px] leading-snug font-bold md:text-sm">
+              {item.label}
+            </dt>
+            <span className="sr-only">
+              {item.exampleLabel}: {item.examples.map((example) => example.srLabel).join(', ')}
             </span>
-            <div>
-              <dd>
-                <AnimatedNumber
-                  value={item.value}
-                  delay={index * 0.08}
-                  className="font-serif text-3xl font-medium tracking-[-0.02em] md:text-[2.8rem]"
-                />
-              </dd>
-              <dt className="text-muted-foreground mt-2 max-w-[20ch] text-xs leading-snug font-semibold md:text-sm">
-                {item.label}
-              </dt>
-              <span className="sr-only">
-                {item.exampleLabel}: {item.examples.map((example) => example.srLabel).join(', ')}
-              </span>
-            </div>
           </div>
         </div>
       ))}

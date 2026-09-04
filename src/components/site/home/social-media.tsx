@@ -21,8 +21,9 @@ const FEATURED_REELS = [
   },
 ] as const
 
-/** Dunkles Küchenmotiv, ohne die Grafik der Verkaufs-Clips. */
-const TIKTOK_GUIDE_POSTER = '/images/process/step-01.webp'
+/** Anonymisiertes Stimmungsbild statt eines echten Referenzobjekts, da der Kanal-Teaser
+ * keinem bestimmten Verkaufsfall zugeordnet ist. */
+const TIKTOK_GUIDE_POSTER = '/images/generic/generic-living-dining-staircase.webp'
 
 const REEL_ITEM = 'w-[min(13.75rem,72vw)] shrink-0 snap-start sm:w-auto sm:min-w-0'
 const REEL_SURFACE = 'aspect-[9/16] w-full overflow-hidden rounded-2xl'
@@ -34,7 +35,11 @@ const REEL_SURFACE = 'aspect-[9/16] w-full overflow-hidden rounded-2xl'
 export async function SocialMedia() {
   const t = await getTranslations('Home.social')
   const tVideo = await getTranslations('VideoDialog')
-  const videoLabels = { play: tVideo('play'), close: tVideo('close') }
+  const videoLabels = {
+    play: tVideo('play'),
+    close: tVideo('close'),
+    transcript: tVideo('transcript'),
+  }
 
   return (
     <section

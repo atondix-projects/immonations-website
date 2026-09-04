@@ -9,11 +9,12 @@ import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
 import { breadcrumbList, itemList } from '@/lib/seo/jsonld'
 import { SITE } from '@/lib/seo/site'
-import { referenceImage, type ReferenceItem } from '@/lib/content/references'
+import { listLocalizedReferences, listAllReferences } from '@/lib/content/references'
 import { JsonLd } from '@/components/site/json-ld'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { ReferenceGallery } from '@/components/site/references/reference-gallery'
+import { ReferenceStoryList } from '@/components/site/references/reference-story-list'
 import { SoldVideoReel } from '@/components/site/sold/sold-video-reel'
 import { listSoldVideos } from '@/lib/content/sold-videos'
 import { BellVideoWall } from '@/components/site/sold/bell-video-wall'
@@ -53,8 +54,10 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
   const t = await getTranslations('ReferencesPage')
   const nav = await getTranslations('Nav')
   const soldT = await getTranslations('SoldVideos')
-  const items = t.raw('items') as ReferenceItem[]
+  const records = listAllReferences()
+  const items = listLocalizedReferences(locale)
   const pagePath = localizePath('/references', locale)
+  const storyLocale = locale as 'de' | 'en'
 
   return (
     <main className="bg-background">
@@ -68,7 +71,7 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
             items.map((item) => ({
               name: item.title,
               description: `${item.type}, ${item.location}`,
-              image: `${SITE.url}${referenceImage(item.id)}`,
+              image: `${SITE.url}${item.image}`,
               url: `${SITE.url}/${locale}${localizePath(`/references/${item.id}`, locale)}`,
             })),
           ),
@@ -77,9 +80,13 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
 
       <PageHero eyebrow={t('eyebrow')} title={t('title')} lede={t('lede')} />
 
+      <ReferenceStoryList locale={storyLocale} />
+
       <section className="border-border border-y bg-neutral-950 py-9 text-white">
         <div className="mx-auto grid w-full max-w-[1240px] gap-7 px-6 md:grid-cols-[auto_1fr] md:items-center lg:px-10">
-          <span className="font-serif text-5xl leading-none font-semibold tabular-nums">15</span>
+          <span className="font-serif text-5xl leading-none font-semibold tabular-nums">
+            {records.length}
+          </span>
           <div>
             <h2 className="text-base font-semibold">{t('proof.title')}</h2>
             <p className="mt-1 max-w-[72ch] text-sm leading-relaxed text-neutral-400">
@@ -109,6 +116,9 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
             referenceLabel={t('gallery.referenceLabel')}
             allLabel={t('gallery.allLabel')}
             filterLabel={t('gallery.filterLabel')}
+            cityFilterLabel={t('gallery.cityFilterLabel')}
+            allCitiesLabel={t('gallery.allCitiesLabel')}
+            typeFilterLabel={t('gallery.typeFilterLabel')}
           />
         </div>
       </section>
@@ -153,6 +163,7 @@ export default async function ReferencesPage({ params }: { params: Promise<{ loc
         eyebrow={soldT('eyebrow')}
         title={soldT('title')}
         text={soldT('text')}
+        showCta={false}
       />
 
       {/* Verkaufsglocke — gesprochene Ansage nach jedem Abschluss */}

@@ -21,6 +21,7 @@ export function CatalogPage({
   sections,
   faq,
   preview,
+  extra,
   cta,
 }: {
   eyebrow: string
@@ -30,6 +31,8 @@ export function CatalogPage({
   sections: CatalogSection[]
   faq?: FaqItem[]
   preview?: ReactNode
+  /** Seitenspezifischer Abschnitt unterhalb der Katalogsektionen. */
+  extra?: ReactNode
   cta: { title: string; text: string; label: string; href: LinkHref }
 }) {
   return (
@@ -42,31 +45,38 @@ export function CatalogPage({
       </section>
       {preview}
       <section className="py-16 md:py-24">
-        <div className="mx-auto grid w-full max-w-[1240px] gap-px bg-neutral-900/10 px-6 md:grid-cols-3 lg:px-10">
-          {sections.map((section, index) => (
-            <article key={section.title} className="bg-background p-7 md:p-9">
-              <span className="text-brand-700 font-mono text-xs tabular-nums">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold">
-                {section.title}
-              </h2>
-              <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">
-                {section.text}
-              </p>
-              {section.href ? (
-                <Link
-                  href={section.href}
-                  className="text-brand-700 mt-7 inline-flex items-center gap-2 text-sm font-semibold"
-                >
+        {/* Das Trennraster liegt bewusst auf einem inneren Element: Trägt der
+            Container den Seitenabstand und die Hairline-Fläche gemeinsam, malt
+            `bg-neutral-900/10` in die Polsterung und die Sektion bekommt links
+            und rechts je einen grauen Balken neben den Karten. */}
+        <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+          <div className="border-border grid gap-px border bg-neutral-900/10 md:grid-cols-3">
+            {sections.map((section, index) => (
+              <article key={section.title} className="bg-background flex flex-col p-7 md:p-9">
+                <span className="text-brand-700 font-mono text-xs tabular-nums">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold text-balance">
                   {section.title}
-                  <ArrowUpRight className="size-4" aria-hidden="true" />
-                </Link>
-              ) : null}
-            </article>
-          ))}
+                </h2>
+                <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">
+                  {section.text}
+                </p>
+                {section.href ? (
+                  <Link
+                    href={section.href}
+                    className="text-brand-700 mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold"
+                  >
+                    {section.title}
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </Link>
+                ) : null}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
+      {extra}
       {faq?.length ? <FaqSection title="FAQ" items={faq} /> : null}
       <CtaBand title={cta.title} text={cta.text} primary={{ label: cta.label, href: cta.href }} />
     </div>

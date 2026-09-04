@@ -11,7 +11,6 @@ export const PATHNAMES = {
   '/buyer-search': { de: '/suchkunden', en: '/active-buyers' },
   '/virtual-tour': { de: '/virtuell', en: '/virtual-viewing' },
   '/ai': { de: '/ki', en: '/ai' },
-  '/client-area': { de: '/kundenbereich', en: '/client-area' },
   '/sale-warning-signs': {
     de: '/warnsignale-immobilienverkauf',
     en: '/property-sale-warning-signs',

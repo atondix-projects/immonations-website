@@ -12,14 +12,18 @@
 - [KI-Visualisierung und Home Staging](https://www.immonationgmbh.de/de/ki-visualisierung-home-staging) · [AI visualisation and home staging](https://www.immonationgmbh.de/en/ai-visualisation-home-staging)
 - [Aktuelle Angebote](https://www.immonationgmbh.de/de/angebote) · [Current properties](https://www.immonationgmbh.de/en/properties)
 - [Immobilienpreise und Trends](https://www.immonationgmbh.de/de/marktdaten) · [Property prices and trends](https://www.immonationgmbh.de/en/market-data)
+- [Immobilienmarkt Übersicht](https://www.immonationgmbh.de/de/markt) · [Property market overview](https://www.immonationgmbh.de/en/property-market)
 - [Städte und Stadtteile](https://www.immonationgmbh.de/de/staedte) · [Cities and districts](https://www.immonationgmbh.de/en/cities)
 - [Bodenrichtwert](https://www.immonationgmbh.de/de/bodenrichtwert) · [Standard land value](https://www.immonationgmbh.de/en/land-value)
 - [Ratgeber und News](https://www.immonationgmbh.de/de/news) · [Guides and news](https://www.immonationgmbh.de/en/news)
 - [Immobilienlexikon A–Z](https://www.immonationgmbh.de/de/lexikon) · [Property glossary A–Z](https://www.immonationgmbh.de/en/glossary)
 - [FAQ](https://www.immonationgmbh.de/de/faq) · [FAQ EN](https://www.immonationgmbh.de/en/faq)
 - [Über Immonation](https://www.immonationgmbh.de/de/ueber) · [About Immonation](https://www.immonationgmbh.de/en/about)
+- [EU-Marken-Zertifikat Immonation (PDF)](https://www.immonationgmbh.de/downloads/Zertifikat-Marke-Immonation.pdf)
 - [Partnermakler](https://www.immonationgmbh.de/de/partnermakler) · [Partner agents](https://www.immonationgmbh.de/en/partner-agents)
 - [Referenzen](https://www.immonationgmbh.de/de/referenzen) · [References](https://www.immonationgmbh.de/en/references)
+- [Bewertungen](https://www.immonationgmbh.de/de/bewertungen) · [Reviews](https://www.immonationgmbh.de/en/reviews)
+- [Engagement](https://www.immonationgmbh.de/de/engagement) · [Community engagement](https://www.immonationgmbh.de/en/engagement)
 - [Kontakt](https://www.immonationgmbh.de/de/kontakt) · [Contact](https://www.immonationgmbh.de/en/contact)
 - [HTML-Sitemap](https://www.immonationgmbh.de/de/sitemap) · [XML-Sitemap](https://www.immonationgmbh.de/sitemap.xml)
 
@@ -34,7 +38,9 @@
 - Einzelne Stimmen: `/de/stimme/{slug}` ↔ `/en/testimonial/{slug}`
 - Referenzgeschichten: `/de/referenzen/{slug}` ↔ `/en/references/{slug}`
 
-`/kundenbereich` ist reserviert und nicht veröffentlicht. `/seo` ist nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.
+Der Referenz-Hub umfasst 29 archivierte Referenzobjekte aus 13 Orten. Jede Referenz ist nach Stadt, Objektart und Merkmal eingeordnet und besitzt drei optimierte Bilder, bilinguale Detailinhalte sowie eine getrennte Kennzeichnung gegenüber aktuellen Angeboten. Exakte Straßenadressen, nicht freigegebene Kennzahlen und ungeklärte Ergebnisvarianten werden nicht veröffentlicht.
+
+`/seo` ist nicht indexierbar. Die 103 Stadtteilpfade sind technisch vorbereitet, bleiben aber bis zur Prüfung individueller lokaler Fakten auf `noindex` und außerhalb der Sitemaps. Alle veröffentlichten Seiten besitzen kanonische URLs, reziproke Sprachalternativen und strukturierte Daten.
 
 ## Auszeichnungen
 

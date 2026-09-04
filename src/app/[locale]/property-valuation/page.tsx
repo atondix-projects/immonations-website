@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { FaqHubLink } from '@/components/site/faq-category-nav'
 import { JsonLd } from '@/components/site/json-ld'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
 import {
   ValuationPage,
   type ValuationFeature,
@@ -12,6 +13,7 @@ import {
 } from '@/components/site/templates/valuation-page'
 import { routing } from '@/i18n/routing'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
+import { listReferencesByPropertyType } from '@/lib/content/references'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -63,6 +65,7 @@ export default async function PropertyValuationPage({
   const faqItems = toFaqSectionItems(selectFaqsForPage(locale, 'property-valuation'))
   const publicPath = localizePath('/property-valuation', locale)
   const url = `${SITE.url}/${locale}${publicPath}`
+  const referencesT = await getTranslations('ReferencesPage')
 
   return (
     <>
@@ -101,6 +104,17 @@ export default async function PropertyValuationPage({
           },
           secondary: { label: t('cta.secondaryLabel'), href: '/contact' },
         }}
+      />
+      <ReferenceProofRail
+        references={[
+          ...listReferencesByPropertyType('house'),
+          ...listReferencesByPropertyType('apartment'),
+        ]}
+        locale={locale}
+        eyebrow={referencesT('gallery.eyebrow')}
+        title={referencesT('proof.title')}
+        text={referencesT('proof.text')}
+        referenceLabel={referencesT('gallery.referenceLabel')}
       />
     </>
   )

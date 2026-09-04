@@ -18,7 +18,11 @@
     "test:e2e": "next build && playwright test",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,mjs,json,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mjs,json,css}\"",
-    "generate:withdrawal-pdf": "node scripts/generate-withdrawal-form-pdf.mjs"
+    "generate:withdrawal-pdf": "node scripts/generate-withdrawal-form-pdf.mjs",
+    "brand:assets": "node scripts/generate-brand-assets.mjs",
+    "references:derivatives": "node scripts/generate-reference-derivatives.mjs",
+    "references:coverage": "node scripts/reference-coverage-report.mjs",
+    "test:references": "vitest run tests/contracts/reference-catalog.test.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
@@ -40,8 +44,8 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
+    "@types/node": "20.19.43",
+    "@types/react": "19.2.18",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",

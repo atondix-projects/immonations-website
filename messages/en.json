@@ -35,7 +35,7 @@
       "floorPlans": "Floor plans & living area",
       "floorPlansDesc": "Lender-ready plans, surveyed by our in-house engineer.",
       "references": "Reference properties",
-      "referencesDesc": "15 selected properties from our region.",
+      "referencesDesc": "29 selected properties from our region.",
       "buying": "Buy a property",
       "buyingDesc": "Current listings from the region.",
       "financing": "Financing",
@@ -69,12 +69,20 @@
   "AboutPage": {
     "metadata": {
       "title": "About Immonation",
-      "description": "Learn how Immonation GmbH supports owners and buyers in Zirndorf, Nuremberg, Fürth, and Erlangen."
+      "description": "Learn how Immonation GmbH and the Immonation company group support owners and buyers in Zirndorf, Nuremberg, Fürth, and Erlangen."
     },
     "eyebrow": "Immonation GmbH",
     "title": "Real-estate advisory with local roots and digital reach.",
     "lede": "Immonation supports owners, buyers, and investors in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region with valuation, marketing, and personal advisory.",
     "body": "Our standard is a transparent process with defensible numbers, clear communication, and marketing that does more than place a standard listing.",
+    "trademark": {
+      "eyebrow": "Trademark protection",
+      "title": "Immonation is registered as a European Union trade mark.",
+      "text": "The Immonation mark is registered with the European Union Intellectual Property Office (EUIPO) under No. 019283377. The registration dates from 15 March 2026 and covers real-estate and renovation services in classes 36 and 37.",
+      "registrationLabel": "EUIPO registration",
+      "registration": "No. 019283377 · registered 15 March 2026",
+      "downloadLabel": "Download certificate as PDF"
+    },
     "values": {
       "items": [
         {
@@ -90,6 +98,42 @@
           "text": "One dedicated contact guides you from the first conversation to the notary appointment."
         }
       ]
+    },
+    "companyProfile": {
+      "eyebrow": "Who we are",
+      "title": "Owner-managed since 2017. Not a franchise.",
+      "text": "Regional strength across Nuremberg and the metropolitan area, an established network, and internal training: Immonation combines personal responsibility with a professional marketing structure.",
+      "logoAlt": "Immonation GmbH",
+      "resourceTitle": "Company resources",
+      "resourceText": "For more insight into our work, our region, and property sales, explore the magazine and downloads.",
+      "resourceLink": "Explore magazine & resources",
+      "stats": [
+        {
+          "value": "60+",
+          "label": "property sales per year"
+        },
+        {
+          "value": "€30m",
+          "label": "annual transaction volume"
+        },
+        {
+          "value": "4.9 / 5",
+          "label": "from 230 Google reviews"
+        },
+        {
+          "value": "60 km",
+          "label": "regional reach"
+        }
+      ]
+    },
+    "group": {
+      "eyebrow": "Company group",
+      "title": "Four companies. Clear responsibilities.",
+      "text": "Immonation GmbH is part of a group of four legally independent companies. Brokerage, holding, acquisition and project development, and revitalisation are clearly separated.",
+      "link": "Explore the company group",
+      "imageAlt": "Northdata network diagram showing Immonation GmbH and connected companies",
+      "caption": "Publicly displayed relationships in the company network.",
+      "sourceLabel": "Source: Northdata"
     },
     "partnerTrack": {
       "title": "Selected partner agents extend our team",
@@ -471,7 +515,8 @@
   },
   "VideoDialog": {
     "play": "Play video",
-    "close": "Close video"
+    "close": "Close video",
+    "transcript": "Show transcript"
   },
   "Testimonials": {
     "spotlightEyebrow": "Customer story",
@@ -622,7 +667,7 @@
     "back": "Back",
     "next": "Continue",
     "finish": "Request my analysis",
-    "restart": "Start over",
+    "edit": "Edit answers",
     "optionalBadge": "optional",
     "optionalStepNote": "Everything in this step is voluntary. It sharpens the range — you can skip it at any time.",
     "skip": "Skip",
@@ -1473,6 +1518,14 @@
     "eyebrow": "Resources",
     "title": "Free documents. A magazine to read. A handbook on request.",
     "lede": "Unlock handover and tenancy templates with a short email check. The REVIER magazine is free to read; we send the selling handbook personally by email.",
+    "trademark": {
+      "eyebrow": "Trademark protection",
+      "title": "The certificate for Immonation’s registered trade mark.",
+      "text": "Find the registration certificate for the Immonation European Union trade mark here. EUIPO lists the mark under No. 019283377, registered on 15 March 2026 for real-estate and renovation services in classes 36 and 37.",
+      "registrationLabel": "EUIPO registration",
+      "registration": "No. 019283377 · registered 15 March 2026",
+      "downloadLabel": "Download certificate as PDF"
+    },
     "freedocs": {
       "eyebrow": "Free documents",
       "title": "Templates for handover and tenancy — ready to download.",
@@ -1583,12 +1636,6 @@
     },
     "proof": {
       "eyebrow": "Locally rooted · measurably effective",
-      "trailHints": {
-        "reviews": "Explore reviews",
-        "sales": "Explore sales",
-        "volume": "Explore investments",
-        "search": "Explore clients"
-      },
       "exampleLabels": {
         "reviews": "Example reviews",
         "sales": "Example properties",
@@ -1604,7 +1651,7 @@
       "items": [
         {
           "value": "4.9 / 5",
-          "label": "from 226 Google reviews · as of August 2026"
+          "label": "from 230Google reviews · as of August 2026"
         },
         {
           "value": "60+",
@@ -1670,12 +1717,115 @@
       "tabList": "The ten steps of a property sale",
       "selectedStep": "Selected step",
       "activities": "What we do",
-      "outcome": "Your result"
+      "outcome": "Your result",
+      "steps": [
+        {
+          "id": "valuation",
+          "num": "01",
+          "title": "Free property valuation",
+          "summary": "Initial online estimate and appointment scheduling.",
+          "activities": [
+            "Create an initial online price indication",
+            "Arrange the personal valuation appointment"
+          ],
+          "outcome": "You know where a sensible sale starts and what happens next."
+        },
+        {
+          "id": "consultation",
+          "num": "02",
+          "title": "Personal consultation",
+          "summary": "Goals, timeframe, and questions in the first conversation.",
+          "activities": [
+            "Clarify goals and timeframe together",
+            "Structure questions and priorities in the first meeting"
+          ],
+          "outcome": "You get a clear plan that fits your situation."
+        },
+        {
+          "id": "documents",
+          "num": "03",
+          "title": "Document review",
+          "summary": "We review and obtain missing documents.",
+          "activities": [
+            "Review existing documents for completeness",
+            "Request missing records where needed"
+          ],
+          "outcome": "Your sales file is complete and reliable."
+        },
+        {
+          "id": "property-capture",
+          "num": "04",
+          "title": "Professional property capture",
+          "summary": "Photography, video brochure, and 360° tour.",
+          "activities": [
+            "Create professional photography and a video brochure",
+            "Add a 360° tour for digital viewings"
+          ],
+          "outcome": "Prospective buyers get a realistic first impression right away."
+        },
+        {
+          "id": "marketing-strategy",
+          "num": "05",
+          "title": "Marketing strategy",
+          "summary": "Pricing strategy, target groups, and marketing plan.",
+          "activities": ["Set price and positioning", "Align audiences and channels"],
+          "outcome": "Your property goes live with a clear market message."
+        },
+        {
+          "id": "buyer-qualification",
+          "num": "06",
+          "title": "Buyer qualification",
+          "summary": "Solvency and financing checks for prospective buyers.",
+          "activities": [
+            "Pre-qualify prospective buyers",
+            "Check solvency and financing before viewings"
+          ],
+          "outcome": "Viewings happen with financially credible buyers."
+        },
+        {
+          "id": "viewings",
+          "num": "07",
+          "title": "Viewings",
+          "summary": "Only serious, vetted buyers on site.",
+          "activities": ["Coordinate and accompany viewings", "Collect questions and feedback"],
+          "outcome": "You save time and meet vetted buyers on site."
+        },
+        {
+          "id": "negotiation",
+          "num": "08",
+          "title": "Negotiation",
+          "summary": "We negotiate the price on your behalf.",
+          "activities": [
+            "Assess and compare offers",
+            "Lead the negotiation with your goals in mind"
+          ],
+          "outcome": "You have support for a sound pricing decision."
+        },
+        {
+          "id": "notary",
+          "num": "09",
+          "title": "Notary",
+          "summary": "Contract preparation and notary appointment.",
+          "activities": [
+            "Prepare the contract with everyone involved",
+            "Coordinate and accompany the notary appointment"
+          ],
+          "outcome": "The sale is ready for legally binding notarisation."
+        },
+        {
+          "id": "handover",
+          "num": "10",
+          "title": "Handover",
+          "summary": "Key handover and completion.",
+          "activities": ["Coordinate the handover", "Complete the keys and final documents"],
+          "outcome": "The sale is closed cleanly and completely."
+        }
+      ]
     },
     "references": {
       "eyebrow": "Selected references",
       "title": "References from your neighborhood",
-      "link": "View all 15 reference properties →"
+      "link": "View all 29 reference properties →"
     },
     "difference": {
       "eyebrow": "Why Immonation",
@@ -1851,7 +2001,7 @@
       "headline": {
         "platform": "Google",
         "rating": "4.9",
-        "count": "226 reviews",
+        "count": "230reviews",
         "link": "Read all Google reviews"
       },
       "stats": [
@@ -1886,7 +2036,7 @@
           "name": "Google",
           "rating": "4.9",
           "scale": "/ 5",
-          "basis": "226 reviews",
+          "basis": "230reviews",
           "kind": "direct"
         },
         {
@@ -2137,6 +2287,12 @@
       "newBadge": "New",
       "exposeLink": "Sample brochure",
       "photoAlt": "Property photo",
+      "references": {
+        "eyebrow": "Local sales proof",
+        "title": "What has already sold in the region",
+        "text": "Archived reference properties provide context. They are not current listings and their photos are never used as a live listing gallery.",
+        "referenceLabel": "Archived reference"
+      },
       "items": [
         {
           "isNew": true,
@@ -2317,6 +2473,7 @@
         "eyebrow": "New · Property AI",
         "title": "Your digital property assistant",
         "text": "Initial guidance, suitable next steps, and answers around the clock: the assistant supports you from the first thought to a personal appointment.",
+        "promptPlaceholder": "Your question about selling a property",
         "link": "Try the property AI",
         "capabilities": [
           "Initial price guidance for your location",
@@ -2471,7 +2628,7 @@
         "phase": "Phase 03 · Visibility and buyers",
         "title": "Professional preparation",
         "summary": "Photography, floor plans, brochure, and digital presentation show the property from its strongest perspective.",
-        "detail": "We prepare a clear property description, high-quality photography, and polished floor plans. Depending on the property, a virtual tour or clearly labelled visualisations add context. Our specialist network can prepare missing lender-ready measured plans and floor-area calculations.",
+        "detail": "We prepare a clear property description, high-quality photography, and polished floor plans. Depending on the property, a virtual tour or clearly labelled visualisations add context. Our in-house building engineer prepares missing lender-ready measured plans and floor-area calculations.",
         "activities": [
           "Create the brochure, property description, and professional imagery",
           "Review, improve, or measure floor plans when required",
@@ -2794,6 +2951,95 @@
       "secondary": "Arrange an initial consultation"
     }
   },
+  "ReviewsPage": {
+    "metadata": {
+      "title": "Reviews on 10 platforms | Immonation",
+      "description": "Immonation is present on ten review platforms with more than 300 voices. 4.9 out of 5 on Google, plus Trustpilot, Immowelt and seven further public profiles."
+    },
+    "eyebrow": "Reviews",
+    "title": "More than 300 reviews across ten platforms",
+    "lede": "Google, Trustpilot, Immowelt and seven further public profiles. Every figure on this page links back to its original.",
+    "answer": "Immonation maintains its own profiles on ten review platforms. Together they hold more than 300 reviews. On Google the score is {rating} out of 5 stars from {count} voices. Five platforms award the top score of 5.0. Direct profiles count their own entries; platforms marked as aggregates bundle reviews from other sources and therefore display the same voices again.",
+    "claimTitle": "Ten platforms, more than 300 voices.",
+    "claimText": "Direct sources and aggregates are listed separately. One click opens the original profile.",
+    "portals": {
+      "title": "Every profile is publicly accessible",
+      "intro": "Google, Trustpilot, Immowelt, 11880 and golocal count their own entries. ProvenExpert, Jacasa, Wer kennt den Besten, Trustlocal and KennstDuEinen bundle reviews from other sources."
+    },
+    "quotes": {
+      "title": "Original voices from completed sales",
+      "intro": "The texts appear exactly as they were published on the platforms. Name, source and date belong to every voice.",
+      "listLabel": "Filter reviews by source",
+      "filters": {
+        "all": "All voices"
+      },
+      "expand": "Read the full review",
+      "collapse": "Collapse review",
+      "openSource": "Open the original review",
+      "empty": "No documented voices are held here for this source. The public profile is linked in the overview above."
+    },
+    "source": {
+      "google": "Google",
+      "golocal": "golocal"
+    },
+    "attribution": {
+      "live": "The Google Places API returns up to five reviews selected by relevance. These are merged with documented original quotes and sorted by date. The texts appear in their original language.",
+      "curated": "The original voices shown are taken from documented public reviews and sorted by date. The complete current set remains readable on the linked profiles."
+    },
+    "screenshots": {
+      "title": "How the reviews read in the original",
+      "note": "Unedited excerpts from public Google profiles, each matched to a documented sale."
+    },
+    "seals": {
+      "title": "Verified agent seals",
+      "intro": "Three independent bodies maintain a public profile. The seals are held as local copies, with no external tracking.",
+      "note": "Maklersieger verifies the agent profile. Makler-Siegel.de certifies vetted property experts. ProvenExpert presents Google reviews in a profile of its own.",
+      "maklersieger": {
+        "title": "Maklersieger",
+        "text": "Verified agent profile, independently rated for the Nuremberg area.",
+        "alt": "Verified Agent seal from maklersieger.de for Immonation GmbH",
+        "open": "Open profile"
+      },
+      "maklersiegel": {
+        "title": "Makler-Siegel",
+        "text": "Seal for vetted property experts. The graphic is a local copy of the public seal.",
+        "alt": "Makler-Siegel seal, Certified Property Expert",
+        "open": "Open issuer"
+      },
+      "provenexpert": {
+        "title": "ProvenExpert",
+        "text": "The ProvenExpert profile bundles Google reviews. The link opens the original page.",
+        "alt": "ProvenExpert profile of Immonation GmbH, Zirndorf",
+        "open": "Open profile"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions about the reviews",
+      "items": [
+        {
+          "question": "Are the reviews genuine?",
+          "answer": "Yes. Every voice shown comes from a documented public profile. Name, source and date sit directly alongside the review. The complete profiles are reachable through the tiles on this page."
+        },
+        {
+          "question": "Why do the numbers differ between platforms?",
+          "answer": "Each platform counts by its own rules. Google, Trustpilot and Immowelt record their own entries. ProvenExpert, Jacasa and Trustlocal bundle reviews from other sources and therefore display the same voices again. The total of 300+ counts each underlying source once."
+        },
+        {
+          "question": "What do direct source and aggregate mean?",
+          "answer": "Direct source means the review was left on that platform. Aggregate means the platform displays reviews that originate elsewhere, frequently on Google."
+        },
+        {
+          "question": "Where can I read all the Google reviews?",
+          "answer": "The link beside the Google score takes you to the public Maps profile of Immonation GmbH in Zirndorf. The complete current set is held there."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Would you like your sale to be the next good story?",
+      "text": "Start with a free valuation and get to know how we work, with no obligation.",
+      "label": "Start a free valuation"
+    }
+  },
   "TestimonialsPage": {
     "metadata": {
       "title": "Client testimonials and reviews | Immonation",
@@ -2881,15 +3127,15 @@
     "compare": {
       "eyebrow": "Before / after",
       "title": "Original and visualisation, side by side",
-      "intro": "Four examples from our own marketing: the unedited photograph and the visualisation, labelled “Original” and “Visualisation”. Both frames share the same camera position, so the difference stays verifiable.",
+      "intro": "Seven examples from our own marketing: the unedited photograph and the visualisation, labelled “Original” and “Visualisation”. Both frames share the same camera position, so the difference stays verifiable.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisation",
       "items": {
-        "plot-schwabach": {
-          "title": "Undeveloped plot, Schwabach",
-          "text": "The aerial photograph of the undeveloped plot becomes a possible scheme with house, garage, driveway, and garden. Sellers negotiate on equal terms with developers, who calculate backwards from the resale value anyway.",
-          "beforeAlt": "Aerial photograph of an undeveloped, overgrown plot in Schwabach",
-          "afterAlt": "Visualisation of the same plot with a detached house, garage, driveway, and landscaped garden"
+        "bedroom-entenberg": {
+          "title": "Bedroom, detached house in Entenberg",
+          "text": "Nothing was cleared out here: the bed, the curtains, and the wall colour visibly belong to an earlier decade. The visualisation shows the same room furnished for today — windows, flooring, sloping ceiling, and layout stay unchanged.",
+          "beforeAlt": "Bedroom with orange curtains, an orange wall, and an old metal bed with a red bedspread",
+          "afterAlt": "Visualisation of the same bedroom with an upholstered bed, light curtains, chest of drawers, and mirror"
         },
         "living-room-nuremberg": {
           "title": "Living and dining area, terraced house in Nuremberg",
@@ -2897,17 +3143,35 @@
           "beforeAlt": "Empty living and dining area of a terraced house with wooden flooring",
           "afterAlt": "Visualisation of the same room with dining table, sofa arrangement, and rug"
         },
-        "entrance-nuremberg": {
-          "title": "Entrance and grounds, Nuremberg",
-          "text": "The existing photograph was taken in winter, with bare shrubs. The visualisation shows the same entrance planted up – the first impression in the brochure decides whether buyers click.",
-          "beforeAlt": "Entrance of a terraced house in winter with bare shrubs",
-          "afterAlt": "Visualisation of the same entrance with a green front garden and flowering planting"
+        "office-wiesenstrasse": {
+          "title": "Small attic room, top-floor apartment in Nuremberg",
+          "text": "Rooms under a sloping ceiling are hard to read: does a bed fit, a desk, anything at all? The visualisation settles the question visibly — as a study with shelving, desk, and chair.",
+          "beforeAlt": "Empty small attic room with a sloping ceiling, window, and radiator",
+          "afterAlt": "Visualisation of the same room as a study with desk, office chair, and shelving"
         },
         "bedroom-nuremberg": {
           "title": "Bedroom, apartment in Nuremberg",
           "text": "An empty bedroom quickly reads as smaller than it is. With a bed, wardrobe front, and textiles the room size becomes legible, without anything having been changed.",
           "beforeAlt": "Empty bedroom of an apartment with a balcony door",
           "afterAlt": "Visualisation of the same bedroom with a double bed, armchair, and rug"
+        },
+        "terrace-entenberg": {
+          "title": "Roof terrace, detached house in Entenberg",
+          "text": "An empty terrace reads as leftover space. Furnished, the same photograph turns into an argument — the view across the wooded ridge was there all along, nobody had seen it.",
+          "beforeAlt": "Empty tiled roof terrace with a wooden balustrade and a view of wooded hills",
+          "afterAlt": "Visualisation of the same terrace with a lounge sofa, parasol, grill, and festoon lighting"
+        },
+        "entrance-nuremberg": {
+          "title": "Entrance and grounds, Nuremberg",
+          "text": "The existing photograph was taken in winter, with bare shrubs. The visualisation shows the same entrance planted up – the first impression in the brochure decides whether buyers click.",
+          "beforeAlt": "Entrance of a terraced house in winter with bare shrubs",
+          "afterAlt": "Visualisation of the same entrance with a green front garden and flowering planting"
+        },
+        "plot-schwabach": {
+          "title": "Undeveloped plot, Schwabach",
+          "text": "The aerial photograph of the undeveloped plot becomes a possible scheme with house, garage, driveway, and garden. Sellers negotiate on equal terms with developers, who calculate backwards from the resale value anyway.",
+          "beforeAlt": "Aerial photograph of an undeveloped, overgrown plot in Schwabach",
+          "afterAlt": "Visualisation of the same plot with a detached house, garage, driveway, and landscaped garden"
         }
       },
       "disclaimer": "The frame labelled “Visualisation” is digitally generated. It shows a possible condition, not the current one. Layout, building fabric, windows, and defects remain unchanged – furniture and planting are not part of the property being sold."
@@ -2917,18 +3181,35 @@
       "title": "Video material that makes the vision tangible",
       "intro": "The same visualisations become a short film for the brochure, the website, and social media. The transformation plays out on screen: the empty room becomes the furnished one, the plot becomes the finished house.",
       "badge": "Visualisation",
+      "groups": {
+        "house": "Houses",
+        "apartment": "Apartments",
+        "plot": "Plots"
+      },
       "items": {
         "house": {
           "title": "Terraced house, Nuremberg",
           "text": "Entrance, living and dining area, bedrooms, balcony, and hobby room in sequence."
         },
+        "houseEntenberg": {
+          "title": "Detached house, Entenberg",
+          "text": "Terrace, bedroom, library, and dressing room — each from the existing state to the modernised version."
+        },
         "apartment": {
           "title": "Apartment, Nuremberg",
           "text": "Three rooms, each from the empty state to the finished furnishing."
         },
+        "apartmentWiesenstrasse": {
+          "title": "Top-floor apartment, Nuremberg",
+          "text": "Living room, roof terrace, kitchen, bathroom, study, and bedroom, each starting from empty."
+        },
         "plot": {
           "title": "Plot, Schwabach",
           "text": "From the undeveloped plot through the shell to the finished house with garden."
+        },
+        "plotUttenreuth": {
+          "title": "Development plot, Uttenreuth",
+          "text": "From demolishing the existing structure through slab and shell to the finished house with garden."
         }
       },
       "fallback": "Your browser cannot play this video."
@@ -3048,12 +3329,11 @@
     },
     "answer": "The standard land value is an average location value per square metre of land, derived by the local appraisal committee from actual purchase contracts. It applies to a whole zone — not to your specific plot. Whether your plot sits above or below that level depends on shape, servicing, building rights, contamination risk, and demand.",
     "values": {
-      "eyebrow": "Draft · Orientation",
+      "eyebrow": "Orientation",
       "title": "Current standard land values",
-      "intro": "Orientation ranges for the metropolitan region — draft figures with placeholders. The exact value for your address comes from BORIS Bayern or the competent appraisal committee; we are happy to look it up in an initial consultation.",
-      "disclaimer": "Placeholder values (draft). Replace with current, dated figures from BORIS Bayern or the appraisal committees before publication, and state the as-of date.",
+      "intro": "Orientation ranges for the metropolitan region. The exact value for your address comes from BORIS Bayern or the competent appraisal committee; we are happy to look it up in an initial consultation.",
+      "disclaimer": "Standard land values are official orientation figures per valuation zone, not a guarantee of an achievable plot price. What matters for your plot is its shape, servicing, building rights and demand.",
       "unit": "€/m²",
-      "draftBadge": "Draft",
       "rows": [
         {
           "city": "Nuremberg",
@@ -3462,13 +3742,13 @@
         "tab": "Floor plans",
         "kicker": "Lender-ready records",
         "title": "Measured floor plans that support financing.",
-        "text": "Missing or unusable plans can delay a buyer's financing. When needed, our specialist network coordinates a measured redraw with a traceable living-area calculation.",
+        "text": "Missing or unusable plans can delay a buyer's financing. When needed, our in-house building engineer produces a measured redraw with a traceable living-area calculation.",
         "highlight": "Usable for buyers, lenders, and valuers.",
         "bullets": [
           "Measurements for all relevant walls and rooms",
           "Living-area calculation under the applicable regulation",
           "Traceable records for lenders and valuers",
-          "Coordinated through an established specialist network"
+          "Measurements and floor plans by our in-house building engineer"
         ],
         "result": "Buyers can submit usable plans with their finance application, while questions about dimensions and areas are resolved early.",
         "proof": [
@@ -3677,6 +3957,17 @@
       "title": "What are you selling?",
       "link": "Open guide"
     },
+    "references": {
+      "eyebrow": "Examples by sales path",
+      "title": "Sales knowledge grounded in real references",
+      "text": "Archived cases show how property type and buyer group shape marketing. For land sales, regional process evidence is explicitly labelled as such.",
+      "referenceLabel": "Sales reference",
+      "filterLabel": "Filter references by property type",
+      "allLabel": "All property types",
+      "cityFilterLabel": "City",
+      "typeFilterLabel": "Property type",
+      "allCitiesLabel": "All cities"
+    },
     "local": {
       "title": "Local context instead of a generic market figure.",
       "text": "Zirndorf, Nuremberg, Fürth, and Erlangen vary at district and street level. Our location pages explain the sales approach without unverified live prices.",
@@ -3698,6 +3989,16 @@
     "documentsEyebrow": "Checklist",
     "documentsTitle": "Documents you will need",
     "faqTitle": "Frequently asked questions",
+    "references": {
+      "eyebrow": "Relevant reference properties",
+      "title": "Make the sales path concrete",
+      "text": "These cases are archived sales examples, not current properties. On the land guide, regional process evidence is labelled clearly and never presented as a land sale.",
+      "referenceLabel": "Archived reference",
+      "regionalEyebrow": "Regional marketing proof",
+      "regionalTitle": "Put the land-sale process in regional context",
+      "regionalText": "These archived residential and commercial cases evidence regional preparation and buyer outreach. They are explicitly not proof of a land sale.",
+      "regionalReferenceLabel": "Regional process proof"
+    },
     "cta": {
       "title": "Prepare your sale properly",
       "text": "We clarify value, documents, buyer group, and timing before your property enters the market.",
@@ -3729,6 +4030,17 @@
     "contentEyebrow": "Locally informed",
     "contentTitle": "Selling property in {city}",
     "faqTitle": "Property questions for {city}",
+    "references": {
+      "eyebrow": "Local sales references",
+      "title": "Reference properties from {city}",
+      "text": "Archived sales examples from this city. They show property type, local context, and marketing quality – not current properties for sale.",
+      "referenceLabel": "Archived reference",
+      "filterLabel": "Filter local references",
+      "allLabel": "All property types",
+      "cityFilterLabel": "City",
+      "typeFilterLabel": "Property type",
+      "allCitiesLabel": "This city"
+    },
     "cta": {
       "title": "Value your property in {city}",
       "text": "We connect the specific micro-location in {city} with condition, documents, and the current buyer group.",
@@ -3921,6 +4233,7 @@
   },
   "BlogPost": {
     "backToOverview": "All guides",
+    "videoFallback": "Your browser cannot play this video.",
     "toc": {
       "label": "Contents",
       "aria": "Table of contents",
@@ -3968,25 +4281,121 @@
       "secondary": "View the sales process"
     }
   },
+  "PropertyDetailPage": {
+    "relatedEyebrow": "Related local reference",
+    "relatedTitle": "Related local reference",
+    "relatedText": "Archived reference properties from the same city or region. These images do not belong to the current listing.",
+    "referenceLabel": "Archived reference"
+  },
   "ReferencesPage": {
     "metadata": {
       "title": "Reference properties in Nuremberg, Fürth & region",
-      "description": "Explore 15 Immonation reference properties from Nuremberg, Fürth, Erlangen, Zirndorf, and the region, with real property photography and client interviews."
+      "description": "Explore 29 Immonation reference properties from Nuremberg, Fürth, Erlangen, Zirndorf, and the region, with real property photography and approved sales cases."
     },
-    "eyebrow": "References & insights",
-    "title": "Properties we have had the privilege to support",
-    "lede": "From apartments to multi-family buildings, this selection presents real properties from our region and the range of homes and investments Immonation presents professionally and supports personally.",
+    "eyebrow": "References",
+    "title": "Sold with Immonation",
+    "lede": "Starting point → challenge → outcome. We deliberately show only selected references — real, traceable, and approved by our clients.",
+    "stories": {
+      "eyebrow": "Client stories",
+      "title": "Starting point, challenge, outcome",
+      "text": "Three approved sales cases with concrete metrics — from a heritage apartment to a terrace home that never went online.",
+      "soldLabel": "Sold",
+      "viewSold": "View all sold properties",
+      "note": "More reference properties are available in our gallery and REVIER magazine. Marketing periods and sale results are added only after documented approval.",
+      "labels": {
+        "startingPoint": "Starting point.",
+        "challenge": "Challenge.",
+        "result": "Outcome."
+      },
+      "items": [
+        {
+          "id": "frau-hartmann",
+          "type": "Apartment · St. Johannis",
+          "location": "Nuremberg · 87 m² · heritage protection",
+          "name": "Ms Hartmann",
+          "kpis": [
+            {
+              "value": "6 weeks",
+              "label": "to sold"
+            },
+            {
+              "value": "+6%",
+              "label": "above market value"
+            },
+            {
+              "value": "renovated 2017",
+              "label": "herringbone oak"
+            }
+          ],
+          "startingPoint": "A heritage-protected period apartment in Nuremberg-St. Johannis — 87 m², renovated to a high standard in 2017, with herringbone oak flooring and high ceilings where period charm and modern comfort meet.",
+          "challenge": "For a property of this calibre, the task was to find buyers who truly appreciate heritage status and high-end renovation.",
+          "result": "With editorial marketing and targeted outreach, the apartment sold in just six weeks — 6% above market value.",
+          "quote": "Immonation understood the character of my apartment immediately and presented it perfectly — sold in six weeks and even above my target price."
+        },
+        {
+          "id": "herr-sippel",
+          "type": "Semi-detached home · Erlangen",
+          "location": "Erlangen · 138 m² · inherited, renovation needed",
+          "name": "Mr Sippel",
+          "kpis": [
+            {
+              "value": "12 weeks",
+              "label": "to sold"
+            },
+            {
+              "value": "inherited",
+              "label": "after vacancy"
+            },
+            {
+              "value": "388 m²",
+              "label": "plot · garage · cellar"
+            }
+          ],
+          "startingPoint": "An inherited semi-detached home in Erlangen that stood empty after long-term tenancy and needed renovation — 138 m² living space, 388 m² plot, garage and full basement.",
+          "challenge": "With renovation backlog, the buyer pool is smaller, and initial interest was cautious.",
+          "result": "Clear positioning as a property with potential and targeted outreach to the right buyer group paid off after a short ramp-up — sold in twelve weeks.",
+          "quote": "My inherited semi-detached home stood empty and needed renovation — Immonation still found the right buyer and handled everything for me."
+        },
+        {
+          "id": "frau-berthold",
+          "type": "Terrace apartment · Fürth",
+          "location": "Fürth · 79 m² · terrace & underground parking",
+          "name": "Ms Berthold",
+          "kpis": [
+            {
+              "value": "2 weeks",
+              "label": "to reserved"
+            },
+            {
+              "value": "asking price",
+              "label": "fully achieved"
+            },
+            {
+              "value": "no listing",
+              "label": "via buyer network"
+            }
+          ],
+          "startingPoint": "Terrace apartment in Fürth — 79 m², fitted kitchen, underground parking space and 16 m² terrace. Ms Berthold first tried to sell on her own and became frustrated.",
+          "challenge": "After the failed solo attempt, find the right buyer quickly — without a long marketing cycle.",
+          "result": "Through an already registered buyer in our network, the apartment was reserved within two weeks — sold at full asking price before it ever went online.",
+          "quote": "On my own I got nowhere — with Immonation my apartment sold in two weeks, at full price and without ever appearing online."
+        }
+      ]
+    },
     "proof": {
       "title": "Selected properties from the documented reference library",
       "text": "We intentionally show only verifiable property types, locations, and approved images. Marketing periods, enquiry figures, and sale results are added only after documented approval."
     },
     "gallery": {
-      "eyebrow": "15 reference properties",
+      "eyebrow": "29 reference properties",
       "title": "As individual as the people behind them",
       "text": "Every property needs its own positioning. This selection ranges from apartments and detached homes to investment and commercial properties across the metropolitan region.",
       "referenceLabel": "Immonation reference",
       "allLabel": "All properties",
-      "filterLabel": "Filter references by property type"
+      "filterLabel": "Filter references by city and property type",
+      "cityFilterLabel": "City",
+      "typeFilterLabel": "Property type",
+      "allCitiesLabel": "All cities"
     },
     "tour": {
       "eyebrow": "Virtual viewing",
@@ -4106,14 +4515,136 @@
         "type": "Condominium",
         "location": "Zirndorf",
         "alt": "Bright garden apartment in Zirndorf"
+      },
+      {
+        "id": "adelsdorf-reuthseering",
+        "title": "Mid-terrace home in Adelsdorf",
+        "type": "Mid-terrace home",
+        "location": "Adelsdorf",
+        "alt": "Reference photograph of a mid-terrace home in Adelsdorf"
+      },
+      {
+        "id": "nuernberg-willy-wunder",
+        "title": "Semi-detached home in Nuremberg",
+        "type": "Semi-detached home",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a semi-detached home in Nuremberg"
+      },
+      {
+        "id": "nuernberg-neutrograben",
+        "title": "Condominium in Nuremberg Old Town",
+        "type": "Condominium",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a condominium in Nuremberg Old Town"
+      },
+      {
+        "id": "nuernberg-zuericher-52",
+        "title": "Condominium in southeast Nuremberg",
+        "type": "Condominium",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a condominium in southeast Nuremberg"
+      },
+      {
+        "id": "nuernberg-zuericher-40",
+        "title": "Condominium in southeast Nuremberg",
+        "type": "Condominium",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a condominium in southeast Nuremberg"
+      },
+      {
+        "id": "nuernberg-haderastrasse",
+        "title": "Mid-terrace home in Nuremberg",
+        "type": "Mid-terrace home",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a mid-terrace home in Nuremberg"
+      },
+      {
+        "id": "nuernberg-woernitzstrasse",
+        "title": "Mid-terrace home in Nuremberg",
+        "type": "Mid-terrace home",
+        "location": "Nuremberg",
+        "alt": "Reference photograph of a mid-terrace home in Nuremberg"
+      },
+      {
+        "id": "schwabach-abenberger",
+        "title": "Condominium in Schwabach",
+        "type": "Condominium",
+        "location": "Schwabach",
+        "alt": "Reference photograph of a condominium in Schwabach"
+      },
+      {
+        "id": "zirndorf-carl-benz",
+        "title": "Mid-terrace home in Zirndorf",
+        "type": "Mid-terrace home",
+        "location": "Zirndorf",
+        "alt": "Reference photograph of a mid-terrace home in Zirndorf"
+      },
+      {
+        "id": "zirndorf-gutenbergstrasse",
+        "title": "Mid-terrace home in Zirndorf",
+        "type": "Mid-terrace home",
+        "location": "Zirndorf",
+        "alt": "Reference photograph of a mid-terrace home in Zirndorf"
+      },
+      {
+        "id": "zirndorf-homburger",
+        "title": "Single-family home in Zirndorf",
+        "type": "Single-family home",
+        "location": "Zirndorf",
+        "alt": "Reference photograph of a single-family home in Zirndorf"
+      },
+      {
+        "id": "zirndorf-marienbader",
+        "title": "Single-family home in Zirndorf",
+        "type": "Single-family home",
+        "location": "Zirndorf",
+        "alt": "Reference photograph of a single-family home in Zirndorf"
+      },
+      {
+        "id": "herzogenaurach-schuetzengraben",
+        "title": "Single-family home in Herzogenaurach",
+        "type": "Single-family home",
+        "location": "Herzogenaurach",
+        "alt": "Reference photograph of a single-family home in Herzogenaurach"
+      },
+      {
+        "id": "hagenbuechach-hausaeckern",
+        "title": "Single-family home in Hagenbüchach",
+        "type": "Single-family home",
+        "location": "Hagenbüchach",
+        "alt": "Reference photograph of a single-family home in Hagenbüchach"
       }
     ]
+  },
+  "PropertyTour": {
+    "eyebrow": "Property video",
+    "title": "A full property video, not just a clip",
+    "text": "Short clips show fragments. This is the complete edit from one marketing campaign: a walk-through from the front door past the kitchen, living area and staircase out to the terrace — cut in vertical format, where the first few seconds decide whether anyone keeps watching.",
+    "badge": "Property video",
+    "videoTitle": "Property video",
+    "videoFallback": "Your browser cannot play this property video.",
+    "caption": "The original edit from the campaign. Audio: music, no spoken commentary.",
+    "caseLink": "View the reference case",
+    "facts": {
+      "type": "Property type",
+      "location": "Location",
+      "format": "Format",
+      "formatValue": "9:16 vertical",
+      "length": "Length",
+      "lengthValue": "{seconds} seconds"
+    }
   },
   "SoldVideos": {
     "eyebrow": "Sold",
     "title": "Sold across the Nuremberg metropolitan region",
     "text": "Every clip marks a completed sale — from a terraced house in Adelsdorf to commercial land in Zirndorf. The short takes are filmed on handover day and show where we actually sell.",
     "soldLabel": "Sold",
+    "viewAll": "View all sold properties",
+    "tileLink": "Sold: {type} in {town} – view details",
+    "carouselLabel": "Sold properties",
+    "previousVideo": "Previous video",
+    "nextVideo": "Next video",
+    "videoSlide": "Video",
     "alt": "Sold: {type} in {town}",
     "types": {
       "etw": "Apartment",
@@ -4150,56 +4681,55 @@
   },
   "Footer": {
     "claim": "Your real-estate partner in Zirndorf, Nuremberg, Fürth, Erlangen, and the surrounding region.",
-    "stats": [
-      {
-        "value": "60 km",
-        "label": "Advisory radius around Zirndorf"
-      },
-      {
-        "value": "6–12",
-        "label": "Weeks typical time on market"
-      },
-      {
-        "value": "360°",
-        "label": "Tour for every property"
-      },
-      {
-        "value": "300+",
-        "label": "reviews across 10 platforms"
-      }
-    ],
+    "badges": {
+      "immowelt": "immowelt Business Partner 24–26",
+      "trademark": "EU trade mark 019283377",
+      "maklersiegerAlt": "“Verified agent” seal issued by maklersieger.de for Immonation GmbH",
+      "maklersiegelAlt": "Seal issued by Makler-Siegel.de for Immonation GmbH"
+    },
     "sell": {
       "title": "Selling",
+      "sell": "Sell a property",
       "valuation": "Property valuation",
+      "floorPlans": "Living area & floor plans",
+      "situations": "Reasons for selling",
+      "references": "References",
+      "buyerSearch": "Active buyers",
+      "byType": "By property type",
       "house": "Sell a house",
       "apartment": "Sell an apartment",
       "land": "Sell land",
       "apartmentBuilding": "Sell an apartment building"
     },
     "buy": {
-      "title": "Buying",
+      "title": "Buying & service",
       "listings": "Property listings",
-      "searchRequest": "Search request",
+      "virtualTour": "Virtual viewing",
       "financing": "Financing",
-      "buyerAdvice": "Buyer advisory"
+      "ai": "Property AI",
+      "appointment": "Book an appointment",
+      "downloads": "Downloads",
+      "faq": "FAQ"
     },
     "company": {
       "title": "Company",
-      "about": "About us",
-      "references": "References",
-      "guide": "Guide",
-      "faq": "FAQ",
+      "about": "Who is Immonation?",
+      "group": "Company group",
+      "awards": "Awards",
+      "locations": "Cities & districts",
+      "reviews": "Reviews",
+      "engagement": "Engagement",
       "careers": "Careers",
-      "referrers": "Referrers",
-      "downloads": "Downloads",
-      "contact": "Contact"
+      "guide": "News & guide",
+      "contact": "Contact",
+      "directions": "Opening hours & directions",
+      "referrers": "Referrers"
     },
     "copyright": "© {year} Immonation GmbH · Zirndorf",
-    "rights": "All rights reserved.",
     "imprint": "Imprint",
     "privacy": "Privacy",
     "terms": "Terms",
-    "withdrawal": "Withdrawal"
+    "backToTop": "Back to top"
   },
   "LegalWithdrawal": {
     "metadata": {
@@ -4264,6 +4794,7 @@
     },
     "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
     "note": "All figures are guide values, not a commitment to an achievable sale price. A reliable assessment starts with a review of the specific property.",
+    "source": "Data source: Immonation GmbH’s own brokerage records.",
     "jsonLd": {
       "cityDescription": "District-level square-metre prices for {city} in the Immonation price atlas."
     },

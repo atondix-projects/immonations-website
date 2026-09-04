@@ -27,6 +27,26 @@ import { cn } from '@/lib/utils'
 export type VideoDialogLabels = {
   play: string
   close: string
+  /** Beschriftung der Transkript-Aufklappung. Fehlt sie, wird kein Transkript angeboten. */
+  transcript?: string
+}
+
+/**
+ * Eine Untertitelspur. `src` verweist auf eine WebVTT-Datei unterhalb von `public/`.
+ *
+ * Videos mit Ton brauchen Untertitel — ohne sie ist der gesprochene Inhalt für
+ * gehörlose und schwerhörige Nutzerinnen und Nutzer nicht zugänglich (WCAG 1.2.2).
+ * Die Spuren liegen bewusst als Daten neben dem Video im jeweiligen Registry-Eintrag,
+ * damit eine nachgelieferte VTT-Datei ohne Codeänderung wirksam wird.
+ */
+export type VideoCaptionTrack = {
+  /** Pfad zur `.vtt`-Datei, z. B. `/videos/testimonials/viktor-emter.de.vtt`. */
+  src: string
+  /** BCP-47-Sprachkennung der Spur, z. B. `de`. */
+  srcLang: string
+  /** Im Untertitelmenü sichtbarer Name der Spur. */
+  label: string
+  default?: boolean
 }
 
 type VideoDialogProps = {
@@ -43,6 +63,13 @@ type VideoDialogProps = {
   /** Text für Browser, die das Format nicht abspielen können. */
   fallback: string
   labels: VideoDialogLabels
+  /**
+   * Untertitelspuren des Videos. Stummer Bestand (etwa die Verkaufs-Kacheln)
+   * bleibt leer; jedes Video mit Ton sollte mindestens eine Spur führen.
+   */
+  captions?: readonly VideoCaptionTrack[]
+  /** Volltext des Gesprochenen, im Overlay aufklappbar unter dem Video. */
+  transcript?: ReactNode
   /** Klassen der Auslöser-Kachel — hier setzt die aufrufende Sektion ihr Format. */
   className?: string
   posterSizes?: string
@@ -73,6 +100,8 @@ export function VideoDialog({
   title,
   fallback,
   labels,
+  captions,
+  transcript,
   className,
   posterSizes = '(min-width: 1024px) 50vw, 100vw',
   posterPriority = false,
@@ -236,7 +265,7 @@ export function VideoDialog({
                   ? { duration: 0.12 }
                   : { type: 'spring', damping: 30, stiffness: 300 }
               }
-              className="relative flex max-h-full max-w-full items-center justify-center"
+              className="relative flex max-h-full max-w-full flex-col items-center justify-center"
             >
               <video
                 className="block h-auto max-h-[82dvh] w-auto max-w-full bg-black object-contain"
@@ -250,8 +279,27 @@ export function VideoDialog({
                 aria-label={title}
               >
                 <source src={src} type="video/mp4" />
+                {captions?.map((track) => (
+                  <track
+                    key={`${track.srcLang}-${track.src}`}
+                    kind="captions"
+                    src={track.src}
+                    srcLang={track.srcLang}
+                    label={track.label}
+                    default={track.default}
+                  />
+                ))}
                 {fallback}
               </video>
+
+              {transcript && labels.transcript ? (
+                <details className="mt-3 max-h-[24dvh] w-full max-w-[68ch] overflow-y-auto bg-white/10 text-left text-sm leading-[1.7] text-white">
+                  <summary className="focus-visible:ring-brand-400 cursor-pointer px-4 py-3 font-semibold focus-visible:ring-2 focus-visible:outline-none">
+                    {labels.transcript}
+                  </summary>
+                  <div className="px-4 pb-4 text-white/85">{transcript}</div>
+                </details>
+              ) : null}
 
               <button
                 type="button"

@@ -16,7 +16,6 @@ export type RegionLandValue = {
 type RegionValuesGridProps = {
   rows: RegionLandValue[]
   unit: string
-  draftBadge: string
   className?: string
 }
 
@@ -26,7 +25,7 @@ type RegionValuesGridProps = {
  * staggered entrance, featured cell, animated tabular figures.
  * Restyled to Immonation borders / brand (no purple gradients).
  */
-export function RegionValuesGrid({ rows, unit, draftBadge, className }: RegionValuesGridProps) {
+export function RegionValuesGrid({ rows, unit, className }: RegionValuesGridProps) {
   const locale = useLocale()
   const intlLocale = locale === 'de' ? 'de-DE' : 'en-US'
   const scaleMax = Math.max(...rows.map((row) => row.max), 1)
@@ -47,7 +46,6 @@ export function RegionValuesGrid({ rows, unit, draftBadge, className }: RegionVa
             index={index}
             featured={featured}
             unit={unit}
-            draftBadge={draftBadge}
             intlLocale={intlLocale}
             scaleMax={scaleMax}
             className={cn(
@@ -66,7 +64,6 @@ function RegionValueCell({
   index,
   featured,
   unit,
-  draftBadge,
   intlLocale,
   scaleMax,
   className,
@@ -75,7 +72,6 @@ function RegionValueCell({
   index: number
   featured: boolean
   unit: string
-  draftBadge: string
   intlLocale: string
   scaleMax: number
   className?: string
@@ -109,9 +105,6 @@ function RegionValueCell({
             </p>
           ) : null}
         </div>
-        <span className="border-border text-muted-foreground shrink-0 border px-2 py-1 text-[10px] font-semibold tracking-[0.14em] uppercase">
-          {draftBadge}
-        </span>
       </div>
 
       <div className={cn('mt-10', featured && 'mt-auto pt-16 md:pt-24')}>

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import { CatalogPage } from '@/components/site/templates/catalog-page'
+import { RelatedReferenceBlock } from '@/components/site/references/related-reference-block'
 import { routing } from '@/i18n/routing'
 import { getPropertyListing, PROPERTY_LISTINGS } from '@/lib/content/property-listings'
+import { listReferencesForListing } from '@/lib/content/references'
 import { getRouteById } from '@/lib/routing/route-catalog'
 import { breadcrumbList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -54,6 +56,7 @@ export default async function PropertyPage({
   const { locale, slug } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
+  const t = await getTranslations('PropertyDetailPage')
   const listing = getPropertyListing(slug)
   const routeRecord = getRouteById(`property:${slug}`)
   if (!listing || !routeRecord) notFound()
@@ -67,6 +70,7 @@ export default async function PropertyPage({
         ? 'Verkauft / nicht verfügbar'
         : 'Sold / unavailable'
   const url = `${SITE.url}/${locale}${routeRecord.paths[locale]}`
+  const relatedReferences = listReferencesForListing(listing)
 
   return (
     <>
@@ -116,6 +120,14 @@ export default async function PropertyPage({
           label: isGerman ? 'Kontakt aufnehmen' : 'Contact us',
           href: listing.status === 'available' ? '/contact' : '/buy',
         }}
+      />
+      <RelatedReferenceBlock
+        references={relatedReferences}
+        locale={locale}
+        eyebrow={t('relatedEyebrow')}
+        title={t('relatedTitle')}
+        text={t('relatedText')}
+        referenceLabel={t('referenceLabel')}
       />
     </>
   )

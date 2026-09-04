@@ -45,7 +45,6 @@ export function ValuationField({ field, value, error, onChange }: ValuationField
   const hint = t.has(`fields.${field.id}.hint`) ? t(`fields.${field.id}.hint`) : null
   const describedBy = [hint ? hintId : null, error ? errorId : null].filter(Boolean).join(' ')
 
-  const label = t(`fields.${field.id}.label`)
   const optionalSuffix =
     field.status === 'optional' && field.kind !== 'checkbox' ? (
       <span className="text-muted-foreground ml-2 text-xs font-normal">{t('optionalBadge')}</span>
@@ -91,6 +90,8 @@ export function ValuationField({ field, value, error, onChange }: ValuationField
       </div>
     )
   }
+
+  const label = t(`fields.${field.id}.label`)
 
   // --- Einfach- und Mehrfachauswahl ----------------------------------------
   if (field.kind === 'choice' || field.kind === 'multi' || field.kind === 'boolean') {

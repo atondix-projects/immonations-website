@@ -49,3 +49,11 @@ The media library also contains reference folders for Erlangen Luise-Kiesselbach
 ## Editorial rule
 
 Do not infer a result from a photo, filename, or selectable source-table option. Each published case needs a signed-off result, a privacy-safe location level, explicit media/testimonial rights, and a source record with review date.
+
+## Implemented public catalog
+
+The implementation reconciles all 29 folders in `assets/Referenz Objekte/` to one stable public ID. The current public catalog therefore contains 29 records, 13 represented towns/cities, and 87 source photographs. Every record has three checked-in WebP derivatives under `public/images/references/<reference-id>/`, bilingual copy, privacy-safe city/area labels, a four-part narrative, publication gates, provenance, and a last-reviewed date.
+
+The 26 drafted cases are retained as provenance where a draft maps directly to a source folder. The remaining folders are explicitly reconciled from the supplied reference labels and source evidence; no public address or metric is inferred from a filename. The public catalog IDs intentionally preserve the existing 15 detail URLs. The generated manifests are `customer-files/public-derivative-map.csv` and `reference-public-derivatives.csv`.
+
+The catalog is consumed through `src/lib/content/references.ts`. Its accessors provide all records, city/type filters, listing matching, seller-guide matching, localized card data, and a usage summary. Numeric metrics remain stored as unapproved source data and are blocked from rendering by both the per-record gate and the global publication flag.

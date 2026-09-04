@@ -13,10 +13,20 @@ beiden Dinge, die die Seite ``/ki-visualisierung-home-staging`` braucht.
    Paare aus verschiedenen Räumen, und die Seite verspricht ausdrücklich, die
    Visualisierung *dem Originalfoto* gegenüberzustellen.
 
-2. **Der fehlende Film.** Zwei der vier Quellfilme liegen bereits als 720p in
-   ``public/videos/ai-visualizations/``. Dieses Skript ergänzt den dritten im
-   gleichen Format. Der vierte (Vogelherdstraße) bleibt bewusst außen vor: er
-   zeigt keinen Vorher/Nachher-Aufbau, sondern einen Rundgang.
+2. **Die Filme.** Jeder Quellfilm, der einen Aufbau zeigt, wird als tonlose
+   720p-Fassung samt Poster abgelegt. Zwei Filme (Panzerstraße, Schwabach)
+   wurden vor diesem Skript von Hand erzeugt und liegen bereits im Zielformat;
+   sie stehen deshalb nicht in ``CLIPS``.
+
+Nicht jede Quelldatei taugt für die Seite. Bewusst außen vor bleiben:
+
+* **Vogelherdstraße** — ein Rundgang durch eine fertige Wohnung, kein
+  Vorher/Nachher-Aufbau. Ob überhaupt visualisiert wurde, ist unbestätigt.
+* **An den Hausäckern** — ein Exposé-Film aus Drohnen- und Innenaufnahmen des
+  Bestands; der Aufbau fehlt.
+* **Zirndorf Carl-Benz-Straße** — erzählt dieselbe Geschichte wie Uttenreuth
+  (Grundstück → fertiger Bau), springt dabei aber von kahlem Herbst in vollen
+  Sommer. Neben Uttenreuth bringt der Film nichts hinzu.
 
     python scripts/curate-visualization-assets.py [--check]
 
@@ -51,8 +61,11 @@ VIDEO_HEIGHT = 720
 VIDEO_CRF = 27
 
 APARTMENT = "eigentumswohnung-visualisierung/etw-panzerstrasse-nuernberg"
+ATTIC = "eigentumswohnung-visualisierung/etw-wiesenstrasse-nuernberg"
 HOUSE = "haus-visualisierung/rmh-woernitzstrasse"
+DETACHED = "haus-visualisierung/efh-entenberger-hauptstrasse"
 PLOT = "grundstueck-visualisuerung/schwabach-wolkersdorf"
+NEW_BUILD = "grundstueck-visualisuerung/uttenreuth-zum-tennenbach"
 
 
 @dataclass(frozen=True)
@@ -73,7 +86,14 @@ PAIRS: tuple[Pair, ...] = (
     Pair("living-room-nuremberg", HOUSE, 5.10, 7.20),
     Pair("entrance-nuremberg", HOUSE, 0.20, 3.60),
     Pair("bedroom-nuremberg", APARTMENT, 5.10, 8.30),
+    # Der einzige Beleg für „veraltete Einrichtung modernisieren": dasselbe
+    # Zimmer, dieselbe Kamera, nur Vorhänge, Bett und Wandfarbe erneuert.
+    Pair("bedroom-entenberg", DETACHED, 5.10, 7.20),
+    Pair("terrace-entenberg", DETACHED, 0.60, 3.20),
+    Pair("office-wiesenstrasse", ATTIC, 17.10, 19.40),
 )
+# Uttenreuth liefert kein Paar: die Drohne wandert zwischen Baugrube und
+# fertigem Haus merklich näher heran. Der Film zeigt den Aufbau trotzdem.
 
 
 @dataclass(frozen=True)
@@ -82,9 +102,21 @@ class Clip:
 
     slug: str
     source: str
+    #: Sekunde des Posters. Der Anfang zeigt normalerweise den Ausgangszustand —
+    #: das ist gewollt, die Kachel trägt bereits das Etikett „Visualisierung".
+    #: Taugt der erste Frame nicht als Kachel, steht hier eine andere Marke.
+    poster: float = 0.20
 
 
-CLIPS: tuple[Clip, ...] = (Clip("house-nuremberg", HOUSE),)
+CLIPS: tuple[Clip, ...] = (
+    Clip("house-nuremberg", HOUSE),
+    Clip("house-entenberg", DETACHED),
+    Clip("apartment-wiesenstrasse", ATTIC),
+    # 0.20 s zeigt hier nur die überwachsene Fläche aus einer anderen Flughöhe.
+    # 3.40 s ist der geräumte Bauplatz in der Einstellung, in der auch das
+    # fertige Haus steht — die Kachel führt damit in den Film hinein.
+    Clip("property-uttenreuth", NEW_BUILD, poster=3.40),
+)
 
 
 def source_video(relative: str) -> Path:
@@ -167,7 +199,7 @@ def main() -> int:
         video = source_video(clip.source)
         target = VIDEO_DIR / f"{clip.slug}.mp4"
         transcode(video, target)
-        extract_frame(video, 0.20, VIDEO_DIR / f"{clip.slug}-poster.webp")
+        extract_frame(video, clip.poster, VIDEO_DIR / f"{clip.slug}-poster.webp")
         print(f"{clip.slug}: {target.stat().st_size // 1024} kB")
 
     return 0

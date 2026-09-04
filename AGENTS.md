@@ -1,7 +1,11 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
 <!-- END:nextjs-agent-rules -->
 
 # Immonation — Agent Instructions
@@ -43,6 +47,17 @@ Short form:
    3. Can plain Tailwind utilities express it?
    4. If still no — extend `@theme` tokens or add a small utility class via `@layer utilities` in `globals.css`. That is the only escape hatch.
 5. **Dark mode** uses the `class` strategy via `next-themes` (when wired) — never write media-query dark mode CSS.
+
+## Brand assets
+
+> Canonical version: see `CLAUDE.md` § Brand assets.
+
+Every logo is generated from the vector master by `pnpm brand:assets`. Use
+`public/brand/immonation-logo.svg` (light grounds) / `-inverse.svg` (dark grounds) for
+the wordmark, and `<ImmonationMark />` from `src/components/site/brand/` for the CI
+element ("Einzelnes I") — it marks every section eyebrow and watermarks the hero.
+Never smaller than ~20 px, never recoloured, never skewed or rotated. Never hand-edit
+a generated file; `tests/contracts/brand-assets.test.ts` guards them.
 
 ## Component layering
 
@@ -90,3 +105,4 @@ TODO.md                  Canonical list of verified outstanding work
 - ❌ Render JSON-LD via `<script>` without escaping `<` to `<` (use the `JsonLd` component).
 - ❌ Hardcode locale strings in JSX — use `useTranslations` / `getTranslations` from `next-intl`.
 - ❌ Edit files in `src/components/ui/` by hand. Re-add from registry instead.
+- ❌ Hand-edit `public/brand/*`, `src/app/icon.svg`, `favicon.ico` or `apple-icon.png` — regenerate with `pnpm brand:assets`.

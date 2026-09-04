@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import { CatalogPage } from '@/components/site/templates/catalog-page'
 import { routing } from '@/i18n/routing'
-import { DISTRICTS, getRouteById } from '@/lib/routing/route-catalog'
+import { DISTRICTS, getRouteById, isRouteNoindex } from '@/lib/routing/route-catalog'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { SITE } from '@/lib/seo/site'
@@ -162,7 +162,7 @@ export async function generateMetadata({
     localizedPaths: routeRecord.paths,
     title: `${content.title} | Immonation`,
     description: content.description,
-    noindex: routeRecord.indexing !== 'index',
+    noindex: isRouteNoindex(routeRecord),
   })
 }
 

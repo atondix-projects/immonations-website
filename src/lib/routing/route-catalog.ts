@@ -33,7 +33,6 @@ const STATIC_ROUTES: StaticRouteDefinition[] = [
   route('buyer-search', '/buyer-search', 1, 'published', 0.7, 'monthly'),
   route('virtual-tour', '/virtual-tour', 1, 'published', 0.7, 'monthly'),
   route('ai', '/ai', 1, 'published', 0.5, 'monthly'),
-  route('client-area', '/client-area', 1, 'reserved', 0, 'yearly'),
   route('warning-signs', '/sale-warning-signs', 1, 'published', 0.7, 'monthly'),
   route('referrers', '/referrers', 1, 'published', 0.5, 'monthly'),
   route('appointment', '/appointment', 1, 'published', 0.7, 'monthly'),
@@ -349,4 +348,17 @@ export function listIndexableRoutes() {
   return ROUTE_CATALOG.filter(
     (routeRecord) => routeRecord.status === 'published' && routeRecord.indexing === 'index',
   )
+}
+
+/**
+ * Single source of truth for the `noindex` value a page hands to `buildMetadata`.
+ *
+ * `buildMetadata` takes a plain boolean and never consults this catalog, so a page that
+ * forgets to pass this stays indexable no matter what its catalog entry says. Route this
+ * through one helper rather than re-deriving it per page: the district route and the
+ * generic catalog-page route previously branched on different fields (`indexing` vs
+ * `status`), which agreed only by accident of the data.
+ */
+export function isRouteNoindex(routeRecord: Pick<RouteRecord, 'indexing'>) {
+  return routeRecord.indexing !== 'index'
 }

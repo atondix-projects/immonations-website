@@ -9,6 +9,7 @@ import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
+import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import {
@@ -17,6 +18,7 @@ import {
   getSellerGuideFaqPageKey,
   listAllSellerGuides,
 } from '@/lib/content/seller-guides'
+import { listReferencesForSellerGuide } from '@/lib/content/references'
 import { storyForSellerGuide } from '@/lib/content/testimonials'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
@@ -81,6 +83,8 @@ export default async function SellerGuidePage({
   // Passende Verkaufsgeschichte zur Objektart; für Mehrfamilienhaus
   // liegt keine vor, dort bleibt die Sektion aus.
   const storyId = storyForSellerGuide(guide.translationKey)
+  const references = listReferencesForSellerGuide(guide.translationKey)
+  const isLandGuide = guide.translationKey === 'sell-land'
 
   return (
     <article className="bg-background">
@@ -186,6 +190,15 @@ export default async function SellerGuidePage({
           </ul>
         </div>
       </section>
+
+      <ReferenceProofRail
+        references={references}
+        locale={locale}
+        eyebrow={t(isLandGuide ? 'references.regionalEyebrow' : 'references.eyebrow')}
+        title={t(isLandGuide ? 'references.regionalTitle' : 'references.title')}
+        text={t(isLandGuide ? 'references.regionalText' : 'references.text')}
+        referenceLabel={t(isLandGuide ? 'references.regionalReferenceLabel' : 'references.referenceLabel')}
+      />
 
       {storyId ? <TestimonialSpotlight id={storyId} /> : null}
 

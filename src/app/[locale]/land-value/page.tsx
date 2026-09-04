@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { DataProvenance } from '@/components/site/data-provenance'
 import { JsonLd } from '@/components/site/json-ld'
 import {
   RegionValuesGrid,
@@ -13,6 +14,7 @@ import { FaqSection, type FaqItem } from '@/components/site/templates/faq-sectio
 import { PageHero } from '@/components/site/templates/page-hero'
 import { Link } from '@/i18n/navigation'
 import { routing, type Locale } from '@/i18n/routing'
+import { CLAIM_REGISTRY, DATA_AS_OF } from '@/lib/content/provenance'
 import { listSellerGuides } from '@/lib/content/seller-guides'
 import { breadcrumbList, faqPage } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -120,16 +122,13 @@ export default async function LandValuePage({ params }: { params: Promise<{ loca
             </p>
           </div>
 
-          <RegionValuesGrid
-            className="mt-12"
-            rows={valueRows}
-            unit={t('values.unit')}
-            draftBadge={t('values.draftBadge')}
-          />
+          <RegionValuesGrid className="mt-12" rows={valueRows} unit={t('values.unit')} />
 
-          <p className="text-muted-foreground mt-5 max-w-[72ch] text-sm leading-[1.65] text-pretty">
-            {t('values.disclaimer')}
-          </p>
+          <DataProvenance
+            asOf={DATA_AS_OF[locale]}
+            source={CLAIM_REGISTRY['land-value:rows'].source}
+            note={t('values.disclaimer')}
+          />
         </div>
       </section>
 

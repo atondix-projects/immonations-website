@@ -138,13 +138,6 @@ export async function TrustProof() {
     personExamples(t('proof.trailBadges.search')),
   ]
 
-  const trailHints = [
-    t('proof.trailHints.reviews'),
-    t('proof.trailHints.sales'),
-    t('proof.trailHints.volume'),
-    t('proof.trailHints.search'),
-  ]
-
   const exampleLabels = [
     t('proof.exampleLabels.reviews'),
     t('proof.exampleLabels.sales'),
@@ -154,7 +147,6 @@ export async function TrustProof() {
 
   const proofItems = proof.map((item, index) => ({
     ...item,
-    trailHint: trailHints[index] ?? '',
     exampleLabel: exampleLabels[index] ?? '',
     examples: examplesByIndex[index] ?? [],
   }))

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export type FaqItem = { question: string; answer: string }
@@ -18,7 +19,9 @@ type FaqSectionProps = {
 }
 
 /**
- * SSR-visible FAQ block (AEO rule: answers stay in the DOM, no JS accordion).
+ * SSR-visible FAQ accordion (AEO rule: answers stay in the DOM).
+ * Uses native `<details>`/`<summary>` — collapsed but present in the markup, unlike a
+ * JS accordion that mounts answers on click. Matching pattern: `@/components/site/partner-faq`.
  * The page is responsible for emitting the matching faqPage() JSON-LD.
  */
 export function FaqSection({
@@ -32,6 +35,9 @@ export function FaqSection({
   footer,
 }: FaqSectionProps) {
   const Heading = headingLevel
+  // Scopes the exclusive-open behaviour to this block: the FAQ hub stacks several
+  // FaqSections on one page and they must not collapse each other.
+  const groupName = `faq-${id ?? 'section'}`
 
   return (
     <section
@@ -63,24 +69,31 @@ export function FaqSection({
             {title}
           </Heading>
         ) : null}
-        <dl className="divide-border border-border border-y">
+        <div className="border-border border-y">
           {items.map((item, index) => (
-            <div
+            <details
               key={item.question}
-              className="grid gap-4 border-b py-7 last:border-b-0 md:grid-cols-[3rem_minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8 md:py-9"
+              name={groupName}
+              className="group border-border border-b last:border-b-0"
             >
-              <span className="text-brand-700 font-mono text-xs tabular-nums">
-                {String(startIndex + index).padStart(2, '0')}
-              </span>
-              <dt className="max-w-[28ch] font-serif text-xl leading-snug font-medium md:text-2xl">
-                {item.question}
-              </dt>
-              <dd className="text-muted-foreground max-w-[65ch] text-[15px] leading-[1.75]">
-                {item.answer}
-              </dd>
-            </div>
+              <summary className="hover:text-brand-700 flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-base leading-7 font-semibold transition-colors marker:content-none md:py-7 md:text-lg [&::-webkit-details-marker]:hidden">
+                <span className="grid min-w-0 grid-cols-[2.5rem_1fr] items-start gap-4 text-left">
+                  <span className="text-brand-700 pt-0.5 font-mono text-xs tabular-nums">
+                    {String(startIndex + index).padStart(2, '0')}
+                  </span>
+                  <span>{item.question}</span>
+                </span>
+                <ChevronDown
+                  className="text-muted-foreground mt-1 size-4 shrink-0 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="text-muted-foreground pb-7 pl-[4rem] text-[15px] leading-[1.75] md:max-w-[82ch]">
+                <p>{item.answer}</p>
+              </div>
+            </details>
           ))}
-        </dl>
+        </div>
         {footer}
       </div>
     </section>

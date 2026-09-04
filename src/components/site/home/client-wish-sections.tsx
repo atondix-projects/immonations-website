@@ -23,7 +23,7 @@ import { getTranslations } from 'next-intl/server'
 import { CatalogPreview } from '@/components/site/catalog-preview'
 import { AtlasTeaserPanel } from '@/components/site/price-atlas/atlas-teaser-panel'
 import { FaqSection } from '@/components/site/templates/faq-section'
-import { VideoDialog } from '@/components/site/video-dialog'
+import { VideoDialog, type VideoCaptionTrack } from '@/components/site/video-dialog'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { toFaqSectionItems, selectFaqsForPage } from '@/lib/content/faqs'
@@ -35,6 +35,21 @@ import { cn } from '@/lib/utils'
 import { CONTAINER, EYEBROW, SECTION_LINK, SECTION_TITLE, SectionHeader } from './section-shell'
 
 const PROPERTY_ICONS = [House, Building2, Map, ChartNoAxesCombined] as const
+
+/**
+ * Objektart-Motive, nach `translationKey` statt nach Index verschlüsselt — die Reihenfolge
+ * der Ratgeber darf sich ändern, ohne dass Bild und Objektart auseinanderlaufen.
+ *
+ * Bewusst anonymisierte Aufnahmen: Die Kacheln stehen für eine *Gattung* (Haus, Wohnung,
+ * Grundstück, Mehrfamilienhaus), nicht für ein bestimmtes Objekt. Ein reales Referenzfoto
+ * würde hier ein konkretes Kundenobjekt behaupten, das mit dem Ratgeber nichts zu tun hat.
+ */
+const PROPERTY_TYPE_IMAGES: Record<string, string> = {
+  'sell-house': '/images/generic/generic-house-carport-exterior.webp',
+  'sell-apartment': '/images/generic/generic-apartment-balconies.webp',
+  'sell-land': '/images/generic/generic-aerial-townscape.webp',
+  'sell-apartment-building': '/images/generic/generic-apartment-facade.webp',
+}
 
 /**
  * Der Nachweis-Clip zur Sektion „Beurkundet, nicht behauptet“: die Ordner mit den
@@ -51,6 +66,8 @@ const NOTARIAL_RECORDS_MEDIA = {
   poster: '/images/notary/notarial-records-poster.webp',
   width: 1920,
   height: 1080,
+  /** Der Clip hat Ton; die WebVTT-Spur steht noch aus. Eintrag hier genügt. */
+  captions: undefined as readonly VideoCaptionTrack[] | undefined,
 } as const
 
 export async function PropertyTypePaths({
@@ -86,32 +103,50 @@ export async function PropertyTypePaths({
         <ul className="grid gap-px bg-neutral-900/10 sm:grid-cols-2 lg:grid-cols-4">
           {guides.map((guide, index) => {
             const Icon = PROPERTY_ICONS[index] ?? House
+            const image = PROPERTY_TYPE_IMAGES[guide.translationKey]
 
             return (
               <li key={guide.translationKey} className="bg-background">
                 <Link
                   href={{ pathname: '/sell/[slug]', params: { slug: guide.slug } }}
-                  className="group hover:bg-muted/55 flex h-full min-h-[310px] flex-col p-7 transition-colors duration-200 md:p-8"
+                  className="group hover:bg-muted/55 flex h-full flex-col transition-colors duration-200"
                 >
-                  <div className="flex items-start justify-between gap-5">
-                    <Icon className="text-brand-700 size-6" strokeWidth={1.6} aria-hidden="true" />
-                    <span className="font-mono text-[11px] text-neutral-500 tabular-nums">
-                      {String(index + 1).padStart(2, '0')}
+                  {image ? (
+                    <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+                      <Image
+                        src={image}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+                      />
+                      <span
+                        className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"
+                        aria-hidden="true"
+                      />
+                      <span className="absolute bottom-3 left-3 flex size-10 items-center justify-center bg-white/95 backdrop-blur-sm">
+                        <Icon className="text-brand-700 size-5" strokeWidth={1.6} aria-hidden="true" />
+                      </span>
+                      <span className="absolute top-3 right-3 font-mono text-[11px] text-white/85 tabular-nums">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                  ) : null}
+                  <div className="flex flex-1 flex-col p-7 md:p-8">
+                    <h3 className="font-serif text-2xl leading-tight font-semibold text-balance">
+                      {guide.eyebrow}
+                    </h3>
+                    <p className="text-muted-foreground mt-4 line-clamp-4 text-sm leading-[1.65]">
+                      {guide.answer}
+                    </p>
+                    <span className="text-brand-700 mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold">
+                      {t('cardLink')}
+                      <ArrowUpRight
+                        className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        aria-hidden="true"
+                      />
                     </span>
                   </div>
-                  <h3 className="mt-9 font-serif text-2xl leading-tight font-semibold text-balance">
-                    {guide.eyebrow}
-                  </h3>
-                  <p className="text-muted-foreground mt-4 line-clamp-4 text-sm leading-[1.65]">
-                    {guide.answer}
-                  </p>
-                  <span className="text-brand-700 mt-auto inline-flex items-center gap-2 pt-7 text-sm font-semibold">
-                    {t('cardLink')}
-                    <ArrowUpRight
-                      className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      aria-hidden="true"
-                    />
-                  </span>
                 </Link>
               </li>
             )
@@ -184,9 +219,14 @@ export async function VerifiedResults({ compact = false }: { compact?: boolean }
             poster={NOTARIAL_RECORDS_MEDIA.poster}
             width={NOTARIAL_RECORDS_MEDIA.width}
             height={NOTARIAL_RECORDS_MEDIA.height}
+            captions={NOTARIAL_RECORDS_MEDIA.captions}
             title={t('videoTitle')}
             fallback={t('videoFallback')}
-            labels={{ play: tVideo('play'), close: tVideo('close') }}
+            labels={{
+              play: tVideo('play'),
+              close: tVideo('close'),
+              transcript: tVideo('transcript'),
+            }}
             className="aspect-video w-full border border-white/12"
             posterSizes="(min-width: 1024px) 60vw, 100vw"
           />
@@ -244,7 +284,11 @@ export async function VerifiedResults({ compact = false }: { compact?: boolean }
                 height={item.height}
                 title={bellT('videoTitle', { position: index + 1, total: bellVideos.length })}
                 fallback={bellT('videoFallback')}
-                labels={{ play: tVideo('play'), close: tVideo('close') }}
+                labels={{
+                  play: tVideo('play'),
+                  close: tVideo('close'),
+                  transcript: tVideo('transcript'),
+                }}
                 className="aspect-[9/16] w-full border border-white/12"
                 posterSizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                 overlay={
@@ -444,10 +488,13 @@ export async function RegionPreview({ locale }: { locale: Locale }) {
 
 type PropertyCopy = { type: string; title: string }
 
+/** Anonymisierte Stimmungsbilder: Die Kacheln zeigen Beispiel-Angebote aus den
+ * Übersetzungen, nicht die realen Referenzobjekte, deren Fotos an anderer Stelle als
+ * Beleg für konkrete Verkaufsfälle dienen. */
 const PROPERTY_IMAGES = [
-  '/images/references/zirndorf-gartenwohnung.webp',
-  '/images/references/fuerth-altbauwohnung.webp',
-  '/images/references/erlangen-eigentumswohnung.webp',
+  '/images/generic/generic-aerial-gable-house.webp',
+  '/images/generic/generic-aerial-apartment-complex.webp',
+  '/images/generic/generic-aerial-house-pool.webp',
 ] as const
 
 export async function CurrentProperties({
@@ -543,9 +590,11 @@ export async function CurrentProperties({
 export async function DigitalAssistant({
   locale,
   compact = false,
+  teaser = false,
 }: {
   locale: Locale
   compact?: boolean
+  teaser?: boolean
 }) {
   const t = await getTranslations('Home.clientSections.assistant')
   const capabilities = t.raw('capabilities') as string[]
@@ -567,7 +616,7 @@ export async function DigitalAssistant({
           <p className="text-brand-200 mt-7 text-[11px] font-semibold tracking-[0.2em] uppercase md:text-xs">
             {t('eyebrow')}
           </p>
-          <Heading className="mt-5 max-w-[17ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
+          <Heading className="mt-5 max-w-[28ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
             {t('title')}
           </Heading>
           <p className="mt-6 text-[17px] leading-[1.75] text-pretty text-neutral-300">
@@ -576,12 +625,31 @@ export async function DigitalAssistant({
         </div>
 
         <div className="mx-auto mt-11 w-full max-w-[60rem] md:mt-14">
-          <CatalogPreview
-            kind="assistant"
-            locale={locale}
-            embedded
-            className="border border-white/12 bg-white/[0.04]"
-          />
+          {teaser ? (
+            <Link
+              href="/ai"
+              aria-label={t('link')}
+              className="border-brand-200/30 hover:border-brand-200 focus-visible:ring-brand-400 group flex flex-col gap-3 border bg-white/[0.06] p-5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 focus-visible:outline-none sm:flex-row sm:items-center sm:gap-4 sm:p-6"
+            >
+              <span className="flex min-h-12 flex-1 items-center border border-white/20 bg-white/10 px-4 text-[15px] text-neutral-300">
+                {t('promptPlaceholder')}
+              </span>
+              <span className="bg-brand-600 group-hover:bg-brand-500 inline-flex min-h-12 shrink-0 items-center justify-center gap-2 px-6 text-sm font-semibold whitespace-nowrap text-white transition-colors">
+                {t('link')}
+                <ArrowUpRight
+                  className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                />
+              </span>
+            </Link>
+          ) : (
+            <CatalogPreview
+              kind="assistant"
+              locale={locale}
+              embedded
+              className="border border-white/12 bg-white/[0.04]"
+            />
+          )}
 
           <ul className="grid gap-px border-x border-b border-white/12 bg-white/12 sm:grid-cols-3">
             {capabilities.map((capability, index) => (
@@ -594,15 +662,17 @@ export async function DigitalAssistant({
             ))}
           </ul>
 
-          <div className="mt-10 flex justify-center">
-            <Link
-              href="/ai"
-              className="text-brand-200 border-brand-200/35 hover:border-brand-200 inline-flex items-center gap-2 border-b pb-1 text-sm font-semibold transition-colors"
-            >
-              {t('link')}
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </Link>
-          </div>
+          {teaser ? null : (
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/ai"
+                className="text-brand-200 border-brand-200/35 hover:border-brand-200 inline-flex items-center gap-2 border-b pb-1 text-sm font-semibold transition-colors"
+              >
+                {t('link')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </section>
