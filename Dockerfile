@@ -3,14 +3,14 @@ WORKDIR /app
 RUN corepack enable
 
 FROM base AS deps
-COPY package.json package-lock.json ./
-RUN npm ci --legacy-peer-deps --no-audit --no-fund
+COPY package.json ./
+RUN pnpm install --no-frozen-lockfile
 
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm run build
+RUN pnpm run build
 
 FROM base AS runner
 ENV NODE_ENV=production
