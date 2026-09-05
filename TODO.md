@@ -10,8 +10,11 @@ Current baseline (2026-09-05): format check, lint, typecheck and the production 
 (426 static pages) pass. 90 of 91 unit tests pass; the two contract suites that read
 `assets/` are the exception — see the environment note below.
 
-> **Environment note (2026-09-05).** The package-manager split is closed: `pnpm-lock.yaml` is
-> committed, no `package-lock.json` is tracked, and `node_modules` is pnpm-managed.
+> **Environment note (2026-09-05).** `node_modules` is pnpm-managed and no `package-lock.json`
+> is tracked. `pnpm-lock.yaml` was removed from the repository on request and is now
+> gitignored, so no lockfile is committed: a fresh clone resolves transitive versions afresh
+> and is not guaranteed to reproduce this tree. Install with pnpm only — an npm install here
+> recreates the split that previously pruned `node_modules` and broke `next build`.
 >
 > Open instead: **`assets/` is absent from this checkout.** The directory is gitignored, so a
 > clone never carries it, and it is no longer present here either. Two contract suites read it
