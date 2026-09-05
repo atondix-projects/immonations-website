@@ -3,7 +3,7 @@ WORKDIR /app
 RUN corepack enable
 
 FROM base AS deps
-COPY package.json ./
+COPY package.json pnpm-workspace.yaml ./
 RUN pnpm install --no-frozen-lockfile
 
 FROM base AS builder
