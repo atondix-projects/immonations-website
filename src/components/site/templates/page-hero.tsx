@@ -1,3 +1,4 @@
+import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { cn } from '@/lib/utils'
 
 /**
@@ -28,7 +29,10 @@ export function PageHero({
     >
       <div className="min-w-0">
         {eyebrow ? (
-          <p className="text-brand-700 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs">
+          /* Gleicher CI-Marker wie vor Hero- und Sektions-Eyebrows — damit die
+             Unterseiten die Marke genauso setzen wie die Startseite. */
+          <p className="text-brand-700 flex items-center gap-2.5 text-[11px] font-semibold tracking-[0.22em] uppercase md:text-xs">
+            <ImmonationMark className="h-5 shrink-0" />
             {eyebrow}
           </p>
         ) : null}

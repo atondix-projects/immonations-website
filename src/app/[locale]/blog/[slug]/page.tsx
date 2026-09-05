@@ -19,6 +19,7 @@ import { imageDimensions } from '@/lib/content/article-images'
 import { extractToc, rehypeHeadingIds } from '@/lib/content/toc'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { JsonLd } from '@/components/site/json-ld'
+import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { ArticleToc } from '@/components/site/blog/article-toc'
 import { ReadingProgress } from '@/components/site/blog/reading-progress'
 import { ArticleVideo } from '@/components/site/blog/article-video'
@@ -332,6 +333,11 @@ export default async function BlogPostPage({
                 },
               }}
             />
+            {/* Schlussmarke: das CI-Element als typografisches Endezeichen des
+                Artikels — dekorativ, daher ohne Label. */}
+            <div className="border-border mt-14 flex justify-center border-t pt-8">
+              <ImmonationMark className="h-5" />
+            </div>
           </article>
 
           {tocNode ? (

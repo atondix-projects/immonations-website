@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { getLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
+import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 
 const LINK_CLASSES =
   'text-[15px] leading-snug text-neutral-400 transition-colors hover:text-white focus-visible:text-white focus-visible:underline focus-visible:outline-none'
@@ -19,8 +20,15 @@ export async function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface-dark pt-18 pb-10">
-      <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+    <footer className="bg-surface-dark relative overflow-hidden pt-18 pb-10">
+      {/* Der Fuss ist die einzige Flaeche, die auf jeder Seite steht: das
+          angeschnittene CI-Element setzt die Marke dort ein letztes Mal.
+          Links angeschnitten, damit es die Linkspalten rechts frei laesst.
+          Feste Hoehen statt Prozent: der Fuss stapelt auf Mobil auf ueber 1600px,
+          eine prozentuale Hoehe blies das Zeichen dort auf ein Vielfaches der
+          Viewportbreite auf. */}
+      <ImmonationMark className="pointer-events-none absolute -bottom-16 -left-20 h-[320px] max-w-none opacity-[0.05] md:h-[460px] lg:-bottom-24 lg:-left-10 lg:h-[620px]" />
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr] lg:gap-8">
           {/* Marke: Logo, Claim und die belegbaren Vertrauensnachweise. */}
           <div className="flex flex-col items-start gap-5">

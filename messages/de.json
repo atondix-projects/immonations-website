@@ -508,10 +508,10 @@
   "CookieConsent": {
     "label": "Cookie-Hinweis",
     "title": "Ihre Privatsphäre, klar erklärt.",
-    "text": "Notwendige Funktionen halten diese Website nutzbar. Mit „Alle erlauben“ werden zusätzlich externe Medien wie der 360°-Rundgang direkt geladen — dabei werden Daten an den jeweiligen Anbieter übertragen.",
+    "text": "Notwendige Funktionen halten diese Website nutzbar. Mit „Alle erlauben“ werden zusätzlich externe Medien direkt geladen — Social-Media-Videos von TikTok, Instagram und YouTube, der 360°-Rundgang sowie die Finanzierungsrechner von Dr. Klein. Dabei werden Daten an den jeweiligen Anbieter übertragen.",
     "accept": "Alle erlauben",
     "necessary": "Nur notwendige",
-    "note": "Ihre Auswahl wird lokal in diesem Browser gespeichert. Ohne Einwilligung bleiben externe Medien deaktiviert und lassen sich einzeln zuschalten."
+    "note": "Ihre Auswahl wird lokal in diesem Browser gespeichert. Ohne Einwilligung bleiben externe Medien deaktiviert und lassen sich einzeln zuschalten — Videos starten dann erst auf Klick."
   },
   "VideoDialog": {
     "play": "Video abspielen",
@@ -1188,7 +1188,9 @@
       {
         "heading": "Externe Inhalte",
         "paragraphs": [
-          "Videos von YouTube werden im erweiterten Datenschutzmodus und erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen.",
+          "Auf der Social-Media-Seite und der Startseite binden wir Beiträge unserer eigenen Kanäle bei TikTok, Instagram und YouTube ein. Diese Einbettungen werden erst geladen, wenn Sie ein Video ausdrücklich starten (Zwei-Klick-Lösung). Die Vorschaubilder liegen auf unserem eigenen Server; bis zu Ihrem Klick wird keine Verbindung zu den Plattformen aufgebaut. Starten Sie ein Video, werden Ihre IP-Adresse, Browser- und Geräteinformationen an den jeweiligen Anbieter übertragen, und der Anbieter kann Informationen auf Ihrem Endgerät speichern oder auslesen. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die Sie mit dem Start des Videos oder über „Alle Videos aktivieren“ erteilen und jederzeit für die Zukunft widerrufen können, indem Sie die gespeicherte Auswahl in Ihrem Browser löschen.",
+          "Anbieter sind TikTok Technology Limited (Irland), Meta Platforms Ireland Limited (Instagram) und Google Ireland Limited (YouTube). Eine Übermittlung in Drittländer, insbesondere in die USA und im Fall von TikTok auch nach China, ist dabei nicht ausgeschlossen. YouTube-Videos binden wir über youtube-nocookie.com im erweiterten Datenschutzmodus ein. Es gelten die Datenschutzhinweise der Anbieter: TikTok (https://www.tiktok.com/legal/privacy-policy), Instagram (https://privacycenter.instagram.com/policy) und Google (https://policies.google.com/privacy).",
+          "Der 360°-Rundgang wird ebenfalls erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen.",
           "Auf der Kundenstimmen-Seite können aktuelle Bewertungen serverseitig über die Google Places API abgerufen werden. Bei live geladenen Stimmen können Profilbilder direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Es gelten die Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) und die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
         ]
       },
@@ -2175,7 +2177,8 @@
       "cta": "Videos & Erfolge ansehen",
       "viewsLabel": "Aufrufe",
       "watchOn": "Auf {platform} ansehen",
-      "metricsNote": "Je Kanal das meistgesehene Objektvideo. Aufrufe laut Plattform, teils gerundet, Stand {date}."
+      "metricsNote": "Aufrufe laut Plattform, teils gerundet, Stand {date}.",
+      "clipNote": "Je Kanal der meistgesehene Objektbeitrag, direkt hier abspielbar. Aufrufe laut Plattform, teils gerundet, Stand {date}."
     },
     "group": {
       "eyebrow": "Unternehmensgruppe",
@@ -2516,6 +2519,13 @@
         "text": "Weitere Antworten zu Bewertung, Kosten, Unterlagen, Verkauf und Kauf finden Sie im vollständigen FAQ-Bereich.",
         "link": "Alle Fragen ansehen →"
       }
+    },
+    "financing": {
+      "eyebrow": "Finanzierung",
+      "title": "Erst rechnen, dann besichtigen",
+      "text": "Wer seine Rate kennt, sucht gezielter und verhandelt ruhiger. Der Bauzinsrechner unseres Partners Dr. Klein liefert die Größenordnung sofort — mit tagesaktuellen Konditionen aus einem breiten Bankenvergleich.",
+      "cta": "Zur Finanzierung",
+      "disclaimer": "Unverbindliche Orientierung, kein Finanzierungsangebot. Verbindliche Konditionen ergeben sich erst nach Prüfung Ihrer Unterlagen durch die finanzierende Bank."
     }
   },
   "SalesProcess": {
@@ -3455,7 +3465,8 @@
           "Unabhängiger Bankenvergleich über die Dr.-Klein-Plattform."
         ],
         "cta": "Beratungstermin vereinbaren"
-      }
+      },
+      "partnerLogoAlt": "Dr. Klein Partnermakler-Logo"
     },
     "appraisal": {
       "eyebrow": "Bank-Vorabbewertung",
@@ -3506,12 +3517,24 @@
           "text": "Lohnt sich Kaufen gegenüber Mieten? Stellt beide Wege über die Laufzeit gegenüber."
         }
       ],
-      "panel": {
-        "title": "Alle Rechner bei Dr. Klein öffnen",
-        "text": "Die Rechner werden von Dr. Klein bereitgestellt und auf deren Plattform betrieben. Sie öffnen sich in einem neuen Tab — dabei werden Daten an den Anbieter übertragen.",
-        "cta": "Zu den Rechnern von Dr. Klein"
-      },
-      "disclaimer": "Die Rechner liefern eine unverbindliche Orientierung, kein Finanzierungsangebot. Verbindliche Konditionen ergeben sich erst nach Prüfung Ihrer Unterlagen durch die finanzierende Bank."
+      "disclaimer": "Die Rechner liefern eine unverbindliche Orientierung, kein Finanzierungsangebot. Verbindliche Konditionen ergeben sich erst nach Prüfung Ihrer Unterlagen durch die finanzierende Bank.",
+      "embed": {
+        "eyebrow": "Direkt hier rechnen",
+        "title": "Drei Rechner, ohne die Seite zu verlassen",
+        "lead": "Die drei meistgenutzten Werkzeuge von Dr. Klein stehen unten eingebettet. Sie laden erst auf Klick — vorher erreicht Dr. Klein keine Anfrage von Ihnen.",
+        "interest-tableau": {
+          "heading": "Bauzinschart — wo das Zinsniveau gerade steht",
+          "text": "Der Chart zeigt die tagesaktuellen Konditionen der Bankpartner von Dr. Klein für Ihre Darlehenssumme, aufgeschlüsselt nach Objektwert und Sollzinsbindung. Damit ordnen Sie ein, ob ein Angebot marktüblich ist, bevor Sie darüber verhandeln."
+        },
+        "construction-interest-calculator": {
+          "heading": "Bauzinsrechner — Zinssatz und Monatsrate für Ihr Vorhaben",
+          "text": "Objektwert, Darlehensbetrag, Zinsbindung und Tilgung eingeben — der Rechner gibt Zinssatz, Monatsrate, Gesamtkosten, Restschuld und Tilgungsplan aus. Der schnellste Weg zu einer belastbaren Größenordnung."
+        },
+        "loan-calculator": {
+          "heading": "Hauskreditrechner — wie die Zinsbindung die Rate verschiebt",
+          "text": "Stellt mehrere Sollzinsbindungen nebeneinander und zeigt, was Sicherheit kostet: Monatsrate, Effektivzins und Restschuld je Laufzeit im direkten Vergleich."
+        }
+      }
     },
     "related": {
       "eyebrow": "Passend dazu",
@@ -3568,6 +3591,17 @@
       "text": "Ein Gespräch genügt, um zu wissen, was realistisch ist – unverbindlich und ohne Abschlusszwang.",
       "primary": "Kostenlose Finanzierungsberatung anfragen",
       "secondary": "Immobilie bewerten lassen"
+    },
+    "banner": {
+      "eyebrow": "Partnernetzwerk",
+      "title": "Mit einem Klick beim persönlichen Berater",
+      "text": "Das Banner wird von Dr. Klein ausgeliefert und führt direkt zu Ihrem Ansprechpartner."
+    },
+    "partnerLogin": {
+      "eyebrow": "Für Partner und Tippgeber",
+      "title": "Partner-Login bei Dr. Klein",
+      "text": "Kooperationspartner und Tippgeber verwalten ihre Fälle direkt in der Dr. Klein Plattform. Der Login öffnet sich in einem neuen Tab bei Dr. Klein — Ihre Zugangsdaten geben Sie ausschließlich dort ein, nie auf dieser Seite.",
+      "cta": "Zum Partner-Login"
     }
   },
   "Magazine": {
@@ -4696,11 +4730,12 @@
     "topPosts": {
       "eyebrow": "Aus unseren Kanälen",
       "title": "Die meistgesehenen Objektvideos",
-      "text": "Jeder Eintrag führt zum Originalbeitrag auf der Plattform. Gelistet sind ausschließlich Objektvideos: Beiträge zu Sponsoring, Partnern oder Jahresrückblicken erreichen teils mehr Menschen, sagen über Immobilienvermarktung aber nichts aus.",
-      "views": "Aufrufe",
-      "openOn": "auf {platform} ansehen",
-      "caseLink": "Zum Referenzfall",
-      "channelLink": "{platform}-Kanal öffnen",
+      "text": "Jede Kachel ist ein echter Beitrag von TikTok, Instagram oder YouTube — mit dem Startbild des Originals. Ein Klick spielt ihn hier ab, ohne die Seite zu verlassen. Gelistet sind ausschließlich Objektvideos: Beiträge zu Sponsoring, Partnern oder Jahresrückblicken erreichen teils mehr Menschen, sagen über Immobilienvermarktung aber nichts aus.",
+      "statPosts": "Beiträge",
+      "statViews": "Aufrufe gesamt",
+      "filterAll": "Alle Kanäle",
+      "filterGroupLabel": "Nach Kanal filtern",
+      "allChannels": "Alle Kanäle ansehen",
       "note": "Aufrufe laut Plattform, teils gerundet, Stand {date}. TikTok weist große Zahlen gerundet aus (etwa „44,9 Tsd.“); die Angaben hier folgen dieser Anzeige. Follower- und Abonnentenzahlen führen wir bewusst nicht auf — sie beschreiben nicht, wie viele Menschen ein einzelnes Objekt tatsächlich gesehen haben."
     },
     "channels": {
@@ -4941,5 +4976,39 @@
       "label": "Bewertung starten",
       "secondaryLabel": "Standorte ansehen"
     }
+  },
+  "SocialEmbed": {
+    "views": "Aufrufe",
+    "play": "Video abspielen",
+    "playAria": "{platform}-Video im großen Player öffnen",
+    "watchOn": "Auf {platform} ansehen",
+    "thumbnailAlt": "Startbild des {platform}-Beitrags: {label}",
+    "consentNote": "Startet {platform} — dabei werden Daten übertragen.",
+    "consentBar": {
+      "title": "Videos werden erst auf Klick geladen",
+      "text": "Die Vorschaubilder liegen auf unserem Server — bis hierhin erfährt keine Plattform, dass Sie hier sind. Erst wenn Sie ein Video starten, verbindet sich Ihr Browser mit TikTok, Instagram oder YouTube; dabei werden Ihre IP-Adresse und Gerätedaten dorthin übertragen und die Anbieter können Daten auf Ihrem Gerät speichern.",
+      "button": "Alle Videos aktivieren",
+      "activeTitle": "Externe Videos sind aktiviert",
+      "activeText": "Ein Klick auf eine Kachel startet den Player der jeweiligen Plattform. Sie können die Einwilligung jederzeit in der Datenschutzerklärung widerrufen.",
+      "activeBadge": "Aktiviert"
+    },
+    "lightbox": {
+      "close": "Player schließen",
+      "loading": "Video wird geladen …",
+      "failedTitle": "Das Video lässt sich hier nicht abspielen.",
+      "failedLink": "Auf {platform} öffnen",
+      "openOriginal": "Beitrag auf {platform} öffnen",
+      "consentActive": "Verbindung zu {platform} aktiv."
+    }
+  },
+  "DrKleinEmbed": {
+    "load": "{name} laden",
+    "loading": "Rechner wird geladen …",
+    "consentNote": "Der {name} wird von Dr. Klein bereitgestellt und auf deren Plattform betrieben. Bis Sie ihn laden, geht keine Anfrage dorthin. Beim Laden verbindet sich Ihr Browser mit Dr. Klein; dabei werden Ihre IP-Adresse und Gerätedaten übertragen und es können Daten auf Ihrem Gerät gespeichert werden.",
+    "failedTitle": "Der Rechner lässt sich hier gerade nicht laden.",
+    "failedLink": "{name} bei Dr. Klein öffnen",
+    "quoteLabel": "Erläuterung von Dr. Klein",
+    "sourceLabel": "Quelle:",
+    "germanOnlyNote": "Dieses Werkzeug wird von Dr. Klein betrieben und ist nur auf Deutsch verfügbar."
   }
 }

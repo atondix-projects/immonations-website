@@ -285,25 +285,23 @@ export async function SocialContent({ locale }: { locale: Locale }) {
       <SocialLevers />
       <SocialTopPosts locale={locale} />
       <PropertyTourSection locale={locale} />
-      <SoldVideoReel
-        items={listSoldVideos()}
-        layout="grid"
-        eyebrow={isGerman ? 'Verkauft & übergeben' : 'Sold & handed over'}
-        title={isGerman ? 'Ergebnisse, nicht nur Reichweite' : 'Outcomes, not just reach'}
-        text={
-          isGerman
-            ? 'Social Media ist ein Teil des Systems. Entscheidend ist, ob daraus passende Gespräche und sichere Abschlüsse entstehen.'
-            : 'Social media is one part of the system. What matters is whether it creates relevant conversations and secure completions.'
-        }
-      />
+      {/* Verkaufsglocke statt der Verkauft-Clips: Dieselbe Kachelwand wie auf der
+          Referenzenseite — sechs Aufnahmen, jede erst nach Klick im Overlay mit Ton.
+          Die stummen Verkauft-Clips liefen hier zuvor als 18er-Raster; die Glocken
+          sind die stärkere Aussage, weil die Vermarktung darin gesprochen wird. */}
+      <BellVideoWall items={listBellVideos()} className="bg-muted border-border border-y" />
       <section className="border-border bg-muted/45 border-y py-14 md:py-20">
-        <div className="mx-auto grid w-full max-w-[1240px] gap-px bg-neutral-900/10 px-6 sm:grid-cols-3 lg:px-10">
-          {stats.map(([value, label]) => (
-            <div key={label} className="bg-background p-7 md:p-9">
-              <p className="font-serif text-4xl font-semibold tabular-nums md:text-5xl">{value}</p>
-              <p className="text-muted-foreground mt-3 text-sm leading-[1.65]">{label}</p>
-            </div>
-          ))}
+        <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+          <div className="grid gap-px bg-neutral-900/10 sm:grid-cols-3">
+            {stats.map(([value, label]) => (
+              <div key={label} className="bg-background p-7 md:p-9">
+                <p className="font-serif text-4xl font-semibold tabular-nums md:text-5xl">
+                  {value}
+                </p>
+                <p className="text-muted-foreground mt-3 text-sm leading-[1.65]">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <SocialChannelRow locale={locale} />

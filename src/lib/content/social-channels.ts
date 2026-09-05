@@ -1,6 +1,7 @@
 import type { Locale } from '@/i18n/routing'
 import { SITE } from '@/lib/seo/site'
 import type { ReferenceId } from './references'
+import thumbnailManifest from './social-thumbnails.generated.json'
 
 /**
  * Die tatsächlich betriebenen Social-Kanäle und die reichweitenstärksten
@@ -18,6 +19,20 @@ import type { ReferenceId } from './references'
  *    Siehe Kopfkommentar in `references.ts`.
  * 3. **Aufrufe sind ein Stichtagswert.** Plattformen runden (TikTok zeigt
  *    „44.9K"). `SOCIAL_METRICS_CAPTURED_ON` gehört sichtbar an jede Zahl.
+ * 4. **Gezeigt wird der echte Beitrag, nicht ein Ersatz dafür.** Das Vorschaubild
+ *    ist das Standbild der Plattform (`social-thumbnails.generated.json`, erzeugt
+ *    von `scripts/fetch-social-thumbnails.mjs`), und der Klick startet den echten
+ *    Player von TikTok, Instagram oder YouTube.
+ *
+ *    Zwei Dinge dabei sind Absicht, nicht Umständlichkeit:
+ *    - Das Standbild liegt **lokal**. Direkt eingebunden würde es die IP jedes
+ *      Besuchers vor jeder Einwilligung an die Plattform senden, und die
+ *      signierten CDN-Links laufen ab (TikTok `x-expires`, Instagram `oe=`).
+ *    - Der Player lädt **erst nach Klick** (Zwei-Klick-Lösung, § 25 TDDDG).
+ *
+ *    Eigene Nachschnitte aus `sold-videos.ts` stehen hier bewusst nicht mehr: Sie
+ *    zeigten zwar dasselbe Objekt, aber nicht den Beitrag, über den die Aufrufzahl
+ *    daneben etwas aussagt.
  */
 
 export type SocialPlatform = 'instagram' | 'tiktok' | 'youtube' | 'facebook'
@@ -208,6 +223,35 @@ const POSTS: readonly SocialPost[] = [
     place: text('Hagenbüchach', 'Hagenbüchach'),
     referenceId: 'hagenbuechach-hausaeckern',
   },
+  // Die drei folgenden sind reguläre Kanalvideos (kein Short) und im Querformat.
+  // Sie stehen hier, weil die Rangfolge nach Aufrufen gilt und sie die nächsten
+  // Objektvideos darunter sind — Aufrufe am 2026-09-05 direkt von der Watch-Seite
+  // des jeweiligen Videos abgelesen.
+  {
+    id: 'youtube-nuernberg-visualisierung-wohnung',
+    platform: 'youtube',
+    url: 'https://www.youtube.com/watch?v=tsQoaldeVvE',
+    views: 143,
+    type: text('Visualisierung: 4,5-Zimmer-Wohnung', 'Visualisation: 4.5-room apartment'),
+    place: text('Nürnberg', 'Nuremberg'),
+  },
+  {
+    id: 'youtube-burgthann-villa',
+    platform: 'youtube',
+    url: 'https://www.youtube.com/watch?v=d9jBTDH2pmY',
+    views: 107,
+    type: text('Visualisierung: Unternehmervilla', 'Visualisation: executive villa'),
+    place: text('Burgthann', 'Burgthann'),
+  },
+  {
+    id: 'youtube-zirndorf-winkelbungalow',
+    platform: 'youtube',
+    url: 'https://www.youtube.com/watch?v=pInTNDB2ads',
+    views: 103,
+    type: text('Visualisierung: Winkelbungalow', 'Visualisation: L-shaped bungalow'),
+    place: text('Zirndorf-Bronnamberg', 'Zirndorf-Bronnamberg'),
+  },
+
   // Zurückgehalten: Der vierte YouTube-Short (`qx4Q31CrpM0`, Reihenmittelhaus
   // Nürnberg, 147 Aufrufe) gehört zum Fall Wörnitzstraße, dessen Ortsgenauigkeit
   // noch offen ist (siehe TODO.md). Sein YouTube-Titel nennt die Straße. Der
@@ -220,6 +264,10 @@ export type LocalizedSocialPost = Omit<SocialPost, 'type' | 'place'> & {
   place: string
   /** „Einfamilienhaus · Nürnberg" — die einzige Beschriftung, die publiziert wird. */
   label: string
+  /** Echtes Standbild des Beitrags, lokal ausgeliefert. */
+  thumbnail?: SocialThumbnail
+  /** Einbettung der Plattform, `null` wenn keine gebildet werden kann. */
+  embed: SocialEmbed | null
 }
 
 export function listSocialChannels(locale: Locale): LocalizedSocialChannel[] {
@@ -229,7 +277,15 @@ export function listSocialChannels(locale: Locale): LocalizedSocialChannel[] {
 function localizePost(post: SocialPost, locale: Locale): LocalizedSocialPost {
   const type = post.type[locale]
   const place = post.place[locale]
-  return { ...post, type, place, label: `${type} · ${place}` }
+  const thumbnail = getSocialThumbnail(post.id)
+  return {
+    ...post,
+    type,
+    place,
+    label: `${type} · ${place}`,
+    thumbnail,
+    embed: socialEmbed(post, thumbnail),
+  }
 }
 
 /** Alle Objektvideos, absteigend nach Aufrufen — plattformübergreifend. */
@@ -264,6 +320,125 @@ export function getSocialChannel(
 /** Summe der Aufrufe der hier geführten Objektvideos. */
 export function totalFeaturedViews() {
   return POSTS.reduce((sum, post) => sum + post.views, 0)
+}
+
+/**
+ * Das echte Standbild des Beitrags, lokal ausgeliefert.
+ *
+ * Erzeugt von `scripts/fetch-social-thumbnails.mjs` (`pnpm social:thumbnails`).
+ * Fehlt ein Eintrag, zeigt die Kachel die Markenfläche statt eines fremden Bildes.
+ */
+export type SocialThumbnail = {
+  src: string
+  width: number
+  height: number
+  /** Woher das Bild stammt — für die Herkunftsdokumentation. */
+  source: string
+}
+
+const THUMBNAILS = thumbnailManifest.thumbnails as Record<string, SocialThumbnail | undefined>
+
+export function getSocialThumbnail(postId: string): SocialThumbnail | undefined {
+  return THUMBNAILS[postId]
+}
+
+/** Bestimmt Kachelformat und Rahmen im Lichtkasten. */
+export type SocialEmbedShape = 'portrait' | 'landscape' | 'post'
+
+export type SocialEmbed = {
+  url: string
+  /**
+   * `portrait` = 9:16-Player (TikTok, YouTube-Shorts). `landscape` = 16:9, für
+   * die regulären Kanalvideos auf YouTube — ein Querformat in einen 9:16-Rahmen
+   * zu zwingen, hieße es entweder zu beschneiden oder mit Balken zu umranden.
+   * `post` = Instagrams Beitrags-Einbettung, die Kopf- und Fußzeile mitbringt und
+   * ihre Höhe selbst bestimmt; sie bekommt einen schmalen, scrollbaren Rahmen.
+   *
+   * Für YouTube entscheidet das Seitenverhältnis des echten Standbilds, nicht die
+   * URL-Form: Ein Short liefert ein hochformatiges `oardefault`, ein reguläres
+   * Video ein 1280×720-`maxresdefault`.
+   */
+  shape: SocialEmbedShape
+}
+
+/**
+ * Einbett-URL des Beitrags — `null`, wenn sich keine bilden lässt.
+ *
+ * Bewusst gewählt ist jeweils die **schlankste** Variante, die die Plattform
+ * anbietet — nicht die, die die ganze Plattformseite in einen Rahmen packt:
+ *
+ * - **TikTok** `tiktok.com/player/v1/<id>` — der offiziell dokumentierte
+ *   *Embed Player* (developers.tiktok.com/doc/embed-player). Er liefert das
+ *   nackte Video mit Steuerung: rund 10 KB Dokument statt der rund 290 KB von
+ *   `/embed/v2/`, das Kanalkopf, Beschreibung, Musikzeile und Folgen-Button
+ *   mitbringt. `music_info=0`, `description=0` und `rel=0` schalten den Rest ab.
+ * - **YouTube** `youtube-nocookie.com/embed/<id>` — der erweiterte
+ *   Datenschutzmodus, ohnehin nur der Player. `rel=0` unterdrückt fremde
+ *   Videovorschläge am Ende.
+ * - **Instagram** `instagram.com/p/<shortcode>/embed/` — ohne `captioned`, damit
+ *   der Bildunterschriften-Block wegfällt. Etwas schlanker geht es nicht:
+ *   Instagram bietet keinen reinen Player an, die Beitrags-Einbettung ist die
+ *   einzige unterstützte Form. Sie ist aber die dafür gebaute Einbettung und
+ *   nicht die Desktop-Website.
+ *
+ * Zu Instagram eine Warnung für spätere Prüfungen: Ein `curl` ohne
+ * `Sec-Fetch-Dest: iframe` und Nodes `fetch` bekommen `X-Frame-Options: DENY`
+ * und ein leeres Dokument — Instagram erkennt automatisierte Clients. Das ist
+ * **kein** Einbettungsverbot. Ein echter Browser lädt die Einbettung; geprüft
+ * über die `MOUNTED`-postMessage, die der Frame an das Elternfenster schickt.
+ * Wer das hier künftig „korrigiert", weil ein Header-Check DENY zeigt, entfernt
+ * eine funktionierende Einbettung.
+ *
+ * `autoplay=1` ist vertretbar, weil der Player ausschließlich nach einem
+ * ausdrücklichen Klick auf die Kachel geladen wird — er startet nie ungefragt.
+ * Geladen wird er erst dann: Vorher geht keine Anfrage an die Plattform.
+ */
+export function socialEmbed(
+  post: Pick<SocialPost, 'platform' | 'url'>,
+  thumbnail?: SocialThumbnail,
+): SocialEmbed | null {
+  if (post.platform === 'youtube') {
+    const id =
+      /\/(?:shorts|embed)\/([A-Za-z0-9_-]{6,})/.exec(post.url)?.[1] ??
+      /[?&]v=([A-Za-z0-9_-]{6,})/.exec(post.url)?.[1]
+    if (!id) return null
+    const params = new URLSearchParams({
+      autoplay: '1',
+      rel: '0',
+      modestbranding: '1',
+      playsinline: '1',
+    })
+    const shape: SocialEmbedShape =
+      thumbnail && thumbnail.width > thumbnail.height ? 'landscape' : 'portrait'
+    return { url: `https://www.youtube-nocookie.com/embed/${id}?${params}`, shape }
+  }
+
+  if (post.platform === 'tiktok') {
+    const id = /\/video\/(\d+)/.exec(post.url)?.[1]
+    if (!id) return null
+    const params = new URLSearchParams({
+      autoplay: '1',
+      controls: '1',
+      progress_bar: '1',
+      play_button: '1',
+      volume_control: '1',
+      fullscreen_button: '1',
+      timestamp: '0',
+      // Kanalkopf, Beschreibung, Musikzeile und Videovorschläge aus.
+      music_info: '0',
+      description: '0',
+      rel: '0',
+    })
+    return { url: `https://www.tiktok.com/player/v1/${id}?${params}`, shape: 'portrait' }
+  }
+
+  if (post.platform === 'instagram') {
+    const shortcode = /\/(?:reel|p|tv)\/([A-Za-z0-9_-]+)/.exec(post.url)?.[1]
+    if (!shortcode) return null
+    return { url: `https://www.instagram.com/p/${shortcode}/embed/`, shape: 'post' }
+  }
+
+  return null
 }
 
 export function formatSocialViews(views: number, locale: Locale) {

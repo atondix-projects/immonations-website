@@ -5,11 +5,20 @@ import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
+import { DrKleinToolEmbed } from '@/components/site/finance/drklein-tool-embed'
+import { DrKleinToolSection } from '@/components/site/finance/drklein-tool-section'
 import { CtaBand } from '@/components/site/templates/cta-band'
 import { FaqSection, type FaqItem } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
+import {
+  DRKLEIN_PARTNER_LOGIN_URL,
+  DRKLEIN_PARTNER_LOGO,
+  drKleinEmbedUrl,
+  getDrKleinTool,
+  listDrKleinCalculators,
+} from '@/lib/content/drklein-tools'
 import { breadcrumbList, faqPage, service as serviceJsonLd } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -18,14 +27,6 @@ import { cn } from '@/lib/utils'
 
 type TitledItem = { title: string; text: string }
 type ToolItem = { name: string; text: string }
-
-/**
- * Rechner-Hub des Finanzierungspartners. Bewusst als Link statt als Einbettung:
- * Der Hub bootet und leitet dann auf `id.drklein-plattform.de` weiter, das
- * `frame-ancestors 'self'` setzt — ein iframe bliebe für nicht angemeldete
- * Besucher leer. Die Kacheln unten tragen den Inhalt, der Link führt zum Tool.
- */
-const CALCULATOR_URL = 'https://immonation-gmbh.drklein-plattform.de/tng/tools'
 
 /** Logo liegt in 592.5 × 157.2 vor. */
 const PARTNER_LOGO = { src: '/images/partners/dr-klein.svg', width: 593, height: 157 } as const
@@ -83,6 +84,8 @@ export default async function FinancingPage({ params }: { params: Promise<{ loca
 
   const t = await getTranslations('FinancingPage')
   const nav = await getTranslations('Nav')
+  const embedT = await getTranslations('DrKleinEmbed')
+  const banner = getDrKleinTool('partner-banner')
   const metrics = t.raw('metrics.items') as TitledItem[]
   const partnerBenefits = t.raw('partner.card.items') as string[]
   const appraisalCards = t.raw('appraisal.cards') as TitledItem[]
@@ -210,6 +213,22 @@ export default async function FinancingPage({ params }: { params: Promise<{ loca
                 {t('partner.card.cta')}
                 <ArrowUpRight className="size-4" aria-hidden="true" />
               </Link>
+
+              {/* Offizielles Partnermakler-Siegel aus dem Dr. Klein Partnerportal. */}
+              <a
+                href={DRKLEIN_PARTNER_LOGO.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-border mt-8 w-fit border-t pt-8"
+              >
+                <Image
+                  src={DRKLEIN_PARTNER_LOGO.src}
+                  alt={t('partner.partnerLogoAlt')}
+                  width={DRKLEIN_PARTNER_LOGO.width}
+                  height={DRKLEIN_PARTNER_LOGO.height}
+                  className="h-12 w-auto"
+                />
+              </a>
             </aside>
           </div>
         </div>
@@ -290,33 +309,68 @@ export default async function FinancingPage({ params }: { params: Promise<{ loca
             ))}
           </ul>
 
-          <div className="border-border bg-background mt-8 flex flex-col items-start gap-5 border p-7 sm:p-10">
+          <p className="text-muted-foreground mt-8 max-w-[80ch] text-[13px] leading-[1.7] text-pretty">
+            {t('calculator.disclaimer')}
+          </p>
+        </div>
+      </section>
+
+      {/* Band 5b — die Rechner selbst */}
+      <section className="border-border border-b py-18 md:py-24">
+        <div className={CONTAINER}>
+          <div className="flex items-start gap-4">
             <span
-              className="border-brand-600 text-brand-700 flex size-14 items-center justify-center border"
+              className="border-brand-600 text-brand-700 flex size-14 shrink-0 items-center justify-center border"
               aria-hidden="true"
             >
               <Calculator className="size-6" strokeWidth={1.6} />
             </span>
-            <h3 className="max-w-[26ch] font-serif text-2xl leading-snug font-medium text-balance md:text-[1.9rem]">
-              {t('calculator.panel.title')}
-            </h3>
-            <p className="text-muted-foreground max-w-[62ch] text-[15px] leading-[1.75] text-pretty">
-              {t('calculator.panel.text')}
-            </p>
-            <a
-              href={CALCULATOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brand-600 hover:bg-brand-700 inline-flex min-h-12 items-center gap-2 px-7 py-3 text-sm font-semibold text-white transition-colors active:translate-y-px"
-            >
-              {t('calculator.panel.cta')}
-              <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
+            <div>
+              <p className={EYEBROW_LIGHT}>{t('calculator.embed.eyebrow')}</p>
+              <h2 className={cn(SECTION_TITLE, 'max-w-[18ch]')}>{t('calculator.embed.title')}</h2>
+            </div>
           </div>
-
-          <p className="text-muted-foreground mt-5 max-w-[80ch] text-[13px] leading-[1.7] text-pretty">
-            {t('calculator.disclaimer')}
+          <p className="text-muted-foreground mt-6 max-w-[74ch] text-[16px] leading-[1.75] text-pretty">
+            {t('calculator.embed.lead')}
           </p>
+
+          <div className="divide-border mt-14 flex flex-col gap-16 divide-y">
+            {listDrKleinCalculators().map((tool) => (
+              <DrKleinToolSection
+                key={tool.id}
+                toolId={tool.id}
+                heading={t(`calculator.embed.${tool.id}.heading`)}
+                text={t(`calculator.embed.${tool.id}.text`)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Band 5c — Online-Banner des Partners */}
+      <section className="border-border bg-muted/45 border-b py-14 md:py-18">
+        <div className={CONTAINER}>
+          <p className={EYEBROW_LIGHT}>{t('banner.eyebrow')}</p>
+          <h2 className="mt-4 max-w-[22ch] font-serif text-[1.8rem] leading-[1.1] font-medium tracking-[-0.02em] text-balance md:text-[2.2rem]">
+            {t('banner.title')}
+          </h2>
+          <p className="text-muted-foreground mt-4 max-w-[64ch] text-[15px] leading-[1.75] text-pretty">
+            {t('banner.text')}
+          </p>
+          <DrKleinToolEmbed
+            className="mt-8"
+            url={drKleinEmbedUrl(banner)}
+            toolId={banner.id}
+            frameHeight={banner.frameHeight}
+            labels={{
+              name: banner.name,
+              load: embedT('load', { name: banner.name }),
+              loading: embedT('loading'),
+              consentNote: embedT('consentNote', { name: banner.name }),
+              failedTitle: embedT('failedTitle'),
+              failedLink: embedT('failedLink', { name: banner.name }),
+            }}
+          />
         </div>
       </section>
 
@@ -354,6 +408,36 @@ export default async function FinancingPage({ params }: { params: Promise<{ loca
 
       {/* Band 6 — FAQ */}
       <FaqSection title={t('faq.title')} items={faqItems} />
+
+      {/*
+        Partner-Login — richtet sich an Kooperationspartner und Tippgeber, nicht
+        an Kaufinteressenten. Deshalb bewusst zurückgenommen und ganz am Ende.
+        Der Link führt zur Anmeldemaske von Dr. Klein; das von Dr. Klein
+        angebotene einbettbare Login-Formular wird nicht verwendet (Begründung
+        in `src/lib/content/drklein-tools.ts`).
+      */}
+      <section className="border-border bg-muted/45 border-t py-12 md:py-16">
+        <div className={cn(CONTAINER, 'flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-12')}>
+          <div className="lg:max-w-[38ch]">
+            <p className={EYEBROW_LIGHT}>{t('partnerLogin.eyebrow')}</p>
+            <h2 className="mt-3 font-serif text-2xl leading-snug font-medium text-balance">
+              {t('partnerLogin.title')}
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-[62ch] flex-1 text-[15px] leading-[1.75] text-pretty">
+            {t('partnerLogin.text')}
+          </p>
+          <a
+            href={DRKLEIN_PARTNER_LOGIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-border bg-background inline-flex min-h-12 w-fit shrink-0 items-center gap-2 border px-6 py-3 text-sm font-semibold transition-colors hover:border-neutral-900 active:translate-y-px"
+          >
+            {t('partnerLogin.cta')}
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
+      </section>
 
       {/* Band 7 — Abschluss */}
       <CtaBand

@@ -11,6 +11,7 @@ import { TrustProof } from '@/components/site/home/trust-proof'
 import { ServicesOverview } from '@/components/site/home/services-overview'
 import { PremiumMarketing } from '@/components/site/home/premium-marketing'
 import { SocialMedia } from '@/components/site/home/social-media'
+import { FinancingTeaser } from '@/components/site/home/financing-teaser'
 import { Reviews } from '@/components/site/home/reviews'
 import { CustomerStories } from '@/components/site/home/customer-stories'
 import { Partners } from '@/components/site/home/partners'
@@ -121,6 +122,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       <HomeChapter id="guidance">
         <DigitalAssistant locale={locale} compact teaser />
+        <FinancingTeaser />
       </HomeChapter>
 
       <HomeChapter id="situations">

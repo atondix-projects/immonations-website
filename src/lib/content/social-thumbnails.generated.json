@@ -1,0 +1,111 @@
+{
+  "generatedBy": "scripts/fetch-social-thumbnails.mjs",
+  "generatedAt": "2026-09-05",
+  "thumbnails": {
+    "tiktok-nuernberg-gaulnhofen": {
+      "src": "/images/social/tiktok-nuernberg-gaulnhofen.jpg",
+      "width": 1080,
+      "height": 1920,
+      "source": "tiktok-oembed",
+      "bytes": 483977
+    },
+    "tiktok-architektenhaus": {
+      "src": "/images/social/tiktok-architektenhaus.jpg",
+      "width": 1014,
+      "height": 1473,
+      "source": "tiktok-oembed",
+      "bytes": 87123
+    },
+    "tiktok-villa-nuernberg": {
+      "src": "/images/social/tiktok-villa-nuernberg.jpg",
+      "width": 1014,
+      "height": 1473,
+      "source": "tiktok-oembed",
+      "bytes": 139883
+    },
+    "tiktok-schwaig-sandstein": {
+      "src": "/images/social/tiktok-schwaig-sandstein.jpg",
+      "width": 1080,
+      "height": 1920,
+      "source": "tiktok-oembed",
+      "bytes": 538121
+    },
+    "tiktok-schweinau-rmh": {
+      "src": "/images/social/tiktok-schweinau-rmh.jpg",
+      "width": 2160,
+      "height": 3840,
+      "source": "tiktok-oembed",
+      "bytes": 509351
+    },
+    "instagram-maisonette-loft": {
+      "src": "/images/social/instagram-maisonette-loft.jpg",
+      "width": 720,
+      "height": 1280,
+      "source": "instagram-embed-document",
+      "bytes": 123688
+    },
+    "instagram-zirndorf-terrasse": {
+      "src": "/images/social/instagram-zirndorf-terrasse.jpg",
+      "width": 640,
+      "height": 1136,
+      "source": "instagram-embed-document",
+      "bytes": 16967
+    },
+    "instagram-home-staging": {
+      "src": "/images/social/instagram-home-staging.jpg",
+      "width": 640,
+      "height": 1136,
+      "source": "instagram-embed-document",
+      "bytes": 35813
+    },
+    "instagram-oberasbach-efh": {
+      "src": "/images/social/instagram-oberasbach-efh.jpg",
+      "width": 720,
+      "height": 1280,
+      "source": "instagram-embed-document",
+      "bytes": 220872
+    },
+    "youtube-deining-etw": {
+      "src": "/images/social/youtube-deining-etw.jpg",
+      "width": 1080,
+      "height": 1920,
+      "source": "youtube-oardefault",
+      "bytes": 141759
+    },
+    "youtube-nuernberg-efh": {
+      "src": "/images/social/youtube-nuernberg-efh.jpg",
+      "width": 1080,
+      "height": 1920,
+      "source": "youtube-oardefault",
+      "bytes": 81108
+    },
+    "youtube-hagenbuechach-efh": {
+      "src": "/images/social/youtube-hagenbuechach-efh.jpg",
+      "width": 1080,
+      "height": 1920,
+      "source": "youtube-oar2",
+      "bytes": 116736
+    },
+    "youtube-nuernberg-visualisierung-wohnung": {
+      "src": "/images/social/youtube-nuernberg-visualisierung-wohnung.jpg",
+      "width": 1280,
+      "height": 720,
+      "source": "youtube-maxresdefault",
+      "bytes": 82342
+    },
+    "youtube-burgthann-villa": {
+      "src": "/images/social/youtube-burgthann-villa.jpg",
+      "width": 1280,
+      "height": 720,
+      "source": "youtube-maxresdefault",
+      "bytes": 402204
+    },
+    "youtube-zirndorf-winkelbungalow": {
+      "src": "/images/social/youtube-zirndorf-winkelbungalow.jpg",
+      "width": 1280,
+      "height": 720,
+      "source": "youtube-maxresdefault",
+      "bytes": 84477
+    }
+  }
+}

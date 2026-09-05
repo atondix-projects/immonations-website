@@ -177,17 +177,19 @@ export default async function ReferenceDetailPage({
       reference.publication.metricsApproved &&
       reference.metrics?.approved ? (
         <section className="border-border bg-surface-dark border-b py-8 text-white">
-          <div className="mx-auto grid w-full max-w-[1240px] grid-cols-3 gap-px bg-white/20 px-6 lg:px-10">
-            {[
-              [reference.metrics.requests, copy.requests],
-              [reference.metrics.viewings, copy.viewings],
-              [reference.metrics.duration, copy.weeks],
-            ].map(([value, label]) => (
-              <div key={label} className="bg-surface-dark px-4 py-5">
-                <p className="font-serif text-3xl font-semibold tabular-nums">{value}</p>
-                <p className="mt-1 text-sm text-neutral-300">{label}</p>
-              </div>
-            ))}
+          <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+            <div className="grid grid-cols-3 gap-px bg-white/20">
+              {[
+                [reference.metrics.requests, copy.requests],
+                [reference.metrics.viewings, copy.viewings],
+                [reference.metrics.duration, copy.weeks],
+              ].map(([value, label]) => (
+                <div key={label} className="bg-surface-dark px-4 py-5">
+                  <p className="font-serif text-3xl font-semibold tabular-nums">{value}</p>
+                  <p className="mt-1 text-sm text-neutral-300">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       ) : null}

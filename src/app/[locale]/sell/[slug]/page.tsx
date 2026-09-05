@@ -197,7 +197,9 @@ export default async function SellerGuidePage({
         eyebrow={t(isLandGuide ? 'references.regionalEyebrow' : 'references.eyebrow')}
         title={t(isLandGuide ? 'references.regionalTitle' : 'references.title')}
         text={t(isLandGuide ? 'references.regionalText' : 'references.text')}
-        referenceLabel={t(isLandGuide ? 'references.regionalReferenceLabel' : 'references.referenceLabel')}
+        referenceLabel={t(
+          isLandGuide ? 'references.regionalReferenceLabel' : 'references.referenceLabel',
+        )}
       />
 
       {storyId ? <TestimonialSpotlight id={storyId} /> : null}

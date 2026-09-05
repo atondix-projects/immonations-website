@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useRef, useState, type KeyboardEvent } from 'react'
 import {
   BadgeCheck,
@@ -103,6 +104,27 @@ const SERVICE_ICONS: Record<MarketingServiceId, LucideIcon> = {
   qualification: BadgeCheck,
 }
 
+/**
+ * Kachel-Hintergrund je Leistung. Anonymisierte Gattungsbilder wie in der
+ * Prozess-Strecke — kein konkretes Kundenobjekt, damit keine echte Referenz in
+ * einem fremden Kontext auftaucht. Bewusst andere Motive als `STEP_IMAGES` in
+ * `process-timeline.tsx`, sonst laufen auf der Startseite dieselben Fotos doppelt.
+ * Das Bild liegt hinter einem Scrim und traegt keine Information; es ersetzt nur
+ * das fruehere Linienraster als Flaeche.
+ */
+const SERVICE_BACKDROPS: Record<MarketingServiceId, string> = {
+  system: '/images/generic/generic-aerial-house-garage.webp',
+  valuation: '/images/generic/generic-aerial-gable-house.webp',
+  intake: '/images/generic/generic-living-dining-staircase.webp',
+  floorplans: '/images/generic/generic-apartment-facade.webp',
+  media: '/images/generic/generic-sandstone-house-exterior.webp',
+  tour: '/images/generic/generic-aerial-house-pool.webp',
+  visualisation: '/images/generic/generic-apartment-balconies.webp',
+  listing: '/images/generic/generic-house-carport-exterior.webp',
+  visibility: '/images/generic/generic-aerial-apartment-complex.webp',
+  qualification: '/images/generic/generic-aerial-house-alt.webp',
+}
+
 function ServiceBlueprint({
   service,
   index,
@@ -124,10 +146,27 @@ function ServiceBlueprint({
 
   return (
     <div className="bg-surface-dark relative flex min-h-[420px] flex-col overflow-hidden p-7 text-white sm:p-9 lg:p-11">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:44px_44px] opacity-[0.16]"
-        aria-hidden="true"
-      />
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        {/* Nur die offene Kachel traegt ihr Bild. Alle zehn Panels stehen im DOM, die
+            inaktiven auf `hidden` — dort greift `loading="lazy"` nicht, weil ein
+            `display:none`-Element nie in den Viewport schneidet: Das Motiv startete
+            erst beim Tabwechsel und die Kachel blieb kurz leer. So laedt jeweils genau
+            ein Bild, und zwar sofort beim Aktivieren. */}
+        {isActive ? (
+          <Image
+            src={SERVICE_BACKDROPS[service.id]}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="scale-105 object-cover opacity-60 saturate-[0.7]"
+          />
+        ) : null}
+        {/* Zwei Scrims lassen nur ein Sichtband in der Kachelmitte offen: unten traegt
+            die Flaeche Headline und Kennzahlen, oben den Zaehler `01 / 10`, der sonst
+            gegen einen hellen Himmel anlaufen wuerde. */}
+        <span className="from-surface-dark via-surface-dark/78 absolute inset-0 bg-gradient-to-t from-[32%] via-[54%] to-transparent" />
+        <span className="from-surface-dark/80 absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b to-transparent" />
+      </div>
 
       {service.id === 'visualisation' && isActive ? (
         <VisualizationShowcase examples={visualizationExamples} labels={labels} />

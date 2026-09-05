@@ -508,10 +508,10 @@
   "CookieConsent": {
     "label": "Cookie notice",
     "title": "Privacy, explained clearly.",
-    "text": "Necessary functions keep this website usable. Selecting “Allow all” additionally loads external media such as the 360° tour directly, which transfers data to the respective provider.",
+    "text": "Necessary functions keep this website usable. \"Allow all\" additionally loads external media directly — social media videos from TikTok, Instagram and YouTube, the 360° tour, and the Dr. Klein financing calculators. Data is transmitted to the respective provider in the process.",
     "accept": "Allow all",
     "necessary": "Necessary only",
-    "note": "Your choice is stored locally in this browser. Without consent, external media stays disabled and can be enabled individually."
+    "note": "Your choice is stored locally in this browser. Without consent, external media stay disabled and can be enabled individually — videos then start only on click."
   },
   "VideoDialog": {
     "play": "Play video",
@@ -1190,7 +1190,9 @@
       {
         "heading": "External content",
         "paragraphs": [
-          "YouTube videos load in privacy-enhanced mode and only after a click. Links to Google, Trustpilot, Instagram, TikTok, and Facebook lead to external providers with their own privacy policies.",
+          "On the social media page and the home page we embed posts from our own TikTok, Instagram and YouTube channels. These embeds are loaded only once you explicitly start a video (two-click solution). The preview images are served from our own server; until you click, no connection to the platforms is established. When you start a video, your IP address as well as browser and device information are transmitted to the respective provider, and that provider may store or read information on your device. The legal basis is your consent (Art. 6(1)(a) GDPR, Section 25(1) TDDDG), which you give by starting a video or via \"Enable all videos\" and can withdraw at any time with effect for the future by clearing the stored choice in your browser.",
+          "The providers are TikTok Technology Limited (Ireland), Meta Platforms Ireland Limited (Instagram) and Google Ireland Limited (YouTube). Transfers to third countries, in particular the United States and, in TikTok’s case, also China, cannot be ruled out. YouTube videos are embedded via youtube-nocookie.com in privacy-enhanced mode. The providers’ privacy notices apply: TikTok (https://www.tiktok.com/legal/privacy-policy), Instagram (https://privacycenter.instagram.com/policy) and Google (https://policies.google.com/privacy).",
+          "The 360° tour is likewise loaded only after a click. Links to Google, Trustpilot, Instagram, TikTok and Facebook lead to external providers with their own privacy policies.",
           "The testimonials page may retrieve current reviews server-side through the Google Places API. Live reviews can include profile images loaded directly from Google, which transfers your IP address to Google. The Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) and Google Privacy Policy (https://policies.google.com/privacy) apply."
         ]
       },
@@ -2168,7 +2170,8 @@
       "cta": "See videos and results",
       "viewsLabel": "views",
       "watchOn": "Watch on {platform}",
-      "metricsNote": "The most-watched property video per channel. View counts as reported by each platform, partly rounded, as of {date}."
+      "metricsNote": "View counts as reported by each platform, partly rounded, as of {date}.",
+      "clipNote": "The most-watched property post per channel, playable right here. View counts as reported by each platform, partly rounded, as of {date}."
     },
     "group": {
       "eyebrow": "Company group",
@@ -2509,6 +2512,13 @@
         "text": "Find more answers on valuation, costs, documents, selling, and buying in the complete FAQ section.",
         "link": "View all questions →"
       }
+    },
+    "financing": {
+      "eyebrow": "Financing",
+      "title": "Run the numbers before you view",
+      "text": "Knowing your instalment sharpens the search and steadies the negotiation. The mortgage calculator from our partner Dr. Klein gives you the range straight away — with daily conditions from a broad bank comparison.",
+      "cta": "Explore financing",
+      "disclaimer": "Non-binding orientation, not a financing offer. Binding conditions only follow once the lending bank has reviewed your documents."
     }
   },
   "SalesProcess": {
@@ -3448,7 +3458,8 @@
           "Independent bank comparison via the Dr. Klein platform."
         ],
         "cta": "Arrange an advisory appointment"
-      }
+      },
+      "partnerLogoAlt": "Dr. Klein partner agent logo"
     },
     "appraisal": {
       "eyebrow": "Advance bank appraisal",
@@ -3499,12 +3510,24 @@
           "text": "Is buying worth it compared with renting? Compares both routes over the full term."
         }
       ],
-      "panel": {
-        "title": "Open all calculators at Dr. Klein",
-        "text": "The calculators are provided by Dr. Klein and operated on their platform. They open in a new tab — doing so transfers data to the provider.",
-        "cta": "Go to the Dr. Klein calculators"
-      },
-      "disclaimer": "The calculators provide non-binding orientation, not a financing offer. Binding conditions only follow once the lending bank has reviewed your documents."
+      "disclaimer": "The calculators provide non-binding orientation, not a financing offer. Binding conditions only follow once the lending bank has reviewed your documents.",
+      "embed": {
+        "eyebrow": "Run the numbers here",
+        "title": "Three calculators, without leaving the page",
+        "lead": "The three most-used Dr. Klein tools are embedded below. They load only when you click — until then no request reaches Dr. Klein.",
+        "interest-tableau": {
+          "heading": "Interest-rate chart — where the market currently sits",
+          "text": "The chart shows the daily conditions of Dr. Klein’s banking partners for your loan amount, broken down by property value and fixed-rate period. It tells you whether an offer is in line with the market before you negotiate."
+        },
+        "construction-interest-calculator": {
+          "heading": "Mortgage rate calculator — rate and monthly instalment for your plan",
+          "text": "Enter property value, loan amount, fixed-rate period and repayment rate — the calculator returns the interest rate, monthly instalment, total cost, remaining debt and repayment schedule. The fastest route to a reliable order of magnitude."
+        },
+        "loan-calculator": {
+          "heading": "Home loan calculator — how the fixed-rate period shifts the instalment",
+          "text": "Places several fixed-rate periods side by side and shows what security costs: monthly instalment, effective rate and remaining debt per term, directly compared."
+        }
+      }
     },
     "related": {
       "eyebrow": "Related",
@@ -3561,6 +3584,17 @@
       "text": "One conversation is enough to know what is realistic — non-binding and with no obligation to sign.",
       "primary": "Request free financing advice",
       "secondary": "Get your property valued"
+    },
+    "banner": {
+      "eyebrow": "Partner network",
+      "title": "One click to your personal adviser",
+      "text": "The banner is served by Dr. Klein and leads straight to your point of contact."
+    },
+    "partnerLogin": {
+      "eyebrow": "For partners and referrers",
+      "title": "Partner login at Dr. Klein",
+      "text": "Cooperation partners and referrers manage their cases directly in the Dr. Klein platform. The login opens in a new tab at Dr. Klein — you enter your credentials only there, never on this page.",
+      "cta": "Go to the partner login"
     }
   },
   "Magazine": {
@@ -4689,11 +4723,12 @@
     "topPosts": {
       "eyebrow": "From our channels",
       "title": "The most-watched property videos",
-      "text": "Every entry links to the original post on the platform. Only property videos are listed: posts about sponsorship, partners or year-end reviews sometimes reach more people but say nothing about property marketing.",
-      "views": "views",
-      "openOn": "watch on {platform}",
-      "caseLink": "See the reference case",
-      "channelLink": "Open the {platform} channel",
+      "text": "Every tile is a real post from TikTok, Instagram or YouTube — showing the original’s opening frame. One click plays it here, without leaving the page. Only property videos are listed: posts about sponsorship, partners or year-end reviews sometimes reach more people but say nothing about property marketing.",
+      "statPosts": "posts",
+      "statViews": "total views",
+      "filterAll": "All channels",
+      "filterGroupLabel": "Filter by channel",
+      "allChannels": "See all channels",
       "note": "View counts as reported by each platform, partly rounded, as of {date}. TikTok reports large numbers rounded (for example \"44.9K\"); the figures here follow that display. Follower and subscriber counts are deliberately not listed — they do not describe how many people actually watched a given property."
     },
     "channels": {
@@ -4934,5 +4969,39 @@
       "label": "Start a valuation",
       "secondaryLabel": "View locations"
     }
+  },
+  "SocialEmbed": {
+    "views": "views",
+    "play": "Play video",
+    "playAria": "Open the {platform} video in the large player",
+    "watchOn": "Watch on {platform}",
+    "thumbnailAlt": "Opening frame of the {platform} post: {label}",
+    "consentNote": "Starts {platform} — data is transmitted.",
+    "consentBar": {
+      "title": "Videos load only when you click",
+      "text": "The preview images are served from our own server — up to this point no platform learns that you are here. Only when you start a video does your browser connect to TikTok, Instagram or YouTube; your IP address and device data are transmitted there and those providers can store data on your device.",
+      "button": "Enable all videos",
+      "activeTitle": "External videos are enabled",
+      "activeText": "A click on a tile starts that platform’s player. You can withdraw your consent at any time via the privacy policy.",
+      "activeBadge": "Enabled"
+    },
+    "lightbox": {
+      "close": "Close player",
+      "loading": "Loading the video …",
+      "failedTitle": "This video cannot be played here.",
+      "failedLink": "Open on {platform}",
+      "openOriginal": "Open the post on {platform}",
+      "consentActive": "Connected to {platform}."
+    }
+  },
+  "DrKleinEmbed": {
+    "load": "Load {name}",
+    "loading": "Loading calculator …",
+    "consentNote": "The {name} is provided by Dr. Klein and operated on their platform. No request reaches them until you load it. Loading connects your browser to Dr. Klein; your IP address and device data are transmitted and data may be stored on your device.",
+    "failedTitle": "The calculator cannot be loaded here right now.",
+    "failedLink": "Open {name} at Dr. Klein",
+    "quoteLabel": "Explanation by Dr. Klein",
+    "sourceLabel": "Source:",
+    "germanOnlyNote": "This tool is operated by Dr. Klein and its interface is German only. The figures and results are language-independent."
   }
 }

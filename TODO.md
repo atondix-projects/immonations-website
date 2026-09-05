@@ -1,20 +1,26 @@
 # Outstanding work
 
-Last audited: 2026-09-03.
+Last audited: 2026-09-05.
 
 This is the only active project TODO. Add new work here only after confirming that it is not
 already implemented. Source records under `docs/source-material/` may describe historical gaps or
 publication gates; they are evidence, not parallel backlogs.
 
-Current baseline (2026-09-03): format check, lint, typecheck, all 88 unit tests, and the
-production build (396 static pages) pass.
+Current baseline (2026-09-05): format check, lint, typecheck and the production build
+(426 static pages) pass. 90 of 91 unit tests pass; the two contract suites that read
+`assets/` are the exception — see the environment note below.
 
-> **Environment note.** The direct dependencies were pruned out of `node_modules` mid-session
-> while transitive packages remained, breaking `next build` with `Cannot find module 'react'`.
-> `npm install` restored them. Root cause is a package-manager split: `CLAUDE.md` specifies
-> pnpm, but the repo tracks `package-lock.json` and no `pnpm-lock.yaml`, so a pnpm invocation
-> treats the npm-installed tree as extraneous and prunes it. Pick one manager and commit its
-> lockfile, or this recurs.
+> **Environment note (2026-09-05).** The package-manager split is closed: `pnpm-lock.yaml` is
+> committed, no `package-lock.json` is tracked, and `node_modules` is pnpm-managed.
+>
+> Open instead: **`assets/` is absent from this checkout.** The directory is gitignored, so a
+> clone never carries it, and it is no longer present here either. Two contract suites read it
+> directly and therefore fail — `tests/contracts/brand-assets.test.ts` (cannot open the logo
+> master) and `tests/contracts/reference-catalog.test.ts` (cannot find the 29 reference source
+> folders). Neither failure is a code regression: both assert the presence of gitignored input.
+> Restoring the library makes both pass again. This is the acute form of the P1 item "Archive
+> the library durably" below — until it is resolved, nobody can reproduce the asset checks, and
+> `pnpm brand:assets` and `pnpm references:derivatives` cannot run at all.
 
 The repository ships a complete bilingual prototype, but it is not production-cleared while the
 items below remain open.
@@ -49,6 +55,43 @@ items below remain open.
     stays at city precision, as `references.ts` requires. The titles are Immonation's own public
     publication, but confirm the sellers approve them — or ask for the titles to be re-cut to
     city precision before the site drives traffic to them.
+- [ ] **Instagram bringt im Player Beitrags-Chrome mit.** TikTok läuft über den offiziellen
+  *Embed Player* (`tiktok.com/player/v1/<id>`, rund 10 KB) und YouTube über
+  `youtube-nocookie.com/embed/` — beides reine Videoplayer ohne Kanalkopf, Beschreibung oder
+  Videovorschläge. Instagram bietet keinen entsprechenden Player an: Die einzige unterstützte
+  Einbettung ist die Beitrags-Einbettung (`/p/<shortcode>/embed/`), die Profilkopf und Fußzeile
+  mitbringt. `captioned` ist bereits weggelassen. Falls das stört, bleibt nur, das Original-MP4
+  des Reels vom Kunden zu holen und selbst auszuliefern — dann ist es aber kein echter
+  Plattformbeitrag mehr, sondern wieder eine eigene Kopie.
+- [ ] **Reichweitenstärkere Beiträge für die letzten drei Plätze.** Die Wand führt 15 Beiträge.
+  Die Plätze 13–15 sind reguläre YouTube-Kanalvideos mit 143, 107 und 103 Aufrufen — die
+  nächsten Objektvideos unterhalb der drei Shorts und die stärksten, die sich ohne Kanalzugang
+  belegen ließen. Auf TikTok und Instagram liegen mit Sicherheit stärkere Beiträge, aber beide
+  Plattformen liefern ihre Beitragslisten nicht ohne Anmeldung aus: TikTok rendert das
+  Profilraster ausschließlich clientseitig hinter Consent- und Bot-Prüfung, Instagram verlangt
+  für Profilinhalte ein Login. Wenn Beiträge mit mehr Reichweite gewünscht sind, genügen
+  URL + Aufrufzahl je Beitrag — Eintrag in `POSTS` und `pnpm social:thumbnails`, fertig.
+  Der vierte YouTube-Short (`qx4Q31CrpM0`, 147 Aufrufe) stünde vor diesen dreien, bleibt aber
+  bis zur Ortsgenauigkeits-Freigabe für die Wörnitzstraße zurückgehalten (Punkt oben).
+- [ ] **Stichtag der Aufrufzahlen vereinheitlichen.** `SOCIAL_METRICS_CAPTURED_ON` steht auf
+  2026-09-04 und wird an der Wand als „Stand" ausgewiesen. Die Zahlen der drei zuletzt
+  aufgenommenen YouTube-Videos wurden am 2026-09-05 abgelesen. Die Angabe ist damit
+  konservativ — nie frischer als behauptet — aber beim nächsten Abgleich alle Zahlen an einem
+  Tag erheben und das Datum hochsetzen.
+- [ ] **Vorschaubilder der Social-Beiträge auffrischen.** `public/images/social/*.jpg` sind die
+  echten Startbilder der Beiträge, geholt von `pnpm social:thumbnails`
+  (`scripts/fetch-social-thumbnails.mjs`, Stand in
+  `src/lib/content/social-thumbnails.generated.json`). Sie liegen lokal, weil die CDN-Links der
+  Plattformen signiert ablaufen (TikTok `x-expires`, Instagram `oe=`) und ein Hotlink die IP
+  jedes Besuchers vor der Einwilligung übertragen würde. Wird ein Beitrag ausgetauscht oder das
+  Titelbild geändert, das Skript erneut laufen lassen. Instagram wird darin über `curl` geholt:
+  Nodes `fetch` wird als Bot erkannt und bekommt ein leeres Dokument.
+- [ ] **Freigabe für die Standbilder der Objekte bestätigen.** Die Vorschaubilder zeigen die
+  Objekte so, wie sie öffentlich auf den Kanälen stehen — auf
+  `tiktok-nuernberg-gaulnhofen.jpg` ist die Hausnummer am Eingang schwach lesbar. Das ist
+  Immonations eigene Veröffentlichung; unsere Beschriftung bleibt bei Ortsteil-Genauigkeit.
+  Zusammen mit den Straßennamen in den YouTube-Titeln (Punkt oben) einmal mit den Verkäufern
+  klären.
 - [ ] **Refresh the social view counts.** `src/lib/content/social-channels.ts` holds a hand-taken
   snapshot from 2026-09-04 (`SOCIAL_METRICS_CAPTURED_ON`, rendered as an as-of date on both the
   homepage teaser and `/social`). Numbers go stale; agree a refresh cadence, or replace the file
@@ -60,6 +103,28 @@ items below remain open.
   `https://www.youtube.com/@immonationgmbh4352` — now recorded in `SITE.socials.youtube`.
 - [ ] Confirm the Dr. Klein relationship and allowed wording/linking; confirm the employee versus
   independent-agent model, current vacancies, referral terms, and any secondary buyer-search offer.
+- [ ] **Auto-Höhe der Dr. Klein Module bei Dr. Klein melden.** Der iframe-Schnipsel aus dem
+  Partnerportal setzt `min-height: 900px` und erwartet die echte Höhe per `postMessage`
+  (`drk-rechner.iframe.resized`). Diese Nachricht kommt nie: Das eingebettete Dokument ist ein
+  iframe-resizer-Kind (v5.5.9) und meldet Größen erst nach dem `[iFrameSizer]`-Handshake, den
+  Dr. Klein parentseitig nicht ausliefert. Nachgemessen am 2026-09-05 mit dem unveränderten
+  Schnipsel auf einer nackten HTML-Seite: 24 Sekunden, vier Module, genau eine Nachricht
+  (`[iFrameResizerChild]Ready`). Mit dem Original-Schnipsel schneidet jeder Rechner ab — der
+  Bauzinsrechner braucht 3357 px statt 900 px. Wir setzen deshalb gemessene Festhöhen
+  (`src/lib/content/drklein-tools.ts`); der Listener bleibt bestehen und übernimmt automatisch,
+  sobald Dr. Klein die Gegenstelle nachliefert. Bei Dr. Klein anfragen, ob sie das Parent-Skript
+  bereitstellen — dann fallen die Festhöhen weg.
+- [ ] **Datenschutzerklärung um Dr. Klein ergänzen.** Auf `/financing` und der Startseite laufen
+  jetzt eingebettete Dr. Klein Module (Bauzinschart, Bauzinsrechner, Hauskreditrechner,
+  Online-Banner). Sie laden erst nach Einwilligung, übertragen dann aber IP-Adresse und
+  Gerätedaten an `immonation-gmbh.drklein-plattform.de`. `CookieConsent.text` nennt sie bereits
+  in beiden Sprachen; der Abschnitt zu externen Medien in `LegalPrivacy` noch nicht. Muss mit in
+  die nächste juristische Prüfung (die letzte ist von 2026-09-03).
+- [ ] **Platz des Partner-Logins prüfen.** Der Login-Link steht am Fuß von `/financing`, richtet
+  sich aber an Kooperationspartner und Tippgeber, nicht an Kaufinteressenten. `/referrers` oder
+  `/partners` wäre womöglich der bessere Ort. Bewusst nicht genutzt: das von Dr. Klein
+  angebotene einbettbare Login-Formular — es würde ein Passwortfeld auf immonation.de rendern,
+  das quer nach `id.drklein-plattform.de` sendet.
 - [x] Complete legal review of imprint, privacy, terms, cookies, forms, tracking, financing,
   commission/tax/energy-certificate language, downloads, awards, and sensitive seller guidance.
   Approved 2026-09-03.

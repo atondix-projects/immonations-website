@@ -22,7 +22,8 @@
     "brand:assets": "node scripts/generate-brand-assets.mjs",
     "references:derivatives": "node scripts/generate-reference-derivatives.mjs",
     "references:coverage": "node scripts/reference-coverage-report.mjs",
-    "test:references": "vitest run tests/contracts/reference-catalog.test.ts"
+    "test:references": "vitest run tests/contracts/reference-catalog.test.ts",
+    "social:thumbnails": "node scripts/fetch-social-thumbnails.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

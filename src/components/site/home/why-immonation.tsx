@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { DIFFERENCE_ICONS } from './why-immonation-icons'
 import { CONTAINER } from './section-shell'
@@ -16,10 +17,25 @@ export async function WhyImmonation() {
       id="darum-immonation"
       className="bg-surface-dark relative scroll-mt-24 overflow-hidden py-18 text-white md:py-26"
     >
+      {/* Anonymisierte Stadtansicht statt des frueheren Linienrasters: die Region, ueber
+          die dieser Abschnitt spricht, ohne ein konkretes Kundenobjekt zu zeigen. Das Bild
+          laeuft nach unten aus, damit die Liste auf ruhiger Flaeche steht. */}
+      {/* Auf schmalen Viewports wird die Sektion sehr hoch; ueber die volle Hoehe
+          gezogen bliebe vom Querformat nur ein unlesbarer Ausschnitt. Deshalb dort
+          ein Band am oberen Rand, ab `md` die ganze Flaeche. */}
       <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[460px] md:h-full"
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] bg-[size:72px_72px]"
-      />
+      >
+        <Image
+          src="/images/generic/generic-aerial-townscape.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="[mask-image:linear-gradient(to_bottom,black_30%,transparent_85%)] object-cover object-top opacity-40 saturate-[0.6] md:object-center"
+        />
+        <span className="from-surface-dark via-surface-dark/45 absolute inset-0 bg-gradient-to-b to-transparent" />
+      </div>
       <div
         aria-hidden="true"
         className="bg-brand-400/70 absolute top-0 left-0 h-1 w-[28vw] min-w-28"
