@@ -125,7 +125,11 @@ export async function PropertyTypePaths({
                         aria-hidden="true"
                       />
                       <span className="absolute bottom-3 left-3 flex size-10 items-center justify-center bg-white/95 backdrop-blur-sm">
-                        <Icon className="text-brand-700 size-5" strokeWidth={1.6} aria-hidden="true" />
+                        <Icon
+                          className="text-brand-700 size-5"
+                          strokeWidth={1.6}
+                          aria-hidden="true"
+                        />
                       </span>
                       <span className="absolute top-3 right-3 font-mono text-[11px] text-white/85 tabular-nums">
                         {String(index + 1).padStart(2, '0')}

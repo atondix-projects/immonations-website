@@ -73,9 +73,12 @@ for (const [folder, id] of Object.entries(sourceToId)) {
   const curatedFolder = curatedFolderName
     ? join(root, 'assets', 'media-library', 'references', ...curatedFolderName.split('/'))
     : ''
-  const curatedFiles = curatedFolder && existsSync(curatedFolder)
-    ? readdirSync(curatedFolder).filter((file) => /\.(jpe?g|png|webp)$/i.test(file)).sort((a, b) => a.localeCompare(b, 'en'))
-    : []
+  const curatedFiles =
+    curatedFolder && existsSync(curatedFolder)
+      ? readdirSync(curatedFolder)
+          .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
+          .sort((a, b) => a.localeCompare(b, 'en'))
+      : []
   const inputFolder = curatedFiles.length === 3 ? curatedFolder : sourceFolder
   const files = readdirSync(inputFolder)
     .filter((file) => /\.(jpe?g|png|webp)$/i.test(file))
@@ -126,7 +129,15 @@ const existingText = existsSync(derivativeMap)
   ? readFileSync(derivativeMap, 'utf8').trimEnd()
   : header
 const mapLines = existingText.split(/\r?\n/)
-const retainedMapText = [mapLines[0], ...mapLines.slice(1).filter((line) => !line.match(/,public\/images\/references\/[^,]+\/(cover|gallery-02|gallery-03)\.webp,/))].join('\n')
+const retainedMapText = [
+  mapLines[0],
+  ...mapLines
+    .slice(1)
+    .filter(
+      (line) =>
+        !line.match(/,public\/images\/references\/[^,]+\/(cover|gallery-02|gallery-03)\.webp,/),
+    ),
+].join('\n')
 const existingRows = new Set(retainedMapText.split(/\r?\n/).slice(1))
 const newRows = rows
   .map(
@@ -134,7 +145,10 @@ const newRows = rows
       `${source},${publicPath},source-folder-reconciliation,verified-high,"Three-image WebP derivative; street address withheld from public copy."`,
   )
   .filter((row) => !existingRows.has(row))
-writeFileSync(derivativeMap, `${retainedMapText}${newRows.length ? `\n${newRows.join('\n')}` : ''}\n`)
+writeFileSync(
+  derivativeMap,
+  `${retainedMapText}${newRows.length ? `\n${newRows.join('\n')}` : ''}\n`,
+)
 
 const crossReference = join(
   root,
@@ -149,7 +163,15 @@ const crossText = existsSync(crossReference)
   ? readFileSync(crossReference, 'utf8').trimEnd()
   : crossHeader
 const crossLines = crossText.split(/\r?\n/)
-const retainedCrossText = [crossLines[0], ...crossLines.slice(1).filter((line) => !line.match(/public\/images\/references\/[^,]+\/(cover|gallery-02|gallery-03)\.webp/))].join('\n')
+const retainedCrossText = [
+  crossLines[0],
+  ...crossLines
+    .slice(1)
+    .filter(
+      (line) =>
+        !line.match(/public\/images\/references\/[^,]+\/(cover|gallery-02|gallery-03)\.webp/),
+    ),
+].join('\n')
 const escapeCsv = (value) => `"${String(value).replaceAll('"', '""')}"`
 const newCrossRows = rows
   .map(({ source, publicPath, id, position }) => {

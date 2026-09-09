@@ -67,4 +67,18 @@ describe('Andreas PDF contracts', () => {
     expect(ctaBand).toContain('bg-brand-50')
     expect(localeLayout.match(/<SiteFooter\s*\/>/g)).toHaveLength(1)
   })
+
+  it('PDF-K-01 exposes no public partner login', () => {
+    const publicPartnerSurfaces = [
+      readFileSync(join(ROOT, 'src', 'app', '[locale]', 'financing', 'page.tsx'), 'utf8'),
+      readFileSync(join(ROOT, 'src', 'components', 'site', 'site-footer.tsx'), 'utf8'),
+      readFileSync(join(ROOT, 'src', 'content', 'navigation.ts'), 'utf8'),
+      JSON.stringify([
+        JSON.parse(readFileSync(join(ROOT, 'messages', 'de.json'), 'utf8')) as object,
+        JSON.parse(readFileSync(join(ROOT, 'messages', 'en.json'), 'utf8')) as object,
+      ]),
+    ].join('\n')
+
+    expect(publicPartnerSurfaces).not.toMatch(/partner.?login|\blogin\b|sign.?in/i)
+  })
 })

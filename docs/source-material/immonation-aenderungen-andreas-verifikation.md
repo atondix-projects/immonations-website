@@ -228,11 +228,11 @@ Referenz-URLs: `/de/objektart/wohnung`, `/de/objektart/grundstueck`, `/de/objekt
 
 Referenz-URL: `/de/finanzierung`
 
-- [ ] **Soll:** Am Seitenende und an allen anderen öffentlichen Stellen ist kein interner Partner-Login sichtbar oder verlinkt.
-- [ ] Textsuche, Navigation, Footer und mobile Menüs enthalten keinen entsprechenden Einstieg.
-- [ ] Ein eventuell weiterhin benötigter interner Zugang liegt außerhalb der öffentlichen Website.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Am Seitenende und an allen anderen öffentlichen Stellen ist kein interner Partner-Login sichtbar oder verlinkt.
+- [x] Textsuche, Navigation, Footer und mobile Menüs enthalten keinen entsprechenden Einstieg.
+- [x] Ein eventuell weiterhin benötigter interner Zugang liegt außerhalb der öffentlichen Website.
+- **Status:** PASS
+- **Nachweis:** Contract-Test `PDF-K-01` durchsucht Finanzierungsseite, Navigation, Footer und beide Sprachdateien nach Partner-Login-, Login- und Sign-in-Einstiegen. Es gibt keinen öffentlichen Zugang.
 
 ### PDF-K-02 - Aktuelle Objekte über onOffice
 
@@ -278,19 +278,19 @@ Referenz-URL: `/de/downloads`
 
 Referenz-URL: `/de/faq`
 
-- [ ] Genau eine Fußzeile vorhanden.
-- [ ] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
-- **Status:**
-- **Nachweis:**
+- [x] Genau eine Fußzeile vorhanden.
+- [x] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
+- **Status:** PASS
+- **Nachweis:** Durch `PDF-Ü-01` abgedeckt: globaler Footer-Zähler im vollständigen Route-Katalog und getrennte helle Abschluss-CTA.
 
 ### PDF-W-04 - Lexikon
 
 Referenz-URL: `/de/lexikon`
 
-- [ ] Genau eine Fußzeile vorhanden.
-- [ ] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
-- **Status:**
-- **Nachweis:**
+- [x] Genau eine Fußzeile vorhanden.
+- [x] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
+- **Status:** PASS
+- **Nachweis:** Durch `PDF-Ü-01` abgedeckt: globaler Footer-Zähler im vollständigen Route-Katalog und getrennte helle Abschluss-CTA.
 
 ### PDF-W-05 - Ratgeber & News
 
@@ -308,10 +308,10 @@ Referenz-URL: `/de/news`
 
 Referenz-URL: `/de/bodenrichtwert`
 
-- [ ] Genau eine Fußzeile vorhanden.
-- [ ] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
-- **Status:**
-- **Nachweis:**
+- [x] Genau eine Fußzeile vorhanden.
+- [x] Kein footerartiger Doppelblock unmittelbar vor dem globalen Footer.
+- **Status:** PASS
+- **Nachweis:** Durch `PDF-Ü-01` abgedeckt: globaler Footer-Zähler im vollständigen Route-Katalog und getrennte helle Abschluss-CTA.
 
 ### PDF-W-07 - Städte & Stadtteile
 
@@ -367,11 +367,11 @@ Referenz-URL: `/de/kontakt`
 
 ### PDF-I-02 - Weitere Immonation-Seiten
 
-- [ ] **Soll:** Alle weiteren Seiten des Immonation-Bereichs besitzen genau eine Fußzeile.
-- [ ] Der Prüfbestand entspricht der vollständigen Liste aus PDF-Ü-01.
-- [ ] Seiten, die im PDF als ansonsten gut bewertet wurden, zeigen keine Regression durch die Footer-Korrektur.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Alle weiteren Seiten des Immonation-Bereichs besitzen genau eine Fußzeile.
+- [x] Der Prüfbestand entspricht der vollständigen Liste aus PDF-Ü-01.
+- [x] Seiten, die im PDF als ansonsten gut bewertet wurden, zeigen keine Regression durch die Footer-Korrektur.
+- **Status:** PASS
+- **Nachweis:** Der vollständige DE-/EN-Route-Katalog wird auf genau einen globalen Footer, erfolgreiche Antwort, Canonical, Hreflang und Sitemap-Eintrag geprüft. Der gemeinsame Footer-/CTA-Baustein ist zusätzlich bei 390×844 und 1440×900 verifiziert.
 
 ## I. 8. Übergreifende Technik-/Launch-Punkte - 4 Prüfpunkte
 
