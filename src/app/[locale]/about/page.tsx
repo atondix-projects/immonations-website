@@ -205,7 +205,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           text: t('trademark.text'),
           registrationLabel: t('trademark.registrationLabel'),
           registration: t('trademark.registration'),
-          downloadLabel: t('trademark.downloadLabel'),
         }}
       />
 

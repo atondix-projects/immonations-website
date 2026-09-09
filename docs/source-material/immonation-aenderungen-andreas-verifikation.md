@@ -266,13 +266,13 @@ Referenz-URL: `/de/preisatlas`
 
 Referenz-URL: `/de/downloads`
 
-- [ ] **Soll:** Das Markenzertifikat wird nicht als Download angeboten.
-- [ ] Kein Link, Button, Karteninhalt oder Suchtreffer der Website verweist auf die Datei.
-- [ ] Im Produktions-Build liegt keine öffentlich abrufbare Zertifikatsdatei unter `public/` oder einer statischen URL.
-- [ ] Bekannte oder vermutete Direkt-URLs liefern nicht die Zertifikatsdatei aus.
-- [ ] Die interne Quelldatei unter `assets/` darf erhalten bleiben, wird aber nicht deployed.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Das Markenzertifikat wird nicht als Download angeboten.
+- [x] Kein Link, Button, Karteninhalt oder Suchtreffer der Website verweist auf die Datei.
+- [x] Im Produktions-Build liegt keine öffentlich abrufbare Zertifikatsdatei unter `public/` oder einer statischen URL.
+- [x] Bekannte oder vermutete Direkt-URLs liefern nicht die Zertifikatsdatei aus.
+- [x] Die interne Quelldatei unter `assets/` darf erhalten bleiben, wird aber nicht deployed.
+- **Status:** PASS
+- **Nachweis:** Contract-Test `PDF-W-02`; Zertifikatsdatei aus `public/downloads/`, Download-UI, strukturierten Download-Daten sowie `llms.txt` und `llms-full.txt` entfernt. Die interne Quelldatei bleibt ausschließlich im ignorierten `assets/`-Bestand beziehungsweise als nicht öffentliche Rechtsquelle unter `docs/source-material/originals/legal/` erhalten.
 
 ### PDF-W-03 - FAQ
 

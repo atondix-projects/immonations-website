@@ -8,7 +8,7 @@ Die Immonation GmbH ist ein regionales Immobilienunternehmen mit Sitz in Zirndor
 
 Immonation positioniert sich als persoenlicher Ansprechpartner mit moderner Vermarktung: lokale Marktkenntnis, feste Ansprechpartner, professionelle Praesentation, 360-Grad-Rundgaenge, Immobilienvideos, Social-Media-Kampagnen und ein Suchkunden-Netzwerk.
 
-Die Marke Immonation ist als Unionsmarke beim Amt der Europaeischen Union fuer geistiges Eigentum (EUIPO) unter der Nummer `019283377` eingetragen. Die Eintragung erfolgte am 15. Maerz 2026 fuer immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37. Die Eintragungsurkunde steht als [PDF-Zertifikat](https://www.immonationgmbh.de/downloads/Zertifikat-Marke-Immonation.pdf) zum Download bereit.
+Die Marke Immonation ist als Unionsmarke beim Amt der Europaeischen Union fuer geistiges Eigentum (EUIPO) unter der Nummer `019283377` eingetragen. Die Eintragung erfolgte am 15. Maerz 2026 fuer immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37.
 
 ## Leistungen
 
@@ -50,7 +50,7 @@ Kaeufer erhalten auf `/de/angebote` beziehungsweise `/en/properties` Zugang zu O
 
 ### Ratgeber, FAQ und Downloads
 
-Der Ratgeber-Hub liegt unter `/de/news` beziehungsweise `/en/news`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/faq` beziehungsweise `/en/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen sowie das [EU-Marken-Zertifikat](https://www.immonationgmbh.de/downloads/Zertifikat-Marke-Immonation.pdf) bereit. Das REVIER Magazin ist unter `/de/magazin` beziehungsweise `/en/magazine` frei online lesbar.
+Der Ratgeber-Hub liegt unter `/de/news` beziehungsweise `/en/news`. Er enthaelt Marktkommentare, Leitfaeden und Entscheidungsfragen. Die zentrale FAQ liegt unter `/de/faq` beziehungsweise `/en/faq` und beantwortet Kurzfragen zu Kosten, Dauer, Provision, Unterlagen, Bewertung, Steuern und Ablauf – gruppiert nach Kategorie. Auf `/de/downloads` beziehungsweise `/en/downloads` stehen kostenlose Vorlagen bereit. Das REVIER Magazin ist unter `/de/magazin` beziehungsweise `/en/magazine` frei online lesbar.
 
 Das Immobilienlexikon unter `/de/lexikon` beziehungsweise `/en/glossary` enthaelt 77 servergerenderte Fachbegriffe zu Verkauf, Bewertung, Grundbuch und Finanzierung. Die englischen Eintraege sind fachlich angepasste Erklaerungen. Ein barrierearmer A-bis-Z-Filter veraendert nur die sichtbare Auswahl; alle Begriffe stehen ohne JavaScript in alphabetischer Lesereihenfolge bereit.
 
