@@ -61,12 +61,12 @@ Status je Punkt: `OFFEN`, `PASS`, `FAIL`, `BLOCKIERT`, `FREIGEGEBENE ABWEICHUNG`
 
 ### PDF-Ü-02 - Datumsstempel "Stand September 2026"
 
-- [ ] **Soll:** Der unerwünschte Datumsstempel ist entfernt.
-- [ ] **Pflichtseiten:** `/de/preisatlas`, `/de/markt` und `/de/marktdaten` visuell und im gerenderten Text prüfen.
-- [ ] **Globale Negativsuche:** In indexierbaren Seiten darf weder "Stand September 2026" noch "Stand September" als beanstandeter Stempel erscheinen.
-- [ ] **Ausnahmeprüfung:** Andere fachlich notwendige und ausdrücklich freigegebene Datumsangaben separat dokumentieren, nicht stillschweigend entfernen.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Der unerwünschte Datumsstempel ist entfernt.
+- [x] **Pflichtseiten:** `/de/preisatlas`, `/de/markt` und `/de/marktdaten` visuell und im gerenderten Text prüfen.
+- [x] **Globale Negativsuche:** In indexierbaren Seiten darf weder "Stand September 2026" noch "Stand September" als beanstandeter Stempel erscheinen.
+- [x] **Ausnahmeprüfung:** Andere fachlich notwendige und ausdrücklich freigegebene Datumsangaben separat dokumentieren, nicht stillschweigend entfernen.
+- **Status:** PASS
+- **Nachweis:** Contract-Test `PDF-Ü-02` erzwingt die optionale Datumsangabe und verbietet `DATA_AS_OF` auf den drei Marktseiten. Playwright prüft `/de/preisatlas`, `/de/markt` und `/de/marktdaten` negativ. `/de/bodenrichtwert` behält den fachlich notwendigen Stichtag für amtliche Tabellen ausdrücklich als dokumentierte Ausnahme.
 
 ### PDF-Ü-03 - Einheitliche Datenquellen-Formulierung
 

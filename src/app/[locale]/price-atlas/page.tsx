@@ -15,7 +15,6 @@ import {
   listPriceAtlasGroups,
   PRICE_ATLAS_CITIES,
 } from '@/lib/content/price-atlas'
-import { DATA_AS_OF } from '@/lib/content/provenance'
 import { breadcrumbList, faqPage, itemList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { localizePath } from '@/lib/seo/routes'
@@ -112,7 +111,7 @@ export default async function PriceAtlasPage({ params }: { params: Promise<{ loc
               {t('note')}
             </p>
 
-            <DataProvenance asOf={DATA_AS_OF[locale]} source={t('source')} />
+            <DataProvenance source={t('source')} />
           </div>
         </section>
 

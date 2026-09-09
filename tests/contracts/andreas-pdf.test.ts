@@ -81,4 +81,21 @@ describe('Andreas PDF contracts', () => {
 
     expect(publicPartnerSurfaces).not.toMatch(/partner.?login|\blogin\b|sign.?in/i)
   })
+
+  it('PDF-Ü-02 omits the disputed date from market pages', () => {
+    const provenanceComponent = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'data-provenance.tsx'),
+      'utf8',
+    )
+    const marketPages = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'market', 'market-pages.tsx'),
+      'utf8',
+    )
+    const priceAtlasPage = readFileSync(
+      join(ROOT, 'src', 'app', '[locale]', 'price-atlas', 'page.tsx'),
+      'utf8',
+    )
+    expect(provenanceComponent).toContain('asOf?: string')
+    expect(`${marketPages}\n${priceAtlasPage}`).not.toContain('asOf={DATA_AS_OF[locale]}')
+  })
 })

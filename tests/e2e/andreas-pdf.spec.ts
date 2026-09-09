@@ -17,6 +17,16 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
+  for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
+    await page.goto(path)
+    await expect(page.locator('body')).not.toContainText(/Stand:? September(?: 2026)?/i)
+  }
+
+  await page.goto('/de/bodenrichtwert')
+  await expect(page.locator('body')).toContainText('Stand: September 2026')
+})
+
 test('PDF-W-02 does not serve the former certificate URL', async ({ request }) => {
   const response = await request.get('/downloads/Zertifikat-Marke-Immonation.pdf')
   expect(response.status()).toBe(404)

@@ -15,7 +15,6 @@ import {
   NUREMBERG_DISTRICT_TRANSACTIONS,
   type MarketCard,
 } from '@/lib/content/market-insights'
-import { DATA_AS_OF } from '@/lib/content/provenance'
 import { DataProvenance } from '../data-provenance'
 import { CtaBand } from '../templates/cta-band'
 import { FaqSection } from '../templates/faq-section'
@@ -125,7 +124,7 @@ export function MarketOverviewPage({ locale }: { locale: Locale }) {
             ))}
           </div>
 
-          <DataProvenance asOf={DATA_AS_OF[locale]} note={copy.source} />
+          <DataProvenance note={copy.source} />
         </div>
       </section>
 
@@ -423,7 +422,7 @@ export function MarketDataPage({ locale }: { locale: Locale }) {
           </div>
           <p className="text-muted-foreground mt-4 text-sm leading-[1.7]">{copy.districts.note}</p>
 
-          <DataProvenance asOf={DATA_AS_OF[locale]} note={copy.source} />
+          <DataProvenance note={copy.source} />
         </div>
       </section>
 
