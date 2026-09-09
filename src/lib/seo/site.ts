@@ -1,9 +1,7 @@
 import { routing } from '@/i18n/routing'
 
-const rawUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
-
 export const SITE = {
-  url: rawUrl.replace(/\/$/, ''),
+  url: 'https://immonationgmbh.de',
   name: 'Immonation',
   legalName: 'Immonation GmbH',
   defaultLocale: routing.defaultLocale,

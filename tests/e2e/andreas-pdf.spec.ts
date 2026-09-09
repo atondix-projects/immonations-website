@@ -21,3 +21,44 @@ test('PDF-W-02 does not serve the former certificate URL', async ({ request }) =
   const response = await request.get('/downloads/Zertifikat-Marke-Immonation.pdf')
   expect(response.status()).toBe(404)
 })
+
+const METADATA_SAMPLE = [
+  '/de',
+  '/de/downloads',
+  '/de/objektart/haus',
+  '/de/stadt/zirndorf',
+  '/de/referenzen/deining-neubauwohnung',
+  '/de/news/bildungsspende-uganda',
+] as const
+
+for (const path of METADATA_SAMPLE) {
+  test(`PDF-T-02 emits production metadata for ${path}`, async ({ page }) => {
+    await page.goto(path)
+
+    const canonical = await page.locator('link[rel="canonical"]').getAttribute('href')
+    const openGraphUrl = await page.locator('meta[property="og:url"]').getAttribute('content')
+    const openGraphImage = await page.locator('meta[property="og:image"]').getAttribute('content')
+    const alternates = await page
+      .locator('link[rel="alternate"][hreflang]')
+      .evaluateAll((links) => links.map((link) => link.getAttribute('href')))
+    const html = await page.content()
+
+    expect(canonical).toMatch(/^https:\/\/immonationgmbh\.de\//)
+    expect(openGraphUrl).toBe(canonical)
+    expect(openGraphImage).toMatch(/^https:\/\/immonationgmbh\.de\//)
+    expect(alternates.length).toBeGreaterThanOrEqual(2)
+    expect(alternates.every((href) => href?.startsWith('https://immonationgmbh.de/'))).toBe(true)
+    expect(html).not.toMatch(/localhost|127\.0\.0\.1|vercel\.app/i)
+
+    const imageResponse = await page.request.get(new URL(openGraphImage!).pathname)
+    expect(imageResponse.ok()).toBe(true)
+  })
+}
+
+test('PDF-T-02 keeps sitemap and robots on the production origin', async ({ request }) => {
+  for (const path of ['/sitemap.xml', '/robots.txt']) {
+    const response = await request.get(path)
+    expect(response.ok()).toBe(true)
+    expect(await response.text()).not.toMatch(/localhost|127\.0\.0\.1|vercel\.app/i)
+  }
+})

@@ -387,13 +387,13 @@ Referenz-URL: `/de/kontakt`
 
 ### PDF-T-02 - Keine localhost-Basis-URL
 
-- [ ] **Soll:** `metadataBase`, Canonical URL, `og:url` und `og:image` verwenden `https://immonationgmbh.de`.
-- [ ] Produktions-HTML, Sitemap, Robots, JSON-LD und Social-Metadaten werden auf `localhost`, `127.0.0.1` und interne Preview-Domains durchsucht.
-- [ ] Mindestens Startseite, eine statische Unterseite, eine dynamische Objektartseite, eine Stadtseite, eine Referenzdetailseite und ein Blogartikel werden geprüft.
-- [ ] OG-Bilder sind über ihre ausgegebene URL öffentlich erreichbar.
-- [ ] Canonicals und Hreflang-Ziele liefern erfolgreiche Antworten und zeigen auf die richtige lokalisierte Seite.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** `metadataBase`, Canonical URL, `og:url` und `og:image` verwenden `https://immonationgmbh.de`.
+- [x] Produktions-HTML, Sitemap, Robots, JSON-LD und Social-Metadaten werden auf `localhost`, `127.0.0.1` und interne Preview-Domains durchsucht.
+- [x] Mindestens Startseite, eine statische Unterseite, eine dynamische Objektartseite, eine Stadtseite, eine Referenzdetailseite und ein Blogartikel werden geprüft.
+- [x] OG-Bilder sind über ihre ausgegebene URL öffentlich erreichbar.
+- [x] Canonicals und Hreflang-Ziele liefern erfolgreiche Antworten und zeigen auf die richtige lokalisierte Seite.
+- **Status:** PASS
+- **Nachweis:** Contract- und Playwright-Tests `PDF-T-02` prüfen `SITE.url`, HTML, Canonical, Hreflang, `og:url`, `og:image`, Sitemap und Robots anhand von sechs repräsentativen DE-Routen. Die Produktionsbasis ist fest auf `https://immonationgmbh.de` gesetzt.
 
 ### PDF-T-03 - Formulare senden echte Anfragen
 

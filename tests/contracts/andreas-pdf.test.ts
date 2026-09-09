@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
+import { SITE } from '../../src/lib/seo/site'
 
 const ROOT = process.cwd()
 
@@ -23,5 +24,10 @@ describe('Andreas PDF contracts', () => {
     ].join('\n')
     expect(productionSources).not.toMatch(/Zertifikat-Marke-Immonation\.pdf/i)
     expect(productionSources).not.toMatch(/downloadLabel/)
+  })
+
+  it('PDF-T-02 uses the production origin for generated absolute URLs', () => {
+    expect(SITE.url).toBe('https://immonationgmbh.de')
+    expect(JSON.stringify(SITE)).not.toMatch(/localhost|127\.0\.0\.1|vercel\.app/i)
   })
 })
