@@ -7,6 +7,8 @@ import { Link } from '@/i18n/navigation'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
+import { cn } from '@/lib/utils'
+import { HeroIntroVideo } from './hero-intro-video'
 
 type Audience = 'seller' | 'buyer'
 
@@ -78,7 +80,15 @@ function GoogleRating() {
   )
 }
 
-export function Hero({ mode, showRating = true }: { mode: Audience; showRating?: boolean }) {
+export function Hero({
+  mode,
+  showRating = true,
+  showIntroVideo = false,
+}: {
+  mode: Audience
+  showRating?: boolean
+  showIntroVideo?: boolean
+}) {
   const t = useTranslations('Home.hero')
   const reduceMotion = useReducedMotion() ?? false
   const cta = HERO_CTAS[mode]
@@ -99,9 +109,21 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
         className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-40 bg-gradient-to-b from-black/55 to-transparent md:h-48"
         aria-hidden
       />
-      <div className="relative mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+      <div
+        className={cn(
+          'relative mx-auto w-full px-6 lg:px-10',
+          showIntroVideo ? 'max-w-[1440px]' : 'max-w-[1240px]',
+        )}
+      >
         {/* Etwas unter voller Hoehe, damit die naechste Sektion knapp ueber der Falz hervorlugt. */}
-        <div className="grid min-h-[calc(100svh-5rem)] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)]">
+        <div
+          className={cn(
+            'grid min-h-[calc(100svh-5rem)] gap-10',
+            showIntroVideo
+              ? 'lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)] xl:grid-cols-[minmax(0,1fr)_minmax(340px,410px)_minmax(220px,280px)] xl:gap-7'
+              : 'lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)]',
+          )}
+        >
           {/* key={mode}: Wechsel Verkäufer/Käufer spielt die Inszenierung erneut ab */}
           <div
             key={mode}
@@ -178,6 +200,14 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
                   <ValuationEntryCard variant="glass" />
                 </motion.div>
               ) : null}
+              {showIntroVideo ? (
+                <motion.div
+                  className="w-full max-w-[440px] lg:hidden"
+                  {...getRise(reduceMotion, STAGE_DELAYS.rating)}
+                >
+                  <HeroIntroVideo />
+                </motion.div>
+              ) : null}
               {/* Mobil: Google-Bewertung unter den CTAs; Desktop: rechte Randspalte. */}
               {showRating ? (
                 <motion.div
@@ -193,20 +223,34 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
           {/* Rechte Randspalte: Bewertung unten rechts verankert. */}
           <motion.div
             key={`${mode}-rail`}
-            className="relative hidden h-full flex-col items-stretch pt-28 pb-[72px] lg:flex"
+            className="relative hidden h-full flex-col items-stretch justify-center gap-5 pt-28 pb-[72px] lg:flex"
             {...getRise(reduceMotion, STAGE_DELAYS.rating)}
           >
             {mode === 'seller' ? (
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
+              <div>
                 <ValuationEntryCard variant="glass" />
               </div>
             ) : null}
+            {showIntroVideo ? (
+              <div className="xl:hidden">
+                <HeroIntroVideo />
+              </div>
+            ) : null}
             {showRating ? (
-              <div className="mt-auto self-end border border-white/15 bg-white/5 backdrop-blur-sm">
+              <div className="self-end border border-white/15 bg-white/5 backdrop-blur-sm">
                 <GoogleRating />
               </div>
             ) : null}
           </motion.div>
+
+          {showIntroVideo ? (
+            <motion.div
+              className="hidden h-full items-center pt-28 pb-[72px] xl:flex"
+              {...getRise(reduceMotion, STAGE_DELAYS.rating)}
+            >
+              <HeroIntroVideo />
+            </motion.div>
+          ) : null}
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useMotionValueEvent, useScroll } from 'motion/react'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { LocaleSwitcher } from './locale-switcher'
@@ -11,28 +11,56 @@ import { MainNav } from './main-nav'
 import { MobileNav } from './mobile-nav'
 
 const SCROLL_THRESHOLD = 24
+const HEADER_PROBE_Y = 34
 
 export function SiteHeader() {
   const tSite = useTranslations('Site')
   const tAudience = useTranslations('Audience')
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
+  const [overDarkHomeHero, setOverDarkHomeHero] = useState(pathname === '/')
   const { scrollY } = useScroll()
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    setScrolled(latest > SCROLL_THRESHOLD)
-  })
-
-  // Transparenter, über dem Hero-Video schwebender Header — nur auf der Startseite ganz oben.
   const isHome = pathname === '/'
-  const transparent = isHome && !scrolled
-  const compact = !transparent
+  const updateHeaderState = useCallback(
+    (scrollPosition: number) => {
+      setScrolled(scrollPosition > SCROLL_THRESHOLD)
+
+      if (!isHome) {
+        setOverDarkHomeHero(false)
+        return
+      }
+
+      const hero = document.querySelector<HTMLElement>('[data-home-hero-story]')
+      if (!hero) {
+        setOverDarkHomeHero(false)
+        return
+      }
+
+      const bounds = hero.getBoundingClientRect()
+      setOverDarkHomeHero(bounds.top <= HEADER_PROBE_Y && bounds.bottom > HEADER_PROBE_Y)
+    },
+    [isHome],
+  )
+
+  useMotionValueEvent(scrollY, 'change', updateHeaderState)
+
+  useEffect(() => {
+    const update = () => updateHeaderState(window.scrollY)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [updateHeaderState])
+
+  const darkTone = isHome && overDarkHomeHero
+  const compact = !isHome || scrolled
 
   return (
     <header
+      data-header-tone={darkTone ? 'dark' : 'light'}
       className={cn(
         'fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ease-out motion-reduce:transition-none',
-        transparent
+        darkTone
           ? 'border-white/15 bg-neutral-900/[0.18] shadow-none'
           : 'border-neutral-900/10 bg-white/[0.82] shadow-[0_16px_42px_-34px_rgba(0,0,0,0.45)]',
       )}
@@ -64,7 +92,7 @@ export function SiteHeader() {
             priority
             className={cn(
               'absolute inset-0 h-full w-auto transition-opacity duration-300',
-              transparent ? 'opacity-0' : 'opacity-100',
+              darkTone ? 'opacity-0' : 'opacity-100',
             )}
           />
           <Image
@@ -76,15 +104,15 @@ export function SiteHeader() {
             aria-hidden="true"
             className={cn(
               'absolute inset-0 h-full w-auto transition-opacity duration-300',
-              transparent ? 'opacity-100' : 'opacity-0',
+              darkTone ? 'opacity-100' : 'opacity-0',
             )}
           />
         </Link>
         <div className="hidden justify-self-center lg:block">
-          <MainNav light={transparent} compact={compact} />
+          <MainNav light={darkTone} compact={compact} />
         </div>
         <div className="relative z-10 flex items-center gap-3 justify-self-end">
-          <LocaleSwitcher light={transparent} />
+          <LocaleSwitcher light={darkTone} />
           <Link
             href="/property-valuation"
             className={cn(
@@ -94,7 +122,7 @@ export function SiteHeader() {
           >
             {tAudience('sellerCta')}
           </Link>
-          <MobileNav light={transparent} />
+          <MobileNav light={darkTone} />
         </div>
       </div>
     </header>
