@@ -10,24 +10,24 @@ export type CtaBandProps = {
   secondary?: { label: string; href: LinkHref }
 }
 
-/** Dark conversion band — closes marketing/template pages with one clear action. */
+/** Light conversion band that stays visually separate from the global dark footer. */
 export function CtaBand({ title, text, primary, secondary }: CtaBandProps) {
   return (
-    <section className="bg-surface-dark border-y border-white/8 py-18 md:py-24">
+    <section data-closing-cta className="border-brand-100 bg-brand-50 border-y py-18 md:py-24">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-10 px-5 sm:px-7 lg:flex-row lg:items-end lg:px-12">
         <div className="flex flex-col gap-3">
-          <h2 className="max-w-[20ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance text-white md:text-[3.35rem]">
+          <h2 className="text-foreground max-w-[20ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">
             {title}
           </h2>
           {text ? (
-            <p className="max-w-[56ch] text-[17px] leading-[1.7] text-neutral-300">{text}</p>
+            <p className="text-muted-foreground max-w-[56ch] text-[17px] leading-[1.7]">{text}</p>
           ) : null}
         </div>
         <div className="flex flex-wrap gap-4">
           {secondary ? (
             <Link
               href={secondary.href}
-              className="inline-flex min-h-12 items-center justify-center border border-white/35 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/5 active:translate-y-px"
+              className="border-brand-700 text-brand-800 hover:bg-brand-100 inline-flex min-h-12 items-center justify-center border px-7 py-3 text-sm font-semibold transition-colors active:translate-y-px"
             >
               {secondary.label}
             </Link>

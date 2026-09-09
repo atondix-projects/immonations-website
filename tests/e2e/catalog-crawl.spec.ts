@@ -37,6 +37,11 @@ test('every published catalog URL is canonical, indexable, bilingual and in the 
         expect(html, `${path} should not be noindex`).not.toMatch(
           /<meta[^>]+name="robots"[^>]+noindex/i,
         )
+        const renderedDocument = html.replace(/<script[\s\S]*?<\/script>/g, '')
+        expect(
+          renderedDocument.match(/<footer[^>]*data-site-footer/g),
+          `${path} should have one global footer`,
+        ).toHaveLength(1)
         expect(
           html.includes(`hrefLang="${counterpart}" href="${SITE.url}${counterpartPath}"`),
           `${path} should link to ${counterpart}`,

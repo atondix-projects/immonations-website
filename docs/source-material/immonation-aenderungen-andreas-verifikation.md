@@ -51,13 +51,13 @@ Status je Punkt: `OFFEN`, `PASS`, `FAIL`, `BLOCKIERT`, `FREIGEGEBENE ABWEICHUNG`
 
 ### PDF-Ü-01 - Doppelte Fußzeile
 
-- [ ] **Soll:** Das footerartige Design erscheint pro Seite genau einmal, nicht zusätzlich im vorletzten Block und nochmals im echten Footer.
-- [ ] **Seitenumfang:** `/de/kontakt`, `/de/faq`, `/de/lexikon`, `/de/bodenrichtwert`, `/de/staedte`, `/de/markt`, `/de/marktdaten` sowie alle weiteren Immonation-Seiten prüfen.
-- [ ] **Immonation-Bereich vollständig prüfen:** `/de/ueber`, `/de/magazin`, `/de/referenzen`, `/de/verkauft`, `/de/bewertungen`, `/de/kundenstimmen`, `/de/auszeichnungen`, `/de/engagement`, `/de/gruppe`, `/de/karriere`, `/de/partnermakler`, `/de/tippgeber` und `/de/kontakt`.
-- [ ] **Technische Prüfung:** Pro Seite nur ein globales `<footer>` und keine visuell duplizierte Footer-Komposition unmittelbar davor.
-- [ ] **Responsive Prüfung:** Desktop und Mobilansicht besitzen jeweils genau eine Fußzeile.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Das footerartige Design erscheint pro Seite genau einmal, nicht zusätzlich im vorletzten Block und nochmals im echten Footer.
+- [x] **Seitenumfang:** `/de/kontakt`, `/de/faq`, `/de/lexikon`, `/de/bodenrichtwert`, `/de/staedte`, `/de/markt`, `/de/marktdaten` sowie alle weiteren Immonation-Seiten prüfen.
+- [x] **Immonation-Bereich vollständig prüfen:** `/de/ueber`, `/de/magazin`, `/de/referenzen`, `/de/verkauft`, `/de/bewertungen`, `/de/kundenstimmen`, `/de/auszeichnungen`, `/de/engagement`, `/de/gruppe`, `/de/karriere`, `/de/partnermakler`, `/de/tippgeber` und `/de/kontakt`.
+- [x] **Technische Prüfung:** Pro Seite nur ein globales `<footer>` und keine visuell duplizierte Footer-Komposition unmittelbar davor.
+- [x] **Responsive Prüfung:** Desktop und Mobilansicht besitzen jeweils genau eine Fußzeile.
+- **Status:** PASS
+- **Nachweis:** `CtaBand` ist als helle Markenfläche vom dunklen, mit `data-site-footer` eindeutig markierten globalen Footer getrennt. Der Katalog-Crawl prüft jede indexierbare DE-/EN-Seite auf genau einen globalen Footer; Playwright bestätigt die unterschiedlichen Hintergründe bei 390×844 und 1440×900.
 
 ### PDF-Ü-02 - Datumsstempel "Stand September 2026"
 

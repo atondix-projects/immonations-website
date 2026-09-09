@@ -75,3 +75,21 @@ test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ re
     /(?<![\d.,])0,0\s*\/\s*5|(?<!\d)0\+\s*Verkäufe|(?<!\d)0\s*Mio\.\s*€|(?<!\d)0\s*Team/i,
   )
 })
+
+for (const viewport of VIEWPORTS) {
+  test(`PDF-Ü-01 separates closing CTA and footer on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/kontakt')
+
+    const closingCta = page.locator('[data-closing-cta]')
+    const footer = page.locator('[data-site-footer]')
+    await expect(closingCta).toHaveCount(1)
+    await expect(footer).toHaveCount(1)
+
+    const [ctaBackground, footerBackground] = await Promise.all([
+      closingCta.evaluate((element) => getComputedStyle(element).backgroundColor),
+      footer.evaluate((element) => getComputedStyle(element).backgroundColor),
+    ])
+    expect(ctaBackground).not.toBe(footerBackground)
+  })
+}

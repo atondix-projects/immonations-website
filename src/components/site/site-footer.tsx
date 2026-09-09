@@ -19,7 +19,7 @@ export async function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface-dark pt-18 pb-10">
+    <footer data-site-footer className="bg-surface-dark pt-18 pb-10">
       <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr] lg:gap-8">
           {/* Marke: Logo, Claim und die belegbaren Vertrauensnachweise. */}

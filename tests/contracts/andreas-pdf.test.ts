@@ -55,4 +55,16 @@ describe('Andreas PDF contracts', () => {
       expect(visibleText).toBe(value)
     },
   )
+
+  it('PDF-Ü-01 visually separates the closing CTA from the dark global footer', () => {
+    const ctaBand = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'templates', 'cta-band.tsx'),
+      'utf8',
+    )
+    const localeLayout = readFileSync(join(ROOT, 'src', 'app', '[locale]', 'layout.tsx'), 'utf8')
+
+    expect(ctaBand).not.toContain('bg-surface-dark')
+    expect(ctaBand).toContain('bg-brand-50')
+    expect(localeLayout.match(/<SiteFooter\s*\/>/g)).toHaveLength(1)
+  })
 })
