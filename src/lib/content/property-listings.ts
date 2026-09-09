@@ -10,7 +10,7 @@ export type PropertyListing = {
   rooms: number
   price: number
   status: PropertyStatus
-  description: string
+  description: { de: string; en: string }
 }
 
 export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
@@ -24,8 +24,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 3,
     price: 389000,
     status: 'available',
-    description:
-      'Maisonette-Wohnung mit Balkon in ruhiger Lage von Zirndorf-Weiherhof, Fußbodenheizung, Bad und separatem Gäste-WC über zwei Ebenen.',
+    description: {
+      de: 'Maisonette-Wohnung mit Balkon in ruhiger Lage von Zirndorf-Weiherhof, Fußbodenheizung, Bad und separatem Gäste-WC über zwei Ebenen.',
+      en: 'Maisonette apartment with a balcony in quiet Zirndorf-Weiherhof, featuring underfloor heating, a bathroom and a separate guest WC across two levels.',
+    },
   },
   {
     slug: 'nuernberg-st-johannis-3zi',
@@ -37,8 +39,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 3,
     price: 379000,
     status: 'available',
-    description:
-      '3-Zimmer-Wohnung mit Balkon im beliebten St. Johannis und kurzen Wegen in die Nürnberger Altstadt.',
+    description: {
+      de: '3-Zimmer-Wohnung mit Balkon im beliebten St. Johannis und kurzen Wegen in die Nürnberger Altstadt.',
+      en: "Three-room apartment with a balcony in popular St. Johannis, within easy reach of Nuremberg's historic centre.",
+    },
   },
   {
     slug: 'erlangen-roethelheim-etw',
@@ -50,8 +54,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 3,
     price: 429000,
     status: 'available',
-    description:
-      'Gepflegte Eigentumswohnung im Röthelheimpark, einer ruhigen und stark nachgefragten Wohnlage in Erlangen.',
+    description: {
+      de: 'Gepflegte Eigentumswohnung im Röthelheimpark, einer ruhigen und stark nachgefragten Wohnlage in Erlangen.',
+      en: 'Well-maintained apartment in Röthelheimpark, a quiet and highly sought-after residential area in Erlangen.',
+    },
   },
   {
     slug: 'oberasbach-petershoehe-efh',
@@ -63,8 +69,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 6,
     price: 895000,
     status: 'available',
-    description:
-      'Modernisiertes Einfamilienhaus mit großem Grundstück, Einliegerwohnung, Garage, Carport und Kamin.',
+    description: {
+      de: 'Modernisiertes Einfamilienhaus mit großem Grundstück, Einliegerwohnung, Garage, Carport und Kamin.',
+      en: 'Modernised detached home with a generous plot, separate apartment, garage, carport and fireplace in Oberasbach.',
+    },
   },
   {
     slug: 'deining-neubau-maisonette',
@@ -76,8 +84,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 4,
     price: 695000,
     status: 'available',
-    description:
-      'Neubau-Maisonette mit Terrasse, großem Garten, Fußbodenheizung, Wärmepumpe und modernem Energiestandard.',
+    description: {
+      de: 'Neubau-Maisonette mit Terrasse, großem Garten, Fußbodenheizung, Wärmepumpe und modernem Energiestandard.',
+      en: 'New-build maisonette with a terrace, large garden, underfloor heating, heat pump and modern energy standard in Deining.',
+    },
   },
   {
     slug: 'nuernberg-zerzabelshof-reh',
@@ -89,8 +99,10 @@ export const PROPERTY_LISTINGS: readonly PropertyListing[] = [
     rooms: 5,
     price: 749000,
     status: 'available',
-    description:
-      'Modernisiertes Reihenendhaus mit eigenem Kino, Sauna und gehobener Ausstattung in Zerzabelshof.',
+    description: {
+      de: 'Modernisiertes Reihenendhaus mit eigenem Kino, Sauna und gehobener Ausstattung in Zerzabelshof.',
+      en: 'Modernised end-terrace house with a private cinema, sauna and high-quality fittings in Nuremberg-Zerzabelshof.',
+    },
   },
 ]
 

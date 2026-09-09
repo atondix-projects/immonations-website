@@ -50,6 +50,41 @@ test('every published catalog URL is canonical, indexable, bilingual and in the 
   }
 })
 
+test('PDF-T-04 gives every indexable route a localized, unique meta description', async ({
+  request,
+}) => {
+  test.setTimeout(180_000)
+  const descriptions = new Map<string, string>()
+
+  for (const routeRecord of listIndexableRoutes()) {
+    const localizedDescriptions: Partial<Record<(typeof locales)[number], string>> = {}
+
+    for (const locale of locales) {
+      const path = publicUrl(locale, routeRecord.paths[locale])
+      const response = await request.get(path)
+      expect(response.status(), `${path} should resolve`).toBe(200)
+      const html = await response.text()
+      const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1]?.trim()
+
+      expect(description, `${path} needs a meta description`).toBeTruthy()
+      expect(description!.length, `${path} description is too thin`).toBeGreaterThanOrEqual(50)
+
+      const duplicatePath = descriptions.get(`${locale}:${description}`)
+      expect(
+        duplicatePath,
+        `${path} duplicates the description from ${duplicatePath}`,
+      ).toBeUndefined()
+      descriptions.set(`${locale}:${description}`, path)
+      localizedDescriptions[locale] = description
+    }
+
+    expect(
+      localizedDescriptions.de,
+      `${routeRecord.id} should not reuse German copy as its English description`,
+    ).not.toBe(localizedDescriptions.en)
+  }
+})
+
 test('reserved, noindex, and unknown dynamic routes obey publication rules', async ({
   request,
 }) => {

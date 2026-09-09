@@ -31,12 +31,16 @@ export async function generateMetadata({
     locale === 'de'
       ? `Erfahrung von ${testimonial.name}`
       : `Experience shared by ${testimonial.name}`
+  const description =
+    locale === 'de'
+      ? `Geprüfte Kundenstimme von ${testimonial.name} über die Zusammenarbeit mit Immonation, veröffentlicht mit Quelle und Datum.`
+      : `Verified client testimonial from ${testimonial.name} about working with Immonation, published with its source and date.`
   return buildMetadata({
     locale,
     path: routeRecord.internal,
     localizedPaths: routeRecord.paths,
     title: `${title} | Immonation`,
-    description: testimonial.quote,
+    description,
   })
 }
 

@@ -44,7 +44,7 @@ export async function generateMetadata({
     path: routeRecord.internal,
     localizedPaths: routeRecord.paths,
     title: `${title} | Immonation`,
-    description: listing.description,
+    description: listing.description[locale],
   })
 }
 
@@ -88,7 +88,7 @@ export default async function PropertyPage({
         eyebrow={`${status} · ${listing.type}`}
         title={listing.title}
         lede={`${listing.location} · ${listing.postalCode}`}
-        answer={listing.description}
+        answer={listing.description[locale]}
         sections={[
           {
             title: isGerman ? 'Eckdaten' : 'Key facts',

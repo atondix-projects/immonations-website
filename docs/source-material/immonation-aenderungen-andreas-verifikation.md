@@ -410,14 +410,14 @@ Referenz-URL: `/de/kontakt`
 
 ### PDF-T-04 - Individuelle Meta-Description pro Seite
 
-- [ ] **Soll:** Jede indexierbare Seite besitzt eine eigene, keyword-passende Meta-Description.
-- [ ] Deutsch und Englisch verwenden lokalisierte Beschreibungen.
-- [ ] Keine siteweite Standardbeschreibung wird unverändert auf allen Seiten wiederholt.
-- [ ] Stichprobe umfasst alle statischen Hauptseiten sowie dynamische Objektart-, Stadt-, Stadtteil-, Referenz- und Blogseiten.
-- [ ] Fehlende, leere, doppelte und offensichtlich unpassende Descriptions werden automatisiert gemeldet.
-- [ ] Beschreibungen stimmen mit dem sichtbaren Seiteninhalt überein und versprechen nichts, was die Seite nicht liefert.
-- **Status:**
-- **Nachweis/Report:**
+- [x] **Soll:** Jede indexierbare Seite besitzt eine eigene, keyword-passende Meta-Description.
+- [x] Deutsch und Englisch verwenden lokalisierte Beschreibungen.
+- [x] Keine siteweite Standardbeschreibung wird unverändert auf allen Seiten wiederholt.
+- [x] Stichprobe umfasst alle statischen Hauptseiten sowie dynamische Objektart-, Stadt-, Stadtteil-, Referenz- und Blogseiten.
+- [x] Fehlende, leere, doppelte und offensichtlich unpassende Descriptions werden automatisiert gemeldet.
+- [x] Beschreibungen stimmen mit dem sichtbaren Seiteninhalt überein und versprechen nichts, was die Seite nicht liefert.
+- **Status:** PASS
+- **Nachweis/Report:** Playwright-Test `PDF-T-04` durchläuft den vollständigen indexierbaren Route-Katalog in DE und EN und meldet fehlende, zu kurze, doppelte oder nicht lokalisierte Descriptions. Dabei wurden sechs Objektbeschreibungen und zwei Kundenstimmen-Metadaten für EN lokalisiert; unveränderte Originalzitate bleiben als solche erhalten.
 
 ## J. Abschlussregression nach onOffice
 
