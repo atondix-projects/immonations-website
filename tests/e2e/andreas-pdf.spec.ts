@@ -62,3 +62,16 @@ test('PDF-T-02 keeps sitemap and robots on the production origin', async ({ requ
     expect(await response.text()).not.toMatch(/localhost|127\.0\.0\.1|vercel\.app/i)
   }
 })
+
+test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
+  const response = await request.get('/de')
+  const html = await response.text()
+
+  expect(response.ok()).toBe(true)
+  for (const value of ['4,9 / 5', '60+', '30 Mio. €', '8.000+', '300+']) {
+    expect(html).toContain(value)
+  }
+  expect(html).not.toMatch(
+    /(?<![\d.,])0,0\s*\/\s*5|(?<!\d)0\+\s*Verkäufe|(?<!\d)0\s*Mio\.\s*€|(?<!\d)0\s*Team/i,
+  )
+})

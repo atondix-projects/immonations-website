@@ -377,13 +377,13 @@ Referenz-URL: `/de/kontakt`
 
 ### PDF-T-01 - Kennzahlen nicht mehr auf Null
 
-- [ ] **Soll:** Werte wie Bewertung, Verkäufe, Transaktionsvolumen, Teamgröße und Portalbewertungen werden mit echten freigegebenen Zahlen ausgegeben.
-- [ ] Im initialen serverseitigen HTML stehen die echten Werte; die Count-up-Animation beginnt nicht sichtbar oder semantisch bei einem falschen Nullwert.
-- [ ] Prüfung ohne JavaScript zeigt weiterhin die echten Zahlen.
-- [ ] `0,0/5`, `0+ Verkäufe`, `0 Mio EUR`, `0 Team` und vergleichbare Null-Platzhalter kommen nicht vor.
-- [ ] Werte stimmen mit der freigegebenen Unternehmenszahlen-Liste überein.
-- **Status:**
-- **Nachweis/HTML-Auszug:**
+- [x] **Soll:** Werte wie Bewertung, Verkäufe, Transaktionsvolumen, Teamgröße und Portalbewertungen werden mit echten freigegebenen Zahlen ausgegeben.
+- [x] Im initialen serverseitigen HTML stehen die echten Werte; die Count-up-Animation beginnt nicht sichtbar oder semantisch bei einem falschen Nullwert.
+- [x] Prüfung ohne JavaScript zeigt weiterhin die echten Zahlen.
+- [x] `0,0/5`, `0+ Verkäufe`, `0 Mio EUR`, `0 Team` und vergleichbare Null-Platzhalter kommen nicht vor.
+- [x] Werte stimmen mit der freigegebenen Unternehmenszahlen-Liste überein.
+- **Status:** PASS
+- **Nachweis/HTML-Auszug:** Der serverseitige Renderer wird per Contract-Test unter anderem mit `4,9/5`, `300+`, `12 Mio. €` und `8 Team` geprüft. Playwright liest das initiale HTML von `/de` und bestätigt die hinterlegten Werte `4,9 / 5`, `60+`, `30 Mio. €`, `8.000+` und `300+` ohne Null-Platzhalter.
 
 ### PDF-T-02 - Keine localhost-Basis-URL
 
