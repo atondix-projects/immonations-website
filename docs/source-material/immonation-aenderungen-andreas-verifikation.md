@@ -142,8 +142,8 @@ Referenz-URLs: `/de` und `/de/referenzen`
 - [ ] Startseiten-Karte und Referenzen-Seite zeigen für dasselbe Objekt identische Werte.
 - [ ] Rundung, Einheit und Schreibweise sind konsistent.
 - [ ] Preis- oder Ergebnisangaben besitzen die notwendige Veröffentlichungsfreigabe.
-- **Status:**
-- **Nachweis/Stichprobe:**
+- **Status:** BLOCKIERT
+- **Nachweis/Stichprobe:** Die 26 nummerierten Fälle in `assets/Referenz Objekte/Immonation_Referenztexte.docx.md` enthalten Anfragen, Besichtigungen und Vermarktungszeit. Für `adelsdorf-reuthseering`, `schwabach-abenberger` und `zirndorf-carl-benz` fehlt dort jedoch der vollständige Kennzahlensatz. Beim Fall `fuerth-altbauwohnung` ist das hervorgehobene Ergebnis als `X 8% über Erstbewertung` notiert und deshalb nicht eindeutig freigabefähig. Benötigt werden die drei vollständigen Kennzahlensätze sowie die Bestätigung, ob beim Fürther Fall `8 % über Erstbewertung` gemeint ist. Bis dahin bleiben die öffentlichen Kennzahlen deaktiviert; es werden keine Ersatzwerte veröffentlicht.
 
 ### PDF-R-03 - Google-Rezensionen live einbinden
 
