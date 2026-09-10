@@ -2148,9 +2148,7 @@
     "feedbackReviews": {
       "eyebrow": "Client stories in writing",
       "title": "The same experiences, written down",
-      "text": "If you would rather read than watch, here are the Google reviews from the same clients — unedited screenshots, with name and star rating.",
-      "reviewLabel": "Original Google review",
-      "note": "The screenshots are unedited excerpts from the public Google profiles. Names and review texts appear exactly as published there."
+      "text": "If you would rather read than watch, here are current Google voices and documented original reviews — with reviewer, rating, date, and a link to the source."
     },
     "social": {
       "eyebrow": "Social media",

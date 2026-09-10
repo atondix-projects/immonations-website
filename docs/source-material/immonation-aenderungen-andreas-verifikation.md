@@ -148,12 +148,12 @@ Referenz-URLs: `/de` und `/de/referenzen`
 ### PDF-R-03 - Google-Rezensionen live einbinden
 
 - [ ] **Soll:** Der Block "Dieselben Erfahrungen, schriftlich festgehalten" verwendet eine laufend aktualisierbare Google-Rezensionsquelle.
-- [ ] Statische Google-Screenshots sind entfernt.
-- [ ] Die angezeigten Bewertungen gehören zum richtigen Immonation-Unternehmensprofil.
-- [ ] Aktualisierung, Ladezustand, Fehlerzustand und fehlende Einwilligung werden korrekt behandelt.
-- [ ] Falls ein Slider verwendet wird, funktionieren Autoplay-Pause, Tastatur und Touch.
-- **Status:**
-- **Nachweis:**
+- [x] Statische Google-Screenshots sind entfernt.
+- [x] Die angezeigten Bewertungen gehören zum richtigen Immonation-Unternehmensprofil.
+- [x] Aktualisierung, Ladezustand, Fehlerzustand und fehlende Einwilligung werden korrekt behandelt.
+- [x] Falls ein Slider verwendet wird, funktionieren Autoplay-Pause, Tastatur und Touch.
+- **Status:** BLOCKIERT
+- **Nachweis:** Der Referenzblock verwendet jetzt serverseitig `listTestimonialReviews()` mit der Google-Place-ID des Zirndorfer Profils, zeigt Text statt Screenshots und kennzeichnet Live- bzw. Fallbackbetrieb per `data-review-source`. Der serverseitige Abruf benötigt keine Browser-Einwilligung; bei Fehler oder fehlender Konfiguration bleiben dokumentierte Originalstimmen sichtbar. Contract-Test `PDF-R-03`, bestehende Provider-Unit-Tests und Playwright decken Providerbindung, Fallback, Screenshot-Ausschluss und mobile Sliderbedienung ab. Für den finalen PASS fehlt `GOOGLE_PLACES_API_KEY` in der Zielumgebung sowie ein erfolgreicher Live-Nachweis (`data-review-source="google-live"`).
 
 ## D. 3. KI-Visualisierung - 1 Prüfpunkt
 

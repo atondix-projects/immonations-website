@@ -147,4 +147,16 @@ describe('Andreas PDF contracts', () => {
       new Set(['Apartment', 'House', 'Commercial', 'Investment']),
     )
   })
+
+  it('PDF-R-03 renders the reference review block from the Google-capable provider', () => {
+    const feedbackReviews = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'home', 'feedback-reviews.tsx'),
+      'utf8',
+    )
+
+    expect(feedbackReviews).toContain('listTestimonialReviews')
+    expect(feedbackReviews).toContain('ReviewSlideshow')
+    expect(feedbackReviews).not.toContain('testimonialReview')
+    expect(feedbackReviews).not.toContain('review.screenshot')
+  })
 })

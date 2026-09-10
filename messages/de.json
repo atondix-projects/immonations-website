@@ -2155,9 +2155,7 @@
     "feedbackReviews": {
       "eyebrow": "Kundenstimmen als Text",
       "title": "Dieselben Erfahrungen, schriftlich festgehalten",
-      "text": "Wer lieber liest als schaut, findet hier die Google-Bewertungen derselben Kundinnen und Kunden — unverändert als Screenshot, mit Name und Sternebewertung.",
-      "reviewLabel": "Originale Google-Bewertung",
-      "note": "Die Screenshots sind unbearbeitete Ausschnitte der öffentlichen Google-Profile. Namen und Bewertungstexte stehen so, wie sie dort veröffentlicht wurden."
+      "text": "Wer lieber liest als schaut, findet hier aktuelle Google-Stimmen und dokumentierte Originalbewertungen — mit Name, Sternebewertung, Datum und Link zur Quelle."
     },
     "social": {
       "eyebrow": "Social Media",

@@ -46,6 +46,21 @@ test('PDF-R-01 exposes exactly four reference-category filters in both languages
   await expect(page.getByRole('main').last()).toContainText(/Investment · Fürth/)
 })
 
+test('PDF-R-03 renders provider-backed review text without screenshots', async ({ page }) => {
+  await page.setViewportSize(VIEWPORTS[0])
+  await page.goto('/de/referenzen')
+
+  const section = page.locator('#kundenstimmen-bewertungen')
+  await expect(section).toHaveAttribute('data-review-source', /google-live|curated-fallback/)
+  await expect(section.locator('img[src*="/images/reviews/"]')).toHaveCount(0)
+
+  const carousel = section.getByRole('region')
+  const activeSlide = carousel.locator('[aria-roledescription="Bewertung"][aria-hidden="false"]')
+  const initialLabel = await activeSlide.getAttribute('aria-label')
+  await carousel.getByRole('button', { name: 'Nächste Bewertung' }).last().click()
+  await expect(activeSlide).not.toHaveAttribute('aria-label', initialLabel ?? '')
+})
+
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
     await page.goto(path)
