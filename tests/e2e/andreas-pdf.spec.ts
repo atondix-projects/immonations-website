@@ -17,6 +17,35 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+test('PDF-R-01 exposes exactly four reference-category filters in both languages', async ({
+  page,
+}) => {
+  for (const [path, categories] of [
+    ['/de/referenzen', ['Wohnung', 'Haus', 'Gewerbe', 'Investment']],
+    ['/en/references', ['Apartment', 'House', 'Commercial', 'Investment']],
+  ] as const) {
+    await page.goto(path)
+    const gallery = page
+      .locator('section')
+      .filter({ has: page.locator('[aria-label]') })
+      .first()
+
+    for (const category of categories) {
+      await expect(page.getByRole('button', { name: category, exact: true })).toHaveCount(1)
+    }
+    expect(categories).toHaveLength(4)
+    await expect(gallery).toBeVisible()
+  }
+
+  await page.goto('/de')
+  await expect(page.locator('#referenzen')).toContainText('Wohnung')
+  await expect(page.locator('#referenzen')).toContainText('Haus')
+  await expect(page.locator('#referenzen')).toContainText('Gewerbe')
+
+  await page.goto('/de/referenzen/fuerth-mehrfamilienhaus')
+  await expect(page.getByRole('main').last()).toContainText(/Investment · Fürth/)
+})
+
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
     await page.goto(path)

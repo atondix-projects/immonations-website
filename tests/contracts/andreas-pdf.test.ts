@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { AnimatedNumber } from '../../src/components/site/animated-number'
+import { listAllReferences, listLocalizedReferences } from '../../src/lib/content/references'
 import { testimonialVideo } from '../../src/lib/content/testimonials'
 import { SITE } from '../../src/lib/seo/site'
 
@@ -133,5 +134,17 @@ describe('Andreas PDF contracts', () => {
         },
       ])
     }
+  })
+
+  it('PDF-R-01 assigns every reference to one of four public categories', () => {
+    expect(new Set(listAllReferences().map((reference) => reference.category))).toEqual(
+      new Set(['apartment', 'house', 'commercial', 'investment']),
+    )
+    expect(new Set(listLocalizedReferences('de').map((reference) => reference.type))).toEqual(
+      new Set(['Wohnung', 'Haus', 'Gewerbe', 'Investment']),
+    )
+    expect(new Set(listLocalizedReferences('en').map((reference) => reference.type))).toEqual(
+      new Set(['Apartment', 'House', 'Commercial', 'Investment']),
+    )
   })
 })

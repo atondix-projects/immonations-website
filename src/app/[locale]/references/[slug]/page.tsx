@@ -163,7 +163,8 @@ export default async function ReferenceDetailPage({
             </h1>
             <p className="text-muted-foreground mt-6 inline-flex items-center gap-2 text-base">
               <MapPin className="size-4" aria-hidden="true" />
-              {reference.typeLabel[locale]} · {reference.city[locale]} · {reference.area[locale]}
+              {reference.categoryLabel[locale]} · {reference.city[locale]} ·{' '}
+              {reference.area[locale]}
             </p>
           </div>
           <p className="max-w-[62ch] text-lg leading-[1.7] text-pretty lg:justify-self-end">

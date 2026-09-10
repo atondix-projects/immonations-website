@@ -126,13 +126,13 @@ Referenz-URLs: `/de` und `/de/referenzen`
 
 ### PDF-R-01 - Genau vier Referenzkategorien
 
-- [ ] **Soll:** Es existieren genau die Kategorien `Wohnung`, `Haus`, `Gewerbe` und `Investment`.
-- [ ] Startseiten-Karten, Referenzen-Seite, Filter und Detailseiten verwenden dieselbe Zuordnung.
-- [ ] Bezeichnungen wie Eigentumswohnung, Reihenhaus, Mehrfamilienhaus oder Dreifamilienhaus erscheinen nicht als zusätzliche Hauptkategorien.
-- [ ] Jede veröffentlichte Referenz ist genau einer der vier Kategorien zugeordnet.
-- [ ] Deutsch und Englisch besitzen dieselbe fachliche Kategorisierung.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Es existieren genau die Kategorien `Wohnung`, `Haus`, `Gewerbe` und `Investment`.
+- [x] Startseiten-Karten, Referenzen-Seite, Filter und Detailseiten verwenden dieselbe Zuordnung.
+- [x] Bezeichnungen wie Eigentumswohnung, Reihenhaus, Mehrfamilienhaus oder Dreifamilienhaus erscheinen nicht als zusätzliche Hauptkategorien.
+- [x] Jede veröffentlichte Referenz ist genau einer der vier Kategorien zugeordnet.
+- [x] Deutsch und Englisch besitzen dieselbe fachliche Kategorisierung.
+- **Status:** PASS
+- **Nachweis:** `ReferenceCategory` trennt die öffentliche Vierer-Kategorie von der detaillierten Objektart. Contract-Test `PDF-R-01` prüft alle Datensätze und die exakten DE-/EN-Labels; Playwright prüft die vier Filter, die drei Startseiten-Stichproben und die Investment-Zuordnung einer Mehrfamilienhaus-Detailseite.
 
 ### PDF-R-02 - Kennzahlen pro Referenzobjekt
 
