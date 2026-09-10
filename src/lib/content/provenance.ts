@@ -101,7 +101,7 @@ export const CLAIM_REGISTRY: Record<ClaimId, Provenance> = {
   'market-data:notarised-sales': {
     owner: 'management',
     state: 'verified',
-    source: 'Immonation — eigene beurkundete Vermittlungen',
+    source: 'basierend auf Vermittlungsdaten der Immonation',
     checkedAt: '2026-09-03',
     expiresAt: '2027-03-31',
     note: 'First-party transaction records; not independently auditable from outside the firm.',
@@ -109,7 +109,7 @@ export const CLAIM_REGISTRY: Record<ClaimId, Provenance> = {
   'price-atlas:rows': {
     owner: 'content',
     state: 'verified',
-    source: 'Immonation — eigene Vermittlungsdaten',
+    source: 'basierend auf Vermittlungsdaten der Immonation',
     checkedAt: '2026-09-03',
     expiresAt: '2027-03-31',
   },

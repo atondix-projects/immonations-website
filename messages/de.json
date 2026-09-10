@@ -4833,7 +4833,7 @@
     },
     "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
     "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
-    "source": "Datenquelle: eigene Vermittlungsdaten der Immonation GmbH.",
+    "source": "basierend auf Vermittlungsdaten der Immonation",
     "jsonLd": {
       "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
     },

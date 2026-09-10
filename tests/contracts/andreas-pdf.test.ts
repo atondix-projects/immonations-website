@@ -98,4 +98,19 @@ describe('Andreas PDF contracts', () => {
     expect(provenanceComponent).toContain('asOf?: string')
     expect(`${marketPages}\n${priceAtlasPage}`).not.toContain('asOf={DATA_AS_OF[locale]}')
   })
+
+  it('PDF-Ü-03 uses the approved brokerage-data wording in both languages', () => {
+    const germanMessages = readFileSync(join(ROOT, 'messages', 'de.json'), 'utf8')
+    const englishMessages = readFileSync(join(ROOT, 'messages', 'en.json'), 'utf8')
+    const marketInsights = readFileSync(
+      join(ROOT, 'src', 'lib', 'content', 'market-insights.ts'),
+      'utf8',
+    )
+
+    expect(`${germanMessages}\n${marketInsights}`).toContain(
+      'basierend auf Vermittlungsdaten der Immonation',
+    )
+    expect(`${englishMessages}\n${marketInsights}`).toContain('based on Immonation brokerage data')
+    expect(`${germanMessages}\n${marketInsights}`).not.toMatch(/einige Vermittlungsdaten/i)
+  })
 })

@@ -27,6 +27,21 @@ test('PDF-Ü-02 removes the disputed September stamp only from market pages', as
   await expect(page.locator('body')).toContainText('Stand: September 2026')
 })
 
+test('PDF-Ü-03 uses the approved brokerage-data attribution in both languages', async ({
+  page,
+}) => {
+  for (const [path, source] of [
+    ['/de/preisatlas', 'basierend auf Vermittlungsdaten der Immonation'],
+    ['/de/marktdaten', 'basierend auf Vermittlungsdaten der Immonation'],
+    ['/en/price-atlas', 'based on Immonation brokerage data'],
+    ['/en/market-data', 'based on Immonation brokerage data'],
+  ] as const) {
+    await page.goto(path)
+    await expect(page.locator('body')).toContainText(source)
+    await expect(page.locator('body')).not.toContainText(/einige Vermittlungsdaten/i)
+  }
+})
+
 test('PDF-W-02 does not serve the former certificate URL', async ({ request }) => {
   const response = await request.get('/downloads/Zertifikat-Marke-Immonation.pdf')
   expect(response.status()).toBe(404)

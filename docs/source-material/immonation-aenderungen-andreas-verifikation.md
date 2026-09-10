@@ -70,12 +70,12 @@ Status je Punkt: `OFFEN`, `PASS`, `FAIL`, `BLOCKIERT`, `FREIGEGEBENE ABWEICHUNG`
 
 ### PDF-Ü-03 - Einheitliche Datenquellen-Formulierung
 
-- [ ] **Solltext exakt:** `basierend auf Vermittlungsdaten der Immonation`
-- [ ] **Pflichtseiten:** Preisatlas und Immobilienpreise enthalten diese Formulierung einheitlich.
-- [ ] **Negativprüfung:** Die beanstandete Formulierung `einige Vermittlungsdaten` kommt nicht mehr vor.
-- [ ] **Sprachprüfung:** Die englischen Seiten verwenden eine sinngleiche, eindeutige Übersetzung und keine widersprüchliche Quellenbeschreibung.
-- **Status:**
-- **Nachweis:**
+- [x] **Solltext exakt:** `basierend auf Vermittlungsdaten der Immonation`
+- [x] **Pflichtseiten:** Preisatlas und Immobilienpreise enthalten diese Formulierung einheitlich.
+- [x] **Negativprüfung:** Die beanstandete Formulierung `einige Vermittlungsdaten` kommt nicht mehr vor.
+- [x] **Sprachprüfung:** Die englischen Seiten verwenden eine sinngleiche, eindeutige Übersetzung und keine widersprüchliche Quellenbeschreibung.
+- **Status:** PASS
+- **Nachweis:** Contract- und Playwright-Tests `PDF-Ü-03` prüfen Preisatlas und Immobilienpreise in DE/EN. Deutsch verwendet exakt `basierend auf Vermittlungsdaten der Immonation`, Englisch `based on Immonation brokerage data`; `einige Vermittlungsdaten` ist ausgeschlossen.
 
 ## B. 1. Startseite - 4 Prüfpunkte
 

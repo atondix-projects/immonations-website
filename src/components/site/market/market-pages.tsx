@@ -124,7 +124,7 @@ export function MarketOverviewPage({ locale }: { locale: Locale }) {
             ))}
           </div>
 
-          <DataProvenance note={copy.source} />
+          <DataProvenance source={copy.source} />
         </div>
       </section>
 
@@ -422,7 +422,7 @@ export function MarketDataPage({ locale }: { locale: Locale }) {
           </div>
           <p className="text-muted-foreground mt-4 text-sm leading-[1.7]">{copy.districts.note}</p>
 
-          <DataProvenance note={copy.source} />
+          <DataProvenance source={copy.source} />
         </div>
       </section>
 

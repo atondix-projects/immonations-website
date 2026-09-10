@@ -4826,7 +4826,7 @@
     },
     "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
     "note": "All figures are guide values, not a commitment to an achievable sale price. A reliable assessment starts with a review of the specific property.",
-    "source": "Data source: Immonation GmbH’s own brokerage records.",
+    "source": "based on Immonation brokerage data",
     "jsonLd": {
       "cityDescription": "District-level square-metre prices for {city} in the Immonation price atlas."
     },
