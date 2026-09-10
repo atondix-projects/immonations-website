@@ -94,12 +94,12 @@ Referenz-URL: `/de`
 
 ### PDF-S-02 - Videos statt Google-Screenshots
 
-- [ ] **Soll:** Im Block "Ausgewählte Stimmen zu echten Verkäufen" sind die Google-Screenshots entfernt.
-- [ ] Stattdessen werden die freigegebenen Videos aus `assets/Verkäufer Feedback Videos/` verwendet.
-- [ ] Wiedergabe, Poster, Untertitel, Tastaturbedienung und Mobilansicht funktionieren.
-- [ ] Es werden nur freigegebene Kunden- und Objektinformationen veröffentlicht.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Im Block "Ausgewählte Stimmen zu echten Verkäufen" sind die Google-Screenshots entfernt.
+- [x] Stattdessen werden die freigegebenen Videos aus `assets/Verkäufer Feedback Videos/` verwendet.
+- [x] Wiedergabe, Poster, Untertitel, Tastaturbedienung und Mobilansicht funktionieren.
+- [x] Es werden nur freigegebene Kunden- und Objektinformationen veröffentlicht.
+- **Status:** PASS
+- **Nachweis:** Die Startseite verwendet die vier lokal aufbereiteten Feedback-Videos samt Poster. Deutsche WebVTT-Spuren wurden aus den veröffentlichten Videos zeitcodiert und anhand der Begleitunterlagen korrigiert. Contract-Test `PDF-S-02` prüft alle vier Dateien und Registry-Einträge; Playwright prüft vier Video-Trigger, fehlende Review-Screenshots, Untertitelspur, Tastaturöffnung und Escape-Schließen bei 390×844 und 1440×900.
 
 ### PDF-S-03 - Polaroid-Bilder direkt unter der Verkaufsglocke
 

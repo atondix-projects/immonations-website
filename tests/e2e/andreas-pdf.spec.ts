@@ -42,6 +42,27 @@ test('PDF-Ü-03 uses the approved brokerage-data attribution in both languages',
   }
 })
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-S-02 uses captioned feedback videos on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de')
+
+    const stories = page.locator('#kundenstimmen')
+    await expect(stories.locator('img[src*="/images/reviews/"]')).toHaveCount(0)
+    await expect(stories.locator('[data-video-dialog]')).toHaveCount(4)
+
+    const firstVideoTrigger = stories.locator('[data-video-dialog]').first()
+    await firstVideoTrigger.focus()
+    await page.keyboard.press('Enter')
+
+    const dialog = page.getByRole('dialog')
+    await expect(dialog).toBeVisible()
+    await expect(dialog.locator('video track[kind="captions"][srclang="de"]')).toHaveCount(1)
+    await page.keyboard.press('Escape')
+    await expect(dialog).not.toBeVisible()
+  })
+}
+
 test('PDF-W-02 does not serve the former certificate URL', async ({ request }) => {
   const response = await request.get('/downloads/Zertifikat-Marke-Immonation.pdf')
   expect(response.status()).toBe(404)

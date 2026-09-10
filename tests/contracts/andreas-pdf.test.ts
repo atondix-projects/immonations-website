@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { AnimatedNumber } from '../../src/components/site/animated-number'
+import { testimonialVideo } from '../../src/lib/content/testimonials'
 import { SITE } from '../../src/lib/seo/site'
 
 const ROOT = process.cwd()
@@ -112,5 +113,25 @@ describe('Andreas PDF contracts', () => {
     )
     expect(`${englishMessages}\n${marketInsights}`).toContain('based on Immonation brokerage data')
     expect(`${germanMessages}\n${marketInsights}`).not.toMatch(/einige Vermittlungsdaten/i)
+  })
+
+  it('PDF-S-02 publishes captions for every homepage testimonial video', () => {
+    for (const id of [
+      'viktor-emter',
+      'markus-burkhard',
+      'sandra-boerschlein',
+      'andres-gugel',
+    ] as const) {
+      const captionPath = join(ROOT, 'public', 'videos', 'testimonials', `${id}.de.vtt`)
+      expect(existsSync(captionPath), `${id} needs a German WebVTT track`).toBe(true)
+      expect(testimonialVideo(id)?.captions).toEqual([
+        {
+          src: `/videos/testimonials/${id}.de.vtt`,
+          srcLang: 'de',
+          label: 'Deutsch',
+          default: true,
+        },
+      ])
+    }
   })
 })

@@ -19,12 +19,7 @@ type TestimonialVideo = {
   /** Echte Pixelmaße — ohne sie kennt das Overlay das Seitenverhältnis erst nach dem Laden. */
   width: number
   height: number
-  /**
-   * Untertitelspuren zum gesprochenen Inhalt. Alle vier Kundenvideos haben Ton und
-   * brauchen daher Untertitel (WCAG 1.2.2); die WebVTT-Dateien stehen noch aus.
-   * Sobald eine Datei unter `public/videos/testimonials/` liegt, genügt der Eintrag
-   * hier — `VideoDialog` rendert die Spur ohne weitere Codeänderung.
-   */
+  /** Untertitelspuren zum gesprochenen Inhalt (WCAG 1.2.2). */
   captions?: readonly VideoCaptionTrack[]
 }
 
@@ -54,10 +49,25 @@ type TestimonialMedia = {
 
 const PORTRAIT_VIDEO = { width: 720, height: 1280 } as const
 
+function germanCaptions(id: string): readonly VideoCaptionTrack[] {
+  return [
+    {
+      src: `/videos/testimonials/${id}.de.vtt`,
+      srcLang: 'de',
+      label: 'Deutsch',
+      default: true,
+    },
+  ]
+}
+
 const TESTIMONIAL_MEDIA = {
   'viktor-emter': {
     image: '/images/testimonials/viktor-emter.webp',
-    video: { src: '/videos/testimonials/viktor-emter.mp4', ...PORTRAIT_VIDEO },
+    video: {
+      src: '/videos/testimonials/viktor-emter.mp4',
+      ...PORTRAIT_VIDEO,
+      captions: germanCaptions('viktor-emter'),
+    },
     coverClass: 'object-[center_72%] scale-110',
     review: {
       reviewer: 'Viktor Emter',
@@ -75,7 +85,11 @@ const TESTIMONIAL_MEDIA = {
   },
   'markus-burkhard': {
     image: '/images/testimonials/markus-burkhard.webp',
-    video: { src: '/videos/testimonials/markus-burkhard.mp4', ...PORTRAIT_VIDEO },
+    video: {
+      src: '/videos/testimonials/markus-burkhard.mp4',
+      ...PORTRAIT_VIDEO,
+      captions: germanCaptions('markus-burkhard'),
+    },
     review: {
       reviewer: 'Markus Burkhard',
       rating: 5,
@@ -92,7 +106,11 @@ const TESTIMONIAL_MEDIA = {
   },
   'sandra-boerschlein': {
     image: '/images/testimonials/sandra-boerschlein.webp',
-    video: { src: '/videos/testimonials/sandra-boerschlein.mp4', ...PORTRAIT_VIDEO },
+    video: {
+      src: '/videos/testimonials/sandra-boerschlein.mp4',
+      ...PORTRAIT_VIDEO,
+      captions: germanCaptions('sandra-boerschlein'),
+    },
     coverClass: 'object-[center_42%]',
     review: {
       reviewer: 'Cyber 86',
@@ -110,7 +128,11 @@ const TESTIMONIAL_MEDIA = {
   },
   'andres-gugel': {
     image: '/images/testimonials/andres-gugel.webp',
-    video: { src: '/videos/testimonials/andres-gugel.mp4', ...PORTRAIT_VIDEO },
+    video: {
+      src: '/videos/testimonials/andres-gugel.mp4',
+      ...PORTRAIT_VIDEO,
+      captions: germanCaptions('andres-gugel'),
+    },
     coverClass: 'object-[center_38%]',
   },
   'herr-sippel': { image: '/images/testimonials/herr-sippel-property.jpg' },
