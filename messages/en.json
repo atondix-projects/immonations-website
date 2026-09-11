@@ -3965,12 +3965,19 @@
     "processTitle": "The decisive steps",
     "showcase": {
       "eyebrow": "Property types compared",
-      "title": "Apartment buildings need different sales arguments",
-      "text": "Age, facade, tenancy structure, and records change how buyers assess a property. Three archived examples show what matters in the presentation.",
-      "carousel": "Apartment-building image gallery",
+      "title": "Property details that shape buyer decisions",
+      "text": "Age, construction, use, and records change how buyers assess a property. Three relevant examples show what matters in the presentation.",
+      "carousel": "Property-specific image gallery",
       "slide": "Image",
       "previous": "Previous image",
       "next": "Next image"
+    },
+    "knowledge": {
+      "eyebrow": "Market & land",
+      "title": "Put the location in context with reliable data",
+      "landValue": "Understand standard land value",
+      "priceAtlas": "Open the district price atlas",
+      "open": "Explore the topic"
     },
     "documentsEyebrow": "Checklist",
     "documentsTitle": "Documents you will need",

@@ -3972,12 +3972,19 @@
     "processTitle": "Die entscheidenden Schritte",
     "showcase": {
       "eyebrow": "Objekttypen im Vergleich",
-      "title": "Mehrfamilienhäuser verlangen unterschiedliche Verkaufsargumente",
-      "text": "Baujahr, Fassade, Mietstruktur und Unterlagen verändern die Prüfung durch Käufer. Drei archivierte Beispiele zeigen, worauf es in der Präsentation ankommt.",
-      "carousel": "Bildergalerie zu Mehrfamilienhäusern",
+      "title": "Objektdetails, die Käuferentscheidungen prägen",
+      "text": "Baujahr, Bauart, Nutzung und Unterlagen verändern die Prüfung durch Käufer. Drei passende Beispiele zeigen, worauf es in der Präsentation ankommt.",
+      "carousel": "Objektbezogene Bildergalerie",
       "slide": "Bild",
       "previous": "Vorheriges Bild",
       "next": "Nächstes Bild"
+    },
+    "knowledge": {
+      "eyebrow": "Markt & Grundstück",
+      "title": "Die Lage mit belastbaren Daten einordnen",
+      "landValue": "Bodenrichtwert verstehen",
+      "priceAtlas": "Preisatlas nach Stadtteil öffnen",
+      "open": "Wissen vertiefen"
     },
     "documentsEyebrow": "Checkliste",
     "documentsTitle": "Diese Unterlagen brauchen Sie",

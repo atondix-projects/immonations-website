@@ -217,6 +217,29 @@ describe('Andreas PDF contracts', () => {
     )
   })
 
+  it('PDF-V-04 covers all four seller guides with slideshows and knowledge links', () => {
+    const sellerGuidePage = readFileSync(
+      join(ROOT, 'src', 'app', '[locale]', 'sell', '[slug]', 'page.tsx'),
+      'utf8',
+    )
+    const showcases = readFileSync(
+      join(ROOT, 'src', 'lib', 'content', 'seller-guide-showcases.ts'),
+      'utf8',
+    )
+
+    for (const translationKey of [
+      'sell-house',
+      'sell-apartment',
+      'sell-land',
+      'sell-apartment-building',
+    ]) {
+      expect(showcases).toContain(`'${translationKey}': [`)
+    }
+    expect(sellerGuidePage).toContain('href="/land-value"')
+    expect(sellerGuidePage).toContain('href="/price-atlas"')
+    expect(sellerGuidePage).toContain('data-seller-guide-knowledge')
+  })
+
   it('PDF-W-05 publishes paired, substantive owner guides in German and English', () => {
     const pairs = [
       ['de/immobilienverkauf-vorbereiten-unterlagen.mdx', 'en/prepare-property-sale-documents.mdx'],

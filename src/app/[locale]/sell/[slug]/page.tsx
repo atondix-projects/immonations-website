@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Check } from 'lucide-react'
+import { ArrowUpRight, Check } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -181,6 +181,41 @@ export default async function SellerGuidePage({
           next: t('showcase.next'),
         }}
       />
+
+      <section data-seller-guide-knowledge className="bg-background py-14 md:py-18">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">
+          <div>
+            <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
+              {t('knowledge.eyebrow')}
+            </p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-balance">
+              {t('knowledge.title')}
+            </h2>
+          </div>
+          <div className="grid gap-px bg-neutral-900/10 sm:grid-cols-2">
+            <Link
+              href="/land-value"
+              className="group focus-visible:ring-primary bg-muted flex min-h-40 flex-col justify-between p-6 transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
+            >
+              <span className="font-serif text-2xl font-semibold">{t('knowledge.landValue')}</span>
+              <span className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                {t('knowledge.open')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </span>
+            </Link>
+            <Link
+              href="/price-atlas"
+              className="group focus-visible:ring-primary bg-muted flex min-h-40 flex-col justify-between p-6 transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
+            >
+              <span className="font-serif text-2xl font-semibold">{t('knowledge.priceAtlas')}</span>
+              <span className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                {t('knowledge.open')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="border-border border-t py-16 md:py-20">
         <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">

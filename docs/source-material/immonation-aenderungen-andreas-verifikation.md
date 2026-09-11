@@ -214,13 +214,13 @@ Referenz-URL: `/de/objektart/mehrfamilienhaus`
 
 Referenz-URLs: `/de/objektart/wohnung`, `/de/objektart/grundstueck`, `/de/objektart/haus`
 
-- [ ] **Soll:** Jede der drei Seiten besitzt eine objektpassende Slideshow nach demselben Prinzip.
-- [ ] Zusammen mit `/de/objektart/mehrfamilienhaus` verlinken alle vier Objektartseiten kontextuell auf `/de/bodenrichtwert`.
-- [ ] Alle vier Objektartseiten verlinken kontextuell auf `/de/preisatlas`.
-- [ ] Die englischen Seiten führen auf die jeweiligen lokalisierten Ziele.
-- [ ] Alle Slideshow-Bilder und Beschriftungen passen zur jeweiligen Objektart.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Jede der drei Seiten besitzt eine objektpassende Slideshow nach demselben Prinzip.
+- [x] Zusammen mit `/de/objektart/mehrfamilienhaus` verlinken alle vier Objektartseiten kontextuell auf `/de/bodenrichtwert`.
+- [x] Alle vier Objektartseiten verlinken kontextuell auf `/de/preisatlas`.
+- [x] Die englischen Seiten führen auf die jeweiligen lokalisierten Ziele.
+- [x] Alle Slideshow-Bilder und Beschriftungen passen zur jeweiligen Objektart.
+- **Status:** PASS
+- **Nachweis:** Haus, Wohnung und Grundstück verwenden denselben barrierearmen Slider wie Mehrfamilienhaus mit jeweils drei typisierten, lokalisierten Bildmotiven aus bereits veröffentlichten lokalen Derivaten. Der Grundstücksleitfaden kennzeichnet Luftbilder als Lage-, Zufahrts- und Bebauungskontext und behauptet keinen unbelegten Grundstücksverkauf. Ein serverseitig lokalisierter Wissensblock verlinkt auf allen vier DE-/EN-Seiten zu Bodenrichtwert und Preisatlas. Contract-Test `PDF-V-04`, der 430-Seiten-Build und Playwright über alle acht lokalisierten Routen sind grün; sechs Mobil-/Desktop-Screenshots liegen unter `output/verification/PDF-V-04/`.
 
 ## F. 5. Ich will kaufen - 2 Prüfpunkte
 

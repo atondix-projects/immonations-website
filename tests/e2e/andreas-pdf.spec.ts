@@ -226,6 +226,71 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+test('PDF-V-04 equips all four localized seller guides with slides and knowledge links', async ({
+  page,
+}) => {
+  const routes = [
+    ['/de/objektart/haus', '/de/bodenrichtwert', '/de/preisatlas', 'Freistehendes Einfamilienhaus'],
+    ['/de/objektart/wohnung', '/de/bodenrichtwert', '/de/preisatlas', 'Altbauwohnung'],
+    ['/de/objektart/grundstueck', '/de/bodenrichtwert', '/de/preisatlas', 'Mikrolage aus der Luft'],
+    [
+      '/de/objektart/mehrfamilienhaus',
+      '/de/bodenrichtwert',
+      '/de/preisatlas',
+      'Altbau-Mehrfamilienhaus',
+    ],
+    ['/en/property-type/house', '/en/land-value', '/en/price-atlas', 'Detached family home'],
+    ['/en/property-type/apartment', '/en/land-value', '/en/price-atlas', 'Period apartment'],
+    ['/en/property-type/land', '/en/land-value', '/en/price-atlas', 'Micro-location from above'],
+    [
+      '/en/property-type/apartment-building',
+      '/en/land-value',
+      '/en/price-atlas',
+      'Period apartment building',
+    ],
+  ] as const
+
+  for (const [route, landValuePath, priceAtlasPath, firstSlide] of routes) {
+    await page.goto(route)
+    const essentialCookies = page.getByRole('button', { name: /Nur notwendige|Essential only/ })
+    if (await essentialCookies.isVisible()) await essentialCookies.click()
+
+    const showcase = page.locator('[data-seller-guide-showcase]')
+    const knowledge = page.locator('[data-seller-guide-knowledge]')
+    await expect(showcase).toHaveCount(1)
+    await expect(showcase).toContainText(firstSlide)
+    await expect(showcase.locator('button[aria-label*=" / 3"]')).toHaveCount(3)
+    await expect(knowledge.locator(`a[href="${landValuePath}"]`)).toHaveCount(1)
+    await expect(knowledge.locator(`a[href="${priceAtlasPath}"]`)).toHaveCount(1)
+  }
+})
+
+for (const viewport of VIEWPORTS) {
+  test(`PDF-V-04 renders apartment, land, and house showcases on ${viewport.name}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    const routes = [
+      ['haus', 'house'],
+      ['wohnung', 'apartment'],
+      ['grundstueck', 'land'],
+    ] as const
+
+    for (const [slug, filename] of routes) {
+      await page.goto(`/de/objektart/${slug}`)
+      const essentialCookies = page.getByRole('button', { name: 'Nur notwendige' })
+      if (await essentialCookies.isVisible()) await essentialCookies.click()
+
+      const showcase = page.locator('[data-seller-guide-showcase]')
+      const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-V-04')
+      mkdirSync(evidenceDirectory, { recursive: true })
+      await showcase.screenshot({
+        path: join(evidenceDirectory, `${filename}-${viewport.name}.png`),
+      })
+    }
+  })
+}
+
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
     await page.goto(path)
