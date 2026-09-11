@@ -22,7 +22,10 @@
     "brand:assets": "node scripts/generate-brand-assets.mjs",
     "references:derivatives": "node scripts/generate-reference-derivatives.mjs",
     "references:coverage": "node scripts/reference-coverage-report.mjs",
-    "test:references": "vitest run tests/contracts/reference-catalog.test.ts"
+    "test:references": "vitest run tests/contracts/reference-catalog.test.ts",
+    "verify:andreas:contracts": "vitest run tests/contracts/andreas-pdf.test.ts",
+    "verify:andreas:e2e": "next build && playwright test tests/e2e/andreas-pdf.spec.ts",
+    "verify:andreas": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build && playwright test tests/e2e/andreas-pdf.spec.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
