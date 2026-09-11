@@ -113,6 +113,23 @@ for (const viewport of VIEWPORTS) {
 }
 
 for (const viewport of VIEWPORTS) {
+  test(`PDF-S-03 follows the sales bell immediately with Polaroids on ${viewport.name}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de')
+
+    const polaroids = page.locator('#beurkundet + #uebergabe')
+    await expect(polaroids).toHaveCount(1)
+    await expect(polaroids.locator('img')).toHaveCount(8)
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-S-03')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await polaroids.screenshot({ path: join(evidenceDirectory, `${viewport.name}.png`) })
+  })
+}
+
+for (const viewport of VIEWPORTS) {
   test(`PDF-V-01 opens and closes the Ogulo tour on ${viewport.name}`, async ({ page }) => {
     await page.setViewportSize(viewport)
     await page.goto('/de/virtuell')

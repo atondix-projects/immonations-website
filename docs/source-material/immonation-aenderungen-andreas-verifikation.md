@@ -103,12 +103,12 @@ Referenz-URL: `/de`
 
 ### PDF-S-03 - Polaroid-Bilder direkt unter der Verkaufsglocke
 
-- [ ] **Soll:** Die Polaroid-Bilder stehen direkt unter dem Abschnitt "Jeder Abschluss wird bei uns geläutet".
-- [ ] Die Bilder stammen aus dem freigegebenen Bestand, insbesondere `assets/Übergabebilder Polaroidkamera/`.
-- [ ] Zwischen Glockenabschnitt und Polaroids liegt kein sachfremder Inhaltsblock.
-- [ ] Reihenfolge, Abstände und Lesbarkeit funktionieren auf Desktop und Mobil.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Die Polaroid-Bilder stehen direkt unter dem Abschnitt "Jeder Abschluss wird bei uns geläutet".
+- [x] Die Bilder stammen aus dem freigegebenen Bestand, insbesondere `assets/Übergabebilder Polaroidkamera/`.
+- [x] Zwischen Glockenabschnitt und Polaroids liegt kein sachfremder Inhaltsblock.
+- [x] Reihenfolge, Abstände und Lesbarkeit funktionieren auf Desktop und Mobil.
+- **Status:** PASS
+- **Nachweis:** Die bestehende Wand mit acht kuratierten Übergabe-Polaroids folgt im selben Startseitenkapitel unmittelbar auf `VerifiedResults`, dessen letzter Inhaltsbereich die Verkaufsglocke ist. Contract-Test `PDF-S-03` sichert Reihenfolge und Einmaligkeit; Playwright prüft den direkten DOM-Nachbarn `#beurkundet + #uebergabe`, alle acht Bilder sowie 390×844 und 1440×900. Screenshots liegen unter `output/verification/PDF-S-03/`.
 
 ### PDF-S-04 - Partner vervollständigen
 

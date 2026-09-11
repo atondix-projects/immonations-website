@@ -138,6 +138,17 @@ describe('Andreas PDF contracts', () => {
     }
   })
 
+  it('PDF-S-03 places the handover Polaroids directly after the sales bell', () => {
+    const homepage = readFileSync(join(ROOT, 'src', 'app', '[locale]', 'page.tsx'), 'utf8')
+    const resultsIndex = homepage.indexOf('<VerifiedResults compact />')
+    const polaroidsIndex = homepage.indexOf('<HandoverPolaroidWall')
+
+    expect(resultsIndex).toBeGreaterThan(-1)
+    expect(polaroidsIndex).toBeGreaterThan(resultsIndex)
+    expect(homepage.slice(resultsIndex, polaroidsIndex)).not.toContain('</HomeChapter>')
+    expect(homepage.match(/<HandoverPolaroidWall/g)).toHaveLength(1)
+  })
+
   it('PDF-R-01 assigns every reference to one of four public categories', () => {
     expect(new Set(listAllReferences().map((reference) => reference.category))).toEqual(
       new Set(['apartment', 'house', 'commercial', 'investment']),
