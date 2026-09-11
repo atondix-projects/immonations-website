@@ -1627,7 +1627,13 @@
       "ratingLabel": "reviews across 10 platforms",
       "ratingValue": "300+",
       "imageAlt": "Property marketing by Immonation GmbH",
-      "playWithAudio": "Restart with sound"
+      "playWithAudio": "Restart with sound",
+      "storyTitle": "Home starts right here.",
+      "scrollHint": "Scroll",
+      "videoLabel": "Personal website tour",
+      "videoPending": "Video coming soon",
+      "videoTitle": "Welcome to Immonation",
+      "videoFallback": "Your browser cannot play this introduction video."
     },
     "intro": {
       "title": "Real-estate advisory with local market knowledge and digital marketing strength.",

@@ -1625,7 +1625,13 @@
       "ratingLabel": "Bewertungen auf 10 Plattformen",
       "ratingValue": "300+",
       "imageAlt": "Immobilienvermarktung der Immonation GmbH",
-      "playWithAudio": "Film mit Ton starten"
+      "playWithAudio": "Film mit Ton starten",
+      "storyTitle": "Zuhause beginnt auf dieser Website.",
+      "scrollHint": "Scrollen",
+      "videoLabel": "Persönliche Website-Tour",
+      "videoPending": "Video in Vorbereitung",
+      "videoTitle": "Willkommen bei Immonation",
+      "videoFallback": "Ihr Browser kann dieses Vorstellungsvideo nicht abspielen."
     },
     "intro": {
       "title": "Immobilienberatung mit lokaler Marktkenntnis und digitaler Vermarktungsstärke.",

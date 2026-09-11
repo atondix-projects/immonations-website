@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing'
 import { SITE } from '@/lib/seo/site'
 import { faqPage, localBusiness } from '@/lib/seo/jsonld'
 import { JsonLd } from '@/components/site/json-ld'
-import { Hero } from '@/components/site/home/hero'
+import { HomeHeroStory } from '@/components/site/home/home-hero-story'
 import { Awards } from '@/components/site/home/awards'
 import { TrustProof } from '@/components/site/home/trust-proof'
 import { ServicesOverview } from '@/components/site/home/services-overview'
@@ -90,7 +90,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       <HomeChapter id="hero">
-        <Hero mode="seller" showRating={false} />
+        <HomeHeroStory />
       </HomeChapter>
 
       <HomeChapter id="proof">

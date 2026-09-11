@@ -1,12 +1,12 @@
 'use client'
 
-import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
+import { EASE, RevealTitle, STAGE_DELAYS, getRise } from './hero-motion'
 
 type Audience = 'seller' | 'buyer'
 
@@ -19,53 +19,6 @@ const HERO_CTAS = {
     primaryHref: { pathname: '/buy' as const, hash: '#angebote' },
     secondaryHref: '/contact' as const,
   },
-}
-
-// Premium ease (matches the rest of the site's spring-like feel); staggered in seconds.
-const EASE = [0.22, 1, 0.36, 1] as const
-const STAGE_DELAYS = {
-  eyebrow: 0.1,
-  wordBase: 0.2,
-  wordStep: 0.055,
-  subtitle: 0.62,
-  ctas: 0.78,
-  rating: 0.92,
-} as const
-
-/** Rise-in: opacity + translateY, disabled entirely under prefers-reduced-motion. */
-function getRise(reduceMotion: boolean, delay: number) {
-  return {
-    initial: reduceMotion ? false : { opacity: 0, y: 26 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: reduceMotion ? 0 : 0.9, ease: EASE, delay: reduceMotion ? 0 : delay },
-  }
-}
-
-function RevealTitle({ title, reduceMotion }: { title: string; reduceMotion: boolean }) {
-  const words = title.split(' ')
-  return (
-    <h1 className="font-serif text-3xl leading-[1.12] font-semibold tracking-[-0.005em] text-balance text-white sm:text-4xl md:text-5xl lg:text-[58px]">
-      {words.map((word, index) => (
-        <Fragment key={`${word}-${index}`}>
-          <span className="-mb-[0.08em] inline-flex overflow-hidden pb-[0.08em] align-bottom">
-            <motion.span
-              className="inline-block will-change-transform"
-              initial={reduceMotion ? false : { y: '115%' }}
-              animate={{ y: '0%' }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.85,
-                ease: EASE,
-                delay: reduceMotion ? 0 : STAGE_DELAYS.wordBase + index * STAGE_DELAYS.wordStep,
-              }}
-            >
-              {word}
-            </motion.span>
-          </span>
-          {index < words.length - 1 ? ' ' : null}
-        </Fragment>
-      ))}
-    </h1>
-  )
 }
 
 function GoogleRating() {
@@ -124,7 +77,11 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
                 {t(`${mode}.eyebrow`)}
               </motion.span>
             </div>
-            <RevealTitle title={t(`${mode}.title`)} reduceMotion={reduceMotion} />
+            <RevealTitle
+              title={t(`${mode}.title`)}
+              reduceMotion={reduceMotion}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px]"
+            />
             <motion.p
               className="max-w-[56ch] text-lg leading-[1.55] text-neutral-300 md:text-[19px]"
               {...getRise(reduceMotion, STAGE_DELAYS.subtitle)}
@@ -193,16 +150,16 @@ export function Hero({ mode, showRating = true }: { mode: Audience; showRating?:
           {/* Rechte Randspalte: Bewertung unten rechts verankert. */}
           <motion.div
             key={`${mode}-rail`}
-            className="relative hidden h-full flex-col items-stretch pt-28 pb-[72px] lg:flex"
+            className="relative hidden h-full flex-col items-stretch justify-center gap-5 pt-28 pb-[72px] lg:flex"
             {...getRise(reduceMotion, STAGE_DELAYS.rating)}
           >
             {mode === 'seller' ? (
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
+              <div>
                 <ValuationEntryCard variant="glass" />
               </div>
             ) : null}
             {showRating ? (
-              <div className="mt-auto self-end border border-white/15 bg-white/5 backdrop-blur-sm">
+              <div className="self-end border border-white/15 bg-white/5 backdrop-blur-sm">
                 <GoogleRating />
               </div>
             ) : null}
