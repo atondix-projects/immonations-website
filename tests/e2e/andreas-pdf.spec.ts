@@ -53,7 +53,7 @@ test('PDF-R-03 renders provider-backed review text without screenshots', async (
   await page.goto('/de/referenzen')
 
   const section = page.locator('#kundenstimmen-bewertungen')
-  await expect(section).toHaveAttribute('data-review-source', /google-live|curated-fallback/)
+  await expect(section).toHaveAttribute('data-review-source', /review-feed|curated-fallback/)
   await expect(section.locator('img[src*="/images/reviews/"]')).toHaveCount(0)
 
   const carousel = section.getByRole('region')

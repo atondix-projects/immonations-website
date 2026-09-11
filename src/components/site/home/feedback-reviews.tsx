@@ -13,9 +13,9 @@ import { cn } from '@/lib/utils'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 /**
- * Schriftliche Kundenstimmen aus derselben serverseitigen Google-Places-Quelle
- * wie die Bewertungsseiten. Ohne API-Konfiguration bleibt die Sektion mit den
- * dokumentierten Originalzitaten verfügbar und kennzeichnet diesen Zustand.
+ * Schriftliche Kundenstimmen aus demselben serverseitigen Review-Feed wie die
+ * Bewertungsseiten. Bei Feed-Ausfällen bleiben dokumentierte Originalzitate
+ * verfügbar und der Zustand wird transparent gekennzeichnet.
  */
 export async function FeedbackReviews({
   anchorId = 'kundenstimmen-bewertungen',
@@ -28,7 +28,7 @@ export async function FeedbackReviews({
   const testimonialsT = await getTranslations('TestimonialsPage')
   const locale = await getLocale()
   const language = locale === 'en' ? 'en' : 'de'
-  const { reviews, live } = await listTestimonialReviews(language)
+  const { reviews, live } = await listTestimonialReviews()
   const slides = reviews.map((item): SlideshowReview => ({
     id: item.id,
     author: item.author,
@@ -46,7 +46,7 @@ export async function FeedbackReviews({
   return (
     <section
       id={anchorId}
-      data-review-source={live ? 'google-live' : 'curated-fallback'}
+      data-review-source={live ? 'review-feed' : 'curated-fallback'}
       className={cn('bg-background scroll-mt-24 py-16 md:py-24', className)}
     >
       <div className={CONTAINER}>

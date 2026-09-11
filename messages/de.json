@@ -1195,7 +1195,7 @@
         "heading": "Externe Inhalte",
         "paragraphs": [
           "Videos von YouTube werden im erweiterten Datenschutzmodus und erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen.",
-          "Auf der Kundenstimmen-Seite können aktuelle Bewertungen serverseitig über die Google Places API abgerufen werden. Bei live geladenen Stimmen können Profilbilder direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Es gelten die Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) und die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
+          "Auf der Kundenstimmen-Seite werden aktuelle öffentliche Google-Bewertungen serverseitig über den bereits von Immonation eingesetzten Elfsight-Review-Feed abgerufen. Profilbilder können direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Für den Feed gelten die Datenschutzbestimmungen von Elfsight (https://elfsight.com/privacy-policy/), für Profilbilder und Ziellinks die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
         ]
       },
       {
@@ -2988,7 +2988,7 @@
       "golocal": "golocal"
     },
     "attribution": {
-      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Stimmen. Diese werden mit dokumentierten Originalzitaten zusammengeführt und nach Datum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "live": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Diese werden mit dokumentierten Originalzitaten zusammengeführt und nach Datum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
       "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Datum sortiert. Der vollständige aktuelle Bestand bleibt auf den verlinkten Profilen nachlesbar."
     },
     "screenshots": {
@@ -3068,7 +3068,7 @@
     },
     "allLink": "Alle Bewertungen auf Google Maps ansehen",
     "attribution": {
-      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Bewertungen. Diese werden mit dokumentierten Originalstimmen zusammengeführt und anschließend nach Veröffentlichungsdatum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "live": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Diese werden mit dokumentierten Originalstimmen zusammengeführt und anschließend nach Veröffentlichungsdatum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
       "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Veröffentlichungsdatum sortiert. Der vollständige aktuelle Bestand ist auf Google Maps einsehbar."
     },
     "faq": {
@@ -3080,7 +3080,7 @@
         },
         {
           "question": "Wie werden die Bewertungen ausgewählt?",
-          "answer": "Wenn die Google-Places-API verfügbar ist, liefert Google Maps bis zu fünf nach Relevanz ausgewählte Stimmen. Ergänzend zeigen wir dokumentierte Originalbewertungen; die gemeinsame Liste wird nach Datum sortiert."
+          "answer": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Ergänzend zeigen wir dokumentierte Originalbewertungen; die gemeinsame Liste wird nach Datum sortiert."
         },
         {
           "question": "Wo kann ich alle Google-Bewertungen lesen?",

@@ -1197,7 +1197,7 @@
         "heading": "External content",
         "paragraphs": [
           "YouTube videos load in privacy-enhanced mode and only after a click. Links to Google, Trustpilot, Instagram, TikTok, and Facebook lead to external providers with their own privacy policies.",
-          "The testimonials page may retrieve current reviews server-side through the Google Places API. Live reviews can include profile images loaded directly from Google, which transfers your IP address to Google. The Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) and Google Privacy Policy (https://policies.google.com/privacy) apply."
+          "The testimonials page retrieves current public Google reviews server-side through the Elfsight review feed already used by Immonation. Profile images can load directly from Google, which transfers your IP address to Google. Elfsight's privacy policy (https://elfsight.com/privacy-policy/) applies to the feed; Google's privacy policy (https://policies.google.com/privacy) applies to profile images and destination links."
         ]
       },
       {
@@ -2981,7 +2981,7 @@
       "golocal": "golocal"
     },
     "attribution": {
-      "live": "The Google Places API returns up to five reviews selected by relevance. These are merged with documented original quotes and sorted by date. The texts appear in their original language.",
+      "live": "Immonation's existing review feed returns current public Google reviews. These are merged with documented original quotes and sorted by date. The texts appear in their original language.",
       "curated": "The original voices shown are taken from documented public reviews and sorted by date. The complete current set remains readable on the linked profiles."
     },
     "screenshots": {
@@ -3061,7 +3061,7 @@
     },
     "allLink": "View all reviews on Google Maps",
     "attribution": {
-      "live": "The Google Places API returns up to five reviews selected by relevance. They are merged with documented original reviews and then ordered by publication date. Review text is shown in its original language.",
+      "live": "Immonation's existing review feed returns current public Google reviews. These are merged with documented original reviews and then ordered by publication date. Review text is shown in its original language.",
       "curated": "These original accounts come from documented public reviews and are ordered by publication date. The complete current set is available on Google Maps."
     },
     "faq": {
@@ -3073,7 +3073,7 @@
         },
         {
           "question": "How are the reviews selected?",
-          "answer": "When the Google Places API is available, Google Maps returns up to five reviews selected by relevance. We add documented original reviews and order the combined list by date."
+          "answer": "Immonation's existing review feed returns current public Google reviews. We add documented original reviews and order the combined list by date."
         },
         {
           "question": "Where can I read every Google review?",

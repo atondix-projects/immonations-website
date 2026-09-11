@@ -86,32 +86,27 @@ describe('google review merge', () => {
     expect(merged.map((entry) => entry.id)).toEqual(['newer', 'older'])
   })
 
-  it('preserves Google Maps review and author attribution for live reviews', async () => {
-    vi.stubEnv('GOOGLE_PLACES_API_KEY', 'test-key')
+  it('fetches current Google reviews from the existing review feed', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue(
         new Response(
           JSON.stringify({
-            rating: 4.9,
-            userRatingCount: 227,
-            googleMapsUri: 'https://maps.google.com/place',
-            reviews: [
-              {
-                rating: 5,
-                publishTime: '2026-08-20T12:00:00Z',
-                relativePublishTimeDescription: 'a week ago',
-                originalText: {
+            status: 'success',
+            result: {
+              data: [
+                {
+                  id: 'feed-1',
+                  supplier: 'google',
+                  rating: 5,
+                  published_at: 1_776_316_800,
                   text: 'Eine ausführliche aktuelle Bewertung über den Verkauf und die Betreuung.',
+                  url: 'https://maps.google.com/review/1',
+                  reviewer_name: 'Live Reviewer',
+                  reviewer_picture_url: 'https://lh3.googleusercontent.com/avatar',
                 },
-                googleMapsUri: 'https://maps.google.com/review/1',
-                authorAttribution: {
-                  displayName: 'Live Reviewer',
-                  uri: 'https://maps.google.com/contributor/1',
-                  photoUri: 'https://lh3.googleusercontent.com/avatar',
-                },
-              },
-            ],
+              ],
+            },
           }),
         ),
       ),
@@ -121,18 +116,17 @@ describe('google review merge', () => {
     const liveReview = result.reviews.find((review) => review.isLiveGoogle)
 
     expect(result.live).toBe(true)
-    expect(result.reviewCount).toBe(227)
     expect(liveReview).toMatchObject({
       sourceUrl: 'https://maps.google.com/review/1',
-      authorUrl: 'https://maps.google.com/contributor/1',
       authorPhotoUrl: 'https://lh3.googleusercontent.com/avatar',
-      relativePublished: 'a week ago',
+      author: 'Live Reviewer',
     })
     expect(fetch).toHaveBeenCalledWith(
-      expect.any(URL),
-      expect.objectContaining({ cache: 'no-store' }),
+      expect.objectContaining({ host: 'service-reviews-ultimate.elfsight.com' }),
+      expect.objectContaining({ next: { revalidate: 10_800 } }),
     )
     const requestedUrl = vi.mocked(fetch).mock.calls[0]?.[0]
-    expect(String(requestedUrl)).toContain('languageCode=de')
+    expect(String(requestedUrl)).toContain('page_length=100')
+    expect(String(requestedUrl)).not.toContain('places.googleapis.com')
   })
 })
