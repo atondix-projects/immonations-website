@@ -218,6 +218,15 @@ test('PDF-T-02 keeps sitemap and robots on the production origin', async ({ requ
   }
 })
 
+test('PDF-W-01 keeps the price atlas provenance and footer clean', async ({ page }) => {
+  await page.goto('/de/preisatlas')
+
+  await expect(page.locator('body')).toContainText('basierend auf Vermittlungsdaten der Immonation')
+  await expect(page.locator('body')).not.toContainText(/Stand:? September(?: 2026)?/i)
+  await expect(page.locator('body')).not.toContainText(/einige Vermittlungsdaten/i)
+  await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+})
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()

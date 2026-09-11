@@ -255,12 +255,12 @@ Referenz-URL: `/de/angebote`
 
 Referenz-URL: `/de/preisatlas`
 
-- [ ] Der Datumsstempel "Stand September 2026" ist entfernt.
-- [ ] Die Seite verwendet exakt `basierend auf Vermittlungsdaten der Immonation`.
-- [ ] `einige Vermittlungsdaten` kommt nicht mehr vor.
-- [ ] Keine doppelte Fußzeile vorhanden.
-- **Status:**
-- **Nachweis:**
+- [x] Der Datumsstempel "Stand September 2026" ist entfernt.
+- [x] Die Seite verwendet exakt `basierend auf Vermittlungsdaten der Immonation`.
+- [x] `einige Vermittlungsdaten` kommt nicht mehr vor.
+- [x] Keine doppelte Fußzeile vorhanden.
+- **Status:** PASS
+- **Nachweis:** Durch `PDF-Ü-02`, `PDF-Ü-03` und den route-spezifischen Playwright-Test `PDF-W-01` abgedeckt: `/de/preisatlas` enthält die freigegebene Quellenformulierung ohne Datumsstempel oder alte Formulierung und rendert genau einen globalen Footer.
 
 ### PDF-W-02 - Downloads und Markenzertifikat
 
