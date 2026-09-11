@@ -171,4 +171,23 @@ describe('Andreas PDF contracts', () => {
     expect(comparison).toContain('aria-label={controlLabel}')
     expect(comparison).toContain('data-visualization-compare')
   })
+
+  it('PDF-V-01 places the verified Ogulo tour on its dedicated page', () => {
+    const route = readFileSync(
+      join(ROOT, 'src', 'app', '[locale]', 'virtual-tour', 'page.tsx'),
+      'utf8',
+    )
+    const tour = readFileSync(join(ROOT, 'src', 'lib', 'content', 'virtual-tour.ts'), 'utf8')
+    const overlay = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'home', 'tour-overlay.tsx'),
+      'utf8',
+    )
+
+    expect(route).toContain('<TourEmbed')
+    expect(route).toContain("createCatalogPage('virtual-tour'")
+    expect(tour).toContain("url: 'https://tour.ogulo.com/a4mC'")
+    expect(overlay).toContain('allowFullScreen')
+    expect(overlay).toContain("type LoadStatus = 'loading' | 'ready' | 'failed'")
+    expect(overlay).toContain('labels.failedLinkLabel')
+  })
 })

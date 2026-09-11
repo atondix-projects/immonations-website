@@ -178,13 +178,13 @@ Relevante aktuelle Routen: `/de/ki` und `/de/ki-visualisierung-home-staging`
 
 Referenz-URL: `/de/virtuell`
 
-- [ ] **Soll:** Die Seite besitzt mehr als einen schwachen Kurz- oder Platzhalterinhalt und erklärt Nutzen, Ablauf und Einsatz der virtuellen Besichtigung.
-- [ ] Die auf der Startseite gezeigte 360-Grad-Tour ist auf der Unterseite als direkt abrufbares Beispiel eingebunden.
-- [ ] Es handelt sich tatsächlich um eine interaktive 360-Grad-Tour, nicht lediglich um ein lineares Objektvideo.
-- [ ] Tour, Vollbild, Mobilbedienung, Consent und Fehlerzustand funktionieren.
+- [x] **Soll:** Die Seite besitzt mehr als einen schwachen Kurz- oder Platzhalterinhalt und erklärt Nutzen, Ablauf und Einsatz der virtuellen Besichtigung.
+- [x] Die auf der Startseite gezeigte 360-Grad-Tour ist auf der Unterseite als direkt abrufbares Beispiel eingebunden.
+- [x] Es handelt sich tatsächlich um eine interaktive 360-Grad-Tour, nicht lediglich um ein lineares Objektvideo.
+- [x] Tour, Vollbild, Mobilbedienung, Consent und Fehlerzustand funktionieren.
 - [ ] Andreas bestätigt die inhaltliche Stärke der Seite.
-- **Status:**
-- **Nachweis:**
+- **Status:** BLOCKIERT
+- **Nachweis:** Die bestehende, inhaltlich ausgebaute DE-/EN-Unterseite bindet nun denselben verifizierten Ogulo-Rundgang wie die Startseite als direktes interaktives Beispiel ein. Die Anbieter-URL antwortete im Audit mit HTTP 200. Vor dem Klick erscheint der Consent-Hinweis; der Viewer öffnet in einem nativen Vollbild-Dialog, erlaubt Geräte-/Fullscreen-Funktionen und besitzt Lade- sowie zeitgesteuerten Fehlerzustand mit sicherem Direktlink. Contract-Test und Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-V-01/`. Offen ist ausschließlich Andreas' subjektive Inhaltsfreigabe.
 
 ### PDF-V-02 - Aktive Suchkunden ausbauen
 

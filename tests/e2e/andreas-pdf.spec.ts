@@ -94,6 +94,38 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-V-01 opens and closes the Ogulo tour on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/virtuell')
+
+    await expect(
+      page.getByText(/Erst mit Ihrem Klick wird der Rundgang von Ogulo geladen/),
+    ).toBeVisible()
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-V-01')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `page-${viewport.name}.png`),
+      fullPage: true,
+    })
+
+    await page.getByRole('button', { name: /360°-Rundgang ansehen/ }).click()
+
+    const dialog = page.getByRole('dialog', { name: /360°-Rundgang ansehen/ })
+    await expect(dialog).toBeVisible()
+    await expect(dialog.locator('iframe')).toHaveAttribute('src', 'https://tour.ogulo.com/a4mC')
+    await expect(dialog.locator('iframe')).toHaveAttribute('allow', /fullscreen/)
+
+    await page.screenshot({
+      path: join(evidenceDirectory, `overlay-${viewport.name}.png`),
+      fullPage: true,
+    })
+
+    await page.keyboard.press('Escape')
+    await expect(dialog).not.toBeVisible()
+  })
+}
+
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
     await page.goto(path)
