@@ -296,13 +296,13 @@ Referenz-URL: `/de/lexikon`
 
 Referenz-URL: `/de/news`
 
-- [ ] **Soll:** Der vorhandene gute Aufbau wird beibehalten.
-- [ ] Inhalt wurde gegenüber dem beanstandeten Stand substanziell erweitert.
-- [ ] Artikel/Teaser sind nicht nur Platzhalter und beantworten konkrete Eigentümerfragen.
-- [ ] Deutsch und Englisch besitzen eine freigegebene, sinnvolle Inhaltstiefe.
+- [x] **Soll:** Der vorhandene gute Aufbau wird beibehalten.
+- [x] Inhalt wurde gegenüber dem beanstandeten Stand substanziell erweitert.
+- [x] Artikel/Teaser sind nicht nur Platzhalter und beantworten konkrete Eigentümerfragen.
+- [x] Deutsch und Englisch besitzen eine freigegebene, sinnvolle Inhaltstiefe.
 - [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:**
-- **Nachweis/Freigabe:**
+- **Status:** BLOCKIERT
+- **Nachweis/Freigabe:** Der bestehende Themen-Hub, die Artikelansicht mit Inhaltsverzeichnis und die vorhandenen vier Sprachpaare bleiben erhalten. Ergänzt wurden zwei vollständig gepaarte Eigentümer-Ratgeber: `Immobilienverkauf vorbereiten: Diese Unterlagen schaffen Klarheit` (DE 734 / EN 857 Wörter) und `Angebotspreis richtig einordnen` (DE 738 / EN 832 Wörter). Beide verwenden ausschließlich bereits belegte Immonation-Inhalte, beantworten konkrete Fragen, enthalten interne Links und FAQ-Daten. Contract-Test, Produktionsbuild mit 430 statischen Seiten und Playwright für Hub/Artikel sind grün; Screenshots liegen unter `output/verification/PDF-W-05/`. Offen ist Andreas' redaktionelle Freigabe.
 
 ### PDF-W-06 - Bodenrichtwert
 

@@ -227,6 +227,55 @@ test('PDF-W-01 keeps the price atlas provenance and footer clean', async ({ page
   await expect(page.locator('[data-site-footer]')).toHaveCount(1)
 })
 
+test('PDF-W-05 exposes substantive owner guides in both languages', async ({ page }) => {
+  for (const [path, titles] of [
+    [
+      '/de/news',
+      [
+        'Immobilienverkauf vorbereiten: Diese Unterlagen schaffen Klarheit',
+        'Angebotspreis richtig einordnen',
+      ],
+    ],
+    [
+      '/en/news',
+      [
+        'Preparing a property sale: the documents that create clarity',
+        'How to understand an asking price',
+      ],
+    ],
+  ] as const) {
+    await page.goto(path)
+    for (const title of titles) {
+      await expect(page.getByRole('link', { name: title, exact: true })).toBeVisible()
+    }
+  }
+})
+
+for (const viewport of VIEWPORTS) {
+  test(`PDF-W-05 renders the document guide on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/news/immobilienverkauf-vorbereiten-unterlagen')
+
+    await expect(
+      page.getByRole('heading', {
+        level: 1,
+        name: 'Immobilienverkauf vorbereiten: Diese Unterlagen schaffen Klarheit',
+      }),
+    ).toBeVisible()
+    await expect(page.locator('#article-content')).toContainText(
+      'Mit einer Bestandsaufnahme beginnen',
+    )
+    await expect(page.locator('#article-content a[href="/de/bewertung"]')).toBeVisible()
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-W-05')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}.png`),
+      fullPage: true,
+    })
+  })
+}
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()

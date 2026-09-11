@@ -190,4 +190,22 @@ describe('Andreas PDF contracts', () => {
     expect(overlay).toContain("type LoadStatus = 'loading' | 'ready' | 'failed'")
     expect(overlay).toContain('labels.failedLinkLabel')
   })
+
+  it('PDF-W-05 publishes paired, substantive owner guides in German and English', () => {
+    const pairs = [
+      ['de/immobilienverkauf-vorbereiten-unterlagen.mdx', 'en/prepare-property-sale-documents.mdx'],
+      ['de/angebotspreis-richtig-einordnen.mdx', 'en/understand-property-asking-price.mdx'],
+    ] as const
+
+    for (const pair of pairs) {
+      for (const relativePath of pair) {
+        const content = readFileSync(join(ROOT, 'content', 'blog', relativePath), 'utf8')
+        const body = content.replace(/^---[\s\S]*?---/, '').trim()
+        const words = body.split(/\s+/).filter(Boolean)
+
+        expect(words.length, `${relativePath} is too thin`).toBeGreaterThanOrEqual(500)
+        expect(content).not.toMatch(/lorem|placeholder|platzhalter|coming soon|folgt in kürze/i)
+      }
+    }
+  })
 })
