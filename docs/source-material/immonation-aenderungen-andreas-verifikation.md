@@ -196,8 +196,8 @@ Referenz-URL: `/de/suchkunden`
 - [ ] Profile sind passenden Städten bzw. Stadtteilen zugeordnet.
 - [ ] Aktualität, Datenschutz und Ablauf zur Entfernung abgelaufener Profile sind geprüft.
 - [ ] Andreas bestätigt die inhaltliche Stärke und lokale Verteilung.
-- **Status:**
-- **Nachweis/Freigabeliste:**
+- **Status:** BLOCKIERT
+- **Nachweis/Freigabeliste:** Die aktuelle DE-/EN-Seite erklärt lediglich den Abgleichprozess und veröffentlicht bewusst keine freien JSX-Profile. Im lokalen Master-Prototyp stehen sechs Beispielkarten, derselbe Abschnitt kennzeichnet die Datenquelle jedoch ausdrücklich als Platzhalter `Suchprofile live aus onOffice`; Aktualität, Einwilligung und Ablaufdatum fehlen. Zudem weichen die dortigen Budgets von den PDF-Beispielen ab (unter anderem EFH 750.000 EUR statt 870.000 EUR und MFH 2,5 Mio. EUR statt 2 Mio. EUR), während ein Apartment bis 120.000 EUR ganz fehlt. Benötigt wird eine freigegebene Liste mit anonymisierter Profil-ID, Zielgruppe, Objektart, Ort/Stadtteil, Budget, Kriterien, `validFrom`, `expiresAt` und dokumentierter Veröffentlichungsfreigabe; alternativ folgt die kontrollierte Live-Ausgabe in der finalen onOffice-Runde. Bis dahin werden keine Profile erfunden oder als aktuell ausgegeben.
 
 ### PDF-V-03 - Mehrfamilienhaus-Slideshow
 
