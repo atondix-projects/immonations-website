@@ -83,14 +83,14 @@ Referenz-URL: `/de`
 
 ### PDF-S-01 - Finanzierungsblock verkleinern
 
-- [ ] **Soll:** Der Finanzierungsblock ist ein kompakter Anreißer und keine vollständige Inhaltsseite innerhalb der Startseite.
-- [ ] Eine Tool-Abbildung oder kurze Andeutung ist vorhanden.
-- [ ] Ein kurzer Text erklärt, was Immonation anbietet.
-- [ ] Ein eindeutiger Link führt auf `/de/finanzierung`.
-- [ ] Die vollständige Inhaltstiefe befindet sich auf der Finanzierungs-Unterseite.
+- [x] **Soll:** Der Finanzierungsblock ist ein kompakter Anreißer und keine vollständige Inhaltsseite innerhalb der Startseite.
+- [x] Eine Tool-Abbildung oder kurze Andeutung ist vorhanden.
+- [x] Ein kurzer Text erklärt, was Immonation anbietet.
+- [x] Ein eindeutiger Link führt auf `/de/finanzierung`.
+- [x] Die vollständige Inhaltstiefe befindet sich auf der Finanzierungs-Unterseite.
 - [ ] Andreas bestätigt visuell, dass der Block nicht mehr "zu groß" wirkt.
-- **Status:**
-- **Nachweis:**
+- **Status:** BLOCKIERT
+- **Nachweis:** Die Startseite zeigt Finanzierung ausschließlich als kompakte Servicekachel mit Landmark-Icon, einem Satz zum Dr.-Klein-Angebot und lokalisiertem Link. Die ausführliche Unterseite enthält Partner-, Ablauf-, Bankbewertungs-, Rechner-, FAQ- und CTA-Bereiche. Playwright prüft Kachel, Icon, Text, Navigation und Unterseitentiefe auf 390×844 sowie 1440×900. Offen ist ausschließlich Andreas' visuelle Größenfreigabe.
 
 ### PDF-S-02 - Videos statt Google-Screenshots
 

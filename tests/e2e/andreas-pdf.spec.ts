@@ -95,6 +95,24 @@ for (const viewport of VIEWPORTS) {
 }
 
 for (const viewport of VIEWPORTS) {
+  test(`PDF-S-01 keeps financing compact on the homepage on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de')
+
+    const teaser = page.locator('#leistungen a[href="/de/finanzierung"]')
+    await expect(teaser).toHaveCount(1)
+    await expect(teaser).toContainText('Top-Konditionen mit unserem Partner Dr. Klein.')
+    await expect(teaser.locator('svg')).toHaveCount(1)
+
+    await teaser.click()
+    await expect(page).toHaveURL(/\/de\/finanzierung$/)
+    await expect(
+      page.getByRole('heading', { name: 'Rechnen Sie selbst – bevor Sie ins Gespräch gehen' }),
+    ).toBeVisible()
+  })
+}
+
+for (const viewport of VIEWPORTS) {
   test(`PDF-V-01 opens and closes the Ogulo tour on ${viewport.name}`, async ({ page }) => {
     await page.setViewportSize(viewport)
     await page.goto('/de/virtuell')
