@@ -67,16 +67,6 @@ export type DrKleinTool = {
 export const DRKLEIN_ORIGIN = 'https://immonation-gmbh.drklein-plattform.de'
 
 /**
- * Partner-Login. Dr. Klein bietet daneben ein einbettbares Login-Formular an —
- * bewusst nicht genutzt: Es würde ein Passwortfeld auf immonation.de rendern,
- * das die Zugangsdaten quer nach `id.drklein-plattform.de` sendet. Das ist ein
- * Phishing-Muster, hebelt den Herkunftsabgleich von Passwortmanagern aus und
- * verlagert die Haftung für fremde Zugangsdaten hierher. Dr. Klein selbst
- * schließt die iframe-Einbettung dieses Logins aus Sicherheitsgründen aus.
- */
-export const DRKLEIN_PARTNER_LOGIN_URL = `${DRKLEIN_ORIGIN}/tng/contacts/cooperations`
-
-/**
  * Partnermakler-Logo. Aus dem Partnerportal heruntergeladen und lokal
  * ausgeliefert — `next.config.ts` erlaubt keine Fremd-Hosts für Bilder, und ein
  * Hotlink auf den S3-Bucket von Dr. Klein würde die IP jedes Besuchers dorthin

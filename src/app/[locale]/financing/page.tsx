@@ -13,7 +13,6 @@ import { PageHero } from '@/components/site/templates/page-hero'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import {
-  DRKLEIN_PARTNER_LOGIN_URL,
   DRKLEIN_PARTNER_LOGO,
   drKleinEmbedUrl,
   getDrKleinTool,
@@ -408,36 +407,6 @@ export default async function FinancingPage({ params }: { params: Promise<{ loca
 
       {/* Band 6 — FAQ */}
       <FaqSection title={t('faq.title')} items={faqItems} />
-
-      {/*
-        Partner-Login — richtet sich an Kooperationspartner und Tippgeber, nicht
-        an Kaufinteressenten. Deshalb bewusst zurückgenommen und ganz am Ende.
-        Der Link führt zur Anmeldemaske von Dr. Klein; das von Dr. Klein
-        angebotene einbettbare Login-Formular wird nicht verwendet (Begründung
-        in `src/lib/content/drklein-tools.ts`).
-      */}
-      <section className="border-border bg-muted/45 border-t py-12 md:py-16">
-        <div className={cn(CONTAINER, 'flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-12')}>
-          <div className="lg:max-w-[38ch]">
-            <p className={EYEBROW_LIGHT}>{t('partnerLogin.eyebrow')}</p>
-            <h2 className="mt-3 font-serif text-2xl leading-snug font-medium text-balance">
-              {t('partnerLogin.title')}
-            </h2>
-          </div>
-          <p className="text-muted-foreground max-w-[62ch] flex-1 text-[15px] leading-[1.75] text-pretty">
-            {t('partnerLogin.text')}
-          </p>
-          <a
-            href={DRKLEIN_PARTNER_LOGIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-border bg-background inline-flex min-h-12 w-fit shrink-0 items-center gap-2 border px-6 py-3 text-sm font-semibold transition-colors hover:border-neutral-900 active:translate-y-px"
-          >
-            {t('partnerLogin.cta')}
-            <ArrowUpRight className="size-4" aria-hidden="true" />
-          </a>
-        </div>
-      </section>
 
       {/* Band 7 — Abschluss */}
       <CtaBand

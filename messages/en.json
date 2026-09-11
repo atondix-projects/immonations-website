@@ -3610,12 +3610,6 @@
       "eyebrow": "Partner network",
       "title": "One click to your personal adviser",
       "text": "The banner is served by Dr. Klein and leads straight to your point of contact."
-    },
-    "partnerLogin": {
-      "eyebrow": "For partners and referrers",
-      "title": "Partner login at Dr. Klein",
-      "text": "Cooperation partners and referrers manage their cases directly in the Dr. Klein platform. The login opens in a new tab at Dr. Klein — you enter your credentials only there, never on this page.",
-      "cta": "Go to the partner login"
     }
   },
   "Magazine": {
