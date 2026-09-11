@@ -2252,10 +2252,23 @@
     },
     "buy": {
       "metaTitle": "Immobilien kaufen in Zirndorf, Nürnberg, Fürth & Erlangen",
-      "metaDescription": "Prototypische Angebotsübersicht für Käufer in der Region — Häuser und Wohnungen mit klarer Such- und Finanzierungsstrecke.",
+      "metaDescription": "Aktuelle Immobilienangebote der Immonation in Zirndorf, Nürnberg, Fürth, Erlangen und der Metropolregion — direkt aus onOffice.",
       "eyebrow": "Für Käufer",
       "title": "Sie suchen statt verkaufen?",
-      "subtitle": "Eine realistische Vorschau auf die spätere Käufersuche — mit klarer Orientierung, Beispielobjekten und persönlicher Begleitung.",
+      "subtitle": "Aktuell veröffentlichte Häuser, Wohnungen und Anlageobjekte — automatisch mit unserem führenden Immobiliensystem synchronisiert.",
+      "providerNotice": "Live-Bestand aus onOffice; Verfügbarkeit bitte vor einer Anreise bestätigen.",
+      "providerNotConfigured": "Der Live-Bestand ist in dieser Umgebung noch nicht verbunden.",
+      "liveCount": "{count, plural, =0 {keine veröffentlichten Objekte} one {# veröffentlichtes Objekt} other {# veröffentlichte Objekte}}",
+      "unavailableTitle": "Aktuelle Angebote sind gerade nicht abrufbar",
+      "providerErrorText": "Die Verbindung zu onOffice konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut oder sprechen Sie uns direkt an.",
+      "providerNotConfiguredText": "Es werden bewusst keine Demo-Objekte als echte Angebote ausgegeben. Nach Freischaltung der onOffice-Verbindung erscheint hier ausschließlich der bestätigte Live-Bestand.",
+      "emptyTitle": "Derzeit ist kein Objekt öffentlich verfügbar",
+      "emptyText": "Viele Immobilien werden bereits über vorgemerkte Suchkunden vermittelt. Legen Sie gern einen Suchauftrag an.",
+      "priceOnRequest": "Preis auf Anfrage",
+      "status": {
+        "available": "Verfügbar",
+        "reserved": "Reserviert"
+      },
       "prototypeNotice": "Designprototyp: Die folgenden Angebote, Filter und Exposé-Aktionen sind Beispiele und nicht live.",
       "searchLabel": "Beispielsuche",
       "searchPlaceholder": "Ort, Postleitzahl oder Objekt-ID",
@@ -2265,7 +2278,7 @@
       "ctaAll": "Alle Angebote",
       "ctaSearch": "Suchauftrag anlegen",
       "newBadge": "Neu",
-      "exposeLink": "Beispiel-Exposé",
+      "exposeLink": "Objektdetails",
       "photoAlt": "Objektfoto",
       "references": {
         "eyebrow": "Lokale Verkaufsbelege",
@@ -2434,6 +2447,11 @@
         "title": "Aktuelle Immobilien in der Region",
         "link": "Alle Objekte & Filter →",
         "rooms": "Zimmer",
+        "emptyTitle": "Derzeit kein öffentliches Objekt",
+        "emptyText": "Wir zeigen hier ausschließlich den bestätigten onOffice-Bestand und keine Demo-Angebote. Ein Suchauftrag kann Sie frühzeitig mit passenden Immobilien verbinden.",
+        "areaOnRequest": "Fläche auf Anfrage",
+        "roomsOnRequest": "Zimmer auf Anfrage",
+        "priceOnRequest": "Preis auf Anfrage",
         "items": [
           {
             "type": "Wohnung",

@@ -291,4 +291,23 @@ describe('Andreas PDF contracts', () => {
     expect(marketPages).toContain('data-market-factor')
     expect(`${germanCopy}\n${englishCopy}`).not.toMatch(/Stand:? September(?: 2026)?/i)
   })
+
+  it('PDF-K-02 uses onOffice inventory without production demo listings', () => {
+    const buyPage = readFileSync(join(ROOT, 'src', 'app', '[locale]', 'buy', 'page.tsx'), 'utf8')
+    const homeProperties = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'home', 'client-wish-sections.tsx'),
+      'utf8',
+    )
+    const routeCatalog = readFileSync(
+      join(ROOT, 'src', 'lib', 'routing', 'route-catalog.ts'),
+      'utf8',
+    )
+
+    expect(buyPage).toContain('createOnOfficeProvider')
+    expect(buyPage).toContain('data-estate-state')
+    expect(homeProperties).toContain('createOnOfficeProvider')
+    expect(homeProperties).toContain('data-home-estate-state')
+    expect(routeCatalog).not.toContain('zirndorf-weiherhof-maisonette')
+    expect(existsSync(join(ROOT, 'src', 'lib', 'content', 'property-listings.ts'))).toBe(false)
+  })
 })

@@ -20,15 +20,17 @@ import {
   Users,
 } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
+import { connection } from 'next/server'
 import { CatalogPreview } from '@/components/site/catalog-preview'
 import { AtlasTeaserPanel } from '@/components/site/price-atlas/atlas-teaser-panel'
 import { FaqSection } from '@/components/site/templates/faq-section'
 import { VideoDialog, type VideoCaptionTrack } from '@/components/site/video-dialog'
+import { OnOfficeImage } from '@/components/site/properties/onoffice-image'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { toFaqSectionItems, selectFaqsForPage } from '@/lib/content/faqs'
 import { listLocations } from '@/lib/content/locations'
-import { PROPERTY_LISTINGS } from '@/lib/content/property-listings'
+import { createOnOfficeProvider } from '@/lib/onoffice/provider'
 import { listBellVideos } from '@/lib/content/bell-videos'
 import { listSellerGuides } from '@/lib/content/seller-guides'
 import { cn } from '@/lib/utils'
@@ -490,17 +492,6 @@ export async function RegionPreview({ locale }: { locale: Locale }) {
   )
 }
 
-type PropertyCopy = { type: string; title: string }
-
-/** Anonymisierte Stimmungsbilder: Die Kacheln zeigen Beispiel-Angebote aus den
- * Übersetzungen, nicht die realen Referenzobjekte, deren Fotos an anderer Stelle als
- * Beleg für konkrete Verkaufsfälle dienen. */
-const PROPERTY_IMAGES = [
-  '/images/generic/generic-aerial-gable-house.webp',
-  '/images/generic/generic-aerial-apartment-complex.webp',
-  '/images/generic/generic-aerial-house-pool.webp',
-] as const
-
 export async function CurrentProperties({
   locale,
   compact = false,
@@ -508,9 +499,10 @@ export async function CurrentProperties({
   locale: Locale
   compact?: boolean
 }) {
+  await connection()
   const t = await getTranslations('Home.clientSections.properties')
-  const items = t.raw('items') as PropertyCopy[]
-  const listings = PROPERTY_LISTINGS.filter((listing) => listing.status === 'available').slice(0, 3)
+  const provider = createOnOfficeProvider()
+  const listings = provider ? (await provider.listEstates().catch(() => [])).slice(0, 3) : []
   const priceFormatter = new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-US', {
     style: 'currency',
     currency: 'EUR',
@@ -537,25 +529,33 @@ export async function CurrentProperties({
             {t('link')}
           </Link>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {listings.map((listing, index) => {
-            const copy = items[index]
-            return (
+        {listings.length === 0 ? (
+          <div data-home-estate-state="empty" className="border-border bg-background border p-7">
+            <p className="font-serif text-2xl font-medium">{t('emptyTitle')}</p>
+            <p className="text-muted-foreground mt-2 max-w-[62ch] text-sm leading-relaxed">
+              {t('emptyText')}
+            </p>
+          </div>
+        ) : (
+          <div data-home-estate-state="live" className="grid gap-6 lg:grid-cols-3">
+            {listings.map((listing) => (
               <Link
                 key={listing.slug}
                 href={{ pathname: '/properties/[slug]', params: { slug: listing.slug } }}
                 className="group border-border hover:border-foreground bg-background overflow-hidden border transition-colors"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
-                  <Image
-                    src={PROPERTY_IMAGES[index] ?? PROPERTY_IMAGES[0]}
-                    alt={`${copy?.title ?? listing.title}, ${listing.location}`}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                  />
+                <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-neutral-200">
+                  {listing.images[0] ? (
+                    <OnOfficeImage
+                      src={listing.images[0]}
+                      alt={`${listing.title}, ${listing.location}`}
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                    />
+                  ) : (
+                    <House className="size-12 text-neutral-400" aria-hidden="true" />
+                  )}
                   <span className="bg-surface-dark absolute top-0 left-0 px-4 py-2 text-[11px] font-semibold tracking-[0.16em] text-white uppercase">
-                    {copy?.type ?? listing.type}
+                    {listing.propertyType}
                   </span>
                 </div>
                 <div className="p-6">
@@ -564,28 +564,28 @@ export async function CurrentProperties({
                     {listing.location}
                   </p>
                   <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold">
-                    {copy?.title ?? listing.title}
+                    {listing.title}
                   </h3>
                   <div className="text-muted-foreground mt-5 flex gap-5 text-sm">
                     <span className="flex items-center gap-2">
                       <Ruler className="text-brand-700 size-4" aria-hidden="true" />
-                      {listing.livingArea}
+                      {listing.livingArea ? `${listing.livingArea} m²` : t('areaOnRequest')}
                     </span>
                     <span>
-                      {listing.rooms} {t('rooms')}
+                      {listing.rooms ? `${listing.rooms} ${t('rooms')}` : t('roomsOnRequest')}
                     </span>
                   </div>
                   <div className="border-border mt-6 flex items-end justify-between gap-5 border-t pt-5">
                     <p className="text-xl font-semibold tabular-nums">
-                      {priceFormatter.format(listing.price)}
+                      {listing.price ? priceFormatter.format(listing.price) : t('priceOnRequest')}
                     </p>
                     <ArrowUpRight className="text-brand-700 size-4" aria-hidden="true" />
                   </div>
                 </div>
               </Link>
-            )
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

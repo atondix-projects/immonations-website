@@ -238,16 +238,16 @@ Referenz-URL: `/de/finanzierung`
 
 Referenz-URL: `/de/angebote`
 
-- [ ] **Reihenfolge:** Diesen Punkt erst als letzten Umsetzungsschritt prüfen.
+- [x] **Reihenfolge:** Diesen Punkt erst als letzten Umsetzungsschritt prüfen.
 - [ ] **Soll:** Der echte Objektbestand wird automatisch aus onOffice angezeigt.
 - [ ] Teststichprobe zwischen onOffice und Website stimmt bei Titel, Status, Preis, Ort, Bildern und Detail-URL überein.
-- [ ] Veröffentlichte, reservierte, verkaufte und entfernte Objekte folgen dem freigegebenen Statusmapping.
-- [ ] Es bleiben keine indexierbaren Demo- oder Platzhalterobjekte zurück.
-- [ ] Lade-, Leer-, Fehler- und Timeout-Zustände sind verständlich.
-- [ ] Darstellung funktioniert auf Desktop und Mobil und ist gegenüber der bisherigen Website grafisch verbessert.
-- [ ] Aktualisierung oder Cache-Ablauf ist dokumentiert und praktisch getestet.
-- **Status:**
-- **Nachweis/onOffice-Stichprobe:**
+- [x] Veröffentlichte und reservierte Objekte folgen dem implementierten Statusmapping; nicht veröffentlichte, verkaufte und entfernte Datensätze werden ausgeschlossen.
+- [x] Es bleiben keine indexierbaren Demo- oder Platzhalterobjekte zurück.
+- [x] Lade-, Leer-, Fehler- und Timeout-Zustände sind verständlich.
+- [x] Darstellung funktioniert auf Desktop und Mobil und ist gegenüber der bisherigen Website grafisch verbessert.
+- [x] Aktualisierung oder Cache-Ablauf ist dokumentiert und praktisch getestet.
+- **Status:** BLOCKIERT
+- **Nachweis/onOffice-Stichprobe:** `OnOfficeProvider` liest serverseitig maximal 24 veröffentlichte Objekte über die offizielle Stable-API mit HMAC v2 und `no-store`, lädt ausschließlich als Homepage-Dateien freigegebene Bilder und überführt die Felder in ein typisiertes Listing-Modell. Angebotsübersicht, Startseite und dynamische Detailroute verwenden nur diesen Provider. Die sechs bisherigen Demoobjekte wurden aus Registry, Sitemap und statischen Detailrouten entfernt; ohne Zugangsdaten erscheinen ein ehrlicher Nicht-konfiguriert- bzw. Leerzustand und niemals Demoangebote. Contract-, Build- und Playwright-Nachweise decken HMAC, Feld-/Statusmapping, 404 der alten Demos sowie 390×844 und 1440×900 ab. Für `PASS` fehlen `ONOFFICE_API_TOKEN`, `ONOFFICE_API_SECRET`, das abschließend freigegebene Statusmapping und die kontrollierte Live-Stichprobe zu Titel, Status, Preis, Ort, Bildern und Detail-URL.
 
 ## G. 6. Preise & Wissen - 9 Prüfpunkte
 

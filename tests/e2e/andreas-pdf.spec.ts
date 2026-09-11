@@ -529,6 +529,31 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-K-02 never presents demo inventory as live onOffice data on ${viewport.name}`, async ({
+    page,
+    request,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/angebote')
+    await expect(page.locator('[data-estate-state="not-configured"]')).toHaveCount(1)
+    await expect(page.locator('body')).not.toContainText('Maisonette mit Balkon')
+    await expect(page.locator('body')).not.toContainText('3-Zimmer mit Balkon')
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-K-02')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}-not-configured.png`),
+      fullPage: true,
+    })
+
+    const formerDemo = await request.get('/de/objekt/zirndorf-weiherhof-maisonette')
+    expect(formerDemo.status()).toBe(404)
+    const sitemap = await (await request.get('/sitemap.xml')).text()
+    expect(sitemap).not.toContain('zirndorf-weiherhof-maisonette')
+  })
+}
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()
