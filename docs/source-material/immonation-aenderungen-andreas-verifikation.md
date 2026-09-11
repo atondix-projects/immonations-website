@@ -161,16 +161,16 @@ Relevante aktuelle Routen: `/de/ki` und `/de/ki-visualisierung-home-staging`
 
 ### PDF-KI-01 - Eigene Seite plus Startseiten-Teaser
 
-- [ ] **Soll:** Eine eindeutige, inhaltlich vollständige KI-Visualisierungsseite ist vorhanden; konkurrierende Routen sind sinnvoll kanonisiert oder klar getrennt.
-- [ ] Ein interaktiver Vorher/Nachher-Regler funktioniert mit Maus, Touch und Tastatur.
-- [ ] Die Szenarien `vermietet`, `renovierungsbedürftig`, `leerstehend/veraltet` und `geerbt` werden nachvollziehbar behandelt.
+- [x] **Soll:** Eine eindeutige, inhaltlich vollständige KI-Visualisierungsseite ist vorhanden; konkurrierende Routen sind sinnvoll kanonisiert oder klar getrennt.
+- [x] Ein interaktiver Vorher/Nachher-Regler funktioniert mit Maus, Touch und Tastatur.
+- [x] Die Szenarien `vermietet`, `renovierungsbedürftig`, `leerstehend/veraltet` und `geerbt` werden nachvollziehbar behandelt.
 - [ ] Material für Haus, Wohnung und Gewerbe ist vorhanden oder eine von Andreas freigegebene Abweichung dokumentiert.
-- [ ] Die Inhalte sind mit `assets/KI Visualisierungen/` abgeglichen.
-- [ ] Die Startseite enthält einen sichtbaren Teaser mit funktionierendem Link zur finalen Unterseite.
-- [ ] Vorher- und Nachherdarstellung ist eindeutig beschriftet; KI-Inhalte werden transparent gekennzeichnet.
+- [x] Die Inhalte sind mit `assets/KI Visualisierungen/` abgeglichen.
+- [x] Die Startseite enthält einen sichtbaren Teaser mit funktionierendem Link zur finalen Unterseite.
+- [x] Vorher- und Nachherdarstellung ist eindeutig beschriftet; KI-Inhalte werden transparent gekennzeichnet.
 - [ ] Andreas bestätigt die Übereinstimmung mit dem gewünschten Prototyp-Prinzip.
-- **Status:**
-- **Nachweis:**
+- **Status:** BLOCKIERT
+- **Nachweis:** Die vollständige DE-/EN-Seite bleibt klar vom separaten KI-Assistenten unter `/de/ki` getrennt. Sieben mit dem lokalen Asset-Bestand abgeglichene Vorher-/Nachher-Paare besitzen einen nativen Range-Regler, sichtbare Labels, Tastatursteuerung und KI-Hinweis; der Startseiten-Teaser verlinkt lokalisiert auf die Seite. Contract-Test sowie Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-KI-01/`. Im Bestand fehlen weiterhin belegte Gewerbe-Visualisierungen. Für `PASS` werden daher ein freigegebenes Gewerbe-Paar oder Andreas' ausdrückliche Abweichungsfreigabe sowie die subjektive Prototyp-Abnahme benötigt.
 
 ## E. 4. Ich will verkaufen - 4 Prüfpunkte
 

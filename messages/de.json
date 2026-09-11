@@ -3110,6 +3110,7 @@
       "intro": "Sieben Beispiele aus eigenen Vermarktungen: jeweils das unbearbeitete Foto und die Visualisierung, gekennzeichnet mit „Original“ und „Visualisierung“. Beide Aufnahmen zeigen dieselbe Kameraposition, damit der Unterschied nachvollziehbar bleibt.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisierung",
+      "controlLabel": "Vorher-Nachher-Vergleich verschieben",
       "items": {
         "bedroom-entenberg": {
           "title": "Schlafzimmer, Einfamilienhaus Entenberg",

@@ -1,4 +1,6 @@
 import { expect, test } from '@playwright/test'
+import { mkdirSync } from 'node:fs'
+import { join } from 'node:path'
 
 const VIEWPORTS = [
   { name: 'mobile', width: 390, height: 844 },
@@ -60,6 +62,37 @@ test('PDF-R-03 renders provider-backed review text without screenshots', async (
   await carousel.getByRole('button', { name: 'Nächste Bewertung' }).last().click()
   await expect(activeSlide).not.toHaveAttribute('aria-label', initialLabel ?? '')
 })
+
+for (const viewport of VIEWPORTS) {
+  test(`PDF-KI-01 operates the visualisation slider on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/ki-visualisierung-home-staging')
+
+    const comparison = page.locator('[data-visualization-compare]').first()
+    const slider = comparison.getByRole('slider')
+    await expect(comparison).toContainText('Original')
+    await expect(comparison).toContainText('Visualisierung')
+    await expect(slider).toHaveValue('50')
+
+    await slider.focus()
+    await page.keyboard.press('Home')
+    await expect(slider).toHaveValue('0')
+    await page.keyboard.press('End')
+    await expect(slider).toHaveValue('100')
+    await slider.fill('50')
+    await expect(slider).toHaveValue('50')
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-KI-01')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}.png`),
+      fullPage: true,
+    })
+
+    await page.goto('/de')
+    await expect(page.locator('a[href="/de/ki-visualisierung-home-staging"]')).not.toHaveCount(0)
+  })
+}
 
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {

@@ -159,4 +159,16 @@ describe('Andreas PDF contracts', () => {
     expect(feedbackReviews).not.toContain('testimonialReview')
     expect(feedbackReviews).not.toContain('review.screenshot')
   })
+
+  it('PDF-KI-01 provides an accessible interactive before-and-after control', () => {
+    const comparison = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'staging', 'visualization-compare.tsx'),
+      'utf8',
+    )
+
+    expect(comparison).toContain("'use client'")
+    expect(comparison).toContain('type="range"')
+    expect(comparison).toContain('aria-label={controlLabel}')
+    expect(comparison).toContain('data-visualization-compare')
+  })
 })

@@ -3103,6 +3103,7 @@
       "intro": "Seven examples from our own marketing: the unedited photograph and the visualisation, labelled “Original” and “Visualisation”. Both frames share the same camera position, so the difference stays verifiable.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisation",
+      "controlLabel": "Move the before-and-after comparison",
       "items": {
         "bedroom-entenberg": {
           "title": "Bedroom, detached house in Entenberg",
