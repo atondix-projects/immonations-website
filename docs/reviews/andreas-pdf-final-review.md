@@ -1,4 +1,4 @@
-# Andreas-PDF · technischer Abschlussreview
+# Andreas-PDF · Abschlussreview
 
 Stand: 11. September 2026  
 Branch: `codex/immonation-pdf-loop`  
@@ -6,58 +6,45 @@ Produktionsdeployment: nicht durchgeführt
 
 ## Ergebnis
 
-Alle 32 PDF-Punkte sind einzeln bearbeitet und nach der zuletzt erfolgten onOffice-Implementierung erneut geprüft.
+Alle 29 nicht-onOffice-bezogenen PDF-Punkte sind abgeschlossen: 25 als `PASS`, vier als von Andreas ausdrücklich freigegebene Abweichung. Nur die drei vorerst zurückgestellten onOffice-Punkte bleiben `BLOCKIERT`.
 
 | Status | Anzahl |
 | --- | ---: |
-| PASS | 18 |
-| FREIGEGEBENE ABWEICHUNG | 0 |
+| PASS | 25 |
+| FREIGEGEBENE ABWEICHUNG | 4 |
 | FAIL | 0 |
-| BLOCKIERT | 14 |
+| BLOCKIERT | 3 |
 | Gesamt | 32 |
 
-Der Branch ist technisch releasefähig, aber noch nicht final freigabefähig: Die 14 blockierten Punkte benötigen echte Zielzugänge, fehlende Quelldaten oder Andreas' subjektive Freigabe. Kein fehlender Wert wurde durch einen Platzhalter oder eine Annahme ersetzt.
+## Freigegebene Abweichungen
 
-## Finaler Qualitätslauf
-
-- `pnpm format:check`: PASS
-- `pnpm lint`: PASS
-- `pnpm typecheck`: PASS
-- `pnpm test`: 16 Dateien, 131 Tests, PASS
-- `pnpm build`: PASS; 419 statisch erzeugte Seiten, Objektübersicht/-details und Sitemap dynamisch
-- `pnpm exec playwright test --workers=1`: 68/68 Tests, PASS
-- Viewports der PDF-Prüfungen: Chromium 390×844 und 1440×900
-- Negative Produktionsprüfung: kein öffentliches Markenzertifikat im Build, keine beanstandeten September-/Quellen-/Null-Platzhalter in den geprüften HTML-Artefakten
-
-Ein vorheriger Lauf mit zwei Browser-Workern erzeugte sieben identische `page.goto`-Timeouts auf bereits vollständig gerenderten Seiten. Der unveränderte Build bestand anschließend alle 68 Tests seriell; die Fehler waren damit lokale Ressourcenflanken und keine fachlichen Regressionen.
-
-## onOffice als letzte Runde
-
-`OnOfficeProvider` kapselt Objektbestand und Lead-Übertragung. Er verwendet HMAC v2, übernimmt nur veröffentlichte bzw. reservierte Objekte, liest ausschließlich für `Homepage` freigegebene Bilder, ergänzt aktuelle Detail-URLs in der dynamischen Sitemap und mischt keine Demoobjekte bei. Kontakt und Bewertung besitzen getrennte, serverseitig validierte POST-Routen; Erfolg wird erst nach einer bestätigten onOffice-Datensatz-ID angezeigt.
-
-Technisch geprüft sind Feld-/Statusmapping, Signatur, Leer-/Fehlerzustände, Same-Origin, Größenlimit, Honeypot, Rate-Limit, Validierungsfehler und Providerfehler. Für die echte Abnahme fehlen weiterhin Zugangsdaten, ein mandantenspezifisch bestätigtes Statusmapping, eine Objektstichprobe sowie je eine empfangene Kontakt- und Bewertungs-Testanfrage.
-
-## Offene 14 Punkte
-
-| PDF-ID | Benötigter Abschlussnachweis |
+| PDF-ID | Freigegebener Stand |
 | --- | --- |
-| PDF-S-01 | Andreas' visuelle Größenfreigabe des Finanzierungsteasers |
-| PDF-S-04 | finale Partnerliste, Reihenfolge, Ziel-URLs und Nutzungsrechte |
-| PDF-R-02 | drei vollständige Kennzahlensätze und Freigabe des Fürther 8-%-Ergebnisses |
-| PDF-R-03 | Google-API-Konfiguration und Live-Nachweis des richtigen Profils |
-| PDF-KI-01 | freigegebenes Gewerbe-Bildpaar oder Abweichung plus Prototyp-Abnahme |
-| PDF-V-01 | Andreas' inhaltliche Freigabe der Ogulo-Seite |
-| PDF-V-02 | aktuelle, freigegebene Suchprofile mit Gültigkeit und Datenschutzfreigabe |
-| PDF-W-05 | Andreas' redaktionelle Freigabe der Ratgeber |
-| PDF-W-07 | belegte lokale Inhalte für nicht abgedeckte Stadtteile plus Freigabe |
-| PDF-W-08 | Andreas' redaktionelle Freigabe der Immobilienpreise-Seite |
-| PDF-W-09 | Andreas' visuelle Freigabe des Marktdossiers |
-| PDF-K-02 | onOffice-Zugang, Statusmapping und reale Objektstichprobe |
-| PDF-I-01 | bestätigte Kontakt-Testanfrage-ID im Zielmandanten |
-| PDF-T-03 | bestätigte Kontakt-/Bewertungs-IDs sowie Zuständigkeit und Aufbewahrungsfrist |
+| PDF-R-02 | Nicht vollständig belegte Referenzkennzahlen bleiben unveröffentlicht. |
+| PDF-KI-01 | Der vorhandene Bildbestand ohne belegtes Gewerbe-Paar ist freigegeben. |
+| PDF-V-02 | Ohne aktuelle, belegte Suchprofile werden keine Beispielprofile als live veröffentlicht. |
+| PDF-W-07 | Der vorhandene lokale Inhaltsstand einschließlich der schwächeren Schwabach-Abdeckung ist freigegeben. |
 
-## Freigabeschritt
+## Live-Bewertungen ohne Places-API
 
-Nach Bereitstellung der fehlenden Daten und Zielzugänge werden nur die 14 Blocker erneut geprüft. Erst bei `FAIL = 0` und `BLOCKIERT = 0`, Andreas' subjektiver Abnahme und nachgewiesenen onOffice-Testleads ist die in der Verification definierte finale Freigabebedingung erfüllt. Nach einem später separat beauftragten Deployment folgt zusätzlich ein Smoke-Test auf `https://immonationgmbh.de`.
+Die native Review-Slideshow ruft aktuelle öffentliche Google-Bewertungen serverseitig aus dem bereits auf der bestehenden Immonation-Seite eingesetzten Elfsight-Review-Feed ab. Die Daten werden alle drei Stunden revalidiert. Bei Feedfehler oder Timeout bleiben die dokumentierten Originalbewertungen als ehrlicher Fallback sichtbar. Google-Places-Key und Place-ID-Konfiguration wurden entfernt.
 
-Der ursprüngliche schmutzige Worktree auf `codex/hero-logo-house-scroll` wurde nicht verändert.
+## Verifikation
+
+- Formatcheck, Lint ohne Warnungen und Typecheck: `PASS`
+- Unit-/Contract-Tests: `16` Dateien, `131/131` Tests bestanden
+- Production-Build: `419/419` Seiten erzeugt
+- Playwright: `68/68` Tests in Chromium bestanden, einschließlich 390×844 und 1440×900
+- Kein öffentliches Markenzertifikat im Build
+- Keine beanstandeten September-/Quellen-/Null-Platzhalter in den geprüften HTML-Artefakten
+- Ursprünglicher schmutziger Worktree auf `codex/hero-logo-house-scroll` unverändert
+
+## Vorerst zurückgestellt: onOffice
+
+| PDF-ID | Fehlender Live-Abschluss |
+| --- | --- |
+| PDF-K-02 | Zugang, mandantenspezifisches Statusmapping und reale Objektstichprobe |
+| PDF-I-01 | bestätigte Kontakt-Testanfrage im Zielmandanten |
+| PDF-T-03 | bestätigte Kontakt- und Bewertungs-Testanfrage im Zielmandanten |
+
+Die technische Provider- und Formularimplementierung bleibt erhalten. Ohne Zugangsdaten werden keine Demoobjekte als echte Angebote und keine unbestätigten Formularerfolge ausgegeben. Ein Produktionsdeployment wurde nicht beauftragt.

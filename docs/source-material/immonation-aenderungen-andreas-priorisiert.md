@@ -6,6 +6,8 @@ Triage erstellt: 2026-09-09
 
 > Diese Datei priorisiert das Kundenfeedback und ist noch keine verifizierte Aussage zum aktuellen Implementierungsstand. Vor der Umsetzung jeden Punkt gegen den aktuellen Code pruefen und nur bestaetigte Restarbeiten in die kanonische `TODO.md` uebernehmen.
 
+> Abschlussstand 2026-09-11: Alle nicht-onOffice-bezogenen Punkte sind umgesetzt oder von Andreas als Abweichung freigegeben. Google-Bewertungen kommen ohne Places-API aus dem bestehenden Immonation-Review-Feed. onOffice bleibt vorerst ausdrücklich zurückgestellt; verbindlicher Status siehe Verifikationsliste.
+
 ## Prioritaetslogik
 
 - **P0 - vor Go-live:** Sicherheits-, Lead-, Indexierungs- oder klar sichtbare Produktionsfehler.
@@ -101,7 +103,7 @@ Triage erstellt: 2026-09-09
 - [ ] Im Block "Dieselben Erfahrungen, schriftlich festgehalten" laufend aktuelle Google-Rezensionen anzeigen.
 - [ ] Lade-, Fehler-, Datenschutz- und Consent-Verhalten beruecksichtigen.
 - **Abnahme:** Die freigegebene Live-Quelle funktioniert; statische Google-Screenshots sind entfernt.
-- **Kontext benoetigt:** Google-Unternehmensprofil/Place ID, gewuenschte Integrationsart und Consent-Vorgaben.
+- **Umsetzung:** Serverseitiger Abruf aus dem bestehenden Immonation-Elfsight-Review-Feed mit kuratiertem Fallback; kein Places-Key erforderlich.
 
 ### P1-04 - KI-Visualisierung als vollstaendigen Baustein umsetzen
 
@@ -218,10 +220,10 @@ Triage erstellt: 2026-09-09
 
 - [x] Produktionsdomain bestaetigt: `https://immonationgmbh.de`.
 - [x] Quelldaten und Medien sind lokal unter `assets/` vorhanden; relevante Ordner wurden identifiziert.
-- [ ] Freigegebene aktuelle Unternehmenskennzahlen liefern.
+- [x] Freigegebene aktuelle Unternehmenskennzahlen liefern.
 - [ ] onOffice-Zugang, Datenmapping und Ziel fuer Kontakt-/Bewertungsanfragen fuer den letzten Umsetzungsschritt klaeren.
-- [ ] Finale Auswahl und Publikationsfreigabe fuer Videos, 360-Grad-Tour, Partner und Bilder bestaetigen.
-- [ ] Google-Unternehmensprofil/Place ID und gewuenschte Live-Review-Loesung bestaetigen.
+- [x] Finale Auswahl und Publikationsfreigabe fuer Videos, 360-Grad-Tour, Partner und Bilder bestaetigen.
+- [x] Live-Review-Loesung bestaetigt: bestehender Immonation-Review-Feed statt Places-API.
 - [x] Datenquellen-Formulierung bestaetigt: "basierend auf Vermittlungsdaten der Immonation".
 - [x] "Weitere Immonation-Seiten" meint allgemein die weiteren Seiten des Immonation-Bereichs.
 

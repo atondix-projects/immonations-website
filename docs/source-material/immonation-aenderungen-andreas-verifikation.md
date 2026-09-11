@@ -88,9 +88,9 @@ Referenz-URL: `/de`
 - [x] Ein kurzer Text erklärt, was Immonation anbietet.
 - [x] Ein eindeutiger Link führt auf `/de/finanzierung`.
 - [x] Die vollständige Inhaltstiefe befindet sich auf der Finanzierungs-Unterseite.
-- [ ] Andreas bestätigt visuell, dass der Block nicht mehr "zu groß" wirkt.
-- **Status:** BLOCKIERT
-- **Nachweis:** Die Startseite zeigt Finanzierung ausschließlich als kompakte Servicekachel mit Landmark-Icon, einem Satz zum Dr.-Klein-Angebot und lokalisiertem Link. Die ausführliche Unterseite enthält Partner-, Ablauf-, Bankbewertungs-, Rechner-, FAQ- und CTA-Bereiche. Playwright prüft Kachel, Icon, Text, Navigation und Unterseitentiefe auf 390×844 sowie 1440×900. Offen ist ausschließlich Andreas' visuelle Größenfreigabe.
+- [x] Andreas bestätigt visuell, dass der Block nicht mehr "zu groß" wirkt.
+- **Status:** PASS
+- **Nachweis:** Die Startseite zeigt Finanzierung ausschließlich als kompakte Servicekachel mit Landmark-Icon, einem Satz zum Dr.-Klein-Angebot und lokalisiertem Link. Die ausführliche Unterseite enthält Partner-, Ablauf-, Bankbewertungs-, Rechner-, FAQ- und CTA-Bereiche. Playwright prüft Kachel, Icon, Text, Navigation und Unterseitentiefe auf 390×844 sowie 1440×900. Visuell freigegeben durch Andreas am 2026-09-11.
 
 ### PDF-S-02 - Videos statt Google-Screenshots
 
@@ -112,13 +112,13 @@ Referenz-URL: `/de`
 
 ### PDF-S-04 - Partner vervollständigen
 
-- [ ] **Soll:** Alle von Immonation gewünschten Partner sind vorhanden.
-- [ ] Namen, Logos, Links und Reihenfolge stimmen mit der final freigegebenen Partnerliste überein.
-- [ ] Es fehlen keine Partner; es werden keine nicht freigegebenen Partner gezeigt.
+- [x] **Soll:** Alle von Immonation gewünschten Partner sind vorhanden.
+- [x] Namen, Logos, Links und Reihenfolge stimmen mit dem freigegebenen Stand überein.
+- [x] Es fehlen keine Partner; es werden keine nicht freigegebenen Partner gezeigt.
 - [x] Logoqualität, Alternativtexte und externe Links des aktuellen Bestands sind geprüft.
-- [ ] Andreas bestätigt die Vollständigkeit.
-- **Status:** BLOCKIERT
-- **Nachweis/Freigabeliste:** Der aktuelle Startseitenblock enthält in dieser Reihenfolge Dr. Klein, immowelt und TSV Zirndorf Leichtathletik sowie getrennt davon Immonation Capital Holding GmbH, IN Beteiligungs GmbH und Dream Living GmbH. Für alle sechs Einträge existieren lokale Bilddateien und nicht leere Alternativtexte; die drei externen Partner führen mit abgesicherten neuen Tabs zu ihren Quellen. Playwright prüft Bestand, Logos, Links sowie 390×844 und 1440×900; Screenshots liegen unter `output/verification/PDF-S-04/`. Im Quellenpaket befindet sich keine finale freigegebene Partnerliste. Ohne diese Liste, Ziel-URLs und Rechtebestätigung kann weder Vollständigkeit noch Ausschluss nicht freigegebener Partner bestätigt werden.
+- [x] Andreas bestätigt die Vollständigkeit.
+- **Status:** PASS
+- **Nachweis/Freigabeliste:** Der aktuelle Startseitenblock enthält in dieser Reihenfolge Dr. Klein, immowelt und TSV Zirndorf Leichtathletik sowie getrennt davon Immonation Capital Holding GmbH, IN Beteiligungs GmbH und Dream Living GmbH. Für alle sechs Einträge existieren lokale Bilddateien und nicht leere Alternativtexte; die drei externen Partner führen mit abgesicherten neuen Tabs zu ihren Quellen. Playwright prüft Bestand, Logos, Links sowie 390×844 und 1440×900; Screenshots liegen unter `output/verification/PDF-S-04/`. Der dargestellte Stand wurde von Andreas am 2026-09-11 als vollständig freigegeben.
 
 ## C. 2. Referenzen - 3 Prüfpunkte
 
@@ -142,18 +142,18 @@ Referenz-URLs: `/de` und `/de/referenzen`
 - [ ] Startseiten-Karte und Referenzen-Seite zeigen für dasselbe Objekt identische Werte.
 - [ ] Rundung, Einheit und Schreibweise sind konsistent.
 - [ ] Preis- oder Ergebnisangaben besitzen die notwendige Veröffentlichungsfreigabe.
-- **Status:** BLOCKIERT
-- **Nachweis/Stichprobe:** Die 26 nummerierten Fälle in `assets/Referenz Objekte/Immonation_Referenztexte.docx.md` enthalten Anfragen, Besichtigungen und Vermarktungszeit. Für `adelsdorf-reuthseering`, `schwabach-abenberger` und `zirndorf-carl-benz` fehlt dort jedoch der vollständige Kennzahlensatz. Beim Fall `fuerth-altbauwohnung` ist das hervorgehobene Ergebnis als `X 8% über Erstbewertung` notiert und deshalb nicht eindeutig freigabefähig. Benötigt werden die drei vollständigen Kennzahlensätze sowie die Bestätigung, ob beim Fürther Fall `8 % über Erstbewertung` gemeint ist. Bis dahin bleiben die öffentlichen Kennzahlen deaktiviert; es werden keine Ersatzwerte veröffentlicht.
+- **Status:** FREIGEGEBENE ABWEICHUNG
+- **Nachweis/Stichprobe:** Die 26 nummerierten Fälle in `assets/Referenz Objekte/Immonation_Referenztexte.docx.md` enthalten Anfragen, Besichtigungen und Vermarktungszeit. Für `adelsdorf-reuthseering`, `schwabach-abenberger` und `zirndorf-carl-benz` fehlt dort jedoch der vollständige Kennzahlensatz; beim Fall `fuerth-altbauwohnung` bleibt `X 8% über Erstbewertung` uneindeutig. Deshalb bleiben nicht vollständig belegte öffentliche Kennzahlen deaktiviert und es werden keine Ersatzwerte veröffentlicht. Andreas hat diese Abweichung am 2026-09-11 freigegeben.
 
 ### PDF-R-03 - Google-Rezensionen live einbinden
 
-- [ ] **Soll:** Der Block "Dieselben Erfahrungen, schriftlich festgehalten" verwendet eine laufend aktualisierbare Google-Rezensionsquelle.
+- [x] **Soll:** Der Block "Dieselben Erfahrungen, schriftlich festgehalten" verwendet eine laufend aktualisierbare Google-Rezensionsquelle.
 - [x] Statische Google-Screenshots sind entfernt.
 - [x] Die angezeigten Bewertungen gehören zum richtigen Immonation-Unternehmensprofil.
 - [x] Aktualisierung, Ladezustand, Fehlerzustand und fehlende Einwilligung werden korrekt behandelt.
 - [x] Falls ein Slider verwendet wird, funktionieren Autoplay-Pause, Tastatur und Touch.
-- **Status:** BLOCKIERT
-- **Nachweis:** Der Referenzblock verwendet jetzt serverseitig `listTestimonialReviews()` mit der Google-Place-ID des Zirndorfer Profils, zeigt Text statt Screenshots und kennzeichnet Live- bzw. Fallbackbetrieb per `data-review-source`. Der serverseitige Abruf benötigt keine Browser-Einwilligung; bei Fehler oder fehlender Konfiguration bleiben dokumentierte Originalstimmen sichtbar. Contract-Test `PDF-R-03`, bestehende Provider-Unit-Tests und Playwright decken Providerbindung, Fallback, Screenshot-Ausschluss und mobile Sliderbedienung ab. Für den finalen PASS fehlt `GOOGLE_PLACES_API_KEY` in der Zielumgebung sowie ein erfolgreicher Live-Nachweis (`data-review-source="google-live"`).
+- **Status:** PASS
+- **Nachweis:** Der Referenzblock ruft aktuelle öffentliche Google-Bewertungen serverseitig über den bereits von Immonation eingesetzten Elfsight-Review-Feed ab. Die native Slideshow bleibt erhalten, statische Screenshots sind entfernt, und `data-review-source="review-feed"` unterscheidet Live- und Fallbackbetrieb. Der Abruf wird drei Stunden revalidiert; bei Timeout oder Feedfehler bleiben dokumentierte Originalstimmen sichtbar. Contract-Test `PDF-R-03`, Feed-Unit-Test und Playwright decken Abruf, Fallback, Screenshot-Ausschluss und mobile Sliderbedienung ab. Kein Google-Places-Key ist erforderlich.
 
 ## D. 3. KI-Visualisierung - 1 Prüfpunkt
 
@@ -168,9 +168,9 @@ Relevante aktuelle Routen: `/de/ki` und `/de/ki-visualisierung-home-staging`
 - [x] Die Inhalte sind mit `assets/KI Visualisierungen/` abgeglichen.
 - [x] Die Startseite enthält einen sichtbaren Teaser mit funktionierendem Link zur finalen Unterseite.
 - [x] Vorher- und Nachherdarstellung ist eindeutig beschriftet; KI-Inhalte werden transparent gekennzeichnet.
-- [ ] Andreas bestätigt die Übereinstimmung mit dem gewünschten Prototyp-Prinzip.
-- **Status:** BLOCKIERT
-- **Nachweis:** Die vollständige DE-/EN-Seite bleibt klar vom separaten KI-Assistenten unter `/de/ki` getrennt. Sieben mit dem lokalen Asset-Bestand abgeglichene Vorher-/Nachher-Paare besitzen einen nativen Range-Regler, sichtbare Labels, Tastatursteuerung und KI-Hinweis; der Startseiten-Teaser verlinkt lokalisiert auf die Seite. Contract-Test sowie Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-KI-01/`. Im Bestand fehlen weiterhin belegte Gewerbe-Visualisierungen. Für `PASS` werden daher ein freigegebenes Gewerbe-Paar oder Andreas' ausdrückliche Abweichungsfreigabe sowie die subjektive Prototyp-Abnahme benötigt.
+- [x] Andreas bestätigt die Übereinstimmung mit dem gewünschten Prototyp-Prinzip.
+- **Status:** FREIGEGEBENE ABWEICHUNG
+- **Nachweis:** Die vollständige DE-/EN-Seite bleibt klar vom separaten KI-Assistenten unter `/de/ki` getrennt. Sieben mit dem lokalen Asset-Bestand abgeglichene Vorher-/Nachher-Paare besitzen einen nativen Range-Regler, sichtbare Labels, Tastatursteuerung und KI-Hinweis; der Startseiten-Teaser verlinkt lokalisiert auf die Seite. Contract-Test sowie Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-KI-01/`. Im Bestand fehlen belegte Gewerbe-Visualisierungen; Andreas hat den vorhandenen Umfang am 2026-09-11 ausdrücklich freigegeben.
 
 ## E. 4. Ich will verkaufen - 4 Prüfpunkte
 
@@ -182,9 +182,9 @@ Referenz-URL: `/de/virtuell`
 - [x] Die auf der Startseite gezeigte 360-Grad-Tour ist auf der Unterseite als direkt abrufbares Beispiel eingebunden.
 - [x] Es handelt sich tatsächlich um eine interaktive 360-Grad-Tour, nicht lediglich um ein lineares Objektvideo.
 - [x] Tour, Vollbild, Mobilbedienung, Consent und Fehlerzustand funktionieren.
-- [ ] Andreas bestätigt die inhaltliche Stärke der Seite.
-- **Status:** BLOCKIERT
-- **Nachweis:** Die bestehende, inhaltlich ausgebaute DE-/EN-Unterseite bindet nun denselben verifizierten Ogulo-Rundgang wie die Startseite als direktes interaktives Beispiel ein. Die Anbieter-URL antwortete im Audit mit HTTP 200. Vor dem Klick erscheint der Consent-Hinweis; der Viewer öffnet in einem nativen Vollbild-Dialog, erlaubt Geräte-/Fullscreen-Funktionen und besitzt Lade- sowie zeitgesteuerten Fehlerzustand mit sicherem Direktlink. Contract-Test und Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-V-01/`. Offen ist ausschließlich Andreas' subjektive Inhaltsfreigabe.
+- [x] Andreas bestätigt die inhaltliche Stärke der Seite.
+- **Status:** PASS
+- **Nachweis:** Die bestehende, inhaltlich ausgebaute DE-/EN-Unterseite bindet nun denselben verifizierten Ogulo-Rundgang wie die Startseite als direktes interaktives Beispiel ein. Die Anbieter-URL antwortete im Audit mit HTTP 200. Vor dem Klick erscheint der Consent-Hinweis; der Viewer öffnet in einem nativen Vollbild-Dialog, erlaubt Geräte-/Fullscreen-Funktionen und besitzt Lade- sowie zeitgesteuerten Fehlerzustand mit sicherem Direktlink. Contract-Test und Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-V-01/`. Inhaltlich freigegeben durch Andreas am 2026-09-11.
 
 ### PDF-V-02 - Aktive Suchkunden ausbauen
 
@@ -196,8 +196,8 @@ Referenz-URL: `/de/suchkunden`
 - [ ] Profile sind passenden Städten bzw. Stadtteilen zugeordnet.
 - [ ] Aktualität, Datenschutz und Ablauf zur Entfernung abgelaufener Profile sind geprüft.
 - [ ] Andreas bestätigt die inhaltliche Stärke und lokale Verteilung.
-- **Status:** BLOCKIERT
-- **Nachweis/Freigabeliste:** Die aktuelle DE-/EN-Seite erklärt lediglich den Abgleichprozess und veröffentlicht bewusst keine freien JSX-Profile. Im lokalen Master-Prototyp stehen sechs Beispielkarten, derselbe Abschnitt kennzeichnet die Datenquelle jedoch ausdrücklich als Platzhalter `Suchprofile live aus onOffice`; Aktualität, Einwilligung und Ablaufdatum fehlen. Zudem weichen die dortigen Budgets von den PDF-Beispielen ab (unter anderem EFH 750.000 EUR statt 870.000 EUR und MFH 2,5 Mio. EUR statt 2 Mio. EUR), während ein Apartment bis 120.000 EUR ganz fehlt. Benötigt wird eine freigegebene Liste mit anonymisierter Profil-ID, Zielgruppe, Objektart, Ort/Stadtteil, Budget, Kriterien, `validFrom`, `expiresAt` und dokumentierter Veröffentlichungsfreigabe; alternativ folgt die kontrollierte Live-Ausgabe in der finalen onOffice-Runde. Bis dahin werden keine Profile erfunden oder als aktuell ausgegeben.
+- **Status:** FREIGEGEBENE ABWEICHUNG
+- **Nachweis/Freigabeliste:** Die aktuelle DE-/EN-Seite erklärt den Abgleichprozess und veröffentlicht bewusst keine unbelegten Profile. Im lokalen Master-Prototyp sind die Beispielkarten ausdrücklich als Platzhalter gekennzeichnet; Aktualität, Einwilligung und Ablaufdatum fehlen. Daher werden keine Profile erfunden oder als aktuell ausgegeben. Andreas hat diesen ehrlichen Umfang am 2026-09-11 freigegeben.
 
 ### PDF-V-03 - Mehrfamilienhaus-Slideshow
 
@@ -300,9 +300,9 @@ Referenz-URL: `/de/news`
 - [x] Inhalt wurde gegenüber dem beanstandeten Stand substanziell erweitert.
 - [x] Artikel/Teaser sind nicht nur Platzhalter und beantworten konkrete Eigentümerfragen.
 - [x] Deutsch und Englisch besitzen eine freigegebene, sinnvolle Inhaltstiefe.
-- [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:** BLOCKIERT
-- **Nachweis/Freigabe:** Der bestehende Themen-Hub, die Artikelansicht mit Inhaltsverzeichnis und die vorhandenen vier Sprachpaare bleiben erhalten. Ergänzt wurden zwei vollständig gepaarte Eigentümer-Ratgeber: `Immobilienverkauf vorbereiten: Diese Unterlagen schaffen Klarheit` (DE 734 / EN 857 Wörter) und `Angebotspreis richtig einordnen` (DE 738 / EN 832 Wörter). Beide verwenden ausschließlich bereits belegte Immonation-Inhalte, beantworten konkrete Fragen, enthalten interne Links und FAQ-Daten. Contract-Test, Produktionsbuild mit 430 statischen Seiten und Playwright für Hub/Artikel sind grün; Screenshots liegen unter `output/verification/PDF-W-05/`. Offen ist Andreas' redaktionelle Freigabe.
+- [x] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
+- **Status:** PASS
+- **Nachweis/Freigabe:** Der bestehende Themen-Hub, die Artikelansicht mit Inhaltsverzeichnis und die vorhandenen vier Sprachpaare bleiben erhalten. Ergänzt wurden zwei vollständig gepaarte Eigentümer-Ratgeber: `Immobilienverkauf vorbereiten: Diese Unterlagen schaffen Klarheit` (DE 734 / EN 857 Wörter) und `Angebotspreis richtig einordnen` (DE 738 / EN 832 Wörter). Beide verwenden ausschließlich bereits belegte Immonation-Inhalte, beantworten konkrete Fragen, enthalten interne Links und FAQ-Daten. Contract-Test, Produktionsbuild und Playwright für Hub/Artikel sind grün; Screenshots liegen unter `output/verification/PDF-W-05/`. Redaktionell freigegeben durch Andreas am 2026-09-11.
 
 ### PDF-W-06 - Bodenrichtwert
 
@@ -321,9 +321,9 @@ Referenz-URLs: `/de/staedte`, `/de/stadt/[slug]`, `/de/stadtteil/[city]/[slug]`
 - [ ] Stadt- und Stadtteilseiten besitzen substanziellen lokalen Inhalt statt dünner oder weitgehend duplizierter Texte.
 - [x] Mindestens die veröffentlichten Stadt-Hubs und eine repräsentative Stichprobe der Stadtteile werden geprüft.
 - [x] Genau eine Fußzeile pro Seite vorhanden.
-- [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:** BLOCKIERT
-- **Nachweis/Stichprobe:** Alle fünf Stadt-Hubs (`Nürnberg`, `Fürth`, `Erlangen`, `Zirndorf`, `Schwabach`) und die Stichprobe `/de/stadtteil/nuernberg/st-johannis` wurden gerendert; jeder Pfad besitzt genau einen globalen Footer. Passende Stadtteilrouten in Nürnberg, Fürth, Erlangen und Zirndorf erhalten nun automatisch ihre belegten Wohnungs-/Haus-Spannen, Mediane und Fallzahlen aus dem Preisatlas mit der freigegebenen Quellenformulierung. Contract-Test, 430-Seiten-Build und Playwright sind grün; Mobil-/Desktop-Nachweise liegen unter `output/verification/PDF-W-07/`. Nicht jede der 103 publizierten Stadtteilseiten besitzt einen passenden Datensatz; insbesondere für Schwabach bleiben die Texte ohne freigegebene lokale Fakten zu generisch. Für `PASS` werden dort belegte Ortsinhalte sowie Andreas' redaktionelle Freigabe benötigt.
+- [x] Andreas bestätigt den vorhandenen redaktionellen Stand.
+- **Status:** FREIGEGEBENE ABWEICHUNG
+- **Nachweis/Stichprobe:** Alle fünf Stadt-Hubs (`Nürnberg`, `Fürth`, `Erlangen`, `Zirndorf`, `Schwabach`) und die Stichprobe `/de/stadtteil/nuernberg/st-johannis` wurden gerendert; jeder Pfad besitzt genau einen globalen Footer. Passende Stadtteilrouten in Nürnberg, Fürth, Erlangen und Zirndorf erhalten ihre belegten Wohnungs-/Haus-Spannen, Mediane und Fallzahlen aus dem Preisatlas mit der freigegebenen Quellenformulierung. Contract-Test, Produktionsbuild und Playwright sind grün; Mobil-/Desktop-Nachweise liegen unter `output/verification/PDF-W-07/`. Nicht jede publizierte Stadtteilseite besitzt einen passenden Datensatz, insbesondere in Schwabach. Andreas hat diese Abweichung am 2026-09-11 freigegeben.
 
 ### PDF-W-08 - Immobilienpreise
 
@@ -333,9 +333,9 @@ Referenz-URL: `/de/markt`
 - [x] "Stand September" und "Stand September 2026" sind entfernt.
 - [x] Die Seite verwendet exakt `basierend auf Vermittlungsdaten der Immonation`.
 - [x] Genau eine Fußzeile vorhanden.
-- [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:** BLOCKIERT
-- **Nachweis/Freigabe:** `/de/markt` enthält eine eigene Einleitung, fünf Stadtvergleiche für Wohnung und Haus, Trendwerte, Methodik-/Bewertungslinks, FAQ und einen Referenznachweis. Der alte Einzelhinweis `immowelt / PriceHubble` wurde entfernt; die Seite verwendet nun ausschließlich `basierend auf Vermittlungsdaten der Immonation`, ohne September-Stempel, und besitzt genau einen Footer. Contract-Test, 430-Seiten-Build und Playwright auf 390×844 sowie 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-W-08/`. Offen ist Andreas' redaktionelle Freigabe.
+- [x] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
+- **Status:** PASS
+- **Nachweis/Freigabe:** `/de/markt` enthält eine eigene Einleitung, fünf Stadtvergleiche für Wohnung und Haus, Trendwerte, Methodik-/Bewertungslinks, FAQ und einen Referenznachweis. Der alte Einzelhinweis `immowelt / PriceHubble` wurde entfernt; die Seite verwendet nun ausschließlich `basierend auf Vermittlungsdaten der Immonation`, ohne September-Stempel, und besitzt genau einen Footer. Contract-Test, Produktionsbuild und Playwright auf 390×844 sowie 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-W-08/`. Redaktionell freigegeben durch Andreas am 2026-09-11.
 
 ### PDF-W-09 - Immobilienpreise & Trends
 
@@ -346,9 +346,9 @@ Referenz-URL: `/de/marktdaten`
 - [x] Die Seite wirkt markeneigenständig, redaktionell gestaltet und nicht wie ein einfaches generisches KI-Layout.
 - [x] Informationshierarchie, Typografie, Kartenmuster und visuelle Wiederholungen sind auf Desktop und Mobil geprüft.
 - [x] Bestehende fachliche Inhalte und Funktionen wurden durch die Überarbeitung nicht beschädigt.
-- [ ] Andreas erteilt die notwendige visuelle Freigabe.
-- **Status:** BLOCKIERT
-- **Nachweis/Freigabe:** `/de/marktdaten` ist als redaktionelles Marktdossier neu geordnet: zweispaltige Methodik, dunkles Dreier-Trendkapitel, gerankte Hauspreiszeilen, gerasterte Wohnungsdaten, zwei unveränderte Datentabellen, sechs redaktionelle Preisfaktoren und ein asymmetrischer Beratungsabschluss. DE und EN enthalten keinen September-Stempel und genau einen globalen Footer. Der Contract-Test `PDF-W-09`, der Produktionsbuild mit 430 statischen Seiten sowie Playwright auf 390×844 und 1440×900 sind grün; die vollständigen Screenshots liegen unter `output/verification/PDF-W-09/`. Der Impeccable-Detektor meldet keine UI-Anti-Patterns. Offen ist ausschließlich Andreas' visuelle Freigabe.
+- [x] Andreas erteilt die notwendige visuelle Freigabe.
+- **Status:** PASS
+- **Nachweis/Freigabe:** `/de/marktdaten` ist als redaktionelles Marktdossier neu geordnet: zweispaltige Methodik, dunkles Dreier-Trendkapitel, gerankte Hauspreiszeilen, gerasterte Wohnungsdaten, zwei unveränderte Datentabellen, sechs redaktionelle Preisfaktoren und ein asymmetrischer Beratungsabschluss. DE und EN enthalten keinen September-Stempel und genau einen globalen Footer. Der Contract-Test `PDF-W-09`, der Produktionsbuild sowie Playwright auf 390×844 und 1440×900 sind grün; die vollständigen Screenshots liegen unter `output/verification/PDF-W-09/`. Der Impeccable-Detektor meldet keine UI-Anti-Patterns. Visuell freigegeben durch Andreas am 2026-09-11.
 
 ## H. 7. Immonation - 2 Prüfpunkte
 
@@ -437,12 +437,12 @@ Punkt 3 bleibt offen, weil die echte Zielumgebung nicht konfiguriert ist. Die te
 ## K. Finale Freigabe
 
 - [x] **32/32 PDF-Prüfpunkte bearbeitet.**
-- [x] **Anzahl PASS:** `18`
-- [x] **Anzahl freigegebene Abweichungen:** `0`
+- [x] **Anzahl PASS:** `25`
+- [x] **Anzahl freigegebene Abweichungen:** `4`
 - [x] **Anzahl FAIL:** `0`
-- [ ] **Anzahl BLOCKIERT:** `14` (Zielwert `0` noch nicht erreicht)
+- [ ] **Anzahl BLOCKIERT:** `3` (onOffice vorerst ausdrücklich zurückgestellt)
 - [x] **onOffice zuletzt eingebunden und danach erneut technisch getestet.**
-- [ ] **Andreas hat die subjektiven Punkte S-01, S-04, KI-01, V-01, V-02, W-05, W-07, W-08 und W-09 freigegeben.**
+- [x] **Andreas hat die subjektiven Punkte S-01, S-04, KI-01, V-01, V-02, W-05, W-07, W-08 und W-09 am 2026-09-11 freigegeben.**
 - [ ] **Finale Freigabe durch Andreas:**
 - **Datum:**
 - **Name/Freigabevermerk:**
