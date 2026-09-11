@@ -341,14 +341,14 @@ Referenz-URL: `/de/markt`
 
 Referenz-URL: `/de/marktdaten`
 
-- [ ] "Stand September" und "Stand September 2026" sind entfernt.
-- [ ] Genau eine Fußzeile vorhanden.
-- [ ] Die Seite wirkt markeneigenständig, redaktionell gestaltet und nicht wie ein einfaches generisches KI-Layout.
-- [ ] Informationshierarchie, Typografie, Kartenmuster und visuelle Wiederholungen sind auf Desktop und Mobil geprüft.
-- [ ] Bestehende fachliche Inhalte und Funktionen wurden durch die Überarbeitung nicht beschädigt.
+- [x] "Stand September" und "Stand September 2026" sind entfernt.
+- [x] Genau eine Fußzeile vorhanden.
+- [x] Die Seite wirkt markeneigenständig, redaktionell gestaltet und nicht wie ein einfaches generisches KI-Layout.
+- [x] Informationshierarchie, Typografie, Kartenmuster und visuelle Wiederholungen sind auf Desktop und Mobil geprüft.
+- [x] Bestehende fachliche Inhalte und Funktionen wurden durch die Überarbeitung nicht beschädigt.
 - [ ] Andreas erteilt die notwendige visuelle Freigabe.
-- **Status:**
-- **Nachweis/Freigabe:**
+- **Status:** BLOCKIERT
+- **Nachweis/Freigabe:** `/de/marktdaten` ist als redaktionelles Marktdossier neu geordnet: zweispaltige Methodik, dunkles Dreier-Trendkapitel, gerankte Hauspreiszeilen, gerasterte Wohnungsdaten, zwei unveränderte Datentabellen, sechs redaktionelle Preisfaktoren und ein asymmetrischer Beratungsabschluss. DE und EN enthalten keinen September-Stempel und genau einen globalen Footer. Der Contract-Test `PDF-W-09`, der Produktionsbuild mit 430 statischen Seiten sowie Playwright auf 390×844 und 1440×900 sind grün; die vollständigen Screenshots liegen unter `output/verification/PDF-W-09/`. Der Impeccable-Detektor meldet keine UI-Anti-Patterns. Offen ist ausschließlich Andreas' visuelle Freigabe.
 
 ## H. 7. Immonation - 2 Prüfpunkte
 

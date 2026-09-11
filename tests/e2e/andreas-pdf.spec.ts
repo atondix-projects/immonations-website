@@ -499,6 +499,36 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-W-09 presents market data as an editorial report on ${viewport.name}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/marktdaten')
+
+    const report = page.locator('[data-market-data-report]')
+    await expect(report).toHaveCount(1)
+    await expect(report.locator('[data-market-trend] article')).toHaveCount(3)
+    await expect(report.locator('[data-market-factor]')).toHaveCount(6)
+    await expect(report.locator('table')).toHaveCount(2)
+    await expect(report.getByRole('link', { name: /immobilien-preisatlas/i })).toBeVisible()
+    await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+    await expect(page.locator('body')).not.toContainText(/Stand:? September(?: 2026)?/i)
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-W-09')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}.png`),
+      fullPage: true,
+    })
+
+    await page.goto('/en/market-data')
+    await expect(page.locator('[data-market-data-report]')).toHaveCount(1)
+    await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+    await expect(page.locator('body')).not.toContainText(/As of:? September(?: 2026)?/i)
+  })
+}
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()

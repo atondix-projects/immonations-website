@@ -6,7 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { AnimatedNumber } from '../../src/components/site/animated-number'
 import { listAllReferences, listLocalizedReferences } from '../../src/lib/content/references'
-import { getMarketOverviewCopy } from '../../src/lib/content/market-insights'
+import { getMarketDataCopy, getMarketOverviewCopy } from '../../src/lib/content/market-insights'
 import { findEntriesByDistrictSlug } from '../../src/lib/content/price-atlas'
 import { testimonialVideo } from '../../src/lib/content/testimonials'
 import { SITE } from '../../src/lib/seo/site'
@@ -276,5 +276,19 @@ describe('Andreas PDF contracts', () => {
       'basierend auf Vermittlungsdaten der Immonation',
     )
     expect(getMarketOverviewCopy('en').source).toBe('based on Immonation brokerage data')
+  })
+
+  it('PDF-W-09 presents market data as an Immonation editorial report', () => {
+    const marketPages = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'market', 'market-pages.tsx'),
+      'utf8',
+    )
+    const germanCopy = JSON.stringify(getMarketDataCopy('de'))
+    const englishCopy = JSON.stringify(getMarketDataCopy('en'))
+
+    expect(marketPages).toContain('data-market-data-report')
+    expect(marketPages).toContain('data-market-trend')
+    expect(marketPages).toContain('data-market-factor')
+    expect(`${germanCopy}\n${englishCopy}`).not.toMatch(/Stand:? September(?: 2026)?/i)
   })
 })
