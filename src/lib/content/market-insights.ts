@@ -10,7 +10,6 @@ export type MarketCity = {
   apartmentPrice: number
   housePrice: number
   trend: number
-  source?: LocalizedText
 }
 
 export const MARKET_CITIES: readonly MarketCity[] = [
@@ -20,7 +19,6 @@ export const MARKET_CITIES: readonly MarketCity[] = [
     apartmentPrice: 3750,
     housePrice: 4540,
     trend: 4,
-    source: text('Quelle: immowelt / PriceHubble', 'Source: immowelt / PriceHubble'),
   },
   {
     id: 'fuerth',
@@ -916,8 +914,7 @@ export const MARKET_OVERVIEW_COPY: Record<
     },
     answer:
       'Die folgenden Quadratmeterpreise zeigen eine erste Größenordnung für Wohnungen und Häuser in der Region. Sie ersetzen keine persönliche Bewertung: Lage, Zustand, Ausstattung, Baujahr, Grundstück, Etage und Nachfrage entscheiden darüber, wo ein konkretes Objekt liegt.',
-    source:
-      'Datenquelle: immowelt / PriceHubble. Die Werte sind Orientierungswerte, keine Zusage eines erzielbaren Verkaufspreises.',
+    source: 'basierend auf Vermittlungsdaten der Immonation',
     labels: {
       apartment: 'Wohnung',
       house: 'Haus',
@@ -968,8 +965,7 @@ export const MARKET_OVERVIEW_COPY: Record<
     },
     answer:
       'The square-metre prices below provide a first frame of reference for apartments and houses in the region. They do not replace a personal valuation: location, condition, fittings, year built, land, floor, and demand determine where an individual property sits.',
-    source:
-      'Data source: immowelt / PriceHubble. These are orientation values, not a promise of an achievable sale price.',
+    source: 'based on Immonation brokerage data',
     labels: {
       apartment: 'Apartment',
       house: 'House',

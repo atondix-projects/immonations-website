@@ -108,11 +108,6 @@ export function MarketOverviewPage({ locale }: { locale: Locale }) {
                   {formatPercent(city.trend, locale)}{' '}
                   <span className="ml-1 font-normal">{labels.trend}</span>
                 </span>
-                {city.source ? (
-                  <span className="text-muted-foreground mt-3 block text-[11px] leading-[1.5]">
-                    {city.source[locale]}
-                  </span>
-                ) : null}
                 <span className="text-brand-700 mt-5 inline-flex items-center gap-2 text-sm font-semibold">
                   {labels.cityLink}
                   <ArrowUpRight

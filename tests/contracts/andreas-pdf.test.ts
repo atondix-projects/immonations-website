@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { AnimatedNumber } from '../../src/components/site/animated-number'
 import { listAllReferences, listLocalizedReferences } from '../../src/lib/content/references'
+import { getMarketOverviewCopy } from '../../src/lib/content/market-insights'
 import { findEntriesByDistrictSlug } from '../../src/lib/content/price-atlas'
 import { testimonialVideo } from '../../src/lib/content/testimonials'
 import { SITE } from '../../src/lib/seo/site'
@@ -221,5 +222,12 @@ describe('Andreas PDF contracts', () => {
     expect(entries.map((entry) => entry.median)).toEqual([4920, 5830])
     expect(districtPage).toContain('findEntriesByDistrictSlug')
     expect(districtPage).toContain('basierend auf Vermittlungsdaten der Immonation')
+  })
+
+  it('PDF-W-08 uses the approved source on the property-prices overview', () => {
+    expect(getMarketOverviewCopy('de').source).toBe(
+      'basierend auf Vermittlungsdaten der Immonation',
+    )
+    expect(getMarketOverviewCopy('en').source).toBe('based on Immonation brokerage data')
   })
 })

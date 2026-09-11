@@ -329,13 +329,13 @@ Referenz-URLs: `/de/staedte`, `/de/stadt/[slug]`, `/de/stadtteil/[city]/[slug]`
 
 Referenz-URL: `/de/markt`
 
-- [ ] Inhalt wurde gegenüber dem beanstandeten Stand substanziell erweitert.
-- [ ] "Stand September" und "Stand September 2026" sind entfernt.
-- [ ] Die Seite verwendet exakt `basierend auf Vermittlungsdaten der Immonation`.
-- [ ] Genau eine Fußzeile vorhanden.
+- [x] Inhalt wurde gegenüber dem beanstandeten Stand substanziell erweitert.
+- [x] "Stand September" und "Stand September 2026" sind entfernt.
+- [x] Die Seite verwendet exakt `basierend auf Vermittlungsdaten der Immonation`.
+- [x] Genau eine Fußzeile vorhanden.
 - [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:**
-- **Nachweis/Freigabe:**
+- **Status:** BLOCKIERT
+- **Nachweis/Freigabe:** `/de/markt` enthält eine eigene Einleitung, fünf Stadtvergleiche für Wohnung und Haus, Trendwerte, Methodik-/Bewertungslinks, FAQ und einen Referenznachweis. Der alte Einzelhinweis `immowelt / PriceHubble` wurde entfernt; die Seite verwendet nun ausschließlich `basierend auf Vermittlungsdaten der Immonation`, ohne September-Stempel, und besitzt genau einen Footer. Contract-Test, 430-Seiten-Build und Playwright auf 390×844 sowie 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-W-08/`. Offen ist Andreas' redaktionelle Freigabe.
 
 ### PDF-W-09 - Immobilienpreise & Trends
 

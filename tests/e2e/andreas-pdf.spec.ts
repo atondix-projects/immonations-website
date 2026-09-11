@@ -314,6 +314,26 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-W-08 keeps the property-prices page current on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/markt')
+
+    await expect(page.locator('body')).toContainText(
+      'basierend auf Vermittlungsdaten der Immonation',
+    )
+    await expect(page.locator('body')).not.toContainText(/Stand:? September(?: 2026)?/i)
+    await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-W-08')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}.png`),
+      fullPage: true,
+    })
+  })
+}
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()
