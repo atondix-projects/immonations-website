@@ -10,6 +10,7 @@ import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
 import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
+import { PropertyTypeSlideshow } from '@/components/site/seller-guide/property-type-slideshow'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import {
@@ -19,6 +20,7 @@ import {
   listAllSellerGuides,
 } from '@/lib/content/seller-guides'
 import { listReferencesForSellerGuide } from '@/lib/content/references'
+import { listSellerGuideShowcaseSlides } from '@/lib/content/seller-guide-showcases'
 import { storyForSellerGuide } from '@/lib/content/testimonials'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
@@ -84,6 +86,7 @@ export default async function SellerGuidePage({
   // liegt keine vor, dort bleibt die Sektion aus.
   const storyId = storyForSellerGuide(guide.translationKey)
   const references = listReferencesForSellerGuide(guide.translationKey)
+  const showcaseSlides = listSellerGuideShowcaseSlides(guide.translationKey, locale)
   const isLandGuide = guide.translationKey === 'sell-land'
 
   return (
@@ -136,7 +139,7 @@ export default async function SellerGuidePage({
         </div>
       </section>
 
-      <section className="pb-16 md:pb-22">
+      <section data-seller-guide-process className="pb-16 md:pb-22">
         <div className="mx-auto grid w-full max-w-[1240px] gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">
           <div>
             <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
@@ -165,6 +168,19 @@ export default async function SellerGuidePage({
           </div>
         </div>
       </section>
+
+      <PropertyTypeSlideshow
+        slides={showcaseSlides}
+        labels={{
+          eyebrow: t('showcase.eyebrow'),
+          title: t('showcase.title'),
+          text: t('showcase.text'),
+          carousel: t('showcase.carousel'),
+          slide: t('showcase.slide'),
+          previous: t('showcase.previous'),
+          next: t('showcase.next'),
+        }}
+      />
 
       <section className="border-border border-t py-16 md:py-20">
         <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">

@@ -183,6 +183,49 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-V-03 operates the apartment-building slideshow on ${viewport.name}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/objektart/mehrfamilienhaus')
+
+    const essentialCookies = page.getByRole('button', { name: 'Nur notwendige' })
+    if (await essentialCookies.isVisible()) await essentialCookies.click()
+
+    const showcase = page.locator(
+      'section[data-seller-guide-process] + section[data-seller-guide-showcase]',
+    )
+    const carousel = showcase.getByRole('region')
+    await expect(showcase).toHaveCount(1)
+    await expect(showcase).toContainText('Altbau-Mehrfamilienhaus')
+
+    await showcase.getByRole('button', { name: 'Nächstes Bild' }).click()
+    await expect(showcase).toContainText('Mehrparteienhaus mit Putzfassade')
+
+    await carousel.focus()
+    await carousel.press('End')
+    await expect(showcase).toContainText('Neubau-Mehrfamilienhaus')
+
+    await carousel.dispatchEvent('pointerdown', {
+      pointerId: 1,
+      pointerType: 'touch',
+      clientX: 300,
+    })
+    await carousel.dispatchEvent('pointerup', {
+      pointerId: 1,
+      pointerType: 'touch',
+      clientX: 100,
+    })
+    await expect(showcase).toContainText('Altbau-Mehrfamilienhaus')
+    await expect(showcase.locator('img')).toHaveAttribute('alt', /Altbau-Mehrfamilienhaus/)
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-V-03')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await showcase.screenshot({ path: join(evidenceDirectory, `${viewport.name}.png`) })
+  })
+}
+
 test('PDF-Ü-02 removes the disputed September stamp only from market pages', async ({ page }) => {
   for (const path of ['/de/preisatlas', '/de/markt', '/de/marktdaten']) {
     await page.goto(path)

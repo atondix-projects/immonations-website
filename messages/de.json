@@ -3970,6 +3970,15 @@
     "valuationCta": "Bewertung starten",
     "processEyebrow": "Vorbereitung & Vermarktung",
     "processTitle": "Die entscheidenden Schritte",
+    "showcase": {
+      "eyebrow": "Objekttypen im Vergleich",
+      "title": "Mehrfamilienhäuser verlangen unterschiedliche Verkaufsargumente",
+      "text": "Baujahr, Fassade, Mietstruktur und Unterlagen verändern die Prüfung durch Käufer. Drei archivierte Beispiele zeigen, worauf es in der Präsentation ankommt.",
+      "carousel": "Bildergalerie zu Mehrfamilienhäusern",
+      "slide": "Bild",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild"
+    },
     "documentsEyebrow": "Checkliste",
     "documentsTitle": "Diese Unterlagen brauchen Sie",
     "faqTitle": "Häufige Fragen",

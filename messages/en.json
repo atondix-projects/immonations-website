@@ -3963,6 +3963,15 @@
     "valuationCta": "Start valuation",
     "processEyebrow": "Preparation & marketing",
     "processTitle": "The decisive steps",
+    "showcase": {
+      "eyebrow": "Property types compared",
+      "title": "Apartment buildings need different sales arguments",
+      "text": "Age, facade, tenancy structure, and records change how buyers assess a property. Three archived examples show what matters in the presentation.",
+      "carousel": "Apartment-building image gallery",
+      "slide": "Image",
+      "previous": "Previous image",
+      "next": "Next image"
+    },
     "documentsEyebrow": "Checklist",
     "documentsTitle": "Documents you will need",
     "faqTitle": "Frequently asked questions",

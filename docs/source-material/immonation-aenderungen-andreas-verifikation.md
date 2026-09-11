@@ -203,12 +203,12 @@ Referenz-URL: `/de/suchkunden`
 
 Referenz-URL: `/de/objektart/mehrfamilienhaus`
 
-- [ ] **Soll:** Direkt unter "Die entscheidenden Schritte" befindet sich eine Slideshow.
-- [ ] Die Slideshow zeigt mindestens Altbau-MFH, Putzfassade-MFH und Neubau-MFH.
-- [ ] Typen sind eindeutig beschriftet und verwenden freigegebene Bilder.
-- [ ] Tastatur, Touch, Fokus, Beschriftungen und Mobilansicht funktionieren.
-- **Status:**
-- **Nachweis:**
+- [x] **Soll:** Direkt unter "Die entscheidenden Schritte" befindet sich eine Slideshow.
+- [x] Die Slideshow zeigt mindestens Altbau-MFH, Putzfassade-MFH und Neubau-MFH.
+- [x] Typen sind eindeutig beschriftet und verwenden freigegebene Bilder.
+- [x] Tastatur, Touch, Fokus, Beschriftungen und Mobilansicht funktionieren.
+- **Status:** PASS
+- **Nachweis:** Die Mehrfamilienhaus-Seite zeigt als direkten DOM-Nachbarn des Prozessabschnitts drei lokalisierte Beispiele: Fürther Altbau, Heroldsbacher Mehrparteienhaus mit Putzfassade und moderne Zirndorfer Wohnanlage. Alle Bilder sind bereits veröffentlichte WebP-Derivate aus dem lokalen Referenzbestand. Der wiederverwendbare Slider unterstützt Buttons, fokussierbare Pfeil-/Home-/End-Tastatursteuerung, Touch-Wischgeste, Statusansage und eindeutige Alternativtexte. Contract-Test, 430-Seiten-Build mit reduzierter Workerzahl wegen des vollen Systemlaufwerks sowie Playwright auf 390×844 und 1440×900 sind grün; Screenshots liegen unter `output/verification/PDF-V-03/`.
 
 ### PDF-V-04 - Slideshows und Wissenslinks auf drei weiteren Objektartseiten
 

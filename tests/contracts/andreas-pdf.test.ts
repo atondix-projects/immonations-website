@@ -204,6 +204,19 @@ describe('Andreas PDF contracts', () => {
     expect(overlay).toContain('labels.failedLinkLabel')
   })
 
+  it('PDF-V-03 mounts the property slideshow directly after the decisive steps', () => {
+    const sellerGuidePage = readFileSync(
+      join(ROOT, 'src', 'app', '[locale]', 'sell', '[slug]', 'page.tsx'),
+      'utf8',
+    )
+
+    expect(sellerGuidePage).toContain('listSellerGuideShowcaseSlides')
+    expect(sellerGuidePage).toContain('<PropertyTypeSlideshow')
+    expect(sellerGuidePage).toMatch(
+      /data-seller-guide-process[\s\S]*?<PropertyTypeSlideshow[\s\S]*?<section className="border-border border-t/,
+    )
+  })
+
   it('PDF-W-05 publishes paired, substantive owner guides in German and English', () => {
     const pairs = [
       ['de/immobilienverkauf-vorbereiten-unterlagen.mdx', 'en/prepare-property-sale-documents.mdx'],
