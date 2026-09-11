@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Check } from 'lucide-react'
+import { ArrowUpRight, Check } from 'lucide-react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -10,6 +10,7 @@ import { FaqSection } from '@/components/site/templates/faq-section'
 import { PageHero } from '@/components/site/templates/page-hero'
 import { TestimonialSpotlight } from '@/components/site/testimonial-spotlight'
 import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
+import { PropertyTypeSlideshow } from '@/components/site/seller-guide/property-type-slideshow'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
 import {
@@ -19,6 +20,7 @@ import {
   listAllSellerGuides,
 } from '@/lib/content/seller-guides'
 import { listReferencesForSellerGuide } from '@/lib/content/references'
+import { listSellerGuideShowcaseSlides } from '@/lib/content/seller-guide-showcases'
 import { storyForSellerGuide } from '@/lib/content/testimonials'
 import { selectFaqsForPage, toFaqSectionItems } from '@/lib/content/faqs'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
@@ -84,6 +86,7 @@ export default async function SellerGuidePage({
   // liegt keine vor, dort bleibt die Sektion aus.
   const storyId = storyForSellerGuide(guide.translationKey)
   const references = listReferencesForSellerGuide(guide.translationKey)
+  const showcaseSlides = listSellerGuideShowcaseSlides(guide.translationKey, locale)
   const isLandGuide = guide.translationKey === 'sell-land'
 
   return (
@@ -136,7 +139,7 @@ export default async function SellerGuidePage({
         </div>
       </section>
 
-      <section className="pb-16 md:pb-22">
+      <section data-seller-guide-process className="pb-16 md:pb-22">
         <div className="mx-auto grid w-full max-w-[1240px] gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">
           <div>
             <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
@@ -162,6 +165,54 @@ export default async function SellerGuidePage({
                 </div>
               </section>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <PropertyTypeSlideshow
+        slides={showcaseSlides}
+        labels={{
+          eyebrow: t('showcase.eyebrow'),
+          title: t('showcase.title'),
+          text: t('showcase.text'),
+          carousel: t('showcase.carousel'),
+          slide: t('showcase.slide'),
+          previous: t('showcase.previous'),
+          next: t('showcase.next'),
+        }}
+      />
+
+      <section data-seller-guide-knowledge className="bg-background py-14 md:py-18">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-8 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-10">
+          <div>
+            <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
+              {t('knowledge.eyebrow')}
+            </p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-balance">
+              {t('knowledge.title')}
+            </h2>
+          </div>
+          <div className="grid gap-px bg-neutral-900/10 sm:grid-cols-2">
+            <Link
+              href="/land-value"
+              className="group focus-visible:ring-primary bg-muted flex min-h-40 flex-col justify-between p-6 transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
+            >
+              <span className="font-serif text-2xl font-semibold">{t('knowledge.landValue')}</span>
+              <span className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                {t('knowledge.open')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </span>
+            </Link>
+            <Link
+              href="/price-atlas"
+              className="group focus-visible:ring-primary bg-muted flex min-h-40 flex-col justify-between p-6 transition-colors hover:bg-neutral-100 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-inset"
+            >
+              <span className="font-serif text-2xl font-semibold">{t('knowledge.priceAtlas')}</span>
+              <span className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+                {t('knowledge.open')}
+                <ArrowUpRight className="size-4" aria-hidden="true" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

@@ -14,12 +14,12 @@ import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
+import { VisualizationCompare } from '@/components/site/staging/visualization-compare'
 import {
   LEAD_PAIR_COUNT,
   PAIR_SLUGS,
-  VisualizationCompare,
   type VisualizationPair,
-} from '@/components/site/staging/visualization-compare'
+} from '@/components/site/staging/visualization-pairs'
 import {
   FILM_GROUPS,
   FILM_IDS,
@@ -168,6 +168,7 @@ export default async function StagingPage({ params }: { params: Promise<{ locale
                 index={index}
                 beforeLabel={t('compare.beforeLabel')}
                 afterLabel={t('compare.afterLabel')}
+                controlLabel={t('compare.controlLabel')}
                 size="lead"
               />
             ))}
@@ -180,6 +181,7 @@ export default async function StagingPage({ params }: { params: Promise<{ locale
                   index={index + LEAD_PAIR_COUNT}
                   beforeLabel={t('compare.beforeLabel')}
                   afterLabel={t('compare.afterLabel')}
+                  controlLabel={t('compare.controlLabel')}
                   size="compact"
                 />
               ))}

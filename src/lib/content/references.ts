@@ -3,6 +3,8 @@ import type { Locale } from '@/i18n/routing'
 export type ReferencePropertyType =
   'apartment' | 'house' | 'semi-detached' | 'townhouse' | 'apartment-building' | 'commercial'
 
+export type ReferenceCategory = 'apartment' | 'house' | 'commercial' | 'investment'
+
 export type LocalizedText = Record<Locale, string>
 
 type ReferenceSeed = {
@@ -71,6 +73,8 @@ export type ReferenceRecord = Omit<ReferenceSeed, 'id'> & {
   id: ReferenceId
   slug: string
   propertyType: ReferencePropertyType
+  category: ReferenceCategory
+  categoryLabel: LocalizedText
   region: LocalizedText
   description: LocalizedText
   narrative: ReferenceNarrative
@@ -90,6 +94,28 @@ const REGION = {
   de: 'Metropolregion Nürnberg',
   en: 'Nuremberg metropolitan region',
 } satisfies LocalizedText
+
+export const REFERENCE_CATEGORY_LABELS = {
+  apartment: { de: 'Wohnung', en: 'Apartment' },
+  house: { de: 'Haus', en: 'House' },
+  commercial: { de: 'Gewerbe', en: 'Commercial' },
+  investment: { de: 'Investment', en: 'Investment' },
+} as const satisfies Record<ReferenceCategory, LocalizedText>
+
+function categoryForPropertyType(type: ReferencePropertyType): ReferenceCategory {
+  switch (type) {
+    case 'apartment':
+      return 'apartment'
+    case 'house':
+    case 'semi-detached':
+    case 'townhouse':
+      return 'house'
+    case 'commercial':
+      return 'commercial'
+    case 'apartment-building':
+      return 'investment'
+  }
+}
 
 const city = (de: string, en = de): LocalizedText => ({ de, en })
 
@@ -930,11 +956,14 @@ function mediaFor(
 
 function buildRecord(seed: ReferenceSeed): ReferenceRecord {
   const legacy = legacyCases[seed.id as ReferenceId]
+  const category = categoryForPropertyType(seed.type)
   return {
     ...seed,
     id: seed.id as ReferenceId,
     slug: seed.id,
     propertyType: seed.type,
+    category,
+    categoryLabel: REFERENCE_CATEGORY_LABELS[category],
     region: REGION,
     description: {
       de: `${seed.title.de}. ${seed.feature.de}. Archivierter Verkaufsfall von Immonation.`,
@@ -989,6 +1018,7 @@ export type ReferenceItem = {
   city: string
   citySlug: string
   propertyType: ReferencePropertyType
+  category: ReferenceCategory
   feature: string
   alt: string
   image: string
@@ -1014,12 +1044,13 @@ export function localizeReference(record: ReferenceRecord, locale: Locale): Refe
   return {
     id: record.id,
     title: record.title[locale],
-    type: record.typeLabel[locale],
+    type: record.categoryLabel[locale],
     location: record.city[locale],
     area: record.area[locale],
     city: record.city[locale],
     citySlug: record.citySlug,
     propertyType: record.type,
+    category: record.category,
     feature: record.feature[locale],
     alt: record.media[0].alt[locale],
     image: record.media[0].src,

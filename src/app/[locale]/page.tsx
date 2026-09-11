@@ -158,11 +158,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </section>
         <MagazineSection tone="muted" compact />
         <VerifiedResults compact />
-      </HomeChapter>
-
-      <HomeChapter id="trust">
-        <Reviews compact />
-        <Awards compact />
         <HandoverPolaroidWall
           items={listHandoverPolaroids()}
           eyebrow={handoverT('eyebrow')}
@@ -171,6 +166,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           className="bg-muted border-border border-y"
           compact
         />
+      </HomeChapter>
+
+      <HomeChapter id="trust">
+        <Reviews compact />
+        <Awards compact />
         <WarningSigns />
       </HomeChapter>
 

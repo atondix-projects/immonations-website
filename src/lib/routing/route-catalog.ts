@@ -209,15 +209,6 @@ export const DISTRICTS = {
   ],
 } as const
 
-const PROPERTIES = [
-  'zirndorf-weiherhof-maisonette',
-  'nuernberg-st-johannis-3zi',
-  'erlangen-roethelheim-etw',
-  'oberasbach-petershoehe-efh',
-  'deining-neubau-maisonette',
-  'nuernberg-zerzabelshof-reh',
-] as const
-
 const TESTIMONIALS = ['carmen-verwold', 'golocal-nutzer-2022'] as const
 
 function route(
@@ -319,9 +310,6 @@ const DYNAMIC_ROUTES: RouteRecord[] = [
         'phased',
       ),
     ),
-  ),
-  ...PROPERTIES.map((slug) =>
-    dynamicRoute(`property:${slug}`, '/properties/[slug]', { slug }, {}, 4, 0.7),
   ),
   ...TESTIMONIALS.map((slug) =>
     dynamicRoute(`testimonial:${slug}`, '/testimonials/[slug]', { slug }, {}, 4, 0.6),

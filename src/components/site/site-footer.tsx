@@ -20,7 +20,7 @@ export async function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface-dark relative overflow-hidden pt-18 pb-10">
+    <footer data-site-footer className="bg-surface-dark relative overflow-hidden pt-18 pb-10">
       {/* Der Fuss ist die einzige Flaeche, die auf jeder Seite steht: das
           angeschnittene CI-Element setzt die Marke dort ein letztes Mal.
           Links angeschnitten, damit es die Linkspalten rechts frei laesst.

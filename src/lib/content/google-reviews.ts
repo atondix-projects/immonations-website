@@ -7,19 +7,20 @@ import { PUBLIC_TESTIMONIALS } from './public-testimonials'
 export const GOOGLE_PROFILE = 'https://www.google.com/maps?cid=3199252424447906498'
 
 /**
- * Places-API-Place-ID zum Zirndorfer Profil. Überschreibbar per `GOOGLE_PLACE_ID`.
- * Abgeleitet aus der Maps-Feature-ID `0x479f57902db6a671:0x2c660721320652c2`.
- */
-export const GOOGLE_PLACE_ID = process.env.GOOGLE_PLACE_ID ?? 'ChIJcaa2LZBXn0fCUgYyIQdmLA'
-
-/**
- * Redaktionell freigegebene Google-Kennzahl, solange die Places-API keine
- * aktuellen Werte liefert. Gleicher Stand wie `Home.reviews.headline`.
+ * Redaktionell freigegebene Google-Kennzahl. Der Review-Feed liefert einzelne
+ * Stimmen, aber keine belastbare Gesamtzahl.
  */
 export const PUBLISHED_GOOGLE_RATING = 4.9
 export const PUBLISHED_GOOGLE_REVIEW_COUNT = 230
 
-const PLACES_DETAILS_URL = `https://places.googleapis.com/v1/places/${GOOGLE_PLACE_ID}`
+const REVIEW_SOURCE_ID = 'ChIJcaa2LZBXn0cRwlIGMiEHZiw'
+const REVIEW_FEED_URL = new URL('https://service-reviews-ultimate.elfsight.com/data/reviews')
+REVIEW_FEED_URL.searchParams.append('uris[]', REVIEW_SOURCE_ID)
+REVIEW_FEED_URL.searchParams.set('filter_content', 'text_required')
+REVIEW_FEED_URL.searchParams.set('min_rating', '4')
+REVIEW_FEED_URL.searchParams.set('page_length', '100')
+REVIEW_FEED_URL.searchParams.set('order', 'date')
+
 export type ReviewSource = 'google' | 'golocal'
 export type DatePrecision = 'day' | 'month'
 
@@ -45,22 +46,15 @@ export type TestimonialReviews = {
   reviewCount: number
 }
 
-type PlacesText = { text?: string }
-type PlacesAuthor = { displayName?: string; uri?: string; photoUri?: string }
-type PlacesReview = {
+type ReviewFeedEntry = {
+  id?: string
+  supplier?: string
+  reviewer_name?: string
+  reviewer_picture_url?: string
   rating?: number
-  publishTime?: string
-  originalText?: PlacesText
-  text?: PlacesText
-  authorAttribution?: PlacesAuthor
-  relativePublishTimeDescription?: string
-  googleMapsUri?: string
-}
-type PlaceDetails = {
-  rating?: number
-  userRatingCount?: number
-  googleMapsUri?: string
-  reviews?: PlacesReview[]
+  text?: string
+  url?: string
+  published_at?: number
 }
 
 /**
@@ -318,137 +312,90 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
 }
 
-function asPlacesText(value: unknown): PlacesText | undefined {
-  if (!isRecord(value)) return undefined
-  return { text: typeof value.text === 'string' ? value.text : undefined }
-}
-
-function asPlacesReview(value: unknown): PlacesReview | null {
+function asFeedEntry(value: unknown): ReviewFeedEntry | null {
   if (!isRecord(value)) return null
-  const author = isRecord(value.authorAttribution) ? value.authorAttribution : undefined
   return {
+    id: typeof value.id === 'string' ? value.id : undefined,
+    supplier: typeof value.supplier === 'string' ? value.supplier : undefined,
+    reviewer_name: typeof value.reviewer_name === 'string' ? value.reviewer_name : undefined,
+    reviewer_picture_url:
+      typeof value.reviewer_picture_url === 'string' ? value.reviewer_picture_url : undefined,
     rating: typeof value.rating === 'number' ? value.rating : undefined,
-    publishTime: typeof value.publishTime === 'string' ? value.publishTime : undefined,
-    originalText: asPlacesText(value.originalText),
-    text: asPlacesText(value.text),
-    authorAttribution: author
-      ? {
-          displayName: typeof author.displayName === 'string' ? author.displayName : undefined,
-          uri: typeof author.uri === 'string' ? author.uri : undefined,
-          photoUri: typeof author.photoUri === 'string' ? author.photoUri : undefined,
-        }
-      : undefined,
-    relativePublishTimeDescription:
-      typeof value.relativePublishTimeDescription === 'string'
-        ? value.relativePublishTimeDescription
-        : undefined,
-    googleMapsUri: typeof value.googleMapsUri === 'string' ? value.googleMapsUri : undefined,
+    text: typeof value.text === 'string' ? value.text : undefined,
+    url: typeof value.url === 'string' ? value.url : undefined,
+    published_at: typeof value.published_at === 'number' ? value.published_at : undefined,
   }
 }
 
-function asPlaceDetails(value: unknown): PlaceDetails | null {
-  if (!isRecord(value)) return null
-  const reviews = Array.isArray(value.reviews)
-    ? value.reviews.flatMap((entry) => {
-        const parsed = asPlacesReview(entry)
-        return parsed ? [parsed] : []
-      })
-    : undefined
-
-  return {
-    rating: typeof value.rating === 'number' ? value.rating : undefined,
-    userRatingCount: typeof value.userRatingCount === 'number' ? value.userRatingCount : undefined,
-    googleMapsUri: typeof value.googleMapsUri === 'string' ? value.googleMapsUri : undefined,
-    reviews,
-  }
+function readFeedEntries(value: unknown): ReviewFeedEntry[] {
+  if (!isRecord(value)) return []
+  const result = isRecord(value.result) ? value.result : null
+  const entries = result && Array.isArray(result.data) ? result.data : []
+  return entries.flatMap((entry) => {
+    const parsed = asFeedEntry(entry)
+    return parsed ? [parsed] : []
+  })
 }
 
-function toLiveReview(
-  entry: PlacesReview,
-  fallbackUrl: string,
-  index: number,
-): DisplayReview | null {
+function toLiveReview(entry: ReviewFeedEntry, index: number): DisplayReview | null {
   const rating = entry.rating === 4 || entry.rating === 5 ? entry.rating : null
-  const quote = collapse(entry.originalText?.text ?? entry.text?.text ?? '')
-  const author = entry.authorAttribution?.displayName?.trim()
-  const publishedOn = entry.publishTime?.slice(0, 10)
+  const quote = collapse(entry.text ?? '')
+  const author = entry.reviewer_name?.trim()
+  const publishedOn = entry.published_at
+    ? new Date(entry.published_at * 1000).toISOString().slice(0, 10)
+    : null
   if (!rating || !author || quote.length < 24 || !publishedOn) return null
 
   return {
-    id: `google-live-${publishedOn}-${index}`,
+    id: `google-feed-${entry.id ?? `${publishedOn}-${index}`}`,
     author,
     quote,
     rating,
     source: 'google',
-    sourceUrl: entry.googleMapsUri ?? fallbackUrl,
+    sourceUrl: entry.url?.startsWith('https://') ? entry.url : GOOGLE_PROFILE,
     publishedOn,
     datePrecision: 'day',
-    authorUrl: entry.authorAttribution?.uri,
-    authorPhotoUrl: entry.authorAttribution?.photoUri,
-    relativePublished: entry.relativePublishTimeDescription,
+    authorPhotoUrl: entry.reviewer_picture_url?.startsWith('https://')
+      ? entry.reviewer_picture_url
+      : undefined,
     isLiveGoogle: true,
   }
 }
 
-async function fetchGooglePlaceReviews(locale: 'de' | 'en'): Promise<{
-  reviews: DisplayReview[]
-  rating?: number
-  reviewCount?: number
-} | null> {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY?.trim()
-  if (!apiKey) return null
-
+async function fetchGoogleReviewFeed(): Promise<DisplayReview[] | null> {
   try {
-    const url = new URL(PLACES_DETAILS_URL)
-    url.searchParams.set('languageCode', locale)
-    const response = await fetch(url, {
-      headers: {
-        'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'id,rating,userRatingCount,googleMapsUri,reviews',
-      },
+    const response = await fetch(REVIEW_FEED_URL, {
+      headers: { accept: 'application/json' },
       signal: AbortSignal.timeout(8_000),
-      cache: 'no-store',
+      next: { revalidate: 10_800 },
     })
 
     if (!response.ok) {
-      console.error(`Google Places details failed: ${response.status}`)
+      console.error(`Review feed failed: ${response.status}`)
       return null
     }
 
-    const details = asPlaceDetails(await response.json())
-    if (!details) return null
-
-    const profileUrl = details.googleMapsUri ?? GOOGLE_PROFILE
-    const reviews = (details.reviews ?? []).flatMap((entry, index) => {
-      const item = toLiveReview(entry, profileUrl, index)
+    const reviews = readFeedEntries(await response.json()).flatMap((entry, index) => {
+      if (entry.supplier !== 'google') return []
+      const item = toLiveReview(entry, index)
       return item ? [item] : []
     })
-
-    return {
-      reviews,
-      rating: details.rating,
-      reviewCount: details.userRatingCount,
-    }
+    return reviews.length > 0 ? reviews : null
   } catch (error) {
-    console.error('Google Places details request failed', error)
+    console.error('Review feed request failed', error)
     return null
   }
 }
 
-export async function listTestimonialReviews(
-  locale: 'de' | 'en' = 'de',
-): Promise<TestimonialReviews> {
-  const live = await fetchGooglePlaceReviews(locale)
-  const reviews = mergeReviews(live?.reviews ?? [], [
-    ...CURATED_GOOGLE_REVIEWS,
-    ...fromPublicTestimonials(),
-  ])
+export async function listTestimonialReviews(): Promise<TestimonialReviews> {
+  const live = await fetchGoogleReviewFeed()
+  const reviews = mergeReviews(live ?? [], [...CURATED_GOOGLE_REVIEWS, ...fromPublicTestimonials()])
 
   return {
     reviews,
     live: live !== null,
-    rating: live?.rating ?? PUBLISHED_GOOGLE_RATING,
-    reviewCount: live?.reviewCount ?? PUBLISHED_GOOGLE_REVIEW_COUNT,
+    rating: PUBLISHED_GOOGLE_RATING,
+    reviewCount: PUBLISHED_GOOGLE_REVIEW_COUNT,
   }
 }
 

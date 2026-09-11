@@ -80,8 +80,7 @@
       "title": "Immonation ist als Unionsmarke eingetragen.",
       "text": "Die Marke Immonation ist beim Amt der Europäischen Union für geistiges Eigentum (EUIPO) unter der Nummer 019283377 eingetragen. Die Eintragung erfolgte am 15.03.2026 für immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37.",
       "registrationLabel": "EUIPO-Registrierung",
-      "registration": "Nr. 019283377 · eingetragen am 15.03.2026",
-      "downloadLabel": "Zertifikat als PDF herunterladen"
+      "registration": "Nr. 019283377 · eingetragen am 15.03.2026"
     },
     "values": {
       "items": [
@@ -493,17 +492,22 @@
     }
   },
   "ContactForm": {
-    "prototypeLabel": "Formular-Prototyp",
+    "prototypeLabel": "Kontaktformular",
+    "eyebrow": "Direkter Kontakt",
     "title": "Worum geht es bei Ihrer Immobilie?",
-    "text": "Die Felder zeigen den späteren Kontaktweg. In dieser Phase wird keine Nachricht übertragen.",
+    "text": "Ihre Nachricht wird sicher an unser Immonation-Team in onOffice übergeben.",
     "name": "Name",
     "email": "E-Mail",
+    "phone": "Telefon (optional)",
     "topic": "Thema",
     "topics": ["Immobilie verkaufen", "Immobilie bewerten", "Immobilie kaufen", "Sonstiges"],
     "message": "Ihre Nachricht",
-    "submit": "Prototypisch absenden",
-    "success": "Die Darstellung ist abgeschlossen. Es wurde keine Nachricht versendet.",
-    "localOnly": "Keine Speicherung, keine E-Mail und keine Weitergabe im Frontend-Prototyp."
+    "privacy": "Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage gemäß Datenschutzerklärung zu.",
+    "submit": "Anfrage sicher senden",
+    "submitting": "Anfrage wird übergeben …",
+    "success": "Ihre Anfrage wurde von onOffice bestätigt. Wir melden uns persönlich bei Ihnen.",
+    "error": "Die Übergabe konnte nicht bestätigt werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.",
+    "privacyNote": "Die Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage in unserem führenden Kontaktsystem onOffice gespeichert."
   },
   "CookieConsent": {
     "label": "Cookie-Hinweis",
@@ -660,18 +664,19 @@
     }
   },
   "ValuationWizard": {
-    "prototypeLabel": "Frontend-Prototyp",
+    "prototypeLabel": "Online-Bewertung",
     "title": "Immobilie einordnen",
     "progressLabel": "Fortschritt der Bewertung",
     "stepLabel": "Schritt {current} von {total}",
     "back": "Zurück",
     "next": "Weiter",
     "finish": "Auswertung anfordern",
+    "submitting": "Sicher an onOffice übergeben …",
     "edit": "Angaben ändern",
     "optionalBadge": "optional",
     "optionalStepNote": "Alle Angaben in diesem Schritt sind freiwillig. Sie verfeinern die Spanne — überspringen ist jederzeit möglich.",
     "skip": "Überspringen",
-    "localOnly": "Mit Abschluss öffnen Sie ausschließlich die lokale Danke-Seite. Es wird keine Anfrage übertragen.",
+    "localOnly": "Die Auswertung erscheint erst, nachdem onOffice die vollständige Anfrage bestätigt hat.",
     "propertyTypes": {
       "house": "Haus",
       "apartment": "Wohnung",
@@ -721,7 +726,8 @@
       "postcode": "Bitte eine fünfstellige Postleitzahl eingeben.",
       "email": "Bitte eine gültige E-Mail-Adresse eingeben.",
       "futureYear": "Das Baujahr liegt zu weit in der Zukunft.",
-      "summary": "Bitte prüfen Sie die markierten Felder."
+      "summary": "Bitte prüfen Sie die markierten Felder.",
+      "provider": "Die Übergabe an onOffice konnte nicht bestätigt werden. Ihre Angaben wurden nicht als erfolgreich gesendet markiert. Bitte versuchen Sie es erneut oder rufen Sie uns an."
     },
     "fields": {
       "postcode": {
@@ -1191,7 +1197,7 @@
           "Auf der Social-Media-Seite und der Startseite binden wir Beiträge unserer eigenen Kanäle bei TikTok, Instagram und YouTube ein. Diese Einbettungen werden erst geladen, wenn Sie ein Video ausdrücklich starten (Zwei-Klick-Lösung). Die Vorschaubilder liegen auf unserem eigenen Server; bis zu Ihrem Klick wird keine Verbindung zu den Plattformen aufgebaut. Starten Sie ein Video, werden Ihre IP-Adresse, Browser- und Geräteinformationen an den jeweiligen Anbieter übertragen, und der Anbieter kann Informationen auf Ihrem Endgerät speichern oder auslesen. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die Sie mit dem Start des Videos oder über „Alle Videos aktivieren“ erteilen und jederzeit für die Zukunft widerrufen können, indem Sie die gespeicherte Auswahl in Ihrem Browser löschen.",
           "Anbieter sind TikTok Technology Limited (Irland), Meta Platforms Ireland Limited (Instagram) und Google Ireland Limited (YouTube). Eine Übermittlung in Drittländer, insbesondere in die USA und im Fall von TikTok auch nach China, ist dabei nicht ausgeschlossen. YouTube-Videos binden wir über youtube-nocookie.com im erweiterten Datenschutzmodus ein. Es gelten die Datenschutzhinweise der Anbieter: TikTok (https://www.tiktok.com/legal/privacy-policy), Instagram (https://privacycenter.instagram.com/policy) und Google (https://policies.google.com/privacy).",
           "Der 360°-Rundgang wird ebenfalls erst nach Klick geladen. Links zu Google, Trustpilot, Instagram, TikTok und Facebook führen zu externen Anbietern mit eigenen Datenschutzbestimmungen.",
-          "Auf der Kundenstimmen-Seite können aktuelle Bewertungen serverseitig über die Google Places API abgerufen werden. Bei live geladenen Stimmen können Profilbilder direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Es gelten die Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) und die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
+          "Auf der Kundenstimmen-Seite werden aktuelle öffentliche Google-Bewertungen serverseitig über den bereits von Immonation eingesetzten Elfsight-Review-Feed abgerufen. Profilbilder können direkt von Google eingebunden werden; dabei wird Ihre IP-Adresse an Google übertragen. Für den Feed gelten die Datenschutzbestimmungen von Elfsight (https://elfsight.com/privacy-policy/), für Profilbilder und Ziellinks die Datenschutzerklärung von Google (https://policies.google.com/privacy)."
         ]
       },
       {
@@ -1518,14 +1524,6 @@
     "eyebrow": "Ressourcen",
     "title": "Kostenlose Dokumente. Ein Magazin zum Lesen. Ein Handbuch auf Anfrage.",
     "lede": "Laden Sie Vorlagen für Übergabe und Miete nach kurzer E-Mail-Freigabe herunter. Das REVIER Magazin ist frei lesbar; das Verkaufs-Handbuch senden wir persönlich per E-Mail.",
-    "trademark": {
-      "eyebrow": "Markenschutz",
-      "title": "Das Zertifikat der eingetragenen Immonation-Marke.",
-      "text": "Hier finden Sie die Eintragungsurkunde der Unionsmarke Immonation. Das EUIPO führt die Marke unter der Nummer 019283377; eingetragen am 15.03.2026 für immobilienbezogene Dienstleistungen und Renovierungsleistungen in den Klassen 36 und 37.",
-      "registrationLabel": "EUIPO-Registrierung",
-      "registration": "Nr. 019283377 · eingetragen am 15.03.2026",
-      "downloadLabel": "Zertifikat als PDF herunterladen"
-    },
     "freedocs": {
       "eyebrow": "Kostenlose Dokumente",
       "title": "Vorlagen für Übergabe und Vermietung — direkt zum Download.",
@@ -1895,16 +1893,16 @@
       "quote": "„Der 360°-Rundgang hat uns Besichtigungen mit Unentschlossenen erspart — es kamen nur noch ernsthafte Interessenten.“",
       "quoteAuthor": "Herr M. · Wohnungsverkauf Nürnberg-St. Johannis · Google ★★★★★",
       "formTitle": "Bewertung starten",
-      "prototypeLabel": "Interaktiver Frontend-Prototyp",
+      "prototypeLabel": "Direkte Online-Bewertung",
       "prototypeNote": "Objektart, Lage, Größe und Verkaufszeitpunkt in fünf klaren Schritten einordnen.",
-      "localOnly": "Ihre Angaben bleiben im Browser. Es wird keine Anfrage übertragen.",
+      "localOnly": "Die Auswahl öffnet das vollständige Formular. Übertragen wird erst nach Ihrer Einwilligung und bestätigter Annahme durch onOffice.",
       "plzLabel": "Postleitzahl des Objekts",
       "plzPlaceholder": "z. B. 90513",
       "typeLabel": "Objektart",
       "types": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
       "submit": "Kostenlose Bewertung starten",
-      "success": "Prototyp abgeschlossen — es wurde keine Anfrage versendet.",
-      "privacyNote": "Lokale Demonstration ohne Datenübertragung. Rückruf statt Formular?",
+      "success": "Die vollständige Anfrage wurde bestätigt.",
+      "privacyNote": "Übertragung erst nach Einwilligung. Rückruf statt Formular?",
       "callbackLink": "Rückruf vereinbaren"
     },
     "servicesOverview": {
@@ -2166,9 +2164,7 @@
     "feedbackReviews": {
       "eyebrow": "Kundenstimmen als Text",
       "title": "Dieselben Erfahrungen, schriftlich festgehalten",
-      "text": "Wer lieber liest als schaut, findet hier die Google-Bewertungen derselben Kundinnen und Kunden — unverändert als Screenshot, mit Name und Sternebewertung.",
-      "reviewLabel": "Originale Google-Bewertung",
-      "note": "Die Screenshots sind unbearbeitete Ausschnitte der öffentlichen Google-Profile. Namen und Bewertungstexte stehen so, wie sie dort veröffentlicht wurden."
+      "text": "Wer lieber liest als schaut, findet hier aktuelle Google-Stimmen und dokumentierte Originalbewertungen — mit Name, Sternebewertung, Datum und Link zur Quelle."
     },
     "social": {
       "eyebrow": "Social Media",
@@ -2266,10 +2262,23 @@
     },
     "buy": {
       "metaTitle": "Immobilien kaufen in Zirndorf, Nürnberg, Fürth & Erlangen",
-      "metaDescription": "Prototypische Angebotsübersicht für Käufer in der Region — Häuser und Wohnungen mit klarer Such- und Finanzierungsstrecke.",
+      "metaDescription": "Aktuelle Immobilienangebote der Immonation in Zirndorf, Nürnberg, Fürth, Erlangen und der Metropolregion — direkt aus onOffice.",
       "eyebrow": "Für Käufer",
       "title": "Sie suchen statt verkaufen?",
-      "subtitle": "Eine realistische Vorschau auf die spätere Käufersuche — mit klarer Orientierung, Beispielobjekten und persönlicher Begleitung.",
+      "subtitle": "Aktuell veröffentlichte Häuser, Wohnungen und Anlageobjekte — automatisch mit unserem führenden Immobiliensystem synchronisiert.",
+      "providerNotice": "Live-Bestand aus onOffice; Verfügbarkeit bitte vor einer Anreise bestätigen.",
+      "providerNotConfigured": "Der Live-Bestand ist in dieser Umgebung noch nicht verbunden.",
+      "liveCount": "{count, plural, =0 {keine veröffentlichten Objekte} one {# veröffentlichtes Objekt} other {# veröffentlichte Objekte}}",
+      "unavailableTitle": "Aktuelle Angebote sind gerade nicht abrufbar",
+      "providerErrorText": "Die Verbindung zu onOffice konnte nicht bestätigt werden. Bitte versuchen Sie es später erneut oder sprechen Sie uns direkt an.",
+      "providerNotConfiguredText": "Es werden bewusst keine Demo-Objekte als echte Angebote ausgegeben. Nach Freischaltung der onOffice-Verbindung erscheint hier ausschließlich der bestätigte Live-Bestand.",
+      "emptyTitle": "Derzeit ist kein Objekt öffentlich verfügbar",
+      "emptyText": "Viele Immobilien werden bereits über vorgemerkte Suchkunden vermittelt. Legen Sie gern einen Suchauftrag an.",
+      "priceOnRequest": "Preis auf Anfrage",
+      "status": {
+        "available": "Verfügbar",
+        "reserved": "Reserviert"
+      },
       "prototypeNotice": "Designprototyp: Die folgenden Angebote, Filter und Exposé-Aktionen sind Beispiele und nicht live.",
       "searchLabel": "Beispielsuche",
       "searchPlaceholder": "Ort, Postleitzahl oder Objekt-ID",
@@ -2279,7 +2288,7 @@
       "ctaAll": "Alle Angebote",
       "ctaSearch": "Suchauftrag anlegen",
       "newBadge": "Neu",
-      "exposeLink": "Beispiel-Exposé",
+      "exposeLink": "Objektdetails",
       "photoAlt": "Objektfoto",
       "references": {
         "eyebrow": "Lokale Verkaufsbelege",
@@ -2448,6 +2457,11 @@
         "title": "Aktuelle Immobilien in der Region",
         "link": "Alle Objekte & Filter →",
         "rooms": "Zimmer",
+        "emptyTitle": "Derzeit kein öffentliches Objekt",
+        "emptyText": "Wir zeigen hier ausschließlich den bestätigten onOffice-Bestand und keine Demo-Angebote. Ein Suchauftrag kann Sie frühzeitig mit passenden Immobilien verbinden.",
+        "areaOnRequest": "Fläche auf Anfrage",
+        "roomsOnRequest": "Zimmer auf Anfrage",
+        "priceOnRequest": "Preis auf Anfrage",
         "items": [
           {
             "type": "Wohnung",
@@ -2984,7 +2998,7 @@
       "golocal": "golocal"
     },
     "attribution": {
-      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Stimmen. Diese werden mit dokumentierten Originalzitaten zusammengeführt und nach Datum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "live": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Diese werden mit dokumentierten Originalzitaten zusammengeführt und nach Datum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
       "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Datum sortiert. Der vollständige aktuelle Bestand bleibt auf den verlinkten Profilen nachlesbar."
     },
     "screenshots": {
@@ -3064,7 +3078,7 @@
     },
     "allLink": "Alle Bewertungen auf Google Maps ansehen",
     "attribution": {
-      "live": "Die Google-Places-API liefert bis zu fünf nach Relevanz ausgewählte Bewertungen. Diese werden mit dokumentierten Originalstimmen zusammengeführt und anschließend nach Veröffentlichungsdatum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
+      "live": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Diese werden mit dokumentierten Originalstimmen zusammengeführt und anschließend nach Veröffentlichungsdatum sortiert. Die Texte erscheinen in ihrer Originalsprache.",
       "curated": "Die gezeigten Originalstimmen stammen aus dokumentierten öffentlichen Bewertungen und werden nach Veröffentlichungsdatum sortiert. Der vollständige aktuelle Bestand ist auf Google Maps einsehbar."
     },
     "faq": {
@@ -3076,7 +3090,7 @@
         },
         {
           "question": "Wie werden die Bewertungen ausgewählt?",
-          "answer": "Wenn die Google-Places-API verfügbar ist, liefert Google Maps bis zu fünf nach Relevanz ausgewählte Stimmen. Ergänzend zeigen wir dokumentierte Originalbewertungen; die gemeinsame Liste wird nach Datum sortiert."
+          "answer": "Der bestehende Immonation-Review-Feed liefert aktuelle öffentliche Google-Bewertungen. Ergänzend zeigen wir dokumentierte Originalbewertungen; die gemeinsame Liste wird nach Datum sortiert."
         },
         {
           "question": "Wo kann ich alle Google-Bewertungen lesen?",
@@ -3131,6 +3145,7 @@
       "intro": "Sieben Beispiele aus eigenen Vermarktungen: jeweils das unbearbeitete Foto und die Visualisierung, gekennzeichnet mit „Original“ und „Visualisierung“. Beide Aufnahmen zeigen dieselbe Kameraposition, damit der Unterschied nachvollziehbar bleibt.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisierung",
+      "controlLabel": "Vorher-Nachher-Vergleich verschieben",
       "items": {
         "bedroom-entenberg": {
           "title": "Schlafzimmer, Einfamilienhaus Entenberg",
@@ -3651,6 +3666,9 @@
     "videoLabel": "Beispiel einer digitalen Immobilienpräsentation von Immonation",
     "videoFallback": "Ihr Browser kann das Präsentationsvideo nicht abspielen.",
     "tourTitle": "360°-Rundgang ansehen: Einfamilienhaus in Hagenbüchach",
+    "tourPageEyebrow": "Interaktives Beispiel",
+    "tourPageTitle": "Gehen Sie selbst durch die Immobilie.",
+    "tourPageText": "Dieser veröffentlichte Ogulo-Rundgang zeigt, wie Interessenten Räume, Blickachsen und Wege eigenständig erkunden. Er ist kein lineares Video: Sie bestimmen Perspektive und Tempo.",
     "tourConsentNote": "Erst mit Ihrem Klick wird der Rundgang von {provider} geladen. Dabei werden Daten an den Anbieter übertragen.",
     "tourOpenLabel": "Rundgang bei {provider} öffnen",
     "tourOpenOverlayLabel": "360°-Rundgang öffnen",
@@ -4011,6 +4029,22 @@
     "valuationCta": "Bewertung starten",
     "processEyebrow": "Vorbereitung & Vermarktung",
     "processTitle": "Die entscheidenden Schritte",
+    "showcase": {
+      "eyebrow": "Objekttypen im Vergleich",
+      "title": "Objektdetails, die Käuferentscheidungen prägen",
+      "text": "Baujahr, Bauart, Nutzung und Unterlagen verändern die Prüfung durch Käufer. Drei passende Beispiele zeigen, worauf es in der Präsentation ankommt.",
+      "carousel": "Objektbezogene Bildergalerie",
+      "slide": "Bild",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild"
+    },
+    "knowledge": {
+      "eyebrow": "Markt & Grundstück",
+      "title": "Die Lage mit belastbaren Daten einordnen",
+      "landValue": "Bodenrichtwert verstehen",
+      "priceAtlas": "Preisatlas nach Stadtteil öffnen",
+      "open": "Wissen vertiefen"
+    },
     "documentsEyebrow": "Checkliste",
     "documentsTitle": "Diese Unterlagen brauchen Sie",
     "faqTitle": "Häufige Fragen",
@@ -4877,7 +4911,7 @@
     },
     "answer": "Der Preisatlas zeigt für {districts} Stadtteile in {cities} Städten der Metropolregion Nürnberg, in welchem Preisband sich Eigentumswohnungen und Häuser je Quadratmeter bewegen. Jede Lage erscheint als Spanne mit Median statt als einzelner Durchschnittswert — so bleibt sichtbar, wie weit die Preise innerhalb eines Stadtteils auseinanderliegen. Was eine konkrete Immobilie erzielt, entscheiden zusätzlich Zuschnitt, Zustand, Ausstattung, Etage und Mikrolage.",
     "note": "Alle Werte sind Orientierungswerte und keine Zusage eines erzielbaren Verkaufspreises. Eine belastbare Einschätzung entsteht erst aus der Prüfung des konkreten Objekts.",
-    "source": "Datenquelle: eigene Vermittlungsdaten der Immonation GmbH.",
+    "source": "basierend auf Vermittlungsdaten der Immonation",
     "jsonLd": {
       "cityDescription": "Stadtteilbezogene Quadratmeterpreise für {city} im Immonation-Preisatlas."
     },

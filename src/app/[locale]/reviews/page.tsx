@@ -62,7 +62,7 @@ export default async function ReviewsPage({ params }: { params: Promise<{ locale
   const t = await getTranslations('ReviewsPage')
   const tHome = await getTranslations('Home.reviews')
   const referencesT = await getTranslations('ReferencesPage')
-  const { reviews, live, rating, reviewCount } = await listTestimonialReviews(language)
+  const { reviews, live, rating, reviewCount } = await listTestimonialReviews()
   const faq = t.raw('faq.items') as FaqItem[]
   const portals = tHome.raw('portals') as ReviewPortal[]
   const headline = tHome.raw('headline') as Headline

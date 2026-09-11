@@ -212,6 +212,18 @@ export function listPriceAtlasGroups(): readonly PriceAtlasGroup[] {
   )
 }
 
+/** Vermittlungswerte für eine tatsächlich publizierte Stadtteilroute. */
+export function findEntriesByDistrictSlug(city: string, slug: string): readonly PriceAtlasEntry[] {
+  if (!PRICE_ATLAS_CITIES.includes(city as PriceAtlasCityId)) return []
+
+  const cityId = city as PriceAtlasCityId
+  return PRICE_ATLAS_CATEGORIES.flatMap((category) =>
+    PRICE_ATLAS_ROWS[cityId][category]
+      .map((row) => toEntry(cityId, category, row))
+      .filter((entry) => entry.districtLink?.slug === slug),
+  )
+}
+
 /**
  * Geometrie eines Preisbands auf der Skala seiner Stadt.
  * Die Prozentwerte sind der einzige Fall, in dem ein Inline-Style zulässig ist:

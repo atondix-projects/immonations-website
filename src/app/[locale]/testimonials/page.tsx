@@ -60,7 +60,7 @@ export default async function TestimonialsPage({
   const language = locale === 'en' ? 'en' : 'de'
   const t = await getTranslations('TestimonialsPage')
   const referencesT = await getTranslations('ReferencesPage')
-  const { reviews, live, rating, reviewCount } = await listTestimonialReviews(language)
+  const { reviews, live, rating, reviewCount } = await listTestimonialReviews()
   const faq = t.raw('faq.items') as FaqItem[]
   const publicPath = localizePath('/testimonials', language)
   const pageUrl = `${SITE.url}/${language}${publicPath}`

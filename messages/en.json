@@ -80,8 +80,7 @@
       "title": "Immonation is registered as a European Union trade mark.",
       "text": "The Immonation mark is registered with the European Union Intellectual Property Office (EUIPO) under No. 019283377. The registration dates from 15 March 2026 and covers real-estate and renovation services in classes 36 and 37.",
       "registrationLabel": "EUIPO registration",
-      "registration": "No. 019283377 · registered 15 March 2026",
-      "downloadLabel": "Download certificate as PDF"
+      "registration": "No. 019283377 · registered 15 March 2026"
     },
     "values": {
       "items": [
@@ -493,17 +492,22 @@
     }
   },
   "ContactForm": {
-    "prototypeLabel": "Form prototype",
+    "prototypeLabel": "Contact form",
+    "eyebrow": "Direct contact",
     "title": "What would you like to discuss?",
-    "text": "These fields demonstrate the future contact journey. No message is transmitted in this phase.",
+    "text": "Your message is transferred securely to the Immonation team in onOffice.",
     "name": "Name",
     "email": "Email",
+    "phone": "Phone (optional)",
     "topic": "Topic",
     "topics": ["Sell a property", "Value a property", "Buy a property", "Other"],
     "message": "Your message",
-    "submit": "Complete prototype form",
-    "success": "The demonstration is complete. No message was submitted.",
-    "localOnly": "No storage, email, or data transfer in this frontend prototype."
+    "privacy": "I consent to the processing of my details for this enquiry in accordance with the privacy policy.",
+    "submit": "Send enquiry securely",
+    "submitting": "Transferring enquiry …",
+    "success": "onOffice confirmed your enquiry. We will contact you personally.",
+    "error": "The transfer could not be confirmed. Please try again or contact us by phone.",
+    "privacyNote": "The details are stored in onOffice, our primary contact system, solely to process your enquiry."
   },
   "CookieConsent": {
     "label": "Cookie notice",
@@ -660,18 +664,19 @@
     }
   },
   "ValuationWizard": {
-    "prototypeLabel": "Frontend prototype",
+    "prototypeLabel": "Online valuation",
     "title": "Classify your property",
     "progressLabel": "Valuation progress",
     "stepLabel": "Step {current} of {total}",
     "back": "Back",
     "next": "Continue",
     "finish": "Request my analysis",
+    "submitting": "Transferring securely to onOffice …",
     "edit": "Edit answers",
     "optionalBadge": "optional",
     "optionalStepNote": "Everything in this step is voluntary. It sharpens the range — you can skip it at any time.",
     "skip": "Skip",
-    "localOnly": "Completing the flow only opens the local thank-you page. No request is transmitted.",
+    "localOnly": "The analysis appears only after onOffice confirms the complete enquiry.",
     "propertyTypes": {
       "house": "House",
       "apartment": "Apartment",
@@ -721,7 +726,8 @@
       "postcode": "Please enter a five-digit postcode.",
       "email": "Please enter a valid email address.",
       "futureYear": "That construction year is too far in the future.",
-      "summary": "Please check the highlighted fields."
+      "summary": "Please check the highlighted fields.",
+      "provider": "The onOffice transfer could not be confirmed. Your details were not marked as successfully submitted. Please try again or call us."
     },
     "fields": {
       "postcode": {
@@ -1193,7 +1199,7 @@
           "On the social media page and the home page we embed posts from our own TikTok, Instagram and YouTube channels. These embeds are loaded only once you explicitly start a video (two-click solution). The preview images are served from our own server; until you click, no connection to the platforms is established. When you start a video, your IP address as well as browser and device information are transmitted to the respective provider, and that provider may store or read information on your device. The legal basis is your consent (Art. 6(1)(a) GDPR, Section 25(1) TDDDG), which you give by starting a video or via \"Enable all videos\" and can withdraw at any time with effect for the future by clearing the stored choice in your browser.",
           "The providers are TikTok Technology Limited (Ireland), Meta Platforms Ireland Limited (Instagram) and Google Ireland Limited (YouTube). Transfers to third countries, in particular the United States and, in TikTok’s case, also China, cannot be ruled out. YouTube videos are embedded via youtube-nocookie.com in privacy-enhanced mode. The providers’ privacy notices apply: TikTok (https://www.tiktok.com/legal/privacy-policy), Instagram (https://privacycenter.instagram.com/policy) and Google (https://policies.google.com/privacy).",
           "The 360° tour is likewise loaded only after a click. Links to Google, Trustpilot, Instagram, TikTok and Facebook lead to external providers with their own privacy policies.",
-          "The testimonials page may retrieve current reviews server-side through the Google Places API. Live reviews can include profile images loaded directly from Google, which transfers your IP address to Google. The Google Maps Platform Terms of Service (https://cloud.google.com/maps-platform/terms) and Google Privacy Policy (https://policies.google.com/privacy) apply."
+          "The testimonials page retrieves current public Google reviews server-side through the Elfsight review feed already used by Immonation. Profile images can load directly from Google, which transfers your IP address to Google. Elfsight's privacy policy (https://elfsight.com/privacy-policy/) applies to the feed; Google's privacy policy (https://policies.google.com/privacy) applies to profile images and destination links."
         ]
       },
       {
@@ -1520,14 +1526,6 @@
     "eyebrow": "Resources",
     "title": "Free documents. A magazine to read. A handbook on request.",
     "lede": "Unlock handover and tenancy templates with a short email check. The REVIER magazine is free to read; we send the selling handbook personally by email.",
-    "trademark": {
-      "eyebrow": "Trademark protection",
-      "title": "The certificate for Immonation’s registered trade mark.",
-      "text": "Find the registration certificate for the Immonation European Union trade mark here. EUIPO lists the mark under No. 019283377, registered on 15 March 2026 for real-estate and renovation services in classes 36 and 37.",
-      "registrationLabel": "EUIPO registration",
-      "registration": "No. 019283377 · registered 15 March 2026",
-      "downloadLabel": "Download certificate as PDF"
-    },
     "freedocs": {
       "eyebrow": "Free documents",
       "title": "Templates for handover and tenancy — ready to download.",
@@ -1888,16 +1886,16 @@
       "quote": "“The 360° tour spared us viewings with undecided visitors — only serious prospects came.”",
       "quoteAuthor": "Mr. M. · Apartment sale, Nuremberg-St. Johannis · Google ★★★★★",
       "formTitle": "Start your valuation",
-      "prototypeLabel": "Interactive frontend prototype",
+      "prototypeLabel": "Direct online valuation",
       "prototypeNote": "Classify property type, location, size, and timing in five clear steps.",
-      "localOnly": "Your details stay in the browser. No request is transmitted.",
+      "localOnly": "Your selection opens the complete form. Data is transferred only after your consent and confirmed acceptance by onOffice.",
       "plzLabel": "Postal code of the property",
       "plzPlaceholder": "e.g. 90513",
       "typeLabel": "Property type",
       "types": ["House", "Apartment", "Multi-family house", "Plot"],
       "submit": "Start your free valuation",
-      "success": "Prototype complete — no request was submitted.",
-      "privacyNote": "Local demonstration without data transmission. Prefer a call instead of a form?",
+      "success": "The complete enquiry was confirmed.",
+      "privacyNote": "Transfer only after consent. Prefer a call instead of a form?",
       "callbackLink": "Request a callback"
     },
     "servicesOverview": {
@@ -2159,9 +2157,7 @@
     "feedbackReviews": {
       "eyebrow": "Client stories in writing",
       "title": "The same experiences, written down",
-      "text": "If you would rather read than watch, here are the Google reviews from the same clients — unedited screenshots, with name and star rating.",
-      "reviewLabel": "Original Google review",
-      "note": "The screenshots are unedited excerpts from the public Google profiles. Names and review texts appear exactly as published there."
+      "text": "If you would rather read than watch, here are current Google voices and documented original reviews — with reviewer, rating, date, and a link to the source."
     },
     "social": {
       "eyebrow": "Social media",
@@ -2259,10 +2255,23 @@
     },
     "buy": {
       "metaTitle": "Buying property in Zirndorf, Nuremberg, Fürth & Erlangen",
-      "metaDescription": "Prototype property overview for buyers in the region — houses and apartments with a clear search and financing journey.",
+      "metaDescription": "Current Immonation properties in Zirndorf, Nuremberg, Fürth, Erlangen, and the metropolitan region — supplied directly by onOffice.",
       "eyebrow": "For buyers",
       "title": "Looking to buy instead of sell?",
-      "subtitle": "A realistic preview of the future buyer search — with clear orientation, sample properties, and personal guidance.",
+      "subtitle": "Currently published houses, apartments, and investment properties — synchronised automatically with our primary property system.",
+      "providerNotice": "Live inventory from onOffice; please confirm availability before travelling.",
+      "providerNotConfigured": "The live inventory is not connected in this environment yet.",
+      "liveCount": "{count, plural, =0 {no published properties} one {# published property} other {# published properties}}",
+      "unavailableTitle": "Current properties are temporarily unavailable",
+      "providerErrorText": "The onOffice connection could not be confirmed. Please try again later or contact us directly.",
+      "providerNotConfiguredText": "Demo properties are deliberately not presented as real listings. Once onOffice is connected, only confirmed live inventory will appear here.",
+      "emptyTitle": "No property is publicly available right now",
+      "emptyText": "Many properties are matched with registered buyers before publication. You are welcome to create a search request.",
+      "priceOnRequest": "Price on request",
+      "status": {
+        "available": "Available",
+        "reserved": "Reserved"
+      },
       "prototypeNotice": "Design prototype: the following listings, filters, and brochure actions are examples and are not live.",
       "searchLabel": "Sample search",
       "searchPlaceholder": "Location, postcode, or property ID",
@@ -2272,7 +2281,7 @@
       "ctaAll": "All listings",
       "ctaSearch": "Create a search request",
       "newBadge": "New",
-      "exposeLink": "Sample brochure",
+      "exposeLink": "Property details",
       "photoAlt": "Property photo",
       "references": {
         "eyebrow": "Local sales proof",
@@ -2441,6 +2450,11 @@
         "title": "Current properties in the region",
         "link": "All properties & filters →",
         "rooms": "rooms",
+        "emptyTitle": "No public property right now",
+        "emptyText": "Only confirmed onOffice inventory appears here; demo listings are never shown as real offers. A search request can connect you with suitable properties early.",
+        "areaOnRequest": "Area on request",
+        "roomsOnRequest": "Rooms on request",
+        "priceOnRequest": "Price on request",
         "items": [
           {
             "type": "Apartment",
@@ -2977,7 +2991,7 @@
       "golocal": "golocal"
     },
     "attribution": {
-      "live": "The Google Places API returns up to five reviews selected by relevance. These are merged with documented original quotes and sorted by date. The texts appear in their original language.",
+      "live": "Immonation's existing review feed returns current public Google reviews. These are merged with documented original quotes and sorted by date. The texts appear in their original language.",
       "curated": "The original voices shown are taken from documented public reviews and sorted by date. The complete current set remains readable on the linked profiles."
     },
     "screenshots": {
@@ -3057,7 +3071,7 @@
     },
     "allLink": "View all reviews on Google Maps",
     "attribution": {
-      "live": "The Google Places API returns up to five reviews selected by relevance. They are merged with documented original reviews and then ordered by publication date. Review text is shown in its original language.",
+      "live": "Immonation's existing review feed returns current public Google reviews. These are merged with documented original reviews and then ordered by publication date. Review text is shown in its original language.",
       "curated": "These original accounts come from documented public reviews and are ordered by publication date. The complete current set is available on Google Maps."
     },
     "faq": {
@@ -3069,7 +3083,7 @@
         },
         {
           "question": "How are the reviews selected?",
-          "answer": "When the Google Places API is available, Google Maps returns up to five reviews selected by relevance. We add documented original reviews and order the combined list by date."
+          "answer": "Immonation's existing review feed returns current public Google reviews. We add documented original reviews and order the combined list by date."
         },
         {
           "question": "Where can I read every Google review?",
@@ -3124,6 +3138,7 @@
       "intro": "Seven examples from our own marketing: the unedited photograph and the visualisation, labelled “Original” and “Visualisation”. Both frames share the same camera position, so the difference stays verifiable.",
       "beforeLabel": "Original",
       "afterLabel": "Visualisation",
+      "controlLabel": "Move the before-and-after comparison",
       "items": {
         "bedroom-entenberg": {
           "title": "Bedroom, detached house in Entenberg",
@@ -3644,6 +3659,9 @@
     "videoLabel": "Example of a digital property presentation by Immonation",
     "videoFallback": "Your browser cannot play the presentation video.",
     "tourTitle": "View the 360° tour: detached house in Hagenbüchach",
+    "tourPageEyebrow": "Interactive example",
+    "tourPageTitle": "Walk through the property yourself.",
+    "tourPageText": "This published Ogulo tour shows how buyers can explore rooms, sightlines, and routes independently. It is not a linear video: you control the perspective and pace.",
     "tourConsentNote": "The tour is only loaded from {provider} once you click. Data is transferred to the provider.",
     "tourOpenLabel": "Open the tour at {provider}",
     "tourOpenOverlayLabel": "Open the 360° tour",
@@ -4004,6 +4022,22 @@
     "valuationCta": "Start valuation",
     "processEyebrow": "Preparation & marketing",
     "processTitle": "The decisive steps",
+    "showcase": {
+      "eyebrow": "Property types compared",
+      "title": "Property details that shape buyer decisions",
+      "text": "Age, construction, use, and records change how buyers assess a property. Three relevant examples show what matters in the presentation.",
+      "carousel": "Property-specific image gallery",
+      "slide": "Image",
+      "previous": "Previous image",
+      "next": "Next image"
+    },
+    "knowledge": {
+      "eyebrow": "Market & land",
+      "title": "Put the location in context with reliable data",
+      "landValue": "Understand standard land value",
+      "priceAtlas": "Open the district price atlas",
+      "open": "Explore the topic"
+    },
     "documentsEyebrow": "Checklist",
     "documentsTitle": "Documents you will need",
     "faqTitle": "Frequently asked questions",
@@ -4870,7 +4904,7 @@
     },
     "answer": "The price atlas shows the price band for apartments and houses per square metre across {districts} districts in {cities} cities of the Nuremberg metropolitan region. Each location appears as a range with a median rather than a single average — which keeps the spread within a district visible. What a specific property achieves also depends on layout, condition, specification, floor, and micro-location.",
     "note": "All figures are guide values, not a commitment to an achievable sale price. A reliable assessment starts with a review of the specific property.",
-    "source": "Data source: Immonation GmbH’s own brokerage records.",
+    "source": "based on Immonation brokerage data",
     "jsonLd": {
       "cityDescription": "District-level square-metre prices for {city} in the Immonation price atlas."
     },

@@ -37,6 +37,11 @@ test('every published catalog URL is canonical, indexable, bilingual and in the 
         expect(html, `${path} should not be noindex`).not.toMatch(
           /<meta[^>]+name="robots"[^>]+noindex/i,
         )
+        const renderedDocument = html.replace(/<script[\s\S]*?<\/script>/g, '')
+        expect(
+          renderedDocument.match(/<footer[^>]*data-site-footer/g),
+          `${path} should have one global footer`,
+        ).toHaveLength(1)
         expect(
           html.includes(`hrefLang="${counterpart}" href="${SITE.url}${counterpartPath}"`),
           `${path} should link to ${counterpart}`,
@@ -47,6 +52,41 @@ test('every published catalog URL is canonical, indexable, bilingual and in the 
         ).toBe(true)
       }),
     )
+  }
+})
+
+test('PDF-T-04 gives every indexable route a localized, unique meta description', async ({
+  request,
+}) => {
+  test.setTimeout(180_000)
+  const descriptions = new Map<string, string>()
+
+  for (const routeRecord of listIndexableRoutes()) {
+    const localizedDescriptions: Partial<Record<(typeof locales)[number], string>> = {}
+
+    for (const locale of locales) {
+      const path = publicUrl(locale, routeRecord.paths[locale])
+      const response = await request.get(path)
+      expect(response.status(), `${path} should resolve`).toBe(200)
+      const html = await response.text()
+      const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1]?.trim()
+
+      expect(description, `${path} needs a meta description`).toBeTruthy()
+      expect(description!.length, `${path} description is too thin`).toBeGreaterThanOrEqual(50)
+
+      const duplicatePath = descriptions.get(`${locale}:${description}`)
+      expect(
+        duplicatePath,
+        `${path} duplicates the description from ${duplicatePath}`,
+      ).toBeUndefined()
+      descriptions.set(`${locale}:${description}`, path)
+      localizedDescriptions[locale] = description
+    }
+
+    expect(
+      localizedDescriptions.de,
+      `${routeRecord.id} should not reuse German copy as its English description`,
+    ).not.toBe(localizedDescriptions.en)
   }
 })
 

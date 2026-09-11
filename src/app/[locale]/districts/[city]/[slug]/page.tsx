@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { JsonLd } from '@/components/site/json-ld'
 import { CatalogPage } from '@/components/site/templates/catalog-page'
 import { routing } from '@/i18n/routing'
+import { findEntriesByDistrictSlug } from '@/lib/content/price-atlas'
 import { DISTRICTS, getRouteById, isRouteNoindex } from '@/lib/routing/route-catalog'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -62,6 +63,12 @@ function getDistrictContext(city: CitySlug, slug: string, locale: 'de' | 'en') {
   const next = districts[(index + 1) % districts.length]
   const district = displayName(slug)
   const cityName = CITY_NAMES[city]
+  const priceEntries = findEntriesByDistrictSlug(city, slug)
+  const formatPrice = new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: 'EUR',
+    maximumFractionDigits: 0,
+  })
 
   if (locale === 'de') {
     return {
@@ -82,6 +89,7 @@ function getDistrictContext(city: CitySlug, slug: string, locale: 'de' | 'en') {
           title: 'Vom Lagewert zur Verkaufsstrategie',
           text: `Für ${district} verbinden wir Bewertung, vollständige Unterlagen, Zielgruppenansprache und einen abgestimmten Vermarktungsstart. Allgemeine Quadratmeterpreise bleiben dabei nur ein Ausgangspunkt.`,
         },
+        ...districtPriceSections(priceEntries, 'de', district, formatPrice),
       ],
       faq: [
         {
@@ -119,6 +127,7 @@ function getDistrictContext(city: CitySlug, slug: string, locale: 'de' | 'en') {
         title: 'From location context to sales strategy',
         text: `For ${district}, valuation, complete documents, target audiences, and launch timing are coordinated. General square-metre figures remain only a starting point.`,
       },
+      ...districtPriceSections(priceEntries, 'en', district, formatPrice),
     ],
     faq: [
       {
@@ -136,6 +145,44 @@ function getDistrictContext(city: CitySlug, slug: string, locale: 'de' | 'en') {
       },
     ],
   }
+}
+
+function districtPriceSections(
+  entries: ReturnType<typeof findEntriesByDistrictSlug>,
+  locale: 'de' | 'en',
+  district: string,
+  formatPrice: Intl.NumberFormat,
+) {
+  if (entries.length === 0) return []
+
+  const text = entries
+    .map((entry) => {
+      const category =
+        locale === 'de'
+          ? entry.category === 'apartment'
+            ? 'Eigentumswohnungen'
+            : 'Häuser'
+          : entry.category === 'apartment'
+            ? 'Apartments'
+            : 'Houses'
+      const range = `${formatPrice.format(entry.low)}–${formatPrice.format(entry.high)} pro m²`
+      const median = formatPrice.format(entry.median)
+
+      return locale === 'de'
+        ? `${category}: ${range}, Median ${median}, ausgewertet aus ${entry.sampleSize} Vermittlungsfällen.`
+        : `${category}: ${range}, median ${median}, evaluated from ${entry.sampleSize} brokerage cases.`
+    })
+    .join(' ')
+
+  return [
+    {
+      title: locale === 'de' ? `Preisspannen in ${district}` : `Price ranges in ${district}`,
+      text:
+        locale === 'de'
+          ? `${text} Quelle: basierend auf Vermittlungsdaten der Immonation. Die Werte dienen der Orientierung und ersetzen keine Objektbewertung.`
+          : `${text} Source: based on Immonation brokerage data. These figures provide context and do not replace a property valuation.`,
+    },
+  ]
 }
 
 export function generateStaticParams() {

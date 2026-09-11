@@ -1,17 +1,21 @@
-import Image from 'next/image'
-import { Star } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { getLocale, getTranslations } from 'next-intl/server'
+import {
+  ReviewSlideshow,
+  type SlideshowReview,
+} from '@/components/site/testimonials/review-slideshow'
+import {
+  formatReviewDate,
+  GOOGLE_PROFILE,
+  listTestimonialReviews,
+} from '@/lib/content/google-reviews'
 import { cn } from '@/lib/utils'
-import { testimonialReview } from '@/lib/content/testimonials'
-import type { FeedbackVoice } from './feedback-videos'
 import { CONTAINER, EYEBROW, SECTION_TITLE } from './section-shell'
 
 /**
- * Schriftliche Kundenstimmen — die Google-Bewertungen im unveränderten
- * Original. Gegenstück zu `feedback-videos.tsx`: beide lesen dieselbe Liste
- * (`Home.feedback.items`), zeigen aber je einen Belegtyp. In der eigenen
- * Sektion dürfen die Screenshots vollständig stehen statt auf feste Höhe
- * beschnitten zu werden.
+ * Schriftliche Kundenstimmen aus demselben serverseitigen Review-Feed wie die
+ * Bewertungsseiten. Bei Feed-Ausfällen bleiben dokumentierte Originalzitate
+ * verfügbar und der Zustand wird transparent gekennzeichnet.
  */
 export async function FeedbackReviews({
   anchorId = 'kundenstimmen-bewertungen',
@@ -21,20 +25,30 @@ export async function FeedbackReviews({
   className?: string
 } = {}) {
   const t = await getTranslations('Home.feedbackReviews')
-  const tVoices = await getTranslations('Home.feedback')
+  const testimonialsT = await getTranslations('TestimonialsPage')
   const locale = await getLocale()
   const language = locale === 'en' ? 'en' : 'de'
-  const voices = tVoices.raw('items') as FeedbackVoice[]
-
-  const reviews = voices.flatMap((voice) => {
-    const review = testimonialReview(voice.id)
-    return review ? [{ voice, review }] : []
-  })
-
-  if (reviews.length === 0) return null
+  const { reviews, live } = await listTestimonialReviews()
+  const slides = reviews.map((item): SlideshowReview => ({
+    id: item.id,
+    author: item.author,
+    quote: item.quote,
+    rating: item.rating,
+    source:
+      item.source === 'google' ? testimonialsT('source.google') : testimonialsT('source.golocal'),
+    sourceUrl: item.sourceUrl,
+    authorUrl: item.authorUrl,
+    authorPhotoUrl: item.authorPhotoUrl,
+    isLiveGoogle: item.isLiveGoogle,
+    date: item.relativePublished ?? formatReviewDate(item, language),
+  }))
 
   return (
-    <section id={anchorId} className={cn('bg-background scroll-mt-24 py-16 md:py-24', className)}>
+    <section
+      id={anchorId}
+      data-review-source={live ? 'review-feed' : 'curated-fallback'}
+      className={cn('bg-background scroll-mt-24 py-16 md:py-24', className)}
+    >
       <div className={CONTAINER}>
         <div className="mb-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="flex flex-col gap-3.5">
@@ -46,38 +60,35 @@ export async function FeedbackReviews({
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map(({ voice, review }) => (
-            <figure
-              key={voice.id}
-              className="flex flex-col border border-neutral-200 bg-white p-5 sm:p-6"
-            >
-              <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-neutral-200 pb-4">
-                <span className="font-serif text-xl font-semibold">{review.reviewer}</span>
-                <span className="text-brand-700 flex gap-0.5" aria-label={`${review.rating}/5`}>
-                  {Array.from({ length: review.rating }, (_, index) => (
-                    <Star key={index} className="size-3.5 fill-current" aria-hidden="true" />
-                  ))}
-                </span>
-              </figcaption>
-              <Image
-                src={review.screenshot.src}
-                alt={review.screenshot.alt[language]}
-                width={review.screenshot.width}
-                height={review.screenshot.height}
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="mt-5 h-auto w-full"
-              />
-              <p className="text-muted-foreground mt-5 text-[10px] font-semibold tracking-[0.16em] uppercase">
-                {t('reviewLabel')}
-              </p>
-            </figure>
-          ))}
-        </div>
+        <ReviewSlideshow
+          reviews={slides}
+          locale={language}
+          showGoogleAttribution={live}
+          labels={{
+            carousel: testimonialsT('carousel.label'),
+            previous: testimonialsT('carousel.previous'),
+            next: testimonialsT('carousel.next'),
+            slide: testimonialsT('carousel.slide'),
+            expand: testimonialsT('carousel.expand'),
+            collapse: testimonialsT('carousel.collapse'),
+            openSource: testimonialsT('carousel.openSource'),
+          }}
+        />
 
-        <p className="text-muted-foreground mt-5 max-w-[76ch] text-xs leading-relaxed text-pretty">
-          {t('note')}
-        </p>
+        <div className="mt-10 flex flex-wrap items-start justify-between gap-5 border-t border-neutral-200 pt-6">
+          <p className="text-muted-foreground max-w-[70ch] text-xs leading-relaxed text-pretty">
+            {testimonialsT(live ? 'attribution.live' : 'attribution.curated')}
+          </p>
+          <a
+            href={GOOGLE_PROFILE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-700 inline-flex shrink-0 items-center gap-2 text-sm font-semibold underline-offset-4 hover:underline"
+          >
+            {testimonialsT('allLink')}
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </section>
   )

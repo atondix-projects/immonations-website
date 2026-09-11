@@ -13,8 +13,6 @@ import { PageHero } from '@/components/site/templates/page-hero'
 import { FreedocsSection } from '@/components/site/freedocs-section'
 import { MagazineSection } from '@/components/site/magazine-section'
 import { HandbookRequestForm } from '@/components/site/handbook-request-form'
-import { TrademarkCertificate } from '@/components/site/trademark-certificate'
-import { TRADEMARK_CERTIFICATE_HREF } from '@/lib/content/trademark'
 
 export const dynamic = 'force-static'
 
@@ -60,31 +58,16 @@ export default async function DownloadsPage({ params }: { params: Promise<{ loca
             { name: nav('home'), url: `${SITE.url}/${locale}` },
             { name: t('title'), url: downloadsUrl },
           ]),
-          itemList([
-            ...FREE_DOCS.map((doc) => ({
+          itemList(
+            FREE_DOCS.map((doc) => ({
               name: documents[doc.id].title,
               description: documents[doc.id].description,
               url: `${SITE.url}${doc.href}`,
             })),
-            {
-              name: t('trademark.title'),
-              description: t('trademark.text'),
-              url: `${SITE.url}${TRADEMARK_CERTIFICATE_HREF}`,
-            },
-          ]),
+          ),
         ]}
       />
       <PageHero eyebrow={t('eyebrow')} title={t('title')} lede={t('lede')} />
-      <TrademarkCertificate
-        copy={{
-          eyebrow: t('trademark.eyebrow'),
-          title: t('trademark.title'),
-          text: t('trademark.text'),
-          registrationLabel: t('trademark.registrationLabel'),
-          registration: t('trademark.registration'),
-          downloadLabel: t('trademark.downloadLabel'),
-        }}
-      />
       <FreedocsSection />
       <MagazineSection />
       <section id="handbuch" className="border-border bg-muted/45 border-t py-16 md:py-24">

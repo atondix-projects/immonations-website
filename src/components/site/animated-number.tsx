@@ -166,7 +166,7 @@ function LocaleNumberTicker({
     })
   }, [springValue, decimalPlaces, intlLocale, prefersReducedMotion, value])
 
-  const formattedStart = formatLocaleNumber(startValue, intlLocale, decimalPlaces)
+  const formattedValue = formatLocaleNumber(value, intlLocale, decimalPlaces)
 
   return (
     <span
@@ -174,7 +174,7 @@ function LocaleNumberTicker({
       aria-hidden="true"
       className={cn('inline-block tracking-wider tabular-nums', className)}
     >
-      {formattedStart}
+      {formattedValue}
     </span>
   )
 }

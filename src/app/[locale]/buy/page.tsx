@@ -1,18 +1,16 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import {
+  AlertCircle,
   ArrowUpRight,
   BedDouble,
-  Car,
   HomeIcon,
   Info,
   MapPin,
   Ruler,
   Search,
-  SlidersHorizontal,
 } from 'lucide-react'
 import { routing } from '@/i18n/routing'
 import { Link } from '@/i18n/navigation'
@@ -23,69 +21,39 @@ import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
 import { Hero } from '@/components/site/home/hero'
 import { ReferenceProofRail } from '@/components/site/references/reference-proof-rail'
+import { OnOfficeImage } from '@/components/site/properties/onoffice-image'
 import { listReferencesForListing } from '@/lib/content/references'
-import { PROPERTY_LISTINGS } from '@/lib/content/property-listings'
+import { createOnOfficeProvider } from '@/lib/onoffice/provider'
+import type { EstateListing } from '@/lib/onoffice/types'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
-}
-
-type ListingItem = {
-  isNew: boolean
-  title: string
-  location: string
-  area: string
-  rooms: string
-  extra: string
-  price: string
 }
 
 const CONTAINER = 'mx-auto w-full max-w-[1240px] px-6 lg:px-10'
 const EYEBROW = 'text-primary text-[13px] font-semibold uppercase tracking-[0.22em]'
 const SECTION_TITLE = 'font-serif text-4xl font-semibold leading-[1.05] text-balance md:text-[58px]'
 
-/** Anonymisierte Stimmungsbilder: Die Suchergebnis-Kacheln zeigen Beispieldaten aus
- * den Übersetzungen, nicht die realen Referenzobjekte, deren Fotos an anderer Stelle
- * als Beleg für konkrete Verkaufsfälle dienen. */
-const listingVisuals = [
-  {
-    src: '/images/generic/generic-house-carport-exterior.webp',
-    alt: 'Modern single-family home with carport',
-  },
-  {
-    src: '/images/generic/generic-sandstone-house-exterior.webp',
-    alt: 'Traditional house with garden entrance',
-  },
-  {
-    src: '/images/generic/generic-aerial-house-alt.webp',
-    alt: 'Renovated residential house with garage and garden',
-  },
-] as const
-
-function listingVisual(index: number) {
-  return listingVisuals[index] ?? listingVisuals[0]
-}
-
-function ListingFacts({ listing }: { listing: ListingItem }) {
+function ListingFacts({ listing, roomsLabel }: { listing: EstateListing; roomsLabel: string }) {
   return (
     <div className="text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] md:text-sm">
+      {listing.livingArea ? (
+        <span className="inline-flex items-center gap-1.5">
+          <Ruler className="text-primary size-4" aria-hidden="true" />
+          {listing.livingArea} m²
+        </span>
+      ) : null}
+      {listing.rooms ? (
+        <span className="inline-flex items-center gap-1.5">
+          <BedDouble className="text-primary size-4" aria-hidden="true" />
+          {listing.rooms} {roomsLabel}
+        </span>
+      ) : null}
       <span className="inline-flex items-center gap-1.5">
-        <Ruler className="text-primary size-4" aria-hidden="true" />
-        {listing.area}
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        <BedDouble className="text-primary size-4" aria-hidden="true" />
-        {listing.rooms}
-      </span>
-      <span className="inline-flex items-center gap-1.5">
-        {listing.extra.toLowerCase().includes('garage') ? (
-          <Car className="text-primary size-4" aria-hidden="true" />
-        ) : (
-          <HomeIcon className="text-primary size-4" aria-hidden="true" />
-        )}
-        {listing.extra}
+        <HomeIcon className="text-primary size-4" aria-hidden="true" />
+        {listing.propertyType}
       </span>
     </div>
   )
@@ -122,7 +90,14 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
 
   const t = await getTranslations('Home.buy')
   const tNav = await getTranslations('Nav')
-  const listings = t.raw('items') as ListingItem[]
+  const provider = createOnOfficeProvider()
+  let providerFailed = false
+  const listings = provider
+    ? await provider.listEstates().catch(() => {
+        providerFailed = true
+        return []
+      })
+    : []
   const featured = listings[0]
   const secondaryListings = listings.slice(1)
   const priceLabel = locale === 'de' ? 'Kaufpreis' : 'Purchase price'
@@ -130,10 +105,11 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
   const pageUrl = `${SITE.url}/${locale}${buyPath}`
   const listingReferences = [
     ...new Map(
-      PROPERTY_LISTINGS.flatMap((listing) => listReferencesForListing(listing)).map((reference) => [
-        reference.id,
-        reference,
-      ]),
+      listings
+        .flatMap((listing) =>
+          listReferencesForListing({ location: listing.location, type: listing.propertyType }),
+        )
+        .map((reference) => [reference.id, reference]),
     ).values(),
   ]
 
@@ -162,43 +138,14 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
       <Hero mode="buyer" />
 
       <section className="bg-surface-dark border-y border-white/10 py-10 text-white">
-        <div className={`${CONTAINER} grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end`}>
-          <div>
-            <div className="flex items-center gap-2 text-xs text-neutral-300">
-              <Info className="text-brand-300 size-4" aria-hidden="true" />
-              {t('prototypeNotice')}
-            </div>
-            <div className="mt-5 grid gap-2 sm:grid-cols-[1fr_auto_auto]">
-              <label className="relative">
-                <span className="sr-only">{t('searchLabel')}</span>
-                <Search
-                  className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-neutral-500"
-                  aria-hidden="true"
-                />
-                <input
-                  disabled
-                  placeholder={t('searchPlaceholder')}
-                  className="min-h-13 w-full border border-white/20 bg-white/8 pr-4 pl-11 text-sm text-white placeholder:text-neutral-400 disabled:cursor-not-allowed"
-                />
-              </label>
-              <button
-                type="button"
-                disabled
-                className="inline-flex min-h-13 items-center justify-center gap-2 border border-white/20 px-5 text-sm font-semibold text-neutral-300 disabled:cursor-not-allowed"
-              >
-                <SlidersHorizontal className="size-4" aria-hidden="true" />
-                {t('filters')}
-              </button>
-              <button
-                type="button"
-                disabled
-                className="bg-brand-700 inline-flex min-h-13 items-center justify-center px-6 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-80"
-              >
-                {t('search')}
-              </button>
-            </div>
+        <div className={`${CONTAINER} flex flex-wrap items-center justify-between gap-5`}>
+          <div className="flex items-center gap-3 text-sm text-neutral-200">
+            <Info className="text-brand-300 size-4" aria-hidden="true" />
+            {provider ? t('providerNotice') : t('providerNotConfigured')}
           </div>
-          <span className="font-mono text-xs text-neutral-400">{t('sampleCount')}</span>
+          <span className="font-mono text-xs text-neutral-400">
+            {t('liveCount', { count: listings.length })}
+          </span>
         </div>
       </section>
 
@@ -221,101 +168,140 @@ export default async function BuyPage({ params }: { params: Promise<{ locale: st
             </Link>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.45fr_0.9fr]">
-            {featured ? (
-              <article className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors">
-                <div className="relative min-h-[360px] overflow-hidden md:min-h-[560px]">
-                  <Image
-                    src={listingVisual(0).src}
-                    alt={listingVisual(0).alt}
-                    fill
-                    sizes="(min-width: 1024px) 58vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                    priority
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex justify-end bg-gradient-to-t from-black/45 via-black/10 to-transparent p-6">
-                    <button
-                      type="button"
-                      disabled
-                      className="bg-surface-dark/90 inline-flex cursor-not-allowed items-center gap-2 px-5 py-3 text-sm font-medium text-white opacity-80"
-                    >
-                      {t('exposeLink')}
-                    </button>
-                  </div>
-                  {featured.isNew ? <ListingBadge label={t('newBadge')} /> : null}
-                </div>
-                <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-7">
-                  <div>
-                    <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
-                      <MapPin className="text-primary size-4" aria-hidden="true" />
-                      {featured.location}
-                    </span>
-                    <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold md:text-[30px]">
-                      {featured.title}
-                    </h3>
-                    <div className="mt-4">
-                      <ListingFacts listing={featured} />
-                    </div>
-                  </div>
-                  <div className="border-border pt-5 md:border-l md:pt-0 md:pl-8">
-                    <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
-                      {priceLabel}
-                    </span>
-                    <p className="mt-2 text-3xl font-semibold tabular-nums">{featured.price}</p>
-                  </div>
-                </div>
-              </article>
-            ) : null}
-
-            <div className="grid gap-6">
-              {secondaryListings.map((listing, index) => (
-                <article
-                  key={listing.title}
-                  className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors"
-                >
-                  <div className="relative min-h-[230px] overflow-hidden">
-                    <Image
-                      src={listingVisual(index + 1).src}
-                      alt={listingVisual(index + 1).alt}
-                      fill
-                      sizes="(min-width: 1024px) 38vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                    />
-                    {listing.isNew ? <ListingBadge label={t('newBadge')} /> : null}
-                  </div>
-                  <div className="grid gap-5 p-5 md:grid-cols-[1fr_auto] md:items-end">
-                    <div>
-                      <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] uppercase">
-                        <MapPin className="text-primary size-4" aria-hidden="true" />
-                        {listing.location}
-                      </span>
-                      <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold">
-                        {listing.title}
-                      </h3>
-                      <div className="mt-4">
-                        <ListingFacts listing={listing} />
-                      </div>
-                    </div>
-                    <div className="border-border flex items-end justify-between gap-5 border-t pt-4 md:block md:border-t-0 md:border-l md:pt-0 md:pl-6">
-                      <div>
-                        <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
-                          {priceLabel}
-                        </span>
-                        <p className="mt-1 text-2xl font-semibold tabular-nums">{listing.price}</p>
-                      </div>
-                      <button
-                        type="button"
-                        disabled
-                        className="text-primary inline-flex cursor-not-allowed items-center gap-2 text-sm font-semibold opacity-75"
+          {providerFailed || !provider ? (
+            <div
+              data-estate-state={providerFailed ? 'error' : 'not-configured'}
+              className="border-border bg-muted/45 border p-7 md:p-10"
+            >
+              <AlertCircle className="text-brand-700 size-6" aria-hidden="true" />
+              <h3 className="mt-5 font-serif text-3xl font-medium">{t('unavailableTitle')}</h3>
+              <p className="text-muted-foreground mt-3 max-w-[64ch] leading-relaxed">
+                {providerFailed ? t('providerErrorText') : t('providerNotConfiguredText')}
+              </p>
+            </div>
+          ) : listings.length === 0 ? (
+            <div data-estate-state="empty" className="border-border bg-muted/45 border p-7 md:p-10">
+              <Search className="text-brand-700 size-6" aria-hidden="true" />
+              <h3 className="mt-5 font-serif text-3xl font-medium">{t('emptyTitle')}</h3>
+              <p className="text-muted-foreground mt-3 max-w-[64ch] leading-relaxed">
+                {t('emptyText')}
+              </p>
+            </div>
+          ) : (
+            <div data-estate-state="live" className="grid gap-6 lg:grid-cols-[1.45fr_0.9fr]">
+              {featured ? (
+                <article className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors">
+                  <div className="relative flex min-h-[360px] items-center justify-center overflow-hidden bg-neutral-200 md:min-h-[560px]">
+                    {featured.images[0] ? (
+                      <OnOfficeImage
+                        src={featured.images[0]}
+                        alt={`${featured.title}, ${featured.location}`}
+                        sizes="(min-width: 1024px) 58vw, 100vw"
+                        priority
+                      />
+                    ) : (
+                      <HomeIcon className="size-16 text-neutral-400" aria-hidden="true" />
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 flex justify-end bg-gradient-to-t from-black/45 via-black/10 to-transparent p-6">
+                      <Link
+                        href={{ pathname: '/properties/[slug]', params: { slug: featured.slug } }}
+                        className="bg-surface-dark/90 inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white"
                       >
                         {t('exposeLink')}
-                      </button>
+                      </Link>
+                    </div>
+                    <ListingBadge label={t(`status.${featured.status}`)} />
+                  </div>
+                  <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-7">
+                    <div>
+                      <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase">
+                        <MapPin className="text-primary size-4" aria-hidden="true" />
+                        {featured.location}
+                      </span>
+                      <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold md:text-[30px]">
+                        {featured.title}
+                      </h3>
+                      <div className="mt-4">
+                        <ListingFacts listing={featured} roomsLabel={t('rooms')} />
+                      </div>
+                    </div>
+                    <div className="border-border pt-5 md:border-l md:pt-0 md:pl-8">
+                      <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
+                        {priceLabel}
+                      </span>
+                      <p className="mt-2 text-3xl font-semibold tabular-nums">
+                        {featured.price
+                          ? new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-US', {
+                              style: 'currency',
+                              currency: 'EUR',
+                              maximumFractionDigits: 0,
+                            }).format(featured.price)
+                          : t('priceOnRequest')}
+                      </p>
                     </div>
                   </div>
                 </article>
-              ))}
+              ) : null}
+
+              <div className="grid gap-6">
+                {secondaryListings.map((listing) => (
+                  <article
+                    key={listing.title}
+                    className="group border-border hover:border-foreground overflow-hidden border bg-white transition-colors"
+                  >
+                    <div className="relative flex min-h-[230px] items-center justify-center overflow-hidden bg-neutral-200">
+                      {listing.images[0] ? (
+                        <OnOfficeImage
+                          src={listing.images[0]}
+                          alt={`${listing.title}, ${listing.location}`}
+                          sizes="(min-width: 1024px) 38vw, 100vw"
+                        />
+                      ) : (
+                        <HomeIcon className="size-12 text-neutral-400" aria-hidden="true" />
+                      )}
+                      <ListingBadge label={t(`status.${listing.status}`)} />
+                    </div>
+                    <div className="grid gap-5 p-5 md:grid-cols-[1fr_auto] md:items-end">
+                      <div>
+                        <span className="text-muted-foreground inline-flex items-center gap-2 text-xs font-semibold tracking-[0.16em] uppercase">
+                          <MapPin className="text-primary size-4" aria-hidden="true" />
+                          {listing.location}
+                        </span>
+                        <h3 className="mt-3 font-serif text-2xl leading-tight font-semibold">
+                          {listing.title}
+                        </h3>
+                        <div className="mt-4">
+                          <ListingFacts listing={listing} roomsLabel={t('rooms')} />
+                        </div>
+                      </div>
+                      <div className="border-border flex items-end justify-between gap-5 border-t pt-4 md:block md:border-t-0 md:border-l md:pt-0 md:pl-6">
+                        <div>
+                          <span className="text-muted-foreground text-xs font-semibold tracking-[0.16em] uppercase">
+                            {priceLabel}
+                          </span>
+                          <p className="mt-1 text-2xl font-semibold tabular-nums">
+                            {listing.price
+                              ? new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-US', {
+                                  style: 'currency',
+                                  currency: 'EUR',
+                                  maximumFractionDigits: 0,
+                                }).format(listing.price)
+                              : t('priceOnRequest')}
+                          </p>
+                        </div>
+                        <Link
+                          href={{ pathname: '/properties/[slug]', params: { slug: listing.slug } }}
+                          className="text-primary inline-flex items-center gap-2 text-sm font-semibold"
+                        >
+                          {t('exposeLink')}
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

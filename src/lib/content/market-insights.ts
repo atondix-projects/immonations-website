@@ -10,7 +10,6 @@ export type MarketCity = {
   apartmentPrice: number
   housePrice: number
   trend: number
-  source?: LocalizedText
 }
 
 export const MARKET_CITIES: readonly MarketCity[] = [
@@ -20,7 +19,6 @@ export const MARKET_CITIES: readonly MarketCity[] = [
     apartmentPrice: 3750,
     housePrice: 4540,
     trend: 4,
-    source: text('Quelle: immowelt / PriceHubble', 'Source: immowelt / PriceHubble'),
   },
   {
     id: 'fuerth',
@@ -464,8 +462,7 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
       lede: 'Für Nürnberg können wir bis auf Stadtteil-Ebene zeigen, was tatsächlich bezahlt wurde.',
       note: 'Für die übrigen Städte liegen Stadtteil-Zuordnungen in dieser Auswertung noch nicht vor.',
     },
-    source:
-      'Datenquelle: beurkundete Abschlüsse aus der eigenen Vermittlung der Immonation GmbH. Die Auswertung bildet unser Portfolio ab und ist kein repräsentativer Querschnitt des Gesamtmarkts.',
+    source: 'basierend auf Vermittlungsdaten der Immonation',
     factors: {
       title: 'Woran der Bestpreis 2026 wirklich hängt',
       lede: 'Die Korridore oben sind die wichtigste Erkenntnis dieser Seite. Zwei Häuser in derselben Straße können 200.000 € auseinanderliegen. Das sind die Faktoren, die darüber entscheiden – wir sehen sie in jedem einzelnen Verkauf.',
@@ -712,8 +709,7 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
       lede: 'For Nuremberg, we can show what was actually paid down to district level.',
       note: 'This evaluation does not yet include district assignments for the other cities.',
     },
-    source:
-      'Data source: notarised closings from Immonation GmbH’s own brokerage. The analysis reflects our portfolio and is not a representative cross-section of the wider market.',
+    source: 'based on Immonation brokerage data',
     factors: {
       title: 'What really determines the best price in 2026',
       lede: 'The ranges above are the most important insight on this page. Two houses on the same street can differ by €200,000. These are the factors that decide where a sale lands — we see them in every closing.',
@@ -918,8 +914,7 @@ export const MARKET_OVERVIEW_COPY: Record<
     },
     answer:
       'Die folgenden Quadratmeterpreise zeigen eine erste Größenordnung für Wohnungen und Häuser in der Region. Sie ersetzen keine persönliche Bewertung: Lage, Zustand, Ausstattung, Baujahr, Grundstück, Etage und Nachfrage entscheiden darüber, wo ein konkretes Objekt liegt.',
-    source:
-      'Datenquelle: immowelt / PriceHubble. Die Werte sind Orientierungswerte, keine Zusage eines erzielbaren Verkaufspreises.',
+    source: 'basierend auf Vermittlungsdaten der Immonation',
     labels: {
       apartment: 'Wohnung',
       house: 'Haus',
@@ -970,8 +965,7 @@ export const MARKET_OVERVIEW_COPY: Record<
     },
     answer:
       'The square-metre prices below provide a first frame of reference for apartments and houses in the region. They do not replace a personal valuation: location, condition, fittings, year built, land, floor, and demand determine where an individual property sits.',
-    source:
-      'Data source: immowelt / PriceHubble. These are orientation values, not a promise of an achievable sale price.',
+    source: 'based on Immonation brokerage data',
     labels: {
       apartment: 'Apartment',
       house: 'House',

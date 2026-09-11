@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cache } from 'react'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -6,11 +7,11 @@ import { JsonLd } from '@/components/site/json-ld'
 import { CatalogPage } from '@/components/site/templates/catalog-page'
 import { RelatedReferenceBlock } from '@/components/site/references/related-reference-block'
 import { routing } from '@/i18n/routing'
-import { getPropertyListing, PROPERTY_LISTINGS } from '@/lib/content/property-listings'
 import { listReferencesForListing } from '@/lib/content/references'
-import { getRouteById } from '@/lib/routing/route-catalog'
+import { createOnOfficeProvider } from '@/lib/onoffice/provider'
 import { breadcrumbList } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
+import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
 
 const euro = new Intl.NumberFormat('de-DE', {
@@ -19,11 +20,14 @@ const euro = new Intl.NumberFormat('de-DE', {
   maximumFractionDigits: 0,
 })
 
-export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    PROPERTY_LISTINGS.map((listing) => ({ locale, slug: listing.slug })),
-  )
-}
+export const dynamic = 'force-dynamic'
+
+const getListing = cache(async (slug: string) => {
+  const provider = createOnOfficeProvider()
+  if (!provider) return null
+  const listings = await provider.listEstates().catch(() => [])
+  return listings.find((listing) => listing.slug === slug) ?? null
+})
 
 export async function generateMetadata({
   params,
@@ -32,19 +36,18 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
-  const listing = getPropertyListing(slug)
-  const routeRecord = getRouteById(`property:${slug}`)
-  if (!listing || !routeRecord) notFound()
+  const listing = await getListing(slug)
+  if (!listing) notFound()
   const title =
     locale === 'de'
       ? `${listing.title} in ${listing.location}`
       : `${listing.title} in ${listing.location}`
   return buildMetadata({
     locale,
-    path: routeRecord.internal,
-    localizedPaths: routeRecord.paths,
+    path: `/properties/${slug}`,
     title: `${title} | Immonation`,
-    description: listing.description,
+    description:
+      listing.description || `${listing.title}, ${listing.postalCode} ${listing.location}`.trim(),
   })
 }
 
@@ -57,9 +60,8 @@ export default async function PropertyPage({
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
   const t = await getTranslations('PropertyDetailPage')
-  const listing = getPropertyListing(slug)
-  const routeRecord = getRouteById(`property:${slug}`)
-  if (!listing || !routeRecord) notFound()
+  const listing = await getListing(slug)
+  if (!listing) notFound()
   const isGerman = locale === 'de'
   const status =
     listing.status === 'available'
@@ -69,8 +71,11 @@ export default async function PropertyPage({
       : isGerman
         ? 'Verkauft / nicht verfügbar'
         : 'Sold / unavailable'
-  const url = `${SITE.url}/${locale}${routeRecord.paths[locale]}`
-  const relatedReferences = listReferencesForListing(listing)
+  const url = `${SITE.url}/${locale}${localizePath(`/properties/${slug}`, locale)}`
+  const relatedReferences = listReferencesForListing({
+    location: listing.location,
+    type: listing.propertyType,
+  })
 
   return (
     <>
@@ -79,20 +84,30 @@ export default async function PropertyPage({
           { name: isGerman ? 'Start' : 'Home', url: `${SITE.url}/${locale}` },
           {
             name: isGerman ? 'Angebote' : 'Properties',
-            url: `${SITE.url}/${locale}${getRouteById('properties')?.paths[locale] ?? ''}`,
+            url: `${SITE.url}/${locale}${localizePath('/buy', locale)}`,
           },
           { name: listing.title, url },
         ])}
       />
       <CatalogPage
-        eyebrow={`${status} · ${listing.type}`}
+        eyebrow={`${status} · ${listing.propertyType}`}
         title={listing.title}
         lede={`${listing.location} · ${listing.postalCode}`}
-        answer={listing.description}
+        answer={listing.description || (isGerman ? 'Details auf Anfrage.' : 'Details on request.')}
         sections={[
           {
             title: isGerman ? 'Eckdaten' : 'Key facts',
-            text: `${listing.livingArea} · ${listing.rooms} ${isGerman ? 'Zimmer' : 'rooms'} · ${euro.format(listing.price)}`,
+            text: [
+              listing.livingArea ? `${listing.livingArea} m²` : null,
+              listing.rooms ? `${listing.rooms} ${isGerman ? 'Zimmer' : 'rooms'}` : null,
+              listing.price
+                ? euro.format(listing.price)
+                : isGerman
+                  ? 'Preis auf Anfrage'
+                  : 'Price on request',
+            ]
+              .filter(Boolean)
+              .join(' · '),
           },
           {
             title: isGerman ? 'Besichtigung' : 'Viewing',
