@@ -192,36 +192,30 @@ export class OnOfficeApiProvider implements OnOfficeProvider {
       .map(mapOnOfficeEstate)
       .filter((estate): estate is EstateListing => estate !== null)
 
-    return Promise.all(
-      estates.map(async (estate) => {
-        try {
-          const fileResult = await this.action(
-            'file',
-            GET_ACTION,
-            { estateid: Number(estate.id), includeImageUrl: 'original' },
-            'estate',
-          )
-          const images = (fileResult.data?.records ?? [])
-            .filter((record) => {
-              const published = text(record.elements?.ispublishedonhomepage).toLowerCase()
-              return !published || ['1', 'true', 'ja', 'yes'].includes(published)
-            })
-            .map((record) => {
-              const elements = record.elements ?? {}
-              return (
-                text(elements.url) ||
-                text(elements.urloriginal) ||
-                text(elements.downloadUrl) ||
-                text(elements.downloadurl)
-              )
-            })
-            .filter((url) => /^https:\/\//.test(url))
-          return { ...estate, images }
-        } catch {
-          return estate
-        }
-      }),
-    )
+    if (estates.length === 0) return estates
+
+    try {
+      const imageResult = await this.action('estatepictures', GET_ACTION, {
+        estateids: estates.map((estate) => Number(estate.id)),
+        categories: ['Titelbild', 'Foto', 'Foto_gross'],
+        size: 'original',
+        publicationSetting: 'Homepage',
+      })
+      const imagesByEstate = new Map<string, string[]>()
+      for (const record of imageResult.data?.records ?? []) {
+        const elements = record.elements ?? {}
+        const estateId = text(elements.estateid)
+        const url = text(elements.url)
+        if (!estateId || !/^https:\/\//.test(url)) continue
+        imagesByEstate.set(estateId, [...(imagesByEstate.get(estateId) ?? []), url])
+      }
+      return estates.map((estate) => ({
+        ...estate,
+        images: imagesByEstate.get(estate.id) ?? [],
+      }))
+    } catch {
+      return estates
+    }
   }
 
   async submitLead(input: OnOfficeLeadInput): Promise<LeadReceipt> {

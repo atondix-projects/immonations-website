@@ -4,6 +4,9 @@ import { routing } from '@/i18n/routing'
 import { listIndexableRoutes } from '@/lib/routing/route-catalog'
 import { localizePath } from '@/lib/seo/routes'
 import { SITE } from '@/lib/seo/site'
+import { createOnOfficeProvider } from '@/lib/onoffice/provider'
+
+export const dynamic = 'force-dynamic'
 
 type LocaleKey = (typeof routing.locales)[number]
 
@@ -75,8 +78,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }),
   )
 
+  const provider = createOnOfficeProvider()
+  const estates = provider ? await provider.listEstates().catch(() => []) : []
+  const estateEntries = estates.map((estate) => {
+    const localizedPaths: Partial<Record<LocaleKey, string>> = {}
+    for (const locale of routing.locales as readonly LocaleKey[]) {
+      localizedPaths[locale] = localizePath('/properties/[slug]', locale).replace(
+        '[slug]',
+        estate.slug,
+      )
+    }
+    return entryFor(`/properties/${estate.slug}`, {
+      priority: 0.8,
+      changefreq: 'daily',
+      lastModified: estate.updatedAt ? new Date(estate.updatedAt) : undefined,
+      localizedPaths,
+    })
+  })
+
   const seen = new Set<string>()
-  return [...catalogEntries, ...postEntries.filter((entry) => entry !== null)].filter((entry) => {
+  return [
+    ...catalogEntries,
+    ...postEntries.filter((entry) => entry !== null),
+    ...estateEntries,
+  ].filter((entry) => {
     if (seen.has(entry.url)) return false
     seen.add(entry.url)
     return true

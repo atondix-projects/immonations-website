@@ -89,5 +89,16 @@ describe('onOffice provider contract', () => {
       { id: '7', externalId: 'WEB-7', status: 'available' },
     ])
     expect(fetcher).toHaveBeenCalledTimes(2)
+    const imageRequest = JSON.parse(String(fetcher.mock.calls[1]?.[1]?.body)) as {
+      request: { actions: Array<{ resourcetype: string; parameters: Record<string, unknown> }> }
+    }
+    expect(imageRequest.request.actions[0]).toMatchObject({
+      resourcetype: 'estatepictures',
+      parameters: {
+        estateids: [7],
+        categories: ['Titelbild', 'Foto', 'Foto_gross'],
+        publicationSetting: 'Homepage',
+      },
+    })
   })
 })
