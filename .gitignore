@@ -24,6 +24,11 @@
 # local source inputs and generated Python caches
 /assets/
 /customer-files/
+
+# EU trademark certificate — legal evidence only, never a public download
+/docs/source-material/originals/legal/euipo-immonation-trademark-certificate.pdf
+/docs/source-material/customer-files/media/cf-d3bb75c4172e/
+/public/downloads/Zertifikat-Marke-Immonation.pdf
 **/__pycache__/
 *.py[cod]
 

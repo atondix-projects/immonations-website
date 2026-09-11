@@ -15,7 +15,6 @@ export type HomeChapterId =
   | 'company'
   | 'faq'
   | 'next-step'
-  | 'contact'
 
 export function HomeChapter({ id, children }: { id: HomeChapterId; children: ReactNode }) {
   return <div data-home-chapter={id}>{children}</div>

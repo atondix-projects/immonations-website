@@ -69,6 +69,21 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
           answer:
             'Ja. Zielgruppe, Informationsumfang und Zeitpunkt der Ansprache werden vor Beginn gemeinsam festgelegt.',
         },
+        {
+          question: 'Gibt es Suchkunden für meinen Stadtteil?',
+          answer:
+            'Für jeden Stadtteil in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach sind Suchprofile hinterlegt. Sie finden sie auf dieser Seite über die Stadtteilsuche und auf der jeweiligen Stadtteilseite.',
+        },
+        {
+          question: 'Werden Namen von Suchkunden veröffentlicht?',
+          answer:
+            'Nein. Die Suchprofile sind anonymisiert. Namen und Kontaktdaten geben wir nur mit Einwilligung und erst im abgestimmten Kontakt weiter.',
+        },
+        {
+          question: 'Wie hinterlege ich als Käufer ein Suchprofil?',
+          answer:
+            'Beschreiben Sie uns Objektart, Wunschlage, Budget, Finanzierungsstand und Zeitplan im persönlichen Gespräch. Passt ein Objekt, melden wir uns – auf Wunsch der Eigentümer auch vor einer öffentlichen Vermarktung.',
+        },
       ],
     },
     {
@@ -102,6 +117,21 @@ export const SAFE_CATALOG_OVERRIDES: Partial<Record<CatalogPageId, PageDefinitio
         {
           question: 'Can the sale remain completely discreet?',
           answer: 'Yes. Audience, information, and timing are agreed before contact begins.',
+        },
+        {
+          question: 'Are there buyers for my district?',
+          answer:
+            'Search profiles are listed for every district of Nuremberg, Fürth, Erlangen, Zirndorf, and Schwabach. Find them here with the district search and on each district page.',
+        },
+        {
+          question: 'Are buyers’ names published?',
+          answer:
+            'No. The search profiles are anonymised. Names and contact details are shared only with consent and only once contact has been agreed.',
+        },
+        {
+          question: 'How do I register a search as a buyer?',
+          answer:
+            'Tell us the property type, preferred areas, budget, financing status, and timing in a personal conversation. When a property fits, we get in touch – where the owner agrees, even before any public marketing.',
         },
       ],
     },

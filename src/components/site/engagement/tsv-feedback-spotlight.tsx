@@ -13,8 +13,8 @@ import { TSV_FEEDBACK_VIDEO, TSV_QUOTES } from '@/lib/content/tsv-zirndorf'
  * bekommt er eine eigene Bühne.
  *
  * Der dunkle Grund ist Absicht: Die Sektionen darüber und darunter laufen auf
- * `background` und `muted/45`; nur `surface-dark` (dasselbe Feld wie das
- * CTA-Band) setzt im Seitenrhythmus eine echte Zäsur.
+ * `background` und `muted/45`; nur `surface-dark` setzt im Seitenrhythmus
+ * eine echte Zäsur. Das schließende CTA-Band bleibt auf `background`.
  *
  * Das schriftliche Zitat stammt aus der Bekanntgabe des Vereins, nicht aus dem
  * Film — es steht deshalb nur einmal auf der Seite, hier beim Sprecher.

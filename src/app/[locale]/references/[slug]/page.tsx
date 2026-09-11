@@ -29,7 +29,9 @@ const COPY = {
     result: 'Ergebnis',
     requests: 'Anfragen',
     viewings: 'Besichtigungen',
-    weeks: 'Wochen',
+    duration: 'Vermarktungsdauer',
+    weeksValue: 'Wochen',
+    saleResult: 'Verkaufsergebnis',
     review: 'Freigegebene Kundenstimme',
     source: 'Quellennachweis',
     sourceText:
@@ -57,7 +59,9 @@ const COPY = {
     result: 'Outcome',
     requests: 'Enquiries',
     viewings: 'Viewings',
-    weeks: 'Weeks',
+    duration: 'Marketing period',
+    weeksValue: 'weeks',
+    saleResult: 'Sale result',
     review: 'Approved client feedback',
     source: 'Source evidence',
     sourceText: 'The original review shown here was supplied with the approved reference material.',
@@ -179,11 +183,15 @@ export default async function ReferenceDetailPage({
       reference.metrics?.approved ? (
         <section className="border-border bg-surface-dark border-b py-8 text-white">
           <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-            <div className="grid grid-cols-3 gap-px bg-white/20">
+            <div className="grid gap-px bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 [reference.metrics.requests, copy.requests],
                 [reference.metrics.viewings, copy.viewings],
-                [reference.metrics.duration, copy.weeks],
+                [
+                  `${locale === 'de' ? reference.metrics.duration?.replace('.', ',') : reference.metrics.duration} ${copy.weeksValue}`,
+                  copy.duration,
+                ],
+                [reference.metrics.resultValue?.[locale], copy.saleResult],
               ].map(([value, label]) => (
                 <div key={label} className="bg-surface-dark px-4 py-5">
                   <p className="font-serif text-3xl font-semibold tabular-nums">{value}</p>

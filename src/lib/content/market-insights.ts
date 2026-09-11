@@ -364,6 +364,20 @@ export type MarketDataCopy = {
   factors: { title: string; lede: string; cards: MarketCard[] }
   why: { title: string; lede: string; cards: MarketCard[] }
   cta: { title: string; text: string; primary: string; secondary: string; atlas: string }
+  /** Legends, axis units and key-figure labels for the report's charts. */
+  charts: {
+    glanceTitle: string
+    glanceCities: string
+    glancePeriod: string
+    glanceApartments: string
+    glanceLevels: string
+    levelShiftTitle: string
+    levelShiftCaption: string
+    corridorEarlier: string
+    corridorLatest: string
+    unitThousands: string
+    tableUnit: string
+  }
   labels: {
     apartment: string
     house: string
@@ -427,8 +441,8 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
             'Zirndorf shows the strongest movement',
           ),
           text: text(
-            'Plus 25,2 % beim Hauspreisniveau seit 2024 – deutlich mehr als in den Großstädten. Wer hier vor drei Jahren verkauft hat, hatte einen anderen Markt vor sich.',
-            'House price levels are up 25.2% since 2024 — well above the larger cities. Anyone who sold here three years ago faced a different market.',
+            'Plus 25,3 % beim Hauspreisniveau seit 2024 – deutlich mehr als in den Großstädten. Wer hier vor drei Jahren verkauft hat, hatte einen anderen Markt vor sich.',
+            'House price levels are up 25.3% since 2024 — well above the larger cities. Anyone who sold here three years ago faced a different market.',
           ),
         },
       ],
@@ -587,6 +601,20 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
       secondary: 'Erstgespräch buchen',
       atlas: 'Noch granularer: der Immobilien-Preisatlas',
     },
+    charts: {
+      glanceTitle: 'Die Auswertung auf einen Blick',
+      glanceCities: 'Städte in der Auswertung',
+      glancePeriod: 'Zeitraum der Abschlüsse',
+      glanceApartments: 'Eigentumswohnungen ausgewertet',
+      glanceLevels: 'Ø Hauspreisniveau 2026 je Stadt',
+      levelShiftTitle: 'Ø Hauspreisniveau je Stadt, 2024 → 2026',
+      levelShiftCaption:
+        'Mittelwert der Korridor-Mitten von Reihen- und Einfamilienhäusern. Hohler Punkt 2024, voller Punkt 2026.',
+      corridorEarlier: 'Korridor 2024',
+      corridorLatest: 'Korridor 2026',
+      unitThousands: 'Tsd. €',
+      tableUnit: 'Preiskorridore in Tsd. €, die Spalte 2026 ist hervorgehoben.',
+    },
     labels: {
       apartment: 'Wohnung',
       house: 'Haus',
@@ -674,8 +702,8 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
             'Zirndorf shows the strongest movement',
           ),
           text: text(
-            'Plus 25,2 % beim Hauspreisniveau seit 2024 – deutlich mehr als in den Großstädten. Wer hier vor drei Jahren verkauft hat, hatte einen anderen Markt vor sich.',
-            'House price levels are up 25.2% since 2024 — well above the larger cities. Anyone who sold here three years ago faced a different market.',
+            'Plus 25,3 % beim Hauspreisniveau seit 2024 – deutlich mehr als in den Großstädten. Wer hier vor drei Jahren verkauft hat, hatte einen anderen Markt vor sich.',
+            'House price levels are up 25.3% since 2024 — well above the larger cities. Anyone who sold here three years ago faced a different market.',
           ),
         },
       ],
@@ -834,6 +862,20 @@ const MARKET_DATA_COPY: Record<Locale, MarketDataCopy> = {
       secondary: 'Book an initial call',
       atlas: 'Go more granular: the property price atlas',
     },
+    charts: {
+      glanceTitle: 'The analysis at a glance',
+      glanceCities: 'Cities in this analysis',
+      glancePeriod: 'Period of closings',
+      glanceApartments: 'Apartments assessed',
+      glanceLevels: 'Avg. house level 2026 by city',
+      levelShiftTitle: 'Average house level by city, 2024 → 2026',
+      levelShiftCaption:
+        'Average of the range midpoints for terraced and detached houses. Hollow dot 2024, solid dot 2026.',
+      corridorEarlier: '2024 range',
+      corridorLatest: '2026 range',
+      unitThousands: '€ thousands',
+      tableUnit: 'Price ranges in € thousands; the 2026 column is highlighted.',
+    },
     labels: {
       apartment: 'Apartment',
       house: 'House',
@@ -885,6 +927,23 @@ export const MARKET_OVERVIEW_COPY: Record<
     hero: { eyebrow: string; title: string; lede: string }
     answer: string
     source: string
+    interpretation: {
+      title: string
+      lede: string
+      items: { title: string; text: string }[]
+    }
+    factors: {
+      title: string
+      lede: string
+      items: { title: string; text: string }[]
+    }
+    sellerPath: {
+      title: string
+      lede: string
+      steps: { title: string; text: string }[]
+      reportLabel: string
+    }
+    methodology: { title: string; paragraphs: string[]; reportLabel: string }
     labels: {
       apartment: string
       house: string
@@ -905,7 +964,7 @@ export const MARKET_OVERVIEW_COPY: Record<
     metadata: {
       title: 'Immobilienmarkt – Kaufpreise €/m² | Immonation',
       description:
-        'Orientierungswerte für Kaufpreise je Quadratmeter in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach.',
+        'Kaufpreise, regionale Einordnung und wertbestimmende Faktoren für Immobilien in Nürnberg, Fürth, Erlangen, Zirndorf und Schwabach.',
     },
     hero: {
       eyebrow: 'Immobilienmarkt',
@@ -915,6 +974,81 @@ export const MARKET_OVERVIEW_COPY: Record<
     answer:
       'Die folgenden Quadratmeterpreise zeigen eine erste Größenordnung für Wohnungen und Häuser in der Region. Sie ersetzen keine persönliche Bewertung: Lage, Zustand, Ausstattung, Baujahr, Grundstück, Etage und Nachfrage entscheiden darüber, wo ein konkretes Objekt liegt.',
     source: 'basierend auf Vermittlungsdaten der Immonation',
+    interpretation: {
+      title: 'Was die Zahlen über den regionalen Markt erzählen',
+      lede: 'Ein Durchschnitt macht Städte vergleichbar. Für die Preisentscheidung einer einzelnen Immobilie ist aber die Abweichung vom Durchschnitt entscheidend.',
+      items: [
+        {
+          title: 'Erlangen setzt in der Übersicht das obere Preisniveau',
+          text: 'Mit 5.400 €/m² für Wohnungen und 5.900 €/m² für Häuser liegt Erlangen in den hinterlegten Vergleichswerten vorn. Das zeigt die stärkere Zahlungsbereitschaft in gefragten Lagen – nicht, dass jedes Objekt dort automatisch den Spitzenwert erreicht.',
+        },
+        {
+          title: 'Der regionale Abstand bleibt relevant',
+          text: 'Zwischen den fünf Städten liegen bei vergleichbaren Objektarten mehrere hundert Euro pro Quadratmeter. Für Eigentümer kann schon die genaue Lage innerhalb des Ballungsraums einen spürbaren Unterschied im Gesamtpreis bedeuten.',
+        },
+        {
+          title: 'Ein positiver Trend ersetzt keine Objektprüfung',
+          text: 'Die hinterlegten 12-Monats-Trends sind in allen fünf Städten positiv. Gleichzeitig entscheidet der Markt selektiver: Energiezustand, Modernisierungen, Grundriss und vollständige Unterlagen beeinflussen, ob ein Objekt oberhalb oder unterhalb des Ortswerts liegt.',
+        },
+      ],
+    },
+    factors: {
+      title: 'Sechs Faktoren, die den Quadratmeterpreis verschieben',
+      lede: 'Zwei Immobilien in derselben Straße können deutlich unterschiedliche Verkaufspreise erzielen. Diese Merkmale erklären den Abstand zum rechnerischen Mittelwert.',
+      items: [
+        {
+          title: 'Mikrolage',
+          text: 'Straße, Lärm, Aussicht, Anbindung und das direkte Wohnumfeld zählen oft stärker als der Stadtname.',
+        },
+        {
+          title: 'Zustand und Energie',
+          text: 'Modernisierungen, Heizung, Dämmung und absehbare Investitionen verändern Budget und Zahlungsbereitschaft der Käufer.',
+        },
+        {
+          title: 'Fläche und Grundriss',
+          text: 'Eine gut nutzbare, korrekt ermittelte Wohnfläche ist wertvoller als reine Quadratmeter ohne funktionalen Zuschnitt.',
+        },
+        {
+          title: 'Grundstück und Außenraum',
+          text: 'Größe, Zuschnitt, Ausrichtung, Privatsphäre und Baurecht prägen den Wert eines Hauses zusätzlich zur Wohnfläche.',
+        },
+        {
+          title: 'Unterlagen und Rechtssicherheit',
+          text: 'Grundrisse, Flächenberechnung, Energieausweis und geklärte Rechte erleichtern Finanzierung und Kaufentscheidung.',
+        },
+        {
+          title: 'Vermarktung und Nachfrage',
+          text: 'Positionierung, Präsentation, Käuferqualifizierung und Verhandlung entscheiden mit darüber, welcher Preis realisiert wird.',
+        },
+      ],
+    },
+    sellerPath: {
+      title: 'Vom Marktüberblick zur belastbaren Preisstrategie',
+      lede: 'Eine gute Preisentscheidung entsteht in drei Schritten: erst den Markt einordnen, dann das Objekt prüfen und anschließend die Vermarktung darauf ausrichten.',
+      steps: [
+        {
+          title: 'Region und Objektart einordnen',
+          text: 'Stadtwerte und Preisatlas liefern den ersten Korridor für Lage und Immobilientyp.',
+        },
+        {
+          title: 'Das konkrete Objekt bewerten',
+          text: 'Vor Ort werden Zustand, Ausstattung, Flächen, Grundstück, Unterlagen und Besonderheiten geprüft.',
+        },
+        {
+          title: 'Angebotspreis strategisch setzen',
+          text: 'Der Startpreis muss Nachfrage erzeugen und zugleich den realistischen Verhandlungsspielraum schützen.',
+        },
+      ],
+      reportLabel: 'Ausführlichen Marktbericht öffnen',
+    },
+    methodology: {
+      title: 'So sind die Werte zu lesen',
+      paragraphs: [
+        'Die Übersicht fasst regionale Vermittlungsdaten der Immonation als durchschnittliche Orientierungswerte zusammen. Sie bildet keinen amtlichen Miet- oder Kaufpreisspiegel ab und ist keine Bewertung eines konkreten Grundstücks oder Gebäudes.',
+        'Angebotspreise, rechnerische Quadratmeterwerte und tatsächlich erzielte Verkaufspreise sind nicht dasselbe. Für eine belastbare Einordnung verbinden wir Vergleichsdaten mit Objektprüfung, Unterlagen, aktueller Nachfrage und der jeweiligen Mikrolage.',
+      ],
+      reportLabel: 'Datengrundlage und Marktbewegung ansehen',
+    },
     labels: {
       apartment: 'Wohnung',
       house: 'Haus',
@@ -950,13 +1084,23 @@ export const MARKET_OVERVIEW_COPY: Record<
         answer:
           'Eine realistische Einschätzung verbindet aktuelle Vergleichswerte mit einer Prüfung des konkreten Objekts vor Ort. Bei Bedarf messen wir Wohnfläche auf und prüfen die Unterlagen vor der Vermarktung.',
       },
+      {
+        question: 'Was bedeutet ein positiver Markttrend für meinen Verkauf?',
+        answer:
+          'Ein positiver Trend zeigt, dass sich das durchschnittliche Preisniveau zuletzt nach oben bewegt hat. Er garantiert aber keinen bestimmten Verkaufspreis: Käufer vergleichen Zustand, Energiequalität, Mikrolage und Unterlagen sehr genau.',
+      },
+      {
+        question: 'Warum ist der richtige Angebotspreis so wichtig?',
+        answer:
+          'Der Angebotspreis bestimmt, welche Käufer aufmerksam werden und wie viel Nachfrage in den ersten Vermarktungswochen entsteht. Ein zu hoher Start kann Interessenten abschrecken; ein zu niedriger Preis kann unnötig Verhandlungsspielraum verschenken.',
+      },
     ],
   },
   en: {
     metadata: {
       title: 'Property market — prices per m² | Immonation',
       description:
-        'Orientation values for purchase prices per square metre in Nuremberg, Fürth, Erlangen, Zirndorf, and Schwabach.',
+        'Purchase prices, regional context, and value factors for property in Nuremberg, Fürth, Erlangen, Zirndorf, and Schwabach.',
     },
     hero: {
       eyebrow: 'Property market',
@@ -966,6 +1110,81 @@ export const MARKET_OVERVIEW_COPY: Record<
     answer:
       'The square-metre prices below provide a first frame of reference for apartments and houses in the region. They do not replace a personal valuation: location, condition, fittings, year built, land, floor, and demand determine where an individual property sits.',
     source: 'based on Immonation brokerage data',
+    interpretation: {
+      title: 'What the figures reveal about the regional market',
+      lede: 'An average makes cities comparable. For an individual property, however, the decisive question is why it sits above or below that average.',
+      items: [
+        {
+          title: 'Erlangen sets the upper price level in this overview',
+          text: 'At €5,400/m² for apartments and €5,900/m² for houses, Erlangen leads the comparison values shown here. This reflects stronger willingness to pay in sought-after locations — not that every property there automatically achieves the top figure.',
+        },
+        {
+          title: 'Regional differences remain material',
+          text: 'For comparable property types, the five cities differ by several hundred euros per square metre. Even within the metropolitan area, the precise location can therefore make a noticeable difference to the total price.',
+        },
+        {
+          title: 'A positive trend does not replace a property review',
+          text: 'The recorded 12-month trends are positive in all five cities. At the same time, buyers are more selective: energy performance, improvements, layout, and complete documents influence whether a property sits above or below its local reference value.',
+        },
+      ],
+    },
+    factors: {
+      title: 'Six factors that move the price per square metre',
+      lede: 'Two properties on the same street can achieve very different sale prices. These characteristics explain the distance from a calculated average.',
+      items: [
+        {
+          title: 'Micro-location',
+          text: 'Street, noise, outlook, transport links, and the immediate setting often matter more than the city name alone.',
+        },
+        {
+          title: 'Condition and energy performance',
+          text: 'Improvements, heating, insulation, and foreseeable investment affect buyers’ budgets and willingness to pay.',
+        },
+        {
+          title: 'Area and layout',
+          text: 'Well-used, correctly measured living space is worth more than square metres without a practical layout.',
+        },
+        {
+          title: 'Plot and outdoor space',
+          text: 'Size, shape, orientation, privacy, and planning rights add to a house’s value beyond its living area.',
+        },
+        {
+          title: 'Documents and legal clarity',
+          text: 'Floor plans, area calculations, energy certificates, and clarified rights make financing and purchase decisions easier.',
+        },
+        {
+          title: 'Marketing and demand',
+          text: 'Positioning, presentation, buyer qualification, and negotiation all help determine the price ultimately achieved.',
+        },
+      ],
+    },
+    sellerPath: {
+      title: 'From market overview to a reliable pricing strategy',
+      lede: 'A sound pricing decision takes three steps: understand the market, assess the property, and align the marketing strategy with both.',
+      steps: [
+        {
+          title: 'Place the region and property type',
+          text: 'City values and the price atlas provide an initial corridor for the location and type of property.',
+        },
+        {
+          title: 'Assess the actual property',
+          text: 'Condition, fittings, areas, plot, documents, and special features are reviewed on site.',
+        },
+        {
+          title: 'Set the asking price strategically',
+          text: 'The launch price must create demand while protecting a realistic margin for negotiation.',
+        },
+      ],
+      reportLabel: 'Open the detailed market report',
+    },
+    methodology: {
+      title: 'How to read these values',
+      paragraphs: [
+        'This overview summarises Immonation’s regional brokerage data as average orientation values. It is not an official rent or purchase-price index and does not constitute a valuation of a specific plot or building.',
+        'Asking prices, calculated square-metre values, and achieved sale prices are not the same. For a reliable assessment, we combine comparison data with a property review, documentation, current demand, and the specific micro-location.',
+      ],
+      reportLabel: 'Explore the data basis and market movement',
+    },
     labels: {
       apartment: 'Apartment',
       house: 'House',
@@ -1000,6 +1219,16 @@ export const MARKET_OVERVIEW_COPY: Record<
         question: 'How do I get a realistic assessment?',
         answer:
           'A realistic assessment combines current comparable values with an on-site review of the actual property. Where needed, we measure living space and check the documents before marketing begins.',
+      },
+      {
+        question: 'What does a positive market trend mean for my sale?',
+        answer:
+          'A positive trend shows that the average price level has recently moved upwards. It does not guarantee a specific sale price: buyers compare condition, energy performance, micro-location, and documentation carefully.',
+      },
+      {
+        question: 'Why is the right asking price so important?',
+        answer:
+          'The asking price determines which buyers take notice and how much demand develops in the first weeks of marketing. Starting too high can deter buyers, while starting too low can give away valuable negotiating room.',
       },
     ],
   },
@@ -1069,6 +1298,8 @@ export function getHousingComparison() {
       return {
         city,
         level,
+        /** 2024 level the trend is measured against, in thousands of euros. */
+        base: Math.round(base),
         trend: Math.round(((level / base) * 100 - 100) * 10) / 10,
         series: citySeries,
       }
@@ -1078,9 +1309,43 @@ export function getHousingComparison() {
   return cities
 }
 
+export type HousingComparison = ReturnType<typeof getHousingComparison>[number]
+
 export function getApartmentSummary(city: ApartmentMarketCity) {
   const count = city.years.reduce((sum, year) => sum + year.count, 0)
   const lowK = Math.min(...city.years.map((year) => year.lowK))
   const highK = Math.max(...city.years.map((year) => year.highK))
   return { count, lowK, highK }
+}
+
+/** Compact range in thousands, e.g. "490–680"; the unit is stated once per chart or table. */
+export function formatThousandsRange(lowK: number, highK: number, locale: Locale) {
+  return lowK === highK
+    ? formatThousands(lowK, locale)
+    : `${formatThousands(lowK, locale)}–${formatThousands(highK, locale)}`
+}
+
+/** Key figures for the report masthead, all derived from the published data sets. */
+export function getMarketDataGlance() {
+  const cities = new Set([
+    ...HOUSING_MARKET.map((series) => series.city.de),
+    ...APARTMENT_MARKET.map((city) => city.city.de),
+  ])
+  const years = [
+    ...HOUSING_MARKET.flatMap((series) => series.years),
+    ...APARTMENT_MARKET.flatMap((city) => city.years),
+  ].map((item) => item.year)
+  const levels = getHousingComparison().map((city) => city.level)
+
+  return {
+    cityCount: cities.size,
+    firstYear: Math.min(...years),
+    lastYear: Math.max(...years),
+    apartmentCount: APARTMENT_MARKET.reduce(
+      (sum, city) => sum + getApartmentSummary(city).count,
+      0,
+    ),
+    levelLowK: Math.min(...levels),
+    levelHighK: Math.max(...levels),
+  }
 }

@@ -272,7 +272,7 @@ Referenz-URL: `/de/downloads`
 - [x] Bekannte oder vermutete Direkt-URLs liefern nicht die Zertifikatsdatei aus.
 - [x] Die interne Quelldatei unter `assets/` darf erhalten bleiben, wird aber nicht deployed.
 - **Status:** PASS
-- **Nachweis:** Contract-Test `PDF-W-02`; Zertifikatsdatei aus `public/downloads/`, Download-UI, strukturierten Download-Daten sowie `llms.txt` und `llms-full.txt` entfernt. Die interne Quelldatei bleibt ausschließlich im ignorierten `assets/`-Bestand beziehungsweise als nicht öffentliche Rechtsquelle unter `docs/source-material/originals/legal/` erhalten.
+- **Nachweis:** Contract-Test `PDF-W-02`; Zertifikatsdatei aus `public/downloads/`, Download-UI, strukturierten Download-Daten sowie `llms.txt` und `llms-full.txt` entfernt. Die interne Quelldatei bleibt ausschließlich im ignorierten `assets/`-Bestand.
 
 ### PDF-W-03 - FAQ
 

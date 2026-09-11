@@ -15,7 +15,6 @@ const HOME_CHAPTERS = [
   'company',
   'faq',
   'next-step',
-  'contact',
 ] as const
 
 const CLIENT_TOPIC_ANCHORS = [
@@ -23,6 +22,7 @@ const CLIENT_TOPIC_ANCHORS = [
   'warnsignale',
   'verkaufen',
   'virtuelle-besichtigung',
+  'ki-visualisierung',
   'social',
   'objektarten',
   'leistungen',
@@ -58,7 +58,7 @@ async function finishHeroStory(page: import('@playwright/test').Page) {
 }
 
 for (const locale of ['de', 'en'] as const) {
-  test(`${locale} homepage follows the 15-chapter conversion journey`, async ({ page }) => {
+  test(`${locale} homepage follows the 14-chapter conversion journey`, async ({ page }) => {
     await page.goto(`/${locale}`)
 
     const heroStory = page.locator('[data-home-hero-story]')
@@ -174,6 +174,27 @@ test('homepage statistics show their final values with reduced motion', async ({
   const rating = page.locator('[data-home-chapter="proof"] [aria-label="4,9 / 5"]')
   await rating.scrollIntoViewIfNeeded()
   await expect(rating).toContainText('4,9 / 5')
+})
+
+test('homepage staging teaser compares a labelled original and links to the staging page', async ({
+  page,
+}) => {
+  await page.goto('/de')
+
+  const teaser = page.locator('#ki-visualisierung')
+  await teaser.scrollIntoViewIfNeeded()
+
+  const comparison = teaser.locator('[data-visualization-compare]')
+  await expect(comparison).toHaveCount(1)
+  await expect(comparison).toContainText('Original')
+  await expect(comparison).toContainText('Visualisierung')
+
+  const slider = comparison.getByRole('slider')
+  await slider.focus()
+  await slider.press('ArrowRight')
+  await expect(slider).toHaveValue('51')
+
+  await expect(teaser.locator('a[href="/de/ki-visualisierung-home-staging"]')).toHaveCount(1)
 })
 
 test('homepage process matches the ten prototype steps', async ({ page }) => {

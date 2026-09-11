@@ -1,5 +1,5 @@
-import { existsSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { join, relative } from 'node:path'
 import { createElement, type ComponentType, type ReactNode } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { NextIntlClientProvider } from 'next-intl'
@@ -18,11 +18,43 @@ const TestIntlProvider = NextIntlClientProvider as ComponentType<{
   children?: ReactNode
 }>
 
+const CERTIFICATE_ARTIFACT =
+  /(?:Zertifikat[- ]Marke[- ]Immonation\.pdf|euipo-immonation-trademark-certificate\.pdf|cf-d3bb75c4172e\/page-\d+\.png)/i
+
+function listFilesRecursive(dir: string): string[] {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = join(dir, entry.name)
+    return entry.isDirectory() ? listFilesRecursive(fullPath) : [fullPath]
+  })
+}
+
 describe('Andreas PDF contracts', () => {
   it('PDF-W-02 keeps the trademark certificate out of public website surfaces', () => {
     expect(existsSync(join(ROOT, 'public', 'downloads', 'Zertifikat-Marke-Immonation.pdf'))).toBe(
       false,
     )
+    expect(
+      existsSync(
+        join(
+          ROOT,
+          'docs',
+          'source-material',
+          'originals',
+          'legal',
+          'euipo-immonation-trademark-certificate.pdf',
+        ),
+      ),
+    ).toBe(false)
+
+    const publicCertificateFiles = listFilesRecursive(join(ROOT, 'public')).filter((filePath) =>
+      CERTIFICATE_ARTIFACT.test(relative(ROOT, filePath).replaceAll('\\', '/')),
+    )
+    expect(publicCertificateFiles).toEqual([])
+
+    const gitignore = readFileSync(join(ROOT, '.gitignore'), 'utf8')
+    expect(gitignore).toMatch(/euipo-immonation-trademark-certificate\.pdf/)
+    expect(gitignore).toMatch(/Zertifikat-Marke-Immonation\.pdf/)
 
     const publicIndex = [
       readFileSync(join(ROOT, 'public', 'llms.txt'), 'utf8'),
@@ -34,8 +66,9 @@ describe('Andreas PDF contracts', () => {
       readFileSync(join(ROOT, 'src', 'app', '[locale]', 'about', 'page.tsx'), 'utf8'),
       readFileSync(join(ROOT, 'src', 'app', '[locale]', 'downloads', 'page.tsx'), 'utf8'),
       readFileSync(join(ROOT, 'src', 'components', 'site', 'trademark-certificate.tsx'), 'utf8'),
+      readFileSync(join(ROOT, 'src', 'lib', 'content', 'freedocs.ts'), 'utf8'),
     ].join('\n')
-    expect(productionSources).not.toMatch(/Zertifikat-Marke-Immonation\.pdf/i)
+    expect(productionSources).not.toMatch(CERTIFICATE_ARTIFACT)
     expect(productionSources).not.toMatch(/downloadLabel/)
   })
 
@@ -68,7 +101,7 @@ describe('Andreas PDF contracts', () => {
     const localeLayout = readFileSync(join(ROOT, 'src', 'app', '[locale]', 'layout.tsx'), 'utf8')
 
     expect(ctaBand).not.toContain('bg-surface-dark')
-    expect(ctaBand).toContain('bg-brand-50')
+    expect(ctaBand).toContain('bg-background')
     expect(localeLayout.match(/<SiteFooter\s*\/>/g)).toHaveLength(1)
   })
 
@@ -190,14 +223,23 @@ describe('Andreas PDF contracts', () => {
       join(ROOT, 'src', 'app', '[locale]', 'virtual-tour', 'page.tsx'),
       'utf8',
     )
+    const example = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'virtual-tour', 'tour-example.tsx'),
+      'utf8',
+    )
     const tour = readFileSync(join(ROOT, 'src', 'lib', 'content', 'virtual-tour.ts'), 'utf8')
     const overlay = readFileSync(
       join(ROOT, 'src', 'components', 'site', 'home', 'tour-overlay.tsx'),
       'utf8',
     )
 
-    expect(route).toContain('<TourEmbed')
-    expect(route).toContain("createCatalogPage('virtual-tour'")
+    // Die Seite ist eine eigene Route (wie /staging), kein Katalog-Template mehr:
+    // Rundgang und Beleg stehen vor der Erklärung, SEO-Bausteine sind explizit.
+    expect(route).toContain('<TourExample')
+    expect(route).toContain('buildMetadata(')
+    expect(route).toContain('faqPage(')
+    expect(example).toContain('<TourEmbed')
+    expect(example).toContain('VIRTUAL_TOUR.url')
     expect(tour).toContain("url: 'https://tour.ogulo.com/a4mC'")
     expect(overlay).toContain('allowFullScreen')
     expect(overlay).toContain("type LoadStatus = 'loading' | 'ready' | 'failed'")

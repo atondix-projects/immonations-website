@@ -32,7 +32,7 @@ export type ReferenceMetricSet = {
   requests?: string
   viewings?: string
   duration?: string
-  resultValue?: string
+  resultValue?: LocalizedText
   approved: boolean
 }
 
@@ -583,10 +583,7 @@ const reviewLabelById: Partial<Record<ReferenceId, string>> = {
 }
 
 const legacyCases: Partial<
-  Record<
-    ReferenceId,
-    { narrative: ReferenceNarrative; metrics: ReferenceMetricSet; review?: ReferenceReview }
-  >
+  Record<ReferenceId, { narrative: ReferenceNarrative; review?: ReferenceReview }>
 > = {
   'deining-neubauwohnung': {
     narrative: {
@@ -604,7 +601,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '32', viewings: '10', duration: '6', approved: false },
     review: {
       reviewer: 'Waweina',
       rating: 5,
@@ -640,7 +636,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '68', viewings: '26', duration: '4', approved: false },
   },
   'forchheim-eigentumswohnung': {
     narrative: {
@@ -658,7 +653,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '34', viewings: '6', duration: '3', approved: false },
   },
   'forchheim-reihenhaus': {
     narrative: {
@@ -676,7 +670,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Passenden Käufer gefunden.', 'Matched with the right buyer.'),
     },
-    metrics: { requests: '43', viewings: '22', duration: '9', approved: false },
   },
   'fuerth-altbauwohnung': {
     narrative: {
@@ -694,7 +687,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '102', viewings: '36', duration: '2', approved: false },
   },
   'fuerth-renovierte-wohnung': {
     narrative: {
@@ -712,7 +704,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Strategisch neu positioniert.', 'Strategically repositioned.'),
     },
-    metrics: { requests: '18', viewings: '11', duration: '12', approved: false },
   },
   'fuerth-versorgungszentrum': {
     narrative: {
@@ -733,7 +724,6 @@ const legacyCases: Partial<
         'Specialist property successfully sold.',
       ),
     },
-    metrics: { requests: '8', viewings: '4', duration: '15', approved: false },
   },
   'fuerth-mehrfamilienhaus': {
     narrative: {
@@ -751,7 +741,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '63', viewings: '38', duration: '6', approved: false },
     review: {
       reviewer: 'Markus Biegel',
       rating: 5,
@@ -787,7 +776,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '29', viewings: '24', duration: '13', approved: false },
   },
   'langenzenn-terrassenwohnung': {
     narrative: {
@@ -805,7 +793,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '12', viewings: '8', duration: '2.5', approved: false },
     review: {
       reviewer: 'Hermann Meier',
       rating: 5,
@@ -841,7 +828,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '31', viewings: '26', duration: '10', approved: false },
   },
   'nuernberg-eigentumswohnung': {
     narrative: {
@@ -859,7 +845,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '21', viewings: '8', duration: '3', approved: false },
   },
   'nuernberg-reihenendhaus': {
     narrative: {
@@ -877,7 +862,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '110', viewings: '43', duration: '2', approved: false },
   },
   'oberasbach-einfamilienhaus': {
     narrative: {
@@ -895,7 +879,6 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '82', viewings: '48', duration: '6', approved: false },
   },
   'zirndorf-gartenwohnung': {
     narrative: {
@@ -913,8 +896,117 @@ const legacyCases: Partial<
       ),
       outcome: city('Erfolgreich vermittelt.', 'Successfully sold.'),
     },
-    metrics: { requests: '27', viewings: '13', duration: '6.5', approved: false },
   },
+}
+
+/**
+ * Customer-confirmed figures from the supplied reference brief. The three
+ * additional archive folders without a numbered brief remain valid visual
+ * references, but intentionally have no invented performance figures.
+ */
+const APPROVED_REFERENCE_METRICS: Partial<Record<ReferenceId, ReferenceMetricSet>> = {
+  'deining-neubauwohnung': metric(
+    '32',
+    '10',
+    '6',
+    '6 % über Erstbewertung',
+    '6% above initial valuation',
+  ),
+  'erlangen-eigentumswohnung': metric(
+    '68',
+    '26',
+    '4',
+    '9 % über Erstbewertung',
+    '9% above initial valuation',
+  ),
+  'forchheim-eigentumswohnung': metric('34', '6', '3', 'Zum Marktpreis', 'At market price'),
+  'forchheim-reihenhaus': metric('43', '22', '9', 'Zum Marktpreis', 'At market price'),
+  'fuerth-altbauwohnung': metric(
+    '102',
+    '36',
+    '2',
+    '8 % über Erstbewertung',
+    '8% above initial valuation',
+  ),
+  'fuerth-renovierte-wohnung': metric('18', '11', '12', '3 % Verhandlung', '3% negotiation'),
+  'fuerth-versorgungszentrum': metric('8', '4', '15', 'Zum Marktpreis', 'At market price'),
+  'fuerth-mehrfamilienhaus': metric(
+    '63',
+    '38',
+    '6',
+    '3 % über Erstbewertung',
+    '3% above initial valuation',
+  ),
+  'hagenbuechach-hausaeckern': metric('16', '9', '4', '4 % Verhandlung', '4% negotiation'),
+  'heroldsbach-mehrfamilienhaus': metric('29', '24', '13', 'Zum Marktpreis', 'At market price'),
+  'herzogenaurach-schuetzengraben': metric('48', '23', '5', '4 % Verhandlung', '4% negotiation'),
+  'langenzenn-terrassenwohnung': metric('12', '8', '2.5', 'Zum Marktpreis', 'At market price'),
+  'nuernberg-willy-wunder': metric(
+    '68',
+    '48',
+    '2',
+    '4 % über Erstbewertung',
+    '4% above initial valuation',
+  ),
+  'nuernberg-einfamilienhaus': metric('31', '26', '10', '5 % Verhandlung', '5% negotiation'),
+  'nuernberg-neutrograben': metric(
+    '78',
+    '47',
+    '8',
+    '4 % über Erstbewertung',
+    '4% above initial valuation',
+  ),
+  'nuernberg-eigentumswohnung': metric('16', '16', '12', 'Zum Marktpreis', 'At market price'),
+  'nuernberg-zuericher-52': metric('21', '8', '3', 'Zum Marktpreis', 'At market price'),
+  'nuernberg-zuericher-40': metric(
+    '32',
+    '29',
+    '4.5',
+    '3 % über Erstbewertung',
+    '3% above initial valuation',
+  ),
+  'nuernberg-reihenendhaus': metric(
+    '110',
+    '43',
+    '2',
+    '9 % über Erstbewertung',
+    '9% above initial valuation',
+  ),
+  'nuernberg-haderastrasse': metric('38', '1', '1', 'Zum Marktpreis', 'At market price'),
+  'nuernberg-woernitzstrasse': metric(
+    '48',
+    '36',
+    '4',
+    '3 % über Erstbewertung',
+    '3% above initial valuation',
+  ),
+  'oberasbach-einfamilienhaus': metric(
+    '82',
+    '48',
+    '6',
+    '6 % über Erstbewertung',
+    '6% above initial valuation',
+  ),
+  'zirndorf-gutenbergstrasse': metric('18', '8', '2', 'Zum Marktpreis', 'At market price'),
+  'zirndorf-homburger': metric('42', '29', '6.5', 'Zum Marktpreis', 'At market price'),
+  'zirndorf-gartenwohnung': metric('27', '13', '6.5', '2 % Verhandlung', '2% negotiation'),
+  'zirndorf-marienbader': metric('56', '42', '12', 'Zum Marktpreis', 'At market price'),
+}
+
+function metric(
+  requests: string,
+  viewings: string,
+  duration: string,
+  resultDe: string,
+  resultEn: string,
+): ReferenceMetricSet {
+  return {
+    requests,
+    viewings,
+    duration,
+    resultValue: city(resultDe, resultEn),
+    approved: true,
+  }
 }
 
 function defaultNarrative(seed: ReferenceSeed): ReferenceNarrative {
@@ -956,6 +1048,7 @@ function mediaFor(
 
 function buildRecord(seed: ReferenceSeed): ReferenceRecord {
   const legacy = legacyCases[seed.id as ReferenceId]
+  const metrics = APPROVED_REFERENCE_METRICS[seed.id as ReferenceId]
   const category = categoryForPropertyType(seed.type)
   return {
     ...seed,
@@ -971,7 +1064,7 @@ function buildRecord(seed: ReferenceSeed): ReferenceRecord {
     },
     narrative: legacy?.narrative ?? defaultNarrative(seed),
     media: mediaFor(seed),
-    ...(legacy?.metrics ? { metrics: legacy.metrics } : {}),
+    ...(metrics ? { metrics } : {}),
     ...(legacy?.review ? { review: legacy.review } : {}),
     provenance: {
       sourceFiles: sourceFilesById[seed.id as ReferenceId].map(
@@ -998,16 +1091,16 @@ function buildRecord(seed: ReferenceSeed): ReferenceRecord {
       imagesApproved: true,
       locationApproved: true,
       outcomeApproved: true,
-      metricsApproved: legacy?.metrics?.approved ?? false,
+      metricsApproved: metrics?.approved ?? false,
       rightsApproved: true,
-      lastReviewed: '2026-09-03',
+      lastReviewed: '2026-09-11',
     },
   }
 }
 
 export const REFERENCE_RECORDS: readonly ReferenceRecord[] = REFERENCE_SEEDS.map(buildRecord)
 const RECORD_BY_ID = new Map(REFERENCE_RECORDS.map((record) => [record.id, record]))
-export const PUBLISH_REFERENCE_METRICS = false
+export const PUBLISH_REFERENCE_METRICS = true
 
 export type ReferenceItem = {
   id: ReferenceId

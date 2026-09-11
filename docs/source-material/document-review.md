@@ -20,7 +20,7 @@ All 20 DOCX/PDF sources were extracted successfully. `ok` means the file was str
 
 ## Source-document locations
 
-The 15 editable DOCX files are retained under `docs/source-material/originals/content/`. The EUIPO certificate is retained under `docs/source-material/originals/legal/`. Four brand/download PDFs are in the media library because they are reusable design or download assets.
+The 15 editable DOCX files are retained under `docs/source-material/originals/content/`. The EUIPO certificate stays only in gitignored `assets/` and must never be a public or git-tracked download. Four brand/download PDFs are in the media library because they are reusable design or download assets.
 
 ## Important source conflicts
 

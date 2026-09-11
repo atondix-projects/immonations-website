@@ -1992,17 +1992,18 @@
     "reviews": {
       "eyebrow": "Reviews",
       "title": "Selected voices from real sales",
-      "lead": "Immonation maintains a profile on 10 review platforms — more than 300 reviews in total. The slideshow presents selected original reviews from verifiable sales.",
+      "lead": "Immonation maintains a profile on 10 review platforms — more than 300 reviews in total. The slideshow presents personal video testimonials from verifiable sales.",
       "ratingSuffix": "out of 5",
       "referenceLink": "View the sales reference",
       "reviewSource": "Google · {rating} out of 5 stars",
-      "carouselLabel": "Selected Google reviews",
-      "previousReview": "Previous review",
-      "nextReview": "Next review",
-      "reviewSlide": "Review",
+      "carouselLabel": "Selected video testimonials",
+      "previousReview": "Previous testimonial",
+      "nextReview": "Next testimonial",
+      "reviewSlide": "Testimonial",
+      "videoLabel": "Personal video interview",
       "expandReview": "Expand Google review",
       "closeReview": "Close Google review",
-      "selectionNote": "Each view connects the original screenshot to the matching sales story — including its story image, context, and result.",
+      "selectionNote": "Each view connects the personal video interview to the matching sales story — including its story image, context, and result.",
       "guideLink": "How to tell real reviews from fakes",
       "headline": {
         "platform": "Google",
@@ -2244,6 +2245,11 @@
           "alt": "Dream Living GmbH logo"
         }
       ]
+    },
+    "nextStep": {
+      "tabList": "Next step: valuation or direct contact",
+      "valuation": "Online valuation",
+      "contact": "Direct contact"
     },
     "contactBooking": {
       "eyebrow": "Contact & appointments",
@@ -2539,6 +2545,12 @@
       "text": "Knowing your instalment sharpens the search and steadies the negotiation. The mortgage calculator from our partner Dr. Klein gives you the range straight away — with daily conditions from a broad bank comparison.",
       "cta": "Explore financing",
       "disclaimer": "Non-binding orientation, not a financing offer. Binding conditions only follow once the lending bank has reviewed your documents."
+    },
+    "staging": {
+      "eyebrow": "AI visualisation & home staging",
+      "title": "Show what an empty room can become",
+      "text": "Empty or dated rooms leave buyers guessing how they could be used. With AI visualisation we show the same photograph furnished – nothing is delivered, set up, or renovated. Every visualisation is labelled and shown next to the original photograph: drag the slider to compare the two.",
+      "cta": "All {count} before-and-after examples"
     }
   },
   "SalesProcess": {
@@ -4061,13 +4073,40 @@
   "LocationsPage": {
     "metadata": {
       "title": "Real-estate agents in the Nuremberg region",
-      "description": "Local property advice and sales in Zirndorf, Nuremberg, Fürth, and Erlangen — personal and property-specific."
+      "description": "Local property advice and sales in Zirndorf, Nuremberg, Fürth, Erlangen, and Schwabach — personal and property-specific."
     },
     "eyebrow": "Our region",
     "title": "Local market knowledge starts with the neighborhood.",
     "lede": "A city name alone does not explain property value. We consider micro-location, property type, condition, and current buyer group and turn them into a reliable sales strategy.",
-    "answer": "Immonation supports owners in Zirndorf, Nuremberg, Fürth, and Erlangen with personal valuation and professional marketing. These location pages provide durable orientation without invented or outdated price claims.",
+    "answer": "Immonation supports owners in Zirndorf, Nuremberg, Fürth, Erlangen, and Schwabach with personal valuation and professional marketing. These location pages provide durable orientation without invented or outdated price claims.",
     "link": "View location",
+    "stats": {
+      "cities": "Cities with their own location page",
+      "districts": "Districts covered in detail",
+      "references": "Documented sales references",
+      "towns": "Towns with a reference property"
+    },
+    "cities": {
+      "eyebrow": "Five cities",
+      "title": "One team in Zirndorf, at home across the region."
+    },
+    "card": {
+      "headquarters": "Our home base",
+      "references": "{count, plural, one {# reference} other {# references}}",
+      "districts": "{count} districts",
+      "soldIn": "Sold in {city}"
+    },
+    "districts": {
+      "eyebrow": "Districts",
+      "title": "Every district has its own market.",
+      "count": "{count} district pages",
+      "cityLink": "All about {city}"
+    },
+    "towns": {
+      "eyebrow": "Beyond the five cities",
+      "title": "Sold across the metropolitan region.",
+      "link": "All references"
+    },
     "cta": {
       "title": "How does your property fit its local market?",
       "text": "An on-site valuation connects property characteristics with the specific micro-location and current demand.",
@@ -4209,6 +4248,12 @@
     "title": "Answers for your next property decision.",
     "lede": "From an initial sales plan to local context: find guides, FAQs, regional orientation, and reviewed resources in one place.",
     "answer": "The Immonation knowledge hub brings together content for owners, buyers, and applicants. Topic gateways lead to detailed guides, practical pages, and — once reviewed — relevant downloads.",
+    "featured": {
+      "eyebrow": "New in the guide",
+      "title": "One topic that creates clarity now",
+      "text": "Our latest focus addresses a practical question and explains what property owners should review next.",
+      "read": "Read the latest article"
+    },
     "categories": {
       "eyebrow": "Topics",
       "title": "Go straight to the right answer",
@@ -4217,37 +4262,83 @@
           "id": "selling",
           "title": "Selling property",
           "text": "Guides for houses, apartments, land, and apartment buildings.",
+          "questions": [
+            "Which preparation saves time later?",
+            "How do the different routes to sale compare?"
+          ],
           "link": "Open selling guides"
         },
         {
           "id": "valuation",
           "title": "Property valuation",
           "text": "Value factors, process, and the documents needed for a reliable assessment.",
+          "questions": [
+            "Which features influence value?",
+            "Why is the asking price not the market value?"
+          ],
           "link": "Understand valuation"
         },
         {
           "id": "buying",
           "title": "Buying property",
           "text": "Listings, search requests, financing, and the route to a suitable property.",
+          "questions": [
+            "How should I prepare my search?",
+            "Which documents do I need for financing?"
+          ],
           "link": "Explore buyer area"
         },
         {
           "id": "local",
           "title": "Region & micro-location",
           "text": "Evergreen orientation for Zirndorf, Nuremberg, Fürth, and Erlangen.",
+          "questions": [
+            "Which location factors matter long term?",
+            "What distinguishes a district from a micro-location?"
+          ],
           "link": "Compare locations"
         },
         {
           "id": "careers",
           "title": "Agent career",
           "text": "Role, collaboration, and expectations for real-estate agents at Immonation.",
+          "questions": [
+            "What does day-to-day work look like?",
+            "Which experience and mindset fit our team?"
+          ],
           "link": "Review the career path"
         },
         {
           "id": "downloads",
           "title": "Downloads & templates",
           "text": "Reviewed documents are connected to the guides where they are most useful.",
+          "questions": [
+            "Which template suits my situation?",
+            "What should I check before using it?"
+          ],
           "link": "Explore resources"
+        }
+      ]
+    },
+    "decision": {
+      "eyebrow": "Orientation",
+      "title": "From the first question to a sound decision",
+      "text": "A guide is useful when it does more than inform: it should make the next sensible step clear.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Define the situation",
+          "text": "Start by deciding whether selling, buying, valuation, or a particular life situation is central. This takes you directly to the relevant content."
+        },
+        {
+          "number": "02",
+          "title": "Gather the facts",
+          "text": "Use our guides to collect records, location factors, and open questions in a structured way — before time pressure builds."
+        },
+        {
+          "number": "03",
+          "title": "Review the specific property",
+          "text": "Do not apply general guidance to your property without checking it. Price, strategy, and legal details need an individual assessment."
         }
       ]
     },
@@ -4256,7 +4347,7 @@
       "text": "Our content prepares decisions but does not replace a review of the property, records, and personal objective. We publish market or price claims only with a reliable source and update date."
     },
     "articles": {
-      "title": "Latest articles",
+      "title": "More articles",
       "count": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
       "read": "Read article",
       "empty": "More articles are coming."
@@ -4324,7 +4415,7 @@
       "screenshotNote": "This Google review belongs to this specific sales reference.",
       "guideLink": "How to tell real reviews from fakes"
     },
-    "prototypeNote": "The figures come from the supplied reference material and are approved for this prototype. Evidence and consent remain required before public release.",
+    "prototypeNote": "The figures come from the supplied and approved reference material.",
     "allReferences": "View all references",
     "cta": {
       "title": "What could your property achieve?",
@@ -4353,7 +4444,7 @@
       "text": "Three approved sales cases with concrete metrics — from a heritage apartment to a terrace home that never went online.",
       "soldLabel": "Sold",
       "viewSold": "View all sold properties",
-      "note": "More reference properties are available in our gallery and REVIER magazine. Marketing periods and sale results are added only after documented approval.",
+      "note": "More approved reference properties, including property photography, marketing figures, and sale results, are available in the gallery and on the detailed reference pages.",
       "labels": {
         "startingPoint": "Starting point.",
         "challenge": "Challenge.",
@@ -4436,7 +4527,7 @@
     },
     "proof": {
       "title": "Selected properties from the documented reference library",
-      "text": "We intentionally show only verifiable property types, locations, and approved images. Marketing periods, enquiry figures, and sale results are added only after documented approval."
+      "text": "29 approved sales references with real property photography. For 26 documented cases, the detail pages also show enquiries, viewings, marketing period, and sale result."
     },
     "gallery": {
       "eyebrow": "29 reference properties",
@@ -5037,5 +5128,146 @@
     "quoteLabel": "Explanation by Dr. Klein",
     "sourceLabel": "Source:",
     "germanOnlyNote": "This tool is operated by Dr. Klein and its interface is German only. The figures and results are language-independent."
+  },
+  "VirtualTourPage": {
+    "metadata": {
+      "title": "Virtual viewings with a 360° tour",
+      "description": "A 360° tour for your property: buyers view it online first, so the people you meet on site are prepared. With a live example tour, the process and privacy rules."
+    },
+    "serviceType": "Virtual viewing with a 360° tour",
+    "areaServed": "Nuremberg metropolitan region",
+    "hero": {
+      "eyebrow": "Virtual viewing",
+      "title": "Fewer viewings. The right ones.",
+      "lede": "With a 360° tour, buyers walk through your property online first. Whoever then asks for an appointment already knows the layout, light and flow – and comes with the intent to buy rather than out of curiosity."
+    },
+    "answer": "A virtual viewing is a 360° tour in which buyers move through your property room by room on screen, at their own pace. At Immonation it is captured during the property survey, published only after your approval, and made available either openly or after a specific enquiry, depending on the campaign. Views and viewing time feed into buyer screening – so the people you meet on site are better prepared.",
+    "answerCta": {
+      "primary": "Start a free valuation",
+      "secondary": "View the example tour"
+    },
+    "example": {
+      "eyebrow": "Interactive example",
+      "title": "Walk through the property yourself.",
+      "text": "This tour comes from a real sale. It is not a linear video: buyers choose the direction, order and pace themselves – just as they will later explore your property.",
+      "proofLabel": "Result of this sale",
+      "requests": "Enquiries",
+      "viewings": "Viewings",
+      "weeks": "Weeks on the market",
+      "proofNote": "Figures from the marketing of this exact property.",
+      "caseLink": "View the reference"
+    },
+    "benefits": {
+      "eyebrow": "Your advantage as an owner",
+      "title": "What changes for your sale.",
+      "items": [
+        {
+          "title": "Fewer curiosity viewings",
+          "text": "People who are merely curious watch the tour and stay at home. Your appointments go to buyers who remain seriously interested after the digital walkthrough."
+        },
+        {
+          "title": "Prepared buyers on site",
+          "text": "Room sequence, proportions and flow are already familiar. The conversation on site is about condition, details and financing – not first impressions."
+        },
+        {
+          "title": "Buyers from further away",
+          "text": "People relocating for work or short on time can shortlist from anywhere, at any time of day, before planning a trip."
+        },
+        {
+          "title": "Interest becomes visible",
+          "text": "Views and viewing time show who is genuinely engaging with your property. That feeds into our buyer screening."
+        }
+      ]
+    },
+    "voices": {
+      "eyebrow": "Client reviews",
+      "title": "What sellers say about the tour.",
+      "intro": "Two Google reviews in which owners explicitly mention the virtual tour. They are shown in the original German, unedited: the sentence about the tour is highlighted, the full text is under “Read the full review”.",
+      "rating": "{rating} out of 5 stars on Google · {count} reviews",
+      "stars": "{rating} out of 5 stars",
+      "fullReview": "Read the full review",
+      "source": "Google review, original in German",
+      "allReviews": "See all reviews"
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "From the survey appointment to a targeted viewing.",
+      "intro": "The tour is not an afterthought but part of the property survey – agreed with you and visible only after your approval.",
+      "steps": [
+        {
+          "title": "On-site capture",
+          "text": "The tour is captured during the property survey, together with photographs and floor plans. We agree camera positions and excluded areas with you beforehand."
+        },
+        {
+          "title": "Review and approval",
+          "text": "Personal items, visible documents, reflections and sensitive areas are reviewed. Nothing is published until you have approved the tour."
+        },
+        {
+          "title": "Targeted access",
+          "text": "Depending on the campaign, the tour appears openly in the brochure or is shared only after a specific enquiry."
+        },
+        {
+          "title": "Viewing with a shortlist",
+          "text": "Views and viewing time feed into buyer screening. On site, you meet buyers who already know your property."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Your privacy",
+      "title": "Clear boundaries for your home.",
+      "text": "A tour shows how you live. That is why you decide what can be seen – and who can see it.",
+      "rulesLabel": "What you can rely on",
+      "rules": [
+        "Only rooms and areas you approve are captured.",
+        "Personal items, documents, photographs and reflections are removed, concealed or excluded before capture.",
+        "Nothing is published until you approve it.",
+        "Whether the tour appears openly in the brochure or only after an enquiry is agreed together.",
+        "The tour complements an in-person viewing – it does not replace it."
+      ]
+    },
+    "related": {
+      "eyebrow": "Related",
+      "title": "One part of the marketing",
+      "text": "The tour comes from the same survey as the photographs, floor plans and property video – and works best once price and target audience are clear.",
+      "valuation": "Free valuation",
+      "staging": "AI visualisation & home staging",
+      "video": "Video marketing",
+      "floorPlans": "Floor plans & living area"
+    },
+    "faq": {
+      "title": "Frequently asked questions about virtual viewings",
+      "items": [
+        {
+          "question": "What is a virtual viewing?",
+          "answer": "A 360° tour in which buyers move freely through the property on screen – room by room, choosing their own direction and pace. Unlike a video, it follows no fixed sequence."
+        },
+        {
+          "question": "Does the tour replace an in-person viewing?",
+          "answer": "No. It improves shortlisting. Condition, noise, surroundings and neighbourhood can only be judged on site – which is why an in-person viewing remains part of every sale."
+        },
+        {
+          "question": "Who can see the tour?",
+          "answer": "We decide that together: openly in the brochure or selectively after a specific enquiry. Only areas you approve are captured."
+        },
+        {
+          "question": "What happens to personal items?",
+          "answer": "Sensitive information such as documents, family photographs or reflections is removed, concealed or excluded from capture beforehand."
+        },
+        {
+          "question": "When is a tour especially worthwhile?",
+          "answer": "For occupied homes where you want to keep appointments to a minimum, for complex layouts or several floors, and when buyers are likely to travel from further away."
+        },
+        {
+          "question": "How do I get started?",
+          "answer": "With a free valuation or an initial consultation. We clarify price, target audience and which media – photographs, floor plans, tour, video – make sense for your property."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for buyers who know what to expect?",
+      "text": "We clarify the value, target audience and right presentation for your property – personally and without obligation.",
+      "primary": "Start a free valuation",
+      "secondary": "Book an initial consultation"
+    }
   }
 }

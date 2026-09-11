@@ -83,6 +83,7 @@ export type ClaimId =
   | 'price-atlas:rows'
   | 'land-value:rows'
   | 'locations:city-hubs'
+  | 'buyer-search:profiles'
   // Trust and volume claims (several remain open under TODO.md P0)
   | 'trust:google-rating'
   | 'trust:buyer-network'
@@ -128,6 +129,19 @@ export const CLAIM_REGISTRY: Record<ClaimId, Provenance> = {
     note:
       'Only the per-city context and focuses are hand-written; titles, sections and FAQs are one ' +
       'template with the city name interpolated. Pages remain indexed pending real local content.',
+  },
+  'buyer-search:profiles': {
+    owner: 'content',
+    // `provisional`: bewusst veröffentlicht, aber nicht auf einzelne OnOffice-Datensätze
+    // zurückgeführt. Das Ablaufdatum erzwingt eine Aktualisierung — Suchaufträge veralten schnell.
+    state: 'provisional',
+    checkedAt: '2026-09-11',
+    expiresAt: '2026-12-31',
+    note:
+      'The 36 anonymised search profiles on /suchkunden (and on every district page) were confirmed ' +
+      'for publication as real profiles by the project owner on 2026-09-11. They are not traced to ' +
+      'individual OnOffice records; budgets are checked against price-atlas medians. Refresh from ' +
+      'OnOffice search requests before the expiry date.',
   },
   'trust:google-rating': {
     owner: 'content',

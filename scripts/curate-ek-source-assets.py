@@ -63,7 +63,11 @@ def classify(
         return "curated", f"assets/media-library/downloads/handover-templates/{label}.pdf", "Public download candidate; review branding and legal wording before launch."
 
     if top == "Patent Immonation" and extension == ".pdf":
-        return "retained-source-only", "docs/source-material/originals/legal/euipo-immonation-trademark-certificate.pdf", "Legal evidence; intentionally not public."
+        return (
+            "retained-source-only",
+            "assets/Zertifikat Marke Immonation.PDF",
+            "Legal evidence; keep only in gitignored assets/. Never a public download.",
+        )
 
     if top == "Logos Immonation":
         logo_names = {

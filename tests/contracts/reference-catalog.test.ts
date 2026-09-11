@@ -54,7 +54,7 @@ describe('reference-object trust system', () => {
         expect(asset.width).toBeGreaterThan(0)
         expect(asset.height).toBeGreaterThan(0)
       }
-      expect(reference.publication.metricsApproved).toBe(false)
+      expect(reference.publication.metricsApproved).toBe(Boolean(reference.metrics))
       expect(reference.provenance.notes).not.toMatch(/publish/i)
       expect(reference.title.de).not.toMatch(/straße|str\.?\s*\d+/i)
       expect(reference.title.en).not.toMatch(/street|str\.?\s*\d+/i)
@@ -70,6 +70,23 @@ describe('reference-object trust system', () => {
       })
       expect(publicCopy).not.toContain('X')
       expect(publicCopy).not.toMatch(/\b\d{1,4}\s+(straße|str\.|street)\b/i)
+    }
+  })
+
+  it('publishes every confirmed metric set without placeholders', () => {
+    const referencesWithMetrics = listAllReferences().filter((reference) => reference.metrics)
+
+    expect(referencesWithMetrics).toHaveLength(26)
+    for (const reference of referencesWithMetrics) {
+      const resultValue = reference.metrics?.resultValue
+      if (!resultValue) throw new Error(`Missing sale result for ${reference.id}`)
+
+      expect(reference.metrics?.approved).toBe(true)
+      expect(reference.metrics?.requests).toMatch(/^\d+$/)
+      expect(reference.metrics?.viewings).toMatch(/^\d+$/)
+      expect(reference.metrics?.duration).toMatch(/^\d+(\.\d+)?$/)
+      expect(resultValue.de).not.toMatch(/\bX\b|__/)
+      expect(resultValue.en).not.toMatch(/\bX\b|__/)
     }
   })
 

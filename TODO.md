@@ -37,6 +37,11 @@ items below remain open.
 - [ ] Reconcile and date every numerical claim, especially the Google rating/review count, 8,000+
   buyer network, 40 versus 60+ annual sales, 30 million euro transaction volume, marketing duration,
   and reference outcomes. Remove any claim that cannot be evidenced.
+- [ ] Keep the 36 buyer search profiles on `/suchkunden` and the district pages current
+  (`src/lib/content/buyer-profile-records/`). Published as real profiles on the project owner's
+  confirmation (2026-09-11), not traced to individual OnOffice records; `buyer-search:profiles` in
+  `provenance.ts` expires 2026-12-31. Refresh from OnOffice search requests once that integration
+  lands, and keep every district covered (`tests/contracts/buyer-profiles.test.ts`).
 - [ ] Obtain written publication permission for every testimonial, review screenshot, customer or
   property image/video, sold-property case, partner logo, award, athlete/child image, and AI
   visualization. Record approved location precision and metrics per reference.

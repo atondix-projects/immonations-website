@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { getCatalogPage, type CatalogPageId } from '@/content/catalog-pages'
 
 const scopedIds: CatalogPageId[] = [
+  'buyer-search',
   'warning-signs',
   'selling-situations',
   'virtual-tour',

@@ -337,9 +337,15 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
-test('PDF-W-02 does not serve the former certificate URL', async ({ request }) => {
-  const response = await request.get('/downloads/Zertifikat-Marke-Immonation.pdf')
-  expect(response.status()).toBe(404)
+test('PDF-W-02 does not serve former certificate URLs', async ({ request }) => {
+  for (const path of [
+    '/downloads/Zertifikat-Marke-Immonation.pdf',
+    '/Zertifikat-Marke-Immonation.pdf',
+    '/docs/source-material/originals/legal/euipo-immonation-trademark-certificate.pdf',
+  ]) {
+    const response = await request.get(path)
+    expect(response.status(), path).toBe(404)
+  }
 })
 
 const METADATA_SAMPLE = [
@@ -487,6 +493,14 @@ for (const viewport of VIEWPORTS) {
     await expect(page.locator('body')).toContainText(
       'basierend auf Vermittlungsdaten der Immonation',
     )
+    await expect(page.locator('[data-market-interpretation] article')).toHaveCount(3)
+    await expect(page.locator('[data-market-overview-factor]')).toHaveCount(6)
+    await expect(
+      page.getByRole('heading', { name: 'Vom Marktüberblick zur belastbaren Preisstrategie' }),
+    ).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: 'Ausführlichen Marktbericht öffnen' }),
+    ).toBeVisible()
     await expect(page.locator('body')).not.toContainText(/Stand:? September(?: 2026)?/i)
     await expect(page.locator('[data-site-footer]')).toHaveCount(1)
 

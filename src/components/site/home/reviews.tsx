@@ -5,13 +5,14 @@ import { Link } from '@/i18n/navigation'
 import { REAL_REVIEWS_POST_SLUG } from '@/lib/content/blog'
 import { MAKLER_SIEGER_PROFILE } from '@/lib/content/review-portals'
 import {
+  testimonialCoverClass,
   testimonialImage,
-  testimonialReview,
+  testimonialVideo,
   type TestimonialId,
   type TestimonialStory,
 } from '@/lib/content/testimonials'
 import { AnimatedNumber } from '@/components/site/animated-number'
-import { ReviewRotator, type ReviewScreenshot } from './review-rotator'
+import { ReviewRotator, type TestimonialVideoSlide } from './review-rotator'
 import { GOOGLE_PROFILE, ReviewPortalGrid, type ReviewPortal } from './review-portals'
 import { CONTAINER, SECTION_LINK, SectionHeader } from './section-shell'
 
@@ -21,44 +22,36 @@ type FeedbackVoice = {
   id: TestimonialId
   name: string
   title: string
-  alt: string
   available: boolean
 }
 
-function getReviewScreenshots(
-  stories: TestimonialStory[],
-  voices: FeedbackVoice[],
-  language: 'de' | 'en',
-) {
+function getVideoTestimonials(stories: TestimonialStory[], voices: FeedbackVoice[]) {
   return voices.flatMap((voice) => {
-    const review = testimonialReview(voice.id)
-    if (!review) return []
+    const video = testimonialVideo(voice.id)
+    if (!voice.available || !video) return []
     const story = stories.find((item) => item.id === voice.id)
 
     return [
       {
-        src: review.screenshot.src,
-        alt: review.screenshot.alt[language],
-        width: review.screenshot.width,
-        height: review.screenshot.height,
-        rating: review.rating,
+        video,
+        poster: testimonialImage(voice.id),
+        posterClassName: testimonialCoverClass(voice.id),
         story: {
           name: story?.name ?? voice.name,
           context: story?.context ?? voice.title,
           quote: story?.quote,
           result: story?.result,
-          image: testimonialImage(voice.id),
-          imageAlt: story?.alt ?? voice.alt,
         },
       },
     ]
-  }) satisfies ReviewScreenshot[]
+  }) satisfies TestimonialVideoSlide[]
 }
 
 export async function Reviews({ compact = false }: { compact?: boolean }) {
   const t = await getTranslations('Home.reviews')
   const tTestimonials = await getTranslations('Testimonials')
   const tFeedback = await getTranslations('Home.feedback')
+  const tVideo = await getTranslations('VideoDialog')
   const locale = await getLocale()
   const language = locale === 'en' ? 'en' : 'de'
   const headline = t.raw('headline') as Headline
@@ -69,7 +62,7 @@ export async function Reviews({ compact = false }: { compact?: boolean }) {
     : portals
   const testimonialItems = tTestimonials.raw('items') as TestimonialStory[]
   const feedbackItems = tFeedback.raw('items') as FeedbackVoice[]
-  const screenshots = getReviewScreenshots(testimonialItems, feedbackItems, language)
+  const videoTestimonials = getVideoTestimonials(testimonialItems, feedbackItems)
 
   return (
     <section
@@ -178,18 +171,21 @@ export async function Reviews({ compact = false }: { compact?: boolean }) {
           </div>
         </div>
 
-        {/* Original Google profiles rotate like the approved prototype. */}
+        {/* Playable interviews rotate with their matching documented sale stories. */}
         <div className="mt-14 md:mt-16">
           <ReviewRotator
-            screenshots={screenshots}
+            slides={videoTestimonials}
             labels={{
               carousel: t('carouselLabel'),
               previous: t('previousReview'),
               next: t('nextReview'),
               slide: t('reviewSlide'),
-              expand: t('expandReview'),
-              close: t('closeReview'),
+              video: t('videoLabel'),
+              play: tVideo('play'),
+              close: tVideo('close'),
+              transcript: tVideo('transcript'),
             }}
+            fallback={tTestimonials('videoFallback')}
           />
         </div>
         <p className="text-muted-foreground mt-4 max-w-[62ch] text-xs leading-relaxed text-pretty">

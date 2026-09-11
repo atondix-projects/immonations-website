@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import {
+  ArrowRight,
   ArrowUpRight,
   BriefcaseBusiness,
   Calculator,
@@ -52,6 +53,13 @@ type KnowledgeCategory = {
   title: string
   text: string
   link: string
+  questions: string[]
+}
+
+type DecisionStep = {
+  number: string
+  title: string
+  text: string
 }
 
 export async function generateMetadata({
@@ -81,10 +89,13 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
   const dateFmt = new Intl.DateTimeFormat(locale, { dateStyle: 'long' })
   const blogPath = localizePath('/blog', locale)
   const categories = t.raw('categories.items') as KnowledgeCategory[]
+  const decisionSteps = t.raw('decision.items') as DecisionStep[]
   const faq = t.raw('faq.items') as FaqItem[]
+  const featuredPost = posts[0]
+  const remainingPosts = posts.slice(1)
 
   return (
-    <main className="bg-background">
+    <div className="bg-background">
       <JsonLd
         data={[
           breadcrumbList([
@@ -103,7 +114,57 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {featuredPost ? (
+        <section className="py-16 md:py-24">
+          <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
+            <div className="grid overflow-hidden bg-neutral-950 text-white lg:grid-cols-[0.78fr_1.22fr]">
+              <div className="border-b border-white/15 p-7 lg:border-r lg:border-b-0 lg:p-10">
+                <p className="text-brand-300 text-[11px] font-semibold tracking-[0.18em] uppercase">
+                  {t('featured.eyebrow')}
+                </p>
+                <p className="mt-8 max-w-[28ch] font-serif text-3xl leading-[1.08] font-medium text-balance md:text-[2.5rem]">
+                  {t('featured.title')}
+                </p>
+                <p className="mt-5 max-w-[42ch] text-sm leading-7 text-pretty text-white/65">
+                  {t('featured.text')}
+                </p>
+              </div>
+              <article className="flex flex-col p-7 lg:p-10">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/55">
+                  <time dateTime={featuredPost.date}>
+                    {dateFmt.format(new Date(featuredPost.date))}
+                  </time>
+                  {featuredPost.tags?.slice(0, 3).map((tag) => (
+                    <span key={tag} className="border-l border-white/20 pl-5">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="mt-7 max-w-[22ch] font-serif text-4xl leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-5xl">
+                  <Link
+                    href={{ pathname: '/blog/[slug]', params: { slug: featuredPost.slug } }}
+                    className="transition-colors hover:text-white/75"
+                  >
+                    {featuredPost.title}
+                  </Link>
+                </h2>
+                <p className="mt-5 max-w-[62ch] text-[15px] leading-7 text-pretty text-white/70">
+                  {featuredPost.description}
+                </p>
+                <Link
+                  href={{ pathname: '/blog/[slug]', params: { slug: featuredPost.slug } }}
+                  className="text-brand-300 mt-10 inline-flex min-h-11 w-fit items-center gap-3 text-sm font-semibold transition-colors hover:text-white"
+                >
+                  {t('featured.read')}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </article>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="border-border border-t py-16 md:py-20">
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
           <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
             {t('categories.eyebrow')}
@@ -133,6 +194,16 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
                     <p className="text-muted-foreground mt-3 text-sm leading-[1.65] text-pretty">
                       {category.text}
                     </p>
+                    <ul className="text-muted-foreground mt-5 space-y-2 text-sm leading-6">
+                      {category.questions.map((question) => (
+                        <li key={question} className="flex gap-3">
+                          <span className="text-primary" aria-hidden="true">
+                            —
+                          </span>
+                          <span>{question}</span>
+                        </li>
+                      ))}
+                    </ul>
                     <span className="text-primary mt-auto pt-7 text-sm font-semibold">
                       {category.link}
                     </span>
@@ -141,6 +212,36 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
               )
             })}
           </ul>
+        </div>
+      </section>
+
+      <section className="border-border bg-muted/45 border-y py-16 md:py-24">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-12 px-6 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 lg:px-10">
+          <div>
+            <p className="text-primary text-[12px] font-semibold tracking-[0.16em] uppercase">
+              {t('decision.eyebrow')}
+            </p>
+            <h2 className="mt-3 max-w-[14ch] font-serif text-3xl font-semibold text-balance md:text-[40px]">
+              {t('decision.title')}
+            </h2>
+            <p className="text-muted-foreground mt-5 max-w-[44ch] leading-7 text-pretty">
+              {t('decision.text')}
+            </p>
+          </div>
+          <ol className="border-border border-t">
+            {decisionSteps.map((step) => (
+              <li
+                key={step.number}
+                className="border-border grid gap-4 border-b py-7 sm:grid-cols-[3rem_0.72fr_1.28fr] sm:gap-6"
+              >
+                <span className="text-primary font-mono text-xs font-semibold tabular-nums">
+                  {step.number}
+                </span>
+                <h3 className="font-serif text-xl font-semibold text-balance">{step.title}</h3>
+                <p className="text-muted-foreground text-sm leading-7 text-pretty">{step.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -160,11 +261,11 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
               {t('articles.title')}
             </h2>
             <span className="text-muted-foreground text-sm tabular-nums">
-              {t('articles.count', { count: posts.length })}
+              {t('articles.count', { count: remainingPosts.length })}
             </span>
           </div>
           <ul className="divide-border divide-y border-y">
-            {posts.map((post) => (
+            {remainingPosts.map((post) => (
               <li key={post.slug}>
                 <article className="grid gap-4 py-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-10">
                   <div>
@@ -194,7 +295,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
                 </article>
               </li>
             ))}
-            {posts.length === 0 ? (
+            {remainingPosts.length === 0 ? (
               <li className="text-muted-foreground py-8">{t('articles.empty')}</li>
             ) : null}
           </ul>
@@ -202,6 +303,6 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
       </section>
 
       <FaqSection title={t('faq.title')} items={faq} />
-    </main>
+    </div>
   )
 }

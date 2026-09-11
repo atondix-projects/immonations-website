@@ -1999,17 +1999,18 @@
     "reviews": {
       "eyebrow": "Bewertungen",
       "title": "Ausgewählte Stimmen zu echten Verkäufen",
-      "lead": "Immonation ist auf 10 Bewertungsportalen mit einem eigenen Profil vertreten — zusammen über 300 Bewertungen. Die Diashow zeigt ausgewählte Originalstimmen aus nachprüfbaren Verkäufen.",
+      "lead": "Immonation ist auf 10 Bewertungsportalen mit einem eigenen Profil vertreten — zusammen über 300 Bewertungen. Die Diashow zeigt persönliche Video-Stimmen aus nachprüfbaren Verkäufen.",
       "ratingSuffix": "von 5",
       "referenceLink": "Zur Verkaufsreferenz",
       "reviewSource": "Google · {rating} von 5 Sternen",
-      "carouselLabel": "Ausgewählte Google-Bewertungen",
-      "previousReview": "Vorherige Bewertung",
-      "nextReview": "Nächste Bewertung",
-      "reviewSlide": "Bewertung",
+      "carouselLabel": "Ausgewählte Video-Kundenstimmen",
+      "previousReview": "Vorherige Kundenstimme",
+      "nextReview": "Nächste Kundenstimme",
+      "reviewSlide": "Kundenstimme",
+      "videoLabel": "Persönliches Video-Interview",
       "expandReview": "Google-Bewertung vergrößern",
       "closeReview": "Google-Bewertung schließen",
-      "selectionNote": "Jede Ansicht verbindet den Original-Screenshot mit der passenden Verkaufsgeschichte — inklusive Story-Bild, Kontext und Ergebnis.",
+      "selectionNote": "Jede Ansicht verbindet das persönliche Video-Interview mit der passenden Verkaufsgeschichte — inklusive Story-Bild, Kontext und Ergebnis.",
       "guideLink": "So erkennen Sie echte von gefälschten Bewertungen",
       "headline": {
         "platform": "Google",
@@ -2251,6 +2252,11 @@
           "alt": "Logo der Dream Living GmbH"
         }
       ]
+    },
+    "nextStep": {
+      "tabList": "Nächster Schritt: Bewertung oder direkter Kontakt",
+      "valuation": "Online-Bewertung",
+      "contact": "Direkter Kontakt"
     },
     "contactBooking": {
       "eyebrow": "Kontakt & Termin",
@@ -2546,6 +2552,12 @@
       "text": "Wer seine Rate kennt, sucht gezielter und verhandelt ruhiger. Der Bauzinsrechner unseres Partners Dr. Klein liefert die Größenordnung sofort — mit tagesaktuellen Konditionen aus einem breiten Bankenvergleich.",
       "cta": "Zur Finanzierung",
       "disclaimer": "Unverbindliche Orientierung, kein Finanzierungsangebot. Verbindliche Konditionen ergeben sich erst nach Prüfung Ihrer Unterlagen durch die finanzierende Bank."
+    },
+    "staging": {
+      "eyebrow": "KI-Visualisierung & Home Staging",
+      "title": "Zeigen, was in einem leeren Raum steckt",
+      "text": "Leere oder in die Jahre gekommene Räume lassen offen, wie sie sich nutzen lassen. Mit KI-Visualisierung zeigen wir dieselbe Aufnahme eingerichtet – ohne dass etwas geliefert, aufgebaut oder renoviert wird. Jede Visualisierung ist gekennzeichnet und steht neben dem Originalfoto: Ziehen Sie den Regler, um beide zu vergleichen.",
+      "cta": "Alle {count} Vorher-Nachher-Beispiele"
     }
   },
   "SalesProcess": {
@@ -4068,13 +4080,40 @@
   "LocationsPage": {
     "metadata": {
       "title": "Immobilienmakler in der Region Nürnberg",
-      "description": "Lokale Immobilienberatung und Immobilienverkauf in Zirndorf, Nürnberg, Fürth und Erlangen — persönlich und objektbezogen."
+      "description": "Lokale Immobilienberatung und Immobilienverkauf in Zirndorf, Nürnberg, Fürth, Erlangen und Schwabach — persönlich und objektbezogen."
     },
     "eyebrow": "Unsere Region",
     "title": "Lokale Marktkenntnis beginnt im Quartier.",
     "lede": "Ein Stadtname erklärt noch keinen Immobilienwert. Wir betrachten Mikrolage, Objektart, Zustand und aktuelle Zielgruppe und leiten daraus eine belastbare Verkaufsstrategie ab.",
-    "answer": "Immonation begleitet Eigentümer in Zirndorf, Nürnberg, Fürth und Erlangen mit persönlicher Bewertung und professioneller Vermarktung. Die Regionsseiten liefern eine dauerhafte Orientierung — ohne erfundene oder veraltete Preisangaben.",
+    "answer": "Immonation begleitet Eigentümer in Zirndorf, Nürnberg, Fürth, Erlangen und Schwabach mit persönlicher Bewertung und professioneller Vermarktung. Die Regionsseiten liefern eine dauerhafte Orientierung — ohne erfundene oder veraltete Preisangaben.",
     "link": "Region ansehen",
+    "stats": {
+      "cities": "Städte mit eigener Regionsseite",
+      "districts": "Stadtteile im Detail",
+      "references": "Dokumentierte Verkaufsreferenzen",
+      "towns": "Orte mit Referenzobjekt"
+    },
+    "cities": {
+      "eyebrow": "Fünf Städte",
+      "title": "Ein Team in Zirndorf, zu Hause in der ganzen Region."
+    },
+    "card": {
+      "headquarters": "Unser Sitz",
+      "references": "{count, plural, one {# Referenz} other {# Referenzen}}",
+      "districts": "{count} Stadtteile",
+      "soldIn": "Verkauft in {city}"
+    },
+    "districts": {
+      "eyebrow": "Stadtteile",
+      "title": "Jeder Stadtteil hat seinen eigenen Markt.",
+      "count": "{count} Stadtteilseiten",
+      "cityLink": "Alles zu {city}"
+    },
+    "towns": {
+      "eyebrow": "Über die fünf Städte hinaus",
+      "title": "Verkauft in der ganzen Metropolregion.",
+      "link": "Alle Referenzen"
+    },
     "cta": {
       "title": "Wie ist Ihre Immobilie lokal einzuordnen?",
       "text": "Eine Vor-Ort-Bewertung verbindet Objektmerkmale mit der konkreten Mikrolage und aktuellen Nachfrage.",
@@ -4216,6 +4255,12 @@
     "title": "Antworten für die nächste Immobilienentscheidung.",
     "lede": "Vom ersten Verkaufsplan bis zur lokalen Einordnung: Finden Sie Leitfäden, FAQ, regionale Orientierung und geprüfte Ressourcen an einem Ort.",
     "answer": "Der Immonation Wissensbereich bündelt Inhalte für Eigentümer, Käufer und Bewerber. Einstiegspunkte führen direkt zu vertiefenden Leitfäden, konkreten Seiten und — sobald geprüft — passenden Downloads.",
+    "featured": {
+      "eyebrow": "Neu im Ratgeber",
+      "title": "Ein Thema, das jetzt Klarheit schafft",
+      "text": "Unser aktueller Schwerpunkt greift eine konkrete Frage aus der Praxis auf und ordnet ein, was Eigentümer als Nächstes prüfen sollten.",
+      "read": "Aktuellen Beitrag lesen"
+    },
     "categories": {
       "eyebrow": "Themen",
       "title": "Direkt zur passenden Antwort",
@@ -4224,37 +4269,83 @@
           "id": "selling",
           "title": "Immobilie verkaufen",
           "text": "Leitfäden für Haus, Wohnung, Grundstück und Mehrfamilienhaus.",
+          "questions": [
+            "Welche Vorbereitung spart später Zeit?",
+            "Wie unterscheiden sich die Verkaufswege?"
+          ],
           "link": "Verkaufswissen öffnen"
         },
         {
           "id": "valuation",
           "title": "Immobilienbewertung",
           "text": "Wertfaktoren, Ablauf und die Unterlagen für eine belastbare Einschätzung.",
+          "questions": [
+            "Welche Merkmale beeinflussen den Wert?",
+            "Warum ist der Angebotspreis nicht der Marktwert?"
+          ],
           "link": "Bewertung verstehen"
         },
         {
           "id": "buying",
           "title": "Immobilie kaufen",
           "text": "Angebote, Suchanfrage, Finanzierung und der Weg zur passenden Immobilie.",
+          "questions": [
+            "Wie bereite ich meine Suche sinnvoll vor?",
+            "Welche Unterlagen brauche ich für die Finanzierung?"
+          ],
           "link": "Käuferbereich ansehen"
         },
         {
           "id": "local",
           "title": "Region & Mikrolage",
           "text": "Evergreen-Orientierung für Zirndorf, Nürnberg, Fürth und Erlangen.",
+          "questions": [
+            "Welche Lagefaktoren zählen langfristig?",
+            "Was unterscheidet Stadtteil und Mikrolage?"
+          ],
           "link": "Regionen vergleichen"
         },
         {
           "id": "careers",
           "title": "Makler-Karriere",
           "text": "Rolle, Zusammenarbeit und Erwartungen für Immobilienmakler bei Immonation.",
+          "questions": [
+            "Wie sieht der Arbeitsalltag aus?",
+            "Welche Erfahrung und Haltung passen zu uns?"
+          ],
           "link": "Karriereweg prüfen"
         },
         {
           "id": "downloads",
           "title": "Downloads & Vorlagen",
           "text": "Geprüfte Unterlagen werden thematisch mit den passenden Leitfäden verbunden.",
+          "questions": [
+            "Welche Vorlage passt zu meinem Vorhaben?",
+            "Was sollte ich vor der Nutzung prüfen?"
+          ],
           "link": "Ressourcen ansehen"
+        }
+      ]
+    },
+    "decision": {
+      "eyebrow": "Orientierung",
+      "title": "Von der ersten Frage zur belastbaren Entscheidung",
+      "text": "Ein Ratgeber ist dann hilfreich, wenn er nicht nur informiert, sondern den nächsten sinnvollen Schritt sichtbar macht.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Situation einordnen",
+          "text": "Klären Sie zuerst, ob Verkauf, Kauf, Bewertung oder eine besondere Lebenssituation im Mittelpunkt steht. So landen Sie direkt bei den relevanten Inhalten."
+        },
+        {
+          "number": "02",
+          "title": "Fakten zusammentragen",
+          "text": "Nutzen Sie unsere Leitfäden, um Unterlagen, Lagefaktoren und offene Fragen strukturiert zu sammeln — bevor Zeitdruck entsteht."
+        },
+        {
+          "number": "03",
+          "title": "Objektbezogen prüfen",
+          "text": "Übertragen Sie allgemeines Wissen nicht ungeprüft auf Ihre Immobilie. Preis, Strategie und rechtliche Details brauchen eine individuelle Einordnung."
         }
       ]
     },
@@ -4263,7 +4354,7 @@
       "text": "Unsere Inhalte bereiten Entscheidungen vor, ersetzen aber keine Prüfung von Objekt, Unterlagen und persönlichem Ziel. Markt- oder Preisangaben veröffentlichen wir nur mit belastbarer Quelle und Aktualitätsangabe."
     },
     "articles": {
-      "title": "Aktuelle Beiträge",
+      "title": "Weitere Beiträge",
       "count": "{count, plural, =0 {Keine Beiträge} one {# Beitrag} other {# Beiträge}}",
       "read": "Beitrag lesen",
       "empty": "Weitere Beiträge folgen."
@@ -4331,7 +4422,7 @@
       "screenshotNote": "Diese Google-Bewertung gehört zu genau dieser Verkaufsreferenz.",
       "guideLink": "So erkennen Sie echte von gefälschten Bewertungen"
     },
-    "prototypeNote": "Die Kennzahlen stammen aus den bereitgestellten Referenzunterlagen und sind für diesen Prototyp freigegeben. Vor einer öffentlichen Veröffentlichung bleiben Nachweis und Zustimmung erforderlich.",
+    "prototypeNote": "Die Kennzahlen stammen aus den bereitgestellten und freigegebenen Referenzunterlagen.",
     "allReferences": "Alle Referenzen ansehen",
     "cta": {
       "title": "Was könnte Ihre Immobilie erreichen?",
@@ -4360,7 +4451,7 @@
       "text": "Drei freigegebene Verkaufsfälle mit konkreten Kennzahlen – von der Denkmalwohnung bis zur Terrassenwohnung, die nie online ging.",
       "soldLabel": "Verkauft",
       "viewSold": "Alle verkauften Objekte ansehen",
-      "note": "Weitere Referenzobjekte finden Sie in unserer Objektgalerie und im REVIER-Magazin. Vermarktungsdauer und Verkaufsergebnisse ergänzen wir erst nach dokumentierter Freigabe.",
+      "note": "Weitere freigegebene Referenzobjekte mit Objektfotos, Vermarktungskennzahlen und Verkaufsergebnissen finden Sie in der Galerie und den ausführlichen Referenzseiten.",
       "labels": {
         "startingPoint": "Ausgangslage.",
         "challenge": "Herausforderung.",
@@ -4443,7 +4534,7 @@
     },
     "proof": {
       "title": "Ausgewählte Immobilien aus dem vorhandenen Referenzbestand",
-      "text": "Wir zeigen bewusst nur belegbare Objektarten, Orte und freigegebene Bilder. Vermarktungsdauer, Nachfragezahlen und Verkaufsergebnisse ergänzen wir erst nach dokumentierter Freigabe."
+      "text": "29 freigegebene Verkaufsreferenzen mit echten Objektfotos. Für 26 dokumentierte Fälle zeigen die Detailseiten zusätzlich Anfragen, Besichtigungen, Vermarktungsdauer und Verkaufsergebnis."
     },
     "gallery": {
       "eyebrow": "29 Referenzobjekte",
@@ -5044,5 +5135,146 @@
     "quoteLabel": "Erläuterung von Dr. Klein",
     "sourceLabel": "Quelle:",
     "germanOnlyNote": "Dieses Werkzeug wird von Dr. Klein betrieben und ist nur auf Deutsch verfügbar."
+  },
+  "VirtualTourPage": {
+    "metadata": {
+      "title": "Virtuelle Besichtigung per 360°-Rundgang",
+      "description": "360°-Rundgang für Ihre Immobilie: Interessenten besichtigen zuerst digital, vor Ort treffen Sie vorbereitete Käufer. Mit Beispiel-Rundgang, Ablauf und Datenschutz."
+    },
+    "serviceType": "Virtuelle Besichtigung per 360°-Rundgang",
+    "areaServed": "Metropolregion Nürnberg",
+    "hero": {
+      "eyebrow": "Virtuelle Besichtigung",
+      "title": "Weniger Besichtigungen. Dafür die richtigen.",
+      "lede": "Mit einem 360°-Rundgang gehen Interessenten zuerst digital durch Ihre Immobilie. Wer danach einen Termin anfragt, kennt Raumaufteilung, Licht und Wege – und kommt mit Kaufabsicht statt aus Neugier."
+    },
+    "answer": "Eine virtuelle Besichtigung ist ein 360°-Rundgang, in dem sich Interessenten am Bildschirm Raum für Raum selbst durch Ihre Immobilie bewegen. Bei Immonation entsteht er bei der Objektaufnahme, wird erst nach Ihrer Freigabe veröffentlicht und passend zur Vermarktung offen oder nach einer konkreten Anfrage bereitgestellt. Zugriffe und Betrachtungsdauer fließen in die Käuferprüfung ein – vor Ort treffen Sie besser vorbereitete Interessenten.",
+    "answerCta": {
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Beispiel-Rundgang ansehen"
+    },
+    "example": {
+      "eyebrow": "Interaktives Beispiel",
+      "title": "Gehen Sie selbst durch die Immobilie.",
+      "text": "Dieser Rundgang stammt aus einer echten Vermarktung. Er ist kein lineares Video: Interessenten bestimmen Blickrichtung, Reihenfolge und Tempo selbst – so, wie sie später auch Ihre Immobilie erkunden.",
+      "proofLabel": "Ergebnis dieser Vermarktung",
+      "requests": "Anfragen",
+      "viewings": "Besichtigungen",
+      "weeks": "Wochen Vermarktung",
+      "proofNote": "Kennzahlen aus der Vermarktung genau dieses Objekts.",
+      "caseLink": "Referenzfall ansehen"
+    },
+    "benefits": {
+      "eyebrow": "Ihr Vorteil als Eigentümer",
+      "title": "Was sich für Ihren Verkauf ändert.",
+      "items": [
+        {
+          "title": "Weniger Besichtigungstourismus",
+          "text": "Wer nur neugierig ist, schaut sich den Rundgang an und bleibt zu Hause. Ihre Termine gehören Interessenten, die nach dem digitalen Rundgang weiter ernsthaft interessiert sind."
+        },
+        {
+          "title": "Vorbereitete Käufer vor Ort",
+          "text": "Raumfolge, Proportionen und Wege sind bereits bekannt. Das Gespräch vor Ort dreht sich um Zustand, Details und Finanzierung – nicht um den ersten Eindruck."
+        },
+        {
+          "title": "Käufer von weiter weg",
+          "text": "Wer beruflich umzieht oder wenig Zeit hat, kann ortsunabhängig und zu jeder Tageszeit vorauswählen, bevor eine Anreise geplant wird."
+        },
+        {
+          "title": "Interesse wird sichtbar",
+          "text": "Zugriffe und Betrachtungsdauer zeigen, wer sich wirklich mit Ihrer Immobilie beschäftigt. Das fließt in unsere Vorqualifizierung ein."
+        }
+      ]
+    },
+    "voices": {
+      "eyebrow": "Kundenstimmen",
+      "title": "Was Verkäufer über den Rundgang sagen.",
+      "intro": "Zwei Google-Bewertungen, in denen Eigentümer den virtuellen Rundgang ausdrücklich erwähnen. Hervorgehoben ist der Satz zum Rundgang, der vollständige Wortlaut steht unter „Ganze Bewertung lesen“.",
+      "rating": "{rating} von 5 Sternen bei Google · {count} Bewertungen",
+      "stars": "{rating} von 5 Sternen",
+      "fullReview": "Ganze Bewertung lesen",
+      "source": "Google-Bewertung",
+      "allReviews": "Alle Bewertungen ansehen"
+    },
+    "process": {
+      "eyebrow": "Ablauf",
+      "title": "Vom Aufnahmetermin zur gezielten Besichtigung.",
+      "intro": "Der Rundgang entsteht nicht nebenbei, sondern als Teil der Objektaufnahme – abgestimmt mit Ihnen und erst nach Ihrer Freigabe sichtbar.",
+      "steps": [
+        {
+          "title": "Aufnahme vor Ort",
+          "text": "Bei der Objektaufnahme entsteht der Rundgang zusammen mit Fotos und Grundrissen. Kamerapositionen und auszublendende Bereiche legen wir vorher gemeinsam fest."
+        },
+        {
+          "title": "Prüfung und Freigabe",
+          "text": "Private Gegenstände, sichtbare Dokumente, Spiegelungen und sensible Bereiche werden geprüft. Veröffentlicht wird erst, wenn Sie den Rundgang freigegeben haben."
+        },
+        {
+          "title": "Gezielter Zugang",
+          "text": "Passend zur Vermarktung steht der Rundgang offen im Exposé oder wird erst nach einer konkreten Anfrage bereitgestellt."
+        },
+        {
+          "title": "Besichtigung mit Vorauswahl",
+          "text": "Zugriffe und Betrachtungsdauer fließen in die Käuferprüfung ein. Vor Ort treffen Sie Interessenten, die Ihre Immobilie schon kennen."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Ihre Privatsphäre",
+      "title": "Klare Grenzen für Ihr Zuhause.",
+      "text": "Ein Rundgang zeigt, wie Sie wohnen. Deshalb entscheiden Sie, was zu sehen ist – und wer es sehen kann.",
+      "rulesLabel": "Darauf können Sie sich verlassen",
+      "rules": [
+        "Aufgenommen werden nur Räume und Bereiche, die Sie freigeben.",
+        "Private Gegenstände, Dokumente, Fotos und Spiegelungen werden vor der Aufnahme entfernt, verdeckt oder ausgeschlossen.",
+        "Veröffentlicht wird erst nach Ihrer Freigabe.",
+        "Ob der Rundgang offen im Exposé steht oder nur nach Anfrage zugänglich ist, legen wir gemeinsam fest.",
+        "Der Rundgang ergänzt die Besichtigung vor Ort – er ersetzt sie nicht."
+      ]
+    },
+    "related": {
+      "eyebrow": "Passt dazu",
+      "title": "Ein Baustein der Vermarktung",
+      "text": "Der Rundgang entsteht aus derselben Aufnahme wie Fotos, Grundrisse und Objektvideo – und wirkt am stärksten, wenn Preis und Zielgruppe vorher geklärt sind.",
+      "valuation": "Kostenlose Bewertung",
+      "staging": "KI-Visualisierung & Home Staging",
+      "video": "Video-Marketing",
+      "floorPlans": "Grundrisse & Wohnfläche"
+    },
+    "faq": {
+      "title": "Häufige Fragen zur virtuellen Besichtigung",
+      "items": [
+        {
+          "question": "Was ist eine virtuelle Besichtigung?",
+          "answer": "Ein 360°-Rundgang, in dem sich Interessenten am Bildschirm frei durch die Immobilie bewegen – Raum für Raum, mit selbst gewählter Blickrichtung und eigenem Tempo. Anders als ein Video folgt er keiner festen Reihenfolge."
+        },
+        {
+          "question": "Ersetzt der Rundgang die Besichtigung vor Ort?",
+          "answer": "Nein. Er verbessert die Vorauswahl. Zustand, Geräusche, Umgebung und Nachbarschaft lassen sich nur vor Ort beurteilen – deshalb bleibt die persönliche Besichtigung Teil jedes Verkaufs."
+        },
+        {
+          "question": "Wer kann den Rundgang sehen?",
+          "answer": "Das legen wir gemeinsam fest: offen im Exposé oder gezielt nach einer konkreten Anfrage. Aufgenommen werden nur Bereiche, die Sie freigeben."
+        },
+        {
+          "question": "Was passiert mit privaten Gegenständen?",
+          "answer": "Sensible Informationen wie Dokumente, Familienfotos oder Spiegelungen werden vor der Aufnahme entfernt, verdeckt oder von der Aufnahme ausgeschlossen."
+        },
+        {
+          "question": "Wann lohnt sich ein Rundgang besonders?",
+          "answer": "Bei bewohnten Immobilien, in denen Sie die Zahl der Termine gering halten möchten, bei verwinkelten Grundrissen oder mehreren Ebenen und wenn Käufer voraussichtlich von weiter weg anreisen."
+        },
+        {
+          "question": "Wie starte ich?",
+          "answer": "Mit einer kostenlosen Bewertung oder einem Erstgespräch. Dabei klären wir Preis, Zielgruppe und welche Medien – Fotos, Grundrisse, Rundgang, Video – für Ihre Immobilie sinnvoll sind."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit für Käufer, die wissen, was sie erwartet?",
+      "text": "Wir klären Wert, Zielgruppe und die passende Präsentation Ihrer Immobilie – persönlich und unverbindlich.",
+      "primary": "Kostenlose Bewertung starten",
+      "secondary": "Erstgespräch vereinbaren"
+    }
   }
 }

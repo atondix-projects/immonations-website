@@ -1,6 +1,5 @@
-import { ArrowUpRight, ShieldCheck } from 'lucide-react'
+import { ShieldCheck } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
-import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { listBellVideos } from '@/lib/content/bell-videos'
 import { listSoldVideos } from '@/lib/content/sold-videos'
@@ -21,76 +20,6 @@ import { BellVideoWall } from './sold/bell-video-wall'
 import { SoldVideoReel } from './sold/sold-video-reel'
 import { CatalogPreview } from './catalog-preview'
 import { MagazineSection } from './magazine-section'
-
-export async function BuyerSearchContent({ locale }: { locale: Locale }) {
-  const isGerman = locale === 'de'
-  const copy = isGerman
-    ? {
-        eyebrow: 'So funktioniert der Abgleich',
-        title: 'Vom Suchprofil zum passenden Gespräch',
-        steps: [
-          [
-            '01',
-            'Profil verstehen',
-            'Objektart, Lage, Budget und Zeitplan werden mit Ihrer Immobilie abgeglichen.',
-          ],
-          [
-            '02',
-            'Interesse prüfen',
-            'Wir klären, ob die Anfrage ernsthaft ist und zum Objekt passt.',
-          ],
-          [
-            '03',
-            'Kontakt abstimmen',
-            'Sie entscheiden, welche Informationen und welcher nächste Schritt freigegeben werden.',
-          ],
-        ],
-        link: 'Suchauftrag für Käufer anlegen',
-      }
-    : {
-        eyebrow: 'How the match works',
-        title: 'From a search profile to the right conversation',
-        steps: [
-          [
-            '01',
-            'Understand the profile',
-            'We match property type, location, budget, and timing with your property.',
-          ],
-          [
-            '02',
-            'Check the interest',
-            'We clarify whether the enquiry is serious and fits the property.',
-          ],
-          ['03', 'Agree the contact', 'You decide which information and next step are approved.'],
-        ],
-        link: 'Create a buyer search request',
-      }
-
-  return (
-    <section className="border-border bg-muted/45 border-y py-16 md:py-24">
-      <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-        <div className="grid gap-px bg-neutral-900/10 md:grid-cols-3">
-          {copy.steps.map(([number, title, text]) => (
-            <article key={number} className="bg-background flex min-h-56 flex-col p-7 md:p-9">
-              <span className="text-brand-700 font-mono text-xs tabular-nums">{number}</span>
-              <h2 className="mt-7 font-serif text-2xl leading-tight font-semibold text-balance">
-                {title}
-              </h2>
-              <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">{text}</p>
-            </article>
-          ))}
-        </div>
-        <Link
-          href="/buy"
-          className="text-brand-700 mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-semibold"
-        >
-          {copy.link}
-          <ArrowUpRight className="size-4" aria-hidden="true" />
-        </Link>
-      </div>
-    </section>
-  )
-}
 
 export async function AiContent({ locale }: { locale: Locale }) {
   return <DigitalAssistant locale={locale} />

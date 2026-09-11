@@ -2,55 +2,21 @@ import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { DistrictBuyerProfiles } from '@/components/site/buyer-search/district-buyer-profiles'
 import { JsonLd } from '@/components/site/json-ld'
 import { CatalogPage } from '@/components/site/templates/catalog-page'
 import { routing } from '@/i18n/routing'
+import {
+  DISTRICT_CITY_NAMES as CITY_NAMES,
+  districtDisplayName as displayName,
+  isDistrictCity as isCity,
+  type DistrictCitySlug as CitySlug,
+} from '@/lib/content/districts'
 import { findEntriesByDistrictSlug } from '@/lib/content/price-atlas'
 import { DISTRICTS, getRouteById, isRouteNoindex } from '@/lib/routing/route-catalog'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { SITE } from '@/lib/seo/site'
-
-type CitySlug = keyof typeof DISTRICTS
-
-const CITY_NAMES: Record<CitySlug, string> = {
-  nuernberg: 'Nürnberg',
-  fuerth: 'Fürth',
-  erlangen: 'Erlangen',
-  zirndorf: 'Zirndorf',
-  schwabach: 'Schwabach',
-}
-
-const DISPLAY_NAMES: Record<string, string> = {
-  baerenschanze: 'Bärenschanze',
-  buchenbuehl: 'Buchenbühl',
-  buechenbach: 'Büchenbach',
-  fuerth: 'Fürth',
-  gleisshammer: 'Gleißhammer',
-  grossgruendlach: 'Großgründlach',
-  hoefen: 'Höfen',
-  moegeldorf: 'Mögeldorf',
-  oberfuerberg: 'Oberfürberg',
-  roethenbach: 'Röthenbach',
-  roethelheimpark: 'Röthelheimpark',
-  stadtteil: 'Stadtteil',
-  steinbuehl: 'Steinbühl',
-  suedstadt: 'Südstadt',
-  suendersbuehl: 'Sündersbühl',
-  woehrd: 'Wöhrd',
-}
-
-function displayName(slug: string) {
-  if (DISPLAY_NAMES[slug]) return DISPLAY_NAMES[slug]
-  return slug
-    .split('-')
-    .map((part) => (part === 'st' ? 'St.' : `${part.charAt(0).toUpperCase()}${part.slice(1)}`))
-    .join(' ')
-}
-
-function isCity(value: string): value is CitySlug {
-  return value in DISTRICTS
-}
 
 function hasDistrict(city: CitySlug, slug: string) {
   return (DISTRICTS[city] as readonly string[]).includes(slug)
@@ -256,6 +222,7 @@ export default async function DistrictPage({
         lede={content.lede}
         answer={content.answer}
         sections={content.sections}
+        extra={<DistrictBuyerProfiles locale={locale} city={city} slug={slug} />}
         faq={content.faq}
         cta={{
           title:

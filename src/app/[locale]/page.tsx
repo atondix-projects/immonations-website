@@ -10,12 +10,15 @@ import { Awards } from '@/components/site/home/awards'
 import { TrustProof } from '@/components/site/home/trust-proof'
 import { ServicesOverview } from '@/components/site/home/services-overview'
 import { PremiumMarketing } from '@/components/site/home/premium-marketing'
+import { StagingTeaser } from '@/components/site/home/staging-teaser'
 import { SocialMedia } from '@/components/site/home/social-media'
 import { FinancingTeaser } from '@/components/site/home/financing-teaser'
 import { Reviews } from '@/components/site/home/reviews'
 import { CustomerStories } from '@/components/site/home/customer-stories'
 import { Partners } from '@/components/site/home/partners'
 import { ContactBooking } from '@/components/site/home/contact-booking'
+import { NextStepSwitcher } from '@/components/site/home/next-step-switcher'
+import { ValuationCta } from '@/components/site/home/valuation-cta'
 import { HomeChapter } from '@/components/site/home/home-chapter'
 import { ProcessTimeline, type SalesProcessStep } from '@/components/site/home/process-timeline'
 import { CONTAINER, SectionHeader } from '@/components/site/home/section-shell'
@@ -23,7 +26,6 @@ import { WhyImmonation } from '@/components/site/home/why-immonation'
 import { WarningSigns } from '@/components/site/home/warning-signs'
 import { ReferenceGallery } from '@/components/site/references/reference-gallery'
 import { HandoverPolaroidWall } from '@/components/site/handover/handover-polaroid-wall'
-import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
 import { listHandoverPolaroids } from '@/lib/content/handover-polaroids'
 import type { ReferenceId } from '@/lib/content/references'
 import { listLocalizedReferences } from '@/lib/content/references'
@@ -132,6 +134,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <HomeChapter id="sales-system">
         <PropertyTypePaths locale={locale} compact />
         <PremiumMarketing showNetworkProof />
+        <StagingTeaser />
         <SocialMedia />
         <ServicesOverview compact />
       </HomeChapter>
@@ -191,36 +194,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </HomeChapter>
 
       <HomeChapter id="next-step">
-        <section id="bewertung" className="bg-surface-dark scroll-mt-24 py-16 md:py-24">
-          <div
-            className={`${CONTAINER} grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16`}
-          >
-            <div className="flex flex-col gap-5">
-              <span className="text-brand-200 text-[13px] font-semibold tracking-[0.14em] uppercase">
-                {t('valuation.eyebrow')}
-              </span>
-              <h2 className="font-serif text-3xl leading-[1.15] font-semibold text-balance text-white md:text-[44px]">
-                {t('valuation.title')}
-              </h2>
-              <p className="max-w-[56ch] text-[17px] leading-[1.6] text-neutral-400">
-                {t('valuation.subtitle')}
-              </p>
-              <figure className="border-accent mt-2 flex flex-col gap-2.5 border-l-2 pl-6">
-                <blockquote className="max-w-[50ch] font-serif text-xl leading-[1.45] text-neutral-100 italic md:text-[23px]">
-                  {t('valuation.quote')}
-                </blockquote>
-                <figcaption className="text-sm text-neutral-500">
-                  {t('valuation.quoteAuthor')}
-                </figcaption>
-              </figure>
-            </div>
-            <ValuationEntryCard />
-          </div>
-        </section>
-      </HomeChapter>
-
-      <HomeChapter id="contact">
-        <ContactBooking />
+        <NextStepSwitcher
+          labels={{
+            tabList: t('nextStep.tabList'),
+            valuation: t('nextStep.valuation'),
+            contact: t('nextStep.contact'),
+          }}
+          valuation={<ValuationCta />}
+          contact={<ContactBooking embedded />}
+        />
       </HomeChapter>
     </>
   )

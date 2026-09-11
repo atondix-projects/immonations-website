@@ -54,7 +54,7 @@ Zusätzliche Claims aus dem EK-Archiv, noch nicht als live verifiziert:
 - Wohnflächenberechnung beziehungsweise Neuaufmaß durch einen Inhouse-Ingenieur.
 - F.A.Z. Institut TOP Makler 2026 sowie Immowelt-Auszeichnungen 2024 und 2026; Bezeichnung, Methodik und Nutzungsrechte vor Veröffentlichung prüfen.
 
-Primär belegt ist die EU-Markenregistrierung: EUIPO Nr. `019283377`, eingetragen am 15.03.2026 für Immonation GmbH, unter anderem in den Klassen 36 und 37. Das Zertifikat bleibt als Rechtsquelle unter `docs/source-material/originals/legal/` und ist kein automatisches Public Asset.
+Primär belegt ist die EU-Markenregistrierung: EUIPO Nr. `019283377`, eingetragen am 15.03.2026 für Immonation GmbH, unter anderem in den Klassen 36 und 37. Das Zertifikat bleibt als Rechtsquelle in gitignored `assets/` und ist kein Public Asset und kein Git-Download.
 
 ## Käufer & Listings
 

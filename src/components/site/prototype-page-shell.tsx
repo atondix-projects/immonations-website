@@ -6,7 +6,9 @@ import type { CatalogPageContent } from '@/content/catalog-pages'
 import type { RouteRecord } from '@/lib/routing/route-catalog'
 import { breadcrumbList, faqPage, service } from '@/lib/seo/jsonld'
 import { SITE } from '@/lib/seo/site'
+import { cn } from '@/lib/utils'
 import { JsonLd } from './json-ld'
+import { cardGridColumns, cardGridSpan } from './templates/card-grid'
 import { CtaBand } from './templates/cta-band'
 import { FaqSection } from './templates/faq-section'
 import { PageHero } from './templates/page-hero'
@@ -58,16 +60,27 @@ export function PrototypePageShell({
         {showSections ? (
           <section className="py-16 md:py-24">
             <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-              <div className="border-border grid gap-px border bg-neutral-900/10 md:grid-cols-3">
+              <div
+                className={cn(
+                  'border-border grid gap-px border bg-neutral-900/10',
+                  cardGridColumns(content.sectionTitles.length),
+                )}
+              >
                 {content.sectionTitles.map((title, index) => (
-                  <article key={title} className="bg-background flex flex-col p-7 md:p-9">
+                  <article
+                    key={title}
+                    className={cn(
+                      'bg-background flex flex-col p-7 md:p-9',
+                      cardGridSpan(index, content.sectionTitles.length),
+                    )}
+                  >
                     <span className="text-brand-700 font-mono text-xs tabular-nums">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold text-balance">
                       {title}
                     </h2>
-                    <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">
+                    <p className="text-muted-foreground mt-4 max-w-[62ch] text-[15px] leading-[1.75]">
                       {content.sectionTexts?.[index] ?? ''}
                     </p>
                     {content.sectionHrefs?.[index] ? (

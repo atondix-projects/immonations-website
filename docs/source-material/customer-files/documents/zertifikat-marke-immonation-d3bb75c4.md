@@ -15,9 +15,9 @@ pdf_metadata: {"Producer": "iText 5.0.6 (c) 1T3XT BVBA", "ModDate": "D:202603251
 
 > Supplied customer source. Treat claims and copy as unapproved until verified.
 
-## Page 1
+Page scans of the registration certificate are withheld. The original remains only in gitignored `assets/` and must not be offered as a public download.
 
-![Rendered source page 1](../media/cf-d3bb75c4172e/page-01.png)
+## Page 1
 
 AMT DER EUROPÄISCHEN UNION FÜR GEISTIGES
 EIGENTUM
@@ -40,8 +40,6 @@ Director
 João Negrão
 
 ## Page 2
-
-![Rendered source page 2](../media/cf-d3bb75c4172e/page-02.png)
 
 019283377210
 27/11/2025220
@@ -161,8 +159,6 @@ AMT DER EUROPÄISCHEN UNION FÜR GEISTIGES EIGENTUM
 EUROPEAN UNION INTELLECTUAL PROPERTY OFFICE
 
 ## Page 3
-
-![Rendered source page 3](../media/cf-d3bb75c4172e/page-03.png)
 
 Nekustamā īpašuma atjaunošanas pakalpojumi; Ēku reno-
 vēšana; Ēku atjaunošana un restaurēšana.

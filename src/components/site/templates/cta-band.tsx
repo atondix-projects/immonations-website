@@ -10,10 +10,10 @@ export type CtaBandProps = {
   secondary?: { label: string; href: LinkHref }
 }
 
-/** Light conversion band that stays visually separate from the global dark footer. */
+/** Closing conversion band on the normal page ground, separate from the dark footer. */
 export function CtaBand({ title, text, primary, secondary }: CtaBandProps) {
   return (
-    <section data-closing-cta className="border-brand-100 bg-brand-50 border-y py-18 md:py-24">
+    <section data-closing-cta className="border-border bg-background border-y py-18 md:py-24">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col items-start justify-between gap-10 px-5 sm:px-7 lg:flex-row lg:items-end lg:px-12">
         <div className="flex flex-col gap-3">
           <h2 className="text-foreground max-w-[20ch] font-serif text-[2.35rem] leading-[1.04] font-medium tracking-[-0.025em] text-balance md:text-[3.35rem]">

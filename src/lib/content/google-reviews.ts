@@ -274,6 +274,11 @@ function fingerprint(reviewItem: DisplayReview) {
   return `${reviewItem.author.trim().toLocaleLowerCase('de-DE')}::${reviewItem.quote.slice(0, 96).toLocaleLowerCase('de-DE')}`
 }
 
+/** Einzelne kuratierte Stimme per ID — für Seiten, die eine bestimmte Bewertung zitieren. */
+export function getCuratedReview(id: string): DisplayReview | undefined {
+  return CURATED_GOOGLE_REVIEWS.find((item) => item.id === id)
+}
+
 export function mergeReviews(
   live: readonly DisplayReview[],
   curated: readonly DisplayReview[],

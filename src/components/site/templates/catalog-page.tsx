@@ -1,6 +1,8 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { cn } from '@/lib/utils'
+import { cardGridColumns, cardGridSpan } from './card-grid'
 import { CtaBand } from './cta-band'
 import { FaqSection, type FaqItem } from './faq-section'
 import { PageHero } from './page-hero'
@@ -50,16 +52,27 @@ export function CatalogPage({
             `bg-neutral-900/10` in die Polsterung und die Sektion bekommt links
             und rechts je einen grauen Balken neben den Karten. */}
         <div className="mx-auto w-full max-w-[1240px] px-6 lg:px-10">
-          <div className="border-border grid gap-px border bg-neutral-900/10 md:grid-cols-3">
+          <div
+            className={cn(
+              'border-border grid gap-px border bg-neutral-900/10',
+              cardGridColumns(sections.length),
+            )}
+          >
             {sections.map((section, index) => (
-              <article key={section.title} className="bg-background flex flex-col p-7 md:p-9">
+              <article
+                key={section.title}
+                className={cn(
+                  'bg-background flex flex-col p-7 md:p-9',
+                  cardGridSpan(index, sections.length),
+                )}
+              >
                 <span className="text-brand-700 font-mono text-xs tabular-nums">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h2 className="mt-6 font-serif text-2xl leading-tight font-semibold text-balance">
                   {section.title}
                 </h2>
-                <p className="text-muted-foreground mt-4 text-[15px] leading-[1.75]">
+                <p className="text-muted-foreground mt-4 max-w-[62ch] text-[15px] leading-[1.75]">
                   {section.text}
                 </p>
                 {section.href ? (
