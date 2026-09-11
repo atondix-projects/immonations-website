@@ -115,10 +115,10 @@ Referenz-URL: `/de`
 - [ ] **Soll:** Alle von Immonation gewünschten Partner sind vorhanden.
 - [ ] Namen, Logos, Links und Reihenfolge stimmen mit der final freigegebenen Partnerliste überein.
 - [ ] Es fehlen keine Partner; es werden keine nicht freigegebenen Partner gezeigt.
-- [ ] Logoqualität, Alternativtexte und externe Links sind geprüft.
+- [x] Logoqualität, Alternativtexte und externe Links des aktuellen Bestands sind geprüft.
 - [ ] Andreas bestätigt die Vollständigkeit.
-- **Status:**
-- **Nachweis/Freigabeliste:**
+- **Status:** BLOCKIERT
+- **Nachweis/Freigabeliste:** Der aktuelle Startseitenblock enthält in dieser Reihenfolge Dr. Klein, immowelt und TSV Zirndorf Leichtathletik sowie getrennt davon Immonation Capital Holding GmbH, IN Beteiligungs GmbH und Dream Living GmbH. Für alle sechs Einträge existieren lokale Bilddateien und nicht leere Alternativtexte; die drei externen Partner führen mit abgesicherten neuen Tabs zu ihren Quellen. Playwright prüft Bestand, Logos, Links sowie 390×844 und 1440×900; Screenshots liegen unter `output/verification/PDF-S-04/`. Im Quellenpaket befindet sich keine finale freigegebene Partnerliste. Ohne diese Liste, Ziel-URLs und Rechtebestätigung kann weder Vollständigkeit noch Ausschluss nicht freigegebener Partner bestätigt werden.
 
 ## C. 2. Referenzen - 3 Prüfpunkte
 

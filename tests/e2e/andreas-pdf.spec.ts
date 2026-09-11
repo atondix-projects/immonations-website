@@ -130,6 +130,28 @@ for (const viewport of VIEWPORTS) {
 }
 
 for (const viewport of VIEWPORTS) {
+  test(`PDF-S-04 preserves the documented partner set on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de')
+
+    const partners = page.locator('#partner')
+    await expect(partners).toContainText('Dr. Klein')
+    await expect(partners).toContainText('immowelt')
+    await expect(partners).toContainText('TSV Zirndorf Leichtathletik')
+    await expect(partners).toContainText('Immonation Capital Holding GmbH')
+    await expect(partners).toContainText('IN Beteiligungs GmbH')
+    await expect(partners).toContainText('Dream Living GmbH')
+    await expect(partners.locator('img')).toHaveCount(6)
+    await expect(partners.locator('img[alt=""]')).toHaveCount(0)
+    await expect(partners.locator('a[target="_blank"][rel="noreferrer"]')).toHaveCount(3)
+
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-S-04')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await partners.screenshot({ path: join(evidenceDirectory, `${viewport.name}.png`) })
+  })
+}
+
+for (const viewport of VIEWPORTS) {
   test(`PDF-V-01 opens and closes the Ogulo tour on ${viewport.name}`, async ({ page }) => {
     await page.setViewportSize(viewport)
     await page.goto('/de/virtuell')
