@@ -1,11 +1,11 @@
 'use client'
 
-import { useId, useState } from 'react'
+import { useId } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
-import { PROPERTY_TYPE_IDS, WIZARD_STEP_IDS, type PropertyTypeId } from '@/lib/valuation/types'
+import { PROPERTY_TYPE_IDS, WIZARD_STEP_IDS } from '@/lib/valuation/types'
+import { useValuationEntry } from './use-valuation-entry'
 
 /**
  * Einstiegskarte auf Startseite und Hero: nur die erste Weiche (Objektart).
@@ -24,13 +24,11 @@ const SPANS_FULL_WIDTH = PROPERTY_TYPE_IDS.length % 2 === 1
 export function ValuationEntryCard({ className, variant = 'light' }: ValuationEntryCardProps) {
   const t = useTranslations('ValuationWizard')
   const homeT = useTranslations('Home.valuation')
-  const router = useRouter()
   // Die Karte erscheint mehrfach pro Seite (Hero mobil/desktop) — die IDs
   // muessen deshalb je Instanz eindeutig sein.
   const titleId = useId()
   const groupName = useId()
-  const [selectedType, setSelectedType] = useState<PropertyTypeId | null>(null)
-  const [showError, setShowError] = useState(false)
+  const { selectedType, showError, select, submit } = useValuationEntry()
   const isGlass = variant === 'glass'
 
   return (
@@ -42,18 +40,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
           : 'bg-neutral-0 border-border text-neutral-900 shadow-[0_28px_70px_-42px_rgba(0,0,0,0.65)]',
         className,
       )}
-      onSubmit={(event) => {
-        event.preventDefault()
-        if (!selectedType) {
-          setShowError(true)
-          return
-        }
-
-        router.push({
-          pathname: '/property-valuation',
-          query: { type: selectedType },
-        })
-      }}
+      onSubmit={submit}
     >
       <div
         className={cn(
@@ -105,10 +92,7 @@ export function ValuationEntryCard({ className, variant = 'light' }: ValuationEn
                   name={groupName}
                   value={id}
                   checked={selected}
-                  onChange={() => {
-                    setSelectedType(id)
-                    setShowError(false)
-                  }}
+                  onChange={() => select(id)}
                   className="peer sr-only"
                 />
                 <span

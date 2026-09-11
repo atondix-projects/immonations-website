@@ -47,12 +47,14 @@ const CLIENT_TOPIC_ANCHORS = [
   'kontakt',
 ] as const
 
-async function revealHomepageHero(page: import('@playwright/test').Page) {
+/** Scrolls to the end of the pinned logo-to-house story. */
+async function finishHeroStory(page: import('@playwright/test').Page) {
   await page.locator('[data-home-hero-story]').evaluate((story) => {
-    const top = story.getBoundingClientRect().top + window.scrollY
-    window.scrollTo({ top: top + window.innerHeight * 0.82, behavior: 'instant' })
+    const box = story.getBoundingClientRect()
+    const travel = Math.max(box.height - window.innerHeight, 0)
+    window.scrollTo({ top: box.top + window.scrollY + travel, behavior: 'instant' })
   })
-  await expect(page.locator('[data-home-hero-story]')).toHaveAttribute('data-hero-phase', 'hero')
+  await expect(page.locator('[data-home-hero-story]')).toHaveAttribute('data-hero-phase', 'house')
 }
 
 for (const locale of ['de', 'en'] as const) {
@@ -66,10 +68,15 @@ for (const locale of ['de', 'en'] as const) {
       locale === 'de' ? 'Zuhause beginnt auf dieser Website.' : 'Home starts right here.',
     )
 
-    await revealHomepageHero(page)
-    await expect(page.locator('[data-home-chapter="hero"] form:visible')).toBeVisible()
+    // Headline and valuation entry are part of the first frame, not the end of the story.
+    await expect(heroStory.locator('h1')).toBeInViewport()
+    await expect(heroStory.locator('form:visible')).toBeInViewport()
     await expect(page.locator('[data-hero-video="placeholder"]:visible')).toBeVisible()
     await expect(page.locator('[data-home-chapter="hero"]')).not.toContainText('300+')
+
+    await finishHeroStory(page)
+    await expect(heroStory.locator('h1')).toBeInViewport()
+    await expect(heroStory.locator('form:visible')).toBeInViewport()
 
     const chapterOrder = await page
       .locator('[data-home-chapter]')
@@ -91,7 +98,6 @@ test('homepage valuation entry keeps the primary journey client-side until navig
   page,
 }) => {
   await page.goto('/de')
-  await revealHomepageHero(page)
   const hero = page.locator('[data-home-chapter="hero"]')
   const valuationEntry = hero.locator('form:visible')
 
@@ -103,12 +109,12 @@ test('homepage valuation entry keeps the primary journey client-side until navig
   await expect(page).toHaveURL(/\/de\/bewertung\?type=house$/)
 })
 
-test('homepage bypasses the scroll story when reduced motion is requested', async ({ page }) => {
+test('homepage shows the finished house when reduced motion is requested', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/de')
 
   const heroStory = page.locator('[data-home-hero-story]')
-  await expect(heroStory).toHaveAttribute('data-hero-phase', 'hero')
+  await expect(heroStory).toHaveAttribute('data-hero-phase', 'house')
   await expect(heroStory.locator('[inert]')).toHaveCount(0)
   await expect(heroStory.locator('form:visible')).toBeVisible()
 })
@@ -138,10 +144,11 @@ test('homepage hero keeps valuation and video responsive without horizontal over
     expect(hasHorizontalOverflow).toBe(false)
 
     if (!formBox || !videoBox) continue
-    if (viewport.width >= 1280) {
+    // From lg the video sits under the house in the right column; below it, after the form.
+    if (viewport.width >= 1024) {
       expect(videoBox.x).toBeGreaterThan(formBox.x + formBox.width)
     } else {
-      expect(videoBox.y).toBeGreaterThan(formBox.y)
+      expect(videoBox.y).toBeGreaterThan(formBox.y + formBox.height)
     }
   }
 })
@@ -153,7 +160,7 @@ test('homepage header stays dark through the hero story and turns light afterwar
   const header = page.locator('header[data-header-tone]')
 
   await expect(header).toHaveAttribute('data-header-tone', 'dark')
-  await revealHomepageHero(page)
+  await finishHeroStory(page)
   await expect(header).toHaveAttribute('data-header-tone', 'dark')
 
   await page.locator('[data-home-chapter="proof"]').scrollIntoViewIfNeeded()

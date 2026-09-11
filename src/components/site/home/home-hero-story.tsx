@@ -1,224 +1,213 @@
 'use client'
 
-import { useRef, useState, useSyncExternalStore } from 'react'
+import { useId, useRef, useState, useSyncExternalStore } from 'react'
+import { ArrowRight } from 'lucide-react'
 import {
   motion,
+  useMotionValue,
   useMotionValueEvent,
   useScroll,
+  useSpring,
   useTransform,
-  type MotionValue,
 } from 'motion/react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { ImmonationMark } from '@/components/site/brand/immonation-mark'
-import { Hero } from './hero'
+import { ValuationEntryBar } from '@/components/site/valuation/valuation-entry-bar'
+import { HeroHouse } from './hero-house'
+import { HeroIntroVideo } from './hero-intro-video'
+import { EASE, RevealTitle, STAGE_DELAYS, getRise } from './hero-motion'
 
-type HeroPhase = 'logo' | 'morph' | 'house' | 'transition' | 'hero'
+type HeroPhase = 'logo' | 'fold' | 'house'
 
-const PANEL_POINTS = {
-  front: {
-    logo: '214 176 344 230 344 480 214 426',
-    house: '225 302 500 302 500 570 225 570',
-  },
-  roof: {
-    logo: '335 226 465 280 465 530 335 476',
-    house: '225 302 500 302 650 220 375 206',
-  },
-  side: {
-    logo: '456 276 586 330 586 580 456 526',
-    house: '500 302 650 220 650 488 500 570',
-  },
-} as const
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)'
+const PROGRESS_SPRING = { stiffness: 140, damping: 30, mass: 0.5, restDelta: 0.0005 } as const
+/** Unpinned, the story completes once the stage centre reaches the viewport centre. */
+const MIN_FLOW_TRAVEL = 0.45
 
 function getHeroPhase(progress: number): HeroPhase {
-  if (progress < 0.12) return 'logo'
-  if (progress < 0.48) return 'morph'
-  if (progress < 0.68) return 'house'
-  if (progress < 0.88) return 'transition'
-  return 'hero'
+  if (progress < 0.03) return 'logo'
+  if (progress < 0.62) return 'fold'
+  return 'house'
+}
+
+const clampProgress = (value: number) => Math.min(Math.max(value, 0), 1)
+
+/**
+ * The `hero-pin` variant in globals.css decides whether the story pins (wide and tall
+ * enough, motion welcome). Reading the resulting `position: sticky` keeps that CSS the
+ * single source of truth: pinned, progress runs over the section's extra scroll height;
+ * unpinned, the house builds as the stage scrolls towards the middle of the viewport.
+ */
+function readProgress(
+  scrollPosition: number,
+  section: HTMLElement | null,
+  pin: HTMLElement | null,
+  stage: HTMLElement | null,
+): number {
+  if (!section || !pin || !stage) return 0
+  const viewport = window.innerHeight
+
+  if (getComputedStyle(pin).position === 'sticky') {
+    const sectionTop = section.getBoundingClientRect().top + scrollPosition
+    const travel = Math.max(section.offsetHeight - viewport, 1)
+    return clampProgress((scrollPosition - sectionTop) / travel)
+  }
+
+  const stageBox = stage.getBoundingClientRect()
+  const stageMiddle = stageBox.top + scrollPosition + stageBox.height / 2
+  const travel = Math.max(stageMiddle - viewport / 2, viewport * MIN_FLOW_TRAVEL)
+  return clampProgress(scrollPosition / travel)
 }
 
 function subscribeToReducedMotion(onChange: () => void) {
-  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+  const mediaQuery = window.matchMedia(REDUCED_MOTION_QUERY)
   mediaQuery.addEventListener('change', onChange)
   return () => mediaQuery.removeEventListener('change', onChange)
 }
 
 function getReducedMotionPreference() {
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches
 }
 
-function HouseGraphic({ progress }: { progress: MotionValue<number> }) {
-  const architectureOpacity = useTransform(progress, [0.1, 0.18, 0.68, 0.88], [0, 1, 1, 0])
-  const detailsOpacity = useTransform(progress, [0.48, 0.62], [0, 1])
-  const lightOpacity = useTransform(progress, [0.54, 0.68, 0.82], [0, 0.95, 0])
-  const graphicScale = useTransform(progress, [0.68, 0.88], [1, 1.14])
-  const graphicY = useTransform(progress, [0.68, 0.88], [0, -36])
-  const frontPoints = useTransform(
-    progress,
-    [0.12, 0.48],
-    [PANEL_POINTS.front.logo, PANEL_POINTS.front.house],
-  )
-  const roofPoints = useTransform(
-    progress,
-    [0.12, 0.48],
-    [PANEL_POINTS.roof.logo, PANEL_POINTS.roof.house],
-  )
-  const sidePoints = useTransform(
-    progress,
-    [0.12, 0.48],
-    [PANEL_POINTS.side.logo, PANEL_POINTS.side.house],
-  )
-
-  return (
-    <motion.div
-      className="absolute inset-0 flex items-center justify-center will-change-transform"
-      style={{ opacity: architectureOpacity, scale: graphicScale, y: graphicY }}
-      aria-hidden="true"
-    >
-      <svg viewBox="0 0 800 720" className="h-[58vh] w-[88vw] max-w-[760px] overflow-visible">
-        <defs>
-          <radialGradient id="house-ambient" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stopColor="#ffd08a" stopOpacity="0.34" />
-            <stop offset="1" stopColor="#ffd08a" stopOpacity="0" />
-          </radialGradient>
-          <filter id="house-shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="18" />
-          </filter>
-        </defs>
-
-        <motion.ellipse
-          cx="425"
-          cy="590"
-          rx="235"
-          ry="42"
-          fill="#000000"
-          filter="url(#house-shadow)"
-          opacity={detailsOpacity}
-        />
-        <motion.circle
-          cx="390"
-          cy="430"
-          r="270"
-          fill="url(#house-ambient)"
-          opacity={lightOpacity}
-        />
-        <motion.polygon points={sidePoints} fill="#737372" />
-        <motion.polygon points={roofPoints} fill="#A2D9F5" />
-        <motion.polygon points={frontPoints} fill="#1D9CD7" />
-
-        <motion.g opacity={detailsOpacity}>
-          <rect x="268" y="352" width="70" height="70" fill="#152126" />
-          <rect x="386" y="352" width="70" height="70" fill="#152126" />
-          <rect x="268" y="458" width="70" height="66" fill="#152126" />
-          <rect x="386" y="448" width="72" height="122" fill="#152126" />
-          <path d="M532 344 616 299v69l-84 46z" fill="#152126" />
-          <path d="M532 447 616 401v69l-84 46z" fill="#152126" />
-          <motion.g opacity={lightOpacity} fill="#ffd08a">
-            <rect x="274" y="358" width="58" height="58" />
-            <rect x="392" y="358" width="58" height="58" />
-            <rect x="274" y="464" width="58" height="54" />
-            <path d="M538 348 610 309v55l-72 39z" />
-          </motion.g>
-          <g stroke="#0b171c" strokeWidth="5" opacity="0.75">
-            <path d="M303 352v70M268 387h70M421 352v70M386 387h70" />
-            <path d="M303 458v66M268 491h70" />
-          </g>
-        </motion.g>
-      </svg>
-    </motion.div>
-  )
-}
-
+/**
+ * Homepage hero: headline, valuation entry and intro video are there from the
+ * first frame; only the house on the right is told through the scroll.
+ */
 export function HomeHeroStory() {
   const t = useTranslations('Home.hero')
-  const storyRef = useRef<HTMLDivElement>(null)
-  const shouldReduceMotion = useSyncExternalStore(
+  const titleId = useId()
+  const sectionRef = useRef<HTMLElement>(null)
+  const pinRef = useRef<HTMLDivElement>(null)
+  const stageRef = useRef<HTMLDivElement>(null)
+  const reduceMotion = useSyncExternalStore(
     subscribeToReducedMotion,
     getReducedMotionPreference,
     () => false,
   )
   const [phase, setPhase] = useState<HeroPhase>('logo')
-  const [isHeroInteractive, setIsHeroInteractive] = useState(false)
+
   const { scrollY } = useScroll()
-  const scrollYProgress = useTransform(scrollY, (scrollPosition) => {
-    const story = storyRef.current
-    if (!story) return 0
+  const scrollProgress = useTransform(scrollY, (position) =>
+    readProgress(position, sectionRef.current, pinRef.current, stageRef.current),
+  )
+  const smoothProgress = useSpring(scrollProgress, PROGRESS_SPRING)
+  const builtHouse = useMotionValue(1)
+  const progress = reduceMotion ? builtHouse : smoothProgress
+  const hintOpacity = useTransform(scrollProgress, [0, 0.08], [1, 0])
 
-    const storyTop = story.getBoundingClientRect().top + scrollPosition
-    const scrollDistance = Math.max(story.offsetHeight - window.innerHeight, 1)
-    return Math.min(Math.max((scrollPosition - storyTop) / scrollDistance, 0), 1)
-  })
-  const introOpacity = useTransform(scrollYProgress, [0.06, 0.28], [1, 0])
-  const markOpacity = useTransform(scrollYProgress, [0.08, 0.18], [1, 0])
-  const hintOpacity = useTransform(scrollYProgress, [0, 0.14], [1, 0])
-  const stageOpacity = useTransform(scrollYProgress, [0.7, 0.9], [1, 0])
-
-  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    const nextPhase = getHeroPhase(progress)
+  useMotionValueEvent(scrollProgress, 'change', (value) => {
+    const nextPhase = getHeroPhase(value)
     setPhase((currentPhase) => (currentPhase === nextPhase ? currentPhase : nextPhase))
-    setIsHeroInteractive(progress >= 0.78)
   })
-
-  const activePhase = shouldReduceMotion ? 'hero' : phase
-  const canUseHero = shouldReduceMotion || isHeroInteractive
 
   return (
-    <div
-      className="bg-surface-dark relative -mt-[var(--header-height)]"
+    <section
+      ref={sectionRef}
+      aria-labelledby={titleId}
+      className="bg-surface-dark hero-pin:h-[165svh] relative -mt-[var(--header-height)]"
       data-home-hero-story
-      data-hero-phase={activePhase}
+      data-hero-phase={reduceMotion ? 'house' : phase}
     >
       <div
-        ref={storyRef}
-        className="pointer-events-none relative z-20 h-[180svh] motion-reduce:hidden"
-        aria-hidden={canUseHero ? true : undefined}
+        ref={pinRef}
+        className="hero-pin:sticky hero-pin:top-0 hero-pin:h-svh relative overflow-hidden"
       >
-        <motion.div
-          className="bg-surface-dark sticky top-0 h-svh overflow-hidden"
-          style={{ opacity: stageOpacity }}
-        >
-          <div className="from-brand-800/35 absolute inset-0 bg-gradient-to-tr via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/20" />
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="from-brand-800/40 absolute inset-0 bg-gradient-to-tr via-transparent to-transparent opacity-70" />
+          {/* Kopf-Scrim: sichert Kontrast für den transparenten Header. */}
+          <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
+        </div>
+
+        {/* Beide Spalten gleich hoch: oben Headline und Haus, unten schliessen Formular
+            und Video auf einer Linie ab. */}
+        <div className="relative mx-auto grid h-full w-full max-w-[1320px] content-center gap-x-12 gap-y-14 px-6 pt-[calc(var(--header-height)+2.75rem)] pb-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:px-10 lg:pb-10 xl:grid-cols-[minmax(0,1.08fr)_minmax(0,1fr)]">
+          <div className="flex min-w-0 flex-col gap-8 lg:justify-between">
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-2.5">
+                {/* Gleiches CI-Element wie vor den Sektions-Eyebrows — ein Marker sitewide. */}
+                <motion.span
+                  className="block"
+                  initial={reduceMotion ? false : { opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.7, ease: EASE }}
+                >
+                  <ImmonationMark className="h-6" />
+                </motion.span>
+                <motion.span
+                  className="text-brand-200 text-[13px] font-semibold tracking-[0.14em] uppercase"
+                  {...getRise(reduceMotion, STAGE_DELAYS.eyebrow)}
+                >
+                  {t('seller.eyebrow')}
+                </motion.span>
+              </div>
+              <RevealTitle
+                id={titleId}
+                title={t('seller.title')}
+                reduceMotion={reduceMotion}
+                className="text-[length:clamp(2.1rem,min(3.8vw,6.2svh),3.75rem)] leading-[1.08]"
+              />
+              <motion.p
+                className="max-w-[54ch] text-[17px] leading-[1.55] text-neutral-300 xl:text-lg"
+                {...getRise(reduceMotion, STAGE_DELAYS.subtitle)}
+              >
+                {t('seller.subtitle')}
+              </motion.p>
+              <motion.div className="self-start" {...getRise(reduceMotion, STAGE_DELAYS.subtitle)}>
+                <Link
+                  href="/sell"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold tracking-[0.02em] text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
+                >
+                  {t('seller.ctaSecondary')}
+                  <ArrowRight
+                    className="size-4 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </motion.div>
+            </div>
+            <motion.div {...getRise(reduceMotion, STAGE_DELAYS.ctas)}>
+              <ValuationEntryBar />
+            </motion.div>
+          </div>
 
           <motion.div
-            className="absolute inset-x-6 top-[17%] z-10 text-center"
-            style={{ opacity: introOpacity }}
+            ref={stageRef}
+            className="flex min-w-0 flex-col gap-6 lg:justify-between"
+            {...getRise(reduceMotion, STAGE_DELAYS.eyebrow)}
           >
-            <p className="text-brand-200 text-[11px] font-semibold tracking-[0.2em] uppercase sm:text-[13px]">
-              {t('storyEyebrow')}
-            </p>
-            <p className="mx-auto mt-4 max-w-[18ch] font-serif text-3xl leading-[1.08] font-semibold text-balance text-white sm:text-4xl md:text-5xl">
-              {t('storyTitle')}
-            </p>
+            <HeroHouse
+              progress={progress}
+              idPrefix="home-hero"
+              // Capped by the height left over for the house once header, caption row and
+              // video are placed, so short screens keep air under the header.
+              className="mx-auto w-full max-w-[min(68svh,calc((100svh-21rem)*1.09))]"
+            />
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div className="min-w-0 flex-1">
+                <p className="font-serif text-xl leading-snug text-balance text-white xl:text-2xl">
+                  {t('storyTitle')}
+                </p>
+                <div className="mt-3 flex items-center gap-3" aria-hidden="true">
+                  <div className="h-px w-full max-w-48 bg-white/15">
+                    <motion.div
+                      className="bg-brand-400 h-full origin-left"
+                      style={{ scaleX: progress }}
+                    />
+                  </div>
+                  <motion.span
+                    className="text-[10px] font-semibold tracking-[0.2em] whitespace-nowrap text-neutral-400 uppercase motion-reduce:hidden"
+                    style={{ opacity: hintOpacity }}
+                  >
+                    {t('scrollHint')}
+                  </motion.span>
+                </div>
+              </div>
+              <HeroIntroVideo className="w-full max-w-[440px] shrink-0 sm:w-56 xl:w-64" />
+            </div>
           </motion.div>
-
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center pt-[8vh]"
-            style={{ opacity: markOpacity }}
-            aria-hidden="true"
-          >
-            <ImmonationMark className="h-[30vh] max-h-[320px] min-h-[190px]" />
-          </motion.div>
-
-          <HouseGraphic progress={scrollYProgress} />
-
-          <motion.div
-            className="absolute inset-x-0 bottom-7 flex flex-col items-center gap-3 text-[10px] font-semibold tracking-[0.2em] text-neutral-400 uppercase sm:bottom-9"
-            style={{ opacity: hintOpacity }}
-          >
-            <span>{t('scrollHint')}</span>
-            <span className="border-brand-200 block size-3 rotate-45 border-r-2 border-b-2" />
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
-
-      <div
-        className="relative z-10 -mt-[100svh] motion-reduce:mt-0"
-        inert={canUseHero ? undefined : true}
-        aria-hidden={canUseHero ? undefined : true}
-      >
-        <Hero mode="seller" showRating={false} showIntroVideo />
-      </div>
-    </div>
+    </section>
   )
 }

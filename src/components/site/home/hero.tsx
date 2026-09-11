@@ -1,14 +1,12 @@
 'use client'
 
-import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { AnimatedNumber } from '@/components/site/animated-number'
 import { ImmonationMark } from '@/components/site/brand/immonation-mark'
 import { ValuationEntryCard } from '@/components/site/valuation/valuation-entry-card'
-import { cn } from '@/lib/utils'
-import { HeroIntroVideo } from './hero-intro-video'
+import { EASE, RevealTitle, STAGE_DELAYS, getRise } from './hero-motion'
 
 type Audience = 'seller' | 'buyer'
 
@@ -23,53 +21,6 @@ const HERO_CTAS = {
   },
 }
 
-// Premium ease (matches the rest of the site's spring-like feel); staggered in seconds.
-const EASE = [0.22, 1, 0.36, 1] as const
-const STAGE_DELAYS = {
-  eyebrow: 0.1,
-  wordBase: 0.2,
-  wordStep: 0.055,
-  subtitle: 0.62,
-  ctas: 0.78,
-  rating: 0.92,
-} as const
-
-/** Rise-in: opacity + translateY, disabled entirely under prefers-reduced-motion. */
-function getRise(reduceMotion: boolean, delay: number) {
-  return {
-    initial: reduceMotion ? false : { opacity: 0, y: 26 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: reduceMotion ? 0 : 0.9, ease: EASE, delay: reduceMotion ? 0 : delay },
-  }
-}
-
-function RevealTitle({ title, reduceMotion }: { title: string; reduceMotion: boolean }) {
-  const words = title.split(' ')
-  return (
-    <h1 className="font-serif text-3xl leading-[1.12] font-semibold tracking-[-0.005em] text-balance text-white sm:text-4xl md:text-5xl lg:text-[58px]">
-      {words.map((word, index) => (
-        <Fragment key={`${word}-${index}`}>
-          <span className="-mb-[0.08em] inline-flex overflow-hidden pb-[0.08em] align-bottom">
-            <motion.span
-              className="inline-block will-change-transform"
-              initial={reduceMotion ? false : { y: '115%' }}
-              animate={{ y: '0%' }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.85,
-                ease: EASE,
-                delay: reduceMotion ? 0 : STAGE_DELAYS.wordBase + index * STAGE_DELAYS.wordStep,
-              }}
-            >
-              {word}
-            </motion.span>
-          </span>
-          {index < words.length - 1 ? ' ' : null}
-        </Fragment>
-      ))}
-    </h1>
-  )
-}
-
 function GoogleRating() {
   const t = useTranslations('Home.hero')
   return (
@@ -80,15 +31,7 @@ function GoogleRating() {
   )
 }
 
-export function Hero({
-  mode,
-  showRating = true,
-  showIntroVideo = false,
-}: {
-  mode: Audience
-  showRating?: boolean
-  showIntroVideo?: boolean
-}) {
+export function Hero({ mode, showRating = true }: { mode: Audience; showRating?: boolean }) {
   const t = useTranslations('Home.hero')
   const reduceMotion = useReducedMotion() ?? false
   const cta = HERO_CTAS[mode]
@@ -109,21 +52,9 @@ export function Hero({
         className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-40 bg-gradient-to-b from-black/55 to-transparent md:h-48"
         aria-hidden
       />
-      <div
-        className={cn(
-          'relative mx-auto w-full px-6 lg:px-10',
-          showIntroVideo ? 'max-w-[1440px]' : 'max-w-[1240px]',
-        )}
-      >
+      <div className="relative mx-auto w-full max-w-[1240px] px-6 lg:px-10">
         {/* Etwas unter voller Hoehe, damit die naechste Sektion knapp ueber der Falz hervorlugt. */}
-        <div
-          className={cn(
-            'grid min-h-[calc(100svh-5rem)] gap-10',
-            showIntroVideo
-              ? 'lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)] xl:grid-cols-[minmax(0,1fr)_minmax(340px,410px)_minmax(220px,280px)] xl:gap-7'
-              : 'lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)]',
-          )}
-        >
+        <div className="grid min-h-[calc(100svh-5rem)] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,410px)]">
           {/* key={mode}: Wechsel Verkäufer/Käufer spielt die Inszenierung erneut ab */}
           <div
             key={mode}
@@ -146,7 +77,11 @@ export function Hero({
                 {t(`${mode}.eyebrow`)}
               </motion.span>
             </div>
-            <RevealTitle title={t(`${mode}.title`)} reduceMotion={reduceMotion} />
+            <RevealTitle
+              title={t(`${mode}.title`)}
+              reduceMotion={reduceMotion}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px]"
+            />
             <motion.p
               className="max-w-[56ch] text-lg leading-[1.55] text-neutral-300 md:text-[19px]"
               {...getRise(reduceMotion, STAGE_DELAYS.subtitle)}
@@ -200,14 +135,6 @@ export function Hero({
                   <ValuationEntryCard variant="glass" />
                 </motion.div>
               ) : null}
-              {showIntroVideo ? (
-                <motion.div
-                  className="w-full max-w-[440px] lg:hidden"
-                  {...getRise(reduceMotion, STAGE_DELAYS.rating)}
-                >
-                  <HeroIntroVideo />
-                </motion.div>
-              ) : null}
               {/* Mobil: Google-Bewertung unter den CTAs; Desktop: rechte Randspalte. */}
               {showRating ? (
                 <motion.div
@@ -231,26 +158,12 @@ export function Hero({
                 <ValuationEntryCard variant="glass" />
               </div>
             ) : null}
-            {showIntroVideo ? (
-              <div className="xl:hidden">
-                <HeroIntroVideo />
-              </div>
-            ) : null}
             {showRating ? (
               <div className="self-end border border-white/15 bg-white/5 backdrop-blur-sm">
                 <GoogleRating />
               </div>
             ) : null}
           </motion.div>
-
-          {showIntroVideo ? (
-            <motion.div
-              className="hidden h-full items-center pt-28 pb-[72px] xl:flex"
-              {...getRise(reduceMotion, STAGE_DELAYS.rating)}
-            >
-              <HeroIntroVideo />
-            </motion.div>
-          ) : null}
         </div>
       </div>
     </section>

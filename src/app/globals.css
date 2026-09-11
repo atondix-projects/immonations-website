@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Homepage hero: the logo-to-house story pins only where the whole hero fits one
+   screen and motion is welcome. home-hero-story.tsx reads the resulting
+   `position: sticky` to decide how it measures scroll progress. */
+@custom-variant hero-pin (@media (min-width: 64rem) and (min-height: 44rem) and (prefers-reduced-motion: no-preference));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
