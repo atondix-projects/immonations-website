@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { describe, expect, it } from 'vitest'
 import { AnimatedNumber } from '../../src/components/site/animated-number'
 import { listAllReferences, listLocalizedReferences } from '../../src/lib/content/references'
+import { findEntriesByDistrictSlug } from '../../src/lib/content/price-atlas'
 import { testimonialVideo } from '../../src/lib/content/testimonials'
 import { SITE } from '../../src/lib/seo/site'
 
@@ -207,5 +208,18 @@ describe('Andreas PDF contracts', () => {
         expect(content).not.toMatch(/lorem|placeholder|platzhalter|coming soon|folgt in kürze/i)
       }
     }
+  })
+
+  it('PDF-W-07 gives published district pages local price evidence where available', () => {
+    const entries = findEntriesByDistrictSlug('nuernberg', 'st-johannis')
+    const districtPage = readFileSync(
+      join(ROOT, 'src', 'app', '[locale]', 'districts', '[city]', '[slug]', 'page.tsx'),
+      'utf8',
+    )
+
+    expect(entries.map((entry) => entry.category)).toEqual(['apartment', 'house'])
+    expect(entries.map((entry) => entry.median)).toEqual([4920, 5830])
+    expect(districtPage).toContain('findEntriesByDistrictSlug')
+    expect(districtPage).toContain('basierend auf Vermittlungsdaten der Immonation')
   })
 })

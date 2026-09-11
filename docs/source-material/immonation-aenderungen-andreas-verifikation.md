@@ -317,13 +317,13 @@ Referenz-URL: `/de/bodenrichtwert`
 
 Referenz-URLs: `/de/staedte`, `/de/stadt/[slug]`, `/de/stadtteil/[city]/[slug]`
 
-- [ ] **Soll:** Der vorhandene gute Aufbau wird beibehalten.
+- [x] **Soll:** Der vorhandene gute Aufbau wird beibehalten.
 - [ ] Stadt- und Stadtteilseiten besitzen substanziellen lokalen Inhalt statt dünner oder weitgehend duplizierter Texte.
-- [ ] Mindestens die veröffentlichten Stadt-Hubs und eine repräsentative Stichprobe der Stadtteile werden geprüft.
-- [ ] Genau eine Fußzeile pro Seite vorhanden.
+- [x] Mindestens die veröffentlichten Stadt-Hubs und eine repräsentative Stichprobe der Stadtteile werden geprüft.
+- [x] Genau eine Fußzeile pro Seite vorhanden.
 - [ ] Andreas bestätigt redaktionell: "nicht mehr zu dünn".
-- **Status:**
-- **Nachweis/Stichprobe:**
+- **Status:** BLOCKIERT
+- **Nachweis/Stichprobe:** Alle fünf Stadt-Hubs (`Nürnberg`, `Fürth`, `Erlangen`, `Zirndorf`, `Schwabach`) und die Stichprobe `/de/stadtteil/nuernberg/st-johannis` wurden gerendert; jeder Pfad besitzt genau einen globalen Footer. Passende Stadtteilrouten in Nürnberg, Fürth, Erlangen und Zirndorf erhalten nun automatisch ihre belegten Wohnungs-/Haus-Spannen, Mediane und Fallzahlen aus dem Preisatlas mit der freigegebenen Quellenformulierung. Contract-Test, 430-Seiten-Build und Playwright sind grün; Mobil-/Desktop-Nachweise liegen unter `output/verification/PDF-W-07/`. Nicht jede der 103 publizierten Stadtteilseiten besitzt einen passenden Datensatz; insbesondere für Schwabach bleiben die Texte ohne freigegebene lokale Fakten zu generisch. Für `PASS` werden dort belegte Ortsinhalte sowie Andreas' redaktionelle Freigabe benötigt.
 
 ### PDF-W-08 - Immobilienpreise
 

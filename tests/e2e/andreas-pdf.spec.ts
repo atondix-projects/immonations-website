@@ -276,6 +276,44 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+test('PDF-W-07 renders local evidence on representative city and district pages', async ({
+  page,
+}) => {
+  for (const path of [
+    '/de/stadt/nuernberg',
+    '/de/stadt/fuerth',
+    '/de/stadt/erlangen',
+    '/de/stadt/zirndorf',
+    '/de/stadt/schwabach',
+  ]) {
+    await page.goto(path)
+    await expect(page.locator('main, article').first()).toContainText(/Immobilien/)
+    await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+  }
+
+  await page.goto('/de/stadtteil/nuernberg/st-johannis')
+  await expect(page.getByRole('heading', { name: 'Preisspannen in St. Johannis' })).toBeVisible()
+  await expect(page.locator('body')).toContainText('4.920')
+  await expect(page.locator('body')).toContainText('5.830')
+  await expect(page.locator('body')).toContainText('basierend auf Vermittlungsdaten der Immonation')
+  await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+})
+
+for (const viewport of VIEWPORTS) {
+  test(`PDF-W-07 renders district evidence on ${viewport.name}`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/stadtteil/nuernberg/st-johannis')
+
+    await expect(page.getByRole('heading', { name: 'Preisspannen in St. Johannis' })).toBeVisible()
+    const evidenceDirectory = join(process.cwd(), 'output', 'verification', 'PDF-W-07')
+    mkdirSync(evidenceDirectory, { recursive: true })
+    await page.screenshot({
+      path: join(evidenceDirectory, `${viewport.name}.png`),
+      fullPage: true,
+    })
+  })
+}
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()
