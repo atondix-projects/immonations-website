@@ -15,7 +15,8 @@ Token und Secret dürfen nie mit `NEXT_PUBLIC_` beginnen oder in Git committed w
 - Die Website fragt maximal 24 veröffentlichte Objekte mit `cache: no-store` ab.
 - `status = 1` wird als veröffentlicht akzeptiert; das zusätzliche onOffice-Feld `reserviert` unterscheidet `available` und `reserved`.
 - Nicht veröffentlichte, verkaufte oder entfernte Datensätze werden nicht in das öffentliche Listing-Modell übernommen.
-- Bilder werden über die offizielle Dateiaktion gelesen und nur übernommen, wenn sie für die eigene Homepage freigegeben sind.
+- Bilder werden gesammelt über die offizielle Aktion `estatepictures` mit `publicationSetting: Homepage` gelesen. Damit gelangen nur Dateien in die Website, deren Veröffentlichung für die eigene Homepage/API freigegeben ist.
+- Die dynamische Sitemap ergänzt die lokalisierten Detail-URLs der aktuell vom Provider gelieferten Objekte und lässt Providerfehler ohne falsche Einträge auslaufen.
 - Ohne Konfiguration, bei leerem Bestand, Timeout oder Providerfehler erscheinen getrennte ehrliche Zustände. Demoobjekte werden nicht zugemischt.
 
 Vor Produktionsfreigabe muss Immonation das konkrete Statusmapping im eigenen onOffice-Mandanten bestätigen, da kundenspezifische Felder und Schlüssel abweichen können.
@@ -41,4 +42,3 @@ Der Client verhindert parallele Doppelklick-Übertragungen. Ein Reload sendet de
 - Aufbewahrungs- und Löschfrist für Kontakt- und Bewertungsleads freigeben und in der Datenschutzerklärung abbilden.
 - Zwei eindeutig markierte Testleads aus Kontakt und Bewertung im Zielmandanten bestätigen.
 - Objektstichprobe einschließlich Titel, Status, Preis, Ort, Bildern und Detail-URL gegen onOffice abnehmen.
-

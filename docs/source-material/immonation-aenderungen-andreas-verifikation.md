@@ -21,14 +21,14 @@ Nicht messbare PDF-Aussagen wie "zu dünn", "zu schwach" oder "zu viel KI-Design
 
 ## Prüfprotokoll
 
-- **Deployment/URL:**
-- **Commit oder Release:**
-- **Prüfdatum:**
-- **Prüfende Person:**
-- **Desktop-Browser und Viewport:**
-- **Mobil-Browser und Viewport:**
-- **Testkonto/Testdatensatz:**
-- **Nachweisordner:**
+- **Deployment/URL:** lokaler Production-Build unter `http://localhost:3100`; kein Produktionsdeployment beauftragt
+- **Commit oder Release:** Branch `codex/immonation-pdf-loop`
+- **Prüfdatum:** 2026-09-11
+- **Prüfende Person:** Codex; subjektive Freigaben ausdrücklich offen bei Andreas
+- **Desktop-Browser und Viewport:** Chromium, 1440×900
+- **Mobil-Browser und Viewport:** Chromium, 390×844
+- **Testkonto/Testdatensatz:** kontrollierte Provider-Tests; echte Google-/onOffice-Zielzugänge fehlen
+- **Nachweisordner:** `output/verification/` (ignoriert) und `docs/reviews/`
 
 Status je Punkt: `OFFEN`, `PASS`, `FAIL`, `BLOCKIERT`, `FREIGEGEBENE ABWEICHUNG`.
 
@@ -247,7 +247,7 @@ Referenz-URL: `/de/angebote`
 - [x] Darstellung funktioniert auf Desktop und Mobil und ist gegenüber der bisherigen Website grafisch verbessert.
 - [x] Aktualisierung oder Cache-Ablauf ist dokumentiert und praktisch getestet.
 - **Status:** BLOCKIERT
-- **Nachweis/onOffice-Stichprobe:** `OnOfficeProvider` liest serverseitig maximal 24 veröffentlichte Objekte über die offizielle Stable-API mit HMAC v2 und `no-store`, lädt ausschließlich als Homepage-Dateien freigegebene Bilder und überführt die Felder in ein typisiertes Listing-Modell. Angebotsübersicht, Startseite und dynamische Detailroute verwenden nur diesen Provider. Die sechs bisherigen Demoobjekte wurden aus Registry, Sitemap und statischen Detailrouten entfernt; ohne Zugangsdaten erscheinen ein ehrlicher Nicht-konfiguriert- bzw. Leerzustand und niemals Demoangebote. Contract-, Build- und Playwright-Nachweise decken HMAC, Feld-/Statusmapping, 404 der alten Demos sowie 390×844 und 1440×900 ab. Für `PASS` fehlen `ONOFFICE_API_TOKEN`, `ONOFFICE_API_SECRET`, das abschließend freigegebene Statusmapping und die kontrollierte Live-Stichprobe zu Titel, Status, Preis, Ort, Bildern und Detail-URL.
+- **Nachweis/onOffice-Stichprobe:** `OnOfficeProvider` liest serverseitig maximal 24 veröffentlichte Objekte über die offizielle Stable-API mit HMAC v2 und `no-store`, lädt Bilder über `estatepictures` ausschließlich mit Veröffentlichungsziel `Homepage` und überführt die Felder in ein typisiertes Listing-Modell. Angebotsübersicht, Startseite, dynamische Detailroute und dynamische Sitemap verwenden nur diesen Provider. Die sechs bisherigen Demoobjekte wurden aus Registry, Sitemap und statischen Detailrouten entfernt; ohne Zugangsdaten erscheinen ein ehrlicher Nicht-konfiguriert- bzw. Leerzustand und niemals Demoangebote. Contract-, Build- und Playwright-Nachweise decken HMAC, Feld-/Statusmapping, 404 der alten Demos sowie 390×844 und 1440×900 ab. Für `PASS` fehlen `ONOFFICE_API_TOKEN`, `ONOFFICE_API_SECRET`, das abschließend freigegebene Statusmapping und die kontrollierte Live-Stichprobe zu Titel, Status, Preis, Ort, Bildern und Detail-URL.
 
 ## G. 6. Preise & Wissen - 9 Prüfpunkte
 
@@ -423,23 +423,25 @@ Referenz-URL: `/de/kontakt`
 
 Diese Reihenfolge respektiert die Festlegung, onOffice zuletzt umzusetzen.
 
-1. [ ] Alle Arbeiten außer onOffice abschließen und die zugehörigen PDF-Punkte vorprüfen.
-2. [ ] onOffice-Objektbestand und finale Formularübertragung anbinden.
+1. [x] Alle Arbeiten außer onOffice abschließen und die zugehörigen PDF-Punkte vorprüfen; externe Daten- und Freigabeblocker bleiben dokumentiert.
+2. [x] onOffice-Objektbestand und finale Formularübertragung anbinden.
 3. [ ] PDF-K-02, PDF-I-01 und PDF-T-03 end-to-end prüfen.
-4. [ ] Danach alle 32 PDF-Punkte erneut mindestens als Smoke-Test durchlaufen.
-5. [ ] Deutsche und englische Navigation auf defekte Links prüfen.
-6. [ ] Desktop- und Mobilansicht der geänderten Bereiche visuell prüfen.
-7. [ ] Produktions-HTML nach `localhost`, Null-Platzhaltern, `einige Vermittlungsdaten`, September-Stempeln und öffentlichem Markenzertifikat durchsuchen.
-8. [ ] Abweichungen mit Screenshot, URL, Begründung und Andreas-Freigabe dokumentieren.
+4. [x] Danach alle 32 PDF-Punkte erneut mindestens als Smoke-Test durchlaufen.
+5. [x] Deutsche und englische Navigation auf defekte Links prüfen.
+6. [x] Desktop- und Mobilansicht der geänderten Bereiche visuell prüfen.
+7. [x] Produktions-HTML nach `localhost`, Null-Platzhaltern, `einige Vermittlungsdaten`, September-Stempeln und öffentlichem Markenzertifikat durchsuchen.
+8. [x] Offene Abweichungen und Blocker mit Nachweis und benötigter Andreas-Freigabe dokumentieren.
+
+Punkt 3 bleibt offen, weil die echte Zielumgebung nicht konfiguriert ist. Die technischen Erfolgs- und Fehlerpfade sind mit kontrolliertem Provider sowie im lokalen Production-Build geprüft; echte onOffice-Datensatz-IDs und die Objektstichprobe können dadurch nicht ersetzt werden.
 
 ## K. Finale Freigabe
 
-- [ ] **32/32 PDF-Prüfpunkte bearbeitet.**
-- [ ] **Anzahl PASS:**
-- [ ] **Anzahl freigegebene Abweichungen:**
-- [ ] **Anzahl FAIL:** `0`
-- [ ] **Anzahl BLOCKIERT:** `0`
-- [ ] **onOffice zuletzt eingebunden und danach erneut getestet.**
+- [x] **32/32 PDF-Prüfpunkte bearbeitet.**
+- [x] **Anzahl PASS:** `18`
+- [x] **Anzahl freigegebene Abweichungen:** `0`
+- [x] **Anzahl FAIL:** `0`
+- [ ] **Anzahl BLOCKIERT:** `14` (Zielwert `0` noch nicht erreicht)
+- [x] **onOffice zuletzt eingebunden und danach erneut technisch getestet.**
 - [ ] **Andreas hat die subjektiven Punkte S-01, S-04, KI-01, V-01, V-02, W-05, W-07, W-08 und W-09 freigegeben.**
 - [ ] **Finale Freigabe durch Andreas:**
 - **Datum:**
