@@ -492,17 +492,22 @@
     }
   },
   "ContactForm": {
-    "prototypeLabel": "Formular-Prototyp",
+    "prototypeLabel": "Kontaktformular",
+    "eyebrow": "Direkter Kontakt",
     "title": "Worum geht es bei Ihrer Immobilie?",
-    "text": "Die Felder zeigen den späteren Kontaktweg. In dieser Phase wird keine Nachricht übertragen.",
+    "text": "Ihre Nachricht wird sicher an unser Immonation-Team in onOffice übergeben.",
     "name": "Name",
     "email": "E-Mail",
+    "phone": "Telefon (optional)",
     "topic": "Thema",
     "topics": ["Immobilie verkaufen", "Immobilie bewerten", "Immobilie kaufen", "Sonstiges"],
     "message": "Ihre Nachricht",
-    "submit": "Prototypisch absenden",
-    "success": "Die Darstellung ist abgeschlossen. Es wurde keine Nachricht versendet.",
-    "localOnly": "Keine Speicherung, keine E-Mail und keine Weitergabe im Frontend-Prototyp."
+    "privacy": "Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage gemäß Datenschutzerklärung zu.",
+    "submit": "Anfrage sicher senden",
+    "submitting": "Anfrage wird übergeben …",
+    "success": "Ihre Anfrage wurde von onOffice bestätigt. Wir melden uns persönlich bei Ihnen.",
+    "error": "Die Übergabe konnte nicht bestätigt werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch.",
+    "privacyNote": "Die Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage in unserem führenden Kontaktsystem onOffice gespeichert."
   },
   "CookieConsent": {
     "label": "Cookie-Hinweis",
@@ -659,18 +664,19 @@
     }
   },
   "ValuationWizard": {
-    "prototypeLabel": "Frontend-Prototyp",
+    "prototypeLabel": "Online-Bewertung",
     "title": "Immobilie einordnen",
     "progressLabel": "Fortschritt der Bewertung",
     "stepLabel": "Schritt {current} von {total}",
     "back": "Zurück",
     "next": "Weiter",
     "finish": "Auswertung anfordern",
+    "submitting": "Sicher an onOffice übergeben …",
     "edit": "Angaben ändern",
     "optionalBadge": "optional",
     "optionalStepNote": "Alle Angaben in diesem Schritt sind freiwillig. Sie verfeinern die Spanne — überspringen ist jederzeit möglich.",
     "skip": "Überspringen",
-    "localOnly": "Mit Abschluss öffnen Sie ausschließlich die lokale Danke-Seite. Es wird keine Anfrage übertragen.",
+    "localOnly": "Die Auswertung erscheint erst, nachdem onOffice die vollständige Anfrage bestätigt hat.",
     "propertyTypes": {
       "house": "Haus",
       "apartment": "Wohnung",
@@ -720,7 +726,8 @@
       "postcode": "Bitte eine fünfstellige Postleitzahl eingeben.",
       "email": "Bitte eine gültige E-Mail-Adresse eingeben.",
       "futureYear": "Das Baujahr liegt zu weit in der Zukunft.",
-      "summary": "Bitte prüfen Sie die markierten Felder."
+      "summary": "Bitte prüfen Sie die markierten Felder.",
+      "provider": "Die Übergabe an onOffice konnte nicht bestätigt werden. Ihre Angaben wurden nicht als erfolgreich gesendet markiert. Bitte versuchen Sie es erneut oder rufen Sie uns an."
     },
     "fields": {
       "postcode": {
@@ -1884,16 +1891,16 @@
       "quote": "„Der 360°-Rundgang hat uns Besichtigungen mit Unentschlossenen erspart — es kamen nur noch ernsthafte Interessenten.“",
       "quoteAuthor": "Herr M. · Wohnungsverkauf Nürnberg-St. Johannis · Google ★★★★★",
       "formTitle": "Bewertung starten",
-      "prototypeLabel": "Interaktiver Frontend-Prototyp",
+      "prototypeLabel": "Direkte Online-Bewertung",
       "prototypeNote": "Objektart, Lage, Größe und Verkaufszeitpunkt in fünf klaren Schritten einordnen.",
-      "localOnly": "Ihre Angaben bleiben im Browser. Es wird keine Anfrage übertragen.",
+      "localOnly": "Die Auswahl öffnet das vollständige Formular. Übertragen wird erst nach Ihrer Einwilligung und bestätigter Annahme durch onOffice.",
       "plzLabel": "Postleitzahl des Objekts",
       "plzPlaceholder": "z. B. 90513",
       "typeLabel": "Objektart",
       "types": ["Haus", "Wohnung", "Mehrfamilienhaus", "Grundstück"],
       "submit": "Kostenlose Bewertung starten",
-      "success": "Prototyp abgeschlossen — es wurde keine Anfrage versendet.",
-      "privacyNote": "Lokale Demonstration ohne Datenübertragung. Rückruf statt Formular?",
+      "success": "Die vollständige Anfrage wurde bestätigt.",
+      "privacyNote": "Übertragung erst nach Einwilligung. Rückruf statt Formular?",
       "callbackLink": "Rückruf vereinbaren"
     },
     "servicesOverview": {

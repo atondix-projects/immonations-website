@@ -492,17 +492,22 @@
     }
   },
   "ContactForm": {
-    "prototypeLabel": "Form prototype",
+    "prototypeLabel": "Contact form",
+    "eyebrow": "Direct contact",
     "title": "What would you like to discuss?",
-    "text": "These fields demonstrate the future contact journey. No message is transmitted in this phase.",
+    "text": "Your message is transferred securely to the Immonation team in onOffice.",
     "name": "Name",
     "email": "Email",
+    "phone": "Phone (optional)",
     "topic": "Topic",
     "topics": ["Sell a property", "Value a property", "Buy a property", "Other"],
     "message": "Your message",
-    "submit": "Complete prototype form",
-    "success": "The demonstration is complete. No message was submitted.",
-    "localOnly": "No storage, email, or data transfer in this frontend prototype."
+    "privacy": "I consent to the processing of my details for this enquiry in accordance with the privacy policy.",
+    "submit": "Send enquiry securely",
+    "submitting": "Transferring enquiry …",
+    "success": "onOffice confirmed your enquiry. We will contact you personally.",
+    "error": "The transfer could not be confirmed. Please try again or contact us by phone.",
+    "privacyNote": "The details are stored in onOffice, our primary contact system, solely to process your enquiry."
   },
   "CookieConsent": {
     "label": "Cookie notice",
@@ -659,18 +664,19 @@
     }
   },
   "ValuationWizard": {
-    "prototypeLabel": "Frontend prototype",
+    "prototypeLabel": "Online valuation",
     "title": "Classify your property",
     "progressLabel": "Valuation progress",
     "stepLabel": "Step {current} of {total}",
     "back": "Back",
     "next": "Continue",
     "finish": "Request my analysis",
+    "submitting": "Transferring securely to onOffice …",
     "edit": "Edit answers",
     "optionalBadge": "optional",
     "optionalStepNote": "Everything in this step is voluntary. It sharpens the range — you can skip it at any time.",
     "skip": "Skip",
-    "localOnly": "Completing the flow only opens the local thank-you page. No request is transmitted.",
+    "localOnly": "The analysis appears only after onOffice confirms the complete enquiry.",
     "propertyTypes": {
       "house": "House",
       "apartment": "Apartment",
@@ -720,7 +726,8 @@
       "postcode": "Please enter a five-digit postcode.",
       "email": "Please enter a valid email address.",
       "futureYear": "That construction year is too far in the future.",
-      "summary": "Please check the highlighted fields."
+      "summary": "Please check the highlighted fields.",
+      "provider": "The onOffice transfer could not be confirmed. Your details were not marked as successfully submitted. Please try again or call us."
     },
     "fields": {
       "postcode": {
@@ -1877,16 +1884,16 @@
       "quote": "“The 360° tour spared us viewings with undecided visitors — only serious prospects came.”",
       "quoteAuthor": "Mr. M. · Apartment sale, Nuremberg-St. Johannis · Google ★★★★★",
       "formTitle": "Start your valuation",
-      "prototypeLabel": "Interactive frontend prototype",
+      "prototypeLabel": "Direct online valuation",
       "prototypeNote": "Classify property type, location, size, and timing in five clear steps.",
-      "localOnly": "Your details stay in the browser. No request is transmitted.",
+      "localOnly": "Your selection opens the complete form. Data is transferred only after your consent and confirmed acceptance by onOffice.",
       "plzLabel": "Postal code of the property",
       "plzPlaceholder": "e.g. 90513",
       "typeLabel": "Property type",
       "types": ["House", "Apartment", "Multi-family house", "Plot"],
       "submit": "Start your free valuation",
-      "success": "Prototype complete — no request was submitted.",
-      "privacyNote": "Local demonstration without data transmission. Prefer a call instead of a form?",
+      "success": "The complete enquiry was confirmed.",
+      "privacyNote": "Transfer only after consent. Prefer a call instead of a form?",
       "callbackLink": "Request a callback"
     },
     "servicesOverview": {

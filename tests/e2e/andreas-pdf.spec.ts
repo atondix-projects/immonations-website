@@ -554,6 +554,62 @@ for (const viewport of VIEWPORTS) {
   })
 }
 
+for (const viewport of VIEWPORTS) {
+  test(`PDF-I-01 reports an unconfirmed contact handover honestly on ${viewport.name}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/de/kontakt')
+    const form = page
+      .locator('form')
+      .filter({ has: page.getByRole('button', { name: /anfrage sicher senden/i }) })
+    await form.getByLabel('Name').fill('PDF Testkontakt')
+    await form.getByLabel('E-Mail').fill('pdf-test@example.com')
+    await form.getByLabel('Telefon (optional)').fill('0911 1234567')
+    await form.getByLabel('Thema').selectOption({ label: 'Immobilie bewerten' })
+    await form.getByLabel('Ihre Nachricht').fill('Kontrollierte PDF-Testanfrage ohne Live-Zugang.')
+    await form.getByRole('checkbox').check()
+    await form.getByRole('button', { name: /anfrage sicher senden/i }).click()
+
+    await expect(form.getByRole('alert')).toContainText(/konnte nicht bestätigt werden/i)
+    await expect(form.getByRole('status')).toHaveCount(0)
+    await expect(form.getByRole('button', { name: /anfrage sicher senden/i })).toBeEnabled()
+    await expect(page.locator('[data-site-footer]')).toHaveCount(1)
+  })
+}
+
+test('PDF-T-03 keeps an unconfigured valuation request distinguishable', async ({ request }) => {
+  const response = await request.post('/api/valuation', {
+    headers: {
+      origin: 'http://127.0.0.1:3000',
+      host: '127.0.0.1:3000',
+      'x-forwarded-for': '203.0.113.90',
+    },
+    data: {
+      locale: 'de',
+      propertyType: 'apartment',
+      website: '',
+      answers: {
+        postcode: '90475',
+        city: 'Nürnberg',
+        timing: 'concrete',
+        livingArea: '80',
+        rooms: '3',
+        constructionYear: '1995',
+        floorLevel: 'upper-2',
+        condition: 'maintained',
+        rented: 'no',
+        firstName: 'PDF',
+        lastName: 'Test',
+        email: 'pdf-test@example.com',
+        consent: 'yes',
+      },
+    },
+  })
+  expect(response.status()).toBe(503)
+  await expect(response.json()).resolves.toMatchObject({ ok: false, code: 'not_configured' })
+})
+
 test('PDF-T-01 includes final metrics in the initial homepage HTML', async ({ request }) => {
   const response = await request.get('/de')
   const html = await response.text()

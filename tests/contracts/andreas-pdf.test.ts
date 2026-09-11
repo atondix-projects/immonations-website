@@ -310,4 +310,24 @@ describe('Andreas PDF contracts', () => {
     expect(routeCatalog).not.toContain('zirndorf-weiherhof-maisonette')
     expect(existsSync(join(ROOT, 'src', 'lib', 'content', 'property-listings.ts'))).toBe(false)
   })
+
+  it('PDF-T-03 routes contact and valuation leads through onOffice', () => {
+    const contactForm = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'contact', 'prototype-contact-form.tsx'),
+      'utf8',
+    )
+    const valuationWizard = readFileSync(
+      join(ROOT, 'src', 'components', 'site', 'valuation', 'valuation-wizard.tsx'),
+      'utf8',
+    )
+    const messages = `${readFileSync(join(ROOT, 'messages', 'de.json'), 'utf8')}\n${readFileSync(join(ROOT, 'messages', 'en.json'), 'utf8')}`
+
+    expect(contactForm).toContain("fetch('/api/contact'")
+    expect(contactForm).toContain("status === 'submitting'")
+    expect(valuationWizard).toContain("fetch('/api/valuation'")
+    expect(valuationWizard).toContain('if (!response?.ok)')
+    expect(messages).not.toMatch(
+      /es wird keine anfrage (?:übertragen|versendet)|no (?:request|message) (?:is transmitted|was submitted)/i,
+    )
+  })
 })

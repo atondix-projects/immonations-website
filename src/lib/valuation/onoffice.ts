@@ -6,11 +6,8 @@ import { listAnswer, textAnswer } from './types'
 /**
  * Abbildung der Formularantworten auf onOffice-Stammdatenfelder.
  *
- * WICHTIG: Dies ist ausschließlich eine Abbildung — es wird nichts übertragen.
- * Die Seite ist ein Frontend-Prototyp ohne Backend; die Vertrauenszusage am
- * Formular sagt zu, dass Eingaben im Browser bleiben. Die Funktion existiert,
- * damit die Feldnamen bereits den Stammdaten entsprechen und aus dem Formular
- * später ohne Nacharbeit ein sauberer Kontakt- und Objektdatensatz wird.
+ * Die Funktion bildet validierte Formulardaten auf den Datensatz ab, der danach
+ * ausschließlich serverseitig an den konfigurierten onOffice-Provider geht.
  *
  * `role` und `timing` gehören nicht in die Stammdaten, sondern dienen der
  * Lead-Priorisierung — sie landen deshalb in `notes` (Merkmal/Notiz).

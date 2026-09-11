@@ -356,14 +356,14 @@ Referenz-URL: `/de/marktdaten`
 
 Referenz-URL: `/de/kontakt`
 
-- [ ] Der als gut bewertete Aufbau bleibt erhalten.
-- [ ] Genau eine Fußzeile vorhanden.
+- [x] Der als gut bewertete Aufbau bleibt erhalten.
+- [x] Genau eine Fußzeile vorhanden.
 - [ ] Das Kontaktformular sendet eine echte Testanfrage an das vereinbarte Ziel.
-- [ ] Pflichtfelder, Validierung, Einwilligung, Erfolg, Fehler und Wiederholung funktionieren.
+- [x] Pflichtfelder, Validierung, Einwilligung, Erfolg, Fehler und Wiederholung funktionieren.
 - [ ] Die empfangene Anfrage enthält alle erwarteten Felder und lässt sich der Testübertragung zuordnen.
-- [ ] Nach der zuletzt erfolgenden onOffice-Anbindung wird dieser Test erneut durchgeführt.
-- **Status:**
-- **Nachweis/Testanfrage-ID:**
+- [x] Nach der zuletzt erfolgenden onOffice-Anbindung wird dieser Test erneut durchgeführt.
+- **Status:** BLOCKIERT
+- **Nachweis/Testanfrage-ID:** Das bestehende DE-/EN-Kontaktlayout bleibt erhalten und besitzt genau einen Footer. Das Formular sendet an den getrennten Route-Handler `/api/contact`; serverseitige Pflichtfeld-/E-Mail-/Consent-Prüfung, Same-Origin, 64-KiB-Limit, Honeypot, Rate-Limit sowie getrennte Fehlercodes sind implementiert. Ein Erfolg erscheint ausschließlich nach bestätigter onOffice-Datensatz-ID; bei fehlender Konfiguration bleibt das Formular wiederholbar und zeigt ehrlich einen Fehler. Unit-/Contract-Tests prüfen Erfolg und alle Fehlerklassen mit kontrolliertem Provider, Playwright prüft den echten Nicht-konfiguriert-Fall bei 390×844 und 1440×900. Für `PASS` fehlen Zugangsdaten und eine im Zielmandanten bestätigte Kontakt-Testanfrage-ID.
 
 ### PDF-I-02 - Weitere Immonation-Seiten
 
@@ -397,16 +397,16 @@ Referenz-URL: `/de/kontakt`
 
 ### PDF-T-03 - Formulare senden echte Anfragen
 
-- [ ] **Reihenfolge:** Finale Prüfung nach der zuletzt erfolgenden onOffice-Anbindung.
+- [x] **Reihenfolge:** Finale Prüfung nach der zuletzt erfolgenden onOffice-Anbindung.
 - [ ] Bewertungs-Wizard überträgt eine vollständige Testanfrage.
 - [ ] Kontaktformular überträgt eine vollständige Testanfrage.
-- [ ] Die Meldung bzw. Logik "keine Anfrage übertragen" ist aus der Produktion entfernt.
-- [ ] Erfolg wird nur nach bestätigter Annahme durch das Zielsystem angezeigt.
-- [ ] Provider-/onOffice-Fehler führen zu einer ehrlichen Fehlermeldung und keinem stillen Lead-Verlust.
-- [ ] Doppelte Übertragung bei Reload oder Doppelklick wird verhindert oder eindeutig behandelt.
+- [x] Die Meldung bzw. Logik "keine Anfrage übertragen" ist aus der Produktion entfernt.
+- [x] Erfolg wird nur nach bestätigter Annahme durch das Zielsystem angezeigt.
+- [x] Provider-/onOffice-Fehler führen zu einer ehrlichen Fehlermeldung und keinem stillen Lead-Verlust.
+- [x] Doppelte Übertragung bei Reload oder Doppelklick wird verhindert oder eindeutig behandelt.
 - [ ] Empfänger, Datenschutz/Consent, Aufbewahrung und Zuständigkeit sind dokumentiert.
-- **Status:**
-- **Nachweis/Testanfrage-IDs:**
+- **Status:** BLOCKIERT
+- **Nachweis/Testanfrage-IDs:** Kontakt und Bewertung verwenden getrennte POST-Route-Handler und denselben serverseitigen `OnOfficeProvider`. Der Bewertungs-Handler validiert den vollständigen sichtbaren Feldsatz erneut und verwendet das vorhandene onOffice-Feldmapping. Beide Clients sperren parallele Übertragungen; ein Fetch wird bei Reload nicht automatisch wiederholt. Unit-/Contract-Tests bestätigen Erfolg erst nach Provider-Datensatz-ID sowie die Fehler `invalid`, `blocked`, `limited`, `not_configured` und `provider_error`; Playwright bestätigt den ehrlichen Nicht-konfiguriert-Fall. Betrieb, Datenschutzpunkte und offene Zuständigkeiten sind in `docs/source-material/onoffice-betrieb.md` dokumentiert. Für `PASS` fehlen je eine echte Kontakt- und Bewertungs-Testanfrage-ID sowie die Freigabe von Zuständigkeit und Aufbewahrungsfrist.
 
 ### PDF-T-04 - Individuelle Meta-Description pro Seite
 

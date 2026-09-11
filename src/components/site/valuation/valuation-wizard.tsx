@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Home, ShieldCheck } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
@@ -45,6 +45,7 @@ function focusField(fieldId: string) {
 
 export function ValuationWizard() {
   const t = useTranslations('ValuationWizard')
+  const locale = useLocale()
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -58,6 +59,8 @@ export function ValuationWizard() {
   const [errors, setErrors] = useState<FieldErrors>({})
   const [typeError, setTypeError] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const submittingRef = useRef(false)
   const headingRef = useRef<HTMLParagraphElement>(null)
 
   const stepId = WIZARD_STEP_IDS[step] ?? 'type'
@@ -85,7 +88,7 @@ export function ValuationWizard() {
     setStep((current) => Math.max(current - 1, 0))
   }
 
-  function submitStep() {
+  async function submitStep() {
     if (stepId === 'type') {
       if (!propertyType) {
         setTypeError(true)
@@ -109,6 +112,20 @@ export function ValuationWizard() {
       return
     }
 
+    if (!propertyType || submittingRef.current) return
+    submittingRef.current = true
+    setSubmissionStatus('submitting')
+    const response = await fetch('/api/valuation', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ locale, propertyType, answers, website: '' }),
+    }).catch(() => null)
+    submittingRef.current = false
+    if (!response?.ok) {
+      setSubmissionStatus('error')
+      return
+    }
+    setSubmissionStatus('idle')
     setSubmitted(true)
   }
 
@@ -151,6 +168,7 @@ export function ValuationWizard() {
             onClick={() => {
               setSubmitted(false)
               setErrors({})
+              setSubmissionStatus('idle')
             }}
             className="inline-flex min-h-12 items-center px-2 text-sm font-semibold text-neutral-700 underline underline-offset-4"
           >
@@ -288,6 +306,11 @@ export function ValuationWizard() {
             {t('errors.summary')}
           </p>
         ) : null}
+        {submissionStatus === 'error' ? (
+          <p className="text-destructive mt-6 text-sm font-semibold" role="alert">
+            {t('errors.provider')}
+          </p>
+        ) : null}
       </div>
 
       <div className="mt-8 flex items-center justify-between gap-4 border-t border-neutral-200 pt-5">
@@ -302,9 +325,14 @@ export function ValuationWizard() {
         </button>
         <button
           type="submit"
-          className="bg-brand-700 hover:bg-brand-800 inline-flex min-h-12 items-center gap-2 px-6 text-sm font-semibold text-white transition-colors active:translate-y-px"
+          disabled={submissionStatus === 'submitting'}
+          className="bg-brand-700 hover:bg-brand-800 inline-flex min-h-12 items-center gap-2 px-6 text-sm font-semibold text-white transition-colors active:translate-y-px disabled:cursor-wait disabled:opacity-70"
         >
-          {step === CONTACT_STEP ? t('finish') : t('next')}
+          {submissionStatus === 'submitting'
+            ? t('submitting')
+            : step === CONTACT_STEP
+              ? t('finish')
+              : t('next')}
           <ArrowRight className="size-4" aria-hidden="true" />
         </button>
       </div>
